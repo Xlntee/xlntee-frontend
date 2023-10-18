@@ -1,0 +1,65 @@
+.price {
+    &__free {
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    &__block {
+        display: flex;
+        align-items: center;
+    }
+    &__start {
+        font-size: 20px;
+        font-weight: 700;
+        color:#000;
+        padding-right: 5px;
+    }
+    &__discount {
+        font-size: 15px;
+        font-weight: 400;
+        color:#777;
+        padding-right: 5px;
+        text-decoration: line-through;
+    }
+    &__persentage {
+        font-size: 20px;
+        font-weight: 700;
+        color:#FB7576;
+        padding-right: 5px;
+    }
+
+    // price large styles
+
+    &--large & {
+        &__free {
+            font-size: 25px;
+            font-weight: 700;
+        }
+    
+        &__block {
+            display: flex;
+            align-items: center;
+        }
+        &__start {
+            font-size: 25px;
+            font-weight: 700;
+            color:#000;
+            padding-right: 5px;
+        }
+        &__discount {
+            font-size: 20px;
+            font-weight: 400;
+            color:#777;
+            padding-right: 5px;
+            text-decoration: line-through;
+        }
+        &__persentage {
+            font-size: 25px;
+            font-weight: 700;
+            color:#FB7576;
+            padding-right: 5px;
+        }
+    }
+}
+
+

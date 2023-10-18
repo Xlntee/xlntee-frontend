@@ -1,0 +1,39 @@
+.rating {
+    display: flex;
+    font-size: 15px;
+    font-weight: 400;
+
+    &__number {
+        color: #FAAF00;
+    }
+
+    .MuiRating-icon { 
+        font-size: 17px;
+    }
+
+    &__rating-amount {
+        font-size: 15px;
+        font-weight: 400;
+        color:#777;
+    }
+
+    // rating large styles
+
+    &--large {
+        display: flex;
+        font-size: 20px;
+        font-weight: 400;
+
+        .MuiRating-icon { 
+            font-size: 25px;
+        }
+    }
+
+    &--large & {
+        &__rating-amount {
+            font-size: 20px;
+            font-weight: 400;
+            color:#777;
+        }
+    }
+}
