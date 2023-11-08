@@ -1,16 +1,11 @@
-import CourseCard from '../course-card/CourseCard'
-import './CoursesGrid.scss'
-import courseData from './temp-data'
+import "./CoursesGrid.scss";
 
-function CoursesGrid() {
-
-    return (
-        <div className='courses-grid'>
-            {courseData.map((course, index:number) => 
-                <CourseCard size='large' key={index} {...course}/>
-            )}
-        </div>
-    )
+interface IProps {
+  children: React.ReactNode;
 }
 
-export default CoursesGrid
+const CoursesGrid: React.FC<IProps> = ({ children }) => {
+  return <div className="courses-grid">{children}</div>;
+};
+
+export default CoursesGrid;

@@ -1,65 +1,77 @@
+$mainFontSize: 20px;
+$mainFontSizeLarge: 25px;
+$startPriceColor: #000;
+$discountPriceColor: #777;
+$persentageColor: #fb7576;
+
+@mixin priceBlock {
+  display: flex;
+  align-items: center;
+}
+
+@mixin startPrice {
+  font-weight: 700;
+  color: $startPriceColor;
+  padding-right: 5px;
+}
+
+@mixin discountPrice {
+  font-weight: 400;
+  color: $discountPriceColor;
+  padding-right: 5px;
+  text-decoration: line-through;
+}
+
+@mixin persentage {
+  font-weight: 700;
+  color: $persentageColor;
+  padding-right: 5px;
+}
+
 .price {
+  &__free {
+    font-size: $mainFontSize;
+    font-weight: 700;
+  }
+
+  &__block {
+    @include priceBlock;
+  }
+  &__start {
+    font-size: $mainFontSize;
+    @include startPrice;
+  }
+  &__discount {
+    font-size: 15px;
+    @include discountPrice;
+  }
+  &__persentage {
+    font-size: $mainFontSize;
+    @include persentage;
+  }
+
+  // price large styles
+
+  &--large & {
     &__free {
-        font-size: 20px;
-        font-weight: 700;
+      font-size: $mainFontSizeLarge;
+      font-weight: 700;
     }
 
     &__block {
-        display: flex;
-        align-items: center;
+      @include priceBlock;
     }
     &__start {
-        font-size: 20px;
-        font-weight: 700;
-        color:#000;
-        padding-right: 5px;
+      font-size: $mainFontSizeLarge;
+      @include startPrice;
     }
     &__discount {
-        font-size: 15px;
-        font-weight: 400;
-        color:#777;
-        padding-right: 5px;
-        text-decoration: line-through;
+      font-size: 20px;
+      @include discountPrice;
     }
     &__persentage {
-        font-size: 20px;
-        font-weight: 700;
-        color:#FB7576;
-        padding-right: 5px;
+      font-size: $mainFontSizeLarge;
+      @include persentage;
     }
-
-    // price large styles
-
-    &--large & {
-        &__free {
-            font-size: 25px;
-            font-weight: 700;
-        }
-    
-        &__block {
-            display: flex;
-            align-items: center;
-        }
-        &__start {
-            font-size: 25px;
-            font-weight: 700;
-            color:#000;
-            padding-right: 5px;
-        }
-        &__discount {
-            font-size: 20px;
-            font-weight: 400;
-            color:#777;
-            padding-right: 5px;
-            text-decoration: line-through;
-        }
-        &__persentage {
-            font-size: 25px;
-            font-weight: 700;
-            color:#FB7576;
-            padding-right: 5px;
-        }
-    }
+  }
 }
-
-
