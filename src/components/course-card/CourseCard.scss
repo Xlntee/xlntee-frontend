@@ -1,0 +1,134 @@
+$TeacherBtnColor: #082ac9;
+$dateColor: #777;
+
+@mixin textBlock {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+@mixin teacherDateBlock {
+  display: flex;
+  padding: 5px 2px;
+}
+
+@mixin teacherBtn {
+  font-weight: 400;
+  text-decoration: none;
+  padding-right: 5px;
+  color: $TeacherBtnColor;
+}
+
+.course-card {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  max-width: 350px;
+  height: 315px;
+
+  &__top {
+    width: 350px;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+
+  &__bottom {
+    display: flex;
+  }
+
+  &__pfp-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-right: 5px;
+  }
+
+  &__pfp {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+
+  &__text-block {
+    @include textBlock;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  &__teacher-date-block {
+    @include teacherDateBlock;
+  }
+
+  &__teacherBtn {
+    font-size: 15px;
+    @include teacherBtn;
+  }
+
+  &__date {
+    font-size: 15px;
+    font-weight: 400;
+    color: $dateColor;
+  }
+
+  // CourseCard--large styles
+
+  &--large {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    max-width: 466px;
+    height: 430px;
+  }
+
+  &--large & {
+    &__top {
+      width: 466px;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+    &__bottom {
+      display: flex;
+    }
+    &__pfp-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      margin-right: 10px;
+    }
+
+    &__pfp {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+
+    &__text-block {
+      @include textBlock;
+    }
+
+    &__title {
+      margin: 0;
+      font-size: 25px;
+      font-weight: 600;
+    }
+
+    &__teacher-date-block {
+      @include teacherDateBlock;
+    }
+
+    &__teacherBtn {
+      font-size: 20px;
+      @include teacherBtn;
+    }
+
+    &__date {
+      font-size: 20px;
+      font-weight: 400;
+      color: $dateColor;
+    }
+  }
+}
