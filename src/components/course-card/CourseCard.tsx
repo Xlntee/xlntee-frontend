@@ -22,8 +22,7 @@ interface IProps {
 }
 
 // тимчасова функція для відображення статичних картинок в залежності від розміру courseCard
-const logoPath = (size: string): string =>
-  size === "small" ? courseImgPath : courseImgLargePath;
+const logoPath = (size: string): string => (size === "small" ? courseImgPath : courseImgLargePath);
 
 const CourseCard: FC<IProps> = ({
   title = "Основи шрифта і як його правильно построїти",
@@ -49,11 +48,7 @@ const CourseCard: FC<IProps> = ({
       </div>
       <div className="course-card__bottom">
         <div className="course-card__pfp-wrapper">
-          <img
-            className="course-card__pfp"
-            src={teacherLogoImg}
-            alt="teacher-logo"
-          />
+          <img className="course-card__pfp" src={teacherLogoImg} alt="teacher-logo" />
         </div>
         <div className="course-card__text-block">
           <h3 className="course-card__title">{title}</h3>
@@ -63,11 +58,7 @@ const CourseCard: FC<IProps> = ({
             </a>
             <span className="course-card__date">{date}</span>
           </div>
-          <RatingComponent
-            size={size}
-            rating={rating}
-            feedbackCount={feedbackCount}
-          />
+          <RatingComponent size={size} rating={rating} feedbackCount={feedbackCount} />
           <Price
             size={size}
             isFree={false}

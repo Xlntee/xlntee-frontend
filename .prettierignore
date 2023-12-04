@@ -1,0 +1,6 @@
+# Ignore artifacts:
+/*
+!/cypress
+!/src
+/src/translations
+!/public

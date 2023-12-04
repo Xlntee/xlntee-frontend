@@ -5,73 +5,73 @@ $discountPriceColor: #777;
 $persentageColor: #fb7576;
 
 @mixin priceBlock {
-  display: flex;
-  align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 @mixin startPrice {
-  font-weight: 700;
-  color: $startPriceColor;
-  padding-right: 5px;
+	font-weight: 700;
+	color: $startPriceColor;
+	padding-right: 5px;
 }
 
 @mixin discountPrice {
-  font-weight: 400;
-  color: $discountPriceColor;
-  padding-right: 5px;
-  text-decoration: line-through;
+	font-weight: 400;
+	color: $discountPriceColor;
+	padding-right: 5px;
+	text-decoration: line-through;
 }
 
 @mixin persentage {
-  font-weight: 700;
-  color: $persentageColor;
-  padding-right: 5px;
+	font-weight: 700;
+	color: $persentageColor;
+	padding-right: 5px;
 }
 
 .price {
-  &__free {
-    font-size: $mainFontSize;
-    font-weight: 700;
-  }
+	&__free {
+		font-size: $mainFontSize;
+		font-weight: 700;
+	}
 
-  &__block {
-    @include priceBlock;
-  }
-  &__start {
-    font-size: $mainFontSize;
-    @include startPrice;
-  }
-  &__discount {
-    font-size: 15px;
-    @include discountPrice;
-  }
-  &__persentage {
-    font-size: $mainFontSize;
-    @include persentage;
-  }
+	&__block {
+		@include priceBlock;
+	}
+	&__start {
+		font-size: $mainFontSize;
+		@include startPrice;
+	}
+	&__discount {
+		font-size: 15px;
+		@include discountPrice;
+	}
+	&__persentage {
+		font-size: $mainFontSize;
+		@include persentage;
+	}
 
-  // price large styles
+	// price large styles
 
-  &--large & {
-    &__free {
-      font-size: $mainFontSizeLarge;
-      font-weight: 700;
-    }
+	&--large & {
+		&__free {
+			font-size: $mainFontSizeLarge;
+			font-weight: 700;
+		}
 
-    &__block {
-      @include priceBlock;
-    }
-    &__start {
-      font-size: $mainFontSizeLarge;
-      @include startPrice;
-    }
-    &__discount {
-      font-size: 20px;
-      @include discountPrice;
-    }
-    &__persentage {
-      font-size: $mainFontSizeLarge;
-      @include persentage;
-    }
-  }
+		&__block {
+			@include priceBlock;
+		}
+		&__start {
+			font-size: $mainFontSizeLarge;
+			@include startPrice;
+		}
+		&__discount {
+			font-size: 20px;
+			@include discountPrice;
+		}
+		&__persentage {
+			font-size: $mainFontSizeLarge;
+			@include persentage;
+		}
+	}
 }
