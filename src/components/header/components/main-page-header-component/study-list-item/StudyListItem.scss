@@ -1,0 +1,29 @@
+.study-list-item {
+  position: relative;
+  padding: 10px 0;
+  &__image {
+    width: 290px;
+    border-radius: 5px;
+  }
+
+  &__title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #000;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+
+  &__button {
+    position: absolute;
+    right: 45px;
+    bottom: 20px;
+    border: none;
+    background-color: inherit;
+    font-size: 15px;
+    font-weight: 900;
+    color: #fff;
+    cursor: pointer;
+    padding: 0;
+  }
+}
