@@ -1,32 +1,32 @@
 .notif-list-item {
-	padding: 10px 0;
-	&__date {
-		display: block;
-		font-size: 10px;
-		font-weight: 300;
-		color: #000;
-	}
-	&__action-type {
-		display: block;
-		font-size: 15px;
-		font-weight: 400;
-		color: #000;
-	}
+  padding: 10px 0;
+  &__date {
+    display: block;
+    font-size: 10px;
+    font-weight: 300;
+    color: #000;
+  }
+  &__action-type {
+    display: block;
+    font-size: 15px;
+    font-weight: 400;
+    color: #000;
+  }
 
-	&__author {
-		font-size: 15px;
-		font-weight: 700;
-		color: #000;
-	}
+  &__author {
+    font-size: 15px;
+    font-weight: 700;
+    color: #000;
+  }
 
-	&__text {
-		font-size: 15px;
-		font-weight: 400;
-		color: #000;
-		display: -webkit-box;
-		overflow: hidden;
-		-webkit-box-orient: vertical;
-		-webkit-line-clamp: 1;
-		text-overflow: ellipsis;
-	}
+  &__text {
+    font-size: 15px;
+    font-weight: 400;
+    color: #000;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    text-overflow: ellipsis;
+  }
 }

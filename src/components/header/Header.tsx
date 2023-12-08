@@ -3,27 +3,18 @@ import "./Header.scss";
 import CourseHeaderComponent from "./components/course-header-component/CourseHeaderComponent";
 import MainPageHeaderComponent from "./components/main-page-header-component/MainPageHeaderComponent";
 import UserHeaderComponent from "./components/user-header-component/UserHeaderComponent";
-import { AppBar, Container, Toolbar } from "@mui/material";
-import Logo from "./components/logo/Logo";
-
-/* <div className="header">
-      <div className="header__logo-block">
-        
-      </div>
-      <MainPageHeaderComponent />
-      { <UserHeaderComponent /> }
-      { <CourseHeaderComponent /> }
-    </div> */
-
 const Header = () => {
   return (
-    <AppBar position="static">
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <Logo />
-        </Toolbar>
-      </Container>
-    </AppBar>
+    <div className="header">
+      <div className="header__logo-block">
+        <Link to="/">
+          <h1 className="header__logo-text">Youni</h1>
+        </Link>
+      </div>
+      <MainPageHeaderComponent />
+      {/* <UserHeaderComponent /> */}
+      {/* <CourseHeaderComponent /> */}
+    </div>
   );
 };
 
