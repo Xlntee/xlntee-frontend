@@ -16,6 +16,7 @@ import { SelectChangeEvent } from "@mui/material";
 const Filter = () => {
   const [fromPrice, setFromPrice] = useState("");
   const [toPrice, setToPrice] = useState("");
+  const [isFree, setIsFree] = useState(false);
   const [level, setLevel] = useState("");
   const [duration, setDuration] = useState("");
   const [lang, setLang] = useState("");
@@ -25,6 +26,7 @@ const Filter = () => {
   const handleClearFilters = () => {
     setFromPrice("");
     setToPrice("");
+    setIsFree(false);
     setLevel("");
     setDuration("");
     setLang("");
@@ -37,6 +39,9 @@ const Filter = () => {
 
   const handleSetToPrice = (e: React.ChangeEvent<HTMLInputElement>) =>
     setToPrice(e.target.value);
+
+  const handleSetIsFree = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setIsFree(e.target.checked);
 
   const handleLevelChange = (event: SelectChangeEvent) => {
     setLevel(event.target.value as string);
@@ -77,6 +82,8 @@ const Filter = () => {
           <span>Найновіші</span>
         </div>
         <PriceFilterMenu
+          isFree={isFree}
+          handleSetIsFree={handleSetIsFree}
           fromPrice={fromPrice}
           toPrice={toPrice}
           handleSetFromPrice={handleSetFromPrice}

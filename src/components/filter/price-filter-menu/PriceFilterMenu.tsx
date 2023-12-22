@@ -1,12 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import "./PriceFilterMenu.scss";
+import { Checkbox, FormControlLabel } from "@mui/material";
 
 interface IProps {
   toPrice: string;
   fromPrice: string;
+  isFree: boolean;
   handleSetToPrice: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleSetFromPrice: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleSetIsFree: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const PriceFilterMenu: React.FC<IProps> = ({
@@ -14,6 +17,8 @@ const PriceFilterMenu: React.FC<IProps> = ({
   fromPrice,
   handleSetToPrice,
   handleSetFromPrice,
+  isFree,
+  handleSetIsFree,
 }) => {
   const [showDialog, setShowDialog] = useState(false);
   const dialogRef = useRef<HTMLDivElement | null>(null);
@@ -38,7 +43,14 @@ const PriceFilterMenu: React.FC<IProps> = ({
     };
   }, []);
 
-  const showPriceDiapazone = (fromInputValue: string, toInputValue: string) => {
+  const showPriceDiapazone = (
+    fromInputValue: string,
+    toInputValue: string,
+    isFree: boolean
+  ) => {
+    if (isFree) {
+      return "Безкоштовні";
+    }
     if (fromInputValue && !toInputValue) {
       return `Ціна ${fromInputValue}₴`;
     }
@@ -56,12 +68,12 @@ const PriceFilterMenu: React.FC<IProps> = ({
     <div className="price-filter-menu">
       <div onClick={handleShowDialog} className="price-filter-menu__btn">
         <span className="priceFilterMenu__btn-title">
-          {showPriceDiapazone(fromPrice, toPrice)}
+          {showPriceDiapazone(fromPrice, toPrice, isFree)}
         </span>
         {showDialog ? (
-          <ArrowDropDownIcon sx={{ rotate: "180deg" }} />
+          <ArrowDropDownIcon sx={{color: '#757575' ,rotate: "180deg" }} />
         ) : (
-          <ArrowDropDownIcon />
+          <ArrowDropDownIcon sx={{color: '#757575'}} />
         )}
       </div>
       {showDialog && (
@@ -84,6 +96,17 @@ const PriceFilterMenu: React.FC<IProps> = ({
               type="number"
             />
           </div>
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={isFree}
+                onChange={handleSetIsFree}
+                sx={{ "& .MuiSvgIcon-root": { fontSize: "18" } }}
+              />
+            }
+            label="Безкоштовні"
+            sx={{ pl: "28px" }}
+          />
         </div>
       )}
     </div>
