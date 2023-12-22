@@ -6,13 +6,16 @@ interface IProps {
 
 const ProgressBar: React.FC<IProps> = ({ percentage = 0 }) => {
   return (
-    <Box sx={{ width: 290, height: 35, position: "relative" }}>
+    <Box
+      sx={{ width: 290, height: 25, position: "relative" }}
+    >
       <LinearProgress
         variant="determinate"
         value={percentage}
         sx={{
+          borderRadius: "5px",
           height: "100%",
-          backgroundColor: "#32449C",
+          backgroundColor: "#333",
           "& .MuiLinearProgress-barColorPrimary": {
             backgroundColor: "#35C587",
           },

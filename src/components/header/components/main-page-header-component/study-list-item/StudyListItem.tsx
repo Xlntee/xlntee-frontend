@@ -13,7 +13,7 @@ const StudyListItem: React.FC<IProps> = ({ imageURL, title, percentage }) => {
       <img className="study-list-item__image" src={imageURL} />
       <h2 className="study-list-item__title">{title}</h2>
       <ProgressBar percentage={percentage} />
-      <button className="study-list-item__button">Продовжити &gt;&gt;</button>
+      <button className="study-list-item__button">продовжити</button>
     </div>
   );
 };
