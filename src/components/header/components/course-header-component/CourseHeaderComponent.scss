@@ -2,55 +2,55 @@ $mainFontFamily: "Inter", sans-serif;
 $mainTextColor: #fff;
 
 @mixin flex-items-center {
-  display: flex;
-  align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 .course-header {
-  @include flex-items-center;
-  color: $mainTextColor;
+	@include flex-items-center;
+	color: $mainTextColor;
 
-  &__back-btn {
-    position: absolute;
-    left: 25%;
-    color: $mainTextColor;
-    font-family: $mainFontFamily;
-    font-size: 20px;
-    font-weight: 400;
-    text-decoration: none;
-  }
+	&__back-btn {
+		position: absolute;
+		left: 25%;
+		color: $mainTextColor;
+		font-family: $mainFontFamily;
+		font-size: 20px;
+		font-weight: 400;
+		text-decoration: none;
+	}
 
-  &__progress-bar {
-    @include flex-items-center;
-    position: absolute;
-    left: 40%;
-  }
+	&__progress-bar {
+		@include flex-items-center;
+		position: absolute;
+		left: 40%;
+	}
 
-  &__progress-name {
-    font-size: 20px;
-    font-weight: 400;
-    margin-right: 10px;
-    font-family: $mainFontFamily;
-  }
+	&__progress-name {
+		font-size: 20px;
+		font-weight: 400;
+		margin-right: 10px;
+		font-family: $mainFontFamily;
+	}
 
-  &__icons-block {
-    @include flex-items-center;
-    position: absolute;
-    right: 0;
-  }
+	&__icons-block {
+		@include flex-items-center;
+		position: absolute;
+		right: 0;
+	}
 
-  &__share-rating-btn {
-    @include flex-items-center;
-    background-color: transparent;
-    border: none;
-    color: $mainTextColor;
-    cursor: pointer;
-    size: 15px;
-    font-weight: 400;
-    font-family: $mainFontFamily;
+	&__share-rating-btn {
+		@include flex-items-center;
+		background-color: transparent;
+		border: none;
+		color: $mainTextColor;
+		cursor: pointer;
+		size: 15px;
+		font-weight: 400;
+		font-family: $mainFontFamily;
 
-    & > span {
-      padding: 0 10px;
-    }
-  }
+		& > span {
+			padding: 0 10px;
+		}
+	}
 }
