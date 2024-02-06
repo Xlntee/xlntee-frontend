@@ -2,5 +2,7 @@
 /*
 !/cypress
 !/src
-/src/translations
 !/public
+!/*.json
+!/vite.config.ts
+/package-lock.json
