@@ -6,9 +6,21 @@ import PriceFilterMenu from "./price-filter-menu/PriceFilterMenu";
 import FilterInputMenu from "./filter-input-menu/FilterInputMenu";
 import { categoriesData, durationData, languageData, levelData } from "./filterSelectData";
 import { useState } from "react";
-import { SelectChangeEvent } from "@mui/material";
+import {
+  Box,
+  Button,
+  Container,
+  FormControl,
+  Grid,
+  InputLabel,
+  MenuItem,
+  Select,
+  SelectChangeEvent,
+  Typography,
+} from "@mui/material";
+import { YouniColors } from "src/themes/colors";
 
-const Filter = () => {
+/* const Filter = () => {
 	const [fromPrice, setFromPrice] = useState("");
 	const [toPrice, setToPrice] = useState("");
 	const [isFree, setIsFree] = useState(false);
@@ -114,6 +126,50 @@ const Filter = () => {
 			</div>
 		</div>
 	);
+}; */
+
+const Filter = () => {
+  return (
+    <Box sx={{ backgroundColor: YouniColors.DarkGray, py: 4 }} component="section">
+      <Container fixed maxWidth="lg">
+        <Grid container spacing={2} sx={{ mb: 2 }}>
+          <Grid item xs={true}>
+            <Button size="large" sx={{ color: "#fff" }}>
+              Застосувати
+            </Button>
+          </Grid>
+          <Grid item xs={true}>
+            <Button variant="text" sx={{ color: "#fff" }}>
+              Очистити фільтр
+            </Button>
+          </Grid>
+          <Grid item xs={9}>
+            <SearchInput />
+          </Grid>
+        </Grid>
+        <Grid container spacing={2}>
+          {Array.apply(null, Array(6)).map(() => (
+            <Grid item xs={2}>
+              <FormControl variant="outlined" fullWidth size="small">
+                <InputLabel id="demo-simple-select-label">Age</InputLabel>
+                <Select
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                  label="Age"
+                  sx={{
+                    backgroundColor: "#fff",
+                  }}
+                >
+                  <MenuItem value={10}>Ten</MenuItem>
+                  <MenuItem value={20}>Twenty</MenuItem>
+                </Select>
+              </FormControl>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+    </Box>
+  );
 };
 
 export default Filter;
