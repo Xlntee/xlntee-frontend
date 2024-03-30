@@ -15,10 +15,7 @@ const HeaderDropdown: React.FC<IProps> = ({ onClose }) => {
 
   useEffect(() => {
     const handleOutSideClick = (event: MouseEvent) => {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
-      ) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         onClose();
       }
     };

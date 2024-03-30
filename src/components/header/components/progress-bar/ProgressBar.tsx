@@ -6,9 +6,7 @@ interface IProps {
 
 const ProgressBar: React.FC<IProps> = ({ percentage = 0 }) => {
   return (
-    <Box
-      sx={{ width: 290, height: 25, position: "relative" }}
-    >
+    <Box sx={{ width: 290, height: 25, position: "relative" }}>
       <LinearProgress
         variant="determinate"
         value={percentage}

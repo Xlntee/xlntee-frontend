@@ -1,22 +1,22 @@
 .login-page {
-	min-height: 100%;
+  min-height: 100%;
 
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-	&__form {
-		border-radius: 4px;
+  &__form {
+    border-radius: 4px;
 
-		padding: 16px;
+    padding: 16px;
 
-		display: flex;
-		flex-direction: column;
+    display: flex;
+    flex-direction: column;
 
-		row-gap: 8px;
+    row-gap: 8px;
 
-		align-items: stretch;
+    align-items: stretch;
 
-		box-shadow: 3px 5px 7px 1px rgba(0, 0, 0, 0.2);
-	}
+    box-shadow: 3px 5px 7px 1px rgba(0, 0, 0, 0.2);
+  }
 }
