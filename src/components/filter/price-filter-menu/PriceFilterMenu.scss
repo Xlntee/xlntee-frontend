@@ -1,66 +1,66 @@
 @mixin flex-items-center {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .price-filter-menu {
-	position: relative;
+  position: relative;
 
-	&__btn {
-		@include flex-items-center;
-		justify-content: space-between;
-		width: 200px;
-		height: 60px;
-		background-color: #fff;
-		border-radius: 5px;
-		padding: 0 15px;
-		cursor: pointer;
-		overflow: hidden;
+  &__btn {
+    @include flex-items-center;
+    justify-content: space-between;
+    width: 200px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 0 15px;
+    cursor: pointer;
+    overflow: hidden;
 
-		&:hover {
-			border: 1px solid black;
-		}
-	}
-	&__title {
-		font-size: 20px;
-		font-weight: 400;
-		color: #000;
-	}
+    &:hover {
+      border: 1px solid black;
+    }
+  }
+  &__title {
+    font-size: 20px;
+    font-weight: 400;
+    color: #000;
+  }
 
-	&__dialog {
-		width: 200px;
-		position: absolute;
-		background-color: #fff;
-		border: 1px solid #d9d9d9;
-		border-radius: 5px;
-		padding: 5px;
-	}
-	&__dialog-element {
-		@include flex-items-center;
-		justify-content: space-around;
-		margin-bottom: 2px;
-	}
+  &__dialog {
+    width: 200px;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
+    padding: 5px;
+  }
+  &__dialog-element {
+    @include flex-items-center;
+    justify-content: space-around;
+    margin-bottom: 2px;
+  }
 
-	&__dialog-title {
-		font-size: 15px;
-		font-weight: 400;
-		color: #000;
-	}
+  &__dialog-title {
+    font-size: 15px;
+    font-weight: 400;
+    color: #000;
+  }
 
-	&__dialog-input {
-		width: 155px;
-		height: 45px;
-		border: 1px solid #d9d9d9;
-		border-radius: 5px;
-		/* Chrome, Safari, Edge, Opera */
-		&::-webkit-outer-spin-button,
-		&::-webkit-inner-spin-button {
-			-webkit-appearance: none;
-			margin: 0;
-		}
-		/* Firefox */
-		&[type="number"] {
-			-moz-appearance: textfield;
-		}
-	}
+  &__dialog-input {
+    width: 155px;
+    height: 45px;
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
+    /* Chrome, Safari, Edge, Opera */
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    /* Firefox */
+    &[type="number"] {
+      -moz-appearance: textfield;
+    }
+  }
 }
