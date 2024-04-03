@@ -1,27 +1,27 @@
 .wish-list-item {
-	padding: 5px 0;
-	&__image {
-		width: 290px;
-		border-radius: 5px;
-	}
+  padding: 5px 0;
+  &__image {
+    width: 290px;
+    border-radius: 5px;
+  }
 
-	&__title {
-		font-size: 20px;
-		font-weight: 600;
-		color: #000;
-		margin: 0;
-		margin-bottom: 10px;
-	}
+  &__title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #000;
+    margin: 0;
+    margin-bottom: 10px;
+  }
 
-	&__button {
-		display: flex;
-		align-items: center;
-		border: none;
-		background-color: inherit;
-		font-size: 15px;
-		font-weight: 600;
-		color: #082ac9;
-		cursor: pointer;
-		padding: 0;
-	}
+  &__button {
+    display: flex;
+    align-items: center;
+    border: none;
+    background-color: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    color: #082ac9;
+    cursor: pointer;
+    padding: 0;
+  }
 }

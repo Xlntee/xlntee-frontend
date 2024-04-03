@@ -1,28 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@900&display=swap");
 
 .header {
-	display: flex;
-	background-color: #0f0f0f;
-	flex-direction: row;
-	align-items: center;
-	width: 100%;
-	height: 75px;
+  display: flex;
+  background-color: #0f0f0f;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 75px;
 
-	&__logo-block {
-		margin: 0 74px 0 20px;
+  &__logo-block {
+    margin: 0 74px 0 20px;
 
-		& > a {
-			color: #fff;
-			text-decoration: none;
-		}
-	}
+    & > a {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
 
-	&__logo-text {
-		margin: 0;
-		font-family: "Be Vietnam Pro", sans-serif;
-		font-size: 50px;
-		font-weight: 800;
-		color: #fff;
-		vertical-align: text-bottom;
-	}
+  &__logo-text {
+    margin: 0;
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-size: 50px;
+    font-weight: 800;
+    color: #fff;
+    vertical-align: text-bottom;
+  }
 }

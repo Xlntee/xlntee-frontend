@@ -21,6 +21,7 @@
 		"noEmit": true,
 		"jsx": "react-jsx",
 
+<<<<<<< HEAD
 		/* Linting */
 		"strict": true,
 		"noUnusedLocals": true,
@@ -29,4 +30,15 @@
 	},
 	"include": ["src"],
 	"references": [{ "path": "./tsconfig.node.json" }]
+=======
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "types": ["vitest/importMeta", "cypress"]
+  },
+  "include": [ "src", "cypress"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+>>>>>>> 854b72e (added testing environment vitest react-testing-library cypress)
 }
