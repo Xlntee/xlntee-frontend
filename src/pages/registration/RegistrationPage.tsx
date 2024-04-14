@@ -9,6 +9,7 @@ import {
   useVerifyEmailMutation,
 } from "../../store/auth/authApiSlice";
 import { useForm } from "react-hook-form";
+import Page from "components/page/Page";
 
 interface IFormData {
   email: string;
@@ -36,8 +37,6 @@ const RegistrationPage: FC = () => {
   const [acceptPolicy, { isLoading: isPolicyAcceptionLoading }] = useAcceptPolicyMutation();
 
   const onSubmit = handleSubmit(async (data) => {
-    console.log(data);
-
     if (isSignUpLoading || isVerificationLoading || isPolicyAcceptionLoading) return;
 
     switch (state) {
@@ -80,32 +79,34 @@ const RegistrationPage: FC = () => {
 
   return (
     <ApiProvider api={authApiSlice}>
-      <div className="registration-page">
-        <form onSubmit={onSubmit} className="registration-page__form">
-          <input
-            className="registration-page__input"
-            type="email"
-            {...register("email")}
-            autoFocus
-            disabled={state !== RegistrationState.SIGN_UP}
-          />
-          <input
-            className="registration-page__input"
-            type="password"
-            {...register("password")}
-            disabled={state !== RegistrationState.SIGN_UP}
-          />
-          <input
-            className="registration-page__input"
-            type="text"
-            {...register("code")}
-            disabled={state !== RegistrationState.EMAIL_CONFIRMATION}
-          />
-          <button className="registration-page__submit" type="submit">
-            Submit
-          </button>
-        </form>
-      </div>
+      <Page>
+        <div className="registration-page">
+          <form onSubmit={onSubmit} className="registration-page__form">
+            <input
+              className="registration-page__input"
+              type="email"
+              {...register("email")}
+              autoFocus
+              disabled={state !== RegistrationState.SIGN_UP}
+            />
+            <input
+              className="registration-page__input"
+              type="password"
+              {...register("password")}
+              disabled={state !== RegistrationState.SIGN_UP}
+            />
+            <input
+              className="registration-page__input"
+              type="text"
+              {...register("code")}
+              disabled={state !== RegistrationState.EMAIL_CONFIRMATION}
+            />
+            <button className="registration-page__submit" type="submit">
+              Submit
+            </button>
+          </form>
+        </div>
+      </Page>
     </ApiProvider>
   );
 };

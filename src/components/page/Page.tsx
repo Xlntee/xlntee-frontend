@@ -15,7 +15,9 @@ const Page = ({ title, showFooter = true, children }: PageProps) => {
   return (
     <>
       <Header />
-      <Box component="main">{children}</Box>
+      <Box component="main" sx={{ flexGrow: 1 }}>
+        {children}
+      </Box>
 
       {showFooter && <Footer />}
     </>

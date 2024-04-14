@@ -1,20 +1,32 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Header.scss";
-import CourseHeaderComponent from "./components/course-header-component/CourseHeaderComponent";
-import MainPageHeaderComponent from "./components/main-page-header-component/MainPageHeaderComponent";
-import UserHeaderComponent from "./components/user-header-component/UserHeaderComponent";
+import { AppBar, Box, Container, Link, Toolbar } from "@mui/material";
+import Logo from "./components/logo/Logo";
+import { AppRoutes } from "components/routing/appRoutes";
+
 const Header = () => {
   return (
-    <div className="header">
-      <div className="header__logo-block">
-        <Link to="/">
-          <h1 className="header__logo-text">Youni</h1>
-        </Link>
-      </div>
-      <MainPageHeaderComponent />
-      {/* <UserHeaderComponent /> */}
-      {/* <CourseHeaderComponent /> */}
-    </div>
+    <AppBar position="static">
+      <Container maxWidth="xl">
+        <Toolbar disableGutters>
+          <Logo />
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+            <Link component={NavLink} to={AppRoutes.base}>
+              Home
+            </Link>
+            <Link component={NavLink} to={AppRoutes.login}>
+              Login
+            </Link>
+            <Link component={NavLink} to={AppRoutes.registration}>
+              Registration
+            </Link>
+            <Link component={NavLink} to={AppRoutes.createCourse}>
+              Create Course
+            </Link>
+          </Box>
+        </Toolbar>
+      </Container>
+    </AppBar>
   );
 };
 

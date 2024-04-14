@@ -14,7 +14,7 @@ const Landing = () => {
 
       <Container fixed maxWidth="lg" sx={{ my: 8 }}>
         <Grid container spacing={2} columnSpacing={4}>
-          {Array.apply(null, Array(12)).map((item) => (
+          {Array.apply(null, Array(12)).map(() => (
             <Grid item xs={4}>
               <CourseCard size="small" />
             </Grid>

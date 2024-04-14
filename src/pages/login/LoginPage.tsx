@@ -4,6 +4,10 @@ import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
 import { FC } from "react";
 import { authApiSlice, useLoginMutation } from "../../store/auth/authApiSlice";
 import { useForm } from "react-hook-form";
+import Page from "components/page/Page";
+import { useAppDispatch } from "src/store/store";
+import { setCredentials } from "src/store/auth/authSlice";
+import { useLocation, useNavigate } from "react-router-dom";
 
 interface IFormData {
   email: string;
@@ -16,14 +20,20 @@ const LoginPage: FC = () => {
   const { register, handleSubmit } = useForm<IFormData>();
 
   const [login, { isLoading: isLoginLoading }] = useLoginMutation();
+  const { state } = useLocation();
+  const navigate = useNavigate();
+
+  const dispatch = useAppDispatch();
 
   const onSubmit = handleSubmit(async (data) => {
-    console.log(data);
-
     try {
       const res = await login({ ...data, deviceId }).unwrap();
 
-      console.log(res);
+      dispatch(setCredentials(res));
+
+      if (state?.from) {
+        navigate(state.from);
+      }
     } catch (error) {
       console.error(error);
     }
@@ -31,15 +41,17 @@ const LoginPage: FC = () => {
 
   return (
     <ApiProvider api={authApiSlice}>
-      <div className="login-page">
-        <form onSubmit={onSubmit} className="login-page__form">
-          <input className="login-page__input" type="email" {...register("email")} autoFocus />
-          <input className="login-page__input" type="password" {...register("password")} />
-          <button className="login-page__submit" type="submit" disabled={isLoginLoading}>
-            Login
-          </button>
-        </form>
-      </div>
+      <Page>
+        <div className="login-page">
+          <form onSubmit={onSubmit} className="login-page__form">
+            <input className="login-page__input" type="email" {...register("email")} autoFocus />
+            <input className="login-page__input" type="password" {...register("password")} />
+            <button className="login-page__submit" type="submit" disabled={isLoginLoading}>
+              Login
+            </button>
+          </form>
+        </div>
+      </Page>
     </ApiProvider>
   );
 };

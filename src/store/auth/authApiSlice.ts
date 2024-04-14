@@ -14,6 +14,7 @@ interface IVerificationData {
 interface ILoginResponse {
   accessToken: string;
   refreshToken: string;
+  email: string;
   status: "EMAIL_VERIFICATION";
 }
 
