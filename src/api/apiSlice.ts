@@ -27,9 +27,9 @@ const baseQueryWithReauth: BaseQueryFn<string | FetchArgs, unknown, FetchBaseQue
     const refreshRes = await baseQuery("auth/refresh-token", api, extraOptions);
 
     if (refreshRes?.data) {
-      const user = api.getState();
+      const state = api.getState();
 
-      api.dispatch(setCredentials({ ...refreshRes.data, user }));
+      api.dispatch(setCredentials({ ...refreshRes.data, state }));
 
       result = await baseQuery(args, api, extraOptions);
     } else {

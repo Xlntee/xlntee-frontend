@@ -11,15 +11,13 @@ const AppRouter = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/">
-          <Route index element={<Landing />} />
-          <Route path={AppRoutes.login} element={<LoginPage />} />
-          <Route path={AppRoutes.registration} element={<RegistrationPage />} />
-          <Route element={<ProtectedRoute />}>
-            <Route path={AppRoutes.createCourse} element={<CreateCoursePage />} />
-          </Route>
-          <Route path="/test" element={<ComponentTestPage />} />
+        <Route index element={<Landing />} />
+        <Route path={AppRoutes.login} element={<LoginPage />} />
+        <Route path={AppRoutes.registration} element={<RegistrationPage />} />
+        <Route element={<ProtectedRoute />}>
+          <Route path={AppRoutes.createCourse} element={<CreateCoursePage />} />
         </Route>
+        <Route path="/test" element={<ComponentTestPage />} />
       </Routes>
     </BrowserRouter>
   );

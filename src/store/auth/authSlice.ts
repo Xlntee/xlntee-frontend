@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 
-interface IAuthState {
+export interface IAuthState {
   token: string;
   email: string;
 }

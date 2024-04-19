@@ -14,7 +14,7 @@ interface IFormData {
   password: string;
 }
 
-const deviceId = "1111";
+const deviceId = "string";
 
 const LoginPage: FC = () => {
   const { register, handleSubmit } = useForm<IFormData>();
@@ -44,7 +44,7 @@ const LoginPage: FC = () => {
       <Page>
         <div className="login-page">
           <form onSubmit={onSubmit} className="login-page__form">
-            <input className="login-page__input" type="email" {...register("email")} autoFocus />
+            <input className="login-page__input"  {...register("email")} autoFocus />
             <input className="login-page__input" type="password" {...register("password")} />
             <button className="login-page__submit" type="submit" disabled={isLoginLoading}>
               Login
