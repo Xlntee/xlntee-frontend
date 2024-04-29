@@ -33,9 +33,12 @@
     "react-hook-form": "^7.46.1",
     "react-redux": "^8.1.1",
     "react-router-dom": "^6.16.0",
-    "redux-persist": "^6.0.0"
+    "redux-persist": "^6.0.0",
+    "swiper": "^11.1.1"
   },
   "devDependencies": {
+    "@swc/cli": "^0.3.12",
+    "@swc/core": "^1.4.17",
     "@testing-library/jest-dom": "^6.3.0",
     "@testing-library/react": "^14.1.2",
     "@testing-library/user-event": "^14.5.2",

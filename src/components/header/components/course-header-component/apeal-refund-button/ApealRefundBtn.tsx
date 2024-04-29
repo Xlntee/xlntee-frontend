@@ -1,4 +1,4 @@
-import { Button, Menu, MenuItem, } from "@mui/material";
+import { Button, Menu, MenuItem } from "@mui/material";
 import React, { useState } from "react";
 import NewReleasesOutlinedIcon from "@mui/icons-material/NewReleasesOutlined";
 import PaidOutlinedIcon from "@mui/icons-material/PaidOutlined";
@@ -24,16 +24,16 @@ const ApealRefundBtn = () => {
   const handleOpenModal = () => setIsOpenModal(true);
   const handleCloseModal = () => setIsOpenModal(false);
 
-  const handleOpenWarning = () => setIsWarningOpen(true)
-  const handleCloseWarning = () => setIsWarningOpen(false)
-  
+  const handleOpenWarning = () => setIsWarningOpen(true);
+  const handleCloseWarning = () => setIsWarningOpen(false);
+
   const handleApealClick = () => {
     if (isDisabled) {
-      handleOpenWarning()
+      handleOpenWarning();
     } else {
-      handleOpenModal()
+      handleOpenModal();
     }
-  }
+  };
 
   return (
     <div className="apeal-refund-block">
@@ -57,7 +57,7 @@ const ApealRefundBtn = () => {
       >
         <MenuItem
           onClick={handleApealClick}
-          sx={{fontFamily: "Inter, sans-serif", color: (isDisabled) ? "#828282" : "#000"}}
+          sx={{ fontFamily: "Inter, sans-serif", color: isDisabled ? "#828282" : "#000" }}
         >
           <NewReleasesOutlinedIcon />
           Поскаржитись

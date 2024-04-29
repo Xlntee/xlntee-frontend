@@ -1,10 +1,6 @@
 import { useEffect, useRef } from "react";
 import "./HeaderDropdown.scss";
-import {
-  categoriesColumn1,
-  categoriesColumn2,
-  categoriesColumn3,
-} from "./tempData";
+import { categoriesColumn1, categoriesColumn2, categoriesColumn3 } from "./tempData";
 
 interface IProps {
   onClose: () => void;

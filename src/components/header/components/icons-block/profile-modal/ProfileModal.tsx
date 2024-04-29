@@ -1,14 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import {
-  Avatar,
-  Box,
-  Divider,
-  List,
-  ListItem,
-  ListItemIcon,
-  Paper,
-  Typography,
-} from "@mui/material";
+import { Avatar, Box, Divider, List, ListItem, ListItemIcon, Paper, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import LanguageIcon from "@mui/icons-material/Language";
@@ -28,9 +19,7 @@ const profileModal: React.FC<IProps> = ({ onClose }) => {
   const ListRef = useRef<HTMLDivElement | null>(null);
   const [selectedLanguage, setSelectedLanguage] = useState("uk");
 
-  const handleLanguageChange = (
-    event: React.ChangeEvent<HTMLSelectElement>
-  ) => {
+  const handleLanguageChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedLanguage(event.target.value);
   };
 

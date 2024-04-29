@@ -79,11 +79,7 @@ const IconsBlock = () => {
       >
         <ShoppingCartOutlinedIcon fontSize="large" />
       </Badge>
-      <AccountCircleOutlinedIcon
-        onClick={handleProfileOpen}
-        fontSize="large"
-        sx={{ cursor: "pointer" }}
-      />
+      <AccountCircleOutlinedIcon onClick={handleProfileOpen} fontSize="large" sx={{ cursor: "pointer" }} />
 
       {wishlistOpen && (
         <ModalList title="Список бажаного" onClose={handleWishlistClose}>
@@ -105,11 +101,7 @@ const IconsBlock = () => {
         <ModalList title="Повідомлення" onClose={handleNotificationsClose}>
           {notifications.slice(0, 8).map((item) => (
             <React.Fragment key={item.id}>
-              <NotificationListItem
-                date={item.date}
-                text={item.text}
-                author={item.author}
-              />
+              <NotificationListItem date={item.date} text={item.text} author={item.author} />
               <Divider />
             </React.Fragment>
           ))}
