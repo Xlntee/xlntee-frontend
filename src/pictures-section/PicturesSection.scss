@@ -1,0 +1,36 @@
+.image-box {
+  position: relative;
+  max-width: 700px;
+  max-height: 450px;
+  overflow: hidden;
+
+  &__image {
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  &__text-first {
+    position: absolute;
+    color: white;
+    font-weight: 400;
+    font-size: 20px;
+    top: 12px;
+    left: 12px;
+  }
+
+  &__text-second {
+    position: absolute;
+    color: white;
+    font-weight: 400;
+    font-size: 20px;
+    bottom: 41px;
+    right: 14px;
+
+    & > span {
+      font-family: "Inter", sans-serif;
+      font-weight: 900;
+      font-size: 30px;
+      font-style: italic;
+    }
+  }
+}
