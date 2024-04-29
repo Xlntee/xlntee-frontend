@@ -28,30 +28,18 @@ const CourseHeaderComponent = () => {
         <ProgressBar percentage={62} />
       </div>
       <div className="course-header__icons-block">
-        <button
-          onClick={handleOpenRatingModal}
-          className="course-header__share-rating-btn"
-        >
+        <button onClick={handleOpenRatingModal} className="course-header__share-rating-btn">
           <StarIcon fontSize="large" sx={{ color: "#fff" }} />
           <span>Оцінити</span>
         </button>
-        <button
-          onClick={handleOpenShareModal}
-          className="course-header__share-rating-btn"
-        >
+        <button onClick={handleOpenShareModal} className="course-header__share-rating-btn">
           <ShareIcon fontSize="large" sx={{ color: "#fff" }} />
           <span>Поділитись</span>
         </button>
         <ApealRefundBtn />
       </div>
-      <RatingModal
-        isOpen={isOpenRatingModal}
-        handleClose={handleCloseRatingModal}
-      />
-      <ShareModal
-        isOpen={isOpenShareModal}
-        handleClose={handleCloseShareModal}
-      />
+      <RatingModal isOpen={isOpenRatingModal} handleClose={handleCloseRatingModal} />
+      <ShareModal isOpen={isOpenShareModal} handleClose={handleCloseShareModal} />
     </div>
   );
 };

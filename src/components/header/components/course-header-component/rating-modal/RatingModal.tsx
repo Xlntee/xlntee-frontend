@@ -1,11 +1,4 @@
-import {
-  Box,
-  Button,
-  Modal,
-  Rating,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { Box, Button, Modal, Rating, TextField, Typography } from "@mui/material";
 import { ChangeEvent, useState } from "react";
 
 const modalStyle = {
@@ -31,10 +24,7 @@ interface IProps {
 const RatingModal: React.FC<IProps> = ({ isOpen, handleClose }) => {
   const [rating, setRating] = useState(0);
 
-  const handleRatingChange = (
-    event: ChangeEvent<{}>,
-    newRating: number | null
-  ) => {
+  const handleRatingChange = (event: ChangeEvent<{}>, newRating: number | null) => {
     if (newRating !== null) {
       setRating(newRating);
     }
@@ -56,17 +46,8 @@ const RatingModal: React.FC<IProps> = ({ isOpen, handleClose }) => {
             width: "100%",
           }}
         >
-          <Typography
-            sx={{ fontFamily: "Inter", fontSize: "30px", fontWeight: 700 }}
-          >
-            Оцінити курс
-          </Typography>
-          <Rating
-            sx={{ fontSize: "60px" }}
-            name="course-rating"
-            value={rating}
-            onChange={handleRatingChange}
-          />
+          <Typography sx={{ fontFamily: "Inter", fontSize: "30px", fontWeight: 700 }}>Оцінити курс</Typography>
+          <Rating sx={{ fontSize: "60px" }} name="course-rating" value={rating} onChange={handleRatingChange} />
         </Box>
 
         <Typography

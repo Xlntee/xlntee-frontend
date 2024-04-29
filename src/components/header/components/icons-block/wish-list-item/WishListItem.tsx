@@ -9,12 +9,7 @@ interface IProps {
   onRemove: () => void;
 }
 
-const WishListItem: React.FC<IProps> = ({
-  imageURL,
-  title,
-  onAddToCart,
-  onRemove,
-}) => {
+const WishListItem: React.FC<IProps> = ({ imageURL, title, onAddToCart, onRemove }) => {
   return (
     <div className="wish-list-item">
       <img className="wish-list-item__image" src={imageURL} />

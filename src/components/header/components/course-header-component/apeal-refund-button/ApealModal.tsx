@@ -39,16 +39,16 @@ interface StyledFormControlLabelProps extends FormControlLabelProps {
   checked: boolean;
 }
 
-const StyledFormControlLabel = styled((props: StyledFormControlLabelProps) => (
-  <FormControlLabel {...props} />
-))(({ checked }) => ({
-  ".MuiTypography-root": {
-    color: checked ? "#32449C" : "#000",
-  },
-  ".MuiSvgIcon-root": {
-    color: checked ? "#32449C" : "inherit",
-  },
-}));
+const StyledFormControlLabel = styled((props: StyledFormControlLabelProps) => <FormControlLabel {...props} />)(
+  ({ checked }) => ({
+    ".MuiTypography-root": {
+      color: checked ? "#32449C" : "#000",
+    },
+    ".MuiSvgIcon-root": {
+      color: checked ? "#32449C" : "inherit",
+    },
+  }),
+);
 
 function MyFormControlLabel(props: FormControlLabelProps) {
   const radioGroup = useRadioGroup();

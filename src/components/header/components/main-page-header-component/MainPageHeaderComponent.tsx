@@ -46,11 +46,7 @@ const MainPageHeaderComponent = () => {
               <StudyModal title="Моє навчання" onClose={handleCloseStudyModal}>
                 {studyData.map((item) => (
                   <React.Fragment key={item.id}>
-                    <StudyListItem
-                      title={item.title}
-                      imageURL={item.imageUrl}
-                      percentage={item.percentage}
-                    />
+                    <StudyListItem title={item.title} imageURL={item.imageUrl} percentage={item.percentage} />
                     <Divider />
                   </React.Fragment>
                 ))}

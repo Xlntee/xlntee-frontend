@@ -17,7 +17,7 @@ const ImageSlider = () => {
       >
         <SwiperSlide>
           <div className="slider-image-box">
-            <img src="/assets/slide-design.jpg" alt="slide design"  />
+            <img src="/assets/slide-design.jpg" alt="slide design" />
             <div className="slider-image-box__text">Дизайну</div>
           </div>
         </SwiperSlide>
@@ -35,7 +35,7 @@ const ImageSlider = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div className="slider-image-box">
-            <img src="/assets/slide-music.jpg" alt="slide music"/>
+            <img src="/assets/slide-music.jpg" alt="slide music" />
             <div className="slider-image-box__text">Музиці</div>
           </div>
         </SwiperSlide>

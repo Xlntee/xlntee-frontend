@@ -12,7 +12,8 @@ const PicturesSection = () => {
             <img src="/assets/picture-section-main.jpg" alt="picture section main" className="image-box__image" />
             <div className="image-box__text-first">Правильні інструменти - ключ до досягнень</div>
             <div className="image-box__text-second">
-              Обирай свій напрямок на <img src="/assets/x-logo-picturesSection.png" /><span>lntee</span> і навчайся
+              Обирай свій напрямок на <img src="/assets/x-logo-picturesSection.png" />
+              <span>lntee</span> і навчайся
             </div>
           </Box>
 

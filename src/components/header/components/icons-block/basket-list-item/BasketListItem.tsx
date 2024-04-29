@@ -26,9 +26,7 @@ const BasketListItem: React.FC<IProps> = ({
       <h2 className="basket-list-item__title">{title}</h2>
       <div className="basket-list-item__price-block">
         <div className="basket-list-item__price-wrapp">
-          <span className="basket-list-item__total-price">
-            {`₴${totalPrice}`}
-          </span>
+          <span className="basket-list-item__total-price">{`₴${totalPrice}`}</span>
           <span className="basket-list-item__first-price">{`₴${startPrice}`}</span>
         </div>
         <span className="basket-list-item__percentage">{`-${percentage}%`}</span>
@@ -40,9 +38,7 @@ const BasketListItem: React.FC<IProps> = ({
         <button className="basket-list-item__remove-button" onClick={onRemove}>
           Видалити
         </button>
-        <FavoriteBorderIcon
-          sx={{ position: "absolute", right: "4px", cursor: "pointer" }}
-        />
+        <FavoriteBorderIcon sx={{ position: "absolute", right: "4px", cursor: "pointer" }} />
       </div>
     </div>
   );
