@@ -2,11 +2,11 @@ import "./LoginPage.scss";
 
 import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
 import { FC } from "react";
-import { authApiSlice, useLoginMutation } from "../../store/auth/authApiSlice";
+import { authApiSlice, useLoginMutation } from "./api/authApiSlice";
 import { useForm } from "react-hook-form";
-import Page from "components/page/Page";
-import { useAppDispatch } from "src/store/store";
-import { setCredentials } from "src/store/auth/authSlice";
+import Page from "src/widgets/page/Page";
+import { useAppDispatch } from "src/app/store/store";
+import { setCredentials } from "pages/login/store/authSlice";
 import { useLocation, useNavigate } from "react-router-dom";
 
 interface IFormData {

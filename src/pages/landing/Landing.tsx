@@ -1,10 +1,10 @@
-import Page from "src/components/page/Page";
+import Page from "src/widgets/page/Page";
 // import PicturesSection from "./components/pictures-section/PicturesSection";
 import TopCoursesSection from "./components/top-courses-section/TopCoursesSection";
-import Filter from "components/filter/Filter";
+import Filter from "src/widgets/filter/Filter";
 import { Container, Grid } from "@mui/material";
-import CourseCard from "components/course-card/CourseCard";
-import PicturesSection from "src/pictures-section/PIcturesSection";
+import CourseCard from "src/widgets/course-card/CourseCard";
+import PicturesSection from "src/widgets/pictures-section/PIcturesSection";
 
 const Landing = () => {
   return (

@@ -1,4 +1,4 @@
-import { YouniColors } from "src/themes/colors";
+import { YouniColors } from "src/shared/themes/colors";
 import "./PictureSection.scss";
 import { Box, Container, Grid } from "@mui/material";
 

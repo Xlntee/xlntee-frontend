@@ -1,5 +1,5 @@
 import { Box, Container } from "@mui/material";
-import { YouniColors } from "src/themes/colors";
+import { YouniColors } from "src/shared/themes/colors";
 import "./PicturesSection.scss";
 import ImageSlider from "./swiper/Slider";
 

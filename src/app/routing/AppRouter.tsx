@@ -4,7 +4,7 @@ import RegistrationPage from "../../pages/registration/RegistrationPage";
 import ComponentTestPage from "../../pages/component-test/ComponentTestPage";
 import Landing from "../../pages/landing/Landing";
 import { AppRoutes } from "./appRoutes";
-import { ProtectedRoute } from "components/routing/ProtectedRoute";
+import { ProtectedRoute } from "src/app/routing/ProtectedRoute";
 import CreateCoursePage from "pages/create-course/CreateCoursePage";
 
 const AppRouter = () => {

@@ -1,5 +1,5 @@
 import App from "./App";
-import { render, screen, userEvent } from "./utils/test-utils";
+import { render } from "../test/test-utils";
 
 describe("App component test", () => {
   it("render App.tsx", () => {

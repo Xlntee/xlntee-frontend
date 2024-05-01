@@ -1,5 +1,5 @@
 import { BaseQueryFn, FetchArgs, FetchBaseQueryError, createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { logOut, setCredentials } from "../store/auth/authSlice";
+import { logOut, setCredentials } from "../../pages/login/store/authSlice";
 import { RootState } from "../store/store";
 
 const baseQuery = fetchBaseQuery({

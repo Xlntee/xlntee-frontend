@@ -18,7 +18,7 @@ import {
   SelectChangeEvent,
   Typography,
 } from "@mui/material";
-import { YouniColors } from "src/themes/colors";
+import { YouniColors } from "src/shared/themes/colors";
 
 /* const Filter = () => {
 	const [fromPrice, setFromPrice] = useState("");
