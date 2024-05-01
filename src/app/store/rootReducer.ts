@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import authReducer, { IAuthState } from "./auth/authSlice";
+import authReducer, { IAuthState } from "../../pages/login/store/authSlice";
 import { apiSlice } from "../api/apiSlice";
 
 import { persistReducer, PersistConfig } from "redux-persist";

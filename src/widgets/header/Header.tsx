@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import "./Header.scss";
 import { AppBar, Box, Container, Link, Toolbar } from "@mui/material";
 import Logo from "./components/logo/Logo";
-import { AppRoutes } from "components/routing/appRoutes";
+import { AppRoutes } from "src/app/routing/appRoutes";
 
 const Header = () => {
   return (

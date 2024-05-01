@@ -7,9 +7,9 @@ import {
   useAcceptPolicyMutation,
   useSignUpMutation,
   useVerifyEmailMutation,
-} from "../../store/auth/authApiSlice";
+} from "../login/api/authApiSlice";
 import { useForm } from "react-hook-form";
-import Page from "components/page/Page";
+import Page from "src/widgets/page/Page";
 
 interface IFormData {
   email: string;

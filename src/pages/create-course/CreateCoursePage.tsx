@@ -1,4 +1,4 @@
-import Page from "components/page/Page";
+import Page from "src/widgets/page/Page";
 import { FC } from "react";
 
 const CreateCoursePage: FC = () => {
