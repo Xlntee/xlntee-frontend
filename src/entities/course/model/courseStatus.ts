@@ -1,0 +1,6 @@
+export enum CourseStatus {
+  WAITING_FOR_APPROVE = "WAITING_FOR_APPROVE",
+  APPROVED = "APPROVED",
+  SUCCESS = "SUCCESS",
+  BLOCKED = "BLOCKED",
+}
