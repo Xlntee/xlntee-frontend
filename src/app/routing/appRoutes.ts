@@ -8,3 +8,8 @@ export const AppRoutes = {
   createCourse: "/createCourse",
   notFound: "/page-not-found",
 };
+
+export enum AuthPageSection {
+  LOGIN = "login",
+  REGISTRATION = "registration",
+}

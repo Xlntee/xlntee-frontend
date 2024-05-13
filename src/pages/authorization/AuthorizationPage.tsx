@@ -2,6 +2,7 @@ import { TabContext, TabList, TabPanel } from "@mui/lab";
 import { Box, Tab } from "@mui/material";
 import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { AuthPageSection } from "src/app/routing/appRoutes";
 import LoginForm from "src/widgets/login-form/LoginForm";
 import Page from "src/widgets/page/Page";
 import RegistrationForm from "src/widgets/registration-form/RegistrationForm";
@@ -9,14 +10,14 @@ import RegistrationForm from "src/widgets/registration-form/RegistrationForm";
 const authorizationPage = () => {
   const { authType } = useParams();
 
-  const cleanAuthType = (authType: string | undefined) => {
-    if (authType === "login" || authType === "reg") return authType;
-    return "login";
+  const cleanAuthType = (authType: string | undefined): AuthPageSection => {
+    if (authType === AuthPageSection.LOGIN || authType === AuthPageSection.REGISTRATION) return authType;
+    return AuthPageSection.LOGIN;
   };
 
-  const [value, setValue] = useState(cleanAuthType(authType));
+  const [value, setValue] = useState<AuthPageSection>(cleanAuthType(authType));
 
-  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+  const handleChange = (event: React.SyntheticEvent, newValue: AuthPageSection) => {
     setValue(newValue);
   };
 
@@ -41,9 +42,9 @@ const authorizationPage = () => {
               />
               <Tab
                 label="Реєстрація"
-                value="reg"
+                value="registration"
                 component={Link}
-                to="/auth/reg"
+                to="/auth/registration"
                 sx={{ fontSize: "35px", textTransform: "none" }}
               />
             </TabList>
@@ -51,7 +52,7 @@ const authorizationPage = () => {
           <TabPanel value="login" sx={{ padding: "0" }}>
             <LoginForm />
           </TabPanel>
-          <TabPanel value="reg" sx={{ padding: "0" }}>
+          <TabPanel value="registration" sx={{ padding: "0" }}>
             <RegistrationForm />
           </TabPanel>
         </TabContext>

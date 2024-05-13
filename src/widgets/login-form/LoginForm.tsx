@@ -102,15 +102,44 @@ const LoginForm: FC = () => {
     <ApiProvider api={authApiSlice}>
       <form onSubmit={onSubmit}>
         <Stack direction="column" gap="20px" padding="20px 0">
-          <Button startIcon={<GoogleIcon style={{ fontSize: 37 }} />} variant="outlined" sx={ButtonStyles}>
+          <Button
+            aria-label="login with google button"
+            startIcon={<GoogleIcon style={{ fontSize: 37 }} />}
+            variant="outlined"
+            sx={ButtonStyles}
+          >
             Увійти через Google
           </Button>
-          <Button startIcon={<FacebookOutlined style={{ fontSize: 37 }} />} variant="outlined" sx={ButtonStyles}>
+          <Button
+            aria-label="login with facebook button"
+            startIcon={<FacebookOutlined style={{ fontSize: 37 }} />}
+            variant="outlined"
+            sx={ButtonStyles}
+          >
             Увійти через Facebook
           </Button>
-          <TextField sx={TextFieldStyles} placeholder="Електронна пошта" {...register("email")} autoFocus />
-          <TextField sx={TextFieldStyles} placeholder="Пароль" type="password" {...register("password")} />
-          <Button sx={SubmitBtnStyles} variant="contained" type="submit" disabled={isLoginLoading}>
+          <TextField
+            aria-label="email input"
+            sx={TextFieldStyles}
+            type="email"
+            placeholder="Електронна пошта"
+            {...register("email")}
+            autoFocus
+          />
+          <TextField
+            aria-label="password input"
+            sx={TextFieldStyles}
+            type="password"
+            placeholder="Пароль"
+            {...register("password")}
+          />
+          <Button
+            aria-label="login button"
+            sx={SubmitBtnStyles}
+            variant="contained"
+            type="submit"
+            disabled={isLoginLoading}
+          >
             Увійти
           </Button>
           <Stack direction="column">
@@ -118,13 +147,17 @@ const LoginForm: FC = () => {
               <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "15px" }}>
                 Забули пароль?
               </Typography>
-              <Button sx={TinyBtnStyles}>Змінити пароль</Button>
+              <Button aria-label="change password button" sx={TinyBtnStyles}>
+                Змінити пароль
+              </Button>
             </Stack>
             <Stack direction="row" alignItems="center" gap="3px" m="0 auto">
               <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "15px" }}>
                 Ще не зареєстровані?
               </Typography>
-              <Button sx={TinyBtnStyles}>Зареєструватись</Button>
+              <Button aria-label="registration button" sx={TinyBtnStyles}>
+                Зареєструватись
+              </Button>
             </Stack>
           </Stack>
         </Stack>
