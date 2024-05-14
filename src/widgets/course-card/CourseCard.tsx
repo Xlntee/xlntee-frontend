@@ -3,8 +3,8 @@ import courseImgPath from "./temp-images/course-img.png";
 import courseImgLargePath from "./temp-images/course-img-large.png";
 import teacherLogoImgPath from "./temp-images/teacher-logo.png";
 import RatingComponent from "../rating/RatingComponent";
-import Price from "../price/Price";
 import { Box, Card, CardActionArea, CardContent, CardMedia, Typography } from "@mui/material";
+import Price from "src/features/price/Price";
 
 interface IProps {
   title?: string;
