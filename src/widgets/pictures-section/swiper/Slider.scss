@@ -1,12 +1,10 @@
-.slider {
-  --swiper-pagination-color: #5057ff;
+.slider .swiper-pagination {
+  --swiper-pagination-color: #643dff;
   --swiper-pagination-bullet-inactive-color: #f9f9f9;
   --swiper-pagination-bullet-inactive-opacity: 1;
   --swiper-pagination-bullet-size: 10px;
   --swiper-pagination-bullet-horizontal-gap: 5px;
-}
 
-.swiper-pagination {
   position: initial !important;
   padding-top: 20px;
 }

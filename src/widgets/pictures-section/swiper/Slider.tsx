@@ -10,7 +10,7 @@ const ImageSlider = () => {
   return (
     <>
       <Swiper
-        className="Slider"
+        className="slider"
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         slidesPerView={1}
         pagination={{ clickable: true }}
