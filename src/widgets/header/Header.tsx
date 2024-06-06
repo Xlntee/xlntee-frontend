@@ -23,6 +23,9 @@ const Header = () => {
             <Link component={NavLink} to={AppRoutes.createCourse}>
               Create Course
             </Link>
+            <Link component={NavLink} to={"/course/6616af061a9802691861ca66"}>
+              PreviewCourse
+            </Link>
           </Box>
         </Toolbar>
       </Container>

@@ -12,6 +12,7 @@ import StudentModal from "src/widgets/student-modal/StudentModal";
 import ViolationModal from "src/widgets/violation-modal/ViolationModal";
 import InformationModal from "src/widgets/information-modal/InformationModal";
 import OnboardingModal from "src/widgets/onboarding-modal/OnboardingModal";
+import CoursePreviewPage from "pages/course-preview/CoursePreviewPage";
 
 const AppRouter = () => {
   return (
@@ -22,6 +23,7 @@ const AppRouter = () => {
         <Route path={AppRoutes.registration} element={<RegistrationPage />} />
         <Route path={AppRoutes.auth} element={<AuthorizationPage />} />
         <Route path={AppRoutes.authType} element={<AuthorizationPage />} />
+        <Route path={AppRoutes.previewCourse} element={<CoursePreviewPage />} />
         <Route element={<ProtectedRoute />}>
           <Route path={AppRoutes.createCourse} element={<CreateCoursePage />} />
         </Route>

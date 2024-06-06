@@ -4,7 +4,7 @@ import { Difficulty } from "./difficultyLevels";
 import { Lecture } from "./lecture";
 import { PriceType } from "./priceType";
 
-export type GeneralSettings = {
+export type GeneralSetting = {
   title: string;
   subTitle: string;
   generateCertificate: boolean;
@@ -35,7 +35,7 @@ export type PriceSettings = {
 };
 
 export type CourseDetails = {
-  generalSettings: GeneralSettings;
+  generalSetting: GeneralSetting;
   landingSetting: LandingSettings;
   courseSetting: CourseSettings;
   priceSetting: PriceSettings;

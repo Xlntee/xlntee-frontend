@@ -6,6 +6,7 @@ export const AppRoutes = {
   login: "/login",
   registration: "/registration",
   createCourse: "/createCourse",
+  previewCourse: "/course/:courseId",
   notFound: "/page-not-found",
 };
 
