@@ -1,4 +1,4 @@
-import { Box, Button, IconButton, InputAdornment, Stack, TextField, Typography } from "@mui/material";
+import { Box, Button, Container, IconButton, InputAdornment, Stack, TextField, Typography } from "@mui/material";
 import { AccountCircle } from "@mui/icons-material";
 import SearchIcon from "@mui/icons-material/Search";
 import UpdateOutlinedIcon from "@mui/icons-material/UpdateOutlined";
@@ -19,7 +19,7 @@ interface CoursePreviewHeaderProps {
 const CoursePreviewHeader: React.FC<CoursePreviewHeaderProps> = ({ courseData }) => {
   return (
     <Box sx={{ bgcolor: "#000", pb: "25px" }}>
-      <Box sx={{ maxWidth: "1200px", margin: "0 auto" }}>
+      <Container sx={{ maxWidth: "1200px", margin: "0 auto" }}>
         <TextField
           variant="outlined"
           placeholder="Пошук..."
@@ -184,7 +184,7 @@ const CoursePreviewHeader: React.FC<CoursePreviewHeaderProps> = ({ courseData })
             </Stack>
           </Box>
         </Stack>
-      </Box>
+      </Container>
     </Box>
   );
 };
