@@ -1,5 +1,4 @@
 import { Box, Button, Modal, Stack, Typography } from "@mui/material";
-import { useState } from "react";
 import CloseIcon from "@mui/icons-material/CloseOutlined";
 
 const style = {
@@ -15,14 +14,14 @@ const style = {
   p: 4,
 };
 
-const StudentModal = () => {
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+interface StudentModalProps {
+  open: boolean;
+  handleClose: () => void;
+}
 
+const StudentModal: React.FC<StudentModalProps> = ({ open, handleClose }) => {
   return (
     <>
-      <Button onClick={handleOpen}>Open student modal</Button>
       <Modal open={open} onClose={handleClose}>
         <Box sx={style}>
           <Stack flexDirection="column" justifyContent="center" alignItems="center" sx={{ p: "0 140px" }}>

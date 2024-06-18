@@ -1,5 +1,4 @@
 import { Box, Button, Modal, Typography } from "@mui/material";
-import { useState } from "react";
 import CloseIcon from "@mui/icons-material/CloseOutlined";
 
 const style = {
@@ -14,14 +13,14 @@ const style = {
   boxShadow: 24,
 };
 
-const InformationModal = () => {
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+interface InformationModalProps {
+  open: boolean;
+  handleClose: () => void;
+}
 
+const InformationModal: React.FC<InformationModalProps> = ({ open, handleClose }) => {
   return (
     <>
-      <Button onClick={handleOpen}>Open information modal</Button>
       <Modal open={open} onClose={handleClose}>
         <Box sx={style}>
           <Box sx={{ position: "absolute", left: "5%", top: "5%", display: "flex", alignItems: "center" }}>
