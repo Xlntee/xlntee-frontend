@@ -1,18 +1,22 @@
 import { createTheme } from "@mui/material";
-import { YouniColors } from "./colors";
+import { XlnteeColors, YouniColors } from "./colors";
 
 export const defaultTheme = createTheme({
   palette: {
     mode: "light",
     primary: {
-      main: "#2D51F7",
+      main: XlnteeColors.BrandColor,
     },
     secondary: {
-      main: "#35C587",
+      main: XlnteeColors.CallToActionColor,
     },
   },
   typography: {
     fontFamily: ["Noto Sans", "Roboto", "sans-serif"].join(","),
+    body1: {
+      fontSize: '20px',
+      fontWeight: '400'
+    }
   },
   components: {
     MuiAppBar: {
@@ -49,6 +53,10 @@ export const defaultTheme = createTheme({
     },
     MuiButton: {
       styleOverrides: {
+        root: {
+          textTransform: "none",
+          borderRadius: '5px'
+        },
         sizeLarge: {
           height: 56,
         },
