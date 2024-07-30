@@ -7,12 +7,8 @@ import { AppRoutes } from "./appRoutes";
 import { ProtectedRoute } from "src/app/routing/ProtectedRoute";
 import CreateCoursePage from "pages/create-course/CreateCoursePage";
 import AuthorizationPage from "pages/authorization/AuthorizationPage";
-import TeacherModal from "src/widgets/teacher-modal/TeacherModal";
-import StudentModal from "src/widgets/student-modal/StudentModal";
-import ViolationModal from "src/widgets/violation-modal/ViolationModal";
-import InformationModal from "src/widgets/information-modal/InformationModal";
-import OnboardingModal from "src/widgets/onboarding-modal/OnboardingModal";
 import CoursePreviewPage from "pages/course-preview/CoursePreviewPage";
+import ThemeTestPage from "pages/theme-test-page/ThemeTestPage";
 
 const AppRouter = () => {
   return (
@@ -31,11 +27,7 @@ const AppRouter = () => {
           path="/test"
           element={
             <ComponentTestPage>
-              <TeacherModal />
-              <StudentModal />
-              <ViolationModal />
-              <InformationModal />
-              <OnboardingModal />
+              <ThemeTestPage />
             </ComponentTestPage>
           }
         />

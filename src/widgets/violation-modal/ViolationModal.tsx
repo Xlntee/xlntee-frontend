@@ -1,5 +1,4 @@
 import { Box, Button, FormControlLabel, FormGroup, Grid, Modal, TextField, Typography } from "@mui/material";
-import { useState } from "react";
 import CloseIcon from "@mui/icons-material/CloseOutlined";
 import Checkbox from "@mui/material/Checkbox";
 
@@ -16,14 +15,14 @@ const style = {
   p: "54px",
 };
 
-const ViolationModal = () => {
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+interface ViolationModalProps {
+  open: boolean;
+  handleClose: () => void;
+}
 
+const ViolationModal: React.FC<ViolationModalProps> = ({ open, handleClose }) => {
   return (
     <>
-      <Button onClick={handleOpen}>Open violation modal</Button>
       <Modal open={open} onClose={handleClose}>
         <Box sx={style}>
           <Typography
