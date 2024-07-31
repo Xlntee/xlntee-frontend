@@ -1,10 +1,10 @@
 import Page from "src/widgets/page/Page";
 // import PicturesSection from "./components/pictures-section/PicturesSection";
 import TopCoursesSection from "./components/top-courses-section/TopCoursesSection";
-import Filter from "src/widgets/filter/Filter";
+import Filter from "../../../legacy/filter/Filter";
 import { Container, Grid } from "@mui/material";
-import CourseCard from "src/widgets/course-card/CourseCard";
-import PicturesSection from "src/widgets/pictures-section/PIcturesSection";
+import CourseCard from "../../../legacy/course-card/CourseCard";
+import PicturesSection from "../../../legacy/pictures-section/PIcturesSection";
 import { useGetCoursesQuery } from "src/entities/course/api/coursesApiSlice";
 import { useState } from "react";
 import { CoursesQueryParams } from "src/entities/course/api/requestModel";

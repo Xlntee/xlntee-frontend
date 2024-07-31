@@ -2,9 +2,9 @@ import "./CourseCard.scss";
 import courseImgPath from "./temp-images/course-img.png";
 import courseImgLargePath from "./temp-images/course-img-large.png";
 import teacherLogoImgPath from "./temp-images/teacher-logo.png";
-import RatingComponent from "../../features/rating/RatingComponent";
+import RatingComponent from "../../src/features/rating/RatingComponent";
 import { Box, Card, CardActionArea, CardContent, CardMedia, Typography } from "@mui/material";
-import Price from "src/features/price/Price";
+import Price from "../../legacy/price/Price";
 
 interface IProps {
   title?: string;
