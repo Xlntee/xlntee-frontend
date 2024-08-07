@@ -55,7 +55,8 @@ export const defaultTheme = createTheme({
       styleOverrides: {
         root: {
           textTransform: "none",
-          borderRadius: '5px'
+          borderRadius: '5px',
+          boxShadow: 'none'
         },
         sizeLarge: {
           height: 56,
