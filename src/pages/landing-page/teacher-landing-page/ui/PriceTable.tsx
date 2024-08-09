@@ -9,6 +9,7 @@ import {
   Button,
   List,
   ListItem,
+  Stack,
 } from "@mui/material";
 import { XlnteeColors } from "src/shared/themes/colors";
 import { useTranslation } from "react-i18next";
@@ -20,13 +21,63 @@ const PriceTable = () => {
 
   return (
     <Box mb="130px">
+      {/* Ліва лінія */}
+      <Box
+        sx={{
+          position: "absolute",
+          left: 0,
+          width: "calc((100vw - 1280px) / 2)",
+          height: "1px",
+          bgcolor: XlnteeColors.GrayStrokeColor,
+        }}
+      />
+
+      {/* Права лінія */}
+      <Box
+        sx={{
+          position: "absolute",
+          right: 0,
+          width: "calc((100vw - 1280px) / 2)",
+          height: "1px",
+          bgcolor: XlnteeColors.GrayStrokeColor,
+        }}
+      />
+      {/* Додаємо решту ліній */}
+      {[...Array(6)].map((_, index) => (
+        <>
+          {/* Ліва лінія */}
+          <Box
+            key={`left-line-${index}`}
+            sx={{
+              position: "absolute",
+              top: `${1894 + index * 142}px`,
+              left: 0,
+              width: "calc((100vw - 1280px) / 2)",
+              height: "1px",
+              bgcolor: XlnteeColors.GrayStrokeColor,
+            }}
+          />
+          {/* Права лінія */}
+          <Box
+            key={`right-line-${index}`}
+            sx={{
+              position: "absolute",
+              top: `${1894 + index * 142}px`,
+              right: 0,
+              width: "calc((100vw - 1280px) / 2)",
+              height: "1px",
+              bgcolor: XlnteeColors.GrayStrokeColor,
+            }}
+          />
+        </>
+      ))}
+
       <TableContainer sx={{ width: "100%" }}>
         <Table>
           <TableBody
             sx={{
-              border: `1px solid ${XlnteeColors.GrayStrokeColor}`,
-              // borderTop: `1px solid ${XlnteeColors.GrayStrokeColor}`,
-              // borderBottom: `1px solid ${XlnteeColors.GrayStrokeColor}`,
+              borderTop: `1px solid ${XlnteeColors.GrayStrokeColor}`,
+              borderBottom: `1px solid ${XlnteeColors.GrayStrokeColor}`,
             }}
           >
             <TableRow>
@@ -45,44 +96,49 @@ const PriceTable = () => {
                   width: "20%",
                   verticalAlign: "top",
                   pt: "25px",
+                  pb: "40px",
+                  height: "243px",
                 }}
               >
                 <Box
                   sx={{
+                    height: "100%",
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
-                    justifyContent: "center",
+                    justifyContent: "space-between",
                   }}
                 >
-                  <Typography
-                    sx={{
-                      fontWeight: 600,
-                      fontSize: "24px",
-                      lineHeight: "32px",
-                      color: `${XlnteeColors.BlackTextColor}`,
-                      textAlign: "center",
-                      mb: "15px",
-                    }}
-                  >
-                    {t("firstPlanTitle")}
-                  </Typography>
-                  <Typography
-                    sx={{
-                      fontWeight: 400,
-                      fontSize: "14px",
-                      lineHeight: "19px",
-                      color: `${XlnteeColors.BlackTextColor}`,
-                      textAlign: "center",
-                      mb: "12px",
-                    }}
-                  >
-                    {t("firstPlanDescription")}
-                  </Typography>
+                  <Stack>
+                    <Typography
+                      sx={{
+                        fontWeight: 600,
+                        fontSize: "24px",
+                        lineHeight: "32px",
+                        color: `${XlnteeColors.BlackTextColor}`,
+                        textAlign: "center",
+                        mb: "15px",
+                      }}
+                    >
+                      {t("firstPlanTitle")}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        fontWeight: 400,
+                        fontSize: "14px",
+                        lineHeight: "19px",
+                        color: `${XlnteeColors.BlackTextColor}`,
+                        textAlign: "center",
+                      }}
+                    >
+                      {t("firstPlanDescription")}
+                    </Typography>
+                  </Stack>
                   <Button
                     variant="contained"
                     sx={{
-                      p: "4.5px 29.5px",
+                      width: "150px",
+                      height: "39px",
                       bgcolor: "inherit",
                       border: `1px solid ${XlnteeColors.BlackElementColor}`,
                       borderRadius: "25px",
@@ -101,54 +157,59 @@ const PriceTable = () => {
                   </Button>
                 </Box>
               </TableCell>
-              <TableCell sx={{ width: "20%", verticalAlign: "top", pt: "25px" }}>
+              <TableCell sx={{ width: "20%", verticalAlign: "top", pt: "25px", pb: "18px", height: "243px" }}>
                 <Box
                   sx={{
+                    height: "100%",
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
-                    justifyContent: "center",
+                    justifyContent: "space-between",
                   }}
                 >
-                  <Typography
-                    sx={{
-                      fontWeight: 600,
-                      fontSize: "24px",
-                      lineHeight: "32px",
-                      color: `${XlnteeColors.BlackTextColor}`,
-                      textAlign: "center",
-                      mb: "15px",
-                    }}
-                  >
-                    {t("secondPlanTitle")}
-                  </Typography>
-                  <Typography
-                    sx={{
-                      fontWeight: 400,
-                      fontSize: "14px",
-                      lineHeight: "19px",
-                      color: `${XlnteeColors.BlackTextColor}`,
-                      textAlign: "center",
-                      mb: "50px",
-                    }}
-                  >
-                    {t("secondPlanDescription")}
-                  </Typography>
-                  <Button
-                    variant="contained"
-                    sx={{
-                      p: "5.5px 53.5px",
-                      borderRadius: "25px",
-                      textAlign: "center",
-                      fontWeight: 400,
-                      fontSize: "16px",
-                    }}
-                  >
-                    Enroll
-                  </Button>
-                  <Typography color="secondary" sx={{ fontWeight: 400, fontSize: "16px", lineHeight: "22px" }}>
-                    Recommended
-                  </Typography>
+                  <Stack>
+                    <Typography
+                      sx={{
+                        fontWeight: 600,
+                        fontSize: "24px",
+                        lineHeight: "32px",
+                        color: `${XlnteeColors.BlackTextColor}`,
+                        textAlign: "center",
+                        mb: "15px",
+                      }}
+                    >
+                      {t("secondPlanTitle")}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        fontWeight: 400,
+                        fontSize: "14px",
+                        lineHeight: "19px",
+                        color: `${XlnteeColors.BlackTextColor}`,
+                        textAlign: "center",
+                      }}
+                    >
+                      {t("secondPlanDescription")}
+                    </Typography>
+                  </Stack>
+                  <Stack alignItems="center">
+                    <Button
+                      variant="contained"
+                      sx={{
+                        width: "150px",
+                        height: "39px",
+                        borderRadius: "25px",
+                        textAlign: "center",
+                        fontWeight: 400,
+                        fontSize: "16px",
+                      }}
+                    >
+                      Enroll
+                    </Button>
+                    <Typography color="secondary" sx={{ fontWeight: 400, fontSize: "16px", lineHeight: "22px" }}>
+                      Recommended
+                    </Typography>
+                  </Stack>
                 </Box>
               </TableCell>
               <TableCell
@@ -159,7 +220,7 @@ const PriceTable = () => {
                   backgroundColor: "#EFEEFD",
                   width: "20%",
                   verticalAlign: "top",
-                  p: "12px",
+                  p: "15px 10px 0 21px",
                 }}
               >
                 <Box
@@ -195,14 +256,15 @@ const PriceTable = () => {
                   <Button
                     variant="contained"
                     sx={{
-                      p: "12.5px 37px",
+                      width: "198px",
+                      height: "55px",
                       bgcolor: "inherit",
                       border: `1px solid ${XlnteeColors.BlackElementColor}`,
                       borderRadius: "25px",
                       textAlign: "center",
                       fontWeight: 400,
                       fontSize: "16px",
-                      lineHeight: '22px',
+                      lineHeight: "22px",
                       color: `${XlnteeColors.BlackTextColor}`,
                       "&:hover": {
                         bgcolor: `${XlnteeColors.BlackElementColor}`,
@@ -216,13 +278,7 @@ const PriceTable = () => {
                   </Button>
                   <List
                     sx={{
-                      p: 0,
-                      pl: 1.5,
                       color: `${XlnteeColors.BlackElementColor} `,
-                      listStyleType: "disc",
-                      "& li::marker": {
-                        color: `${XlnteeColors.BlackElementColor} `,
-                      },
                     }}
                   >
                     {isthirdPlanListArray &&
@@ -232,10 +288,10 @@ const PriceTable = () => {
                           sx={{
                             p: 0,
                             display: "list-item",
-                            fontSize: "20px",
-                            fontWeight: 300,
+                            fontSize: "16px",
+                            fontWeight: 400,
                             color: `${XlnteeColors.BlackElementColor} `,
-                            lineHeight: "30px",
+                            lineHeight: "25px",
                             mb: "20px",
                           }}
                         >
@@ -245,43 +301,46 @@ const PriceTable = () => {
                   </List>
                 </Box>
               </TableCell>
-              <TableCell sx={{ width: "20%", verticalAlign: "top", pt: "25px" }}>
+              <TableCell sx={{ width: "20%", verticalAlign: "top", pt: "25px",pb: '40px', height: "243px" }}>
                 <Box
                   sx={{
+                    height: "100%",
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
-                    justifyContent: "center",
+                    justifyContent: "space-between",
                   }}
                 >
-                  <Typography
-                    sx={{
-                      fontWeight: 600,
-                      fontSize: "24px",
-                      lineHeight: "32px",
-                      color: `${XlnteeColors.BlackTextColor}`,
-                      textAlign: "center",
-                      mb: "11px",
-                    }}
-                  >
-                    {t("fourthPlanTitle")}
-                  </Typography>
-                  <Typography
-                    sx={{
-                      fontWeight: 400,
-                      fontSize: "16px",
-                      lineHeight: "22px",
-                      color: `${XlnteeColors.BlackTextColor}`,
-                      textAlign: "center",
-                      mb: "46px",
-                    }}
-                  >
-                    {t("fourthPlanDescription")}
-                  </Typography>
+                  <Stack>
+                    <Typography
+                      sx={{
+                        fontWeight: 600,
+                        fontSize: "24px",
+                        lineHeight: "32px",
+                        color: `${XlnteeColors.BlackTextColor}`,
+                        textAlign: "center",
+                        mb: "11px",
+                      }}
+                    >
+                      {t("fourthPlanTitle")}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        fontWeight: 400,
+                        fontSize: "16px",
+                        lineHeight: "22px",
+                        color: `${XlnteeColors.BlackTextColor}`,
+                        textAlign: "center",
+                      }}
+                    >
+                      {t("fourthPlanDescription")}
+                    </Typography>
+                  </Stack>
                   <Button
                     variant="contained"
                     sx={{
-                      p: "4.5px 25px",
+                      width: "150px",
+                      height: "39px",
                       bgcolor: "inherit",
                       border: `1px solid ${XlnteeColors.BlackElementColor}`,
                       borderRadius: "25px",
@@ -375,10 +434,10 @@ const PriceTable = () => {
                   height: "142px",
                 }}
               >
-                <Typography sx={{ fontWeight: 600, fontSize: "24px", color: `${XlnteeColors.BlackTextColor}` }}>
+                <Typography sx={{ fontWeight: 600, fontSize: "24px", color: `${XlnteeColors.BlackTextColor}`, lineHeight: '32px' }}>
                   {t("studentCount")}
                 </Typography>
-                <Typography sx={{ fontWeight: 400, fontSize: "16px", color: `${XlnteeColors.BlackTextColor}` }}>
+                <Typography sx={{ fontWeight: 400, fontSize: "16px", color: `${XlnteeColors.BlackTextColor}`, lineHeight: '21px' }}>
                   {t("studentCountDescription")}
                 </Typography>
               </TableCell>

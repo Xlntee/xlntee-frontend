@@ -9,7 +9,7 @@ const TeacherLandingPage = () => {
   return (
     <>
       <Box
-        sx={{ margin: "0 auto", maxWidth: "1280px", display: "flex", flexDirection: "column", alignItems: "center" }}
+        sx={{ margin: "0 auto", maxWidth: "1280px", display: "flex", flexDirection: "column", alignItems: "center"}}
       >
         <HeroSection />
         <AboutSection/>
