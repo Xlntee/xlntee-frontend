@@ -1,7 +1,7 @@
 import { PropsWithChildren } from "react";
-import Footer from "../footer/Footer";
+import Footer from "../../../legacy/footer/Footer";
 import useTitle from "src/hooks/useTitle/useTitle";
-import Header from "../header/Header";
+import Header from "../../../legacy/header/Header";
 import { Box } from "@mui/material";
 
 interface PageProps extends PropsWithChildren {

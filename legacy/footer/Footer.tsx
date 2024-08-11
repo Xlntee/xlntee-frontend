@@ -7,10 +7,10 @@ import FooterButtonComponent from "./ui/FooterButtonComponent";
 import FooterLinkComponent from "./ui/FooterLinkComponent";
 import FooterTextComponent from "./ui/FooterTextComponent";
 import { useState } from "react";
-import TeacherModal from "../teacher-modal/TeacherModal";
-import StudentModal from "../student-modal/StudentModal";
-import InformationModal from "../information-modal/InformationModal";
-import ViolationModal from "../violation-modal/ViolationModal";
+import TeacherModal from "../../src/widgets/teacher-modal/TeacherModal";
+import StudentModal from "../../src/widgets/student-modal/StudentModal";
+import InformationModal from "../../src/widgets/information-modal/InformationModal";
+import ViolationModal from "../../src/widgets/violation-modal/ViolationModal";
 
 const Footer = () => {
   const [openTeacherModal, setOpenTeacherModal] = useState(false);
