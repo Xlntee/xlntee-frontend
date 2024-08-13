@@ -1,0 +1,39 @@
+{
+  "student-landing.hero-section.title": "LMS that helps students to streamline their education",
+  "student-landing.hero-section.subtitle": "Take courses, Learn, Succeed",
+  "student-landing.hero-section.features": [
+    "Student Dashboard",
+    "Reviews",
+    "Learning system",
+    "Course free preview",
+    "Refund guarantee",
+    "Certificates"
+  ],
+  "student-landing.hero-section.heroButton": "Get Started",
+
+  "student-landing.about-section.title": "For Students",
+  "student-landing.about-section.wordList": ["Preview", "Learn", "Succeed"],
+  "student-landing.about-section.description": "Study in a convenient format, get familiar with the lecturer and course materials before purchasing, be sure of your choice by viewing other students' testimonials, and get a completion certificate",
+
+  "student-landing.features-section.caption": [
+    "Progress",
+    "Dashboard",
+    "Refund Guarantee",
+    "Courses",
+    "Quizzes",
+    "Reviews",
+    "Certificates",
+    "Preview"
+  ],
+  "student-landing.features-section.description": [
+    "Keep and eye on your progress",
+    "Manage everything from one place",
+    "Get refunded within 14 days",
+    "Take courses",
+    "Check your knowledge",
+    "Make sure of your choice",
+    "Get completion certificates",
+    "Get familiar with the lecturer and the materials before purchasing."
+  ],
+  "student-landing.features-section.Button": "Get started"
+}

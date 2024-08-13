@@ -12,7 +12,8 @@ const CheckItem: React.FC<CheckItemProps> = ({ children }) => {
     <Stack direction="row" alignItems="center" gap="5px">
       <CheckCircleOutlineIcon sx={{ fontSize: "20px" }} />
       <Typography
-        sx={{ fontFamily: "Noto Sans", fontWeight: 400, fontSize: "20px", color: XlnteeColors.BlackTextColor, whiteSpace: 'nowrap' }}
+        sx={{ fontWeight: 400, color: XlnteeColors.BlackTextColor, whiteSpace: "nowrap" }}
+        variant="h6"
       >
         {children}
       </Typography>

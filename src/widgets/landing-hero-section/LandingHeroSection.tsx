@@ -1,44 +1,56 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import CheckItem from "./CheckItem";
 import { Link as RouterLink } from "react-router-dom";
 import { AppRoutes } from "src/app/routing/appRoutes";
-import { useTranslation } from "react-i18next";
+import CheckItem from "./ui/CheckItem";
+import React from "react";
 
-const HeroSection = () => {
+interface LandingHeroSectionProps {
+  title: string;
+  subtitle: string;
+  buttonTitle: string;
+  features: string[];
+  imgWidth: number | string;
+  imgHeight: number | string;
+  imgSrc: string;
+  imgAlt: string;
+}
+
+const LandingHeroSection: React.FC<LandingHeroSectionProps> = ({
+  title,
+  subtitle,
+  buttonTitle,
+  features,
+  imgWidth = "400px",
+  imgHeight = "400px",
+  imgSrc,
+  imgAlt,
+}) => {
   const theme = useTheme();
-  const { t } = useTranslation("teacher-landing");
-  const features: string[] = t("features", { returnObjects: true });
   const isFeaturesArray = Array.isArray(features);
 
   return (
-    <Stack direction="row" alignItems="center" justifyContent="space-around" p='0 40px' mb='128px'>
+    <Stack width="100%" direction="row" alignItems="center" justifyContent="space-between" mb={15} px={2}>
       <Box>
-        <Typography
-          color="primary"
-          mb="15px"
-          sx={{ fontFamily: "Noto Sans", fontWeight: 700, fontSize: "48px", lineHeight: "50px" }}
-          component="h1"
-        >
-          {t("heroTitle")}
+        <Typography color="primary" sx={{ fontWeight: 700, mb: 2 }} variant="h3">
+          {title}
         </Typography>
         <Typography
-          mb="30px"
           sx={{
             display: "inline-block",
             bgcolor: theme.palette.primary.main,
-            fontFamily: "Noto Sans",
             fontWeight: 400,
-            fontSize: "20px",
             color: "#fff",
-            padding: "3px 27px",
+            py: 1,
+            px: 3,
+            mb: 4,
             borderRadius: "25px",
           }}
-          component="span"
+          variant="h6"
         >
-          {t("subtitle")}
+          {subtitle}
         </Typography>
-        <Stack direction="row" flexWrap="wrap" gap="20px" mb="30px" maxWidth="600px">
+        <Stack direction="row" flexWrap="wrap" gap={2} mb={4} maxWidth="700px">
           {isFeaturesArray && features.map((feature, index) => <CheckItem key={index}>{feature}</CheckItem>)}
         </Stack>
         <Button
@@ -48,18 +60,18 @@ const HeroSection = () => {
           variant="contained"
           sx={{
             borderRadius: "50px",
-            fontFamily: "Noto Sans",
-            padding: "15px 57px",
+            py: 2,
+            px: 6,
             fontWeight: 700,
             fontSize: "20px",
           }}
         >
-          {t("heroButton")}
+          {buttonTitle}
         </Button>
       </Box>
-      <img width="467px" height="467px" src="assets/teacher-landing-hero.png" alt="hero-section-image" />
+      <img width={imgWidth} height={imgHeight} src={imgSrc} alt={imgAlt} />
     </Stack>
   );
 };
 
-export default HeroSection;
+export default LandingHeroSection;

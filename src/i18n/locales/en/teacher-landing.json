@@ -1,0 +1,66 @@
+{
+  "teacher-landing.hero-section.title": "LMS for easy start, creation and growth",
+  "teacher-landing.hero-section.subtitle": "create, improve, grow",
+  "teacher-landing.hero-section.features": [
+    "Dashboard",
+    "Easy navigation",
+    "Communication",
+    "Payments",
+    "Quizzes",
+    "Analytics"
+  ],
+  "teacher-landing.hero-section.heroButton": "Try for Free",
+
+  "teacher-landing.about-section.title": "For creators, lecturers, and educational businesses.",
+  "teacher-landing.about-section.wordList": ["Create", "Manage", "Earn", "Grow"],
+  "teacher-landing.about-section.description": "Empower your educational business, and courses delivery, manage, and sell easily. We offer intuitive design tools, centralized management, and detailed analytics to support continuous improvement and maximize earnings, nothing needlessly.",
+
+  "teacher-landing.features-section.caption": [
+    "Analytics",
+    "Dashboard",
+    "Payments",
+    "Customization",
+    "Courses",
+    "Quizzes",
+    "Certificates",
+    "Landing pages"
+  ],
+  "teacher-landing.features-section.description": [
+    "Transforms data into actionable insights for businesses",
+    "Manage everything from one place",
+    "Promote, offer discounts, and get payments",
+    "Customize your product for your needs",
+    "Create and manage courses",
+    "Create tests for knowledge ",
+    "Provide certificates",
+    "Navigate students directly to your courses"
+  ],
+  "teacher-landing.features-section.Button": "Try for Free",
+
+  "teacher-landing.price-table-section.tableCaption": "Choose the best plan for you",
+  "teacher-landing.price-table-section.firstPlanTitle": "Easy Start",
+  "teacher-landing.price-table-section.firstPlanDescription": "Easy start with no costs to create and launch educational products — Pay when you sell.",
+  "teacher-landing.price-table-section.secondPlanTitle": "Business",
+  "teacher-landing.price-table-section.secondPlanDescription": "When your product is good and it’s time for enlargement.",
+  "teacher-landing.price-table-section.thirdPlanTitle": "Xlntee Enterprise: Solution for businesses",
+  "teacher-landing.price-table-section.thirdPlanDescription": "Create and manage quality educational products from one place.",
+  "teacher-landing.price-table-section.thirdPlanButton": "Contact Enterprise Team",
+  "teacher-landing.price-table-section.thirdPlanList": [
+    "Create and edit courses conveniently",
+    "Centralized management system",
+    "Professional support on all implementation levels"
+  ],
+  "teacher-landing.price-table-section.fourthPlanTitle": "Uncomercial",
+  "teacher-landing.price-table-section.fourthPlanDescription": "When you provide knowledge for nothing because you like sharing :) ",
+  "teacher-landing.price-table-section.price": "Price",
+  "teacher-landing.price-table-section.commission": "Commission 30%",
+  "teacher-landing.price-table-section.courseCount": "Courses per plan",
+  "teacher-landing.price-table-section.courseCountDescription": "number of courses / plan*",
+  "teacher-landing.price-table-section.studentCount": "Students",
+  "teacher-landing.price-table-section.studentCountDescription": "Number of students per month*",
+  "teacher-landing.price-table-section.storage": "Storage",
+  "teacher-landing.price-table-section.storageDescription": "Storage for course creation*",
+  "teacher-landing.price-table-section.certificates": "Certificates",
+
+  "teacher-landing.contactSubTitle": "Education can be easier"
+}

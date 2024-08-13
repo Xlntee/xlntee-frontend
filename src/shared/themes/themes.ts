@@ -11,14 +11,28 @@ export const defaultTheme = createTheme({
       main: XlnteeColors.CallToActionColor,
     },
   },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1280,
+      xl: 1536,
+    },
+  },
   typography: {
     fontFamily: ["Noto Sans", "Roboto", "sans-serif"].join(","),
-    body1: {
-      fontSize: '20px',
-      fontWeight: '400'
-    }
   },
   components: {
+    MuiContainer: {
+      styleOverrides: {
+        root: {
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        },
+      },
+    },
     MuiAppBar: {
       styleOverrides: {
         root: {
@@ -55,8 +69,8 @@ export const defaultTheme = createTheme({
       styleOverrides: {
         root: {
           textTransform: "none",
-          borderRadius: '5px',
-          boxShadow: 'none'
+          borderRadius: "5px",
+          boxShadow: "none",
         },
         sizeLarge: {
           height: 56,

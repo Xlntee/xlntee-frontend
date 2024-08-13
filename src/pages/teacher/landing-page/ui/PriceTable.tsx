@@ -16,55 +16,55 @@ import { useTranslation } from "react-i18next";
 
 const PriceTable = () => {
   const { t } = useTranslation("teacher-landing");
-  const thirdPlanList: string[] = t("thirdPlanList", { returnObjects: true });
+  const thirdPlanList: string[] = t("teacher-landing.price-table-section.thirdPlanList", { returnObjects: true });
   const isthirdPlanListArray = Array.isArray(thirdPlanList);
 
   return (
-    <Box mb="130px">
-      {/* Ліва лінія */}
+    <Box mb={16}>
+      {/* first left line */}
       <Box
         sx={{
           position: "absolute",
           left: 0,
-          width: "calc((100vw - 1280px) / 2)",
+          width: "calc((100vw - 1200px) / 2)",
           height: "1px",
           bgcolor: XlnteeColors.GrayStrokeColor,
         }}
       />
 
-      {/* Права лінія */}
+      {/* first right line */}
       <Box
         sx={{
           position: "absolute",
           right: 0,
-          width: "calc((100vw - 1280px) / 2)",
+          width: "calc((100vw - 1200px) / 2)",
           height: "1px",
           bgcolor: XlnteeColors.GrayStrokeColor,
         }}
       />
-      {/* Додаємо решту ліній */}
+      {/* other lines */}
       {[...Array(6)].map((_, index) => (
         <>
-          {/* Ліва лінія */}
+          {/* left line */}
           <Box
             key={`left-line-${index}`}
             sx={{
               position: "absolute",
-              top: `${1894 + index * 142}px`,
+              top: `${1859 + index * 142}px`,
               left: 0,
-              width: "calc((100vw - 1280px) / 2)",
+              width: "calc((100vw - 1200px) / 2)",
               height: "1px",
               bgcolor: XlnteeColors.GrayStrokeColor,
             }}
           />
-          {/* Права лінія */}
+          {/* right line */}
           <Box
             key={`right-line-${index}`}
             sx={{
               position: "absolute",
-              top: `${1894 + index * 142}px`,
+              top: `${1859 + index * 142}px`,
               right: 0,
-              width: "calc((100vw - 1280px) / 2)",
+              width: "calc((100vw - 1200px) / 2)",
               height: "1px",
               bgcolor: XlnteeColors.GrayStrokeColor,
             }}
@@ -87,7 +87,7 @@ const PriceTable = () => {
                 sx={{ borderRight: `1px solid ${XlnteeColors.GrayStrokeColor}`, width: "20%", height: "243px" }}
               >
                 <Typography color="primary" sx={{ fontWeight: 700, fontSize: "34px" }}>
-                  {t("tableCaption")}
+                  {t("teacher-landing.price-table-section.tableCaption")}
                 </Typography>
               </TableCell>
               <TableCell
@@ -120,7 +120,7 @@ const PriceTable = () => {
                         mb: "15px",
                       }}
                     >
-                      {t("firstPlanTitle")}
+                      {t("teacher-landing.price-table-section.firstPlanTitle")}
                     </Typography>
                     <Typography
                       sx={{
@@ -131,7 +131,7 @@ const PriceTable = () => {
                         textAlign: "center",
                       }}
                     >
-                      {t("firstPlanDescription")}
+                      {t("teacher-landing.price-table-section.firstPlanDescription")}
                     </Typography>
                   </Stack>
                   <Button
@@ -178,7 +178,7 @@ const PriceTable = () => {
                         mb: "15px",
                       }}
                     >
-                      {t("secondPlanTitle")}
+                      {t("teacher-landing.price-table-section.secondPlanTitle")}
                     </Typography>
                     <Typography
                       sx={{
@@ -189,7 +189,7 @@ const PriceTable = () => {
                         textAlign: "center",
                       }}
                     >
-                      {t("secondPlanDescription")}
+                      {t("teacher-landing.price-table-section.secondPlanDescription")}
                     </Typography>
                   </Stack>
                   <Stack alignItems="center">
@@ -240,7 +240,7 @@ const PriceTable = () => {
                       mb: "5px",
                     }}
                   >
-                    {t("thirdPlanTitle")}
+                    {t("teacher-landing.price-table-section.thirdPlanTitle")}
                   </Typography>
                   <Typography
                     sx={{
@@ -251,7 +251,7 @@ const PriceTable = () => {
                       mb: "40px",
                     }}
                   >
-                    {t("thirdPlanDescription")}
+                    {t("teacher-landing.price-table-section.thirdPlanDescription")}
                   </Typography>
                   <Button
                     variant="contained"
@@ -274,7 +274,7 @@ const PriceTable = () => {
                       mb: "30px",
                     }}
                   >
-                    {t("thirdPlanButton")}
+                    {t("teacher-landing.price-table-section.thirdPlanButton")}
                   </Button>
                   <List
                     sx={{
@@ -301,7 +301,7 @@ const PriceTable = () => {
                   </List>
                 </Box>
               </TableCell>
-              <TableCell sx={{ width: "20%", verticalAlign: "top", pt: "25px",pb: '40px', height: "243px" }}>
+              <TableCell sx={{ width: "20%", verticalAlign: "top", pt: "25px", pb: "40px", height: "243px" }}>
                 <Box
                   sx={{
                     height: "100%",
@@ -322,7 +322,7 @@ const PriceTable = () => {
                         mb: "11px",
                       }}
                     >
-                      {t("fourthPlanTitle")}
+                      {t("teacher-landing.price-table-section.fourthPlanTitle")}
                     </Typography>
                     <Typography
                       sx={{
@@ -333,7 +333,7 @@ const PriceTable = () => {
                         textAlign: "center",
                       }}
                     >
-                      {t("fourthPlanDescription")}
+                      {t("teacher-landing.price-table-section.fourthPlanDescription")}
                     </Typography>
                   </Stack>
                   <Button
@@ -372,14 +372,14 @@ const PriceTable = () => {
                   height: "142px",
                 }}
               >
-                {t("price")}
+                {t("teacher-landing.price-table-section.price")}
               </TableCell>
               <TableCell sx={{ borderRight: `1px solid ${XlnteeColors.GrayStrokeColor}`, textAlign: "center" }}>
                 <Typography sx={{ fontWeight: 300, fontSize: "24px", color: `${XlnteeColors.BlackTextColor}` }}>
                   $0.00
                 </Typography>
                 <Typography sx={{ fontWeight: 300, fontSize: "16px", color: `${XlnteeColors.BlackTextColor}` }}>
-                  {t("commission")}
+                  {t("teacher-landing.price-table-section.commission")}
                 </Typography>
               </TableCell>
               <TableCell sx={{ textAlign: "center" }}>
@@ -403,10 +403,10 @@ const PriceTable = () => {
                 }}
               >
                 <Typography sx={{ fontWeight: 600, fontSize: "24px", color: `${XlnteeColors.BlackTextColor}` }}>
-                  {t("courseCount")}
+                  {t("teacher-landing.price-table-section.courseCount")}
                 </Typography>
                 <Typography sx={{ fontWeight: 400, fontSize: "16px", color: `${XlnteeColors.BlackTextColor}` }}>
-                  {t("courseCountDescription")}
+                  {t("teacher-landing.price-table-section.courseCountDescription")}
                 </Typography>
               </TableCell>
               <TableCell sx={{ borderRight: `1px solid ${XlnteeColors.GrayStrokeColor}`, textAlign: "center" }}>
@@ -434,11 +434,25 @@ const PriceTable = () => {
                   height: "142px",
                 }}
               >
-                <Typography sx={{ fontWeight: 600, fontSize: "24px", color: `${XlnteeColors.BlackTextColor}`, lineHeight: '32px' }}>
-                  {t("studentCount")}
+                <Typography
+                  sx={{
+                    fontWeight: 600,
+                    fontSize: "24px",
+                    color: `${XlnteeColors.BlackTextColor}`,
+                    lineHeight: "32px",
+                  }}
+                >
+                  {t("teacher-landing.price-table-section.studentCount")}
                 </Typography>
-                <Typography sx={{ fontWeight: 400, fontSize: "16px", color: `${XlnteeColors.BlackTextColor}`, lineHeight: '21px' }}>
-                  {t("studentCountDescription")}
+                <Typography
+                  sx={{
+                    fontWeight: 400,
+                    fontSize: "16px",
+                    color: `${XlnteeColors.BlackTextColor}`,
+                    lineHeight: "21px",
+                  }}
+                >
+                  {t("teacher-landing.price-table-section.studentCountDescription")}
                 </Typography>
               </TableCell>
               <TableCell sx={{ borderRight: `1px solid ${XlnteeColors.GrayStrokeColor}`, textAlign: "center" }}>
@@ -467,10 +481,10 @@ const PriceTable = () => {
                 }}
               >
                 <Typography sx={{ fontWeight: 600, fontSize: "24px", color: `${XlnteeColors.BlackTextColor}` }}>
-                  {t("storage")}
+                  {t("teacher-landing.price-table-section.storage")}
                 </Typography>
                 <Typography sx={{ fontWeight: 400, fontSize: "16px", color: `${XlnteeColors.BlackTextColor}` }}>
-                  {t("storageDescription")}
+                  {t("teacher-landing.price-table-section.storageDescription")}
                 </Typography>
               </TableCell>
               <TableCell sx={{ borderRight: `1px solid ${XlnteeColors.GrayStrokeColor}`, textAlign: "center" }}>
@@ -501,7 +515,7 @@ const PriceTable = () => {
                   height: "142px",
                 }}
               >
-                {t("certificates")}
+                {t("teacher-landing.price-table-section.certificates")}
               </TableCell>
               <TableCell sx={{ borderRight: `1px solid ${XlnteeColors.GrayStrokeColor}`, textAlign: "center" }}>
                 <Typography sx={{ fontWeight: 300, fontSize: "24px", color: `${XlnteeColors.BlackTextColor}` }}>

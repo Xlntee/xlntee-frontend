@@ -12,10 +12,10 @@ import { AppRoutes } from "src/app/routing/appRoutes";
 import { Link as RouterLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-const StudentHowItWorks = () => {
+const StudentFeaturesSection = () => {
   const { t } = useTranslation("student-landing");
-  const CaptionList: string[] = t("howItWorksCaption", { returnObjects: true });
-  const DescriptionList: string[] = t("howItWorksDescription", { returnObjects: true });
+  const CaptionList: string[] = t("student-landing.features-section.caption", { returnObjects: true });
+  const DescriptionList: string[] = t("student-landing.features-section.description", { returnObjects: true });
   return (
     <Box display="flex" flexDirection="row" mb="160px" alignItems="center" gap="20px">
       <Box>
@@ -150,7 +150,7 @@ const StudentHowItWorks = () => {
             </Box>
           </Grid>
           <Grid item xs={4}>
-            <Box pt="70px" sx={{pl: '10px'}}>
+            <Box pt="70px" sx={{ pl: "10px" }}>
               <Button
                 component={RouterLink}
                 to={AppRoutes.auth}
@@ -164,7 +164,7 @@ const StudentHowItWorks = () => {
                   fontSize: "16px",
                 }}
               >
-                {t("howItWorksButton")}
+                {t("student-landing.features-section.Button")}
               </Button>
             </Box>
           </Grid>
@@ -174,4 +174,4 @@ const StudentHowItWorks = () => {
   );
 };
 
-export default StudentHowItWorks;
+export default StudentFeaturesSection;

@@ -12,10 +12,10 @@ import { AppRoutes } from "src/app/routing/appRoutes";
 import { Link as RouterLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-const HowItWorks = () => {
+const TeacherFeaturesSection = () => {
   const { t } = useTranslation("teacher-landing");
-  const CaptionList: string[] = t("howItWorksCaption", { returnObjects: true });
-  const DescriptionList: string[] = t("howItWorksDescription", { returnObjects: true });
+  const CaptionList: string[] = t("teacher-landing.features-section.caption", { returnObjects: true });
+  const DescriptionList: string[] = t("teacher-landing.features-section.description", { returnObjects: true });
 
   return (
     <Box display="flex" flexDirection="row" mb="160px" alignItems="center" gap="20px">
@@ -167,7 +167,7 @@ const HowItWorks = () => {
                   fontSize: "16px",
                 }}
               >
-                {t("howItWorksButton")}
+                {t("teacher-landing.features-section.Button")}
               </Button>
             </Box>
           </Grid>
@@ -177,4 +177,4 @@ const HowItWorks = () => {
   );
 };
 
-export default HowItWorks;
+export default TeacherFeaturesSection;
