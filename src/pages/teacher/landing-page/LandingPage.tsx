@@ -19,16 +19,14 @@ const TeacherLandingPage = () => {
         buttonTitle={t("teacher-landing.hero-section.heroButton")}
         features={heroSectionfeatures}
       >
-        {/* TODO: Add Alt text for image */}
-        <img width="457px" height="457px" src="assets/teacher-landing-hero.png" alt="" />
+        <img src="assets/teacher-landing-hero.png" alt={t("teacher-landing.hero-section.imageAltText")} />
       </LandingHeroSection>
       <LandingAboutSection
         title={t("teacher-landing.about-section.title")}
         wordsList={aboutSectionWords}
         description={t("teacher-landing.about-section.description")}
       >
-        {/* TODO: Add Alt text for image */}
-        <img width="320px" height="320px" src="assets/teacher-landing-about.png" alt="" />
+        <img src="assets/teacher-landing-about.png" alt={t("teacher-landing.about-section.imageAltText")} />
       </LandingAboutSection>
       <TeacherFeaturesSection />
       <PriceTable />

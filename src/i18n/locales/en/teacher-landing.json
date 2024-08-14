@@ -10,10 +10,12 @@
     "Analytics"
   ],
   "teacher-landing.hero-section.heroButton": "Try for Free",
+  "teacher-landing.hero-section.imageAltText": "Launch your online courses easily on xlntee",
 
   "teacher-landing.about-section.title": "For creators, lecturers, and educational businesses.",
   "teacher-landing.about-section.wordList": ["Create", "Manage", "Earn", "Grow"],
   "teacher-landing.about-section.description": "Empower your educational business, and courses delivery, manage, and sell easily. We offer intuitive design tools, centralized management, and detailed analytics to support continuous improvement and maximize earnings, nothing needlessly.",
+  "teacher-landing.about-section.imageAltText": "Succeed selling courses online with xlntee",
 
   "teacher-landing.features-section.caption": [
     "Analytics",
@@ -62,5 +64,6 @@
   "teacher-landing.price-table-section.storageDescription": "Storage for course creation*",
   "teacher-landing.price-table-section.certificates": "Certificates",
 
-  "teacher-landing.contactSubTitle": "Education can be easier"
+  "teacher-landing.contactSubTitle": "Education can be easier",
+  "teacher-landing.contactImageAltText": "Use all xlntee features to improve your online courses"
 }

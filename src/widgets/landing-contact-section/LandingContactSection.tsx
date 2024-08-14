@@ -28,8 +28,7 @@ const LandingContactSection = () => {
         >
           {t("teacher-landing.contactSubTitle")}
         </Typography>
-        {/* TODO: Add Alt text for image */}
-        <img src="assets/teacher-landing-contact.png" width={343} height={273} alt="" />
+        <img src="assets/teacher-landing-contact.png" alt={t("teacher-landing.contactImageAltText")} />
       </Stack>
       <Box
         sx={{

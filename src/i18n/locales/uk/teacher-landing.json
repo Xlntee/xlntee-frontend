@@ -10,10 +10,12 @@
     "Аналітика"
   ],
   "teacher-landing.hero-section.heroButton": "Спробуй безкоштовно",
+  "teacher-landing.hero-section.imageAltText": "Легкий запуск онлайн курсів на платформі xlntee",
 
   "teacher-landing.about-section.title": "Викладачам, авторам курсів та освітнього бізнесу",
   "teacher-landing.about-section.wordList": ["Створення", "Керування", "Розвиток", "Зростання"],
   "teacher-landing.about-section.description": "Розширюйте можливості свого освітнього бізнесу, легко створюйте та продавайте свої навчальні продукти з інтуїтивним інтерфейсом, централізованним керуванням та аналітикою.",
+  "teacher-landing.about-section.imageAltText": "Досягнення цілей продажу онлайн курсів на xlntee",
 
   "teacher-landing.features-section.caption": [
     "Аналітика",
@@ -62,5 +64,6 @@
   "teacher-landing.price-table-section.storageDescription": "Доступний об'єм сховища для створення курсу*",
   "teacher-landing.price-table-section.certificates": "Сертифікати",
 
-  "teacher-landing.contactSubTitle": "Навчатися може бути простішим"
+  "teacher-landing.contactSubTitle": "Навчатися може бути простішим",
+  "teacher-landing.contactImageAltText": "Використовує всі можливості LMS xlntee для розробки онлайн-курсів"
 }

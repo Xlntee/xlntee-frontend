@@ -50,7 +50,7 @@ const PriceTable = () => {
             key={`left-line-${index}`}
             sx={{
               position: "absolute",
-              top: `${1859 + index * 142}px`,
+              top: `${1858 + index * 142}px`,
               left: 0,
               width: "calc((100vw - 1200px) / 2)",
               height: "1px",
@@ -62,7 +62,7 @@ const PriceTable = () => {
             key={`right-line-${index}`}
             sx={{
               position: "absolute",
-              top: `${1859 + index * 142}px`,
+              top: `${1858 + index * 142}px`,
               right: 0,
               width: "calc((100vw - 1200px) / 2)",
               height: "1px",

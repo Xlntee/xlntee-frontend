@@ -10,10 +10,12 @@
     "Certificates"
   ],
   "student-landing.hero-section.heroButton": "Get Started",
+  "student-landing.hero-section.imageAltText": "Convenient online learning",
 
   "student-landing.about-section.title": "For Students",
   "student-landing.about-section.wordList": ["Preview", "Learn", "Succeed"],
   "student-landing.about-section.description": "Study in a convenient format, get familiar with the lecturer and course materials before purchasing, be sure of your choice by viewing other students' testimonials, and get a completion certificate",
+  "student-landing.about-section.imageAltText": "Succeed by learning in a convenient format",
 
   "student-landing.features-section.caption": [
     "Progress",
