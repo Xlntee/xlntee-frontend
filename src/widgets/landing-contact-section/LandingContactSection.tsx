@@ -2,7 +2,7 @@ import { Box, Stack, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { XlnteeColors } from "src/shared/themes/colors";
 import ContactItem from "./ui/ContactItem";
-import { Contact } from "src/shared/config/contact";
+import { ContactsLinks } from "src/shared/config/LinkConstants";
 
 const LandingContactSection = () => {
   const { t } = useTranslation("teacher-landing");
@@ -42,9 +42,9 @@ const LandingContactSection = () => {
           py: 2,
         }}
       >
-        <ContactItem caption="Support" link={Contact.Support} />
-        <ContactItem caption="Cooperation" link={Contact.Cooperation} />
-        <ContactItem caption="Press" link={Contact.Press} />
+        <ContactItem caption="Support" link={ContactsLinks.Support} />
+        <ContactItem caption="Cooperation" link={ContactsLinks.Cooperation} />
+        <ContactItem caption="Press" link={ContactsLinks.Press} />
       </Box>
     </Box>
   );

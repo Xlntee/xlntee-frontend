@@ -12,6 +12,8 @@ import { AppRoutes } from "src/app/routing/appRoutes";
 import { Link as RouterLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
+//TODO: implement refactoring before component’s declaration
+
 const TeacherFeaturesSection = () => {
   const { t } = useTranslation("teacher-landing");
   const CaptionList: string[] = t("teacher-landing.features-section.caption", { returnObjects: true });

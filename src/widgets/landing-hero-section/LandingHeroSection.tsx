@@ -3,17 +3,14 @@ import { useTheme } from "@mui/material/styles";
 import { Link as RouterLink } from "react-router-dom";
 import { AppRoutes } from "src/app/routing/appRoutes";
 import CheckItem from "./ui/CheckItem";
-import React from "react";
+import React, { ReactNode } from "react";
 
 interface LandingHeroSectionProps {
   title: string;
   subtitle: string;
   buttonTitle: string;
   features: string[];
-  imgWidth: number | string;
-  imgHeight: number | string;
-  imgSrc: string;
-  imgAlt: string;
+  children: ReactNode;
 }
 
 const LandingHeroSection: React.FC<LandingHeroSectionProps> = ({
@@ -21,10 +18,7 @@ const LandingHeroSection: React.FC<LandingHeroSectionProps> = ({
   subtitle,
   buttonTitle,
   features,
-  imgWidth = "400px",
-  imgHeight = "400px",
-  imgSrc,
-  imgAlt,
+  children,
 }) => {
   const theme = useTheme();
   const isFeaturesArray = Array.isArray(features);
@@ -69,7 +63,7 @@ const LandingHeroSection: React.FC<LandingHeroSectionProps> = ({
           {buttonTitle}
         </Button>
       </Box>
-      <img width={imgWidth} height={imgHeight} src={imgSrc} alt={imgAlt} />
+      {children}
     </Stack>
   );
 };

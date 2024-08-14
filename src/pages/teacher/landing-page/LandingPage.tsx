@@ -18,22 +18,18 @@ const TeacherLandingPage = () => {
         subtitle={t("teacher-landing.hero-section.subtitle")}
         buttonTitle={t("teacher-landing.hero-section.heroButton")}
         features={heroSectionfeatures}
-        imgWidth="467px"
-        imgHeight="467px"
-        imgSrc="assets/teacher-landing-hero.png"
-        //TODO: Add Alt text for image
-        imgAlt=""
-      />
+      >
+        {/* TODO: Add Alt text for image */}
+        <img width="457px" height="457px" src="assets/teacher-landing-hero.png" alt="" />
+      </LandingHeroSection>
       <LandingAboutSection
         title={t("teacher-landing.about-section.title")}
         wordsList={aboutSectionWords}
         description={t("teacher-landing.about-section.description")}
-        imgWidth="320px"
-        imgHeight="320px"
-        imgSrc="assets/teacher-landing-about.png"
-        //TODO: Add Alt text for image
-        imgAlt=""
-      />
+      >
+        {/* TODO: Add Alt text for image */}
+        <img width="320px" height="320px" src="assets/teacher-landing-about.png" alt="" />
+      </LandingAboutSection>
       <TeacherFeaturesSection />
       <PriceTable />
       <LandingContactSection />
