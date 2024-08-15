@@ -35,7 +35,8 @@
     "legacy/test",
     "legacy/header",
     "legacy/filter",
-    "legacy/pictures-section"
+    "legacy/pictures-section",
+    "legacy/landing"
   ],
   "references": [{ "path": "./tsconfig.node.json" }],
   "noFallthroughCasesInSwitch": true,

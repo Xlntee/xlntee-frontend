@@ -1,5 +1,5 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
-import CourseCard from "../../../../../legacy/course-card/CourseCard";
+import CourseCard from "../../../course-card/CourseCard";
 import { YouniColors } from "src/shared/themes/colors";
 
 const TopCoursesSection = () => {

@@ -1,5 +1,7 @@
 export const AppRoutes = {
   base: "/",
+  teacherLanding: "/teacher",
+  studentLanding: "/student",
   home: "/home",
   auth: "/auth",
   authType: "/auth/:authType",
