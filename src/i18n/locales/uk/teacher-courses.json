@@ -1,0 +1,12 @@
+{
+  "status": {
+    "draft": "Чернетка",
+    "published": "Активний",
+    "deleted": "Видалений",
+    "moderation": "Модерація"
+  },
+  "courses-update-time": "Останнє оновлення:",
+  "courses-delete-btn": "Видалити",
+  "courses-restore-btn": "Відновити",
+  "courses-toDashboard-btn": "Панель"
+}

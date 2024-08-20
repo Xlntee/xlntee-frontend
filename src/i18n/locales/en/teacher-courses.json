@@ -1,0 +1,12 @@
+{
+  "status": {
+    "draft": "Draft",
+    "published": "Published",
+    "deleted": "Deleted",
+    "moderation": "Moderation"
+  },
+  "courses-update-time": "Last update:",
+  "courses-delete-btn": "Delete",
+  "courses-restore-btn": "Restore",
+  "courses-toDashboard-btn": "Dashboard"
+}
