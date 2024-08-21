@@ -1,13 +1,12 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import LoginPage from "../../pages/login/LoginPage";
 import RegistrationPage from "../../pages/registration/RegistrationPage";
-import ComponentTestPage from "../../pages/component-test/ComponentTestPage";
+import UiPage from "pages/ui";
 import { AppRoutes } from "./appRoutes";
 import { ProtectedRoute } from "src/app/routing/ProtectedRoute";
 import CreateCoursePage from "pages/create-course/CreateCoursePage";
 import AuthorizationPage from "pages/authorization/AuthorizationPage";
 import CoursePreviewPage from "pages/course-preview/CoursePreviewPage";
-import ThemeTestPage from "pages/theme-test-page/ThemeTestPage";
 import TeacherLandingPage from "pages/teacher/landing-page/LandingPage";
 import StudentLandingPage from "pages/student/landing-page/LandingPage";
 
