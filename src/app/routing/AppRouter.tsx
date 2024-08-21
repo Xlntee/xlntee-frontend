@@ -26,14 +26,7 @@ const AppRouter = () => {
         <Route element={<ProtectedRoute />}>
           <Route path={AppRoutes.createCourse} element={<CreateCoursePage />} />
         </Route>
-        <Route
-          path="/test"
-          element={
-            <ComponentTestPage>
-              <ThemeTestPage />
-            </ComponentTestPage>
-          }
-        />
+        <Route path="/ui" element={<UiPage />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,4 +1,3 @@
-import "./ComponentTestPage.scss";
 import { FC, PropsWithChildren } from "react";
 
 const ComponentTestPage: FC<PropsWithChildren> = ({ children }) => {
