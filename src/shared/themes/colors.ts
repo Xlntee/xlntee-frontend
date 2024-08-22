@@ -6,6 +6,8 @@ export enum YouniColors {
 }
 
 export enum XlnteeColors {
+  LightColor = "#ffffff",
+  DarkColor = "#000000",
   BrandColor = "#6361ff",
   LinkColor = "#6879fc",
   CallToActionColor = "#ff1c60",
@@ -13,4 +15,16 @@ export enum XlnteeColors {
   BlackElementColor = "#202020",
   LightElementColor = "#f8f8f8",
   GrayStrokeColor = "#eaeaea",
+  GrayColor300 = "#D9D9D9",
+  GrayColor400 = "#C4C4C4",
+  GrayColor500 = "#BDBDBD",
+  GrayColor600 = "#666666",
+  GrayColor700 = "#828282",
+  WarningExtraLightColor = "#FF99B2",
+  WarningLightColor = "#EE2C2C",
+  WarningBaseColor = "#B63030",
+  SuccessBaseColor = "#30B686",
+  SuccessExtraLightColor = "#F2FFF3",
+  SuccessLightColor = "#AFEDC0",
+  SuccessDarkColor = "#329C56",
 }
