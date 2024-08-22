@@ -1,4 +1,5 @@
 import { createTheme } from "@mui/material";
+
 import { XlnteeColors, YouniColors } from "./colors";
 
 declare module "@mui/material/Button" {
@@ -19,13 +20,24 @@ export const defaultTheme = createTheme({
       xl: 1440,
     },
   },
+  // breakpoints: {
+  //   values: {
+  //     xs: 0,
+  //     sm: 600,
+  //     md: 900,
+  //     lg: 1280,
+  //     xl: 1536,
+  //   },
+  // },
   palette: {
     mode: "light",
     primary: {
       main: XlnteeColors.BrandColor,
+      contrastText: XlnteeColors.LightColor,
     },
     secondary: {
       main: XlnteeColors.CallToActionColor,
+      contrastText: XlnteeColors.LightColor,
     },
     warning: {
       main: XlnteeColors.WarningBaseColor,
@@ -36,7 +48,7 @@ export const defaultTheme = createTheme({
       main: XlnteeColors.SuccessBaseColor,
       "100": XlnteeColors.SuccessExtraLightColor,
       "200": XlnteeColors.SuccessLightColor,
-      "900": "#329C56",
+      "900": XlnteeColors.SuccessDarkColor,
     },
     info: {
       main: XlnteeColors.LinkColor,
@@ -44,24 +56,15 @@ export const defaultTheme = createTheme({
     grey: {
       "100": XlnteeColors.LightElementColor,
       "200": XlnteeColors.GrayStrokeColor,
-      "300": "#D9D9D9",
-      "400": "#666666",
-      "500": "#BDBDBD",
-      "600": "#C4C4C4",
-      "700": "#828282",
+      "300": XlnteeColors.GrayColor300,
+      "400": XlnteeColors.GrayColor400,
+      "500": XlnteeColors.GrayColor500,
+      "600": XlnteeColors.GrayColor600,
+      "700": XlnteeColors.GrayColor700,
     },
     text: {
       primary: XlnteeColors.BlackTextColor,
       secondary: XlnteeColors.BlackElementColor,
-    },
-  },
-  breakpoints: {
-    values: {
-      xs: 0,
-      sm: 600,
-      md: 900,
-      lg: 1280,
-      xl: 1536,
     },
   },
   typography: {
@@ -115,7 +118,6 @@ export const defaultTheme = createTheme({
 defaultTheme.typography.h1 = {
   fontSize: 32,
   lineHeight: 1.04,
-  marginBottom: 20,
 
   [defaultTheme.breakpoints.up("lg")]: {
     fontSize: 48,
@@ -125,7 +127,6 @@ defaultTheme.typography.h1 = {
 defaultTheme.typography.h2 = {
   fontSize: 30,
   lineHeight: 1.02,
-  marginBottom: 20,
 
   [defaultTheme.breakpoints.up("lg")]: {
     fontSize: 34,
@@ -135,7 +136,6 @@ defaultTheme.typography.h2 = {
 defaultTheme.typography.h3 = {
   fontSize: 28,
   lineHeight: 1,
-  marginBottom: 20,
 
   [defaultTheme.breakpoints.up("lg")]: {
     fontSize: 30,
@@ -145,19 +145,16 @@ defaultTheme.typography.h3 = {
 defaultTheme.typography.h4 = {
   fontSize: 24,
   lineHeight: 1,
-  marginBottom: 20,
 };
 
 defaultTheme.typography.h5 = {
   fontSize: 20,
   lineHeight: 1,
-  marginBottom: 20,
 };
 
 defaultTheme.typography.h6 = {
   fontSize: 18,
   lineHeight: 1,
-  marginBottom: 20,
 };
 
 defaultTheme.typography.body1 = {
@@ -306,7 +303,7 @@ defaultTheme.components = {
       root: {
         height: 50,
         fieldset: {
-          borderColor: defaultTheme.palette.grey["600"],
+          borderColor: defaultTheme.palette.grey["400"],
         },
         "&.Mui-focused fieldset": {
           borderColor: XlnteeColors.DarkColor,
