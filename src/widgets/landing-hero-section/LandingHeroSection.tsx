@@ -33,8 +33,8 @@ const LandingHeroSection: React.FC<LandingHeroSectionProps> = ({
           sx={{
             display: "inline-block",
             bgcolor: theme.palette.primary.main,
+            color: theme.palette.primary.contrastText,
             fontWeight: 400,
-            color: "#fff",
             py: 1,
             px: 3,
             mb: 4,
