@@ -1,9 +1,10 @@
+import React, { ReactNode } from "react";
+import { Link as RouterLink } from "react-router-dom";
 import { Box, Button, Stack, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import { Link as RouterLink } from "react-router-dom";
+
 import { AppRoutes } from "src/app/routing/appRoutes";
-import CheckItem from "./ui/CheckItem";
-import React, { ReactNode } from "react";
+import { CheckItem } from "./ui";
 
 interface LandingHeroSectionProps {
   title: string;

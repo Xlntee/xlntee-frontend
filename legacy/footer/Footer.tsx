@@ -1,16 +1,14 @@
+import { useState } from "react";
+import { Box, Container, Stack, Typography, Link as MuiLink } from "@mui/material";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import { Box, Container, Stack, Typography, Link as MuiLink } from "@mui/material";
-import FooterCaptionComponent from "./ui/FooterCaptionComponent";
-import FooterButtonComponent from "./ui/FooterButtonComponent";
-import FooterLinkComponent from "./ui/FooterLinkComponent";
-import FooterTextComponent from "./ui/FooterTextComponent";
-import { useState } from "react";
-import TeacherModal from "../../src/widgets/teacher-modal/TeacherModal";
-import StudentModal from "../../src/widgets/student-modal/StudentModal";
-import InformationModal from "../../src/widgets/information-modal/InformationModal";
-import ViolationModal from "../../src/widgets/violation-modal/ViolationModal";
+
+import {
+  FooterButtonComponent, FooterCaptionComponent, FooterLinkComponent, FooterTextComponent
+} from "./ui";
+
+import { ViolationModal, InformationModal, StudentModal, TeacherModal } from "src/widgets";
 
 const Footer = () => {
   const [openTeacherModal, setOpenTeacherModal] = useState(false);

@@ -1,9 +1,8 @@
 import { Container } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import LandingHeroSection from "src/widgets/landing-hero-section/LandingHeroSection";
-import LandingAboutSection from "src/widgets/landing-about-section/LandingAboutSection";
-import LandingContactSection from "src/widgets/landing-contact-section/LandingContactSection";
-import StudentFeaturesSection from "./ui/StudentFeaturesSection";
+
+import { LandingHeroSection, LandingAboutSection, LandingContactSection } from "src/widgets";
+import { StudentFeaturesSection } from "./ui";
 
 const StudentLandingPage = () => {
   const { t } = useTranslation("student-landing");

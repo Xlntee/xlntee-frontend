@@ -1,7 +1,7 @@
-import { Box, Stack, Typography } from "@mui/material";
 import React, { ReactNode } from "react";
+import { Box, Stack, Typography } from "@mui/material";
 import { XlnteeColors } from "src/shared/themes/colors";
-import ArrowsWordsList from "./ui/ArrowsWordsList";
+import { ArrowsWordsList } from "./ui";
 
 interface LandingAboutSectionProps {
   title: string;

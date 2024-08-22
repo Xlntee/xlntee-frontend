@@ -24,7 +24,7 @@ interface IProps {
 const RatingModal: React.FC<IProps> = ({ isOpen, handleClose }) => {
   const [rating, setRating] = useState(0);
 
-  const handleRatingChange = (event: ChangeEvent<{}>, newRating: number | null) => {
+  const handleRatingChange = (_event: ChangeEvent<{}>, newRating: number | null) => {
     if (newRating !== null) {
       setRating(newRating);
     }

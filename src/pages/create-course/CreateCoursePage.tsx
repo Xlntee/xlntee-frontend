@@ -1,8 +1,8 @@
-import Page from "src/widgets/page/Page";
 import { FC } from "react";
+import { PublicLayout } from "src/layouts";
 
 const CreateCoursePage: FC = () => {
-  return <Page>CreateCoursePage</Page>;
+  return <PublicLayout>CreateCoursePage</PublicLayout>;
 };
 
 export default CreateCoursePage;

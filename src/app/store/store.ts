@@ -1,8 +1,9 @@
-import rootReducer from "./rootReducer";
-import { Action, ThunkAction, configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
-import { apiSlice } from "../api/apiSlice";
+import { Action, ThunkAction, configureStore } from "@reduxjs/toolkit";
 import persistStore from "redux-persist/es/persistStore";
+
+import rootReducer from "./rootReducer";
+import { apiSlice } from "../api/apiSlice";
 
 const store = configureStore({
   reducer: rootReducer,

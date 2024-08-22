@@ -16,7 +16,7 @@ export const defaultTheme = createTheme({
       xs: 0,
       sm: 576,
       md: 768,
-      lg: 1024,
+      lg: 1280,
       xl: 1440,
     },
   },

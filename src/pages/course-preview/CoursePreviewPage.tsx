@@ -1,8 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useGetCourseQuery } from "src/entities/course/api/coursesApiSlice";
-import CoursePreviewContent from "src/widgets/course-preview-content/CoursePreviewContent";
-import CoursePreviewHeader from "src/widgets/course-preview-header/CoursePreviewHeader";
-import Page from "src/widgets/page/Page";
+import { CoursePreviewContent, CoursePreviewHeader } from "src/widgets";
+import { PublicLayout } from "src/layouts";
 
 const CoursePreviewPage = () => {
   const { courseId } = useParams<{ courseId: string }>();
@@ -25,11 +24,11 @@ const CoursePreviewPage = () => {
   }
   //
   return (
-    <Page>
+    <PublicLayout>
       <CoursePreviewHeader courseData={data} />
       <CoursePreviewContent courseData={data} />
       <button onClick={() => console.log(data)}>click</button>
-    </Page>
+    </PublicLayout>
   );
 };
 

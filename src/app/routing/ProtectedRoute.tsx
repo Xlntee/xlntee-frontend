@@ -1,8 +1,10 @@
 import { FC } from "react";
-import { useAppSelector } from "../store/store";
-import { selectToken } from "../../pages/login/store/authSlice";
 import { Navigate, Outlet, useLocation } from "react-router-dom";
-import { AppRoutes } from "src/app/routing/appRoutes";
+
+import { selectToken } from "src/pages/login/store/authSlice";
+
+import { useAppSelector } from "../store/store";
+import { AppRoutes } from "./appRoutes";
 
 export const ProtectedRoute: FC = () => {
   const token = useAppSelector(selectToken);

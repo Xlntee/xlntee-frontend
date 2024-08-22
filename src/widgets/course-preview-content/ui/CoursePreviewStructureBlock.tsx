@@ -1,16 +1,22 @@
-import { Box, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Stack,
+  Typography,
+  Accordion as MuiAccordion,
+  AccordionProps,
+  AccordionSummary as MuiAccordionSummary,
+  AccordionSummaryProps,
+} from "@mui/material";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import MuiAccordion, { AccordionProps } from "@mui/material/Accordion";
-import MuiAccordionSummary, { AccordionSummaryProps } from "@mui/material/AccordionSummary";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
-import { styled } from "@mui/material/styles";
-
 import VideocamIcon from "@mui/icons-material/Videocam";
 import HelpCenterIcon from "@mui/icons-material/HelpCenter";
 import InsertDriveFileIcon from "@mui/icons-material/InsertDriveFile";
 
+import { styled } from "@mui/material/styles";
+
 const Accordion = styled((props: AccordionProps) => <MuiAccordion disableGutters elevation={0} square {...props} />)(
-  ({ theme }) => ({
+  () => ({
     position: "static",
     backgroundColor: "transparent",
     color: "#fff",
@@ -30,7 +36,7 @@ const AccordionSummary = styled((props: AccordionSummaryProps) => (
   },
 }));
 
-const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
+const AccordionDetails = styled(MuiAccordionDetails)(() => ({
   padding: 0,
 }));
 

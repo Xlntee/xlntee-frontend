@@ -1,13 +1,15 @@
-import "./LoginPage.scss";
-
-import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
 import { FC } from "react";
-import { authApiSlice, useLoginMutation } from "./api/authApiSlice";
-import { useForm } from "react-hook-form";
-import Page from "src/widgets/page/Page";
-import { useAppDispatch } from "src/app/store/store";
-import { setCredentials } from "pages/login/store/authSlice";
 import { useLocation, useNavigate } from "react-router-dom";
+import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
+import { useForm } from "react-hook-form";
+
+import { useAppDispatch } from "src/app/store/store";
+import { PublicLayout } from "src/layouts";
+
+import { setCredentials } from "./store/authSlice";
+import { authApiSlice, useLoginMutation } from "./api/authApiSlice";
+
+import "./LoginPage.scss";
 
 interface IFormData {
   email: string;
@@ -41,7 +43,7 @@ const LoginPage: FC = () => {
 
   return (
     <ApiProvider api={authApiSlice}>
-      <Page>
+      <PublicLayout>
         <div className="login-page">
           <form onSubmit={onSubmit} className="login-page__form">
             <input className="login-page__input" {...register("email")} autoFocus />
@@ -51,7 +53,7 @@ const LoginPage: FC = () => {
             </button>
           </form>
         </div>
-      </Page>
+      </PublicLayout>
     </ApiProvider>
   );
 };

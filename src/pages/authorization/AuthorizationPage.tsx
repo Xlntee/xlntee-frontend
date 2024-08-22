@@ -1,11 +1,11 @@
-import { TabContext, TabList, TabPanel } from "@mui/lab";
-import { Box, Tab } from "@mui/material";
 import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { TabContext, TabList, TabPanel } from "@mui/lab";
+import { Box, Tab } from "@mui/material";
+
 import { AuthPageSection } from "src/app/routing/appRoutes";
-import LoginForm from "src/widgets/login-form/LoginForm";
-import Page from "src/widgets/page/Page";
-import RegistrationForm from "src/widgets/registration-form/RegistrationForm";
+import { LoginForm, RegistrationForm } from "src/widgets";
+import { PublicLayout } from "src/layouts";
 
 const authorizationPage = () => {
   const { authType } = useParams();
@@ -17,12 +17,12 @@ const authorizationPage = () => {
 
   const [value, setValue] = useState<AuthPageSection>(cleanAuthType(authType));
 
-  const handleChange = (event: React.SyntheticEvent, newValue: AuthPageSection) => {
+  const handleChange = (_event: React.SyntheticEvent, newValue: AuthPageSection) => {
     setValue(newValue);
   };
 
   return (
-    <Page>
+    <PublicLayout>
       <Box sx={{ width: "504px", margin: "50px auto" }}>
         <TabContext value={value}>
           <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
@@ -57,7 +57,7 @@ const authorizationPage = () => {
           </TabPanel>
         </TabContext>
       </Box>
-    </Page>
+    </PublicLayout>
   );
 };
 

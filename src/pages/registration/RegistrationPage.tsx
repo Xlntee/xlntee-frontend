@@ -1,15 +1,17 @@
-import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
-import "./RegistartionPage.scss";
-
 import { FC, useState } from "react";
+import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
+import { useForm } from "react-hook-form";
+
+import { PublicLayout } from "src/layouts";
+
 import {
   authApiSlice,
   useAcceptPolicyMutation,
   useSignUpMutation,
   useVerifyEmailMutation,
 } from "../login/api/authApiSlice";
-import { useForm } from "react-hook-form";
-import Page from "src/widgets/page/Page";
+
+import "./RegistartionPage.scss";
 
 interface IFormData {
   email: string;
@@ -79,7 +81,7 @@ const RegistrationPage: FC = () => {
 
   return (
     <ApiProvider api={authApiSlice}>
-      <Page>
+      <PublicLayout>
         <div className="registration-page">
           <form onSubmit={onSubmit} className="registration-page__form">
             <input
@@ -106,7 +108,7 @@ const RegistrationPage: FC = () => {
             </button>
           </form>
         </div>
-      </Page>
+      </PublicLayout>
     </ApiProvider>
   );
 };

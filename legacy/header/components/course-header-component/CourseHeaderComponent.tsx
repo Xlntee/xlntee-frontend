@@ -1,12 +1,15 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import "./CourseHeaderComponent.scss";
+
 import StarIcon from "@mui/icons-material/Star";
 import ShareIcon from "@mui/icons-material/Share";
+
 import ProgressBar from "../progress-bar/ProgressBar";
 import ApealRefundBtn from "./apeal-refund-button/ApealRefundBtn";
+
 import RatingModal from "./rating-modal/RatingModal";
-import { useState } from "react";
 import ShareModal from "./share-modal/ShareModal";
+import "./CourseHeaderComponent.scss";
 
 const CourseHeaderComponent = () => {
   const [isOpenRatingModal, setIsOpenRatingModal] = useState(false);

@@ -1,5 +1,7 @@
+import { Link as RouterLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
 import { Box, Button, Grid, Stack, Typography } from "@mui/material";
-import { XlnteeColors } from "src/shared/themes/colors";
 import TrendingUpOutlinedIcon from "@mui/icons-material/TrendingUpOutlined";
 import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
@@ -8,9 +10,9 @@ import PlayCircleOutlinedIcon from "@mui/icons-material/PlayCircleOutlined";
 import QuizOutlinedIcon from "@mui/icons-material/QuizOutlined";
 import WorkspacePremiumOutlinedIcon from "@mui/icons-material/WorkspacePremiumOutlined";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
+
+import { XlnteeColors } from "src/shared/themes/colors";
 import { AppRoutes } from "src/app/routing/appRoutes";
-import { Link as RouterLink } from "react-router-dom";
-import { useTranslation } from "react-i18next";
 
 //TODO: implement refactoring before component’s declaration
 
