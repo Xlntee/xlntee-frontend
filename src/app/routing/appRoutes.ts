@@ -7,7 +7,7 @@ export const AppRoutes = {
   authType: "/auth/:authType",
   login: "/login",
   registration: "/registration",
-  createCourse: "/createCourse",
+  createCourse: "/create-сourse",
   previewCourse: "/course/:courseId",
   notFound: "/page-not-found",
 };
