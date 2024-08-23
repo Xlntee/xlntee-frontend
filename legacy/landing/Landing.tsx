@@ -8,7 +8,7 @@ import PicturesSection from "../pictures-section/PIcturesSection";
 // import { useState } from "react";
 // import { CoursesQueryParams } from "src/entities/course/api/requestModel";
 // import { SortOptions } from "src/shared/api/sorting";
-import { PublicLayout } from "src/layouts";
+// import { PublicLayout } from "src/layouts";
 
 const Landing = () => {
   // const [query, setQuery] = useState<CoursesQueryParams>({ sort: SortOptions.DESC });
@@ -16,7 +16,7 @@ const Landing = () => {
   // const { data, isLoading, isFetching, error } = useGetCoursesQuery(query);
 
   return (
-    <PublicLayout>
+    <>
       <PicturesSection />
       <TopCoursesSection />
       <Filter />
@@ -30,7 +30,7 @@ const Landing = () => {
           ))}
         </Grid>
       </Container>
-    </PublicLayout>
+    </>
   );
 };
 

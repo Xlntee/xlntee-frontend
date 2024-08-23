@@ -11,7 +11,7 @@ const Header = () => {
         <Toolbar disableGutters>
           <Logo />
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            <Link component={NavLink} to={AppRoutes.base}>
+            <Link component={NavLink} to={AppRoutes.home}>
               Home
             </Link>
             <Link component={NavLink} to={AppRoutes.login}>

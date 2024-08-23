@@ -1,10 +1,15 @@
 import { Container } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
+import useTitle from "src/hooks/useTitle/useTitle";
+import { PageProps } from "pages/type";
+
 import { LandingHeroSection, LandingAboutSection, LandingContactSection } from "src/widgets";
 import { PriceTable, TeacherFeaturesSection } from "./ui";
 
-const TeacherLandingPage = () => {
+const TeacherLandingPage = ({ title }: PageProps) => {
+  useTitle(title);
+
   const { t } = useTranslation("teacher-landing");
   const heroSectionfeatures: string[] = t("teacher-landing.hero-section.features", { returnObjects: true });
   const aboutSectionWords: string[] = t("teacher-landing.about-section.wordList", { returnObjects: true });

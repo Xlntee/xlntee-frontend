@@ -8,7 +8,7 @@ interface LayoutProps {
   showFooter?: boolean;
 }
 
-const PublicLayout = ({ showFooter = true }: LayoutProps) => {
+const PrivateLayout = ({ showFooter = true }: LayoutProps) => {
   return (
     <>
       <Header />
@@ -20,4 +20,4 @@ const PublicLayout = ({ showFooter = true }: LayoutProps) => {
   );
 };
 
-export default PublicLayout;
+export default PrivateLayout;
