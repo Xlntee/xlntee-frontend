@@ -6,11 +6,12 @@ import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
 import EqualizerIcon from "@mui/icons-material/Equalizer";
 import WatchLaterOutlinedIcon from "@mui/icons-material/WatchLaterOutlined";
 import LocalActivityIcon from "@mui/icons-material/LocalActivity";
-import RatingComponent from "src/features/rating/RatingComponent";
 import ShareIcon from "@mui/icons-material/Share";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import { Course } from "src/entities/course/model/course";
+
+import { Rating } from "src/features";
+import { Course } from "src/entities/course/model";
 
 interface CoursePreviewHeaderProps {
   courseData: Course;
@@ -56,7 +57,7 @@ const CoursePreviewHeader: React.FC<CoursePreviewHeaderProps> = ({ courseData })
                   {courseData.generalSetting.subTitle}
                 </Typography>
                 <Box sx={{ padding: "5px 0" }}>
-                  <RatingComponent size="large" rating={4.8} />
+                  <Rating size="large" rating={4.8} />
                 </Box>
                 <Stack flexDirection="column" gap="10px">
                   <Box sx={{ display: "flex", gap: "9px", alignItems: "center" }}>

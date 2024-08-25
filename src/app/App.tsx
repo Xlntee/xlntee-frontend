@@ -1,9 +1,12 @@
 import { Provider } from "react-redux";
-import store, { persistor } from "./store/store";
+import { PersistGate } from "redux-persist/integration/react";
 import { ThemeProvider } from "@mui/material";
+
+import store, { persistor } from "./store/store";
+
 import { defaultTheme } from "src/shared/themes/themes";
 import AppRouter from "src/app/routing/AppRouter";
-import { PersistGate } from "redux-persist/integration/react";
+
 import "src/i18n";
 
 function App() {

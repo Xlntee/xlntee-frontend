@@ -1,14 +1,14 @@
-import { Button, Menu, MenuItem } from "@mui/material";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { Button, Menu, MenuItem } from "@mui/material";
 import NewReleasesOutlinedIcon from "@mui/icons-material/NewReleasesOutlined";
 import PaidOutlinedIcon from "@mui/icons-material/PaidOutlined";
-import "./ApealRefundBtn.scss";
-import { Link } from "react-router-dom";
 import ApealModal from "./ApealModal";
 import WarningModal from "./WarningModal";
+import "./ApealRefundBtn.scss";
 
 const ApealRefundBtn = () => {
-  const [isDisabled, setIsDisabled] = useState(false);
+  const [isDisabled] = useState(false);
   const [isOpenModal, setIsOpenModal] = React.useState(false);
   const [isWarningOpen, setIsWarningOpen] = useState(false);
 

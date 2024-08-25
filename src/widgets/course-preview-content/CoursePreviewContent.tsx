@@ -1,9 +1,12 @@
 import { Box, Stack } from "@mui/material";
-import { Course } from "src/entities/course/model/course";
-import CoursePreviewAboutTeacherBlock from "src/widgets/course-preview-content/ui/course-preview-about-teacher-block/CoursePreviewAboutTeacherBlock";
-import CoursePreviewDescriptionBlock from "src/widgets/course-preview-content/ui/course-preview-description-block/CoursePreviewDescriptionBlock";
-import CoursePreviewInfoBlock from "src/widgets/course-preview-content/ui/course-preview-info-block/CoursePreviewInfoBlock";
-import CoursePreviewStructureBlock from "src/widgets/course-preview-content/ui/course-preview-structure-block/CoursePreviewStructureBlock";
+import { Course } from "src/entities/course/model";
+
+import {
+  CoursePreviewAboutTeacherBlock,
+  CoursePreviewDescriptionBlock,
+  CoursePreviewInfoBlock,
+  CoursePreviewStructureBlock,
+} from "./ui";
 
 const tempAboutCourseInfo = [
   "що таке ООП",

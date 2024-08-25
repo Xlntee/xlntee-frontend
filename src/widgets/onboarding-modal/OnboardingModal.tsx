@@ -1,5 +1,5 @@
-import { Box, Button, Modal, Typography } from "@mui/material";
 import { useState } from "react";
+import { Box, Button, Modal, Typography } from "@mui/material";
 import CloseIcon from "@mui/icons-material/CloseOutlined";
 import OnboardingSwiper from "./onboarding-swiper/OnboardingSwiper";
 

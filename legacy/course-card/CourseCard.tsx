@@ -1,10 +1,12 @@
-import "./CourseCard.scss";
+import { Box, Card, CardActionArea, CardContent, CardMedia, Typography } from "@mui/material";
+import { Rating } from "src/features";
+import Price from "../../legacy/price/Price";
+
 import courseImgPath from "./temp-images/course-img.png";
 import courseImgLargePath from "./temp-images/course-img-large.png";
 import teacherLogoImgPath from "./temp-images/teacher-logo.png";
-import RatingComponent from "../../src/features/rating/RatingComponent";
-import { Box, Card, CardActionArea, CardContent, CardMedia, Typography } from "@mui/material";
-import Price from "../../legacy/price/Price";
+
+import "./CourseCard.scss";
 
 interface IProps {
   title?: string;
@@ -55,7 +57,7 @@ const CourseCard = ({
                 </a>
                 <span className="course-card__date">{date}</span>
               </div>
-              <RatingComponent size={size} rating={rating} feedbackCount={feedbackCount} />
+              <Rating size={size} rating={rating} feedbackCount={feedbackCount} />
               <Price
                 size={size}
                 isFree={false}

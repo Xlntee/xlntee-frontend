@@ -1,11 +1,11 @@
 import "./Filter.scss";
-import FilterAltOutlinedIcon from "@mui/icons-material/FilterAltOutlined";
+// import FilterAltOutlinedIcon from "@mui/icons-material/FilterAltOutlined";
 import SearchInput from "./search-input/SearchInput";
-import FilterListIcon from "@mui/icons-material/FilterList";
-import PriceFilterMenu from "./price-filter-menu/PriceFilterMenu";
-import FilterInputMenu from "./filter-input-menu/FilterInputMenu";
-import { categoriesData, durationData, languageData, levelData } from "./filterSelectData";
-import { useState } from "react";
+// import FilterListIcon from "@mui/icons-material/FilterList";
+// import PriceFilterMenu from "./price-filter-menu/PriceFilterMenu";
+// import FilterInputMenu from "./filter-input-menu/FilterInputMenu";
+// import { categoriesData, durationData, languageData, levelData } from "./filterSelectData";
+// import { useState } from "react";
 import {
   Box,
   Button,
@@ -15,8 +15,8 @@ import {
   InputLabel,
   MenuItem,
   Select,
-  SelectChangeEvent,
-  Typography,
+  // SelectChangeEvent,
+  // Typography,
 } from "@mui/material";
 import { YouniColors } from "src/shared/themes/colors";
 

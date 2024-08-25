@@ -1,8 +1,9 @@
 import { Box, Stack, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
+
 import { XlnteeColors } from "src/shared/themes/colors";
-import ContactItem from "./ui/ContactItem";
 import { ContactsLinks } from "src/shared/config/LinkConstants";
+import { ContactItem } from "./ui";
 
 const LandingContactSection = () => {
   const { t } = useTranslation("teacher-landing");

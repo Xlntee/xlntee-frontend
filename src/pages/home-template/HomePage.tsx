@@ -1,6 +1,9 @@
-import { FC } from "react";
+import useTitle from "src/hooks/useTitle/useTitle";
+import { PageProps } from "pages/type";
 
-const HomePage: FC = () => {
+const HomePage = ({ title }: PageProps) => {
+  useTitle(title);
+
   return <div>HomePage</div>;
 };
 

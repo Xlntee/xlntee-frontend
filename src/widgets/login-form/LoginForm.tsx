@@ -1,13 +1,16 @@
-import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
 import { FC } from "react";
-import { authApiSlice, useLoginMutation } from "./api/authApiSlice";
-import { useForm } from "react-hook-form";
-import { useAppDispatch } from "src/app/store/store";
-import { setCredentials } from "pages/login/store/authSlice";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
+
 import { Button, Stack, TextField, Typography } from "@mui/material";
 import GoogleIcon from "@mui/icons-material/Google";
 import { FacebookOutlined } from "@mui/icons-material";
+
+import { useAppDispatch } from "src/app/store/store";
+import { setCredentials } from "pages/login/store/authSlice";
+
+import { authApiSlice, useLoginMutation } from "./api/authApiSlice";
 
 const ButtonStyles = {
   height: "56px",

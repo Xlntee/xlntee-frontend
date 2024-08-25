@@ -1,0 +1,7 @@
+// @use "styles/breakpoints.scss" as breakpoints; // this how you can import breakpoints into component scss file
+// e.g @media (min-width: breakpoints.$tablet) {}
+
+$mobile: 480px;
+$tablet: 768px;
+$tablet_lg: 1024px;
+$desktop: 1280px;

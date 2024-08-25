@@ -1,15 +1,15 @@
 export const AppRoutes = {
-  base: "/",
+  home: "/",
   teacherLanding: "/teacher",
   studentLanding: "/student",
-  home: "/home",
   auth: "/auth",
   authType: "/auth/:authType",
   login: "/login",
   registration: "/registration",
-  createCourse: "/createCourse",
+  createCourse: "/create-сourse",
   previewCourse: "/course/:courseId",
-  notFound: "/page-not-found",
+  notFound: "*",
+  ui: "/ui",
 };
 
 export enum AuthPageSection {

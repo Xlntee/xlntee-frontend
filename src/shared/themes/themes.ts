@@ -14,21 +14,13 @@ export const defaultTheme = createTheme({
   breakpoints: {
     values: {
       xs: 0,
-      sm: 576,
+      sm: 480,
       md: 768,
       lg: 1024,
-      xl: 1440,
+      xl: 1280,
     },
   },
-  // breakpoints: {
-  //   values: {
-  //     xs: 0,
-  //     sm: 600,
-  //     md: 900,
-  //     lg: 1280,
-  //     xl: 1536,
-  //   },
-  // },
+
   palette: {
     mode: "light",
     primary: {

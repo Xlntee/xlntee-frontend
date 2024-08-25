@@ -13,7 +13,7 @@ import React from "react";
 
 const MainPageHeaderComponent = () => {
   const [showCategories, setShowCategories] = useState(false);
-  const [isLogin, setIsLogin] = useState(true);
+  const [isLogin] = useState(true);
   const [showStudyModal, setShowStudyModal] = useState(false);
 
   const handleOpenStudyModal = () => setShowStudyModal(true);

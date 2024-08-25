@@ -1,6 +1,9 @@
 import { CSSProperties } from "react";
 import { Button, Container, Stack, Box, Typography, Grid, TextField, InputLabel, Divider } from "@mui/material";
 
+import useTitle from "src/hooks/useTitle/useTitle";
+import { PageProps } from "pages/type";
+
 const typographyList = ["h1", "h2", "h3", "h4", "h5", "h6"] as const;
 const buttonColorList = ["primary", "secondary", "success", "error"] as const;
 const buttonSizeList = ["small", "medium", "large"];
@@ -48,7 +51,9 @@ const renderButtonsBlack = (variant: "black-contain" | "black-outline" | "black-
   );
 };
 
-const UiPage = () => {
+const UiPage = ({ title }: PageProps) => {
+  useTitle(title);
+
   return (
     <Box component="section" paddingBlock={4}>
       <Container>
