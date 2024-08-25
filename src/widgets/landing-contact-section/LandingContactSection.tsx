@@ -1,51 +1,56 @@
-import { Box, Stack, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import { Box, Stack, Typography, Container, Grid } from "@mui/material";
 
 import { XlnteeColors } from "src/shared/themes/colors";
 import { ContactsLinks } from "src/shared/config/LinkConstants";
-import { ContactItem } from "./ui";
+import { ContactList, ContactLinkType } from "./ui";
+
+const links: ContactLinkType[] = [
+  {
+    title: "Support",
+    link: `mailto:${ContactsLinks.Support}`,
+  },
+  {
+    title: "Cooperation",
+    link: `mailto:${ContactsLinks.Cooperation}`,
+  },
+  {
+    title: "Press",
+    link: `mailto:${ContactsLinks.Press}`,
+  },
+];
 
 const LandingContactSection = () => {
   const { t } = useTranslation("teacher-landing");
 
   return (
-    <Box sx={{ maxWidth: "812px", mb: 9 }}>
-      <Stack direction="row" alignItems="center" px={6.5}>
-        <Stack direction="row" alignItems="center" mt={4}>
-          <img src="assets/x-logo-modal.png" width={38} height={38} />
-          <Typography sx={{ fontFamily: "Inter", fontWeight: 900, fontStyle: "italic", pr: "20px" }} variant="h3">
-            lntee
-          </Typography>
-        </Stack>
-        <Typography
-          sx={{
-            fontWeight: 300,
-            color: `${XlnteeColors.BlackElementColor}`,
-            borderLeft: `1px solid ${XlnteeColors.GrayStrokeColor}`,
-            pl: 3,
-            mt: 4,
-          }}
-          variant="body1"
-        >
-          {t("teacher-landing.contactSubTitle")}
-        </Typography>
-        <img src="assets/teacher-landing-contact.png" alt={t("teacher-landing.contactImageAltText")} />
-      </Stack>
-      <Box
-        sx={{
-          border: `1px solid ${XlnteeColors.BlackTextColor}`,
-          borderRadius: "50px",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          gap: 3,
-          py: 2,
-        }}
-      >
-        <ContactItem caption="Support" link={ContactsLinks.Support} />
-        <ContactItem caption="Cooperation" link={ContactsLinks.Cooperation} />
-        <ContactItem caption="Press" link={ContactsLinks.Press} />
-      </Box>
+    <Box component="section" className="section-contact" py="40px">
+      <Container>
+        <Box maxWidth="820px" marginX="auto">
+          <Grid container alignItems={{ md: "center" }} justifyContent={{ md: "space-between" }}>
+            <Grid item xs={12} md={6}>
+              <Stack
+                direction={{ md: "row" }}
+                alignItems="center"
+                justifyContent={{ xs: "center", md: "start" }}
+                gap={{ md: "40px" }}
+                pl={{ md: "56px" }}
+                pt={{ md: "34px" }}
+                mb={{ xs: "20px", md: "0" }}
+              >
+                <img src="assets/x-logo-modal-extend.png" width={175} height={64} />
+                <Typography variant="body2" fontWeight={300} color={XlnteeColors.BlackElementColor}>
+                  {t("teacher-landing.contactSubTitle")}
+                </Typography>
+              </Stack>
+            </Grid>
+            <Grid item xs={12} md={6} textAlign={{ xs: "center", md: "left" }}>
+              <img src="assets/teacher-landing-contact.png" alt={t("teacher-landing.contactImageAltText")} />
+            </Grid>
+          </Grid>
+          <ContactList items={links} />
+        </Box>
+      </Container>
     </Box>
   );
 };

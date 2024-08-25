@@ -1,0 +1,12 @@
+.contact-list {
+  border: 1px solid rgb(var(--text-color));
+  border-radius: 50px;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px;
+
+  a {
+    text-decoration: none;
+  }
+}
