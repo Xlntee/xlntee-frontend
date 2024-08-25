@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import { Link as RouterLink } from "react-router-dom";
-import { Box, Button, Stack, Grid, Typography, Container } from "@mui/material";
+import { Box, Button, Grid, Typography, Container } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
 import { AppRoutes } from "src/app/routing/appRoutes";
