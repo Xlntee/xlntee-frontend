@@ -1,0 +1,31 @@
+@use "styles/breakpoints.scss" as breakpoints;
+
+.arrows-words-list {
+  flex-wrap: wrap;
+  row-gap: 4px;
+  column-gap: 40px;
+
+  @media (min-width: breakpoints.$desktop) {
+    column-gap: 76px;
+  }
+
+  &__item {
+    position: relative;
+    font-weight: 300;
+
+    &.MuiTypography-root {
+      @media (min-width: breakpoints.$tablet) {
+        font-size: 24px;
+      }
+    }
+
+    &:not(:last-child) {
+      &::after {
+        content: "\003E";
+        color: currentColor;
+        position: absolute;
+        right: -28px;
+      }
+    }
+  }
+}

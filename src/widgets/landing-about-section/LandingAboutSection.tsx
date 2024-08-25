@@ -1,7 +1,9 @@
 import React, { ReactNode } from "react";
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Grid, Container, Typography } from "@mui/material";
 import { XlnteeColors } from "src/shared/themes/colors";
 import { ArrowsWordsList } from "./ui";
+
+import "./LandingAboutSection.scss";
 
 interface LandingAboutSectionProps {
   title: string;
@@ -12,28 +14,25 @@ interface LandingAboutSectionProps {
 
 const LandingAboutSection: React.FC<LandingAboutSectionProps> = ({ title, wordsList, description, children }) => {
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        boxShadow: "0px 2px 6px 0px rgba(0, 0, 0, 0.15)",
-        borderRadius: "20px",
-        mb: 8,
-        mx: 2,
-      }}
-    >
-      <Typography color={XlnteeColors.BlackTextColor} sx={{ fontWeight: 300, ml: 5, mt: 3 }} variant="h3">
-        {title}
-      </Typography>
-      <Stack direction="row" gap={4} margin={4.5}>
-        {children}
-        <Box display="flex" flexDirection="column" gap={3}>
-          <ArrowsWordsList wordsArray={wordsList} />
-          <Typography color={XlnteeColors.BlackTextColor} sx={{ fontWeight: 300 }} variant="h5">
-            {description}
+    <Box component="section" className="section-about">
+      <Container>
+        <Box className="section-about__panel">
+          <Typography variant="h2" color={XlnteeColors.BlackTextColor} className="section-about__title">
+            {title}
           </Typography>
+          <Grid container direction="row" spacing={{ md: "40px" }} paddingInline={{ md: "30px" }}>
+            <Grid item md={4} mx="auto">
+              {children}
+            </Grid>
+            <Grid item md={8} display="flex" flexDirection="column" gap="16px">
+              <ArrowsWordsList wordsArray={wordsList} />
+              <Typography fontWeight={300} fontSize={{ md: "24px" }}>
+                {description}
+              </Typography>
+            </Grid>
+          </Grid>
         </Box>
-      </Stack>
+      </Container>
     </Box>
   );
 };
