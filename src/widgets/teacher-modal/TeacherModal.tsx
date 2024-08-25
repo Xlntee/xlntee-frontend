@@ -44,7 +44,6 @@ const TeacherModal: React.FC<TeacherModalProps> = ({ open, handleClose }) => {
               sx={{
                 bgcolor: "#643dff",
                 fontSize: "25px",
-                fontWeight: 700,
                 textTransform: "capitalize",
                 borderRadius: "10px",
                 p: "10px 20px",

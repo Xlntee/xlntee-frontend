@@ -1,0 +1,75 @@
+@use "styles/breakpoints.scss" as breakpoints;
+
+.feature {
+  --visibility-decor-line-horizontal: none;
+  --visibility-decor-line-vertical: none;
+  --top-position-decor-line: 14px;
+  --left-position-decor-line: 24px;
+  --width-decor-line: 16px;
+
+  position: relative;
+  padding-bottom: 30px;
+
+  @media (min-width: breakpoints.$tablet) {
+    --width-decor-line: 12px;
+    --left-position-decor-line: 16px;
+  }
+
+  @media (min-width: breakpoints.$tablet_lg) {
+    padding-bottom: 64px;
+  }
+
+  @media (min-width: breakpoints.$desktop) {
+    --width-decor-line: 26px;
+    --left-position-decor-line: 40px;
+  }
+
+  &.with-line {
+    @media (min-width: breakpoints.$tablet) {
+      --visibility-decor-line-horizontal: block;
+      --visibility-decor-line-vertical: block;
+    }
+  }
+
+  &.last-with-line {
+    @media (min-width: breakpoints.$tablet) {
+      --visibility-decor-line-horizontal: none;
+      --visibility-decor-line-vertical: block;
+    }
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    border: 1px dashed rgb(var(--element-color));
+    top: var(--top-position-decor-line);
+    left: calc(var(--left-position-decor-line) * -1);
+  }
+
+  &::before {
+    width: var(--width-decor-line);
+    display: var(--visibility-decor-line-vertical);
+  }
+
+  &::after {
+    bottom: calc(var(--top-position-decor-line) * -1);
+    display: var(--visibility-decor-line-horizontal);
+  }
+
+  &__title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+
+    &::after {
+      content: "";
+      border: 1px dashed rgb(var(--element-color));
+      flex: 1;
+    }
+  }
+
+  &__title {
+    max-width: 80%;
+  }
+}

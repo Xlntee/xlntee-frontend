@@ -57,7 +57,6 @@ const ViolationModal: React.FC<ViolationModalProps> = ({ open, handleClose }) =>
               sx={{
                 width: "200px",
                 height: "70px",
-                fontWeight: 700,
                 fontSize: "25px",
                 bgcolor: "#643dff",
                 borderRadius: "5px",
