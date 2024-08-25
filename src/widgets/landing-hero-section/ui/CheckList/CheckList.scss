@@ -1,0 +1,23 @@
+@use "styles/breakpoints.scss" as breakpoints;
+
+.check-list {
+  &.MuiList-root {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    column-gap: 16px;
+    padding: 0;
+
+    @media (min-width: breakpoints.$tablet_lg) {
+      row-gap: 26px;
+    }
+  }
+
+  &__item {
+    &.MuiListItem-root {
+      padding: 0;
+      width: auto;
+      gap: 6px;
+    }
+  }
+}
