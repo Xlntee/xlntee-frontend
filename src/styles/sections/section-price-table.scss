@@ -1,0 +1,91 @@
+@use "../breakpoints.scss" as breakpoints;
+
+.section-price-table {
+  overflow: hidden;
+}
+
+.price-table {
+  overflow-x: auto;
+
+  @media (min-width: breakpoints.$tablet) {
+    overflow: visible;
+  }
+
+  thead,
+  tbody {
+    th,
+    td {
+      &:not(:last-child) {
+        border-right: 1px solid rgb(var(--gray-stroke-color));
+      }
+    }
+
+    tr {
+      th,
+      td {
+        @media (min-width: breakpoints.$tablet_lg) {
+          height: 140px;
+        }
+
+        &:nth-child(1) {
+          @media (min-width: breakpoints.$tablet_lg) {
+            padding-left: 40px;
+          }
+        }
+      }
+
+      th,
+      td {
+        &:first-child {
+          position: relative;
+
+          &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: -1000px;
+            right: 0;
+            width: 1000px;
+            border: 1px solid rgb(var(--gray-stroke-color));
+          }
+        }
+      }
+    }
+  }
+
+  &__title {
+    &.MuiTypography-root {
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__subtitle {
+    &.MuiTypography-root {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__side-title {
+    &.MuiTypography-root {
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__value {
+    &.MuiTypography-root {
+      font-size: 24px;
+      font-weight: 300;
+    }
+  }
+
+  &__cta-button {
+    &.MuiButtonBase-root {
+      padding-inline: 16px;
+      border-radius: 25px;
+      font-weight: 400;
+      min-width: 150px;
+    }
+  }
+}
