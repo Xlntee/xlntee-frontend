@@ -10,6 +10,7 @@ export enum XlnteeColors {
   DarkColor = "#000000",
   BrandColor = "#6361ff",
   LinkColor = "#6879fc",
+  Violet100 = "#EFEEFD",
   CallToActionColor = "#ff1c60",
   BlackTextColor = "#3f454a",
   BlackElementColor = "#202020",
