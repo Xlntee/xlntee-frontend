@@ -1,0 +1,13 @@
+@use "styles/breakpoints.scss" as breakpoints;
+
+.section-feature {
+  &__feature-col {
+    &:nth-last-child(-n + 3) {
+      .feature {
+        @media (min-width: breakpoints.$tablet_lg) {
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
+}

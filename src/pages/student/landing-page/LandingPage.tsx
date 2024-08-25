@@ -1,10 +1,9 @@
-import { Container } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
 import useTitle from "src/hooks/useTitle/useTitle";
 import { PageProps } from "pages/type";
 import { LandingHeroSection, LandingAboutSection, LandingContactSection } from "src/widgets";
-import { StudentFeaturesSection } from "./ui";
+import { SectionFeatures } from "./ui";
 
 const StudentLandingPage = ({ title }: PageProps) => {
   useTitle(title);
@@ -14,7 +13,7 @@ const StudentLandingPage = ({ title }: PageProps) => {
   const aboutSectionWords: string[] = t("student-landing.about-section.wordList", { returnObjects: true });
 
   return (
-    <Container>
+    <>
       <LandingHeroSection
         title={t("student-landing.hero-section.title")}
         subtitle={t("student-landing.hero-section.subtitle")}
@@ -30,9 +29,9 @@ const StudentLandingPage = ({ title }: PageProps) => {
       >
         <img src="assets/student-landing-about.png" alt={t("student-landing.about-section.imageAltText")} />
       </LandingAboutSection>
-      <StudentFeaturesSection />
+      <SectionFeatures />
       <LandingContactSection />
-    </Container>
+    </>
   );
 };
 
