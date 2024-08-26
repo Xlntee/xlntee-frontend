@@ -1,4 +1,4 @@
-@use "../breakpoints.scss" as breakpoints;
+@use "styles/mixins.scss" as mixins;
 
 .section-price-table {
   overflow: hidden;
@@ -7,7 +7,7 @@
 .price-table {
   overflow-x: auto;
 
-  @media (min-width: breakpoints.$tablet) {
+  @include mixins.media(tablet) {
     overflow: visible;
   }
 
@@ -23,12 +23,12 @@
     tr {
       th,
       td {
-        @media (min-width: breakpoints.$tablet_lg) {
+        @include mixins.media(tablet_lg) {
           height: 140px;
         }
 
         &:nth-child(1) {
-          @media (min-width: breakpoints.$tablet_lg) {
+          @include mixins.media(tablet_lg) {
             padding-left: 40px;
           }
         }

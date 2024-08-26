@@ -1,14 +1,14 @@
-@use "../breakpoints.scss" as breakpoints;
+@use "styles/mixins.scss" as mixins;
 
 .section-feature {
   padding-block: 40px;
 
   &__wrapper {
-    @media (min-width: breakpoints.$tablet) {
+    @include mixins.media(tablet) {
       padding: 0 20px 0 16px;
     }
 
-    @media (min-width: breakpoints.$desktop) {
+    @include mixins.media(desktop) {
       padding: 0 20px 0 60px;
     }
   }
@@ -16,7 +16,7 @@
   &__feature-col {
     &:nth-last-child(-n + 3) {
       .feature {
-        @media (min-width: breakpoints.$tablet_lg) {
+        @include mixins.media(tablet_lg) {
           padding-bottom: 0;
         }
       }

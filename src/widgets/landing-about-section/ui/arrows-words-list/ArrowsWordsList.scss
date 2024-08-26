@@ -1,11 +1,11 @@
-@use "styles/breakpoints.scss" as breakpoints;
+@use "styles/mixins.scss" as mixins;
 
 .arrows-words-list {
   flex-wrap: wrap;
   row-gap: 4px;
   column-gap: 40px;
 
-  @media (min-width: breakpoints.$desktop) {
+  @include mixins.media(desktop) {
     column-gap: 76px;
   }
 
@@ -14,7 +14,7 @@
     font-weight: 300;
 
     &.MuiTypography-root {
-      @media (min-width: breakpoints.$tablet) {
+      @include mixins.media(tablet) {
         font-size: 24px;
       }
     }

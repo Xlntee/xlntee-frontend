@@ -1,4 +1,4 @@
-@use "styles/breakpoints.scss" as breakpoints;
+@use "styles/mixins.scss" as mixins;
 
 .feature {
   --visibility-decor-line-horizontal: none;
@@ -10,29 +10,29 @@
   position: relative;
   padding-bottom: 30px;
 
-  @media (min-width: breakpoints.$tablet) {
+  @include mixins.media(tablet) {
     --width-decor-line: 12px;
     --left-position-decor-line: 16px;
   }
 
-  @media (min-width: breakpoints.$tablet_lg) {
+  @include mixins.media(tablet_lg) {
     padding-bottom: 64px;
   }
 
-  @media (min-width: breakpoints.$desktop) {
+  @include mixins.media(desktop) {
     --width-decor-line: 26px;
     --left-position-decor-line: 40px;
   }
 
   &.with-line {
-    @media (min-width: breakpoints.$tablet) {
+    @include mixins.media(tablet) {
       --visibility-decor-line-horizontal: block;
       --visibility-decor-line-vertical: block;
     }
   }
 
   &.last-with-line {
-    @media (min-width: breakpoints.$tablet) {
+    @include mixins.media(tablet) {
       --visibility-decor-line-horizontal: none;
       --visibility-decor-line-vertical: block;
     }
