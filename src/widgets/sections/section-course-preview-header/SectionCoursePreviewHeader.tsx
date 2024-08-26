@@ -13,11 +13,11 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import { Rating } from "src/features";
 import { Course } from "src/entities/course/model";
 
-interface CoursePreviewHeaderProps {
+interface SectionCoursePreviewHeaderProps {
   courseData: Course;
 }
 
-const CoursePreviewHeader: React.FC<CoursePreviewHeaderProps> = ({ courseData }) => {
+const SectionCoursePreviewHeader: React.FC<SectionCoursePreviewHeaderProps> = ({ courseData }) => {
   return (
     <Box sx={{ bgcolor: "#000", pb: "25px" }}>
       <Container sx={{ maxWidth: "1200px", margin: "0 auto" }}>
@@ -190,4 +190,4 @@ const CoursePreviewHeader: React.FC<CoursePreviewHeaderProps> = ({ courseData })
   );
 };
 
-export default CoursePreviewHeader;
+export default SectionCoursePreviewHeader;

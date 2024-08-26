@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 
 import useTitle from "src/hooks/useTitle/useTitle";
 import { PageProps } from "pages/type";
-import { LandingHeroSection, LandingAboutSection, LandingContactSection } from "src/widgets";
+import { SectionLandingHero, SectionLandingAbout, SectionLandingContact } from "src/widgets/sections";
 import { SectionFeatures } from "./ui";
 
 const StudentLandingPage = ({ title }: PageProps) => {
@@ -14,23 +14,23 @@ const StudentLandingPage = ({ title }: PageProps) => {
 
   return (
     <>
-      <LandingHeroSection
+      <SectionLandingHero
         title={t("student-landing.hero-section.title")}
         subtitle={t("student-landing.hero-section.subtitle")}
         buttonTitle={t("student-landing.hero-section.heroButton")}
         features={heroSectionfeatures}
       >
         <img src="assets/student-landing-hero.png" alt={t("student-landing.hero-section.imageAltText")} />
-      </LandingHeroSection>
-      <LandingAboutSection
+      </SectionLandingHero>
+      <SectionLandingAbout
         title={t("student-landing.about-section.title")}
         wordsList={aboutSectionWords}
         description={t("student-landing.about-section.description")}
       >
         <img src="assets/student-landing-about.png" alt={t("student-landing.about-section.imageAltText")} />
-      </LandingAboutSection>
+      </SectionLandingAbout>
       <SectionFeatures />
-      <LandingContactSection />
+      <SectionLandingContact />
     </>
   );
 };

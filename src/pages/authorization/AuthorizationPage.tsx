@@ -5,7 +5,7 @@ import { Box, Tab } from "@mui/material";
 
 import { AuthPageSection } from "src/app/routing/appRoutes";
 import useTitle from "src/hooks/useTitle/useTitle";
-import { LoginForm, RegistrationForm } from "src/widgets";
+import { LoginForm, RegistrationForm } from "src/widgets/forms";
 import { PageProps } from "pages/type";
 
 const authorizationPage = ({ title }: PageProps) => {

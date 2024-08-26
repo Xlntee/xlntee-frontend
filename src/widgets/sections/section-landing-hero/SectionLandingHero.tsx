@@ -6,9 +6,9 @@ import { useTheme } from "@mui/material/styles";
 import { AppRoutes } from "src/app/routing/appRoutes";
 import { CheckList } from "./ui";
 
-import "./LandingHeroSection.scss";
+import "./SectionLandingHero.scss";
 
-interface LandingHeroSectionProps {
+interface SectionLandingHeroProps {
   title: string;
   subtitle: string;
   buttonTitle: string;
@@ -16,7 +16,7 @@ interface LandingHeroSectionProps {
   children: ReactNode;
 }
 
-const LandingHeroSection: React.FC<LandingHeroSectionProps> = ({
+const SectionLandingHero: React.FC<SectionLandingHeroProps> = ({
   title,
   subtitle,
   buttonTitle,
@@ -26,7 +26,7 @@ const LandingHeroSection: React.FC<LandingHeroSectionProps> = ({
   const theme = useTheme();
 
   const isFeaturesArray = Array.isArray(features);
-  LandingHeroSection;
+  SectionLandingHero;
 
   return (
     <Box component="section" className="section-hero">
@@ -63,4 +63,4 @@ const LandingHeroSection: React.FC<LandingHeroSectionProps> = ({
   );
 };
 
-export default LandingHeroSection;
+export default SectionLandingHero;

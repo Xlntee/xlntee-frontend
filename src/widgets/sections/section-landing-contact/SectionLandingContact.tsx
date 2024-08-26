@@ -20,7 +20,7 @@ const links: ContactLinkType[] = [
   },
 ];
 
-const LandingContactSection = () => {
+const SectionLandingContact = () => {
   const { t } = useTranslation("teacher-landing");
 
   return (
@@ -55,4 +55,4 @@ const LandingContactSection = () => {
   );
 };
 
-export default LandingContactSection;
+export default SectionLandingContact;

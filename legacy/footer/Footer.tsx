@@ -8,7 +8,7 @@ import {
   FooterButtonComponent, FooterCaptionComponent, FooterLinkComponent, FooterTextComponent
 } from "./ui";
 
-import { ViolationModal, InformationModal, StudentModal, TeacherModal } from "src/widgets";
+import { ViolationModal, InformationModal, StudentModal, TeacherModal } from "src/widgets/modals";
 
 const Footer = () => {
   const [openTeacherModal, setOpenTeacherModal] = useState(false);

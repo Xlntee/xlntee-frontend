@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useGetCourseQuery } from "src/entities/course/api/coursesApiSlice";
-import { CoursePreviewContent, CoursePreviewHeader } from "src/widgets";
+import { SectionCoursePreviewContent, SectionCoursePreviewHeader } from "src/widgets/sections";
 import useTitle from "src/hooks/useTitle/useTitle";
 import { PageProps } from "pages/type";
 
@@ -28,8 +28,8 @@ const CoursePreviewPage = ({ title }: PageProps) => {
   //
   return (
     <>
-      <CoursePreviewHeader courseData={data} />
-      <CoursePreviewContent courseData={data} />
+      <SectionCoursePreviewHeader courseData={data} />
+      <SectionCoursePreviewContent courseData={data} />
       <button onClick={() => console.log(data)}>click</button>
     </>
   );

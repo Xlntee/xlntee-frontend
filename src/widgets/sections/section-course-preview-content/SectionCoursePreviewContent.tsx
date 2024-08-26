@@ -22,11 +22,11 @@ const tempCourseInfo = [
   "Розуміння різниці фрон-енд та бек-енд розробки",
 ];
 
-interface CoursePreviewContentProps {
+interface SectionCoursePreviewContentProps {
   courseData: Course;
 }
 
-const CoursePreviewContent: React.FC<CoursePreviewContentProps> = ({ courseData }) => {
+const SectionCoursePreviewContent: React.FC<SectionCoursePreviewContentProps> = ({ courseData }) => {
   return (
     <Box
       sx={{
@@ -39,8 +39,8 @@ const CoursePreviewContent: React.FC<CoursePreviewContentProps> = ({ courseData 
       }}
     >
       <Stack flexDirection="row" justifyContent="space-between">
-        <CoursePreviewInfoBlock header={"Курс навчає:"} info={tempAboutCourseInfo} />
-        <CoursePreviewInfoBlock header={"Що потрібно знати:"} info={tempCourseInfo} />
+        <CoursePreviewInfoBlock header="Курс навчає:" info={tempAboutCourseInfo} />
+        <CoursePreviewInfoBlock header="Що потрібно знати:" info={tempCourseInfo} />
       </Stack>
       <CoursePreviewStructureBlock />
       <CoursePreviewDescriptionBlock courseDescription={courseData.landingSetting.description} />
@@ -49,4 +49,4 @@ const CoursePreviewContent: React.FC<CoursePreviewContentProps> = ({ courseData 
   );
 };
 
-export default CoursePreviewContent;
+export default SectionCoursePreviewContent;

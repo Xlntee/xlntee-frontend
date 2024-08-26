@@ -3,16 +3,16 @@ import { Box, Grid, Container, Typography } from "@mui/material";
 import { XlnteeColors } from "src/shared/themes/colors";
 import { ArrowsWordsList } from "./ui";
 
-import "./LandingAboutSection.scss";
+import "./SectionLandingAbout.scss";
 
-interface LandingAboutSectionProps {
+interface SectionLandingAboutProps {
   title: string;
   wordsList: string[];
   description: string;
   children: ReactNode;
 }
 
-const LandingAboutSection: React.FC<LandingAboutSectionProps> = ({ title, wordsList, description, children }) => {
+const SectionLandingAbout: React.FC<SectionLandingAboutProps> = ({ title, wordsList, description, children }) => {
   return (
     <Box component="section" className="section-about">
       <Container>
@@ -37,4 +37,4 @@ const LandingAboutSection: React.FC<LandingAboutSectionProps> = ({ title, wordsL
   );
 };
 
-export default LandingAboutSection;
+export default SectionLandingAbout;
