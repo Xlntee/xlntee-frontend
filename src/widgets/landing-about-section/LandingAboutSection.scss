@@ -1,0 +1,30 @@
+@use "styles/mixins.scss" as mixins;
+
+.section-about {
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  &__panel {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 6px 0 rgb(var(--dark-color) / 0.15);
+    border-radius: 20px;
+    padding: 30px 20px;
+
+    @include mixins.media(tablet_lg) {
+      padding: 40px;
+    }
+  }
+
+  &__title {
+    &.MuiTypography-root {
+      font-weight: 300;
+      margin-bottom: 36px;
+
+      @include mixins.media(desktop) {
+        font-size: 48px;
+        margin-bottom: 56px;
+      }
+    }
+  }
+}

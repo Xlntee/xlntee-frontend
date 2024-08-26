@@ -1,1 +1,1 @@
-export { default as StudentFeaturesSection } from "./StudentFeaturesSection";
+export * from "./SectionFeatures";

@@ -44,6 +44,7 @@ export const defaultTheme = createTheme({
     },
     info: {
       main: XlnteeColors.LinkColor,
+      light: XlnteeColors.Violet100,
     },
     grey: {
       "100": XlnteeColors.LightElementColor,
@@ -127,7 +128,7 @@ defaultTheme.typography.h2 = {
 
 defaultTheme.typography.h3 = {
   fontSize: 28,
-  lineHeight: 1,
+  lineHeight: 1.35,
 
   [defaultTheme.breakpoints.up("lg")]: {
     fontSize: 30,
@@ -136,23 +137,27 @@ defaultTheme.typography.h3 = {
 
 defaultTheme.typography.h4 = {
   fontSize: 24,
-  lineHeight: 1,
+  lineHeight: 1.45,
 };
 
 defaultTheme.typography.h5 = {
   fontSize: 20,
-  lineHeight: 1,
+  lineHeight: 1.45,
 };
 
 defaultTheme.typography.h6 = {
   fontSize: 18,
-  lineHeight: 1,
+  lineHeight: 1.2,
 };
 
 defaultTheme.typography.body1 = {
-  fontSize: 20,
+  fontSize: 18,
   lineHeight: 1.5,
   color: XlnteeColors.BlackTextColor,
+
+  [defaultTheme.breakpoints.up("lg")]: {
+    fontSize: 20,
+  },
 };
 
 defaultTheme.typography.body2 = {
@@ -161,22 +166,28 @@ defaultTheme.typography.body2 = {
   color: XlnteeColors.BlackTextColor,
 };
 
+defaultTheme.typography.caption = {
+  fontSize: 14,
+  lineHeight: 1.35,
+  color: XlnteeColors.BlackTextColor,
+};
+
 defaultTheme.components = {
   MuiContainer: {
     styleOverrides: {
       root: {
-        maxWidth: 1280,
+        maxWidth: 1320,
         paddingInline: 20,
         [defaultTheme.breakpoints.up("sm")]: {
-          maxWidth: 1280,
+          maxWidth: 1320,
           paddingInline: 20,
         },
         [defaultTheme.breakpoints.up("md")]: {
-          maxWidth: 1280,
+          maxWidth: 1320,
           paddingInline: 20,
         },
         [defaultTheme.breakpoints.up("lg")]: {
-          maxWidth: 1280,
+          maxWidth: 1320,
           paddingInline: 20,
         },
       },
@@ -187,42 +198,43 @@ defaultTheme.components = {
       root: {
         textTransform: "none",
         lineHeight: 1.4,
+        fontWeight: 700,
         boxShadow: "none",
         ":hover": {
           boxShadow: "none",
         },
       },
       sizeSmall: {
-        fontSize: 12,
+        fontSize: 14,
         borderRadius: 5,
-        height: 36,
-        [defaultTheme.breakpoints.up("lg")]: {
-          fontSize: 14,
-        },
+        minHeight: 36,
+        height: "auto",
         [defaultTheme.breakpoints.up("xl")]: {
-          height: 40,
+          minHeight: 40,
         },
       },
       sizeMedium: {
-        fontSize: 12,
+        fontSize: 14,
         borderRadius: 5,
-        height: 36,
+        minHeight: 36,
+        height: "auto",
         [defaultTheme.breakpoints.up("lg")]: {
           fontSize: 16,
         },
         [defaultTheme.breakpoints.up("xl")]: {
-          height: 50,
+          minHeight: 50,
         },
       },
       sizeLarge: {
-        fontSize: 12,
+        fontSize: 14,
         borderRadius: 5,
+        height: "auto",
         [defaultTheme.breakpoints.up("lg")]: {
           fontSize: 16,
         },
         [defaultTheme.breakpoints.up("xl")]: {
           fontSize: 20,
-          height: 60,
+          minHeight: 60,
         },
       },
     },
@@ -266,6 +278,11 @@ defaultTheme.components = {
           borderColor: XlnteeColors.DarkColor,
           borderWidth: 1,
           borderStyle: "solid",
+
+          "&:hover": {
+            color: XlnteeColors.LightColor,
+            backgroundColor: XlnteeColors.DarkColor,
+          },
         },
       },
       {

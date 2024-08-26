@@ -10,3 +10,4 @@ export * from "./registration-form";
 export * from "./student-modal";
 export * from "./teacher-modal";
 export * from "./violation-modal";
+export * from "./feature";

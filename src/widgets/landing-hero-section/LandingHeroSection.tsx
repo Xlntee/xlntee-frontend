@@ -1,10 +1,12 @@
 import React, { ReactNode } from "react";
 import { Link as RouterLink } from "react-router-dom";
-import { Box, Button, Stack, Typography } from "@mui/material";
+import { Box, Button, Grid, Typography, Container } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
 import { AppRoutes } from "src/app/routing/appRoutes";
-import { CheckItem } from "./ui";
+import { CheckList } from "./ui";
+
+import "./LandingHeroSection.scss";
 
 interface LandingHeroSectionProps {
   title: string;
@@ -22,50 +24,42 @@ const LandingHeroSection: React.FC<LandingHeroSectionProps> = ({
   children,
 }) => {
   const theme = useTheme();
+
   const isFeaturesArray = Array.isArray(features);
+  LandingHeroSection;
 
   return (
-    <Stack width="100%" direction="row" alignItems="center" justifyContent="space-between" mb={15} px={2}>
-      <Box>
-        <Typography color="primary" sx={{ fontWeight: 700, mb: 2 }} variant="h3">
-          {title}
-        </Typography>
-        <Typography
-          sx={{
-            display: "inline-block",
-            bgcolor: theme.palette.primary.main,
-            color: theme.palette.primary.contrastText,
-            fontWeight: 400,
-            py: 1,
-            px: 3,
-            mb: 4,
-            borderRadius: "25px",
-          }}
-          variant="h6"
-        >
-          {subtitle}
-        </Typography>
-        <Stack direction="row" flexWrap="wrap" gap={2} mb={4} maxWidth="700px">
-          {isFeaturesArray && features.map((feature, index) => <CheckItem key={index}>{feature}</CheckItem>)}
-        </Stack>
-        <Button
-          component={RouterLink}
-          to={AppRoutes.auth}
-          color="secondary"
-          variant="contained"
-          sx={{
-            borderRadius: "50px",
-            py: 2,
-            px: 6,
-            fontWeight: 700,
-            fontSize: "20px",
-          }}
-        >
-          {buttonTitle}
-        </Button>
-      </Box>
-      {children}
-    </Stack>
+    <Box component="section" className="section-hero">
+      <Container>
+        <Grid container rowGap="30px" columnGap={{ md: "40px" }} justifyContent={{ md: "space-between" }}>
+          <Grid item xs={12} md={6} direction="column" display="flex" alignItems="start" gap="30px">
+            <Typography color="primary" variant="h1" mb="-14px" lineHeight={1}>
+              {title}
+            </Typography>
+            <Typography variant="body1" color={theme.palette.primary.contrastText} className="section-hero__subtitle">
+              {subtitle}
+            </Typography>
+            {isFeaturesArray && <CheckList items={features} />}
+            <Button
+              component={RouterLink}
+              to={AppRoutes.auth}
+              color="secondary"
+              variant="contained"
+              size="large"
+              sx={{
+                borderRadius: "50px",
+                px: "36px",
+              }}
+            >
+              {buttonTitle}
+            </Button>
+          </Grid>
+          <Grid item xs={6} md={5} mx="auto">
+            {children}
+          </Grid>
+        </Grid>
+      </Container>
+    </Box>
   );
 };
 

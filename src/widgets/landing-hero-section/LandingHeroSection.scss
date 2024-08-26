@@ -1,0 +1,17 @@
+@use "styles/mixins.scss" as mixins;
+
+.section-hero {
+  padding-block: 40px;
+
+  @include mixins.media(tablet_lg) {
+    padding-top: 82px;
+  }
+
+  &__subtitle {
+    display: inline-block;
+    padding-block: 8px;
+    padding: 4px 24px;
+    border-radius: 25px;
+    background-color: rgb(var(--primary-color));
+  }
+}

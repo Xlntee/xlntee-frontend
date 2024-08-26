@@ -1,1 +1,1 @@
-export { default as ArrowsWordsList } from "./ArrowsWordsList";
+export * from "./arrows-words-list";

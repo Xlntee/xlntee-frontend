@@ -1,11 +1,10 @@
-import { Container } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
 import useTitle from "src/hooks/useTitle/useTitle";
 import { PageProps } from "pages/type";
 
 import { LandingHeroSection, LandingAboutSection, LandingContactSection } from "src/widgets";
-import { PriceTable, TeacherFeaturesSection } from "./ui";
+import { SectionFeatures, SectionPriceTable } from "./ui";
 
 const TeacherLandingPage = ({ title }: PageProps) => {
   useTitle(title);
@@ -15,7 +14,7 @@ const TeacherLandingPage = ({ title }: PageProps) => {
   const aboutSectionWords: string[] = t("teacher-landing.about-section.wordList", { returnObjects: true });
 
   return (
-    <Container>
+    <>
       <LandingHeroSection
         title={t("teacher-landing.hero-section.title")}
         subtitle={t("teacher-landing.hero-section.subtitle")}
@@ -31,10 +30,10 @@ const TeacherLandingPage = ({ title }: PageProps) => {
       >
         <img src="assets/teacher-landing-about.png" alt={t("teacher-landing.about-section.imageAltText")} />
       </LandingAboutSection>
-      <TeacherFeaturesSection />
-      <PriceTable />
+      <SectionFeatures />
+      <SectionPriceTable />
       <LandingContactSection />
-    </Container>
+    </>
   );
 };
 
