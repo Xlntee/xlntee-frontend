@@ -42,6 +42,12 @@
   "teacher-landing.price-table-section.tableCaption": "Обери свій план",
   "teacher-landing.price-table-section.firstPlanTitle": "Easy Start",
   "teacher-landing.price-table-section.firstPlanDescription": "Легкий старт без витрат на створення та запуск навчальних продуктів — платиш тільки коли продаєш.",
+
+  "teacher-landing.price-table-section.getFree": "Отримати безкоштовно",
+  "teacher-landing.price-table-section.enroll": "Зареєструватися",
+  "teacher-landing.price-table-section.recommended": "Рекомендовано",
+  "teacher-landing.price-table-section.startForFree": "Почніть безкоштовно",
+
   "teacher-landing.price-table-section.secondPlanTitle": "Business",
   "teacher-landing.price-table-section.secondPlanDescription": "Коли є гарний продукт і хочеться розвиватися далі.",
   "teacher-landing.price-table-section.thirdPlanTitle": "Xlntee Enterprise: рішення для підприємств",

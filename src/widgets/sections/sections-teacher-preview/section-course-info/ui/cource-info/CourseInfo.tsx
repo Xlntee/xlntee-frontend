@@ -3,11 +3,11 @@ import { Stack, List, Box, ListItem, Typography } from "@mui/material";
 import { XlnteeColors } from "src/shared/themes/colors";
 
 interface CoursePreviewInfoBlockProps {
-  header: string;
+  title: string;
   info: string[];
 }
 
-const CoursePreviewInfoBlock: React.FC<CoursePreviewInfoBlockProps> = ({ header, info }) => {
+const CoursePreviewInfoBlock: React.FC<CoursePreviewInfoBlockProps> = ({ title, info }) => {
   return (
     <Stack
       gap="14px"
@@ -17,7 +17,7 @@ const CoursePreviewInfoBlock: React.FC<CoursePreviewInfoBlockProps> = ({ header,
       border={`1px solid ${XlnteeColors.GrayColor400}`}
     >
       <Typography variant="h2" fontWeight={400}>
-        {header}
+        {title}:
       </Typography>
       <List
         sx={{

@@ -1,0 +1,17 @@
+.discount {
+  --discount-text-size: 16px;
+
+  display: inline-block;
+  border-radius: 20px;
+  padding: 6px 12px;
+  background-color: rgb(var(--cta-color));
+
+  &.MuiBox-root {
+    color: rgb(var(--light-color));
+    font-size: var(--discount-text-size);
+  }
+
+  &--large {
+    --discount-text-size: 20px;
+  }
+}

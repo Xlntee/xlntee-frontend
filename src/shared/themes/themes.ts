@@ -105,6 +105,16 @@ export const defaultTheme = createTheme({
         },
       },
     },
+    MuiRating: {
+      styleOverrides: {
+        sizeSmall: {
+          fontSize: "16px",
+        },
+        sizeLarge: {
+          fontSize: "24px",
+        },
+      },
+    },
   },
 });
 

@@ -47,7 +47,7 @@ const PriceTable = () => {
                       {t("teacher-landing.price-table-section.firstPlanDescription")}
                     </Typography>
                     <Button variant="black-outline" size="medium" className="price-table__cta-button">
-                      Get for Free
+                      {t("teacher-landing.price-table-section.getFree")}
                     </Button>
                   </Box>
                 </TableCell>
@@ -61,10 +61,10 @@ const PriceTable = () => {
                     </Typography>
                     <Box>
                       <Button color="primary" variant="contained" size="medium" className="price-table__cta-button">
-                        Enroll
+                        {t("teacher-landing.price-table-section.enroll")}
                       </Button>
                       <Typography color="secondary.main" variant="body2" fontWeight={300}>
-                        Recommended
+                        {t("teacher-landing.price-table-section.recommended")}
                       </Typography>
                     </Box>
                   </Box>
@@ -90,7 +90,7 @@ const PriceTable = () => {
                       {t("teacher-landing.price-table-section.fourthPlanDescription")}
                     </Typography>
                     <Button variant="black-outline" size="medium" className="price-table__cta-button">
-                      Start for Free
+                      {t("teacher-landing.price-table-section.startForFree")}
                     </Button>
                   </Box>
                 </TableCell>

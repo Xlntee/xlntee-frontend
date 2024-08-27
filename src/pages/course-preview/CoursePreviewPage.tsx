@@ -5,11 +5,12 @@ import {
   SectionCourseHero,
   SectionCourseStructure,
   SectionCourseDescription,
-  SectionAboutTeacher,
-} from "src/widgets/sections";
+  SectionCourseAbout,
+} from "src/widgets/sections/sections-teacher-preview";
 import useTitle from "src/hooks/useTitle/useTitle";
 import { PageProps } from "pages/type";
 import { Stack } from "@mui/material";
+import { Difficulty, Language } from "src/entities/course/model";
 
 const CoursePreviewPage = ({ title }: PageProps) => {
   useTitle(title);
@@ -35,12 +36,34 @@ const CoursePreviewPage = ({ title }: PageProps) => {
   //
   return (
     <>
-      <SectionCourseHero courseData={data} />
       <Stack direction="column" gap="50px" py="40px">
+        <SectionCourseHero
+          preview="https://images.unsplash.com/photo-1719937051157-d3d81cc28e86?q=80&w=2944&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          nickname="Nickname"
+          title="Technology Business, how to become a professional in this topic."
+          description="Description of the course Description of the course Description of the course Description of the course"
+          discount={24}
+          price={1999}
+          rating={4.8}
+          language={Language.ENGLISH}
+          level={Difficulty.ALL}
+          generateCertificate={false}
+          reviewCount={4.8}
+        />
         <SectionCourseInfo />
         <SectionCourseStructure />
         <SectionCourseDescription courseDescription={data.landingSetting.description} />
-        <SectionAboutTeacher />
+        <SectionCourseAbout
+          name={"Name Surname"}
+          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero velit soluta impedit dolorum voluptatem ducimus incidunt sed tempora consequuntur, omnis, iusto odit saepe enim excepturi cum! Voluptatum veniam illo velit?"
+          skills={[
+            "Senior Business Analytic",
+            "MBA",
+            "Junior SEO manager",
+            "Middle Product Manager",
+            "Junior JS developer",
+          ]}
+        />
       </Stack>
 
       <button onClick={() => console.log(data)}>click</button>

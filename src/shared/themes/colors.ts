@@ -30,4 +30,5 @@ export enum XlnteeColors {
   SuccessExtraLightColor = "#F2FFF3",
   SuccessLightColor = "#AFEDC0",
   SuccessDarkColor = "#329C56",
+  YellowColor = "#faaf00",
 }

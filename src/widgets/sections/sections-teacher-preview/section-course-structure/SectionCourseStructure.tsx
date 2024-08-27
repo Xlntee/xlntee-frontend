@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 import {
   Box,
   Stack,
@@ -130,7 +132,9 @@ const AccordionSummary = styled((props: AccordionSummaryProps) => (
   },
 }));
 
-const CoursePreviewStructureBlock = () => {
+const SectionCourseStructure = () => {
+  const { t } = useTranslation("teacher-preview");
+
   return (
     <Box component="section" className="section-course-structure">
       <Container>
@@ -142,7 +146,7 @@ const CoursePreviewStructureBlock = () => {
           border={`1px solid ${XlnteeColors.GrayStrokeColor}`}
         >
           <Typography variant="h2" fontWeight={400}>
-            Структура курсу
+            {t("teacher-preview.section-course-structure.title")}
           </Typography>
           <Stack gap="10px">
             {data.map((item, index) => (
@@ -159,8 +163,8 @@ const CoursePreviewStructureBlock = () => {
                 </AccordionSummary>
                 <MuiAccordionDetails>
                   <Stack pl={{ xs: "40px", md: "114px" }} flexDirection="column" gap="10px">
-                    {item.details.map((detail) => (
-                      <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }} fontWeight={500}>
+                    {item.details.map((detail, index) => (
+                      <Box key={index} sx={{ display: "flex", alignItems: "center", gap: "10px" }} fontWeight={500}>
                         <Typography component="span" color="primary" display="flex" alignItems="center">
                           {detail.icon}
                         </Typography>
@@ -178,4 +182,4 @@ const CoursePreviewStructureBlock = () => {
   );
 };
 
-export default CoursePreviewStructureBlock;
+export default SectionCourseStructure;
