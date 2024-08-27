@@ -1,19 +1,26 @@
+import { Suspense, lazy, ReactNode } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import {
-  LoginPage,
-  RegistrationPage,
-  CreateCoursePage,
-  AuthorizationPage,
-  CoursePreviewPage,
-  TeacherLandingPage,
-  StudentLandingPage,
-  UiPage,
-} from "src/pages";
+
+import PageLoader from "./PageLoader";
+import { AppRoutes } from "./appRoutes";
+import { ProtectedRoute } from "./ProtectedRoute";
 
 import { PrivateLayout, PublicLayout } from "src/layouts";
 
-import { AppRoutes } from "./appRoutes";
-import { ProtectedRoute } from "./ProtectedRoute";
+// Lazy load the component
+const AuthorizationPage = lazy(() => import("src/pages/authorization/AuthorizationPage"));
+const CoursePreviewPage = lazy(() => import("src/pages/course-preview/CoursePreviewPage"));
+const CreateCoursePage = lazy(() => import("src/pages/create-course/CreateCoursePage"));
+const HomePage = lazy(() => import("src/pages/home-template/HomePage"));
+const LoginPage = lazy(() => import("src/pages/login/LoginPage"));
+const RegistrationPage = lazy(() => import("src/pages/registration/RegistrationPage"));
+const StudentLandingPage = lazy(() => import("src/pages/student/landing-page/LandingPage"));
+const TeacherLandingPage = lazy(() => import("src/pages/teacher/landing-page/LandingPage"));
+const UiPage = lazy(() => import("src/pages/ui"));
+
+const SuspenseWrapper = ({ children }: { children: ReactNode }) => {
+  return <Suspense fallback={<PageLoader />}>{children}</Suspense>;
+};
 
 const router = createBrowserRouter([
   {
@@ -22,39 +29,76 @@ const router = createBrowserRouter([
     children: [
       {
         path: AppRoutes.home,
-        element: <TeacherLandingPage title="Teacher landing" />,
+        element: (
+          <SuspenseWrapper>
+            {/* <HomePage title="Home page" /> */}
+            <TeacherLandingPage title="Teacher landing" />
+          </SuspenseWrapper>
+        ),
       },
       {
         path: AppRoutes.teacherLanding,
-        element: <TeacherLandingPage title="Teacher landing" />,
+        element: (
+          <SuspenseWrapper>
+            <TeacherLandingPage title="Teacher landing" />
+          </SuspenseWrapper>
+        ),
       },
       {
         path: AppRoutes.studentLanding,
-        element: <StudentLandingPage title="Student landing" />,
+        element: (
+          <SuspenseWrapper>
+            <StudentLandingPage title="Student landing" />
+          </SuspenseWrapper>
+        ),
       },
       {
         path: AppRoutes.login,
-        element: <LoginPage title="Login" />,
+        element: (
+          <SuspenseWrapper>
+            <LoginPage title="Login" />,
+          </SuspenseWrapper>
+        ),
       },
       {
         path: AppRoutes.registration,
-        element: <RegistrationPage title="Registration" />,
+        element: (
+          <SuspenseWrapper>
+            <RegistrationPage title="Registration" />
+          </SuspenseWrapper>
+        ),
       },
       {
         path: AppRoutes.auth,
-        element: <AuthorizationPage title="Auth" />,
+        element: (
+          <SuspenseWrapper>
+            <AuthorizationPage title="Auth" />
+          </SuspenseWrapper>
+        ),
       },
       {
         path: AppRoutes.authType,
-        element: <AuthorizationPage title="Auth" />,
+        element: (
+          <SuspenseWrapper>
+            <AuthorizationPage title="Auth" />
+          </SuspenseWrapper>
+        ),
       },
       {
         path: AppRoutes.previewCourse,
-        element: <CoursePreviewPage title="Course preview" />,
+        element: (
+          <SuspenseWrapper>
+            <CoursePreviewPage title="Course preview" />
+          </SuspenseWrapper>
+        ),
       },
       {
         path: AppRoutes.ui,
-        element: <UiPage title="UI" />,
+        element: (
+          <SuspenseWrapper>
+            <UiPage title="UI" />
+          </SuspenseWrapper>
+        ),
       },
       {
         path: AppRoutes.notFound,
@@ -67,7 +111,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: AppRoutes.createCourse,
-        element: <CreateCoursePage title="Create course" />,
+        element: (
+          <SuspenseWrapper>
+            <CreateCoursePage title="Create course" />
+          </SuspenseWrapper>
+        ),
       },
     ],
   },
