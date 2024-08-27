@@ -19,17 +19,21 @@ const TeacherLandingPage = ({ title }: PageProps) => {
         title={t("teacher-landing.hero-section.title")}
         subtitle={t("teacher-landing.hero-section.subtitle")}
         buttonTitle={t("teacher-landing.hero-section.heroButton")}
+        image={{
+          src: "assets/teacher-landing-hero.png",
+          alt: t("teacher-landing.hero-section.imageAltText"),
+        }}
         features={heroSectionfeatures}
-      >
-        <img src="assets/teacher-landing-hero.png" alt={t("teacher-landing.hero-section.imageAltText")} />
-      </SectionLandingHero>
+      />
       <SectionLandingAbout
         title={t("teacher-landing.about-section.title")}
         wordsList={aboutSectionWords}
         description={t("teacher-landing.about-section.description")}
-      >
-        <img src="assets/teacher-landing-about.png" alt={t("teacher-landing.about-section.imageAltText")} />
-      </SectionLandingAbout>
+        image={{
+          src: "assets/teacher-landing-about.png",
+          alt: t("teacher-landing.about-section.imageAltText"),
+        }}
+      />
       <SectionFeatures />
       <SectionPriceTable />
       <SectionLandingContact />

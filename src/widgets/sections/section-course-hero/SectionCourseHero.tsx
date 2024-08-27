@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { Box, Button, Container, IconButton, InputAdornment, Stack, TextField, Typography } from "@mui/material";
 import { AccountCircle } from "@mui/icons-material";
 import SearchIcon from "@mui/icons-material/Search";
@@ -13,11 +14,11 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import { Rating } from "src/features";
 import { Course } from "src/entities/course/model";
 
-interface SectionCoursePreviewHeaderProps {
+interface SectionCourseHeroProps {
   courseData: Course;
 }
 
-const SectionCoursePreviewHeader: React.FC<SectionCoursePreviewHeaderProps> = ({ courseData }) => {
+const SectionCourseHero: FC<SectionCourseHeroProps> = ({ courseData }) => {
   return (
     <Box sx={{ bgcolor: "#000", pb: "25px" }}>
       <Container sx={{ maxWidth: "1200px", margin: "0 auto" }}>
@@ -190,4 +191,4 @@ const SectionCoursePreviewHeader: React.FC<SectionCoursePreviewHeaderProps> = ({
   );
 };
 
-export default SectionCoursePreviewHeader;
+export default SectionCourseHero;

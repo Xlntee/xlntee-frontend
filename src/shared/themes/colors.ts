@@ -21,6 +21,8 @@ export enum XlnteeColors {
   GrayColor500 = "#BDBDBD",
   GrayColor600 = "#666666",
   GrayColor700 = "#828282",
+  GrayColor800 = "#f9f9f9",
+  GrayColor900 = "#f3f3f3",
   WarningExtraLightColor = "#FF99B2",
   WarningLightColor = "#EE2C2C",
   WarningBaseColor = "#B63030",

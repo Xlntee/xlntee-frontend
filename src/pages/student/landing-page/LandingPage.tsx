@@ -18,17 +18,21 @@ const StudentLandingPage = ({ title }: PageProps) => {
         title={t("student-landing.hero-section.title")}
         subtitle={t("student-landing.hero-section.subtitle")}
         buttonTitle={t("student-landing.hero-section.heroButton")}
+        image={{
+          src: "assets/student-landing-hero.png",
+          alt: t("student-landing.hero-section.imageAltText"),
+        }}
         features={heroSectionfeatures}
-      >
-        <img src="assets/student-landing-hero.png" alt={t("student-landing.hero-section.imageAltText")} />
-      </SectionLandingHero>
+      />
       <SectionLandingAbout
         title={t("student-landing.about-section.title")}
         wordsList={aboutSectionWords}
         description={t("student-landing.about-section.description")}
-      >
-        <img src="assets/student-landing-about.png" alt={t("student-landing.about-section.imageAltText")} />
-      </SectionLandingAbout>
+        image={{
+          src: "assets/student-landing-about.png",
+          alt: "student-landing.about-section.imageAltText",
+        }}
+      />
       <SectionFeatures />
       <SectionLandingContact />
     </>

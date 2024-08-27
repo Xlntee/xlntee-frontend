@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import { FC } from "react";
 import { Box, Grid, Container, Typography } from "@mui/material";
 import { XlnteeColors } from "src/shared/themes/colors";
 import { ArrowsWordsList } from "./ui";
@@ -9,10 +9,13 @@ interface SectionLandingAboutProps {
   title: string;
   wordsList: string[];
   description: string;
-  children: ReactNode;
+  image: {
+    src: string;
+    alt: string;
+  };
 }
 
-const SectionLandingAbout: React.FC<SectionLandingAboutProps> = ({ title, wordsList, description, children }) => {
+const SectionLandingAbout: FC<SectionLandingAboutProps> = ({ title, wordsList, description, image }) => {
   return (
     <Box component="section" className="section-about">
       <Container>
@@ -22,7 +25,7 @@ const SectionLandingAbout: React.FC<SectionLandingAboutProps> = ({ title, wordsL
           </Typography>
           <Grid container direction="row" spacing={{ md: "40px" }} paddingInline={{ md: "30px" }}>
             <Grid item md={4} mx="auto">
-              {children}
+              <img src={image.src} alt={image.alt} />
             </Grid>
             <Grid item md={8} display="flex" flexDirection="column" gap="16px">
               <ArrowsWordsList wordsArray={wordsList} />

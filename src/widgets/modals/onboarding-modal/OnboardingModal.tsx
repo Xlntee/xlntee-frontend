@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Box, Button, Modal, Typography } from "@mui/material";
 import CloseIcon from "@mui/icons-material/CloseOutlined";
 import OnboardingSwiper from "./onboarding-swiper/OnboardingSwiper";
+import { XlnteeColors } from "src/shared/themes/colors";
 
 const style = {
   position: "absolute" as "absolute",
@@ -52,7 +53,7 @@ const OnboardingModal = () => {
           </Box>
           {isLastSlide && (
             <Button sx={{ position: "absolute", top: 0, right: 0 }}>
-              <CloseIcon fontSize="large" sx={{ color: "#c4c4c4" }} onClick={handleClose} />
+              <CloseIcon fontSize="large" sx={{ color: XlnteeColors.GrayColor400 }} onClick={handleClose} />
             </Button>
           )}
           {isLastSlide && (

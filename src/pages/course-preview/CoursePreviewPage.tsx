@@ -1,8 +1,15 @@
 import { useParams } from "react-router-dom";
 import { useGetCourseQuery } from "src/entities/course/api/coursesApiSlice";
-import { SectionCoursePreviewContent, SectionCoursePreviewHeader } from "src/widgets/sections";
+import {
+  SectionCourseInfo,
+  SectionCourseHero,
+  SectionCourseStructure,
+  SectionCourseDescription,
+  SectionAboutTeacher,
+} from "src/widgets/sections";
 import useTitle from "src/hooks/useTitle/useTitle";
 import { PageProps } from "pages/type";
+import { Stack } from "@mui/material";
 
 const CoursePreviewPage = ({ title }: PageProps) => {
   useTitle(title);
@@ -28,8 +35,14 @@ const CoursePreviewPage = ({ title }: PageProps) => {
   //
   return (
     <>
-      <SectionCoursePreviewHeader courseData={data} />
-      <SectionCoursePreviewContent courseData={data} />
+      <SectionCourseHero courseData={data} />
+      <Stack direction="column" gap="50px" py="40px">
+        <SectionCourseInfo />
+        <SectionCourseStructure />
+        <SectionCourseDescription courseDescription={data.landingSetting.description} />
+        <SectionAboutTeacher />
+      </Stack>
+
       <button onClick={() => console.log(data)}>click</button>
     </>
   );

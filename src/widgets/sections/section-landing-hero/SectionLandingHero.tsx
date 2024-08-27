@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import { FC } from "react";
 import { Link as RouterLink } from "react-router-dom";
 import { Box, Button, Grid, Typography, Container } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
@@ -13,16 +13,13 @@ interface SectionLandingHeroProps {
   subtitle: string;
   buttonTitle: string;
   features: string[];
-  children: ReactNode;
+  image: {
+    src: string;
+    alt: string;
+  };
 }
 
-const SectionLandingHero: React.FC<SectionLandingHeroProps> = ({
-  title,
-  subtitle,
-  buttonTitle,
-  features,
-  children,
-}) => {
+const SectionLandingHero: FC<SectionLandingHeroProps> = ({ title, subtitle, buttonTitle, features, image }) => {
   const theme = useTheme();
 
   const isFeaturesArray = Array.isArray(features);
@@ -55,7 +52,7 @@ const SectionLandingHero: React.FC<SectionLandingHeroProps> = ({
             </Button>
           </Grid>
           <Grid item xs={6} md={5} mx="auto">
-            {children}
+            <img src={image.src} alt={image.alt} />
           </Grid>
         </Grid>
       </Container>
