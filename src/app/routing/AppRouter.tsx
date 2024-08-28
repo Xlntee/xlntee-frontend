@@ -17,6 +17,7 @@ const RegistrationPage = lazy(() => import("src/pages/registration/RegistrationP
 const StudentLandingPage = lazy(() => import("src/pages/student/landing-page/LandingPage"));
 const TeacherLandingPage = lazy(() => import("src/pages/teacher/landing-page/LandingPage"));
 const UiPage = lazy(() => import("src/pages/ui"));
+const MyCoursesPage = lazy(() => import("src/pages/teacher/my-courses-page/MyCoursesPage"));
 
 const SuspenseWrapper = ({ children }: { children: ReactNode }) => {
   return <Suspense fallback={<PageLoader />}>{children}</Suspense>;
@@ -114,6 +115,14 @@ const router = createBrowserRouter([
         element: (
           <SuspenseWrapper>
             <CreateCoursePage title="Create course" />
+          </SuspenseWrapper>
+        ),
+      },
+      {
+        path: AppRoutes.myCourses,
+        element: (
+          <SuspenseWrapper>
+            <MyCoursesPage title="My courses" />
           </SuspenseWrapper>
         ),
       },
