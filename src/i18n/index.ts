@@ -10,9 +10,16 @@ i18n
   .init({
     fallbackLng: "uk",
     backend: {
-      loadPath: "src/i18n/locales/{{lng}}/{{ns}}.json",
+      loadPath: "/locales/{{lng}}/{{ns}}.json",
     },
-    ns: ["teacher-landing", "student-landing", "teacher-preview", "teacher-courses"],
+    ns: [
+      "teacher-landing",
+      "student-landing",
+      "teacher-preview",
+      "teacher-courses",
+      "teacher-create-course",
+      "dialog-modal",
+    ],
     react: {
       useSuspense: false,
     },

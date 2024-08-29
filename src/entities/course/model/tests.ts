@@ -1,9 +1,4 @@
-export enum TestConfigurationType {
-  CHECK_BOX = "CHECK_BOX",
-  RADIO_BTN = "RADIO_BTN",
-}
-
-type TestConfiguratonVariant = {
+export type TestConfiguratonVariant = {
   id: string;
   title: string;
   answer: boolean;
@@ -12,6 +7,5 @@ type TestConfiguratonVariant = {
 export type TestConfiguraton = {
   id: string;
   question: string;
-  type: TestConfigurationType;
   variants?: TestConfiguratonVariant[];
 };

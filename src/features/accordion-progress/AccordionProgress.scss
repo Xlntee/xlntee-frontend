@@ -1,0 +1,124 @@
+@use "styles/mixins.scss" as mixins;
+
+.accordion-progress {
+  --collapsed-navigation-toggler-number-width: 20px;
+  --collapsed-navigation-toggler-text-opacity: 1;
+  --collapsed-navigation-toggler-text-width: 100%;
+  --collapsed-navigation-gap: 10px;
+  --collapsed-navigation-padding-side: 10px;
+  --collapsed-navigation-header-width: 80%;
+
+  @include mixins.media(tablet_lg) {
+    --collapsed-navigation-header-width: 100%;
+  }
+
+  &.squeeze {
+    --collapsed-navigation-toggler-number-width: 42px;
+    --collapsed-navigation-toggler-text-opacity: 0;
+    --collapsed-navigation-toggler-text-width: 0;
+    --collapsed-navigation-gap: 0;
+    --collapsed-navigation-padding-side: 4px;
+    --collapsed-navigation-header-width: 100%;
+  }
+
+  &.MuiAccordion-root {
+    color: rgb(var(--light-color));
+    background-color: rgb(var(--primary-color));
+
+    &:first-of-type,
+    &:last-of-type {
+      border-radius: 10px;
+      margin: 0;
+    }
+
+    &.Mui-expanded {
+      margin: 0;
+    }
+  }
+
+  &.Mui-expanded {
+    .MuiAccordionSummary-expandIconWrapper {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      display: block;
+    }
+  }
+
+  &__summary {
+    &.MuiButtonBase-root {
+      min-height: auto;
+      position: static;
+      padding: 10px var(--collapsed-navigation-padding-side);
+      justify-content: space-between;
+
+      &.Mui-expanded {
+        min-height: auto;
+      }
+    }
+
+    .MuiAccordionSummary-content {
+      margin: 0;
+
+      gap: var(--collapsed-navigation-gap);
+
+      justify-content: space-between;
+      width: 100%;
+
+      &.Mui-expanded {
+        margin: 0;
+      }
+    }
+
+    .MuiTypography-root {
+      color: currentColor;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: var(--collapsed-navigation-gap);
+    width: var(--collapsed-navigation-header-width);
+  }
+
+  &__number {
+    text-align: center;
+    width: var(--collapsed-navigation-toggler-number-width);
+  }
+
+  &__heading {
+    @include mixins.text-trim-dots;
+    @include mixins.animate($properties: opacity width, $easing: var(--transition-cubic-bezier));
+
+    text-align: left;
+    width: var(--collapsed-navigation-toggler-text-width);
+    opacity: var(--collapsed-navigation-toggler-text-opacity);
+  }
+
+  &__progress {
+    @include mixins.text-trim-dots;
+    @include mixins.animate($properties: opacity width, $easing: var(--transition-cubic-bezier));
+
+    display: flex;
+    align-items: center;
+    text-align: left;
+    justify-content: end;
+    opacity: var(--collapsed-navigation-toggler-text-opacity);
+  }
+
+  &__details {
+    &.MuiAccordionDetails-root {
+      padding: 10px 40px 20px 10px;
+    }
+  }
+
+  .MuiAccordionSummary-expandIconWrapper {
+    display: none;
+
+    svg {
+      fill: rgb(var(--light-color));
+    }
+  }
+}

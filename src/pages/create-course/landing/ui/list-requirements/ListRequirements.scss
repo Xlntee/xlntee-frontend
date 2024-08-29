@@ -1,0 +1,18 @@
+.list-requirements {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  &__text {
+    &.MuiTypography-root {
+      font-size: 14px;
+    }
+  }
+
+  &__text-value {
+    &.MuiTypography-root {
+      font-size: 14px;
+      margin-left: 4px;
+    }
+  }
+}

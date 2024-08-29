@@ -1,0 +1,71 @@
+@use "styles/mixins.scss" as mixins;
+
+.block-quiz {
+  &__info-message {
+    background-color: rgb(var(--gray-stroke-color));
+    border-radius: 10px;
+    padding: 14px;
+
+    > span {
+      margin-left: 4px;
+    }
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    column-gap: 10px;
+
+    > svg {
+      position: relative;
+      top: 14px;
+    }
+  }
+
+  &__action-add-quetion {
+    &.MuiButtonBase-root {
+      min-width: 214px;
+      color: rgb(var(--dark-color));
+    }
+  }
+
+  .quiz-panel {
+    background-color: rgb(var(--light-color));
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 16px;
+  }
+}
+
+.quiz-question {
+  display: grid;
+  align-items: start;
+  grid-template-columns: 24px 1fr 24px;
+  gap: 10px;
+  margin-bottom: 20px;
+
+  &__number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 34px;
+
+    @include mixins.media(tablet) {
+      min-height: 50px;
+    }
+  }
+
+  &__text-field {
+    .MuiInputBase-root {
+      border-radius: 10px;
+    }
+  }
+
+  &__action {
+    text-align: center;
+
+    &.MuiButtonBase-root {
+      min-width: auto;
+    }
+  }
+}

@@ -1,0 +1,80 @@
+@use "styles/mixins.scss" as mixins;
+
+.block-lecture {
+  --collapsed: block;
+
+  border-radius: 10px;
+  background-color: rgb(var(--primary-color));
+  color: rgb(var(--light-color));
+  padding: 16px;
+
+  &--collapsed {
+    --collapsed: none;
+  }
+
+  &__header {
+    display: grid;
+    align-items: center;
+    gap: 10px;
+    grid-template-columns: auto auto 1fr;
+  }
+
+  &__title {
+    .MuiFormHelperText-root.Mui-error {
+      color: rgb(var(--light-color));
+    }
+  }
+
+  &__action-delete {
+    place-self: end;
+    min-width: 40px;
+    min-height: 40px;
+  }
+
+  &__body {
+    display: var(--collapsed);
+  }
+
+  &__actions-grid {
+    display: grid;
+    gap: 14px;
+    margin-top: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(214px, auto));
+
+    @include mixins.media(tablet) {
+      gap: 20px;
+    }
+
+    .MuiButtonBase-root {
+      width: 100%;
+    }
+  }
+
+  .quill {
+    color: rgb(var(--dark-color));
+    background-color: rgb(var(--light-color));
+    border-radius: 10px;
+    overflow: hidden;
+  }
+}
+
+.lecture-description {
+  display: grid;
+  align-items: start;
+  gap: 10px;
+  grid-template-columns: 24px 1fr 24px;
+
+  > svg {
+    position: relative;
+    top: 6px;
+  }
+
+  &__action {
+    text-align: center;
+
+    &.MuiButtonBase-root {
+      min-width: auto;
+      min-height: 40px;
+    }
+  }
+}

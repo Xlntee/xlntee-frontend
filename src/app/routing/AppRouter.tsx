@@ -3,9 +3,10 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import PageLoader from "./PageLoader";
 import { AppRoutes } from "./appRoutes";
-import { ProtectedRoute } from "./ProtectedRoute";
+// import { ProtectedRoute } from "./ProtectedRoute";
 
-import { PrivateLayout, PublicLayout } from "src/layouts";
+import { PublicLayout, CreateCourseLayout, PrivateLayout, CourseLayout } from "src/layouts";
+import { ProtectedRoute } from "./ProtectedRoute";
 
 // Lazy load the component
 const AuthorizationPage = lazy(() => import("pages/auth/authorization/AuthorizationPage"));
@@ -15,7 +16,15 @@ const EmailUpdatePage = lazy(() => import("src/pages/auth/email-update/EmailUpda
 const PasswordUpdatePage = lazy(() => import("src/pages/auth/password-update/PasswordUpdatePage"));
 
 const CoursePreviewPage = lazy(() => import("src/pages/course-preview/CoursePreviewPage"));
-const CreateCoursePage = lazy(() => import("src/pages/create-course/CreateCoursePage"));
+const CreateCourseGeneralPage = lazy(() => import("src/pages/create-course/general/General"));
+const CreateCourseLandingPage = lazy(() => import("src/pages/create-course/landing/Landing"));
+const CreateCourseStructurePage = lazy(() => import("src/pages/create-course/structure/Structure"));
+const CreateCourseLecturerPage = lazy(() => import("src/pages/create-course/lecturer/Lecturer"));
+const CreateCoursePricePage = lazy(() => import("src/pages/create-course/price/Price"));
+const CreateCourseAdvertisingPage = lazy(() => import("src/pages/create-course/advertising/Advertising"));
+// const HomePage = lazy(() => import("src/pages/home-template/HomePage"));
+const LoginPage = lazy(() => import("src/pages/login/LoginPage"));
+const RegistrationPage = lazy(() => import("src/pages/registration/RegistrationPage"));
 const StudentLandingPage = lazy(() => import("src/pages/student/landing-page/LandingPage"));
 const TeacherLandingPage = lazy(() => import("src/pages/teacher/landing-page/LandingPage"));
 const UiPage = lazy(() => import("src/pages/ui"));
@@ -32,6 +41,74 @@ const router = createBrowserRouter([
     path: "/",
     element: <PublicLayout />,
     children: [
+      {
+        element: <CreateCourseLayout />,
+        children: [
+          {
+            index: true,
+            path: AppRoutes.createCourse,
+            element: (
+              <SuspenseWrapper>
+                <CreateCourseGeneralPage title="Create course" />
+              </SuspenseWrapper>
+            ),
+          },
+          {
+            path: AppRoutes.createCourseLanding,
+            element: (
+              <SuspenseWrapper>
+                <CreateCourseLandingPage title="Create course general" />
+              </SuspenseWrapper>
+            ),
+          },
+          {
+            path: AppRoutes.createCourseStructure,
+            element: (
+              <SuspenseWrapper>
+                <CreateCourseStructurePage title="Create course general" />
+              </SuspenseWrapper>
+            ),
+          },
+          {
+            path: AppRoutes.createCourseLecturer,
+            element: (
+              <SuspenseWrapper>
+                <CreateCourseLecturerPage title="Create course general" />
+              </SuspenseWrapper>
+            ),
+          },
+          {
+            path: AppRoutes.createCoursePrice,
+            element: (
+              <SuspenseWrapper>
+                <CreateCoursePricePage title="Create course general" />
+              </SuspenseWrapper>
+            ),
+          },
+          {
+            path: AppRoutes.createCourseAdvertising,
+            element: (
+              <SuspenseWrapper>
+                <CreateCourseAdvertisingPage title="Create course general" />
+              </SuspenseWrapper>
+            ),
+          },
+        ],
+      },
+      {
+        element: <CourseLayout />,
+        children: [
+          {
+            index: true,
+            path: "/course",
+            element: (
+              <SuspenseWrapper>
+                <CoursePage />
+              </SuspenseWrapper>
+            ),
+          },
+        ],
+      },
       {
         path: AppRoutes.home,
         element: (
@@ -129,14 +206,6 @@ const router = createBrowserRouter([
   {
     element: <ProtectedRoute element={<PrivateLayout />} />,
     children: [
-      {
-        path: AppRoutes.createCourse,
-        element: (
-          <SuspenseWrapper>
-            <CreateCoursePage title="Create course" />
-          </SuspenseWrapper>
-        ),
-      },
       {
         path: AppRoutes.myCourses,
         element: (

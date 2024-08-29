@@ -2,7 +2,8 @@ import { combineReducers } from "redux";
 import { persistReducer, PersistConfig } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
-import authReducer, { IAuthState } from "pages/auth/login/store/authSlice";
+import authReducer, { IAuthState } from "src/pages/login/store/authSlice";
+import lessonsReducer from "src/pages/create-course/structure/store/lessonsSlice";
 import { apiSlice } from "../api/apiSlice";
 
 const authPersistConfig: PersistConfig<IAuthState> = {
@@ -13,6 +14,7 @@ const authPersistConfig: PersistConfig<IAuthState> = {
 
 const rootReducer = combineReducers({
   auth: persistReducer(authPersistConfig, authReducer),
+  lessons: lessonsReducer,
   [apiSlice.reducerPath]: apiSlice.reducer,
 });
 

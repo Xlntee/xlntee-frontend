@@ -1,0 +1,45 @@
+.block-lesson {
+  --collapsed: block;
+
+  border-radius: 20px;
+  padding: 16px;
+  margin-bottom: 20px;
+  box-shadow: var(--base-shadow);
+
+  &--collapsed {
+    --collapsed: none;
+  }
+
+  &__header {
+    position: relative;
+    padding-right: 40px;
+    gap: 10px;
+    margin-bottom: 10px;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__action-delete {
+    min-width: 40px;
+    min-height: auto;
+  }
+
+  &__body {
+    display: var(--collapsed);
+  }
+
+  &__action-add-lecture {
+    &.MuiButtonBase-root {
+      border-radius: 25px;
+      min-width: 214px;
+    }
+  }
+
+  &__action-save-lecture {
+    &.MuiButtonBase-root {
+      border-radius: 25px;
+      min-width: 134px;
+    }
+  }
+}

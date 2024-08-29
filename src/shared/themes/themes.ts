@@ -7,6 +7,8 @@ declare module "@mui/material/Button" {
     "black-contain": true;
     "black-outline": true;
     "black-text": true;
+    "white-contain": true;
+    "white-text": true;
   }
 }
 
@@ -216,6 +218,7 @@ defaultTheme.components = {
         lineHeight: 1.4,
         fontWeight: 700,
         boxShadow: "none",
+        gap: 8,
         ":hover": {
           boxShadow: "none",
         },
@@ -223,21 +226,19 @@ defaultTheme.components = {
       sizeSmall: {
         fontSize: 14,
         borderRadius: 5,
-        minHeight: 36,
         height: "auto",
-        [defaultTheme.breakpoints.up("xl")]: {
+        minHeight: 36,
+        [defaultTheme.breakpoints.up("md")]: {
           minHeight: 40,
         },
       },
       sizeMedium: {
         fontSize: 14,
         borderRadius: 5,
-        minHeight: 36,
         height: "auto",
-        [defaultTheme.breakpoints.up("lg")]: {
+        minHeight: 36,
+        [defaultTheme.breakpoints.up("md")]: {
           fontSize: 16,
-        },
-        [defaultTheme.breakpoints.up("xl")]: {
           minHeight: 50,
         },
       },
@@ -245,16 +246,25 @@ defaultTheme.components = {
         fontSize: 14,
         borderRadius: 5,
         height: "auto",
-        [defaultTheme.breakpoints.up("lg")]: {
-          fontSize: 16,
-        },
-        [defaultTheme.breakpoints.up("xl")]: {
+        minHeight: 36,
+        [defaultTheme.breakpoints.up("md")]: {
           fontSize: 20,
           minHeight: 60,
         },
       },
     },
     variants: [
+      {
+        props: {
+          variant: "text",
+        },
+        style: {
+          padding: 0,
+          ":hover": {
+            backgroundColor: "transparent",
+          },
+        },
+      },
       {
         props: {
           color: "success",
@@ -276,12 +286,62 @@ defaultTheme.components = {
       {
         props: {
           variant: "black-contain",
+          size: "small",
         },
         style: {
+          fontSize: 14,
+          borderRadius: 5,
+          height: "auto",
+          minHeight: 36,
           backgroundColor: XlnteeColors.DarkColor,
           color: XlnteeColors.LightColor,
           ":hover": {
             backgroundColor: XlnteeColors.BlackTextColor,
+          },
+          [defaultTheme.breakpoints.up("md")]: {
+            minHeight: 40,
+          },
+        },
+      },
+      {
+        props: {
+          variant: "black-contain",
+          size: "medium",
+        },
+        style: {
+          fontSize: 14,
+          borderRadius: 5,
+          minHeight: 36,
+          height: "auto",
+          backgroundColor: XlnteeColors.DarkColor,
+          color: XlnteeColors.LightColor,
+          ":hover": {
+            backgroundColor: XlnteeColors.BlackTextColor,
+          },
+          [defaultTheme.breakpoints.up("md")]: {
+            fontSize: 16,
+            minHeight: 50,
+          },
+        },
+      },
+      {
+        props: {
+          variant: "black-contain",
+          size: "large",
+        },
+        style: {
+          fontSize: 14,
+          borderRadius: 5,
+          height: "auto",
+          minHeight: 36,
+          backgroundColor: XlnteeColors.DarkColor,
+          color: XlnteeColors.LightColor,
+          ":hover": {
+            backgroundColor: XlnteeColors.BlackTextColor,
+          },
+          [defaultTheme.breakpoints.up("md")]: {
+            fontSize: 20,
+            minHeight: 60,
           },
         },
       },
@@ -294,7 +354,6 @@ defaultTheme.components = {
           borderColor: XlnteeColors.DarkColor,
           borderWidth: 1,
           borderStyle: "solid",
-
           "&:hover": {
             color: XlnteeColors.LightColor,
             backgroundColor: XlnteeColors.DarkColor,
@@ -303,10 +362,44 @@ defaultTheme.components = {
       },
       {
         props: {
+          variant: "white-contain",
+          size: "medium",
+        },
+        style: {
+          color: XlnteeColors.BrandColor,
+          backgroundColor: XlnteeColors.LightColor,
+          borderColor: "transparent",
+          borderWidth: 0,
+          borderStyle: "solid",
+          fontWeight: 500,
+          "&:hover": {
+            backgroundColor: XlnteeColors.Violet100,
+          },
+        },
+      },
+      {
+        props: {
+          variant: "white-text",
+          size: "medium",
+        },
+        style: {
+          color: XlnteeColors.LightColor,
+          borderColor: "transparent",
+          borderWidth: 0,
+          borderStyle: "solid",
+          padding: 0,
+        },
+      },
+      {
+        props: {
           variant: "black-text",
         },
         style: {
           color: XlnteeColors.DarkColor,
+          padding: 0,
+          "&:hover": {
+            backgroundColor: "transparent",
+          },
         },
       },
     ],
@@ -326,7 +419,11 @@ defaultTheme.components = {
   MuiOutlinedInput: {
     styleOverrides: {
       root: {
-        height: 50,
+        height: 36,
+
+        [defaultTheme.breakpoints.up("md")]: {
+          height: 50,
+        },
         fieldset: {
           borderColor: defaultTheme.palette.grey["400"],
         },
@@ -347,39 +444,124 @@ defaultTheme.components = {
       },
     },
   },
+  MuiFormHelperText: {
+    styleOverrides: {
+      root: {
+        marginInline: 0,
+      },
+    },
+  },
   MuiTextField: {
     styleOverrides: {
       root: {
         input: {
-          height: 34,
+          height: 20,
           color: XlnteeColors.BlackTextColor,
-          fontSize: 16,
+          fontSize: 14,
           paddingBlock: 8,
-          paddingInline: 14,
+          paddingInline: 10,
+          textAlign: "inherit",
           "&::placeholder": {
             color: defaultTheme.palette.grey["700"],
+          },
+
+          [defaultTheme.breakpoints.up("md")]: {
+            fontSize: 16,
+            height: 34,
+            paddingInline: 14,
           },
         },
       },
     },
   },
-  MuiAlert: {
+  MuiSelect: {
     styleOverrides: {
-      standardError: {
-        color: XlnteeColors.WarningBaseColor,
-        border: `1px solid ${XlnteeColors.WarningLightColor}`,
-      },
-      standardSuccess: {
-        color: XlnteeColors.SuccessBaseColor,
-        border: `1px solid ${XlnteeColors.SuccessLightColor}`,
+      root: {
+        width: "100%",
+        "& .MuiSelect-outlined": {
+          fontSize: 14,
+          textAlign: "inherit",
+
+          [defaultTheme.breakpoints.up("md")]: {
+            fontSize: 16,
+          },
+        },
       },
     },
   },
-  MuiMenuItem: {
+  MuiLinearProgress: {
     styleOverrides: {
       root: {
-        fontSize: "14px !important",
-        paddingInline: 10,
+        borderRadius: 10,
+        height: 26,
+        backgroundColor: XlnteeColors.GrayStrokeColor,
+      },
+    },
+  },
+  MuiCheckbox: {
+    styleOverrides: {
+      root: {
+        padding: 0,
+      },
+      sizeMedium: {
+        width: 26,
+        height: 26,
+        "& .MuiSvgIcon-root": {
+          fontSize: 26,
+          color: XlnteeColors.DarkColor,
+        },
+        "&.Mui-checked": {
+          color: XlnteeColors.DarkColor,
+        },
+      },
+    },
+  },
+  MuiAutocomplete: {
+    styleOverrides: {
+      input: {
+        "&.MuiAutocomplete-input": {
+          paddingBlock: 8,
+          paddingLeft: 0,
+          paddingRight: 10,
+          fontSize: 14,
+          textAlign: "inherit",
+
+          [defaultTheme.breakpoints.up("md")]: {
+            paddingRight: 14,
+            fontSize: 16,
+          },
+        },
+      },
+      inputRoot: {
+        padding: 0,
+        height: 36,
+        paddingLeft: 10,
+
+        [defaultTheme.breakpoints.up("md")]: {
+          height: 50,
+          paddingLeft: 14,
+        },
+      },
+    },
+  },
+  MuiList: {
+    styleOverrides: {
+      root: {
+        padding: 0,
+      },
+    },
+  },
+  MuiListItem: {
+    styleOverrides: {
+      root: {
+        padding: 0,
+      },
+    },
+  },
+  MuiAlert: {
+    styleOverrides: {
+      action: {
+        paddingTop: 0,
       },
     },
   },

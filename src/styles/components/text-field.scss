@@ -1,0 +1,10 @@
+.text-field-light {
+  .MuiInputBase-root {
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  .MuiInputBase-input {
+    background-color: rgb(var(--light-color));
+  }
+}

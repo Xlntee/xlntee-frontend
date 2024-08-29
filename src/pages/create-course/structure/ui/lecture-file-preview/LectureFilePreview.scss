@@ -1,0 +1,12 @@
+.lecture-file-preview {
+  display: grid;
+  grid-template-columns: 24px 1fr 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  &__delete-icon {
+    color: rgb(var(--light-color));
+    min-width: 40px;
+  }
+}

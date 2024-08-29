@@ -1,0 +1,122 @@
+{
+  "general": {
+    "nav_title": "Загальний",
+    "title_field_label": "Назва курсу",
+    "title_field_description": "Назва курсу повинна складатися з ключових слів, які демонструють цінність і тему курсу.",
+    "title_field_placeholder": "Назва курсу",
+    "description_field_label": "Короткий опис",
+    "description_field_description": "Опишіть свій курс, кому він може бути корисним і що саме вивчатимуть студенти.",
+    "description_field_placeholder": "Short Description",
+    "checkbox_label": "Ви надасте сертифікат про закінчення?",
+    "checkbox_description": "Сертифікат може бути цінним для студентів",
+    "select_field_label": "Категорія",
+    "select_field_level": "Рівень",
+    "select_field_subcategory": "Підкатегорія",
+    "select_field_language": "Мова",
+    "tags_field_label": "Теги",
+    "tags_field_placeholder": "Додати"
+  },
+  "landing": {
+    "nav_title": "Лендінг",
+    "subjects_field_label": "Які предмети буде опановувати?",
+    "subjects_field_description": "Введіть цілі або результати, яких учні можуть очікувати досягти після завершення вашого курсу.",
+    "requirements_field_label": "Які вимоги або передумови для проходження вашого курсу?",
+    "requirements_field_description": "Перелічіть необхідні навички, досвід, інструменти чи обладнання, які повинні мати учні до проходження вашого курсу.",
+    "describe-course_field_label": "Опишіть курс",
+    "describe-course_field_description": "Розкажіть нам більше про цей курс: що він охоплює, чого він вартий і чому студенти його проходять.",
+    "promo_video_label": "Промо відео",
+    "promo_video_description": "Завантажте коротке рекламне відео, у якому ви зможете розповісти більше про свій курс і зацікавити студентів його проходженням.",
+    "promo_video_requirements": [
+      {
+        "title": "Рекомендовані методичні вказівки",
+        "value": "1280х720 ppi."
+      },
+      {
+        "title": "Рекомендоване співвідношення сторін",
+        "value": "16:9"
+      }
+    ],
+    "promo_image_label": "Обкладинка",
+    "promo_image_description": "Обкладинка – це перше, що побачить студент під час пошуку курсів, інформативна та приваблива обкладинка для вашого курсу.",
+    "promo_image_requirements": [
+      {
+        "title": "Рекомендовані методичні вказівки",
+        "value": "1280х720 ppi."
+      },
+      {
+        "title": "Рекомендоване співвідношення сторін",
+        "value": "16:9"
+      },
+      {
+        "title": "Розмір файлу не повинен перевищувати",
+        "value": "2 MB"
+      }
+    ],
+    "promo_button_text": "Завантажити"
+  },
+  "structure": {
+    "nav_title": "Структура курсу",
+    "section": "Розділ",
+    "lecture": "Лекція",
+    "add_lecture": "Додати лекцію",
+    "add_lesson": "Додати розділ",
+    "free_section": "Безкоштовний розділ",
+    "title_lesson_placeholder": "Назва",
+    "title_lecture_placeholder": "Назва",
+    "video_upload_button_text": "Завантажити відео",
+    "file_upload_button_text": "Завантажити файл",
+    "lecture_add_quiz": "Додати вікторину",
+    "lecture_add_description": "Додайте опис",
+    "lecture_quiz_info_message": "Тести: введіть своє запитання та виберіть правильну відповідь, поставивши галочку",
+    "lecture_quiz_question_placeholder": "Питання",
+    "lecture_quiz_add_answer": "Додайте відповідь",
+    "lecture_quiz_add_question": "Додайте запитання",
+    "dialog_modal_delete_lecture": "Ви хочете видалити урок?",
+    "dialog_modal_delete_lesson": "Ви хочете видалити урок?",
+    "quiz_answer_field_placeholder": "Відповідь"
+  },
+  "lecturer": {
+    "nav_title": "Викладач",
+    "fullname_field_label": "Ім'я та прізвище",
+    "fullname_field_description": "Назва курсу повинна складатися з ключових слів, які демонструють цінність і тему курсу.",
+    "fullname_field_placeholder": "Назва курсу",
+    "skills_field_label": "Викладацька майстерність",
+    "skills_field_description": "Напишіть навички, якими володіє вчитель, які стосуються цього курсу, наприклад: менеджер проекту середнього рівня, старший розробник Javascript.",
+    "skills_field_placeholder": "Додати",
+    "about_field_label": "Про лектора",
+    "about_field_description": "Розкажіть докладніше про викладача курсу",
+    "image_upload_title": "Фото викладача",
+    "image_upload_button_text": "Завантажити"
+  },
+  "price": {
+    "nav_title": "Ціна",
+    "title": "Налаштування ціни",
+    "checkbox_label": "Цей курс платний?",
+    "price_field_label": "Вартість курсу",
+    "price_field_placeholder": "Вартість курсу",
+    "info_box_title": "Безкоштовний попередній перегляд курсу",
+    "info_box_text": "Згідно з нашими правилами, перший розділ вашого курсу має бути доступним для безкоштовного перегляду, щоб учні могли ознайомитися з вами та вашими уроками, це може підвищити довіру учнів до вашого продукту.",
+    "promo_title": "Промокоди",
+    "promo_field_discount_label": "Знижка",
+    "promo_field_code_label": "Назва промо-коду",
+    "promo_field_code_placeholder": "Кодове ім'я",
+    "promo_button_create": "створити",
+    "promo_created_title": "Створені промокоди",
+    "promo_created_empty": "Без промокодів",
+    "dialog_modal_delete_promo_code": "Бажаєте видалити промокод?"
+  },
+  "advertising": {
+    "nav_title": "Реклама",
+    "course_url_label": "URL-адреса курсу",
+    "course_url_description": "Ви можете поділитися своїм курсом у своїх соціальних мережах за посиланням нижче",
+    "course_url_placeholder": "Назва курсу"
+  },
+  "publish": {
+    "nav_title": "Опублікувати курс"
+  },
+  "button_save": "зберегти",
+  "button_discard_changes": "відхилити зміни",
+  "storage": "Зберігання",
+  "students": "Студенти",
+  "change_plan": "Змінити тарифний план"
+}

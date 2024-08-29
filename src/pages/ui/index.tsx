@@ -1,5 +1,7 @@
-import { CSSProperties } from "react";
+import { CSSProperties, useState } from "react";
 import { Button, Container, Stack, Box, Typography, Grid, TextField, InputLabel, Divider } from "@mui/material";
+
+import { Snackbar } from "src/features";
 
 import useTitle from "src/hooks/useTitle/useTitle";
 import { PageProps } from "pages/type";
@@ -54,6 +56,8 @@ const renderButtonsBlack = (variant: "black-contain" | "black-outline" | "black-
 
 const UiPage = ({ title }: PageProps) => {
   useTitle(title);
+
+  const [showSnackbar, setShowSnackbar] = useState<boolean>(false);
 
   return (
     <Box component="section" paddingBlock={4}>
