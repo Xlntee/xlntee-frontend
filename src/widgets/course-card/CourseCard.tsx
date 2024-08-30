@@ -1,11 +1,14 @@
-import { Box, Button, Stack, Typography, useTheme } from "@mui/material";
 import { FC } from "react";
-import { XlnteeColors } from "src/shared/themes/colors";
-import EditIcon from "@mui/icons-material/Edit";
-import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
-import RestoreFromTrashIcon from "@mui/icons-material/RestoreFromTrash";
-import { CourseStatus } from "src/shared/config/CourseStatus";
 import { useTranslation } from "react-i18next";
+
+import { Box, Button, Stack, Typography, useTheme } from "@mui/material";
+import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
+import EditIcon from "@mui/icons-material/Edit";
+import RestoreFromTrashIcon from "@mui/icons-material/RestoreFromTrash";
+
+import { XlnteeColors } from "src/shared/themes/colors";
+import { CourseStatus } from "src/shared/config/CourseStatus";
+
 import "./CourseCard.scss";
 
 interface CourseCardProps {
@@ -13,9 +16,9 @@ interface CourseCardProps {
   updateTime?: string;
   status?: string;
   imageSrc?: string;
-  onDelete: (course: any) => void;
-  onEdit: (course: any) => void;
-  onRestore: (course: any) => void;
+  onDelete: () => void;
+  onEdit: () => void;
+  onRestore: () => void;
 }
 
 const CourseCard: FC<CourseCardProps> = ({
@@ -32,16 +35,7 @@ const CourseCard: FC<CourseCardProps> = ({
 
   return (
     <Box className="course-card">
-      <Box
-        sx={{
-          height: 195,
-          p: "8px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          position: "relative",
-        }}
-      >
+      <Box className="course-card__image-section">
         <Box
           sx={{
             width: "100%",

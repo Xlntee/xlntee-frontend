@@ -12,7 +12,7 @@
   text-decoration: none;
   @include mixins.animate(box-shadow);
 
-  min-height: 14vw;
+  min-height: 40vw;
   @media (min-width: breakpoints.$mobile) {
     min-height: auto;
   }

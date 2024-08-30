@@ -8,5 +8,6 @@
   "courses-update-time": "Останнє оновлення:",
   "courses-delete-btn": "Видалити",
   "courses-restore-btn": "Відновити",
-  "courses-toDashboard-btn": "Панель"
+  "courses-toDashboard-btn": "Панель",
+  "courses-no-courses": "Курсів ще немає"
 }
