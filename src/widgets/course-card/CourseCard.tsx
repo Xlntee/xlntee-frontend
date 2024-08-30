@@ -36,15 +36,7 @@ const CourseCard: FC<CourseCardProps> = ({
   return (
     <Box className="course-card">
       <Box className="course-card__image-section">
-        <Box
-          sx={{
-            width: "100%",
-            height: "100%",
-            borderRadius: "20px",
-            overflow: "hidden",
-            backgroundColor: imageSrc ? "transparent" : XlnteeColors.LightElementColor,
-          }}
-        >
+        <Box bgcolor={imageSrc ? "transparent" : XlnteeColors.LightElementColor} className="course-card__image-inner">
           {imageSrc && <img src={imageSrc} className="course-card__image" />}
         </Box>
         {updateTime && (
@@ -58,9 +50,11 @@ const CourseCard: FC<CourseCardProps> = ({
           </Typography>
         )}
       </Box>
-      <Typography variant="subtitle1" className="course-card__title">
-        {title}
-      </Typography>
+      <Box pt="4px" pb="10px">
+        <Typography variant="subtitle1" className="course-card__title">
+          {title}
+        </Typography>
+      </Box>
       <Box className="course-card__overlay">
         {status === CourseStatus.DELETED ? (
           <Button

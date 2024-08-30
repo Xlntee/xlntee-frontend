@@ -1,3 +1,4 @@
+@use "styles/breakpoints.scss" as breakpoints;
 @use "styles/mixins" as mixins;
 
 .course-card {
@@ -8,22 +9,30 @@
   border: 1px solid rgb(var(--gray-stroke-color));
   position: relative;
   overflow: hidden;
+  padding: 6px;
 
   @include mixins.hover {
     --course-card-overlay-opacity: 1;
   }
 
   &__image-section {
-    height: 195px;
-    padding: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    padding-top: 55%;
+  }
+
+  &__image-inner {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    border-radius: 20px;
   }
 
   &__image {
     width: 100%;
+    height: 100%;
     object-fit: cover;
   }
 
@@ -54,23 +63,38 @@
 
   &__update-time {
     position: absolute;
-    top: 15px;
-    left: 15px;
+    top: 14px;
+    left: 8px;
     z-index: 1;
     color: rgb(var(--dark-color));
     background-color: rgb(var(--light-color));
     padding-inline: 8px;
     border-radius: 10px;
+
+    @include mixins.media(tablet, max) {
+      font-size: 14px;
+    }
+    @include mixins.media(tablet) {
+      left: 14px;
+    }
   }
 
   &__status {
     position: absolute;
-    bottom: 15px;
-    left: 15px;
+    bottom: 14px;
+    left: 8px;
     z-index: 1;
     color: rgb(var(--dark-color));
     background-color: rgb(var(--light-color));
     padding-inline: 8px;
     border-radius: 10px;
+
+    @include mixins.media(tablet, max) {
+      font-size: 14px;
+    }
+
+    @include mixins.media(tablet) {
+      left: 14px;
+    }
   }
 }
