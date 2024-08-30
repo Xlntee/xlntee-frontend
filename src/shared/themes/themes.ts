@@ -20,7 +20,6 @@ export const defaultTheme = createTheme({
       xl: 1280,
     },
   },
-
   palette: {
     mode: "light",
     primary: {
@@ -54,6 +53,7 @@ export const defaultTheme = createTheme({
       "500": XlnteeColors.GrayColor500,
       "600": XlnteeColors.GrayColor600,
       "700": XlnteeColors.GrayColor700,
+      "800": XlnteeColors.GrayColor800,
     },
     text: {
       primary: XlnteeColors.BlackTextColor,
@@ -105,12 +105,23 @@ export const defaultTheme = createTheme({
         },
       },
     },
+    MuiRating: {
+      styleOverrides: {
+        sizeSmall: {
+          fontSize: "16px",
+        },
+        sizeLarge: {
+          fontSize: "24px",
+        },
+      },
+    },
   },
 });
 
 defaultTheme.typography.h1 = {
   fontSize: 32,
-  lineHeight: 1.04,
+  lineHeight: 1.2,
+  color: XlnteeColors.BlackTextColor,
 
   [defaultTheme.breakpoints.up("lg")]: {
     fontSize: 48,
@@ -119,7 +130,8 @@ defaultTheme.typography.h1 = {
 
 defaultTheme.typography.h2 = {
   fontSize: 30,
-  lineHeight: 1.02,
+  lineHeight: 1.2,
+  color: XlnteeColors.BlackTextColor,
 
   [defaultTheme.breakpoints.up("lg")]: {
     fontSize: 34,
@@ -129,6 +141,7 @@ defaultTheme.typography.h2 = {
 defaultTheme.typography.h3 = {
   fontSize: 28,
   lineHeight: 1.35,
+  color: XlnteeColors.BlackTextColor,
 
   [defaultTheme.breakpoints.up("lg")]: {
     fontSize: 30,
@@ -138,16 +151,19 @@ defaultTheme.typography.h3 = {
 defaultTheme.typography.h4 = {
   fontSize: 24,
   lineHeight: 1.45,
+  color: XlnteeColors.BlackTextColor,
 };
 
 defaultTheme.typography.h5 = {
   fontSize: 20,
   lineHeight: 1.45,
+  color: XlnteeColors.BlackTextColor,
 };
 
 defaultTheme.typography.h6 = {
   fontSize: 18,
   lineHeight: 1.2,
+  color: XlnteeColors.BlackTextColor,
 };
 
 defaultTheme.typography.body1 = {

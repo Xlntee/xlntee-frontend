@@ -1,4 +1,4 @@
-enum TestConfigurationType {
+export enum TestConfigurationType {
   CHECK_BOX = "CHECK_BOX",
   RADIO_BTN = "RADIO_BTN",
 }

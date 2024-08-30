@@ -253,7 +253,7 @@ interface CardProps {
     className?: string
 }
 
-const Card: FC<LandingHeroSectionProps> = ({
+const Card: FC<SectionLandingHeroProps> = ({
   title, description, className
 }) => {
     return (

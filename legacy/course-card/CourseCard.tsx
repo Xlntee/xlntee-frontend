@@ -57,7 +57,7 @@ const CourseCard = ({
                 </a>
                 <span className="course-card__date">{date}</span>
               </div>
-              <Rating size={size} rating={rating} feedbackCount={feedbackCount} />
+              <Rating size={size} rating={rating} reviewCount={feedbackCount} />
               <Price
                 size={size}
                 isFree={false}

@@ -1,0 +1,22 @@
+{
+  "teacher-preview.section-course-hero.creator": "Творець",
+  "teacher-preview.section-course-hero.actionViewCourse": "Переглянути курс",
+  "teacher-preview.section-course-hero.actionBuyCourse": "Купити зараз",
+  "teacher-preview.section-course-info.title1": "Курс навчає",
+  "teacher-preview.section-course-info.details1": [
+    "що таке ООП",
+    "Логіка написання коду та основи синтаксису",
+    "Основні бібліотеки, як їх використовувати і для чого вони потрібні",
+    "З чого почати свій шлях програміста, де набиратись досвіду та на яких платформах"
+  ],
+  "teacher-preview.section-course-info.title2": "Що потрібно знати",
+  "teacher-preview.section-course-info.details2": [
+    "Основні навички роботи в РСН",
+    "Як працює код, основні поняття про програмування",
+    "Що таке мова програмування та де використовується ця мова",
+    "Розуміння різниці фрон-енд та бек-енд розробки"
+  ],
+  "teacher-preview.section-course-structure.title": "Структура курсу",
+  "teacher-preview.section-course-description.title": "Опис курсу",
+  "teacher-preview.section-about-teacher.title": "Лектор"
+}

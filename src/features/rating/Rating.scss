@@ -1,44 +1,17 @@
-$ratingNumberColor: #faaf00;
-$ratingAmountColor: #777;
-$mainFontSize: 15px;
-$mainFontSizeLarge: 20px;
-
 .rating {
-  display: flex;
-  font-size: $mainFontSize;
-  font-weight: 400;
-
-  &__number {
-    color: $ratingNumberColor;
-  }
-
-  .MuiRating-icon {
-    font-size: 17px;
-  }
-
-  &__rating-amount {
-    font-size: $mainFontSize;
-    font-weight: 400;
-    color: $ratingAmountColor;
-  }
-
-  // rating large styles
+  --review-count-size: 16px;
+  --rating-review-size: 16px;
 
   &--large {
-    display: flex;
-    font-size: $mainFontSizeLarge;
-    font-weight: 400;
-
-    .MuiRating-icon {
-      font-size: 25px;
-    }
+    --review-count-size: 20px;
+    --rating-review-size: 20px;
   }
 
-  &--large & {
-    &__rating-amount {
-      font-size: $mainFontSizeLarge;
-      font-weight: 400;
-      color: $ratingAmountColor;
-    }
+  &__count {
+    font-size: var(--review-count-size);
+  }
+
+  &__review-count {
+    font-size: var(--rating-review-size);
   }
 }

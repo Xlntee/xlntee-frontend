@@ -13,7 +13,7 @@ import WorkspacePremiumOutlinedIcon from "@mui/icons-material/WorkspacePremiumOu
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 
 import { AppRoutes } from "src/app/routing/appRoutes";
-import { Feature } from "src/widgets";
+import { Feature } from "src/widgets/components";
 
 //TODO: implement refactoring before component’s declaration
 

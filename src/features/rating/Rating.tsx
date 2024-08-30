@@ -1,21 +1,48 @@
 import { FC } from "react";
-import { Rating as MuiRating } from "@mui/material";
-import css from "classnames";
+import cn from "classnames";
+
+import { Stack, Typography, Rating as MuiRating } from "@mui/material";
+import { XlnteeColors } from "src/shared/themes/colors";
+
 import "./Rating.scss";
 
-interface IProps {
-  rating?: number;
-  feedbackCount?: number;
+interface RatingProps {
+  rating: number;
+  reviewCount?: number;
+  max?: number;
+  precision?: number;
   size?: "small" | "large";
 }
 
-const Rating: FC<IProps> = ({ rating = 4.5, feedbackCount = 108, size = "small" }) => {
+const Rating: FC<RatingProps> = ({ rating, reviewCount, max = 5, precision = 0.5, size }) => {
+  const sizeModification = cn({
+    "rating--large": size === "large",
+  });
+
+  const classnames = cn("rating", sizeModification);
   return (
-    <div className={css("rating", { ["rating--large"]: size === "large" })}>
-      <span className="rating__number">{rating}</span>
-      <MuiRating readOnly value={rating} precision={0.5} max={5} />
-      <span className="rating__rating-amount">{`(${feedbackCount})`}</span>
-    </div>
+    <Stack direction="row" alignItems="center" gap="4px" className={classnames}>
+      <Typography component="span" color={XlnteeColors.YellowColor} className="rating__count">
+        {rating}
+      </Typography>
+      <MuiRating
+        readOnly
+        color={XlnteeColors.YellowColor}
+        value={rating}
+        precision={precision}
+        max={max}
+        size={size}
+        className="rating__list"
+      />
+      {reviewCount && (
+        <Typography
+          component="span"
+          fontWeight={300}
+          color={XlnteeColors.GrayColor600}
+          className="rating__review-count"
+        >{`(${reviewCount})`}</Typography>
+      )}
+    </Stack>
   );
 };
 

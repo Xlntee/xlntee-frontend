@@ -1,0 +1,9 @@
+.skills {
+  &__item {
+    border-radius: 20px;
+    color: var(--gray-color-700);
+    background-color: rgb(var(--gray-color-900));
+    padding: 4px 14px;
+    white-space: "nowrap";
+  }
+}
