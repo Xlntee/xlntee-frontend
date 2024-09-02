@@ -12,7 +12,7 @@ import { CourseStatus } from "src/shared/config/CourseStatus";
 import "./CourseCard.scss";
 
 interface CourseCardProps {
-  title?: string;
+  title: string;
   updateTime?: string;
   status?: string;
   imageSrc?: string;

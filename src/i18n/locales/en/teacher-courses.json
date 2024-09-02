@@ -8,6 +8,5 @@
   "courses-update-time": "Last update:",
   "courses-delete-btn": "Delete",
   "courses-restore-btn": "Restore",
-  "courses-toDashboard-btn": "Dashboard",
-  "courses-no-courses": "No courses"
+  "courses-toDashboard-btn": "Dashboard"
 }

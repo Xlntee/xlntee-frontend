@@ -10,10 +10,11 @@
   justify-content: center;
   align-items: center;
   text-decoration: none;
+  min-height: 40vw;
+
   @include mixins.animate(box-shadow);
 
-  min-height: 40vw;
-  @media (min-width: breakpoints.$mobile) {
+  @include mixins.media(mobile) {
     min-height: auto;
   }
 

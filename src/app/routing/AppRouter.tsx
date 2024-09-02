@@ -11,7 +11,7 @@ import { PrivateLayout, PublicLayout } from "src/layouts";
 const AuthorizationPage = lazy(() => import("src/pages/authorization/AuthorizationPage"));
 const CoursePreviewPage = lazy(() => import("src/pages/course-preview/CoursePreviewPage"));
 const CreateCoursePage = lazy(() => import("src/pages/create-course/CreateCoursePage"));
-const HomePage = lazy(() => import("src/pages/home-template/HomePage"));
+// const HomePage = lazy(() => import("src/pages/home-template/HomePage"));
 const LoginPage = lazy(() => import("src/pages/login/LoginPage"));
 const RegistrationPage = lazy(() => import("src/pages/registration/RegistrationPage"));
 const StudentLandingPage = lazy(() => import("src/pages/student/landing-page/LandingPage"));
