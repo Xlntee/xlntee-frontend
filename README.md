@@ -393,3 +393,4 @@ export default SectionAbout;
     }
 ```
 
+- try use styles in component attributes, insted of `sx={{}}` otherwise you can write it
