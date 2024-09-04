@@ -11,12 +11,13 @@ import { PrivateLayout, PublicLayout } from "src/layouts";
 const AuthorizationPage = lazy(() => import("src/pages/authorization/AuthorizationPage"));
 const CoursePreviewPage = lazy(() => import("src/pages/course-preview/CoursePreviewPage"));
 const CreateCoursePage = lazy(() => import("src/pages/create-course/CreateCoursePage"));
-const HomePage = lazy(() => import("src/pages/home-template/HomePage"));
+// const HomePage = lazy(() => import("src/pages/home-template/HomePage"));
 const LoginPage = lazy(() => import("src/pages/login/LoginPage"));
 const RegistrationPage = lazy(() => import("src/pages/registration/RegistrationPage"));
 const StudentLandingPage = lazy(() => import("src/pages/student/landing-page/LandingPage"));
 const TeacherLandingPage = lazy(() => import("src/pages/teacher/landing-page/LandingPage"));
 const UiPage = lazy(() => import("src/pages/ui"));
+const MyCoursesPage = lazy(() => import("src/pages/teacher/my-courses-page/MyCoursesPage"));
 
 const SuspenseWrapper = ({ children }: { children: ReactNode }) => {
   return <Suspense fallback={<PageLoader />}>{children}</Suspense>;
@@ -114,6 +115,14 @@ const router = createBrowserRouter([
         element: (
           <SuspenseWrapper>
             <CreateCoursePage title="Create course" />
+          </SuspenseWrapper>
+        ),
+      },
+      {
+        path: AppRoutes.myCourses,
+        element: (
+          <SuspenseWrapper>
+            <MyCoursesPage title="My courses" />
           </SuspenseWrapper>
         ),
       },

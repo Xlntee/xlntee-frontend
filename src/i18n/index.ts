@@ -12,7 +12,7 @@ i18n
     backend: {
       loadPath: "src/i18n/locales/{{lng}}/{{ns}}.json",
     },
-    ns: ["teacher-landing", "student-landing", "teacher-preview"],
+    ns: ["teacher-landing", "student-landing", "teacher-preview", "teacher-courses"],
     react: {
       useSuspense: false,
     },
