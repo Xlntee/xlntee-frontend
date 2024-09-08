@@ -10,7 +10,7 @@ export const AppRoutes = {
   previewCourse: "/course/:courseId",
   notFound: "*",
   ui: "/ui",
-  myCourses: "/my-courses",
+  myCourses: '/my-courses'
 };
 
 export enum AuthPageSection {
