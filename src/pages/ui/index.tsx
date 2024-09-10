@@ -172,6 +172,9 @@ const UiPage = ({ title }: PageProps) => {
         </Grid>
       </Container>
     </Box>
+
+
+    
   );
 };
 
