@@ -6,5 +6,5 @@ export * from "./login";
 export * from "./registration";
 export * from "./student/landing-page";
 export * from "./teacher/landing-page";
-export * from "./teacher/my-courses-page"
+export * from "./teacher/my-courses-page";
 export { default as UiPage } from "./ui";
