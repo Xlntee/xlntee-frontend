@@ -10,3 +10,6 @@ $mobile_max: 479px;
 $tablet_max: 767px;
 $tablet_lg_max: 1023px;
 $desktop_max: 1279px;
+
+$mobile_breakpoint_min: $desktop;
+$mobile_breakpoint_max: $desktop_max;

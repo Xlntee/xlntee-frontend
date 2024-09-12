@@ -1,21 +1,15 @@
 import { Outlet } from "react-router-dom";
 import { Box } from "@mui/material";
 
-import Header from "../../legacy/header/Header";
-import Footer from "src/widgets/footer/Footer";
+import { HeaderProfile } from "src/widgets/profile-header";
 
-interface LayoutProps {
-  showFooter?: boolean;
-}
-
-const PrivateLayout = ({ showFooter = true }: LayoutProps) => {
+const PrivateLayout = () => {
   return (
     <>
-      <Header />
+      <HeaderProfile />
       <Box component="main" sx={{ flexGrow: 1 }}>
         <Outlet />
       </Box>
-      {showFooter && <Footer />}
     </>
   );
 };
