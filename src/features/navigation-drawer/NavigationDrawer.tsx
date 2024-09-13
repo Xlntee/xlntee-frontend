@@ -1,9 +1,8 @@
 import { FC, useEffect, useState } from "react";
 
-import { Box, Stack, Button, Drawer, Divider } from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close";
+import { Box, Stack, Drawer, Divider } from "@mui/material";
 
-import { Navigation, NavigationLinkType } from "src/features";
+import { MenuToggler, Navigation, NavigationLinkType } from "src/features";
 
 import "./NavigationDrawer.scss";
 
@@ -16,7 +15,6 @@ type HeaderProfileProps = {
 
 const HeaderProfile: FC<HeaderProfileProps> = ({ children, navigationList, open = false, onClose }) => {
   const [visible, setVisible] = useState<boolean>(false);
-  const iconSize = "30px";
 
   useEffect(() => {
     setVisible(open);
@@ -29,9 +27,7 @@ const HeaderProfile: FC<HeaderProfileProps> = ({ children, navigationList, open 
           <Box className="header-profile__logo">
             <img src="/assets/x-logo-modal-extend.png" />
           </Box>
-          <Button variant="black-text" onClick={onClose}>
-            <CloseIcon sx={{ fontSize: iconSize }} />
-          </Button>
+          <MenuToggler active={true} onClick={onClose} />
         </Box>
         <Box paddingInline="20px">
           <Navigation items={navigationList} />

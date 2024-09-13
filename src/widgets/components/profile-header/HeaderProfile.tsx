@@ -7,11 +7,9 @@ import CreditCardIcon from "@mui/icons-material/CreditCard";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import DoneOutlineIcon from "@mui/icons-material/DoneOutline";
 import LocalActivityIcon from "@mui/icons-material/LocalActivity";
-import MenuIcon from "@mui/icons-material/Menu";
-import CloseIcon from "@mui/icons-material/Close";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 
-import { Navigation, NavigationDrawer, NavigationLinkType } from "src/features";
+import { MenuToggler, Navigation, NavigationDrawer, NavigationLinkType } from "src/features";
 
 import { Tools, User } from "./ui";
 
@@ -129,9 +127,7 @@ const HeaderProfile: FC<HeaderProfileProps> = ({ children, type }) => {
               </Button>
               <User />
             </Stack>
-            <Button variant="black-text" className="header-profile__toggler" onClick={toggleDrawer}>
-              {open ? <CloseIcon /> : <MenuIcon />}
-            </Button>
+            <MenuToggler active={open} onClick={toggleDrawer} />
           </Stack>
         </Box>
       </Container>

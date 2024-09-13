@@ -32,7 +32,7 @@
   }
 
   &__nav-left .navigation {
-    @include mixins.media(breakpoints.$mobile_breakpoint_max, "max") {
+    @include mixins.media(breakpoints.$mobile_breakpoint_max, max) {
       display: none;
     }
   }
@@ -68,18 +68,6 @@
       @include mixins.media(breakpoints.$mobile) {
         font-size: 30px;
       }
-    }
-  }
-
-  &__toggler {
-    &.MuiButtonBase-root {
-      @include mixins.media(breakpoints.$mobile_breakpoint_min) {
-        display: none;
-      }
-    }
-
-    svg {
-      font-size: 30px;
     }
   }
 }

@@ -1,12 +1,12 @@
 import { Outlet } from "react-router-dom";
 import { Box } from "@mui/material";
 
-import { HeaderProfile } from "src/widgets/profile-header";
+import { HeaderProfile } from "src/widgets/components";
 
 const PrivateLayout = () => {
   return (
     <>
-      <HeaderProfile />
+      <HeaderProfile type="teacher" />
       <Box component="main" sx={{ flexGrow: 1 }}>
         <Outlet />
       </Box>
