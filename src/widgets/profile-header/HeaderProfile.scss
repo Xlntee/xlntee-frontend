@@ -83,13 +83,3 @@
     }
   }
 }
-
-.header-drawer {
-  &__header {
-    padding: 6px 10px 6px 20px;
-    box-shadow: 0 2px 5px 0 rgb(var(--dark-color) / 0.2);
-    display: grid;
-    grid-template-columns: 100px 50px;
-    justify-content: space-between;
-  }
-}

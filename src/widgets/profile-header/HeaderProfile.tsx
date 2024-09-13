@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 
-import { Box, Container, Stack, Button, Drawer, Divider } from "@mui/material";
+import { Box, Container, Stack, Button, Badge } from "@mui/material";
 import VideocamIcon from "@mui/icons-material/Videocam";
 import EqualizerIcon from "@mui/icons-material/Equalizer";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
@@ -9,8 +9,9 @@ import DoneOutlineIcon from "@mui/icons-material/DoneOutline";
 import LocalActivityIcon from "@mui/icons-material/LocalActivity";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 
-import { Navigation, NavigationLinkType } from "src/features";
+import { Navigation, NavigationDrawer, NavigationLinkType } from "src/features";
 
 import { Tools, User } from "./ui";
 
@@ -18,6 +19,7 @@ import "./HeaderProfile.scss";
 
 type HeaderProfileProps = {
   children?: React.ReactNode;
+  type: "teacher" | "student";
 };
 
 const navList: NavigationLinkType[] = [
@@ -88,9 +90,8 @@ const courseNavList: NavigationLinkType[] = [
   },
 ];
 
-const HeaderProfile: FC<HeaderProfileProps> = ({ children }) => {
+const HeaderProfile: FC<HeaderProfileProps> = ({ children, type }) => {
   const [open, setOpen] = useState<boolean>(false);
-  const iconSize = "30px";
 
   const toggleDrawer = () => {
     setOpen((prevState) => !prevState);
@@ -101,32 +102,31 @@ const HeaderProfile: FC<HeaderProfileProps> = ({ children }) => {
   }
 
   function getNavigation() {
-    const flag = false;
-
-    if (flag) {
-      return <Navigation items={navList} />;
+    if (type === "student") {
+      return navList;
     }
-    return <Navigation items={courseNavList} />;
-  }
-
-  function getLogo() {
-    return (
-      <Box className="header-profile__logo">
-        <img src="/assets/x-logo-modal-extend.png" />
-      </Box>
-    );
+    return courseNavList;
   }
 
   return (
     <Box component="header" className="header-profile">
       <Container className="header-profile__container">
-        {getLogo()}
+        <Box className="header-profile__logo">
+          <img src="/assets/x-logo-modal-extend.png" />
+        </Box>
         <Box className="header-profile__nav">
-          <Box className="header-profile__nav-left">{getNavigation()}</Box>
+          <Box className="header-profile__nav-left">
+            <Navigation items={getNavigation()} />
+          </Box>
           <Box className="header-profile__nav-center">{children}</Box>
           <Stack direction="row" alignItems="center" gap="10px" className="header-profile__nav-right">
             <Stack direction="row" alignItems="center" gap="10px">
-              <Tools />
+              {type === "student" && <Tools />}
+              <Button variant="black-text">
+                <Badge variant="dot" color="primary">
+                  <NotificationsNoneIcon />
+                </Badge>
+              </Button>
               <User />
             </Stack>
             <Button variant="black-text" className="header-profile__toggler" onClick={toggleDrawer}>
@@ -135,23 +135,7 @@ const HeaderProfile: FC<HeaderProfileProps> = ({ children }) => {
           </Stack>
         </Box>
       </Container>
-      <Drawer anchor="left" open={open} onClose={onClose} className="header-drawer">
-        <Stack direction="column" gap="20px" width="320px">
-          <Box className="header-drawer__header">
-            {getLogo()}
-            <Button variant="black-text" onClick={onClose}>
-              <CloseIcon sx={{ fontSize: iconSize }} />
-            </Button>
-          </Box>
-          <Box paddingInline="20px">
-            {getNavigation()}
-            <Box marginBlock="20px">
-              <Divider />
-            </Box>
-            {children}
-          </Box>
-        </Stack>
-      </Drawer>
+      <NavigationDrawer navigationList={getNavigation()} open={open} onClose={onClose} />
     </Box>
   );
 };

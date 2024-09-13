@@ -17,11 +17,6 @@ const Tools = () => {
       <Button variant="black-text" onClick={onToggleFavorite}>
         {isFavorite ? <FavoriteOutlinedIcon /> : <FavoriteBorderOutlinedIcon />}
       </Button>
-      <Button variant="black-text">
-        <Badge variant="dot" color="primary">
-          <NotificationsNoneIcon />
-        </Badge>
-      </Button>
     </Stack>
   );
 };

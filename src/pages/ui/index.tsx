@@ -3,6 +3,7 @@ import { Button, Container, Stack, Box, Typography, Grid, TextField, InputLabel,
 
 import useTitle from "src/hooks/useTitle/useTitle";
 import { PageProps } from "pages/type";
+import { HeaderProfile } from "src/widgets/profile-header";
 
 const typographyList = ["h1", "h2", "h3", "h4", "h5", "h6"] as const;
 const buttonColorList = ["primary", "secondary", "success", "error"] as const;
@@ -170,6 +171,22 @@ const UiPage = ({ title }: PageProps) => {
             </Stack>
           </Grid>
         </Grid>
+
+        <Box mb="20px">
+          <Typography variant="h2">HeaderProfile</Typography>
+        </Box>
+        <Box mb="20px">
+          <Typography mb="20px" variant="h3">
+            Student
+          </Typography>
+          <HeaderProfile type="student" />
+        </Box>
+        <Box mb="20px">
+          <Typography mb="20px" variant="h3">
+            Teacher
+          </Typography>
+          <HeaderProfile type="teacher" />
+        </Box>
       </Container>
     </Box>
   );
