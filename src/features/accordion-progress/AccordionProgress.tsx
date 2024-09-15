@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect, useState, SyntheticEvent, ReactNode } from "react";
 import cn from "classnames";
 
 import { Typography, Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
@@ -7,7 +7,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import "./AccordionProgress.scss";
 
 type AccordionProgressProps = {
-  children?: React.ReactNode;
+  children?: ReactNode;
   heading: string;
   number?: number;
   progress?: {
@@ -15,11 +15,27 @@ type AccordionProgressProps = {
     total: number;
   };
   className?: string;
+  open: boolean;
+  onChange: (event: SyntheticEvent, expanded: boolean) => void;
 };
 
-const AccordionProgress: FC<AccordionProgressProps> = ({ number, heading, progress, children, className }) => {
+const AccordionProgress: FC<AccordionProgressProps> = ({
+  number,
+  heading,
+  progress,
+  children,
+  open,
+  className,
+  onChange,
+}) => {
+  const [isExpanded, setIsExpanded] = useState<boolean>(false);
+
+  useEffect(() => {
+    setIsExpanded(open);
+  }, [open]);
+
   return (
-    <Accordion className={cn("accordion-progress", className)}>
+    <Accordion expanded={isExpanded} className={cn("accordion-progress", className)} onChange={onChange}>
       <AccordionSummary className="accordion-progress__summary" expandIcon={<ExpandMoreIcon />}>
         <Typography variant="body2" className="accordion-progress__header">
           {number && (

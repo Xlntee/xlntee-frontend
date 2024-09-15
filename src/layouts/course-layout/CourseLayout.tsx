@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import cn from "classnames";
 
@@ -11,10 +11,40 @@ import "./CourseLayout.scss";
 
 const CourseLayout = () => {
   const [isOpenMenu, setIsOpenMenu] = useState<boolean>(true);
+  const [expandedObj, setExpandedObj] = useState<Record<string, boolean>>({});
+
+  //test data
+  const arr = [false, false];
+
+  function fillExpandedObj() {
+    const obj: Record<string, boolean> = {};
+    arr.forEach((item, index) => (obj[index] = item));
+    setExpandedObj(obj);
+  }
+
+  function collapseAll() {
+    const obj: Record<string, boolean> = {};
+    arr.forEach((_, index) => (obj[index] = false));
+    setExpandedObj(obj);
+  }
+
+  function onOpenAccordion(key: string, value: boolean) {
+    setExpandedObj((prevState) => ({
+      ...prevState,
+      [key]: value,
+    }));
+  }
 
   function onToggleNavigation() {
     setIsOpenMenu((prevState) => !prevState);
+    if (isOpenMenu) {
+      collapseAll();
+    }
   }
+
+  useEffect(() => {
+    fillExpandedObj();
+  }, [open]);
 
   return (
     <Box className={cn("course-layout", { "open-navigation": isOpenMenu })}>
@@ -32,23 +62,27 @@ const CourseLayout = () => {
           </Button>
         </Box>
         <Stack direction="column" gap="10px" position="relative">
-          <AccordionProgress
-            heading="Lorem ipsum dolor sit amet"
-            number={1}
-            progress={{
-              complete: 2,
-              total: 4,
-            }}
-            className={cn({ squeeze: !isOpenMenu })}
-          >
-            <Box>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla delectus quas molestiae cum corporis ex
-              velit unde consectetur odio fugit. Illum tenetur, labore earum ducimus rerum enim. Odio facere animi fuga
-              non placeat nisi quasi provident modi nam, tempore eligendi minima ipsa nostrum, laudantium veniam
-              sapiente ut soluta mollitia pariatur?
-            </Box>
-          </AccordionProgress>
-          <AccordionProgress
+          {Object.entries(expandedObj).map((item, index) => (
+            <AccordionProgress
+              open={item[1]}
+              onChange={(_, value) => onOpenAccordion(item[0], value)}
+              heading="Lorem ipsum dolor sit amet"
+              number={index + 1}
+              progress={{
+                complete: 2,
+                total: 4,
+              }}
+              className={cn({ squeeze: !isOpenMenu })}
+            >
+              <Box>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla delectus quas molestiae cum corporis ex
+                velit unde consectetur odio fugit. Illum tenetur, labore earum ducimus rerum enim. Odio facere animi
+                fuga non placeat nisi quasi provident modi nam, tempore eligendi minima ipsa nostrum, laudantium veniam
+                sapiente ut soluta mollitia pariatur?
+              </Box>
+            </AccordionProgress>
+          ))}
+          {/* <AccordionProgress
             heading="Lorem ipsum dolor sit amet"
             number={2}
             progress={{
@@ -56,6 +90,7 @@ const CourseLayout = () => {
               total: 4,
             }}
             className={cn({ squeeze: !isOpenMenu })}
+            open={false}
           >
             <Box>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla delectus quas molestiae cum corporis ex
@@ -63,7 +98,7 @@ const CourseLayout = () => {
               non placeat nisi quasi provident modi nam, tempore eligendi minima ipsa nostrum, laudantium veniam
               sapiente ut soluta mollitia pariatur?
             </Box>
-          </AccordionProgress>
+          </AccordionProgress> */}
           <Button className="collapsed-navigation__hidden-toggler" onClick={onToggleNavigation}></Button>
         </Stack>
       </Box>
