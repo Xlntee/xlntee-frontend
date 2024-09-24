@@ -18,6 +18,7 @@ const StudentLandingPage = lazy(() => import("src/pages/student/landing-page/Lan
 const TeacherLandingPage = lazy(() => import("src/pages/teacher/landing-page/LandingPage"));
 const UiPage = lazy(() => import("src/pages/ui"));
 const MyCoursesPage = lazy(() => import("src/pages/teacher/my-courses-page/MyCoursesPage"));
+const HelpCenterPage = lazy(() => import("src/pages/help-center-page/HelpCenterPage"));
 
 const SuspenseWrapper = ({ children }: { children: ReactNode }) => {
   return <Suspense fallback={<PageLoader />}>{children}</Suspense>;
@@ -104,6 +105,14 @@ const router = createBrowserRouter([
       {
         path: AppRoutes.notFound,
         element: <div>404</div>,
+      },
+      {
+        path: AppRoutes.helpCenter,
+        element: (
+          <SuspenseWrapper>
+            <HelpCenterPage title="Help Center" />
+          </SuspenseWrapper>
+        ),
       },
     ],
   },

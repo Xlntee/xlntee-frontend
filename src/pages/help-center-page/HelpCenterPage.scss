@@ -1,0 +1,22 @@
+.help-center-page {
+  margin-block: 50px;
+
+  &__caption {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: rgb(var(--dark-color));
+    margin-bottom: 30px;
+  }
+
+  &__submitBtn {
+    align-self: flex-end;
+  }
+
+  &__static-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+}

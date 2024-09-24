@@ -326,7 +326,7 @@ defaultTheme.components = {
   MuiOutlinedInput: {
     styleOverrides: {
       root: {
-        height: 50,
+        // height: 50,
         fieldset: {
           borderColor: defaultTheme.palette.grey["400"],
         },
