@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
 import { Box, Button, Container, Stack, TextField, Typography } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
@@ -12,16 +13,22 @@ import { PageProps } from "pages/type";
 
 import "./HelpCenterPage.scss";
 
+interface FormData {
+  supportFormText: string;
+}
+
 const HelpCenterPage = ({ title }: PageProps) => {
   useTitle(title);
 
   let navigate = useNavigate();
 
-  const [textFieldText, setTextFieldText] = useState("");
-  const [isSubmit, SetIsSubmit] = useState(false);
+  const { register, handleSubmit } = useForm<FormData>();
 
-  const handleSubmit = () => {
-    SetIsSubmit(true);
+  const [isSubmit, setIsSubmit] = useState<boolean>(false);
+
+  const onSubmit = (data: FormData) => {
+    console.log(data);
+    setIsSubmit(true);
   };
 
   //TODO: render button when user not authorized
@@ -52,41 +59,31 @@ const HelpCenterPage = ({ title }: PageProps) => {
             </Button>
           </Stack>
         ) : (
-          <Stack
-            paddingInline={{
-              xs: "0",
-              sm: "0",
-              md: "50px",
-              lg: "200px",
-              xl: "200px",
-            }}
-            alignItems="center"
-            pb="25px"
-          >
-            <TextField
-              className="help-center-page__textField"
-              sx={{
-                "& .MuiOutlinedInput-root": {
-                  borderRadius: "25px",
-                  border: "1px solid #dbe9fe",
-                },
-              }}
-              multiline
-              fullWidth
-              rows={6}
-              placeholder="Напишіть нам"
-              value={textFieldText}
-              onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                setTextFieldText(event.target.value);
-              }}
-            />
-            <Button onClick={handleSubmit} endIcon={<ArrowForwardIcon />} className="help-center-page__submitBtn">
-              Надіслати
-            </Button>
+          <Stack maxWidth="880px" margin="0 auto" pb="25px">
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <TextField
+                className="help-center-page__text-field"
+                sx={{
+                  "& .MuiOutlinedInput-root": {
+                    borderRadius: "25px",
+                    border: "1px solid #dbe9fe",
+                    height: "auto",
+                  },
+                }}
+                multiline
+                fullWidth
+                rows={6}
+                placeholder="Напишіть нам"
+                {...register("supportFormText", { required: true })}
+              />
+              <Button type="submit" endIcon={<ArrowForwardIcon />} className="help-center-page__submit-button">
+                Надіслати
+              </Button>
+            </form>
           </Stack>
         )}
 
-        <img className="help-center-page__static-image" src="/assets/help-center-image.png" />
+        <img className="help-center-page__image" src="/assets/help-center-image.png" />
       </Container>
     </Box>
   );
