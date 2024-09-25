@@ -1,0 +1,47 @@
+@use "styles/mixins" as mixins;
+
+.section-auth {
+  padding-block: 40px;
+}
+
+.auth-tab {
+  margin: 0 auto;
+  max-width: 502px;
+
+  &__tablist {
+    margin-bottom: 20px;
+  }
+
+  &__button {
+    cursor: pointer;
+
+    &.MuiTab-root {
+      padding: 0;
+      font-size: 14px;
+      font-weight: 400;
+      text-transform: capitalize;
+      min-width: auto;
+
+      @include mixins.media(tablet) {
+        font-size: 30px;
+      }
+    }
+
+    &.Mui-selected {
+      color: rgb(var(--text-color));
+    }
+  }
+
+  .MuiTabs-indicator {
+    background-color: rgb(var(--text-color));
+  }
+
+  .MuiTabs-flexContainer {
+    gap: 20px;
+    border-bottom: 2px solid rgb(var(--gray-color-400));
+  }
+
+  &__panel {
+    padding: 0;
+  }
+}

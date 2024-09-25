@@ -1,14 +1,19 @@
 import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
-import { Box, Tab } from "@mui/material";
+import { Box, Tab, Container } from "@mui/material";
 
-import { AuthPageSection } from "src/app/routing/appRoutes";
+import { AppRoutes, AuthPageSection } from "src/app/routing/appRoutes";
 import useTitle from "src/hooks/useTitle/useTitle";
 import { LoginForm, RegistrationForm } from "src/widgets/forms";
 import { PageProps } from "pages/type";
 
+import "./AuthorizationPage.scss";
+
 const authorizationPage = ({ title }: PageProps) => {
+  const loginTab = "login";
+  const registrationTab = "registration";
+
   useTitle(title);
 
   const { authType } = useParams();
@@ -25,39 +30,35 @@ const authorizationPage = ({ title }: PageProps) => {
   };
 
   return (
-    <Box sx={{ width: "504px", margin: "50px auto" }}>
-      <TabContext value={value}>
-        <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-          <TabList
-            onChange={handleChange}
-            sx={{
-              ".MuiTabs-indicator": { backgroundColor: "#000" },
-              ".Mui-selected": { color: "#000 !important", fontWeight: 700 },
-            }}
-          >
-            <Tab
-              label="Вхід"
-              value="login"
-              component={Link}
-              to="/auth/login"
-              sx={{ fontSize: "35px", textTransform: "none" }}
-            />
-            <Tab
-              label="Реєстрація"
-              value="registration"
-              component={Link}
-              to="/auth/registration"
-              sx={{ fontSize: "35px", textTransform: "none" }}
-            />
-          </TabList>
+    <Box component="section" className="section-auth">
+      <Container>
+        <Box className="auth-tab">
+          <TabContext value={value}>
+            <TabList className="auth-tab__tablist" onChange={handleChange}>
+              <Tab
+                label="Log in"
+                value={loginTab}
+                to={"/auth" + AppRoutes.login}
+                component={Link}
+                className="auth-tab__button"
+              />
+              <Tab
+                label="Sing up"
+                value={registrationTab}
+                to={"/auth" + AppRoutes.registration}
+                component={Link}
+                className="auth-tab__button"
+              />
+            </TabList>
+            <TabPanel value={loginTab} className="auth-tab__panel">
+              <LoginForm />
+            </TabPanel>
+            <TabPanel value={registrationTab} className="auth-tab__panel">
+              <RegistrationForm />
+            </TabPanel>
+          </TabContext>
         </Box>
-        <TabPanel value="login" sx={{ padding: "0" }}>
-          <LoginForm />
-        </TabPanel>
-        <TabPanel value="registration" sx={{ padding: "0" }}>
-          <RegistrationForm />
-        </TabPanel>
-      </TabContext>
+      </Container>
     </Box>
   );
 };

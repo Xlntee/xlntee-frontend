@@ -363,11 +363,15 @@ defaultTheme.components = {
       },
     },
   },
-  MuiMenuItem: {
+  MuiAlert: {
     styleOverrides: {
-      root: {
-        fontSize: "14px !important",
-        paddingInline: 10,
+      standardError: {
+        color: XlnteeColors.WarningBaseColor,
+        border: `1px solid ${XlnteeColors.WarningLightColor}`,
+      },
+      standardSuccess: {
+        color: XlnteeColors.SuccessBaseColor,
+        border: `1px solid ${XlnteeColors.SuccessLightColor}`,
       },
     },
   },

@@ -1,0 +1,64 @@
+@use "styles/mixins" as mixins;
+
+.auth-form {
+  &__caption-text {
+    &.MuiTypography-root {
+      color: rgb(var(--dark-color));
+    }
+
+    a {
+      text-decoration: underline;
+      color: rgb(var(--link-color));
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__btn-submit {
+    &.MuiButton-root {
+      min-height: 50px;
+      font-size: 18px;
+    }
+  }
+
+  &__auth-btn {
+    &.MuiButton-root {
+      min-height: 50px;
+      justify-content: start;
+      font-size: 16px;
+
+      @include mixins.media(tablet) {
+        font-size: 20px;
+      }
+    }
+
+    .MuiButton-startIcon {
+      margin: 0 12px 0 0;
+
+      svg {
+        font-size: 20px;
+
+        @include mixins.media(tablet) {
+          font-size: 36px;
+        }
+      }
+    }
+  }
+
+  &__terms-text {
+    a {
+      text-decoration: underline;
+      color: rgb(var(--link-color));
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .MuiFormHelperText-root {
+    margin-inline: 0;
+  }
+}
