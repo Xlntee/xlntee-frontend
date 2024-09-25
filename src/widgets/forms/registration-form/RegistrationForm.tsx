@@ -105,19 +105,6 @@ const RegistrationForm = () => {
           />
           {errors.agreement && <FormHelperText>{errors.agreement.message}</FormHelperText>}
         </FormControl>
-
-        {/* <Box>
-          <FormControlLabel
-            {...register("agreement")}
-            control={<Checkbox />}
-            label={
-              <Typography variant="body2" className="auth-form__terms-text">
-                I have read and accept all <a href="#">terms of use of the platform.</a>
-              </Typography>
-            }
-          />
-          {!!errors.confirm_password?.message && <p>{errors.confirm_password?.message}</p>}
-        </Box> */}
         <Button variant="contained" className="auth-form__btn-submit" onClick={handleSubmit(onSubmit)}>
           Sign up
         </Button>
