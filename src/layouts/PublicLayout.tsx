@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import { Box } from "@mui/material";
 
 import Header from "../../legacy/header/Header";
-import Footer from "../../legacy/footer/Footer";
+import Footer from "src/widgets/footer/Footer";
 
 interface LayoutProps {
   showFooter?: boolean;

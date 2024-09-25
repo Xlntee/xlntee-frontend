@@ -1,0 +1,40 @@
+@use "styles/mixins" as mixins;
+
+.footer {
+  position: relative;
+  padding-block: 20px;
+
+  &__container-main-text {
+    max-width: 562px;
+    margin: 0 auto;
+  }
+
+  &__main-text {
+    font-size: 14px !important;
+    font-weight: 300;
+    text-align: center;
+  }
+
+  &__social-network-block {
+    position: absolute;
+    top: 20px;
+  }
+
+  &__social-network-icon {
+    @include mixins.animate(color);
+
+    @include mixins.hover {
+      color: rgb(var(--gray-color-600));
+    }
+  }
+
+  &__cards-images-block {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
+  &__cards-image {
+    max-width: 53px;
+  }
+}
