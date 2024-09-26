@@ -37,11 +37,8 @@ const HeaderProfile = () => {
   function Tools() {
     return (
       <Stack direction="row" alignItems="center" gap="10px" className="header__tools">
-        <Link to={AppRoutes.login} className="header__action">
+        <Link to={`/auth${AppRoutes.login}`} className="header__action">
           Login
-        </Link>
-        <Link to={AppRoutes.registration} className="header__action">
-          Registration
         </Link>
       </Stack>
     );

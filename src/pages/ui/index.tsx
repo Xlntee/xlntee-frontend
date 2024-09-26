@@ -13,7 +13,7 @@ const renderButtons = (variant: string, size: string, styles?: CSSProperties) =>
   return (
     <>
       {buttonColorList.map((item) => (
-        <Button color={item} variant={variant as any} size={size as any} style={styles}>
+        <Button key={item} color={item} variant={variant as any} size={size as any} style={styles}>
           {item}
         </Button>
       ))}
@@ -44,7 +44,7 @@ const renderButtonsBlack = (variant: "black-contain" | "black-outline" | "black-
   return (
     <Stack gap={2} mb={2} direction="column">
       {buttonSizeList.map((item) => (
-        <Button variant={variant} size={item as any} style={styles}>
+        <Button key={item} variant={variant} size={item as any} style={styles}>
           {variant}
         </Button>
       ))}

@@ -37,7 +37,7 @@ const Navigation: FC<NavigationProps> = ({ items }) => {
             );
           }
           return (
-            <ListItem className="navigation__item">
+            <ListItem key={id} className="navigation__item">
               <NavLink to="/" className="navigation__link">
                 <Typography variant="caption" className="navigation__action">
                   {name}
