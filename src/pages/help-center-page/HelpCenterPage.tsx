@@ -42,19 +42,11 @@ const HelpCenterPage = ({ title }: PageProps) => {
         </Typography>
         {isSubmit ? (
           <Stack alignItems="center">
-            <CheckIcon sx={{ fontSize: "250px", color: XlnteeColors.BrandColor }} />
-            <Typography variant="body1" sx={{ color: XlnteeColors.BrandColor, fontSize: "14px" }}>
+            <CheckIcon className="help-center-page__check-icon" />
+            <Typography variant="caption" color={XlnteeColors.BrandColor}>
               Дякуємо! Ваш запит надіслано
             </Typography>
-            <Button
-              onClick={() => navigate(-1)}
-              sx={{
-                borderRadius: "50px",
-                px: "36px",
-                color: XlnteeColors.BlackElementColor,
-                fontWeight: "400",
-              }}
-            >
+            <Button className="help-center-page__return-btn" onClick={() => navigate(-1)}>
               На головну &gt;
             </Button>
           </Stack>
@@ -63,13 +55,6 @@ const HelpCenterPage = ({ title }: PageProps) => {
             <form onSubmit={handleSubmit(onSubmit)}>
               <TextField
                 className="help-center-page__text-field"
-                sx={{
-                  "& .MuiOutlinedInput-root": {
-                    borderRadius: "25px",
-                    border: "1px solid #dbe9fe",
-                    height: "auto",
-                  },
-                }}
                 multiline
                 fullWidth
                 rows={6}
