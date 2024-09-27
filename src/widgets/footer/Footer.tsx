@@ -38,7 +38,7 @@ const Footer = () => {
           </Grid>
           <Grid item xs={12} lg={8}>
             <Box className="footer__container-main-text">
-              <Typography variant="caption" className="footer__main-text">
+              <Typography variant="caption" fontWeight={300}>
                 Ми працюємо над тим, щоб зробити користування платформою якомога зручнішим. Ви можете допомогти нам
                 стати кращими
               </Typography>
