@@ -135,6 +135,14 @@ const router = createBrowserRouter([
           </SuspenseWrapper>
         ),
       },
+      {
+        path: AppRoutes.statistic,
+        element: (
+          <SuspenseWrapper>
+            <StatisticPage />
+          </SuspenseWrapper>
+        ),
+      },
     ],
   },
 ]);

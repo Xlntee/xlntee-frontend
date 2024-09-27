@@ -1,2 +1,2 @@
 export * from "./rating";
-export * from "./statistic";
+export * from "./statistic-info";
