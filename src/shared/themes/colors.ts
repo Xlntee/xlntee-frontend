@@ -16,6 +16,7 @@ export enum XlnteeColors {
   BlackElementColor = "#202020",
   LightElementColor = "#f8f8f8",
   GrayStrokeColor = "#eaeaea",
+  GrayColor200 = "#555E68",
   GrayColor300 = "#D9D9D9",
   GrayColor400 = "#C4C4C4",
   GrayColor500 = "#BDBDBD",
