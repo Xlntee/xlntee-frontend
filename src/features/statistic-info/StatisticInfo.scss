@@ -1,0 +1,48 @@
+@use "styles/mixins.scss" as mixins;
+
+.statistic-info {
+  background-color: rgb(var(--light-color));
+  border: 1px solid rgb(var(--gray-stroke-color));
+  border-radius: 10px;
+  padding: 4px 10px;
+  width: 100%;
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+
+  @include mixins.media(tablet) {
+    min-height: 100px;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  @include mixins.media(tablet_lg) {
+    min-height: 156px;
+    padding: 20px;
+  }
+
+  &__value {
+    &.MuiTypography-root {
+      font-size: 14px;
+
+      @include mixins.media(tablet) {
+        font-size: 30px;
+      }
+
+      @include mixins.media(tablet_lg) {
+        font-size: 48px;
+      }
+    }
+  }
+
+  &__text {
+    &.MuiTypography-root {
+      font-size: 12px;
+      color: rgb(var(--gray-color-200));
+    }
+  }
+}

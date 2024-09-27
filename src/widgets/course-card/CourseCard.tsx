@@ -1,4 +1,5 @@
 import { FC } from "react";
+import cn from "classnames";
 import { useTranslation } from "react-i18next";
 
 import { Box, Button, Stack, Typography, useTheme } from "@mui/material";
@@ -19,6 +20,7 @@ interface CourseCardProps {
   onDelete: () => void;
   onEdit: () => void;
   onRestore: () => void;
+  className?: string;
 }
 
 const CourseCard: FC<CourseCardProps> = ({
@@ -26,6 +28,7 @@ const CourseCard: FC<CourseCardProps> = ({
   updateTime,
   status = CourseStatus.DRAFT,
   imageSrc,
+  className,
   onDelete,
   onEdit,
   onRestore,
@@ -34,7 +37,7 @@ const CourseCard: FC<CourseCardProps> = ({
   const theme = useTheme();
 
   return (
-    <Box className="course-card">
+    <Box className={cn("course-card", className)}>
       <Box className="course-card__image-section">
         <Box bgcolor={imageSrc ? "transparent" : XlnteeColors.LightElementColor} className="course-card__image-inner">
           {imageSrc && <img src={imageSrc} className="course-card__image" />}

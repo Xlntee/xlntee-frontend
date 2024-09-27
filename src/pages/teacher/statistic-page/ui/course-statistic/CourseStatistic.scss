@@ -1,0 +1,40 @@
+@use "styles/mixins.scss" as mixins;
+
+.course-statistic {
+  background: rgb(var(--light-element-color));
+  border: 1px solid rgb(var(--gray-stroke-color));
+  border-radius: 25px;
+  padding: 10px;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+
+  @include mixins.media(tablet) {
+    flex-direction: row;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  &__card {
+    @include mixins.media(tablet) {
+      max-width: 280px;
+    }
+
+    @include mixins.media(tablet_lg) {
+      max-width: 350px;
+    }
+  }
+
+  &__grid-item {
+    width: calc(50% - 4px);
+    display: flex;
+
+    @include mixins.media(tablet) {
+      width: 120px;
+    }
+
+    @include mixins.media(tablet_lg) {
+      width: 156px;
+    }
+  }
+}
