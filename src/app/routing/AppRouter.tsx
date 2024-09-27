@@ -19,6 +19,7 @@ const TeacherLandingPage = lazy(() => import("src/pages/teacher/landing-page/Lan
 const UiPage = lazy(() => import("src/pages/ui"));
 const MyCoursesPage = lazy(() => import("src/pages/teacher/my-courses-page/MyCoursesPage"));
 const HelpCenterPage = lazy(() => import("src/pages/help-center-page/HelpCenterPage"));
+const StatisticPage = lazy(() => import("src/pages/teacher/statistic-page/StatisticPage"));
 
 const SuspenseWrapper = ({ children }: { children: ReactNode }) => {
   return <Suspense fallback={<PageLoader />}>{children}</Suspense>;
