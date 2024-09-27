@@ -1,0 +1,30 @@
+@use "styles/mixins" as mixins;
+
+.footer {
+  border-top: 1px solid rgb(var(--gray-stroke-color));
+  padding-block: 20px;
+
+  &__container-main-text {
+    max-width: 562px;
+    margin: auto;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  &__link {
+    font-size: 14px;
+    color: rgb(var(--link-color));
+  }
+
+  &__social-network-icon {
+    @include mixins.animate(color);
+
+    @include mixins.hover {
+      color: rgb(var(--gray-color-600));
+    }
+  }
+
+  &__cards-image {
+    max-width: 53px;
+  }
+}
