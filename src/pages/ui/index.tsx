@@ -177,6 +177,14 @@ const UiPage = ({ title }: PageProps) => {
         </Grid>
 
         <Box mb="20px">
+          <Typography variant="h2">Snackbar</Typography>
+          <Button onClick={() => setShowSnackbar(true)} variant="contained">
+            Snackbar open
+          </Button>
+          <Snackbar open={showSnackbar} onClose={() => setShowSnackbar(false)} title="Snackbar message" />
+        </Box>
+
+        <Box mb="20px">
           <Typography variant="h2">Header</Typography>
           <Header />
         </Box>
