@@ -20,7 +20,7 @@ const navList: NavigationLinkType[] = [
   {
     id: "2",
     name: "Students",
-    path: "/",
+    path: "/students",
     type: "link",
   },
 ];

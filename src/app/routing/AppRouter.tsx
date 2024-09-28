@@ -14,7 +14,6 @@ const AccountVerificationPage = lazy(() => import("pages/auth/account-verificati
 const EmailUpdatePage = lazy(() => import("src/pages/auth/email-update/EmailUpdatePage"));
 const PasswordUpdatePage = lazy(() => import("src/pages/auth/password-update/PasswordUpdatePage"));
 
-// const HomePage = lazy(() => import("src/pages/home-template/HomePage"));
 const CoursePreviewPage = lazy(() => import("src/pages/course-preview/CoursePreviewPage"));
 const CreateCoursePage = lazy(() => import("src/pages/create-course/CreateCoursePage"));
 const StudentLandingPage = lazy(() => import("src/pages/student/landing-page/LandingPage"));
@@ -37,7 +36,6 @@ const router = createBrowserRouter([
         path: AppRoutes.home,
         element: (
           <SuspenseWrapper>
-            {/* <HomePage title="Home page" /> */}
             <TeacherLandingPage title="Teacher landing" />
           </SuspenseWrapper>
         ),

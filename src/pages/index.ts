@@ -1,7 +1,6 @@
 export * from "./auth/authorization";
 export * from "./course-preview";
 export * from "./create-course";
-export * from "./home-template";
 export * from "./auth/login";
 export * from "./auth/registration";
 export * from "./student/landing-page";
