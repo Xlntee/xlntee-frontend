@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
@@ -24,6 +24,8 @@ import { XlnteeColors } from "src/shared/themes/colors";
 import { RegistrationFormValues, validationSchema } from "./validation";
 
 const RegistrationForm = () => {
+  const { role } = useParams();
+
   const {
     control,
     formState: { errors },
@@ -111,7 +113,7 @@ const RegistrationForm = () => {
         </Button>
         <Stack direction="column" gap="4px" textAlign="center">
           <Typography variant="caption" className="auth-form__caption-text">
-            Already have an account? <Link to={AppRoutes.login}>Log in</Link>
+            Already have an account? <Link to={`${AppRoutes.authTypeLogin}/${role}`}>Log in</Link>
           </Typography>
         </Stack>
       </Stack>

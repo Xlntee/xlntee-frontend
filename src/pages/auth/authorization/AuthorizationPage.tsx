@@ -13,7 +13,7 @@ import "./AuthorizationPage.scss";
 const authorizationPage = ({ title }: PageProps) => {
   useTitle(title);
 
-  const { authType } = useParams();
+  const { authType, role } = useParams();
   const [value, setValue] = useState<AuthPageSection>(AuthPageSection.LOGIN);
 
   useEffect(() => {
@@ -31,14 +31,14 @@ const authorizationPage = ({ title }: PageProps) => {
               <Tab
                 label="Log in"
                 value={AuthPageSection.LOGIN}
-                to={AppRoutes.login}
+                to={`${AppRoutes.authTypeLogin}/${role}`}
                 component={Link}
                 className="auth-tab__button"
               />
               <Tab
                 label="Sing up"
                 value={AuthPageSection.REGISTRATION}
-                to={AppRoutes.registration}
+                to={`${AppRoutes.authTypeRegistration}/${role}`}
                 component={Link}
                 className="auth-tab__button"
               />

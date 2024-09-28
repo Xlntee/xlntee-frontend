@@ -9,6 +9,7 @@ import { PrivateLayout, PublicLayout } from "src/layouts";
 
 // Lazy load the component
 const AuthorizationPage = lazy(() => import("pages/auth/authorization/AuthorizationPage"));
+const AuthorizationRolesPage = lazy(() => import("pages/auth/authorization-roles/AuthorizationRolesPage"));
 const AccountVerificationPage = lazy(() => import("pages/auth/account-verification/AccountVerificationPage"));
 const EmailUpdatePage = lazy(() => import("src/pages/auth/email-update/EmailUpdatePage"));
 const PasswordUpdatePage = lazy(() => import("src/pages/auth/password-update/PasswordUpdatePage"));
@@ -57,24 +58,8 @@ const router = createBrowserRouter([
           </SuspenseWrapper>
         ),
       },
-      // {
-      //   path: AppRoutes.login,
-      //   element: (
-      //     <SuspenseWrapper>
-      //       <LoginPage title="Login" />,
-      //     </SuspenseWrapper>
-      //   ),
-      // },
-      // {
-      //   path: AppRoutes.registration,
-      //   element: (
-      //     <SuspenseWrapper>
-      //       <RegistrationPage title="Registration" />
-      //     </SuspenseWrapper>
-      //   ),
-      // },
       {
-        path: AppRoutes.auth,
+        path: `${AppRoutes.authType}`,
         element: (
           <SuspenseWrapper>
             <AuthorizationPage title="Auth" />
@@ -82,10 +67,10 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: AppRoutes.authType,
+        path: AppRoutes.authRoles,
         element: (
           <SuspenseWrapper>
-            <AuthorizationPage title="Auth" />
+            <AuthorizationRolesPage title="Auth roles" />
           </SuspenseWrapper>
         ),
       },
