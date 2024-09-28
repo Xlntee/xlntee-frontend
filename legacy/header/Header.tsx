@@ -14,12 +14,12 @@ const Header = () => {
             <Link component={NavLink} to={AppRoutes.home}>
               Home
             </Link>
-            <Link component={NavLink} to={AppRoutes.login}>
+            {/* <Link component={NavLink} to={AppRoutes.login}>
               Login
             </Link>
             <Link component={NavLink} to={AppRoutes.registration}>
               Registration
-            </Link>
+            </Link> */}
             <Link component={NavLink} to={AppRoutes.createCourse}>
               Create Course
             </Link>
