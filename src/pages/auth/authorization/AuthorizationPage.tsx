@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 import { Box, Tab, Container } from "@mui/material";
@@ -11,49 +11,42 @@ import { PageProps } from "pages/type";
 import "./AuthorizationPage.scss";
 
 const authorizationPage = ({ title }: PageProps) => {
-  const loginTab = "login";
-  const registrationTab = "registration";
-
   useTitle(title);
 
   const { authType } = useParams();
+  const [value, setValue] = useState<AuthPageSection>(AuthPageSection.LOGIN);
 
-  const cleanAuthType = (authType: string | undefined): AuthPageSection => {
-    if (authType === AuthPageSection.LOGIN || authType === AuthPageSection.REGISTRATION) return authType;
-    return AuthPageSection.LOGIN;
-  };
-
-  const [value, setValue] = useState<AuthPageSection>(cleanAuthType(authType));
-
-  const handleChange = (_event: React.SyntheticEvent, newValue: AuthPageSection) => {
-    setValue(newValue);
-  };
+  useEffect(() => {
+    if (authType) {
+      setValue(authType as AuthPageSection);
+    }
+  }, [authType]);
 
   return (
     <Box component="section" className="section-auth">
       <Container>
         <Box className="auth-tab">
           <TabContext value={value}>
-            <TabList className="auth-tab__tablist" onChange={handleChange}>
+            <TabList className="auth-tab__tablist" onChange={(_, value) => setValue(value)}>
               <Tab
                 label="Log in"
-                value={loginTab}
-                to={"/auth" + AppRoutes.login}
+                value={AuthPageSection.LOGIN}
+                to={AppRoutes.login}
                 component={Link}
                 className="auth-tab__button"
               />
               <Tab
                 label="Sing up"
-                value={registrationTab}
-                to={"/auth" + AppRoutes.registration}
+                value={AuthPageSection.REGISTRATION}
+                to={AppRoutes.registration}
                 component={Link}
                 className="auth-tab__button"
               />
             </TabList>
-            <TabPanel value={loginTab} className="auth-tab__panel">
+            <TabPanel value={AuthPageSection.LOGIN} className="auth-tab__panel">
               <LoginForm />
             </TabPanel>
-            <TabPanel value={registrationTab} className="auth-tab__panel">
+            <TabPanel value={AuthPageSection.REGISTRATION} className="auth-tab__panel">
               <RegistrationForm />
             </TabPanel>
           </TabContext>

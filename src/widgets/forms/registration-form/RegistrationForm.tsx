@@ -18,6 +18,7 @@ import GoogleIcon from "@mui/icons-material/Google";
 import { FacebookOutlined } from "@mui/icons-material";
 import ErrorIcon from "@mui/icons-material/Error";
 
+import { AppRoutes } from "src/app/routing/appRoutes";
 import { XlnteeColors } from "src/shared/themes/colors";
 
 import { RegistrationFormValues, validationSchema } from "./validation";
@@ -110,7 +111,7 @@ const RegistrationForm = () => {
         </Button>
         <Stack direction="column" gap="4px" textAlign="center">
           <Typography variant="caption" className="auth-form__caption-text">
-            Already have an account? <Link to="/">Log in</Link>
+            Already have an account? <Link to={AppRoutes.login}>Log in</Link>
           </Typography>
         </Stack>
       </Stack>

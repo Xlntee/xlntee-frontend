@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
@@ -7,16 +7,13 @@ import { Box, Container, Typography, InputLabel, TextField, Stack, Button, Grid 
 import useTitle from "src/hooks/useTitle/useTitle";
 import { PageProps } from "pages/type";
 import { XlnteeColors } from "src/shared/themes/colors";
-import { getSecureEmail } from "src/shared/utils/methods";
 
 import { FormValues, validationSchema } from "./validation";
 
-import "./EmailUpdatePage.scss";
+import "./PasswordUpdatePage.scss";
 
-const EmailUpdatePage = ({ title }: PageProps) => {
+const PasswordUpdatePage = ({ title }: PageProps) => {
   useTitle(title);
-
-  const [email, setEmail] = useState<string>("");
 
   const {
     formState: { errors },
@@ -24,12 +21,8 @@ const EmailUpdatePage = ({ title }: PageProps) => {
     register,
   } = useForm<FormValues>({
     mode: "onSubmit",
-    resolver: yupResolver(validationSchema(email)),
+    resolver: yupResolver(validationSchema),
   });
-
-  useEffect(() => {
-    setEmail("vasilkovalyov@gmail.com");
-  }, []);
 
   const [success, setSuccess] = useState<boolean>(false);
 
@@ -50,44 +43,45 @@ const EmailUpdatePage = ({ title }: PageProps) => {
             onSubmit={handleSubmit(onSubmitForm)}
           >
             <Typography variant="h3" mb="20px" textAlign="center">
-              Email update
+              Password update
             </Typography>
             <Stack gap="20px">
               <Box>
-                <InputLabel htmlFor="email">Current email address</InputLabel>
+                <InputLabel htmlFor="current_password">Current password</InputLabel>
                 <TextField
-                  id="email"
-                  aria-label="email input"
-                  type="email"
-                  placeholder="Email"
-                  value={getSecureEmail(email)}
-                  fullWidth
-                  disabled
-                />
-              </Box>
-              <Box>
-                <InputLabel htmlFor="new_email">New email address</InputLabel>
-                <TextField
-                  {...register("new_email")}
-                  error={!!errors.new_email?.message}
-                  helperText={errors.new_email?.message}
-                  id="new_email"
-                  aria-label="new email input"
-                  type="email"
-                  placeholder="New email"
+                  {...register("password")}
+                  error={!!errors.password?.message}
+                  helperText={errors.password?.message}
+                  id="current_password"
+                  aria-label="current password input"
+                  type="password"
+                  placeholder="Current password"
                   fullWidth
                 />
               </Box>
               <Box>
-                <InputLabel htmlFor="confirm_email">Confirm new email</InputLabel>
+                <InputLabel htmlFor="new_password">New password</InputLabel>
                 <TextField
-                  {...register("confirm_email")}
-                  error={!!errors.confirm_email?.message}
-                  helperText={errors.confirm_email?.message}
-                  id="confirm_email"
-                  aria-label="email input"
-                  type="email"
-                  placeholder="Confirm new meanil"
+                  {...register("new_password")}
+                  error={!!errors.new_password?.message}
+                  helperText={errors.new_password?.message}
+                  id="new_password"
+                  aria-label="new password input"
+                  type="password"
+                  placeholder="New password"
+                  fullWidth
+                />
+              </Box>
+              <Box>
+                <InputLabel htmlFor="new_password">Confirm password</InputLabel>
+                <TextField
+                  {...register("confirm_password")}
+                  error={!!errors.confirm_password?.message}
+                  helperText={errors.confirm_password?.message}
+                  id="confirm_password"
+                  aria-label="confirm password input"
+                  type="password"
+                  placeholder="Confirm password"
                   fullWidth
                 />
               </Box>
@@ -101,7 +95,7 @@ const EmailUpdatePage = ({ title }: PageProps) => {
         ) : (
           <Grid container spacing={{ md: "40px" }} my={{ md: "40px" }}>
             <Grid item xs={12} md={5} textAlign={{ xs: "center", md: "left" }}>
-              <img src="/assets/email-update.png" alt="email-update" />
+              <img src="/assets/password-update.png" alt="email-update" />
             </Grid>
             <Grid item xs={12} md={7}>
               <Typography
@@ -110,7 +104,7 @@ const EmailUpdatePage = ({ title }: PageProps) => {
                 fontSize={{ xs: "20px", lg: "40px" }}
                 mb={{ xs: "10px", lg: "0" }}
               >
-                Email update
+                Password update
               </Typography>
               <Typography
                 variant="h3"
@@ -138,4 +132,4 @@ const EmailUpdatePage = ({ title }: PageProps) => {
   );
 };
 
-export default EmailUpdatePage;
+export default PasswordUpdatePage;

@@ -37,7 +37,7 @@ const HeaderProfile = () => {
   function Tools() {
     return (
       <Stack direction="row" alignItems="center" gap="10px" className="header__tools">
-        <Link to={`/auth${AppRoutes.login}`} className="header__action">
+        <Link to={AppRoutes.login} className="header__action">
           Login
         </Link>
       </Stack>

@@ -10,6 +10,7 @@ import { FacebookOutlined } from "@mui/icons-material";
 
 import { useAppDispatch } from "src/app/store/store";
 import { setCredentials } from "pages/auth/login/store/authSlice";
+import { AppRoutes } from "src/app/routing/appRoutes";
 
 import { authApiSlice, useLoginMutation } from "./api/authApiSlice";
 
@@ -94,10 +95,10 @@ const LoginForm: FC = () => {
           </Button>
           <Stack direction="column" gap="4px" textAlign="center">
             <Typography variant="caption" className="auth-form__caption-text">
-              Forgot password? <Link to="/">recover your pasword</Link>
+              Forgot password? <Link to={AppRoutes.password_update}>recover your pasword</Link>
             </Typography>
             <Typography variant="caption" className="auth-form__caption-text">
-              Have no account? <Link to="/">Sign up</Link>
+              Have no account? <Link to={AppRoutes.registration}>Sign up</Link>
             </Typography>
           </Stack>
         </Stack>
