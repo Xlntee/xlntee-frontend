@@ -1,4 +1,5 @@
 import { FC, useState } from "react";
+import { Link } from "react-router-dom";
 
 import { Box, Container, Stack, Button, Badge } from "@mui/material";
 import VideocamIcon from "@mui/icons-material/Videocam";
@@ -109,9 +110,9 @@ const HeaderProfile: FC<HeaderProfileProps> = ({ children, type }) => {
   return (
     <Box component="header" className="header-profile">
       <Container className="header-profile__container">
-        <Box className="header-profile__logo">
+        <Link to="/" className="header-profile__logo">
           <img src="/assets/x-logo-modal-extend.png" />
-        </Box>
+        </Link>
         <Box className="header-profile__nav">
           <Box className="header-profile__nav-left">
             <Navigation items={getNavigation()} />
