@@ -383,4 +383,11 @@ defaultTheme.components = {
       },
     },
   },
+  MuiList: {
+    styleOverrides: {
+      root: {
+        paddingBlock: 0,
+      },
+    },
+  },
 };

@@ -60,12 +60,12 @@
     border-radius: 20px;
     font-weight: 600;
     font-size: 12px;
-    min-height: 26px;
+    min-height: 30px;
     padding-inline: 10px;
 
     @include mixins.animate(background-color);
 
-    @include mixins.media(breakpoints.$mobile_breakpoint_min) {
+    @include mixins.media(breakpoints.$desktop) {
       font-size: 14px;
       min-height: 36px;
       padding-inline: 20px;

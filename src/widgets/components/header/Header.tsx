@@ -1,12 +1,14 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import { Box, Container, Stack } from "@mui/material";
 
+import { AppRoutes } from "src/app/routing/appRoutes";
 import { MenuToggler, Navigation, NavigationDrawer, NavigationLinkType } from "src/features";
 
+import { LanguageSwitcher } from "../language-switcher";
+
 import "./Header.scss";
-import { Link } from "react-router-dom";
-import { AppRoutes } from "src/app/routing/appRoutes";
 
 const navList: NavigationLinkType[] = [
   {
@@ -37,6 +39,7 @@ const HeaderProfile = () => {
   function Tools() {
     return (
       <Stack direction="row" alignItems="center" gap="10px" className="header__tools">
+        <LanguageSwitcher compact />
         <Link to={AppRoutes.authRoles} className="header__action">
           Login
         </Link>
