@@ -565,6 +565,11 @@ defaultTheme.components = {
       },
     },
   },
+  MuiMenuItem: {
+    styleOverrides: {
+      root: {
+        fontSize: "14px !important",
+        paddingInline: 10,
   MuiList: {
     styleOverrides: {
       root: {
