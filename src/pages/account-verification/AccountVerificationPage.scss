@@ -1,0 +1,35 @@
+@use "styles/mixins" as mixins;
+
+.section-account-verification {
+  &__content {
+    text-align: center;
+  }
+
+  a {
+    text-decoration: underline;
+    color: rgb(var(--link-color));
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &__bottom-text {
+    button {
+      &.MuiButtonBase-root {
+        display: inline-block;
+        padding: 0;
+        min-height: auto;
+        font-weight: 400;
+        text-decoration: underline;
+        color: rgb(var(--link-color));
+        min-width: auto;
+        line-height: 1.35;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

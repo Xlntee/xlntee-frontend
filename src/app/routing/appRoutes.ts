@@ -13,6 +13,7 @@ export const AppRoutes = {
   myCourses: "/my-courses",
   helpCenter: "/help-center",
   statistic: "/statistic",
+  account_verification: "/account-verification",
 };
 
 export enum AuthPageSection {

@@ -20,6 +20,7 @@ const UiPage = lazy(() => import("src/pages/ui"));
 const MyCoursesPage = lazy(() => import("src/pages/teacher/my-courses-page/MyCoursesPage"));
 const HelpCenterPage = lazy(() => import("src/pages/help-center-page/HelpCenterPage"));
 const StatisticPage = lazy(() => import("src/pages/teacher/statistic-page/StatisticPage"));
+const AccountVerificationPage = lazy(() => import("src/pages/account-verification/AccountVerificationPage"));
 
 const SuspenseWrapper = ({ children }: { children: ReactNode }) => {
   return <Suspense fallback={<PageLoader />}>{children}</Suspense>;
@@ -112,6 +113,14 @@ const router = createBrowserRouter([
         element: (
           <SuspenseWrapper>
             <HelpCenterPage title="Help Center" />
+          </SuspenseWrapper>
+        ),
+      },
+      {
+        path: AppRoutes.account_verification,
+        element: (
+          <SuspenseWrapper>
+            <AccountVerificationPage title="Account verification" />
           </SuspenseWrapper>
         ),
       },
