@@ -31,6 +31,7 @@ const UiPage = lazy(() => import("src/pages/ui"));
 const MyCoursesPage = lazy(() => import("src/pages/teacher/my-courses-page/MyCoursesPage"));
 const HelpCenterPage = lazy(() => import("src/pages/help-center-page/HelpCenterPage"));
 const StatisticPage = lazy(() => import("src/pages/teacher/statistic-page/StatisticPage"));
+const CoursePage = lazy(() => import("src/pages/course/Course"));
 
 const SuspenseWrapper = ({ children }: { children: ReactNode }) => {
   return <Suspense fallback={<PageLoader />}>{children}</Suspense>;
@@ -169,38 +170,6 @@ const router = createBrowserRouter([
         path: AppRoutes.notFound,
         element: <div>404</div>,
       },
-      {
-        path: AppRoutes.helpCenter,
-        element: (
-          <SuspenseWrapper>
-            <HelpCenterPage title="Help Center" />
-          </SuspenseWrapper>
-        ),
-      },
-      {
-        path: AppRoutes.account_verification,
-        element: (
-          <SuspenseWrapper>
-            <AccountVerificationPage title="Account verification" />
-          </SuspenseWrapper>
-        ),
-      },
-      {
-        path: AppRoutes.email_update,
-        element: (
-          <SuspenseWrapper>
-            <EmailUpdatePage title="Email update" />
-          </SuspenseWrapper>
-        ),
-      },
-      {
-        path: AppRoutes.password_update,
-        element: (
-          <SuspenseWrapper>
-            <PasswordUpdatePage title="Password update" />
-          </SuspenseWrapper>
-        ),
-      },
     ],
   },
   {
@@ -211,6 +180,14 @@ const router = createBrowserRouter([
         element: (
           <SuspenseWrapper>
             <MyCoursesPage title="My courses" />
+          </SuspenseWrapper>
+        ),
+      },
+      {
+        path: AppRoutes.helpCenter,
+        element: (
+          <SuspenseWrapper>
+            <HelpCenterPage title="Help Center" />
           </SuspenseWrapper>
         ),
       },

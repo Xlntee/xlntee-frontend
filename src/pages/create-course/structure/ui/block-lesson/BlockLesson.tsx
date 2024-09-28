@@ -170,7 +170,7 @@ const BlockLesson: FC<BlockLessonProps> = ({ index, id, canDelete }) => {
               className="block-lesson__action-save-lecture"
               onClick={handleSubmit(onSubmit)}
             >
-              {t("button_save")}
+              {t("structure.save_section")}
             </Button>
           </Stack>
         </Box>

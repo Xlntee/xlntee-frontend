@@ -60,6 +60,7 @@
     "section": "Section",
     "lecture": "Lecture",
     "add_lecture": "Add lecture",
+    "save_section": "Save section",
     "add_lesson": "Add section",
     "free_section": "Free Section",
     "title_lesson_placeholder": "Title",
@@ -120,5 +121,6 @@
   "button_discard_changes": "Discard changes",
   "storage": "Storage",
   "students": "Students",
-  "change_plan": "Change tariff plan"
+  "change_plan": "Change tariff plan",
+  "course_navigation": "Course navigation"
 }

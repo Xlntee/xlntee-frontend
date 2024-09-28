@@ -59,6 +59,7 @@
     "section": "Розділ",
     "lecture": "Лекція",
     "add_lecture": "Додати лекцію",
+    "save_section": "Зберегти розділ",
     "add_lesson": "Додати розділ",
     "free_section": "Безкоштовний розділ",
     "title_lesson_placeholder": "Назва",
@@ -114,9 +115,10 @@
   "publish": {
     "nav_title": "Опублікувати курс"
   },
-  "button_save": "зберегти",
+  "button_save": "Зберегти",
   "button_discard_changes": "відхилити зміни",
   "storage": "Зберігання",
   "students": "Студенти",
-  "change_plan": "Змінити тарифний план"
+  "change_plan": "Змінити тарифний план",
+  "course_navigation": "Навігація по курсу"
 }

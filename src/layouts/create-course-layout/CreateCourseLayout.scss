@@ -1,9 +1,85 @@
 @use "styles/mixins.scss" as mixins;
 
+.create-course-layout {
+  --collapsed-navigation-width: 100%;
+
+  flex: 1;
+
+  &__container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__grid {
+    @include mixins.animate(grid-template-columns);
+
+    @include mixins.media(desktop) {
+      --collapsed-navigation-width: 350px;
+
+      display: grid;
+      grid-template-columns: var(--collapsed-navigation-width) 1fr;
+      gap: 20px;
+    }
+  }
+
+  &__aside {
+    position: relative;
+    z-index: 2;
+    background-color: rgb(var(--light-color));
+
+    @include mixins.media(desktop, max) {
+      display: none;
+    }
+  }
+
+  &__aside-menu {
+    width: 320px;
+    padding: 50px 20px 20px;
+
+    @include mixins.media(tablet) {
+      width: 400px;
+    }
+
+    @include mixins.media(desktop) {
+      padding: 0;
+      width: auto;
+    }
+  }
+
+  &__menu-opener {
+    &.MuiButtonBase-root {
+      margin-bottom: 20px;
+
+      @include mixins.media(desktop) {
+        display: none;
+      }
+    }
+  }
+
+  &__menu-close {
+    &.MuiButtonBase-root {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      min-height: auto;
+
+      @include mixins.media(desktop) {
+        display: none;
+      }
+    }
+  }
+
+  &__body {
+  }
+}
+
 .create-course-nav {
-  border-radius: 25px;
   padding: 16px 14px;
   box-shadow: var(--base-shadow);
+
+  @include mixins.media(desktop) {
+    border-radius: 25px;
+  }
 
   &__list {
     display: flex;
@@ -17,7 +93,9 @@
 
   &__item {
     &.MuiListItem-root {
+      justify-content: space-between;
       padding: 0;
+      gap: 10px;
     }
   }
 
