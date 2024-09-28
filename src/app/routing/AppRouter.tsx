@@ -8,19 +8,20 @@ import { ProtectedRoute } from "./ProtectedRoute";
 import { PrivateLayout, PublicLayout } from "src/layouts";
 
 // Lazy load the component
-const AuthorizationPage = lazy(() => import("src/pages/authorization/AuthorizationPage"));
+const AuthorizationPage = lazy(() => import("pages/auth/authorization/AuthorizationPage"));
 const CoursePreviewPage = lazy(() => import("src/pages/course-preview/CoursePreviewPage"));
 const CreateCoursePage = lazy(() => import("src/pages/create-course/CreateCoursePage"));
 // const HomePage = lazy(() => import("src/pages/home-template/HomePage"));
-const LoginPage = lazy(() => import("src/pages/login/LoginPage"));
-const RegistrationPage = lazy(() => import("src/pages/registration/RegistrationPage"));
+const LoginPage = lazy(() => import("pages/auth/login/LoginPage"));
 const StudentLandingPage = lazy(() => import("src/pages/student/landing-page/LandingPage"));
 const TeacherLandingPage = lazy(() => import("src/pages/teacher/landing-page/LandingPage"));
 const UiPage = lazy(() => import("src/pages/ui"));
 const MyCoursesPage = lazy(() => import("src/pages/teacher/my-courses-page/MyCoursesPage"));
 const HelpCenterPage = lazy(() => import("src/pages/help-center-page/HelpCenterPage"));
 const StatisticPage = lazy(() => import("src/pages/teacher/statistic-page/StatisticPage"));
-const AccountVerificationPage = lazy(() => import("src/pages/account-verification/AccountVerificationPage"));
+const AccountVerificationPage = lazy(() => import("pages/auth/account-verification/AccountVerificationPage"));
+const RegistrationPage = lazy(() => import("src/pages/auth/registration/RegistrationPage"));
+const EmailUpdatePage = lazy(() => import("src/pages/auth/email-update/EmailUpdatePage"));
 
 const SuspenseWrapper = ({ children }: { children: ReactNode }) => {
   return <Suspense fallback={<PageLoader />}>{children}</Suspense>;
@@ -121,6 +122,14 @@ const router = createBrowserRouter([
         element: (
           <SuspenseWrapper>
             <AccountVerificationPage title="Account verification" />
+          </SuspenseWrapper>
+        ),
+      },
+      {
+        path: AppRoutes.email_update,
+        element: (
+          <SuspenseWrapper>
+            <EmailUpdatePage title="Email update" />
           </SuspenseWrapper>
         ),
       },

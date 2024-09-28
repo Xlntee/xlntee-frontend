@@ -1,11 +1,12 @@
-export * from "./authorization";
+export * from "./auth/authorization";
 export * from "./course-preview";
 export * from "./create-course";
 export * from "./home-template";
-export * from "./login";
-export * from "./registration";
+export * from "./auth/login";
+export * from "./auth/registration";
 export * from "./student/landing-page";
 export * from "./teacher/landing-page";
 export * from "./teacher/my-courses-page";
-export * from "./account-verification";
+export * from "./auth/account-verification";
+export * from "./auth/email-update";
 export { default as UiPage } from "./ui";

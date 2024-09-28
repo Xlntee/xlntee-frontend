@@ -2,7 +2,7 @@ import { combineReducers } from "redux";
 import { persistReducer, PersistConfig } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
-import authReducer, { IAuthState } from "src/pages/login/store/authSlice";
+import authReducer, { IAuthState } from "pages/auth/login/store/authSlice";
 import { apiSlice } from "../api/apiSlice";
 
 const authPersistConfig: PersistConfig<IAuthState> = {

@@ -9,7 +9,7 @@ import GoogleIcon from "@mui/icons-material/Google";
 import { FacebookOutlined } from "@mui/icons-material";
 
 import { useAppDispatch } from "src/app/store/store";
-import { setCredentials } from "pages/login/store/authSlice";
+import { setCredentials } from "pages/auth/login/store/authSlice";
 
 import { authApiSlice, useLoginMutation } from "./api/authApiSlice";
 

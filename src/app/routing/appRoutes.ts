@@ -14,6 +14,7 @@ export const AppRoutes = {
   helpCenter: "/help-center",
   statistic: "/statistic",
   account_verification: "/account-verification",
+  email_update: "/email-update",
 };
 
 export enum AuthPageSection {

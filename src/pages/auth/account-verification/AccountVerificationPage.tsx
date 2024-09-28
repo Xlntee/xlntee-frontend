@@ -31,8 +31,8 @@ const AccountVerificationPage = ({ title }: PageProps) => {
             <Box mb="20px">
               <OtpInput length={4} onUpdate={(value) => console.log(value)} />
             </Box>
-            <Typography variant="body2" className="section-account-verification__bottom-text">
-              Haven't received the code yet? check your spam folder or <Button>resend</Button>
+            <Typography variant="body2">
+              Haven't received the code yet? check your spam folder or <Button className="button-link">resend</Button>
             </Typography>
           </Box>
         </Stack>
