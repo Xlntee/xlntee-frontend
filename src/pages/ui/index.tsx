@@ -3,6 +3,7 @@ import { Button, Container, Stack, Box, Typography, Grid, TextField, InputLabel,
 
 import useTitle from "src/hooks/useTitle/useTitle";
 import { PageProps } from "pages/type";
+import { Header, HeaderProfile } from "src/widgets/components";
 
 const typographyList = ["h1", "h2", "h3", "h4", "h5", "h6"] as const;
 const buttonColorList = ["primary", "secondary", "success", "error"] as const;
@@ -12,7 +13,7 @@ const renderButtons = (variant: string, size: string, styles?: CSSProperties) =>
   return (
     <>
       {buttonColorList.map((item) => (
-        <Button color={item} variant={variant as any} size={size as any} style={styles}>
+        <Button key={item} color={item} variant={variant as any} size={size as any} style={styles}>
           {item}
         </Button>
       ))}
@@ -43,7 +44,7 @@ const renderButtonsBlack = (variant: "black-contain" | "black-outline" | "black-
   return (
     <Stack gap={2} mb={2} direction="column">
       {buttonSizeList.map((item) => (
-        <Button variant={variant} size={item as any} style={styles}>
+        <Button key={item} variant={variant} size={item as any} style={styles}>
           {variant}
         </Button>
       ))}
@@ -170,6 +171,26 @@ const UiPage = ({ title }: PageProps) => {
             </Stack>
           </Grid>
         </Grid>
+
+        <Box mb="20px">
+          <Typography variant="h2">Header</Typography>
+          <Header />
+        </Box>
+        <Box mb="20px">
+          <Typography variant="h2">HeaderProfile</Typography>
+        </Box>
+        <Box mb="20px">
+          <Typography mb="20px" variant="h3">
+            Student
+          </Typography>
+          <HeaderProfile type="student" />
+        </Box>
+        <Box mb="20px">
+          <Typography mb="20px" variant="h3">
+            Teacher
+          </Typography>
+          <HeaderProfile type="teacher" />
+        </Box>
       </Container>
     </Box>
   );

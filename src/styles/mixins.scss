@@ -84,5 +84,15 @@ $animation-speed: 0.3s !default;
         @content;
       }
     }
+  } @else {
+    @if ($type == "max") {
+      @media (max-width: $breakpoint) {
+        @content;
+      }
+    } @else {
+      @media (min-width: $breakpoint) {
+        @content;
+      }
+    }
   }
 }

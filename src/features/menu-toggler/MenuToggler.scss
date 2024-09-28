@@ -1,0 +1,19 @@
+@use "styles/mixins.scss" as mixins;
+@use "styles/breakpoints.scss" as breakpoints;
+
+.menu-toggler {
+  &.MuiButtonBase-root {
+    padding: 0;
+    min-width: 30px;
+    width: 30px;
+    height: 30px;
+
+    @include mixins.media(breakpoints.$mobile_breakpoint_min) {
+      display: none;
+    }
+  }
+
+  svg {
+    font-size: 30px;
+  }
+}

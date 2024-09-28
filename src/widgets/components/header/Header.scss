@@ -1,0 +1,84 @@
+@use "styles/mixins.scss" as mixins;
+@use "styles/breakpoints.scss" as breakpoints;
+
+.header {
+  padding-block: 6px;
+  box-shadow: 0 2px 5px 0 rgb(var(--dark-color) / 0.2);
+
+  &__container {
+    &.MuiContainer-root {
+      display: grid;
+      align-items: center;
+      justify-content: space-between;
+      grid-template-columns: 86px 1fr;
+      gap: 20px;
+
+      @include mixins.media(breakpoints.$mobile_breakpoint_min) {
+        gap: 40px;
+      }
+    }
+  }
+
+  &__nav {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    justify-content: space-between;
+    align-items: center;
+
+    @include mixins.media(breakpoints.$mobile_breakpoint_min) {
+      gap: 40px;
+    }
+  }
+
+  &__nav-left .navigation {
+    @include mixins.media(breakpoints.$mobile_breakpoint_max, max) {
+      display: none;
+    }
+  }
+
+  &__nav-right {
+    place-self: end;
+
+    .MuiButtonBase-root {
+      min-width: auto;
+    }
+  }
+
+  &__nav-right &__tools {
+    &.MuiStack-root {
+      @include mixins.media(breakpoints.$tablet, max) {
+        display: none;
+      }
+    }
+  }
+
+  &__action {
+    display: inline-flex;
+    align-items: center;
+    color: rgb(var(--light-color));
+    background-color: rgb(var(--dark-color));
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 12px;
+    min-height: 26px;
+    padding-inline: 10px;
+
+    @include mixins.animate(background-color);
+
+    @include mixins.media(breakpoints.$mobile_breakpoint_min) {
+      font-size: 14px;
+      min-height: 36px;
+      padding-inline: 20px;
+    }
+
+    @include mixins.hover {
+      background-color: rgb(var(--dark-color) / 0.7);
+    }
+  }
+
+  .navigation-drawer &__tools {
+    @include mixins.media(breakpoints.$tablet) {
+      display: none;
+    }
+  }
+}
