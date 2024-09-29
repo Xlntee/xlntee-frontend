@@ -1,0 +1,11 @@
+{
+  "dashboard": {
+    "students": "Student / period",
+    "refund": "Refund / period",
+    "review": "Review / period",
+    "complains": "Complains",
+    "revenue": "Revenue / period",
+    "refunds-total": "Refunds total / period",
+    "rating": "Rating"
+  }
+}

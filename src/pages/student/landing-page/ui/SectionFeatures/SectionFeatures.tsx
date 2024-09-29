@@ -63,7 +63,7 @@ const SectionFeatures = () => {
             <Grid item md={4} className="section-feature__feature-col">
               <Button
                 component={RouterLink}
-                to={AppRoutes.auth}
+                to={AppRoutes.auth.base}
                 color="primary"
                 variant="contained"
                 size="medium"

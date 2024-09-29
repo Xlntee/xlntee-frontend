@@ -10,5 +10,5 @@ export const ProtectedRoute = ({ element }: { element: ReactNode }) => {
   const token = useAppSelector(selectToken);
   const location = useLocation();
 
-  return token ? element : <Navigate to={AppRoutes.authRoles} state={{ from: location.pathname }} replace />;
+  return token ? element : <Navigate to={AppRoutes.auth.roles} state={{ from: location.pathname }} replace />;
 };

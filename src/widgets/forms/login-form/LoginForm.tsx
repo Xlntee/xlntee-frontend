@@ -99,10 +99,10 @@ const LoginForm: FC = () => {
           </Button>
           <Stack direction="column" gap="4px" textAlign="center">
             <Typography variant="caption" className="auth-form__caption-text">
-              {t("forgot-password")}? <Link to={AppRoutes.authPasswordUpdate}>{t("recover-password")}</Link>
+              {t("forgot-password")}? <Link to={AppRoutes.auth.passwordUpdate}>{t("recover-password")}</Link>
             </Typography>
             <Typography variant="caption" className="auth-form__caption-text">
-              {t("no-account")}? <Link to={`${AppRoutes.authTypeRegistration}/${role}`}>{t("sign-up")}</Link>
+              {t("no-account")}? <Link to={`${AppRoutes.auth.registration}/${role}`}>{t("sign-up")}</Link>
             </Typography>
           </Stack>
         </Stack>

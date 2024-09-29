@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { useTranslation } from "react-i18next";
 
 import { Box, Stack } from "@mui/material";
 
@@ -16,6 +17,8 @@ interface CourseStatisticProps {
 }
 
 const CourseStatistic: FC<CourseStatisticProps> = ({ id, title, status, updateTime, image }) => {
+  const { t } = useTranslation("teacher");
+
   const onDelete = (id: string) => alert(`course with id: ${id} deleted`);
   const onEdit = (id: string) => alert(`course with id: ${id} editing`);
   const onRestore = (id: string) => alert(`course with id: ${id} restored`);
@@ -43,25 +46,25 @@ const CourseStatistic: FC<CourseStatisticProps> = ({ id, title, status, updateTi
         flex="1"
       >
         <Box className="course-statistic__grid-item">
-          <StatisticInfo value="135" text="Student / period" />
+          <StatisticInfo value="135" text={t("dashboard.students")} />
         </Box>
         <Box className="course-statistic__grid-item">
-          <StatisticInfo value="11" text="Refund / period" />
+          <StatisticInfo value="11" text={t("dashboard.refund")} />
         </Box>
         <Box className="course-statistic__grid-item">
-          <StatisticInfo value="99" text="Review / period" />
+          <StatisticInfo value="99" text={t("dashboard.review")} />
         </Box>
         <Box className="course-statistic__grid-item">
-          <StatisticInfo value="3" text="Complains" />
+          <StatisticInfo value="3" text={t("dashboard.complains")} />
         </Box>
         <Box className="course-statistic__grid-item">
-          <StatisticInfo value="121.1" text="Revenue / period" />
+          <StatisticInfo value="121.1" text={t("dashboard.revenue")} />
         </Box>
         <Box className="course-statistic__grid-item">
-          <StatisticInfo value="900" text="Refunds total / period" />
+          <StatisticInfo value="900" text={t("dashboard.refunds-total")} />
         </Box>
         <Box className="course-statistic__grid-item">
-          <StatisticInfo value="4.3" text="Rating" />
+          <StatisticInfo value="4.3" text={t("dashboard.rating")} />
         </Box>
       </Stack>
     </Box>

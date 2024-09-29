@@ -23,13 +23,13 @@ const HeaderProfile = () => {
   const navList: NavigationLinkType[] = [
     {
       id: "1",
-      name: t("public-navigation.teacher"),
+      name: t("teacher"),
       path: "/",
       type: "link",
     },
     {
       id: "2",
-      name: t("public-navigation.student"),
+      name: t("student"),
       path: "/student",
       type: "link",
     },
@@ -39,7 +39,7 @@ const HeaderProfile = () => {
     return (
       <Stack direction="row" alignItems="center" gap="10px" className="header__tools">
         <LanguageSwitcher compact />
-        <Link to={AppRoutes.authRoles} className="header__action">
+        <Link to={AppRoutes.auth.roles} className="header__action">
           {t("login")}
         </Link>
       </Stack>

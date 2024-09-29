@@ -29,7 +29,7 @@ const AccountVerificationPage = ({ title }: PageProps) => {
           </Typography>
           <Typography variant="body2" textAlign="left" mb="20px">
             {t("account-verification.text1")} {getShortEmail("namesurname@gmail.com")} {t("account-verification.text2")}
-            ? <Link to={AppRoutes.authPasswordUpdate}>{t("account-verification.link")}</Link>
+            ? <Link to={AppRoutes.auth.passwordUpdate}>{t("account-verification.link")}</Link>
           </Typography>
           <Box maxWidth="280px" marginInline="auto">
             <Box mb="20px">

@@ -21,6 +21,7 @@ const CreateCourseStructurePage = lazy(() => import("src/pages/create-course/str
 const CreateCourseLecturerPage = lazy(() => import("src/pages/create-course/lecturer/Lecturer"));
 const CreateCoursePricePage = lazy(() => import("src/pages/create-course/price/Price"));
 const CreateCourseAdvertisingPage = lazy(() => import("src/pages/create-course/advertising/Advertising"));
+
 const StudentLandingPage = lazy(() => import("src/pages/student/landing-page/LandingPage"));
 const TeacherLandingPage = lazy(() => import("src/pages/teacher/landing-page/LandingPage"));
 const UiPage = lazy(() => import("src/pages/ui"));
@@ -39,7 +40,23 @@ const router = createBrowserRouter([
     element: <PublicLayout />,
     children: [
       {
-        path: AppRoutes.authType,
+        path: AppRoutes.home,
+        element: (
+          <SuspenseWrapper>
+            <TeacherLandingPage title="Teacher landing" />
+          </SuspenseWrapper>
+        ),
+      },
+      {
+        path: AppRoutes.studentLanding,
+        element: (
+          <SuspenseWrapper>
+            <StudentLandingPage title="Student landing" />
+          </SuspenseWrapper>
+        ),
+      },
+      {
+        path: AppRoutes.auth.typeRole,
         element: (
           <SuspenseWrapper>
             <AuthorizationPage title="Auth" />
@@ -47,7 +64,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: AppRoutes.authRoles,
+        path: AppRoutes.auth.roles,
         element: (
           <SuspenseWrapper>
             <AuthorizationRolesPage title="Auth roles" />
@@ -55,7 +72,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: AppRoutes.authAccountVerification,
+        path: AppRoutes.auth.accountVerification,
         element: (
           <SuspenseWrapper>
             <AccountVerificationPage title="Account verification" />
@@ -63,7 +80,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: AppRoutes.authEmailUpdate,
+        path: AppRoutes.auth.emailUpdate,
         element: (
           <SuspenseWrapper>
             <EmailUpdatePage title="Email update" />
@@ -71,10 +88,81 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: AppRoutes.authPasswordUpdate,
+        path: AppRoutes.auth.passwordUpdate,
         element: (
           <SuspenseWrapper>
             <PasswordUpdatePage title="Password update" />
+          </SuspenseWrapper>
+        ),
+      },
+      {
+        element: <CourseLayout />,
+        children: [
+          {
+            index: true,
+            path: "/course",
+            element: (
+              <SuspenseWrapper>
+                <CoursePage />
+              </SuspenseWrapper>
+            ),
+          },
+        ],
+      },
+      {
+        path: AppRoutes.helpCenter,
+        element: (
+          <SuspenseWrapper>
+            <HelpCenterPage title="Help Center" />
+          </SuspenseWrapper>
+        ),
+      },
+      {
+        path: AppRoutes.ui,
+        element: (
+          <SuspenseWrapper>
+            <UiPage title="UI" />
+          </SuspenseWrapper>
+        ),
+      },
+      {
+        path: AppRoutes.notFound,
+        element: <div>404</div>,
+      },
+    ],
+  },
+  {
+    element: <ProtectedRoute element={<PrivateLayout />} />,
+    children: [
+      {
+        path: AppRoutes.dashboard.base,
+        element: (
+          <SuspenseWrapper>
+            <StatisticPage />
+          </SuspenseWrapper>
+        ),
+      },
+      {
+        path: AppRoutes.dashboard.myCourses,
+        element: (
+          <SuspenseWrapper>
+            <MyCoursesPage title="My courses" />
+          </SuspenseWrapper>
+        ),
+      },
+      {
+        path: AppRoutes.helpCenter,
+        element: (
+          <SuspenseWrapper>
+            <HelpCenterPage title="Help Center" />
+          </SuspenseWrapper>
+        ),
+      },
+      {
+        path: AppRoutes.previewCourse,
+        element: (
+          <SuspenseWrapper>
+            <CoursePreviewPage title="Course preview" />
           </SuspenseWrapper>
         ),
       },
@@ -131,93 +219,6 @@ const router = createBrowserRouter([
             ),
           },
         ],
-      },
-      {
-        element: <CourseLayout />,
-        children: [
-          {
-            index: true,
-            path: "/course",
-            element: (
-              <SuspenseWrapper>
-                <CoursePage />
-              </SuspenseWrapper>
-            ),
-          },
-        ],
-      },
-      {
-        path: AppRoutes.home,
-        element: (
-          <SuspenseWrapper>
-            <TeacherLandingPage title="Teacher landing" />
-          </SuspenseWrapper>
-        ),
-      },
-      {
-        path: AppRoutes.studentLanding,
-        element: (
-          <SuspenseWrapper>
-            <StudentLandingPage title="Student landing" />
-          </SuspenseWrapper>
-        ),
-      },
-      {
-        path: AppRoutes.helpCenter,
-        element: (
-          <SuspenseWrapper>
-            <HelpCenterPage title="Help Center" />
-          </SuspenseWrapper>
-        ),
-      },
-      {
-        path: AppRoutes.previewCourse,
-        element: (
-          <SuspenseWrapper>
-            <CoursePreviewPage title="Course preview" />
-          </SuspenseWrapper>
-        ),
-      },
-      {
-        path: AppRoutes.ui,
-        element: (
-          <SuspenseWrapper>
-            <UiPage title="UI" />
-          </SuspenseWrapper>
-        ),
-      },
-      {
-        path: AppRoutes.notFound,
-        element: <div>404</div>,
-      },
-    ],
-  },
-  {
-    element: <ProtectedRoute element={<PrivateLayout />} />,
-    children: [
-      {
-        path: AppRoutes.myCourses,
-        element: (
-          <SuspenseWrapper>
-            <MyCoursesPage title="My courses" />
-          </SuspenseWrapper>
-        ),
-      },
-      {
-        path: AppRoutes.helpCenter,
-        element: (
-          <SuspenseWrapper>
-            <HelpCenterPage title="Help Center" />
-          </SuspenseWrapper>
-        ),
-      },
-      {
-        path: AppRoutes.statistic,
-        element: (
-          <SuspenseWrapper>
-            <StatisticPage />
-          </SuspenseWrapper>
-        ),
       },
     ],
   },

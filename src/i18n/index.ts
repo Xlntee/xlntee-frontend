@@ -14,6 +14,7 @@ i18n
     },
     ns: [
       "auth",
+      "teacher",
       "teacher-landing",
       "student-landing",
       "teacher-preview",

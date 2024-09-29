@@ -28,7 +28,7 @@ const AuthorizationRolesPage = ({ title }: PageProps) => {
                 text={rolesList[0]}
                 type={UserRole.STUDENT}
                 buttonText={t("role.student.button-text")}
-                href={`${AppRoutes.authTypeLogin}/${UserRole.STUDENT}`}
+                href={`${AppRoutes.auth.login}/${UserRole.STUDENT}`}
               />
             </Grid>
             <Grid item xs={12} md={6} display="flex">
@@ -37,7 +37,7 @@ const AuthorizationRolesPage = ({ title }: PageProps) => {
                 text={rolesList[1]}
                 type={UserRole.TEACHER}
                 buttonText={t("role.teacher.button-text")}
-                href={`${AppRoutes.authTypeLogin}/${UserRole.TEACHER}`}
+                href={`${AppRoutes.auth.login}/${UserRole.TEACHER}`}
               />
             </Grid>
           </Grid>

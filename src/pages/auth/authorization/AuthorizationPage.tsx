@@ -35,14 +35,14 @@ const authorizationPage = ({ title }: PageProps) => {
               <Tab
                 label={t("login")}
                 value={AuthPageSection.LOGIN}
-                to={`${AppRoutes.authTypeLogin}/${role}`}
+                to={`${AppRoutes.auth.login}/${role}`}
                 component={Link}
                 className="auth-tab__button"
               />
               <Tab
                 label={t("registration")}
                 value={AuthPageSection.REGISTRATION}
-                to={`${AppRoutes.authTypeRegistration}/${role}`}
+                to={`${AppRoutes.auth.registration}/${role}`}
                 component={Link}
                 className="auth-tab__button"
               />
