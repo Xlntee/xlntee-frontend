@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useTranslation } from "react-i18next";
 
 import { Box, Container, Typography, InputLabel, TextField, Stack, Button, Grid } from "@mui/material";
 
@@ -14,6 +15,8 @@ import "./PasswordUpdatePage.scss";
 
 const PasswordUpdatePage = ({ title }: PageProps) => {
   useTitle(title);
+
+  const { t } = useTranslation("auth");
 
   const {
     formState: { errors },
@@ -43,11 +46,11 @@ const PasswordUpdatePage = ({ title }: PageProps) => {
             onSubmit={handleSubmit(onSubmitForm)}
           >
             <Typography variant="h3" mb="20px" textAlign="center">
-              Password update
+              {t("credential-update-content.title-password")}
             </Typography>
             <Stack gap="20px">
               <Box>
-                <InputLabel htmlFor="current_password">Current password</InputLabel>
+                <InputLabel htmlFor="current_password">{t("current-password-label")}</InputLabel>
                 <TextField
                   {...register("password")}
                   error={!!errors.password?.message}
@@ -55,12 +58,12 @@ const PasswordUpdatePage = ({ title }: PageProps) => {
                   id="current_password"
                   aria-label="current password input"
                   type="password"
-                  placeholder="Current password"
+                  placeholder={t("current-password-placeholder")}
                   fullWidth
                 />
               </Box>
               <Box>
-                <InputLabel htmlFor="new_password">New password</InputLabel>
+                <InputLabel htmlFor="new_password">{t("new-password-label")}</InputLabel>
                 <TextField
                   {...register("new_password")}
                   error={!!errors.new_password?.message}
@@ -68,12 +71,12 @@ const PasswordUpdatePage = ({ title }: PageProps) => {
                   id="new_password"
                   aria-label="new password input"
                   type="password"
-                  placeholder="New password"
+                  placeholder={t("new-password-placeholder")}
                   fullWidth
                 />
               </Box>
               <Box>
-                <InputLabel htmlFor="new_password">Confirm password</InputLabel>
+                <InputLabel htmlFor="new_password">{t("confirm-password-label")}</InputLabel>
                 <TextField
                   {...register("confirm_password")}
                   error={!!errors.confirm_password?.message}
@@ -81,13 +84,13 @@ const PasswordUpdatePage = ({ title }: PageProps) => {
                   id="confirm_password"
                   aria-label="confirm password input"
                   type="password"
-                  placeholder="Confirm password"
+                  placeholder={t("confirm-password-placeholder")}
                   fullWidth
                 />
               </Box>
               <Box textAlign="center">
                 <Button type="submit" variant="contained" className="auth-form__btn-submit">
-                  Next
+                  {t("button-text")}
                 </Button>
               </Box>
             </Stack>
@@ -95,34 +98,25 @@ const PasswordUpdatePage = ({ title }: PageProps) => {
         ) : (
           <Grid container spacing={{ md: "40px" }} my={{ md: "40px" }}>
             <Grid item xs={12} md={5} textAlign={{ xs: "center", md: "left" }}>
-              <img src="/assets/password-update.png" alt="email-update" />
+              <img src="/assets/password-update.png" alt={t("credential-update-content.title-password")} />
             </Grid>
             <Grid item xs={12} md={7}>
-              <Typography
-                variant="h2"
-                fontWeight={300}
-                fontSize={{ xs: "20px", lg: "40px" }}
-                mb={{ xs: "10px", lg: "0" }}
-              >
-                Password update
+              <Typography variant="h2" fontWeight={300} fontSize={{ xs: "20px", lg: "30px" }} mb={{ xs: "10px" }}>
+                {t("credential-update-content.title-password")}
               </Typography>
-              <Typography
-                variant="h3"
-                fontWeight={300}
-                fontSize={{ xs: "16px", lg: "30px" }}
-                mb={{ xs: "10px", lg: "0" }}
-              >
-                We sent you an email with the further instruction to youremail@gmail.com, if you can not find it please
-                check you spam folder or resent the email.
+              <Typography variant="h3" fontWeight={300} fontSize={{ xs: "16px", lg: "20px" }} mb={{ xs: "10px" }}>
+                {t("credential-update-content.subtitle1")}
+                test@test.com
+                {t("credential-update-content.subtitle2")}
               </Typography>
               <Typography
                 fontWeight={300}
-                maxWidth="480px"
-                fontSize={{ xs: "16px", lg: "24px" }}
+                maxWidth={{ md: "480px" }}
+                fontSize={{ xs: "16px", lg: "18px" }}
                 color={XlnteeColors.GrayColor700}
               >
-                Did not receive it yet? check your spam folder or click{" "}
-                <Button className="button-link">Resend email.</Button>
+                {t("credential-update-content.check-email")} {""}
+                <Button className="button-link">{t("resend-email")}.</Button>
               </Typography>
             </Grid>
           </Grid>

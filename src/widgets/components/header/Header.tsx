@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import { Box, Container, Stack } from "@mui/material";
 
@@ -10,38 +11,36 @@ import { LanguageSwitcher } from "../language-switcher";
 
 import "./Header.scss";
 
-const navList: NavigationLinkType[] = [
-  {
-    id: "1",
-    name: "Creators",
-    path: "/",
-    type: "link",
-  },
-  {
-    id: "2",
-    name: "Students",
-    path: "/students",
-    type: "link",
-  },
-];
-
 const HeaderProfile = () => {
+  const { t } = useTranslation("auth");
+
   const [open, setOpen] = useState<boolean>(false);
 
   const toggleDrawer = () => {
     setOpen((prevState) => !prevState);
   };
 
-  function onClose() {
-    setOpen(false);
-  }
+  const navList: NavigationLinkType[] = [
+    {
+      id: "1",
+      name: t("public-navigation.teacher"),
+      path: "/",
+      type: "link",
+    },
+    {
+      id: "2",
+      name: t("public-navigation.student"),
+      path: "/student",
+      type: "link",
+    },
+  ];
 
   function Tools() {
     return (
       <Stack direction="row" alignItems="center" gap="10px" className="header__tools">
         <LanguageSwitcher compact />
         <Link to={AppRoutes.authRoles} className="header__action">
-          Login
+          {t("login")}
         </Link>
       </Stack>
     );
@@ -63,7 +62,7 @@ const HeaderProfile = () => {
           </Stack>
         </Box>
       </Container>
-      <NavigationDrawer navigationList={navList} open={open} onClose={onClose}>
+      <NavigationDrawer navigationList={navList} open={open} onClose={() => setOpen(false)}>
         <Tools />
       </NavigationDrawer>
     </Box>

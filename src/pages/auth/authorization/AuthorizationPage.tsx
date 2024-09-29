@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 import { Box, Tab, Container } from "@mui/material";
 
@@ -12,6 +14,8 @@ import "./AuthorizationPage.scss";
 
 const authorizationPage = ({ title }: PageProps) => {
   useTitle(title);
+
+  const { t } = useTranslation("auth");
 
   const { authType, role } = useParams();
   const [value, setValue] = useState<AuthPageSection>(AuthPageSection.LOGIN);
@@ -29,14 +33,14 @@ const authorizationPage = ({ title }: PageProps) => {
           <TabContext value={value}>
             <TabList className="auth-tab__tablist" onChange={(_, value) => setValue(value)}>
               <Tab
-                label="Log in"
+                label={t("login")}
                 value={AuthPageSection.LOGIN}
                 to={`${AppRoutes.authTypeLogin}/${role}`}
                 component={Link}
                 className="auth-tab__button"
               />
               <Tab
-                label="Sing up"
+                label={t("registration")}
                 value={AuthPageSection.REGISTRATION}
                 to={`${AppRoutes.authTypeRegistration}/${role}`}
                 component={Link}

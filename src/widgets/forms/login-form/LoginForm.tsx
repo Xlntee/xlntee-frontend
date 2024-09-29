@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
+import { useTranslation } from "react-i18next";
 
 import { Button, Stack, TextField, Typography } from "@mui/material";
 import GoogleIcon from "@mui/icons-material/Google";
@@ -20,6 +21,7 @@ const deviceId = "string";
 
 const LoginForm: FC = () => {
   const { role } = useParams();
+  const { t } = useTranslation("auth");
 
   const [login, { isLoading: isLoginLoading }] = useLoginMutation();
   const { state } = useLocation();
@@ -59,7 +61,7 @@ const LoginForm: FC = () => {
             variant="black-outline"
             startIcon={<GoogleIcon />}
           >
-            Log in with Google
+            {t("login-with")} Google
           </Button>
           <Button
             aria-label="login with facebook button"
@@ -67,7 +69,7 @@ const LoginForm: FC = () => {
             variant="black-outline"
             startIcon={<FacebookOutlined />}
           >
-            Log in with Facebook
+            {t("login-with")} Facebook
           </Button>
           <TextField
             {...register("email")}
@@ -75,7 +77,7 @@ const LoginForm: FC = () => {
             helperText={errors.email?.message}
             aria-label="email input"
             type="email"
-            placeholder="Email"
+            placeholder={t("email-placeholder")}
             autoFocus
           />
           <TextField
@@ -84,7 +86,7 @@ const LoginForm: FC = () => {
             helperText={errors.password?.message}
             aria-label="password input"
             type="password"
-            placeholder="Password"
+            placeholder={t("password-placeholder")}
           />
           <Button
             aria-label="login button"
@@ -93,14 +95,14 @@ const LoginForm: FC = () => {
             disabled={isLoginLoading}
             className="auth-form__btn-submit"
           >
-            Log in
+            {t("login")}
           </Button>
           <Stack direction="column" gap="4px" textAlign="center">
             <Typography variant="caption" className="auth-form__caption-text">
-              Forgot password? <Link to={AppRoutes.authPasswordUpdate}>recover your pasword</Link>
+              {t("forgot-password")}? <Link to={AppRoutes.authPasswordUpdate}>{t("recover-password")}</Link>
             </Typography>
             <Typography variant="caption" className="auth-form__caption-text">
-              Have no account? <Link to={`${AppRoutes.authTypeRegistration}/${role}`}>Sign up</Link>
+              {t("no-account")}? <Link to={`${AppRoutes.authTypeRegistration}/${role}`}>{t("sign-up")}</Link>
             </Typography>
           </Stack>
         </Stack>

@@ -13,6 +13,7 @@ i18n
       loadPath: "/locales/{{lng}}/{{ns}}.json",
     },
     ns: [
+      "auth",
       "teacher-landing",
       "student-landing",
       "teacher-preview",

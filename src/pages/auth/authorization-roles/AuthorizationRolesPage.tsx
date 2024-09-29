@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 import { Box, Container, Grid } from "@mui/material";
 
 import useTitle from "src/hooks/useTitle/useTitle";
@@ -12,6 +14,9 @@ import "./AuthorizationRolesPage.scss";
 const AuthorizationRolesPage = ({ title }: PageProps) => {
   useTitle(title);
 
+  const { t } = useTranslation("auth");
+  const rolesList: string[] = t("roles", { returnObjects: true });
+
   return (
     <Box component="section" className="section-auth-roles" py={{ xs: "40px", md: "80px" }}>
       <Container>
@@ -20,16 +25,18 @@ const AuthorizationRolesPage = ({ title }: PageProps) => {
             <Grid item xs={12} md={6} display="flex">
               <RoleCard
                 image="/assets/student.svg"
-                text="learn, improve, and organize your education space"
+                text={rolesList[0]}
                 type={UserRole.STUDENT}
+                buttonText={t("role.student.button-text")}
                 href={`${AppRoutes.authTypeLogin}/${UserRole.STUDENT}`}
               />
             </Grid>
             <Grid item xs={12} md={6} display="flex">
               <RoleCard
                 image="/assets/teacher.svg"
-                text="Create, manage, and empower your educational business"
+                text={rolesList[1]}
                 type={UserRole.TEACHER}
+                buttonText={t("role.teacher.button-text")}
                 href={`${AppRoutes.authTypeLogin}/${UserRole.TEACHER}`}
               />
             </Grid>

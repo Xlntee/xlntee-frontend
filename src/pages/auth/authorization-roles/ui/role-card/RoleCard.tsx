@@ -10,9 +10,10 @@ export type RoleCardProps = {
   text: string;
   type: string;
   href: string;
+  buttonText: string;
 };
 
-const RoleCard: FC<RoleCardProps> = ({ image, text, type, href }) => {
+const RoleCard: FC<RoleCardProps> = ({ image, text, type, href, buttonText }) => {
   return (
     <Box className="role-card">
       <Box mb="20px">
@@ -27,10 +28,7 @@ const RoleCard: FC<RoleCardProps> = ({ image, text, type, href }) => {
             variant="outlined"
             sx={{ fontWeight: 400, borderRadius: "60px", gap: "6px" }}
           >
-            Log in as a{" "}
-            <Box component="span" textTransform="capitalize">
-              {type}
-            </Box>
+            {buttonText}
           </Button>
         </Box>
       </Stack>
