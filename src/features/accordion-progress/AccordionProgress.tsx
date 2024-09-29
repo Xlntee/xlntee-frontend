@@ -43,7 +43,7 @@ const AccordionProgress: FC<AccordionProgressProps> = ({
               {number}
             </Typography>
           )}
-          <Typography component="span" className="accordion-progress__heading" variant="body2" accordion-progress>
+          <Typography component="span" className="accordion-progress__heading" variant="body2">
             {heading}
           </Typography>
         </Typography>

@@ -16,11 +16,7 @@ const CreateCoursePageLayout = () => {
 
   return (
     <>
-      <HeaderProfile
-        className="header-profile--create-course"
-        link={<Link to={AppRoutes.teacher.dashboard}>{t("dashboard")}</Link>}
-        userRole={UserRole.TEACHER}
-      >
+      <HeaderProfile link={<Link to={AppRoutes.teacher.dashboard}>{t("dashboard")}</Link>} userRole={UserRole.TEACHER}>
         <Stack direction="row" gap="14px">
           <Button
             className="button-preview"
