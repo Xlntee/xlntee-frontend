@@ -23,6 +23,10 @@
     }
   }
 
+  .MuiLinearProgress-bar {
+    border-radius: 10px;
+  }
+
   .MuiLinearProgress-barColorWarning {
     background-color: rgb(var(--warning-extra-light-color));
   }
