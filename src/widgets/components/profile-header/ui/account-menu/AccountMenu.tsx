@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -6,6 +5,9 @@ import { Box, Stack, Divider, Button, Typography } from "@mui/material";
 import SwapHorizIcon from "@mui/icons-material/SwapHoriz";
 import LanguageIcon from "@mui/icons-material/Language";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
+
+import { useAppSelector, useAppDispatch } from "src/app/store/store";
+import { getUserRole, switchRole } from "src/app/store/slices/user/userSlice";
 
 import { LanguageSwitcher } from "src/widgets/components";
 import { AppRoutes } from "src/app/routing/appRoutes";
@@ -15,17 +17,8 @@ import "./AccountMenu.scss";
 
 const AccountMenu = () => {
   const { t } = useTranslation("auth");
-
-  const [userRole, setUserRole] = useState<string | null>(UserRole.TEACHER);
-
-  function onHandleToggleUser() {
-    if (userRole === UserRole.STUDENT) {
-      setUserRole(UserRole.TEACHER);
-    }
-    if (userRole === UserRole.TEACHER) {
-      setUserRole(UserRole.STUDENT);
-    }
-  }
+  const dispatch = useAppDispatch();
+  const userRole = useAppSelector(getUserRole);
 
   return (
     <Box className="account-menu">
@@ -46,7 +39,7 @@ const AccountMenu = () => {
           startIcon={<SwapHorizIcon fontSize="large" />}
           sx={{ borderRadius: "30px" }}
           size="small"
-          onClick={onHandleToggleUser}
+          onClick={() => dispatch(switchRole())}
         >
           {userRole === UserRole.STUDENT && t("student")}
           {userRole === UserRole.TEACHER && t("teacher")}

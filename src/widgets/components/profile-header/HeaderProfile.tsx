@@ -12,6 +12,9 @@ import LocalActivityIcon from "@mui/icons-material/LocalActivity";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import DashboardCustomizeIcon from "@mui/icons-material/DashboardCustomize";
 
+import { useAppSelector } from "src/app/store/store";
+import { getUserRole } from "src/app/store/slices/user/userSlice";
+
 import { MenuToggler, Navigation, NavigationDrawer, NavigationLinkType } from "src/features";
 import { UserRole } from "src/shared/utils/enum";
 import { AppRoutes } from "src/app/routing/appRoutes";
@@ -22,11 +25,11 @@ import "./HeaderProfile.scss";
 
 type HeaderProfileProps = {
   children?: React.ReactNode;
-  type: "teacher" | "student";
 };
 
-const HeaderProfile: FC<HeaderProfileProps> = ({ children, type }) => {
+const HeaderProfile: FC<HeaderProfileProps> = ({ children }) => {
   const { t } = useTranslation("auth");
+  const userRole = useAppSelector(getUserRole);
 
   const [open, setOpen] = useState<boolean>(false);
 
@@ -121,7 +124,7 @@ const HeaderProfile: FC<HeaderProfileProps> = ({ children, type }) => {
   }
 
   function getNavigation() {
-    if (type === UserRole.STUDENT) {
+    if (userRole === UserRole.STUDENT) {
       return studentNavList;
     }
     return teacherNavList;
@@ -140,7 +143,7 @@ const HeaderProfile: FC<HeaderProfileProps> = ({ children, type }) => {
           <Box className="header-profile__nav-center">{children}</Box>
           <Stack direction="row" alignItems="center" gap="10px" className="header-profile__nav-right">
             <Stack direction="row" alignItems="center" gap="10px">
-              {type === "student" && <Tools />}
+              {userRole === UserRole.STUDENT && <Tools />}
               <Button variant="black-text">
                 <Badge variant="dot" color="primary">
                   <NotificationsNoneIcon />

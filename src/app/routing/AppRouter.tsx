@@ -1,10 +1,14 @@
-import { Suspense, lazy, ReactNode } from "react";
+import { Suspense, lazy, ReactNode, useEffect } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+
+import { useAppDispatch } from "src/app/store/store";
+import { setRole } from "src/app/store/slices/user/userSlice";
+import { UserRole } from "src/shared/utils/enum";
+
+import { PublicLayout, CreateCourseLayout, PrivateLayout, CourseLayout } from "src/layouts";
 
 import PageLoader from "./PageLoader";
 import { AppRoutes } from "./appRoutes";
-
-import { PublicLayout, CreateCourseLayout, PrivateLayout, CourseLayout } from "src/layouts";
 import { ProtectedRoute } from "./ProtectedRoute";
 
 // Lazy load the component
@@ -37,7 +41,8 @@ const SuspenseWrapper = ({ children }: { children: ReactNode }) => {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <PublicLayout />,
+    // element: <PublicLayout />,
+    element: <PrivateLayout />,
     children: [
       {
         path: AppRoutes.home,
@@ -225,6 +230,16 @@ const router = createBrowserRouter([
 ]);
 
 const AppRouter = () => {
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(
+      setRole({
+        role: UserRole.TEACHER,
+      }),
+    );
+  }, []);
+
   return <RouterProvider router={router} />;
 };
 

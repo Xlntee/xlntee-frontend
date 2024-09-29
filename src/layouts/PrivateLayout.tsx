@@ -7,7 +7,7 @@ import Footer from "src/widgets/footer/Footer";
 const PrivateLayout = () => {
   return (
     <>
-      <HeaderProfile type="teacher" />
+      <HeaderProfile />
       <Box component="main" sx={{ flexGrow: 1 }}>
         <Outlet />
       </Box>

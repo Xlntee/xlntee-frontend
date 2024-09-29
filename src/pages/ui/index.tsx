@@ -195,13 +195,13 @@ const UiPage = ({ title }: PageProps) => {
           <Typography mb="20px" variant="h3">
             Student
           </Typography>
-          <HeaderProfile type="student" />
+          <HeaderProfile />
         </Box>
         <Box mb="20px">
           <Typography mb="20px" variant="h3">
             Teacher
           </Typography>
-          <HeaderProfile type="teacher" />
+          <HeaderProfile />
         </Box>
       </Container>
     </Box>
