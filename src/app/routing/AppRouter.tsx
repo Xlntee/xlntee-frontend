@@ -27,6 +27,7 @@ const CreateCoursePricePage = lazy(() => import("src/pages/create-course/price/P
 const CreateCourseAdvertisingPage = lazy(() => import("src/pages/create-course/advertising/Advertising"));
 
 const StudentLandingPage = lazy(() => import("src/pages/student/landing-page/LandingPage"));
+const StudentMyLearningPage = lazy(() => import("src/pages/student/my-learning/MyLearningPage"));
 const TeacherLandingPage = lazy(() => import("src/pages/teacher/landing-page/LandingPage"));
 const UiPage = lazy(() => import("src/pages/ui"));
 const MyCoursesPage = lazy(() => import("src/pages/teacher/my-courses-page/MyCoursesPage"));
@@ -167,6 +168,14 @@ const router = createBrowserRouter([
         element: (
           <SuspenseWrapper>
             <CoursePreviewPage title="Course preview" />
+          </SuspenseWrapper>
+        ),
+      },
+      {
+        path: AppRoutes.dashboard.myLearning,
+        element: (
+          <SuspenseWrapper>
+            <StudentMyLearningPage title="My learning" />
           </SuspenseWrapper>
         ),
       },
