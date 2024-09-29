@@ -1,3 +1,6 @@
+import { AppRoutes } from "src/app/routing/appRoutes";
+import { UserRole } from "./enum";
+
 export function getSecureEmail(email: string): string {
   const [localPart, domain] = email.split("@");
 
@@ -8,4 +11,15 @@ export function getSecureEmail(email: string): string {
 
   const maskedLocalPart = localPart.substring(0, 3) + "****";
   return maskedLocalPart + "@" + domain;
+}
+
+export function getUserPathByRole(userRole: UserRole): string {
+  let route = "";
+  if (userRole === UserRole.STUDENT) {
+    route = AppRoutes.student.dashboard;
+  }
+  if (userRole === UserRole.TEACHER) {
+    route = AppRoutes.teacher.dashboard;
+  }
+  return route;
 }

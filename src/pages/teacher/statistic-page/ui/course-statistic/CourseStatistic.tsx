@@ -46,7 +46,7 @@ const CourseStatistic: FC<CourseStatisticProps> = ({ id, title, status, updateTi
         flex="1"
       >
         <Box className="course-statistic__grid-item">
-          <StatisticInfo value="135" text={t("dashboard.students")} />
+          <StatisticInfo value="135" text={t("students")} />
         </Box>
         <Box className="course-statistic__grid-item">
           <StatisticInfo value="11" text={t("dashboard.refund")} />

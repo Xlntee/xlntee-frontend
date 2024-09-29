@@ -7,10 +7,11 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 import { AccordionProgress } from "src/features";
 
-import "./CourseLayout.scss";
+import "./CourseBlockLayout.scss";
 
 const CourseLayout = () => {
-  const [isOpenMenu, setIsOpenMenu] = useState<boolean>(true);
+  const LSMenuKey = "student-collapsed-menu";
+  const [isOpenMenu, setIsOpenMenu] = useState<boolean>(localStorage.getItem(LSMenuKey) === "true");
   const [expandedObj, setExpandedObj] = useState<Record<string, boolean>>({});
 
   //test data
@@ -36,7 +37,9 @@ const CourseLayout = () => {
   }
 
   function onToggleNavigation() {
-    setIsOpenMenu((prevState) => !prevState);
+    const isCollapsed = !isOpenMenu;
+    setIsOpenMenu(isCollapsed);
+    localStorage.setItem(LSMenuKey, isCollapsed.toString());
     if (isOpenMenu) {
       collapseAll();
     }
@@ -64,6 +67,7 @@ const CourseLayout = () => {
         <Stack direction="column" gap="10px" position="relative">
           {Object.entries(expandedObj).map((item, index) => (
             <AccordionProgress
+              key={index}
               open={item[1]}
               onChange={(_, value) => onOpenAccordion(item[0], value)}
               heading="Lorem ipsum dolor sit amet"
@@ -82,23 +86,6 @@ const CourseLayout = () => {
               </Box>
             </AccordionProgress>
           ))}
-          {/* <AccordionProgress
-            heading="Lorem ipsum dolor sit amet"
-            number={2}
-            progress={{
-              complete: 1,
-              total: 4,
-            }}
-            className={cn({ squeeze: !isOpenMenu })}
-            open={false}
-          >
-            <Box>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla delectus quas molestiae cum corporis ex
-              velit unde consectetur odio fugit. Illum tenetur, labore earum ducimus rerum enim. Odio facere animi fuga
-              non placeat nisi quasi provident modi nam, tempore eligendi minima ipsa nostrum, laudantium veniam
-              sapiente ut soluta mollitia pariatur?
-            </Box>
-          </AccordionProgress> */}
           <Button className="collapsed-navigation__hidden-toggler" onClick={onToggleNavigation}></Button>
         </Stack>
       </Box>

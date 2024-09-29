@@ -4,14 +4,8 @@
 .header-profile {
   padding-block: 6px;
   box-shadow: 0 2px 5px 0 rgb(var(--dark-color) / 0.2);
-
-  &--create-course &__nav {
-    // justify-content: start;
-  }
-
-  &--create-course &__nav-center {
-    // grid-template-columns: auto 1fr;
-  }
+  position: relative;
+  z-index: 1;
 
   &__container {
     &.MuiContainer-root {
@@ -67,6 +61,7 @@
     .MuiButtonBase-root {
       min-width: auto;
       padding: 0;
+      min-height: 36px;
     }
 
     svg {

@@ -38,6 +38,15 @@
   box-shadow: var(--base-shadow);
   background-color: rgb(var(--light-color));
 
+  overflow: hidden scroll;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
+
   @include mixins.media(tablet_lg, max) {
     position: absolute;
     top: 0;

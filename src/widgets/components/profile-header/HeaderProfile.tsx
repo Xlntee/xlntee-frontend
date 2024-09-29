@@ -13,9 +13,6 @@ import LocalActivityIcon from "@mui/icons-material/LocalActivity";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import DashboardCustomizeIcon from "@mui/icons-material/DashboardCustomize";
 
-import { useAppSelector } from "src/app/store/store";
-import { getUserRole } from "src/app/store/slices/user/userSlice";
-
 import { MenuToggler, Navigation, NavigationDrawer, NavigationLinkType } from "src/features";
 import { UserRole } from "src/shared/utils/enum";
 import { AppRoutes } from "src/app/routing/appRoutes";
@@ -28,11 +25,11 @@ type HeaderProfileProps = {
   children?: React.ReactNode;
   className?: string;
   link?: React.ReactNode;
+  userRole: UserRole;
 };
 
-const HeaderProfile: FC<HeaderProfileProps> = ({ children, link, className }) => {
+const HeaderProfile: FC<HeaderProfileProps> = ({ children, link, className, userRole }) => {
   const { t } = useTranslation("auth");
-  const userRole = useAppSelector(getUserRole);
 
   const [open, setOpen] = useState<boolean>(false);
 
@@ -40,43 +37,37 @@ const HeaderProfile: FC<HeaderProfileProps> = ({ children, link, className }) =>
     {
       id: "1",
       name: t("dashboard"),
-      path: AppRoutes.dashboard.base,
+      path: AppRoutes.teacher.dashboard,
       icon: <DashboardCustomizeIcon />,
       type: "link",
     },
     {
       id: "2",
       name: t("teacher-navigation.courses"),
-      path: AppRoutes.dashboard.myCourses,
+      path: AppRoutes.teacher.myCourses,
       icon: <VideocamIcon />,
       type: "link",
     },
     {
       id: "3",
       name: t("teacher-navigation.statistic"),
-      path: AppRoutes.dashboard.statistic,
+      path: AppRoutes.teacher.statistic,
       icon: <EqualizerIcon />,
       type: "link",
     },
     {
       id: "4",
       name: t("teacher-navigation.billing"),
-      path: AppRoutes.dashboard.billing,
+      path: AppRoutes.teacher.billing,
       icon: <CreditCardIcon />,
       type: "link",
     },
     {
       id: "5",
       name: t("teacher-navigation.support"),
-      path: AppRoutes.dashboard.support,
+      path: AppRoutes.teacher.support,
       icon: <HelpOutlineIcon />,
       type: "link",
-    },
-    {
-      id: "6",
-      name: t("teacher-navigation.pricing"),
-      path: AppRoutes.dashboard.pricing,
-      type: "action",
     },
   ];
 
@@ -84,35 +75,35 @@ const HeaderProfile: FC<HeaderProfileProps> = ({ children, link, className }) =>
     {
       id: "1",
       name: t("dashboard"),
-      path: AppRoutes.dashboard.base,
+      path: AppRoutes.student.dashboard,
       icon: <DashboardCustomizeIcon />,
       type: "link",
     },
     {
       id: "2",
       name: t("student-navigation.my-learning"),
-      path: AppRoutes.dashboard.myLearning,
+      path: AppRoutes.student.myLearning,
       icon: <VideocamIcon />,
       type: "link",
     },
     {
       id: "3",
       name: t("student-navigation.completed-courses"),
-      path: AppRoutes.dashboard.completedCourses,
+      path: AppRoutes.student.completedCourses,
       icon: <DoneOutlineIcon />,
       type: "link",
     },
     {
       id: "4",
       name: t("student-navigation.certificates"),
-      path: AppRoutes.dashboard.certificates,
+      path: AppRoutes.student.certificates,
       icon: <LocalActivityIcon />,
       type: "link",
     },
     {
       id: "5",
       name: t("student-navigation.support"),
-      path: AppRoutes.dashboard.support,
+      path: AppRoutes.student.support,
       icon: <HelpOutlineIcon />,
       type: "link",
     },

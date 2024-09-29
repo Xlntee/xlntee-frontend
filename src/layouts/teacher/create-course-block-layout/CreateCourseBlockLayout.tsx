@@ -9,9 +9,9 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { AppRoutes } from "src/app/routing/appRoutes";
 import { MenuToggler, Progress } from "src/features";
 
-import "./CreateCourseLayout.scss";
+import "./CreateCourseBlockLayout.scss";
 
-const CreateCourseLayout = () => {
+const CreateCourseBlockLayout = () => {
   const { t, ready } = useTranslation("teacher-create-course");
   const { pathname } = useLocation();
 
@@ -22,27 +22,27 @@ const CreateCourseLayout = () => {
   const navList = [
     {
       title: t("general.nav_title"),
-      path: AppRoutes.dashboard.createCourse,
+      path: AppRoutes.teacher.createCourse,
     },
     {
       title: t("landing.nav_title"),
-      path: AppRoutes.dashboard.createCourseLanding,
+      path: AppRoutes.teacher.createCourseLanding,
     },
     {
       title: t("structure.nav_title"),
-      path: AppRoutes.dashboard.createCourseStructure,
+      path: AppRoutes.teacher.createCourseStructure,
     },
     {
       title: t("lecturer.nav_title"),
-      path: AppRoutes.dashboard.createCourseLecturer,
+      path: AppRoutes.teacher.createCourseLecturer,
     },
     {
       title: t("price.nav_title"),
-      path: AppRoutes.dashboard.createCoursePrice,
+      path: AppRoutes.teacher.createCoursePrice,
     },
     {
       title: t("advertising.nav_title"),
-      path: AppRoutes.dashboard.createCourseAdvertising,
+      path: AppRoutes.teacher.createCourseAdvertising,
     },
   ];
 
@@ -125,4 +125,4 @@ const CreateCourseLayout = () => {
   );
 };
 
-export default CreateCourseLayout;
+export default CreateCourseBlockLayout;

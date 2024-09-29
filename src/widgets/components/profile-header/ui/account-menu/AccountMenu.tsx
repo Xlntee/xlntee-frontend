@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import { Box, Stack, Divider, Button, Typography } from "@mui/material";
@@ -7,23 +7,21 @@ import LanguageIcon from "@mui/icons-material/Language";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 
 import { useAppSelector, useAppDispatch } from "src/app/store/store";
-import { getUserRole, switchRole } from "src/app/store/slices/user/userSlice";
+import { getUser, switchRole } from "src/app/store/slices/user/userSlice";
 
 import { LanguageSwitcher } from "src/widgets/components";
-import { AppRoutes } from "src/app/routing/appRoutes";
 import { UserRole } from "src/shared/utils/enum";
 
 import "./AccountMenu.scss";
 
 const AccountMenu = () => {
   const { t } = useTranslation("auth");
-  const navigate = useNavigate();
+
   const dispatch = useAppDispatch();
-  const userRole = useAppSelector(getUserRole);
+  const user = useAppSelector(getUser);
 
   function onToggleUserRole() {
     dispatch(switchRole());
-    navigate(AppRoutes.dashboard.base);
   }
 
   return (
@@ -34,7 +32,7 @@ const AccountMenu = () => {
           <Typography variant="h6" className="account-menu__user-name">
             @leshalurn
           </Typography>
-          <Link className="account-menu__user-link" to={AppRoutes.dashboard.profile}></Link>
+          <Link className="account-menu__user-link" to={user.userRolePath}></Link>
         </Stack>
       </Box>
       <Divider />
@@ -47,8 +45,8 @@ const AccountMenu = () => {
           size="small"
           onClick={onToggleUserRole}
         >
-          {userRole === UserRole.STUDENT && t("teacher")}
-          {userRole === UserRole.TEACHER && t("student")}
+          {user.role === UserRole.STUDENT && t(UserRole.TEACHER)}
+          {user.role === UserRole.TEACHER && t(UserRole.STUDENT)}
         </Button>
         <Stack direction="row" alignItems="center" gap="10px" width="100%">
           <LanguageIcon />

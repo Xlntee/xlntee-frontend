@@ -6,6 +6,7 @@ import { Snackbar } from "src/features";
 import useTitle from "src/hooks/useTitle/useTitle";
 import { PageProps } from "pages/type";
 import { Header, HeaderProfile } from "src/widgets/components";
+import { UserRole } from "src/shared/utils/enum";
 
 const typographyList = ["h1", "h2", "h3", "h4", "h5", "h6"] as const;
 const buttonColorList = ["primary", "secondary", "success", "error"] as const;
@@ -195,13 +196,13 @@ const UiPage = ({ title }: PageProps) => {
           <Typography mb="20px" variant="h3">
             Student
           </Typography>
-          <HeaderProfile />
+          <HeaderProfile userRole={UserRole.STUDENT} />
         </Box>
         <Box mb="20px">
           <Typography mb="20px" variant="h3">
             Teacher
           </Typography>
-          <HeaderProfile />
+          <HeaderProfile userRole={UserRole.TEACHER} />
         </Box>
       </Container>
     </Box>

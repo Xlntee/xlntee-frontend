@@ -8,8 +8,9 @@ import SentimentSatisfiedAltIcon from "@mui/icons-material/SentimentSatisfiedAlt
 import { HeaderProfile } from "src/widgets/components";
 import Footer from "src/widgets/footer/Footer";
 import { AppRoutes } from "src/app/routing/appRoutes";
+import { UserRole } from "src/shared/utils/enum";
 
-const PrivateLayoutCreateCourse = () => {
+const CreateCoursePageLayout = () => {
   const { t } = useTranslation("auth");
   const { t: tTeacherCreateCourse } = useTranslation("teacher-create-course");
 
@@ -17,7 +18,8 @@ const PrivateLayoutCreateCourse = () => {
     <>
       <HeaderProfile
         className="header-profile--create-course"
-        link={<Link to={AppRoutes.dashboard.base}>{t("dashboard")}</Link>}
+        link={<Link to={AppRoutes.teacher.dashboard}>{t("dashboard")}</Link>}
+        userRole={UserRole.TEACHER}
       >
         <Stack direction="row" gap="14px">
           <Button
@@ -48,4 +50,4 @@ const PrivateLayoutCreateCourse = () => {
   );
 };
 
-export default PrivateLayoutCreateCourse;
+export default CreateCoursePageLayout;
