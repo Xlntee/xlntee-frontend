@@ -18,4 +18,17 @@ i18n
     },
   });
 
+export const languages = [
+  {
+    code: "en",
+    shortName: "En",
+    fullName: "English",
+  },
+  {
+    code: "uk",
+    shortName: "Uk",
+    fullName: "Ukrainian",
+  },
+];
+
 export default i18n;

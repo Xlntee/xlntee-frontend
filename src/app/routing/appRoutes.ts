@@ -3,9 +3,10 @@ export const AppRoutes = {
   teacherLanding: "/teacher",
   studentLanding: "/student",
   auth: "/auth",
-  authType: "/auth/:authType",
-  login: "/login",
-  registration: "/registration",
+  authType: "/auth/:authType/:role",
+  authTypeLogin: "/auth/login",
+  authTypeRegistration: "/auth/registration",
+  authRoles: "/auth/roles",
   createCourse: "/create-сourse",
   previewCourse: "/course/:courseId",
   notFound: "*",
@@ -13,6 +14,9 @@ export const AppRoutes = {
   myCourses: "/my-courses",
   helpCenter: "/help-center",
   statistic: "/statistic",
+  account_verification: "/account-verification",
+  email_update: "/email-update",
+  password_update: "/password-update",
 };
 
 export enum AuthPageSection {

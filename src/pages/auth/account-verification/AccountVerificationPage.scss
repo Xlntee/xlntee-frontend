@@ -1,0 +1,16 @@
+@use "styles/mixins" as mixins;
+
+.section-account-verification {
+  &__content {
+    text-align: center;
+  }
+
+  a {
+    text-decoration: underline;
+    color: rgb(var(--link-color));
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

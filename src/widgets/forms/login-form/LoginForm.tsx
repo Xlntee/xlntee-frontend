@@ -1,6 +1,7 @@
 import { FC } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
 
 import { Button, Stack, TextField, Typography } from "@mui/material";
@@ -8,84 +9,31 @@ import GoogleIcon from "@mui/icons-material/Google";
 import { FacebookOutlined } from "@mui/icons-material";
 
 import { useAppDispatch } from "src/app/store/store";
-import { setCredentials } from "pages/login/store/authSlice";
+import { setCredentials } from "pages/auth/login/store/authSlice";
+import { AppRoutes } from "src/app/routing/appRoutes";
 
 import { authApiSlice, useLoginMutation } from "./api/authApiSlice";
 
-const ButtonStyles = {
-  height: "56px",
-  padding: "0 15px",
-  color: "#070707",
-  fontFamily: "Inter, sans-serif",
-  fontWeight: 700,
-  fontSize: "20px",
-  border: "1px solid #070707",
-  textTransform: "none",
-  justifyContent: "flex-start",
-  "&:hover": {
-    border: "1px solid #070707",
-    backgroundColor: "rgba(7, 7, 7, 0.05)",
-  },
-};
-
-const TextFieldStyles = {
-  fontFamily: "Inter, sans-serif",
-  fontWeight: 700,
-  fontSize: "20px",
-  textTransform: "none",
-  justifyContent: "flex-start",
-  "&:hover": {
-    backgroundColor: "rgba(7, 7, 7, 0.05)",
-  },
-  "& .MuiOutlinedInput-root": {
-    "&.Mui-focused fieldset": {
-      border: "1px solid #070707",
-    },
-  },
-  "& input::placeholder": {
-    fontFamily: "Inter, sans-serif",
-    fontSize: "20px",
-    color: "#828282",
-  },
-};
-
-const SubmitBtnStyles = {
-  color: "#fff",
-  fontFamily: "Inter, sans-serif",
-  fontWeight: 700,
-  fontSize: "25px",
-  textTransform: "none",
-  height: "56px",
-};
-
-const TinyBtnStyles = {
-  p: 0,
-  textTransform: "none",
-  fontFamily: "Inter, sans-serif",
-  fontWeight: 700,
-  fontSize: "15px",
-  borderRadius: "0px",
-  borderBottom: "1px solid #082AC9",
-  "&:hover": {
-    backgroundColor: "transparent",
-  },
-};
-
-interface IFormData {
-  email: string;
-  password: string;
-}
+import { LoginFormValues, validationSchema } from "./validation";
 
 const deviceId = "string";
 
 const LoginForm: FC = () => {
-  const { register, handleSubmit } = useForm<IFormData>();
+  const { role } = useParams();
 
   const [login, { isLoading: isLoginLoading }] = useLoginMutation();
   const { state } = useLocation();
   const navigate = useNavigate();
-
   const dispatch = useAppDispatch();
+
+  const {
+    formState: { errors },
+    register,
+    handleSubmit,
+  } = useForm<LoginFormValues>({
+    resolver: yupResolver(validationSchema),
+    mode: "onSubmit",
+  });
 
   const onSubmit = handleSubmit(async (data) => {
     try {
@@ -103,65 +51,57 @@ const LoginForm: FC = () => {
 
   return (
     <ApiProvider api={authApiSlice}>
-      <form onSubmit={onSubmit}>
-        <Stack direction="column" gap="20px" padding="20px 0">
+      <form onSubmit={onSubmit} className="auth-form">
+        <Stack direction="column" gap="20px">
           <Button
             aria-label="login with google button"
-            startIcon={<GoogleIcon style={{ fontSize: 37 }} />}
-            variant="outlined"
-            sx={ButtonStyles}
+            className="auth-form__auth-btn"
+            variant="black-outline"
+            startIcon={<GoogleIcon />}
           >
-            Увійти через Google
+            Log in with Google
           </Button>
           <Button
             aria-label="login with facebook button"
-            startIcon={<FacebookOutlined style={{ fontSize: 37 }} />}
-            variant="outlined"
-            sx={ButtonStyles}
+            className="auth-form__auth-btn"
+            variant="black-outline"
+            startIcon={<FacebookOutlined />}
           >
-            Увійти через Facebook
+            Log in with Facebook
           </Button>
           <TextField
-            aria-label="email input"
-            sx={TextFieldStyles}
-            type="email"
-            placeholder="Електронна пошта"
             {...register("email")}
+            error={!!errors.email?.message}
+            helperText={errors.email?.message}
+            aria-label="email input"
+            type="email"
+            placeholder="Email"
             autoFocus
           />
           <TextField
-            aria-label="password input"
-            sx={TextFieldStyles}
-            type="password"
-            placeholder="Пароль"
             {...register("password")}
+            error={!!errors.password?.message}
+            helperText={errors.password?.message}
+            aria-label="password input"
+            type="password"
+            placeholder="Password"
           />
           <Button
             aria-label="login button"
-            sx={SubmitBtnStyles}
             variant="contained"
             type="submit"
             disabled={isLoginLoading}
+            className="auth-form__btn-submit"
           >
-            Увійти
+            Log in
           </Button>
-          <Stack direction="column">
-            <Stack direction="row" alignItems="center" gap="3px" m="0 auto">
-              <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "15px" }}>
-                Забули пароль?
-              </Typography>
-              <Button aria-label="change password button" sx={TinyBtnStyles}>
-                Змінити пароль
-              </Button>
-            </Stack>
-            <Stack direction="row" alignItems="center" gap="3px" m="0 auto">
-              <Typography sx={{ fontFamily: "Inter, sans-serif", fontWeight: 400, fontSize: "15px" }}>
-                Ще не зареєстровані?
-              </Typography>
-              <Button aria-label="registration button" sx={TinyBtnStyles}>
-                Зареєструватись
-              </Button>
-            </Stack>
+          <Stack direction="column" gap="4px" textAlign="center">
+            <Typography variant="caption" className="auth-form__caption-text">
+              Forgot password? <Link to={AppRoutes.password_update}>recover your pasword</Link>
+            </Typography>
+            <Typography variant="caption" className="auth-form__caption-text">
+              Have no account? <Link to={`${AppRoutes.authTypeRegistration}/${role}`}>Sign up</Link>
+            </Typography>
           </Stack>
         </Stack>
       </form>

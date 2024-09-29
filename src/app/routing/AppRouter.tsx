@@ -8,12 +8,14 @@ import { ProtectedRoute } from "./ProtectedRoute";
 import { PrivateLayout, PublicLayout } from "src/layouts";
 
 // Lazy load the component
-const AuthorizationPage = lazy(() => import("src/pages/authorization/AuthorizationPage"));
+const AuthorizationPage = lazy(() => import("pages/auth/authorization/AuthorizationPage"));
+const AuthorizationRolesPage = lazy(() => import("pages/auth/authorization-roles/AuthorizationRolesPage"));
+const AccountVerificationPage = lazy(() => import("pages/auth/account-verification/AccountVerificationPage"));
+const EmailUpdatePage = lazy(() => import("src/pages/auth/email-update/EmailUpdatePage"));
+const PasswordUpdatePage = lazy(() => import("src/pages/auth/password-update/PasswordUpdatePage"));
+
 const CoursePreviewPage = lazy(() => import("src/pages/course-preview/CoursePreviewPage"));
 const CreateCoursePage = lazy(() => import("src/pages/create-course/CreateCoursePage"));
-// const HomePage = lazy(() => import("src/pages/home-template/HomePage"));
-const LoginPage = lazy(() => import("src/pages/login/LoginPage"));
-const RegistrationPage = lazy(() => import("src/pages/registration/RegistrationPage"));
 const StudentLandingPage = lazy(() => import("src/pages/student/landing-page/LandingPage"));
 const TeacherLandingPage = lazy(() => import("src/pages/teacher/landing-page/LandingPage"));
 const UiPage = lazy(() => import("src/pages/ui"));
@@ -34,7 +36,6 @@ const router = createBrowserRouter([
         path: AppRoutes.home,
         element: (
           <SuspenseWrapper>
-            {/* <HomePage title="Home page" /> */}
             <TeacherLandingPage title="Teacher landing" />
           </SuspenseWrapper>
         ),
@@ -56,23 +57,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: AppRoutes.login,
-        element: (
-          <SuspenseWrapper>
-            <LoginPage title="Login" />,
-          </SuspenseWrapper>
-        ),
-      },
-      {
-        path: AppRoutes.registration,
-        element: (
-          <SuspenseWrapper>
-            <RegistrationPage title="Registration" />
-          </SuspenseWrapper>
-        ),
-      },
-      {
-        path: AppRoutes.auth,
+        path: `${AppRoutes.authType}`,
         element: (
           <SuspenseWrapper>
             <AuthorizationPage title="Auth" />
@@ -80,10 +65,10 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: AppRoutes.authType,
+        path: AppRoutes.authRoles,
         element: (
           <SuspenseWrapper>
-            <AuthorizationPage title="Auth" />
+            <AuthorizationRolesPage title="Auth roles" />
           </SuspenseWrapper>
         ),
       },
@@ -112,6 +97,30 @@ const router = createBrowserRouter([
         element: (
           <SuspenseWrapper>
             <HelpCenterPage title="Help Center" />
+          </SuspenseWrapper>
+        ),
+      },
+      {
+        path: AppRoutes.account_verification,
+        element: (
+          <SuspenseWrapper>
+            <AccountVerificationPage title="Account verification" />
+          </SuspenseWrapper>
+        ),
+      },
+      {
+        path: AppRoutes.email_update,
+        element: (
+          <SuspenseWrapper>
+            <EmailUpdatePage title="Email update" />
+          </SuspenseWrapper>
+        ),
+      },
+      {
+        path: AppRoutes.password_update,
+        element: (
+          <SuspenseWrapper>
+            <PasswordUpdatePage title="Password update" />
           </SuspenseWrapper>
         ),
       },

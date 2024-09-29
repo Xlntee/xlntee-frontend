@@ -1,0 +1,52 @@
+@use "styles/mixins.scss" as mixins;
+
+.language-switcher {
+  &.MuiInputBase-root {
+    height: 34px;
+    width: calc(100% - 34px);
+  }
+
+  .MuiSelect-select {
+    font-size: 16px;
+  }
+
+  .MuiSvgIcon-root {
+    display: none;
+  }
+
+  &.language-switcher--compact {
+    --lang-switcher-color: rgb(var(--link-color));
+
+    &:hover {
+      .MuiOutlinedInput-notchedOutline {
+        border-color: inherit;
+      }
+    }
+
+    &.MuiInputBase-root {
+      height: 30px;
+      width: 30px;
+      border-radius: 10px;
+      color: var(--lang-switcher-color);
+
+      @include mixins.media(desktop) {
+        height: 36px;
+        width: 36px;
+      }
+    }
+
+    .MuiOutlinedInput-notchedOutline {
+      border-color: var(--lang-switcher-color);
+    }
+
+    .MuiInputBase-input {
+      padding: 4px !important;
+      height: 28px;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-transform: uppercase;
+    }
+  }
+}
