@@ -1,4 +1,5 @@
 import { FC, useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 import { Box, Stack, Drawer, Divider } from "@mui/material";
 
@@ -15,10 +16,15 @@ type HeaderProfileProps = {
 
 const HeaderProfile: FC<HeaderProfileProps> = ({ children, navigationList, open = false, onClose }) => {
   const [visible, setVisible] = useState<boolean>(false);
+  const { pathname } = useLocation();
 
   useEffect(() => {
     setVisible(open);
   }, [open]);
+
+  useEffect(() => {
+    onClose();
+  }, [pathname]);
 
   return (
     <Drawer anchor="left" open={visible} onClose={onClose} className="navigation-drawer">

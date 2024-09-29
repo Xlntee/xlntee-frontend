@@ -3,6 +3,7 @@
   --dark-color: 0 0 0; //#000000
 
   --primary-color: 99 97 255; //#6361ff
+  --primary-light-color: 153 200 255; //#99C8FF
   --link-color: 104 121 252; //#6879fc
   --cta-color: 255 28 96; //#ff1c60
 
@@ -31,4 +32,8 @@
   --gray-color-900: 243 243 243; //#f3f3f3
 
   --yellow-color: 250 175 0; //#faaf00
+
+  --base-shadow: 0 2px 6px 0 rgb(var(--dark-color) / 0.25);
+  --base-shadow-invisible: 0 2px 6px 0 rgb(var(--dark-color) / 0);
+  --transition-cubic-bezier: cubic-bezier(0.4, 0, 0.2, 1);
 }

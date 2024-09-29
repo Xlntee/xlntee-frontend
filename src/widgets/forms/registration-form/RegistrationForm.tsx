@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useTranslation } from "react-i18next";
 
 import {
   Alert,
@@ -26,6 +27,8 @@ import { RegistrationFormValues, validationSchema } from "./validation";
 const RegistrationForm = () => {
   const { role } = useParams();
 
+  const { t } = useTranslation("auth");
+
   const {
     control,
     formState: { errors },
@@ -49,7 +52,7 @@ const RegistrationForm = () => {
           className="auth-form__auth-btn"
           startIcon={<GoogleIcon />}
         >
-          Log in with Google
+          {t("login-with")} Google
         </Button>
         <Button
           aria-label="login with facebook button"
@@ -57,39 +60,37 @@ const RegistrationForm = () => {
           className="auth-form__auth-btn"
           startIcon={<FacebookOutlined />}
         >
-          Log in with Facebook
+          {t("login-with")} Facebook
         </Button>
         <TextField
           {...register("email")}
           error={!!errors.email?.message}
           helperText={errors.email?.message}
           type="email"
-          placeholder="Email"
+          placeholder={t("email-placeholder")}
         />
         <TextField
           {...register("password")}
           error={!!errors.password?.message}
           type="password"
-          placeholder="Password"
+          placeholder={t("password-placeholder")}
         />
         <TextField
           {...register("confirm_password")}
           error={!!errors.confirm_password?.message}
           helperText={errors.confirm_password?.message}
           type="password"
-          placeholder="Confirm password"
+          placeholder={t("confirm-password-placeholder")}
         />
         <Typography variant="caption" color={XlnteeColors.GrayColor700}>
-          The password must be at least 8 characters long and include at least: one capital letter; one small letter;
-          one symbol and one number. valid characters: !@#$%^&*()_+/\.-~
+          {t("password-requirements")} !@#$%^&*()_+/\.-~
         </Typography>
         {!!errors.password?.message && errors.password?.message && (
           <Alert icon={<ErrorIcon />} severity="error">
-            Password doesn't match the requirements
+            {t("password-does-not-match")}
           </Alert>
         )}
-
-        <FormControl error={Boolean(errors.agreement)}>
+        <FormControl error={Boolean(errors.agreement)} className="auth-form__terms-control">
           <Controller
             name="agreement"
             control={control}
@@ -100,7 +101,7 @@ const RegistrationForm = () => {
                 control={<Checkbox {...field} checked={field.value} />}
                 label={
                   <Typography variant="body2" className="auth-form__terms-text">
-                    I have read and accept all <a href="#">terms of use of the platform.</a>
+                    {t("terms.text")} <a href="#">{t("terms.link")}</a>
                   </Typography>
                 }
               />
@@ -109,11 +110,11 @@ const RegistrationForm = () => {
           {errors.agreement && <FormHelperText>{errors.agreement.message}</FormHelperText>}
         </FormControl>
         <Button variant="contained" className="auth-form__btn-submit" onClick={handleSubmit(onSubmit)}>
-          Sign up
+          {t("sign-up")}
         </Button>
         <Stack direction="column" gap="4px" textAlign="center">
           <Typography variant="caption" className="auth-form__caption-text">
-            Already have an account? <Link to={`${AppRoutes.authTypeLogin}/${role}`}>Log in</Link>
+            {t("have-account")}? <Link to={`${AppRoutes.auth.login}/${role}`}>{t("login")}</Link>
           </Typography>
         </Stack>
       </Stack>

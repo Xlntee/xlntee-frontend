@@ -1,5 +1,7 @@
-import { CSSProperties } from "react";
+import { CSSProperties, useState } from "react";
 import { Button, Container, Stack, Box, Typography, Grid, TextField, InputLabel, Divider } from "@mui/material";
+
+import { Snackbar } from "src/features";
 
 import useTitle from "src/hooks/useTitle/useTitle";
 import { PageProps } from "pages/type";
@@ -54,6 +56,8 @@ const renderButtonsBlack = (variant: "black-contain" | "black-outline" | "black-
 
 const UiPage = ({ title }: PageProps) => {
   useTitle(title);
+
+  const [showSnackbar, setShowSnackbar] = useState<boolean>(false);
 
   return (
     <Box component="section" paddingBlock={4}>
@@ -173,6 +177,14 @@ const UiPage = ({ title }: PageProps) => {
         </Grid>
 
         <Box mb="20px">
+          <Typography variant="h2">Snackbar</Typography>
+          <Button onClick={() => setShowSnackbar(true)} variant="contained">
+            Snackbar open
+          </Button>
+          <Snackbar open={showSnackbar} onClose={() => setShowSnackbar(false)} title="Snackbar message" />
+        </Box>
+
+        <Box mb="20px">
           <Typography variant="h2">Header</Typography>
           <Header />
         </Box>
@@ -183,13 +195,13 @@ const UiPage = ({ title }: PageProps) => {
           <Typography mb="20px" variant="h3">
             Student
           </Typography>
-          <HeaderProfile type="student" />
+          <HeaderProfile />
         </Box>
         <Box mb="20px">
           <Typography mb="20px" variant="h3">
             Teacher
           </Typography>
-          <HeaderProfile type="teacher" />
+          <HeaderProfile />
         </Box>
       </Container>
     </Box>

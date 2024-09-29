@@ -7,7 +7,28 @@
   &__avatar {
     &.MuiSvgIcon-root {
       font-size: 50px;
+      @include mixins.animate(color);
     }
+  }
+
+  &__user {
+    @include mixins.hover {
+      color: rgb(var(--link-color));
+
+      .MuiTypography-root {
+        color: inherit;
+      }
+    }
+  }
+
+  &__user-name {
+    @include mixins.animate(color);
+  }
+
+  &__user-link {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
   }
 
   &__link {

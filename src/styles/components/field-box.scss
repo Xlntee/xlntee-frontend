@@ -1,0 +1,19 @@
+.field-box {
+  margin-bottom: 30px;
+  display: block;
+
+  &__title {
+    &.MuiTypography-root {
+      font-weight: 400;
+    }
+  }
+
+  &__subtitle {
+    &.MuiTypography-root {
+      font-weight: 300;
+      font-size: 14px;
+      color: rgb(var(--gray-color-600));
+      margin-bottom: 8px;
+    }
+  }
+}

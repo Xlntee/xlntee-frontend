@@ -1,0 +1,24 @@
+.block-promo-codes {
+  display: grid;
+  row-gap: 20px;
+}
+
+.promo-row {
+  display: grid;
+  align-items: end;
+  grid-template-columns: 100px 242px max-content;
+  gap: 24px;
+
+  &__field {
+    .MuiTypography-root,
+    .MuiFormLabel-root {
+      font-size: 14px;
+      color: rgb(var(--gray-color-600));
+      margin-bottom: 10px;
+    }
+
+    .MuiFormControl-root {
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,142 @@
+@use "styles/mixins.scss" as mixins;
+
+.create-course-layout {
+  --collapsed-navigation-width: 100%;
+
+  flex: 1;
+
+  &__container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__grid {
+    @include mixins.animate(grid-template-columns);
+
+    @include mixins.media(desktop) {
+      --collapsed-navigation-width: 350px;
+
+      display: grid;
+      grid-template-columns: var(--collapsed-navigation-width) 1fr;
+      gap: 20px;
+    }
+  }
+
+  &__aside {
+    position: relative;
+    z-index: 2;
+    background-color: rgb(var(--light-color));
+
+    @include mixins.media(desktop, max) {
+      display: none;
+    }
+  }
+
+  &__aside-menu {
+    width: 320px;
+    padding: 50px 20px 20px;
+
+    @include mixins.media(tablet) {
+      width: 400px;
+    }
+
+    @include mixins.media(desktop) {
+      padding: 0;
+      width: auto;
+    }
+  }
+
+  &__menu-opener {
+    &.MuiButtonBase-root {
+      margin-bottom: 20px;
+
+      @include mixins.media(desktop) {
+        display: none;
+      }
+    }
+  }
+
+  &__menu-close {
+    &.MuiButtonBase-root {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      min-height: auto;
+
+      @include mixins.media(desktop) {
+        display: none;
+      }
+    }
+  }
+
+  &__body {
+  }
+}
+
+.create-course-nav {
+  padding: 16px 14px;
+  box-shadow: var(--base-shadow);
+
+  @include mixins.media(desktop) {
+    border-radius: 25px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    &.MuiList-root {
+      padding: 0 16px;
+    }
+  }
+
+  &__item {
+    &.MuiListItem-root {
+      justify-content: space-between;
+      padding: 0;
+      gap: 10px;
+    }
+  }
+
+  &__link {
+    &.MuiTypography-root {
+      font-weight: 300;
+      color: currentColor;
+      text-decoration: none;
+      padding-block: 8px;
+
+      @include mixins.animate(color);
+
+      &.active-page {
+        font-weight: 700;
+      }
+
+      &:not([aria-current="page"]) {
+        @include mixins.hover {
+          color: rgb(var(--primary-color));
+        }
+      }
+    }
+  }
+
+  &__action {
+    &.MuiButtonBase-root {
+      font-weight: 300;
+      width: 100%;
+      padding: 4px 16px;
+      justify-content: start;
+      min-height: auto;
+      border-radius: 20px;
+      color: rgb(var(--gray-color-600));
+      background-color: rgb(var(--gray-stroke-color));
+
+      @include mixins.animate(color background-color);
+
+      @include mixins.hover {
+        color: rgb(var(--light-color));
+        background-color: rgb(var(--dark-color));
+      }
+    }
+  }
+}

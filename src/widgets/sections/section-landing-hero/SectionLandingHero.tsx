@@ -40,7 +40,7 @@ const SectionLandingHero: FC<SectionLandingHeroProps> = ({ title, subtitle, butt
               {isFeaturesArray && <CheckList items={features} />}
               <Button
                 component={RouterLink}
-                to={AppRoutes.auth}
+                to={AppRoutes.auth.base}
                 color="secondary"
                 variant="contained"
                 size="large"

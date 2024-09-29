@@ -1,27 +1,38 @@
-import { Suspense, lazy, ReactNode } from "react";
+import { Suspense, lazy, ReactNode, useEffect } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+
+import { useAppDispatch } from "src/app/store/store";
+import { setRole } from "src/app/store/slices/user/userSlice";
+import { UserRole } from "src/shared/utils/enum";
+
+import { PublicLayout, CreateCourseLayout, PrivateLayout, PrivateLayoutCreateCourse, CourseLayout } from "src/layouts";
 
 import PageLoader from "./PageLoader";
 import { AppRoutes } from "./appRoutes";
 import { ProtectedRoute } from "./ProtectedRoute";
 
-import { PrivateLayout, PublicLayout } from "src/layouts";
-
 // Lazy load the component
-const AuthorizationPage = lazy(() => import("pages/auth/authorization/AuthorizationPage"));
 const AuthorizationRolesPage = lazy(() => import("pages/auth/authorization-roles/AuthorizationRolesPage"));
+const AuthorizationPage = lazy(() => import("pages/auth/authorization/AuthorizationPage"));
 const AccountVerificationPage = lazy(() => import("pages/auth/account-verification/AccountVerificationPage"));
 const EmailUpdatePage = lazy(() => import("src/pages/auth/email-update/EmailUpdatePage"));
 const PasswordUpdatePage = lazy(() => import("src/pages/auth/password-update/PasswordUpdatePage"));
 
 const CoursePreviewPage = lazy(() => import("src/pages/course-preview/CoursePreviewPage"));
-const CreateCoursePage = lazy(() => import("src/pages/create-course/CreateCoursePage"));
+const CreateCourseGeneralPage = lazy(() => import("src/pages/create-course/general/General"));
+const CreateCourseLandingPage = lazy(() => import("src/pages/create-course/landing/Landing"));
+const CreateCourseStructurePage = lazy(() => import("src/pages/create-course/structure/Structure"));
+const CreateCourseLecturerPage = lazy(() => import("src/pages/create-course/lecturer/Lecturer"));
+const CreateCoursePricePage = lazy(() => import("src/pages/create-course/price/Price"));
+const CreateCourseAdvertisingPage = lazy(() => import("src/pages/create-course/advertising/Advertising"));
+
 const StudentLandingPage = lazy(() => import("src/pages/student/landing-page/LandingPage"));
 const TeacherLandingPage = lazy(() => import("src/pages/teacher/landing-page/LandingPage"));
 const UiPage = lazy(() => import("src/pages/ui"));
 const MyCoursesPage = lazy(() => import("src/pages/teacher/my-courses-page/MyCoursesPage"));
 const HelpCenterPage = lazy(() => import("src/pages/help-center-page/HelpCenterPage"));
 const StatisticPage = lazy(() => import("src/pages/teacher/statistic-page/StatisticPage"));
+const CoursePage = lazy(() => import("src/pages/course/Course"));
 
 const SuspenseWrapper = ({ children }: { children: ReactNode }) => {
   return <Suspense fallback={<PageLoader />}>{children}</Suspense>;
@@ -41,14 +52,6 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: AppRoutes.teacherLanding,
-        element: (
-          <SuspenseWrapper>
-            <TeacherLandingPage title="Teacher landing" />
-          </SuspenseWrapper>
-        ),
-      },
-      {
         path: AppRoutes.studentLanding,
         element: (
           <SuspenseWrapper>
@@ -57,7 +60,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: `${AppRoutes.authType}`,
+        path: AppRoutes.auth.typeRole,
         element: (
           <SuspenseWrapper>
             <AuthorizationPage title="Auth" />
@@ -65,7 +68,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: AppRoutes.authRoles,
+        path: AppRoutes.auth.roles,
         element: (
           <SuspenseWrapper>
             <AuthorizationRolesPage title="Auth roles" />
@@ -73,10 +76,48 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: AppRoutes.previewCourse,
+        path: AppRoutes.auth.accountVerification,
         element: (
           <SuspenseWrapper>
-            <CoursePreviewPage title="Course preview" />
+            <AccountVerificationPage title="Account verification" />
+          </SuspenseWrapper>
+        ),
+      },
+      {
+        path: AppRoutes.auth.emailUpdate,
+        element: (
+          <SuspenseWrapper>
+            <EmailUpdatePage title="Email update" />
+          </SuspenseWrapper>
+        ),
+      },
+      {
+        path: AppRoutes.auth.passwordUpdate,
+        element: (
+          <SuspenseWrapper>
+            <PasswordUpdatePage title="Password update" />
+          </SuspenseWrapper>
+        ),
+      },
+      {
+        element: <CourseLayout />,
+        children: [
+          {
+            index: true,
+            path: "/course",
+            element: (
+              <SuspenseWrapper>
+                <CoursePage />
+              </SuspenseWrapper>
+            ),
+          },
+        ],
+      },
+      {
+        path: AppRoutes.helpCenter,
+        element: (
+          <SuspenseWrapper>
+            <HelpCenterPage title="Help Center" />
           </SuspenseWrapper>
         ),
       },
@@ -92,6 +133,27 @@ const router = createBrowserRouter([
         path: AppRoutes.notFound,
         element: <div>404</div>,
       },
+    ],
+  },
+  {
+    element: <ProtectedRoute element={<PrivateLayout />} />,
+    children: [
+      {
+        path: AppRoutes.dashboard.base,
+        element: (
+          <SuspenseWrapper>
+            <StatisticPage />
+          </SuspenseWrapper>
+        ),
+      },
+      {
+        path: AppRoutes.dashboard.myCourses,
+        element: (
+          <SuspenseWrapper>
+            <MyCoursesPage title="My courses" />
+          </SuspenseWrapper>
+        ),
+      },
       {
         path: AppRoutes.helpCenter,
         element: (
@@ -101,63 +163,87 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: AppRoutes.account_verification,
+        path: AppRoutes.previewCourse,
         element: (
           <SuspenseWrapper>
-            <AccountVerificationPage title="Account verification" />
-          </SuspenseWrapper>
-        ),
-      },
-      {
-        path: AppRoutes.email_update,
-        element: (
-          <SuspenseWrapper>
-            <EmailUpdatePage title="Email update" />
-          </SuspenseWrapper>
-        ),
-      },
-      {
-        path: AppRoutes.password_update,
-        element: (
-          <SuspenseWrapper>
-            <PasswordUpdatePage title="Password update" />
+            <CoursePreviewPage title="Course preview" />
           </SuspenseWrapper>
         ),
       },
     ],
   },
   {
-    element: <ProtectedRoute element={<PrivateLayout />} />,
+    element: <ProtectedRoute element={<PrivateLayoutCreateCourse />} />,
     children: [
       {
-        path: AppRoutes.createCourse,
-        element: (
-          <SuspenseWrapper>
-            <CreateCoursePage title="Create course" />
-          </SuspenseWrapper>
-        ),
-      },
-      {
-        path: AppRoutes.myCourses,
-        element: (
-          <SuspenseWrapper>
-            <MyCoursesPage title="My courses" />
-          </SuspenseWrapper>
-        ),
-      },
-      {
-        path: AppRoutes.statistic,
-        element: (
-          <SuspenseWrapper>
-            <StatisticPage />
-          </SuspenseWrapper>
-        ),
+        element: <CreateCourseLayout />,
+        children: [
+          {
+            index: true,
+            path: AppRoutes.dashboard.createCourse,
+            element: (
+              <SuspenseWrapper>
+                <CreateCourseGeneralPage title="Create course" />
+              </SuspenseWrapper>
+            ),
+          },
+          {
+            path: AppRoutes.dashboard.createCourseLanding,
+            element: (
+              <SuspenseWrapper>
+                <CreateCourseLandingPage title="Create course general" />
+              </SuspenseWrapper>
+            ),
+          },
+          {
+            path: AppRoutes.dashboard.createCourseStructure,
+            element: (
+              <SuspenseWrapper>
+                <CreateCourseStructurePage title="Create course general" />
+              </SuspenseWrapper>
+            ),
+          },
+          {
+            path: AppRoutes.dashboard.createCourseLecturer,
+            element: (
+              <SuspenseWrapper>
+                <CreateCourseLecturerPage title="Create course general" />
+              </SuspenseWrapper>
+            ),
+          },
+          {
+            path: AppRoutes.dashboard.createCoursePrice,
+            element: (
+              <SuspenseWrapper>
+                <CreateCoursePricePage title="Create course general" />
+              </SuspenseWrapper>
+            ),
+          },
+          {
+            path: AppRoutes.dashboard.createCourseAdvertising,
+            element: (
+              <SuspenseWrapper>
+                <CreateCourseAdvertisingPage title="Create course general" />
+              </SuspenseWrapper>
+            ),
+          },
+        ],
       },
     ],
   },
 ]);
 
 const AppRouter = () => {
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(
+      setRole({
+        role: UserRole.TEACHER,
+      }),
+    );
+  }, []);
+
   return <RouterProvider router={router} />;
 };
 

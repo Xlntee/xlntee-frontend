@@ -1,0 +1,17 @@
+@use "styles/mixins.scss" as mixins;
+
+.create-course-structure {
+  &__action-add-lesson {
+    margin-bottom: 20px;
+
+    &.MuiButtonBase-root {
+      border-radius: 25px;
+      box-shadow: 0 0 4px 0px rgb(var(--dark-color) / 0.25);
+      font-weight: 400;
+    }
+  }
+
+  &__action-save {
+    min-width: 190px;
+  }
+}

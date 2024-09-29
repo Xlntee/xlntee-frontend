@@ -1,0 +1,18 @@
+.collapse-toggler {
+  &.active {
+    transform: rotate(180deg);
+  }
+
+  &.MuiButtonBase-root {
+    color: currentColor;
+    border: 2px solid currentColor;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    min-height: 0;
+  }
+}

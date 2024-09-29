@@ -1,0 +1,23 @@
+@use "styles/mixins.scss" as mixins;
+
+.preview-box {
+  position: relative;
+  border-radius: 25px;
+  border: 1px solid rgb(var(--gray-color-400));
+  overflow: hidden;
+  width: 100%;
+  height: 56vw;
+  max-height: 300px;
+
+  @include mixins.media(tablet) {
+    max-height: 280px;
+  }
+
+  &__file {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    inset: 0;
+  }
+}

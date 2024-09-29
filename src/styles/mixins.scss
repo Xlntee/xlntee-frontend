@@ -96,3 +96,9 @@ $animation-speed: 0.3s !default;
     }
   }
 }
+
+@mixin text-trim-dots() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

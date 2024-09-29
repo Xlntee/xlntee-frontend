@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom";
-import "./Header.scss";
 import { AppBar, Box, Container, Link, Toolbar } from "@mui/material";
 import Logo from "./components/logo/Logo";
 import { AppRoutes } from "src/app/routing/appRoutes";
+import "./Header.scss";
 
 const Header = () => {
   return (
@@ -20,7 +20,7 @@ const Header = () => {
             <Link component={NavLink} to={AppRoutes.registration}>
               Registration
             </Link> */}
-            <Link component={NavLink} to={AppRoutes.createCourse}>
+            <Link component={NavLink} to={AppRoutes.dashboard.createCourse}>
               Create Course
             </Link>
             <Link component={NavLink} to={"/course/6616af061a9802691861ca66"}>

@@ -1,0 +1,61 @@
+@mixin text-position($position: left) {
+  position: absolute;
+  top: 0;
+
+  @if ($position == left) {
+    left: 10px;
+  } @else {
+    right: 10px;
+  }
+
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+
+.progress {
+  position: relative;
+
+  &--small {
+    .MuiLinearProgress-root {
+      height: 8px;
+    }
+  }
+
+  .MuiLinearProgress-barColorWarning {
+    background-color: rgb(var(--warning-extra-light-color));
+  }
+
+  .MuiLinearProgress-barColorInfo {
+    background-color: rgb(var(--primary-light-color));
+  }
+
+  .MuiLinearProgress-colorSuccess + &__value.MuiTypography-root {
+    color: rgb(var(--light-color));
+  }
+
+  &__value {
+    @include text-position;
+
+    &.MuiTypography-root {
+      color: rgb(var(--dark-color));
+    }
+  }
+
+  &__title {
+    @include text-position;
+
+    &.MuiTypography-root {
+      font-size: 14px;
+    }
+  }
+
+  &__content {
+    @include text-position($position: right);
+
+    &.MuiTypography-root {
+      font-size: 14px;
+    }
+  }
+}

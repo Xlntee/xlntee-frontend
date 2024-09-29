@@ -1,0 +1,37 @@
+@use "styles/mixins.scss" as mixins;
+
+.quiz-answer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  &__action-add-answer {
+    &.MuiButtonBase-root {
+      font-weight: 400;
+    }
+  }
+}
+
+.quiz-answer {
+  display: grid;
+  align-items: start;
+  grid-template-columns: 24px 1fr 24px;
+  gap: 10px;
+  width: 100%;
+
+  &__action {
+    text-align: center;
+
+    &.MuiButtonBase-root {
+      min-width: auto;
+    }
+  }
+
+  &__checkbox {
+    margin-top: 4px;
+
+    @include mixins.media(tablet) {
+      margin-top: 10px;
+    }
+  }
+}

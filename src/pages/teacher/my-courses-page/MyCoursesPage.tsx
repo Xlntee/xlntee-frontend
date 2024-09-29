@@ -30,7 +30,7 @@ const MyCoursesPage = ({ title }: PageProps) => {
               minHeight: myCourses.length === 0 ? "20vh" : "auto",
             }}
           >
-            <CreateCourseButton path={AppRoutes.createCourse} />
+            <CreateCourseButton path={AppRoutes.dashboard.createCourse} />
           </Grid>
           {myCourses.length > 0
             ? myCourses.map((course) => (
