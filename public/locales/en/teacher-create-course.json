@@ -117,6 +117,8 @@
   "publish": {
     "nav_title": "Publish"
   },
+  "button-landing-text": "Landing",
+  "button-preview-text": "Preview",
   "button_save": "Save",
   "button_discard_changes": "Discard changes",
   "storage": "Storage",

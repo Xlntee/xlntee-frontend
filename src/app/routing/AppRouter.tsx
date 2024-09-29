@@ -5,7 +5,7 @@ import { useAppDispatch } from "src/app/store/store";
 import { setRole } from "src/app/store/slices/user/userSlice";
 import { UserRole } from "src/shared/utils/enum";
 
-import { PublicLayout, CreateCourseLayout, PrivateLayout, CourseLayout } from "src/layouts";
+import { PublicLayout, CreateCourseLayout, PrivateLayout, PrivateLayoutCreateCourse, CourseLayout } from "src/layouts";
 
 import PageLoader from "./PageLoader";
 import { AppRoutes } from "./appRoutes";
@@ -41,8 +41,7 @@ const SuspenseWrapper = ({ children }: { children: ReactNode }) => {
 const router = createBrowserRouter([
   {
     path: "/",
-    // element: <PublicLayout />,
-    element: <PrivateLayout />,
+    element: <PublicLayout />,
     children: [
       {
         path: AppRoutes.home,
@@ -171,12 +170,17 @@ const router = createBrowserRouter([
           </SuspenseWrapper>
         ),
       },
+    ],
+  },
+  {
+    element: <ProtectedRoute element={<PrivateLayoutCreateCourse />} />,
+    children: [
       {
         element: <CreateCourseLayout />,
         children: [
           {
             index: true,
-            path: AppRoutes.createCourse,
+            path: AppRoutes.dashboard.createCourse,
             element: (
               <SuspenseWrapper>
                 <CreateCourseGeneralPage title="Create course" />
@@ -184,7 +188,7 @@ const router = createBrowserRouter([
             ),
           },
           {
-            path: AppRoutes.createCourseLanding,
+            path: AppRoutes.dashboard.createCourseLanding,
             element: (
               <SuspenseWrapper>
                 <CreateCourseLandingPage title="Create course general" />
@@ -192,7 +196,7 @@ const router = createBrowserRouter([
             ),
           },
           {
-            path: AppRoutes.createCourseStructure,
+            path: AppRoutes.dashboard.createCourseStructure,
             element: (
               <SuspenseWrapper>
                 <CreateCourseStructurePage title="Create course general" />
@@ -200,7 +204,7 @@ const router = createBrowserRouter([
             ),
           },
           {
-            path: AppRoutes.createCourseLecturer,
+            path: AppRoutes.dashboard.createCourseLecturer,
             element: (
               <SuspenseWrapper>
                 <CreateCourseLecturerPage title="Create course general" />
@@ -208,7 +212,7 @@ const router = createBrowserRouter([
             ),
           },
           {
-            path: AppRoutes.createCoursePrice,
+            path: AppRoutes.dashboard.createCoursePrice,
             element: (
               <SuspenseWrapper>
                 <CreateCoursePricePage title="Create course general" />
@@ -216,7 +220,7 @@ const router = createBrowserRouter([
             ),
           },
           {
-            path: AppRoutes.createCourseAdvertising,
+            path: AppRoutes.dashboard.createCourseAdvertising,
             element: (
               <SuspenseWrapper>
                 <CreateCourseAdvertisingPage title="Create course general" />

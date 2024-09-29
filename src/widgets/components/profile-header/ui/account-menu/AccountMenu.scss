@@ -12,10 +12,8 @@
   }
 
   &__user {
-    &:hover {
-      @include mixins.hover {
-        color: rgb(var(--link-color));
-      }
+    @include mixins.hover {
+      color: rgb(var(--link-color));
 
       .MuiTypography-root {
         color: inherit;

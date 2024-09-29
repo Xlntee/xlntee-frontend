@@ -1,3 +1,5 @@
+@use "./mixins.scss" as mixins;
+
 * {
   box-sizing: border-box;
 }
@@ -39,8 +41,17 @@ img {
     font-weight: inherit;
     vertical-align: initial;
 
-    &:hover {
+    @include mixins.hover {
       text-decoration: none;
     }
+  }
+}
+
+.button-preview {
+  &.MuiButtonBase-root {
+    border-radius: 25px;
+    border: 1px solid rgb(var(--gray-stroke-color));
+    background-color: rgb(var(--light-element-color));
+    font-weight: 400;
   }
 }

@@ -218,7 +218,7 @@ defaultTheme.components = {
         lineHeight: 1.4,
         fontWeight: 700,
         boxShadow: "none",
-        gap: 8,
+        // gap: 8,
         ":hover": {
           boxShadow: "none",
         },

@@ -20,7 +20,7 @@ const Header = () => {
             <Link component={NavLink} to={AppRoutes.registration}>
               Registration
             </Link> */}
-            <Link component={NavLink} to={AppRoutes.createCourse}>
+            <Link component={NavLink} to={AppRoutes.dashboard.createCourse}>
               Create Course
             </Link>
             <Link component={NavLink} to={"/course/6616af061a9802691861ca66"}>

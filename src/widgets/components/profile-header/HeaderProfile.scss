@@ -5,6 +5,14 @@
   padding-block: 6px;
   box-shadow: 0 2px 5px 0 rgb(var(--dark-color) / 0.2);
 
+  &--create-course &__nav {
+    // justify-content: start;
+  }
+
+  &--create-course &__nav-center {
+    // grid-template-columns: auto 1fr;
+  }
+
   &__container {
     &.MuiContainer-root {
       display: grid;
@@ -21,13 +29,11 @@
 
   &__nav {
     display: grid;
-    grid-template-columns: auto minmax(auto, 1fr) auto;
-    justify-content: space-between;
     align-items: center;
 
     @include mixins.media(breakpoints.$mobile_breakpoint_min) {
       gap: 40px;
-      grid-template-columns: auto 1fr auto;
+      grid-template-columns: 1fr auto;
     }
   }
 
@@ -40,22 +46,23 @@
   &__nav-center {
     display: none;
 
-    @include mixins.media(breakpoints.$tablet) {
+    @include mixins.media(breakpoints.$mobile_breakpoint_min) {
       display: flex;
       align-items: center;
-      justify-content: center;
-      margin: 0 auto;
-      max-width: 240px;
-      width: 100%;
+      gap: 20px;
     }
+  }
 
-    @include mixins.media(breakpoints.$mobile_breakpoint_min) {
-      max-width: auto;
-    }
+  &__nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
   }
 
   &__nav-right {
     place-self: end;
+    margin-left: auto;
 
     .MuiButtonBase-root {
       min-width: auto;

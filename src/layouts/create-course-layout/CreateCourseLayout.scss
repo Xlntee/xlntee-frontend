@@ -133,7 +133,7 @@
 
       @include mixins.animate(color background-color);
 
-      &:hover {
+      @include mixins.hover {
         color: rgb(var(--light-color));
         background-color: rgb(var(--dark-color));
       }

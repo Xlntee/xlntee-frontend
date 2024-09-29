@@ -9,7 +9,7 @@
     text-decoration: underline;
     color: rgb(var(--link-color));
 
-    &:hover {
+    @include mixins.hover {
       text-decoration: none;
     }
   }

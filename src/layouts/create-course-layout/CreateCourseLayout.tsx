@@ -22,27 +22,27 @@ const CreateCourseLayout = () => {
   const navList = [
     {
       title: t("general.nav_title"),
-      path: AppRoutes.createCourse,
+      path: AppRoutes.dashboard.createCourse,
     },
     {
       title: t("landing.nav_title"),
-      path: AppRoutes.createCourseLanding,
+      path: AppRoutes.dashboard.createCourseLanding,
     },
     {
       title: t("structure.nav_title"),
-      path: AppRoutes.createCourseStructure,
+      path: AppRoutes.dashboard.createCourseStructure,
     },
     {
       title: t("lecturer.nav_title"),
-      path: AppRoutes.createCourseLecturer,
+      path: AppRoutes.dashboard.createCourseLecturer,
     },
     {
       title: t("price.nav_title"),
-      path: AppRoutes.createCoursePrice,
+      path: AppRoutes.dashboard.createCoursePrice,
     },
     {
       title: t("advertising.nav_title"),
-      path: AppRoutes.createCourseAdvertising,
+      path: AppRoutes.dashboard.createCourseAdvertising,
     },
   ];
 

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import { Box, Stack, Divider, Button, Typography } from "@mui/material";
@@ -17,8 +17,14 @@ import "./AccountMenu.scss";
 
 const AccountMenu = () => {
   const { t } = useTranslation("auth");
+  const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const userRole = useAppSelector(getUserRole);
+
+  function onToggleUserRole() {
+    dispatch(switchRole());
+    navigate(AppRoutes.dashboard.base);
+  }
 
   return (
     <Box className="account-menu">
@@ -39,10 +45,10 @@ const AccountMenu = () => {
           startIcon={<SwapHorizIcon fontSize="large" />}
           sx={{ borderRadius: "30px" }}
           size="small"
-          onClick={() => dispatch(switchRole())}
+          onClick={onToggleUserRole}
         >
-          {userRole === UserRole.STUDENT && t("student")}
-          {userRole === UserRole.TEACHER && t("teacher")}
+          {userRole === UserRole.STUDENT && t("teacher")}
+          {userRole === UserRole.TEACHER && t("student")}
         </Button>
         <Stack direction="row" alignItems="center" gap="10px" width="100%">
           <LanguageIcon />

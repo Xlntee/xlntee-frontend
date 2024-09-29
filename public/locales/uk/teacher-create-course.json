@@ -115,6 +115,8 @@
   "publish": {
     "nav_title": "Опублікувати курс"
   },
+  "button-landing-text": "Лендінг",
+  "button-preview-text": "Перегляд курсу",
   "button_save": "Зберегти",
   "button_discard_changes": "відхилити зміни",
   "storage": "Зберігання",

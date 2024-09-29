@@ -1,6 +1,7 @@
 import { FC, useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import cn from "classnames";
 
 import { Box, Container, Stack, Button, Badge } from "@mui/material";
 import VideocamIcon from "@mui/icons-material/Videocam";
@@ -25,9 +26,11 @@ import "./HeaderProfile.scss";
 
 type HeaderProfileProps = {
   children?: React.ReactNode;
+  className?: string;
+  link?: React.ReactNode;
 };
 
-const HeaderProfile: FC<HeaderProfileProps> = ({ children }) => {
+const HeaderProfile: FC<HeaderProfileProps> = ({ children, link, className }) => {
   const { t } = useTranslation("auth");
   const userRole = useAppSelector(getUserRole);
 
@@ -36,7 +39,7 @@ const HeaderProfile: FC<HeaderProfileProps> = ({ children }) => {
   const teacherNavList: NavigationLinkType[] = [
     {
       id: "1",
-      name: t("teacher-navigation.dashboard"),
+      name: t("dashboard"),
       path: AppRoutes.dashboard.base,
       icon: <DashboardCustomizeIcon />,
       type: "link",
@@ -80,7 +83,7 @@ const HeaderProfile: FC<HeaderProfileProps> = ({ children }) => {
   const studentNavList: NavigationLinkType[] = [
     {
       id: "1",
-      name: t("teacher-navigation.dashboard"),
+      name: t("dashboard"),
       path: AppRoutes.dashboard.base,
       icon: <DashboardCustomizeIcon />,
       type: "link",
@@ -131,16 +134,22 @@ const HeaderProfile: FC<HeaderProfileProps> = ({ children }) => {
   }
 
   return (
-    <Box component="header" className="header-profile">
+    <Box component="header" className={cn("header-profile", className)}>
       <Container className="header-profile__container">
         <Link to="/" className="header-profile__logo">
           <img src="/assets/x-logo-modal-extend.png" />
         </Link>
         <Box className="header-profile__nav">
-          <Box className="header-profile__nav-left">
-            <Navigation items={getNavigation()} />
-          </Box>
-          <Box className="header-profile__nav-center">{children}</Box>
+          {children ? (
+            <Box className="header-profile__nav-center">
+              {link}
+              <Box className="header-profile__nav-content">{children}</Box>
+            </Box>
+          ) : (
+            <Box className="header-profile__nav-left">
+              <Navigation items={getNavigation()} />
+            </Box>
+          )}
           <Stack direction="row" alignItems="center" gap="10px" className="header-profile__nav-right">
             <Stack direction="row" alignItems="center" gap="10px">
               {userRole === UserRole.STUDENT && <Tools />}
@@ -155,7 +164,7 @@ const HeaderProfile: FC<HeaderProfileProps> = ({ children }) => {
           </Stack>
         </Box>
       </Container>
-      <NavigationDrawer navigationList={getNavigation()} open={open} onClose={onClose} />
+      <NavigationDrawer navigationList={getNavigation()} children={children} open={open} onClose={onClose} />
     </Box>
   );
 };
