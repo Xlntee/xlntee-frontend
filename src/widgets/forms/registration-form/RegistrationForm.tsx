@@ -88,8 +88,7 @@ const RegistrationForm = () => {
             Password doesn't match the requirements
           </Alert>
         )}
-
-        <FormControl error={Boolean(errors.agreement)}>
+        <FormControl error={Boolean(errors.agreement)} className="auth-form__terms-control">
           <Controller
             name="agreement"
             control={control}

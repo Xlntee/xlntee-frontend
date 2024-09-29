@@ -3,14 +3,13 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import PageLoader from "./PageLoader";
 import { AppRoutes } from "./appRoutes";
-// import { ProtectedRoute } from "./ProtectedRoute";
 
 import { PublicLayout, CreateCourseLayout, PrivateLayout, CourseLayout } from "src/layouts";
 import { ProtectedRoute } from "./ProtectedRoute";
 
 // Lazy load the component
-const AuthorizationPage = lazy(() => import("pages/auth/authorization/AuthorizationPage"));
 const AuthorizationRolesPage = lazy(() => import("pages/auth/authorization-roles/AuthorizationRolesPage"));
+const AuthorizationPage = lazy(() => import("pages/auth/authorization/AuthorizationPage"));
 const AccountVerificationPage = lazy(() => import("pages/auth/account-verification/AccountVerificationPage"));
 const EmailUpdatePage = lazy(() => import("src/pages/auth/email-update/EmailUpdatePage"));
 const PasswordUpdatePage = lazy(() => import("src/pages/auth/password-update/PasswordUpdatePage"));
@@ -22,9 +21,6 @@ const CreateCourseStructurePage = lazy(() => import("src/pages/create-course/str
 const CreateCourseLecturerPage = lazy(() => import("src/pages/create-course/lecturer/Lecturer"));
 const CreateCoursePricePage = lazy(() => import("src/pages/create-course/price/Price"));
 const CreateCourseAdvertisingPage = lazy(() => import("src/pages/create-course/advertising/Advertising"));
-// const HomePage = lazy(() => import("src/pages/home-template/HomePage"));
-const LoginPage = lazy(() => import("src/pages/login/LoginPage"));
-const RegistrationPage = lazy(() => import("src/pages/registration/RegistrationPage"));
 const StudentLandingPage = lazy(() => import("src/pages/student/landing-page/LandingPage"));
 const TeacherLandingPage = lazy(() => import("src/pages/teacher/landing-page/LandingPage"));
 const UiPage = lazy(() => import("src/pages/ui"));
@@ -42,6 +38,46 @@ const router = createBrowserRouter([
     path: "/",
     element: <PublicLayout />,
     children: [
+      {
+        path: AppRoutes.authType,
+        element: (
+          <SuspenseWrapper>
+            <AuthorizationPage title="Auth" />
+          </SuspenseWrapper>
+        ),
+      },
+      {
+        path: AppRoutes.authRoles,
+        element: (
+          <SuspenseWrapper>
+            <AuthorizationRolesPage title="Auth roles" />
+          </SuspenseWrapper>
+        ),
+      },
+      {
+        path: AppRoutes.authAccountVerification,
+        element: (
+          <SuspenseWrapper>
+            <AccountVerificationPage title="Account verification" />
+          </SuspenseWrapper>
+        ),
+      },
+      {
+        path: AppRoutes.authEmailUpdate,
+        element: (
+          <SuspenseWrapper>
+            <EmailUpdatePage title="Email update" />
+          </SuspenseWrapper>
+        ),
+      },
+      {
+        path: AppRoutes.authPasswordUpdate,
+        element: (
+          <SuspenseWrapper>
+            <PasswordUpdatePage title="Password update" />
+          </SuspenseWrapper>
+        ),
+      },
       {
         element: <CreateCourseLayout />,
         children: [
@@ -119,14 +155,6 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: AppRoutes.teacherLanding,
-        element: (
-          <SuspenseWrapper>
-            <TeacherLandingPage title="Teacher landing" />
-          </SuspenseWrapper>
-        ),
-      },
-      {
         path: AppRoutes.studentLanding,
         element: (
           <SuspenseWrapper>
@@ -135,18 +163,10 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: `${AppRoutes.authType}`,
+        path: AppRoutes.helpCenter,
         element: (
           <SuspenseWrapper>
-            <AuthorizationPage title="Auth" />
-          </SuspenseWrapper>
-        ),
-      },
-      {
-        path: AppRoutes.authRoles,
-        element: (
-          <SuspenseWrapper>
-            <AuthorizationRolesPage title="Auth roles" />
+            <HelpCenterPage title="Help Center" />
           </SuspenseWrapper>
         ),
       },

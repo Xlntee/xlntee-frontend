@@ -570,10 +570,6 @@ defaultTheme.components = {
       root: {
         fontSize: "14px !important",
         paddingInline: 10,
-  MuiList: {
-    styleOverrides: {
-      root: {
-        paddingBlock: 0,
       },
     },
   },

@@ -97,7 +97,7 @@ const LoginForm: FC = () => {
           </Button>
           <Stack direction="column" gap="4px" textAlign="center">
             <Typography variant="caption" className="auth-form__caption-text">
-              Forgot password? <Link to={AppRoutes.password_update}>recover your pasword</Link>
+              Forgot password? <Link to={AppRoutes.authPasswordUpdate}>recover your pasword</Link>
             </Typography>
             <Typography variant="caption" className="auth-form__caption-text">
               Have no account? <Link to={`${AppRoutes.authTypeRegistration}/${role}`}>Sign up</Link>
