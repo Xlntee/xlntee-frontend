@@ -14,7 +14,7 @@ interface RatingProps {
   size?: "small" | "large";
 }
 
-const Rating: FC<RatingProps> = ({ rating, reviewCount, max = 5, precision = 0.5, size }) => {
+const Rating: FC<RatingProps> = ({ rating = 0, reviewCount = 0, max = 5, precision = 0.5, size }) => {
   const sizeModification = cn({
     "rating--large": size === "large",
   });
@@ -22,7 +22,7 @@ const Rating: FC<RatingProps> = ({ rating, reviewCount, max = 5, precision = 0.5
   const classnames = cn("rating", sizeModification);
   return (
     <Stack direction="row" alignItems="center" gap="4px" className={classnames}>
-      <Typography component="span" color={XlnteeColors.YellowColor} className="rating__count">
+      <Typography variant="caption" color={XlnteeColors.YellowColor} className="rating__count">
         {rating}
       </Typography>
       <MuiRating
@@ -34,14 +34,16 @@ const Rating: FC<RatingProps> = ({ rating, reviewCount, max = 5, precision = 0.5
         size={size}
         className="rating__list"
       />
-      {reviewCount && (
+      {reviewCount ? (
         <Typography
-          component="span"
           fontWeight={300}
+          variant="caption"
           color={XlnteeColors.GrayColor600}
           className="rating__review-count"
-        >{`(${reviewCount})`}</Typography>
-      )}
+        >
+          ({`${reviewCount}`})
+        </Typography>
+      ) : null}
     </Stack>
   );
 };

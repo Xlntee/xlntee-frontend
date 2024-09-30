@@ -8,10 +8,16 @@
   }
 
   &__count {
-    font-size: var(--review-count-size);
+    &.MuiTypography-root {
+      font-size: var(--review-count-size);
+      color: rgb(var(--yellow-color));
+    }
   }
 
   &__review-count {
-    font-size: var(--rating-review-size);
+    &.MuiTypography-root {
+      font-size: var(--rating-review-size);
+      color: rgb(var(--gray-color-600));
+    }
   }
 }
