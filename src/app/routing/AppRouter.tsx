@@ -37,6 +37,10 @@ const CreateCourseAdvertisingPage = lazy(() => import("src/pages/create-course/a
 const StudentLandingPage = lazy(() => import("src/pages/student/landing-page/LandingPage"));
 const StudentMyLearningPage = lazy(() => import("src/pages/student/my-learning/MyLearningPage"));
 const StudentCoursePage = lazy(() => import("src/pages/student/course/CoursePage"));
+const StudentCompletedCoursesPage = lazy(() => import("src/pages/student/completed-courses/CompletedCoursesPage"));
+const StudentCertificatesPage = lazy(() => import("src/pages/student/certificates/CertificatesPage"));
+const StudentFavoriteCoursesPage = lazy(() => import("src/pages/student/favorite-courses/FavoriteCoursesPage"));
+
 const TeacherLandingPage = lazy(() => import("src/pages/teacher/landing-page/LandingPage"));
 const UiPage = lazy(() => import("src/pages/ui"));
 const MyCoursesPage = lazy(() => import("src/pages/teacher/my-courses-page/MyCoursesPage"));
@@ -108,18 +112,18 @@ const teacherDashboardRoutes = [
     ),
   },
   {
-    path: AppRoutes.helpCenter,
+    path: AppRoutes.teacher.previewCourse,
     element: (
       <SuspenseWrapper>
-        <HelpCenterPage title="Help Center" />
+        <CoursePreviewPage title="Course preview" />
       </SuspenseWrapper>
     ),
   },
   {
-    path: AppRoutes.previewCourse,
+    path: AppRoutes.teacher.support,
     element: (
       <SuspenseWrapper>
-        <CoursePreviewPage title="Course preview" />
+        <HelpCenterPage title="Help Center" />
       </SuspenseWrapper>
     ),
   },
@@ -200,11 +204,19 @@ const studentDashboardRoutes = [
   },
   {
     path: AppRoutes.student.completedCourses,
-    element: <SuspenseWrapper>completedCourses</SuspenseWrapper>,
+    element: (
+      <SuspenseWrapper>
+        <StudentCompletedCoursesPage title="Completed courses" />
+      </SuspenseWrapper>
+    ),
   },
   {
     path: AppRoutes.student.certificates,
-    element: <SuspenseWrapper>certificates</SuspenseWrapper>,
+    element: (
+      <SuspenseWrapper>
+        <StudentCertificatesPage title="Certificates" />
+      </SuspenseWrapper>
+    ),
   },
   {
     path: AppRoutes.student.pricing,
@@ -212,7 +224,19 @@ const studentDashboardRoutes = [
   },
   {
     path: AppRoutes.student.support,
-    element: <SuspenseWrapper>support</SuspenseWrapper>,
+    element: (
+      <SuspenseWrapper>
+        <HelpCenterPage title="Help Center" />
+      </SuspenseWrapper>
+    ),
+  },
+  {
+    path: AppRoutes.student.favoriteCourses,
+    element: (
+      <SuspenseWrapper>
+        <StudentFavoriteCoursesPage title="Favorite courses" />
+      </SuspenseWrapper>
+    ),
   },
 ];
 

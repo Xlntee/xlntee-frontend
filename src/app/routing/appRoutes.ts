@@ -1,7 +1,7 @@
 export const AppRoutes = {
   home: "/",
   studentLanding: "/student",
-  previewCourse: "/course/:courseId",
+
   auth: {
     base: "/auth",
     typeRole: "/auth/:authType/:role",
@@ -19,8 +19,10 @@ export const AppRoutes = {
     myLearningSingle: "/student/dashboard/my-learning/:id",
     completedCourses: "/student/dashboard/completed-courses",
     certificates: "/student/dashboard/certificates",
+    certificatesSingle: "/student/dashboard/certificates/:id",
     pricing: "/student/dashboard/pricing",
     support: "/student/dashboard/support",
+    favoriteCourses: "/student/dashboard/favorite-courses",
   },
   teacher: {
     dashboard: "/teacher/dashboard",
@@ -30,6 +32,7 @@ export const AppRoutes = {
     statistic: "/teacher/dashboard/statistic",
     billing: "/teacher/dashboard/billing",
     support: "/teacher/dashboard/support",
+    previewCourse: "/teacher/course-preview/:id",
     createCourse: "/teacher/dashboard/create-course",
     createCourseLanding: "/teacher/dashboard/create-course/landing",
     createCourseStructure: "/teacher/dashboard/create-course/structure",

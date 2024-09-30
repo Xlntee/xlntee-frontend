@@ -21,6 +21,11 @@
     }
   }
 
+  &__logo {
+    display: flex;
+    align-items: center;
+  }
+
   &__nav {
     display: grid;
     align-items: center;
@@ -45,6 +50,11 @@
       align-items: center;
       gap: 20px;
     }
+
+    a {
+      color: rgb(var(--element-color));
+      font-size: 14px;
+    }
   }
 
   &__nav-content {
@@ -65,11 +75,23 @@
     }
 
     svg {
-      font-size: 24px;
+      color: rgb(var(--dark-color));
 
-      @include mixins.media(breakpoints.$mobile) {
+      @include mixins.media(tablet) {
         font-size: 30px;
       }
+    }
+  }
+
+  &__tools {
+    a {
+      display: flex;
+      align-items: center;
+      color: inherit;
+    }
+
+    .active {
+      color: rgb(var(--primary-color));
     }
   }
 }

@@ -1,0 +1,15 @@
+@use "styles/mixins.scss" as mixins;
+
+.course-complain {
+  &__toggler {
+    .MuiButton-endIcon {
+      margin-left: 0;
+
+      > svg {
+        @include mixins.media(tablet) {
+          font-size: 30px;
+        }
+      }
+    }
+  }
+}

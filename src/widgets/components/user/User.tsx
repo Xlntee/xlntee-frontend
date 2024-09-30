@@ -4,7 +4,7 @@ import { Box, Tooltip, IconButton, Menu, Modal } from "@mui/material";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-import { AccountMenu } from "../account-menu";
+import { AccountMenu } from "./ui";
 
 import "./User.scss";
 import { MenuToggler } from "src/features";
@@ -36,7 +36,7 @@ const User = () => {
 
   return (
     <Box>
-      <Tooltip title={undefined}>
+      <Tooltip title={undefined} className="account-menu-tool">
         <IconButton
           onClick={handleClick}
           size="small"

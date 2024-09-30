@@ -32,6 +32,8 @@
   }
 
   &__link {
+    color: inherit;
+
     &.MuiButtonBase-root {
       padding: 0;
       min-height: auto;

@@ -52,9 +52,9 @@ const AccountMenu = () => {
           <LanguageIcon />
           <LanguageSwitcher />
         </Stack>
-        <Button variant="black-text" className="account-menu__link">
+        <Link to={`${user.userRolePath}/support`} className="account-menu__link">
           {t("support-center")}
-        </Button>
+        </Link>
         <Button variant="black-text" className="account-menu__link">
           {t("sign-out")}
         </Button>
