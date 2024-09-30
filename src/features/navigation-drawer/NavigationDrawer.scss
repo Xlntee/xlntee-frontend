@@ -4,6 +4,7 @@
     box-shadow: 0 2px 5px 0 rgb(var(--dark-color) / 0.2);
     display: grid;
     grid-template-columns: 100px 50px;
+    align-items: center;
     justify-content: space-between;
   }
 
