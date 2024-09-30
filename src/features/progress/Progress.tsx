@@ -27,7 +27,9 @@ const Progress: FC<IProgress> = ({
     "progress--small": size === "sm",
   });
 
-  const classnames = cn("progress", cnModification, className);
+  const classnames = cn("progress", cnModification, className, {
+    full: value === 100,
+  });
 
   return (
     <Box className={classnames}>

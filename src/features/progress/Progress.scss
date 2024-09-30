@@ -16,11 +16,16 @@
 
 .progress {
   position: relative;
+  width: 100%;
 
   &--small {
     .MuiLinearProgress-root {
       height: 8px;
     }
+  }
+
+  .MuiLinearProgress-bar {
+    border-radius: 10px;
   }
 
   .MuiLinearProgress-barColorWarning {

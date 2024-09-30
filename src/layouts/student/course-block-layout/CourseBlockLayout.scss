@@ -1,0 +1,112 @@
+@use "styles/mixins.scss" as mixins;
+
+.course-layout {
+  --collapsed-navigation-width-sm: 70px;
+  --collapsed-navigation-width-lg: 100%;
+  --collapsed-navigation-width: var(--collapsed-navigation-width-sm);
+
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+
+  @include mixins.animate(grid-template-columns);
+
+  @include mixins.media(tablet) {
+    --collapsed-navigation-width-lg: 380px;
+  }
+
+  @include mixins.media(tablet_lg, max) {
+    padding-left: var(--collapsed-navigation-width-sm);
+  }
+
+  @include mixins.media(tablet_lg) {
+    display: grid;
+    grid-template-columns: var(--collapsed-navigation-width) 1fr;
+  }
+
+  &.open-navigation {
+    --collapsed-navigation-width: var(--collapsed-navigation-width-lg);
+  }
+}
+
+.collapsed-navigation {
+  --collapsed-navigation-toggler-icon-transform: scaleX(1);
+  --collapsed-navigation-toggler-text-opacity: 0;
+  --collapsed-navigation-hidden-toggler-visible: visible;
+
+  padding: 10px;
+  box-shadow: var(--base-shadow);
+  background-color: rgb(var(--light-color));
+
+  overflow: hidden scroll;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
+
+  @include mixins.media(tablet_lg, max) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    transform: translateX(0);
+    width: var(--collapsed-navigation-width);
+
+    @include mixins.animate($properties: transform width, $easing: var(--transition-cubic-bezier));
+  }
+
+  &.expanded {
+    --collapsed-navigation-toggler-icon-transform: scaleX(-1);
+    --collapsed-navigation-toggler-text-opacity: 1;
+    --collapsed-navigation-hidden-toggler-visible: hidden;
+  }
+
+  &__toggler {
+    &.MuiButtonBase-root {
+      min-width: auto;
+      padding: 0;
+      justify-content: space-between;
+      width: 100%;
+      height: 50px;
+      box-shadow: var(--base-shadow);
+      padding-right: 12px;
+
+      @include mixins.animate(padding);
+    }
+
+    &.active {
+      &.MuiButtonBase-root {
+        padding-left: 12px;
+        box-shadow: var(--base-shadow-invisible);
+      }
+    }
+  }
+
+  &__toggler-text {
+    opacity: var(--collapsed-navigation-toggler-text-opacity);
+
+    @include mixins.text-trim-dots;
+    @include mixins.animate($properties: opacity, $easing: cubic-bezier(0.4, 0, 0.2, 1));
+
+    width: 100%;
+    text-align: left;
+  }
+
+  &__toggler-icon {
+    transform: var(--collapsed-navigation-toggler-icon-transform);
+  }
+
+  &__hidden-toggler {
+    &.MuiButtonBase-root {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      min-height: auto;
+      min-width: auto;
+      visibility: var(--collapsed-navigation-hidden-toggler-visible);
+    }
+  }
+}

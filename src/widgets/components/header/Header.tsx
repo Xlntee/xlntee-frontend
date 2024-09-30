@@ -8,11 +8,14 @@ import { AppRoutes } from "src/app/routing/appRoutes";
 import { MenuToggler, Navigation, NavigationDrawer, NavigationLinkType } from "src/features";
 
 import { LanguageSwitcher } from "../language-switcher";
+import { User } from "../user";
 
 import "./Header.scss";
 
 const HeaderProfile = () => {
   const { t } = useTranslation("auth");
+
+  const authUser = false;
 
   const [open, setOpen] = useState<boolean>(false);
 
@@ -39,9 +42,11 @@ const HeaderProfile = () => {
     return (
       <Stack direction="row" alignItems="center" gap="10px" className="header__tools">
         <LanguageSwitcher compact />
-        <Link to={AppRoutes.auth.roles} className="header__action">
-          {t("login")}
-        </Link>
+        {!authUser && (
+          <Link to={AppRoutes.auth.roles} className="header__action">
+            {t("login")}
+          </Link>
+        )}
       </Stack>
     );
   }
@@ -58,6 +63,7 @@ const HeaderProfile = () => {
           </Box>
           <Stack direction="row" alignItems="center" gap="10px" className="header__nav-right">
             <Tools />
+            {authUser && <User />}
             <MenuToggler active={open} onClick={toggleDrawer} />
           </Stack>
         </Box>

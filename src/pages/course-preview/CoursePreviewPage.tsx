@@ -15,10 +15,10 @@ import { Difficulty, Language } from "src/entities/course/model";
 const CoursePreviewPage = ({ title }: PageProps) => {
   useTitle(title);
 
-  const { courseId } = useParams<{ courseId: string }>();
+  const { id } = useParams<{ id: string }>();
 
-  const { data, isLoading, error } = useGetCourseQuery(courseId!, {
-    skip: !courseId,
+  const { data, isLoading, error } = useGetCourseQuery(id!, {
+    skip: !id,
   });
 
   //тимчасово, щоб ts не жалувався на undefined

@@ -79,9 +79,7 @@ const SectionCourseHero: FC<SectionCourseHeroProps> = ({
           <Grid item xs={12} lg={6}>
             <Box className="preview-course-image">
               <img src={preview} alt={title} />
-              <Button className="preview-course-image__action">
-                <PlayArrowIcon />
-              </Button>
+              <Button className="preview-course-image__action" startIcon={<PlayArrowIcon />}></Button>
             </Box>
           </Grid>
           <Grid item xs={12} lg={6}>

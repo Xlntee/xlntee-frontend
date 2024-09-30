@@ -1,0 +1,44 @@
+@use "styles/mixins.scss" as mixins;
+
+.cartificate-card {
+  position: relative;
+  border: 1px solid rgb(var(--gray-stroke-color));
+  border-radius: 25px;
+  padding: 6px;
+  box-shadow: var(--base-shadow-invisible);
+
+  @include mixins.animate(box-shadow);
+
+  @include mixins.hover {
+    box-shadow: var(--base-shadow);
+  }
+
+  &__image {
+    position: relative;
+    padding-top: 60%;
+
+    img {
+      border-radius: 20px;
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__body {
+    padding: 6px;
+  }
+
+  &__title {
+    &.MuiTypography-root {
+      margin-bottom: 6px;
+    }
+  }
+
+  &__link {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+}

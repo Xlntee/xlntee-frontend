@@ -39,11 +39,11 @@ const AccordionProgress: FC<AccordionProgressProps> = ({
       <AccordionSummary className="accordion-progress__summary" expandIcon={<ExpandMoreIcon />}>
         <Typography variant="body2" className="accordion-progress__header">
           {number && (
-            <Typography component="span" className="accordion-progress__number">
+            <Typography component="span" className="accordion-progress__number" variant="body2">
               {number}
             </Typography>
           )}
-          <Typography component="span" className="accordion-progress__heading">
+          <Typography component="span" className="accordion-progress__heading" variant="body2">
             {heading}
           </Typography>
         </Typography>

@@ -109,8 +109,8 @@ export default function ImageUpload({
           variant={togglerVariant}
           disabled={disabled}
           className={buttonClassName}
+          startIcon={<CloudUploadIcon />}
         >
-          <CloudUploadIcon />
           {buttonText}
         </Button>
         <input

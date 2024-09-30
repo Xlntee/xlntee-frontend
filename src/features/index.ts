@@ -11,3 +11,5 @@ export * from "./menu-toggler";
 export * from "./navigation";
 export * from "./navigation-drawer";
 export * from "./otp-input";
+export * from "./course-card-progress";
+export * from "./certificate-card";
