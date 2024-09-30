@@ -48,8 +48,8 @@ export default function FileUpload({
           variant={togglerVariant}
           disabled={disabled}
           className={buttonClassName}
+          startIcon={<CloudUploadIcon />}
         >
-          <CloudUploadIcon />
           {buttonText}
         </Button>
         <input ref={refFieldInputFile} accept=".pdf" onChange={handleChangeFile} {...rest} type="file" hidden />

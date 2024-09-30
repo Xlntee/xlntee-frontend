@@ -88,8 +88,8 @@ export default function VideoUpload({
           variant={togglerVariant}
           disabled={disabled}
           className={buttonClassName}
+          startIcon={<CloudUploadIcon />}
         >
-          <CloudUploadIcon />
           {buttonText}
         </Button>
         <input ref={refFieldInputFile} hidden type="file" accept={accept} onChange={handleChangeFile} {...rest} />
