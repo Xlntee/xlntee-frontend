@@ -92,6 +92,10 @@
 
     .active {
       color: rgb(var(--primary-color));
+
+      svg {
+        color: inherit;
+      }
     }
   }
 }

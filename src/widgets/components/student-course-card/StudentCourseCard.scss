@@ -1,0 +1,79 @@
+@use "styles/mixins.scss" as mixins;
+
+.student-course-card {
+  position: relative;
+  border: 1px solid rgb(var(--gray-stroke-color));
+  border-radius: 25px;
+  padding: 6px;
+  box-shadow: var(--base-shadow-invisible);
+
+  @include mixins.animate(box-shadow);
+
+  @include mixins.hover {
+    box-shadow: var(--base-shadow);
+  }
+
+  &__image {
+    position: relative;
+    padding-top: 60%;
+
+    img {
+      border-radius: 20px;
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__link {
+    position: absolute;
+    inset: 0;
+  }
+
+  &__body {
+    padding: 10px 6px;
+  }
+
+  &__title {
+    a {
+      color: inherit;
+    }
+  }
+
+  &__date {
+    color: rgb(var(--gray-color-500));
+  }
+
+  &__discount {
+    color: rgb(var(--light-color));
+    background-color: rgb(var(--cta-color));
+    border-radius: 20px;
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 14px;
+  }
+
+  &__favorite-toggler {
+    &.MuiButtonBase-root {
+      min-height: auto;
+      width: auto;
+      min-width: auto;
+    }
+  }
+
+  &__action {
+    &.MuiButtonBase-root {
+      min-width: auto;
+      border-radius: 20px;
+      min-height: 30px;
+      padding-bottom: 6px;
+      line-height: 1;
+      flex: 1 0 100px;
+
+      @include mixins.media(tablet) {
+        flex: 1 0 130px;
+      }
+    }
+  }
+}
