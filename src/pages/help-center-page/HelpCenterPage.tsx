@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 
 import { Box, Button, Container, Stack, TextField, Typography } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
@@ -12,7 +13,6 @@ import { XlnteeColors } from "src/shared/themes/colors";
 import { PageProps } from "pages/type";
 
 import "./HelpCenterPage.scss";
-import { useTranslation } from "react-i18next";
 
 interface FormData {
   supportFormText: string;

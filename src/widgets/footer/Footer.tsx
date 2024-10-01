@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import { Box, Container, Stack, Typography, Link as MuiLink, Grid } from "@mui/material";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -6,10 +7,9 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FacebookIcon from "@mui/icons-material/Facebook";
 
 import { XlnteeColors } from "src/shared/themes/colors";
+import { AppRoutes } from "src/app/routing/appRoutes";
 
 import "./Footer.scss";
-import { useTranslation } from "react-i18next";
-import { AppRoutes } from "src/app/routing/appRoutes";
 
 const Footer = () => {
   //TODO: add links
