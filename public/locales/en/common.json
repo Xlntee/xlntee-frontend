@@ -1,4 +1,11 @@
 {
   "preview": "Preview",
-  "buy-now": "Buy now"
+  "buy-now": "Buy now",
+  "footer": {
+    "main-text": "We are working to make using the platform as convenient as possible. You can help us become better",
+    "help-center-link": "Support",
+    "terms-of-use-link": "Terms of use",
+    "privacy-policy-link": "Privacy Policy",
+    "contact-us-text": "Contact us"
+  }
 }

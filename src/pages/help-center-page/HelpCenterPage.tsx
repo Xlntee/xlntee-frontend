@@ -21,7 +21,7 @@ interface FormData {
 const HelpCenterPage = ({ title }: PageProps) => {
   useTitle(title);
 
-  const { t } = useTranslation("help-center");
+  const { t } = useTranslation("auth");
 
   let navigate = useNavigate();
 

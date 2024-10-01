@@ -13,7 +13,7 @@ import { AppRoutes } from "src/app/routing/appRoutes";
 
 const Footer = () => {
   //TODO: add links
-  const { t } = useTranslation("footer");
+  const { t } = useTranslation("common");
 
   return (
     <Box component="footer">

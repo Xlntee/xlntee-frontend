@@ -22,8 +22,6 @@ i18n
       "teacher-courses",
       "teacher-create-course",
       "dialog-modal",
-      "help-center",
-      "footer"
     ],
     react: {
       useSuspense: false,
