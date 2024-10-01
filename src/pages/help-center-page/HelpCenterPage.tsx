@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 
 import { Box, Button, Container, Stack, TextField, Typography } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
@@ -20,6 +21,8 @@ interface FormData {
 const HelpCenterPage = ({ title }: PageProps) => {
   useTitle(title);
 
+  const { t } = useTranslation("auth");
+
   let navigate = useNavigate();
 
   const { register, handleSubmit } = useForm<FormData>();
@@ -32,22 +35,21 @@ const HelpCenterPage = ({ title }: PageProps) => {
   };
 
   //TODO: render button when user not authorized
-  //TODO: localization
 
   return (
     <Box className="help-center-page">
       <Container>
         <Typography className="help-center-page__caption" variant="h2">
-          Як ми можемо вам допомогти?
+          {t("help-center.caption")}
         </Typography>
         {isSubmit ? (
           <Stack alignItems="center">
             <CheckIcon className="help-center-page__check-icon" />
             <Typography variant="caption" color={XlnteeColors.BrandColor}>
-              Дякуємо! Ваш запит надіслано
+              {t("help-center.info-text")}
             </Typography>
             <Button className="help-center-page__return-btn" onClick={() => navigate(-1)}>
-              На головну &gt;
+              {t("help-center.return-btn")} &gt;
             </Button>
           </Stack>
         ) : (
@@ -58,17 +60,17 @@ const HelpCenterPage = ({ title }: PageProps) => {
                 multiline
                 fullWidth
                 rows={6}
-                placeholder="Напишіть нам"
+                placeholder={t("help-center.placeholder")}
                 {...register("supportFormText", { required: true })}
               />
               <Button type="submit" endIcon={<ArrowForwardIcon />} className="help-center-page__submit-button">
-                Надіслати
+                {t("help-center.submit-btn")}
               </Button>
             </form>
           </Stack>
         )}
 
-        <img className="help-center-page__image" src="/assets/help-center-image.png" />
+        <img className="help-center-page__image" src="/assets/help-center-image.png" alt={t("help-center.alt-text")} />
       </Container>
     </Box>
   );

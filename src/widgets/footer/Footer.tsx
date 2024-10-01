@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import { Box, Container, Stack, Typography, Link as MuiLink, Grid } from "@mui/material";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -6,12 +7,13 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FacebookIcon from "@mui/icons-material/Facebook";
 
 import { XlnteeColors } from "src/shared/themes/colors";
+import { AppRoutes } from "src/app/routing/appRoutes";
 
 import "./Footer.scss";
 
 const Footer = () => {
   //TODO: add links
-  //TODO: localization
+  const { t } = useTranslation("common");
 
   return (
     <Box component="footer">
@@ -39,22 +41,22 @@ const Footer = () => {
           <Grid item xs={12} lg={8}>
             <Box className="footer__container-main-text">
               <Typography variant="caption" fontWeight={300}>
-                Ми працюємо над тим, щоб зробити користування платформою якомога зручнішим. Ви можете допомогти нам
-                стати кращими
+                {t("footer.main-text")}
               </Typography>
             </Box>
             <Stack flexDirection="row" alignItems="center" justifyContent="center" gap="20px" flexWrap="wrap">
-              <Link className="footer__link" to="#">
-                Центр Підтримки
+              <Link className="footer__link" to={AppRoutes.helpCenter}>
+                {t("footer.help-center-link")}
               </Link>
               <Link className="footer__link" to="#">
-                Умови використання
+                {t("footer.terms-of-use-link")}
               </Link>
               <Link className="footer__link" to="#">
-                Політика конфіденційності
+                {t("footer.privacy-policy-link")}
               </Link>
               <Typography variant="caption">
-                Зв'яжіться з нами:{" "}
+                {t("footer.contact-us-text")}
+                {": "}
                 <MuiLink sx={{ textDecoration: "none" }} href="mailto:support@xlntee.com">
                   support@xlntee.com
                 </MuiLink>
