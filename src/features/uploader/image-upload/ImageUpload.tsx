@@ -102,7 +102,7 @@ export default function ImageUpload({
           </Typography>
         </Box>
       )}
-      <Box>
+      <Box className="image-upload__button-container">
         <Button
           onClick={() => refFieldInputFile.current?.click()}
           size="medium"

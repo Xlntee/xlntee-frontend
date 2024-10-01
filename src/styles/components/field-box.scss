@@ -5,6 +5,7 @@
   &__title {
     &.MuiTypography-root {
       font-weight: 400;
+      text-transform: capitalize;
     }
   }
 
@@ -15,5 +16,17 @@
       color: rgb(var(--gray-color-600));
       margin-bottom: 8px;
     }
+  }
+
+  .MuiInputBase-root {
+    .MuiInputBase-input {
+      &::placeholder {
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  a {
+    color: rgb(var(--dark-color));
   }
 }

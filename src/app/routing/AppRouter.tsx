@@ -44,8 +44,9 @@ const StudentFavoriteCoursesPage = lazy(() => import("src/pages/student/favorite
 const TeacherLandingPage = lazy(() => import("src/pages/teacher/landing-page/LandingPage"));
 const UiPage = lazy(() => import("src/pages/ui"));
 const MyCoursesPage = lazy(() => import("src/pages/teacher/my-courses-page/MyCoursesPage"));
-const HelpCenterPage = lazy(() => import("src/pages/help-center-page/HelpCenterPage"));
 const StatisticPage = lazy(() => import("src/pages/teacher/statistic-page/StatisticPage"));
+const ProfilePage = lazy(() => import("src/pages/teacher/profile-page/ProfilePage"));
+const HelpCenterPage = lazy(() => import("src/pages/help-center-page/HelpCenterPage"));
 
 const SuspenseWrapper = ({ children }: { children: ReactNode }) => {
   return <Suspense fallback={<PageLoader />}>{children}</Suspense>;
@@ -76,22 +77,6 @@ const authRoutes = [
       </SuspenseWrapper>
     ),
   },
-  {
-    path: AppRoutes.auth.emailUpdate,
-    element: (
-      <SuspenseWrapper>
-        <EmailUpdatePage title="Email update" />
-      </SuspenseWrapper>
-    ),
-  },
-  {
-    path: AppRoutes.auth.passwordUpdate,
-    element: (
-      <SuspenseWrapper>
-        <PasswordUpdatePage title="Password update" />
-      </SuspenseWrapper>
-    ),
-  },
 ];
 
 const teacherDashboardRoutes = [
@@ -100,6 +85,14 @@ const teacherDashboardRoutes = [
     element: (
       <SuspenseWrapper>
         <StatisticPage />
+      </SuspenseWrapper>
+    ),
+  },
+  {
+    path: AppRoutes.teacher.profile,
+    element: (
+      <SuspenseWrapper>
+        <ProfilePage title="Profile" />
       </SuspenseWrapper>
     ),
   },
@@ -124,6 +117,22 @@ const teacherDashboardRoutes = [
     element: (
       <SuspenseWrapper>
         <HelpCenterPage title="Help Center" />
+      </SuspenseWrapper>
+    ),
+  },
+  {
+    path: AppRoutes.teacher.emailUpdate,
+    element: (
+      <SuspenseWrapper>
+        <EmailUpdatePage title="Email update" />
+      </SuspenseWrapper>
+    ),
+  },
+  {
+    path: AppRoutes.teacher.passwordUpdate,
+    element: (
+      <SuspenseWrapper>
+        <PasswordUpdatePage title="Password update" />
       </SuspenseWrapper>
     ),
   },
@@ -191,10 +200,6 @@ const studentDashboardRoutes = [
     ),
   },
   {
-    path: AppRoutes.student.profile,
-    element: <SuspenseWrapper>profile</SuspenseWrapper>,
-  },
-  {
     path: AppRoutes.student.myLearning,
     element: (
       <SuspenseWrapper>
@@ -235,6 +240,22 @@ const studentDashboardRoutes = [
     element: (
       <SuspenseWrapper>
         <StudentFavoriteCoursesPage title="Favorite courses" />
+      </SuspenseWrapper>
+    ),
+  },
+  {
+    path: AppRoutes.student.emailUpdate,
+    element: (
+      <SuspenseWrapper>
+        <EmailUpdatePage title="Email update" />
+      </SuspenseWrapper>
+    ),
+  },
+  {
+    path: AppRoutes.student.passwordUpdate,
+    element: (
+      <SuspenseWrapper>
+        <PasswordUpdatePage title="Password update" />
       </SuspenseWrapper>
     ),
   },

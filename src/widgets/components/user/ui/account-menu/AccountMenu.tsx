@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import cn from "classnames";
 
 import { Box, Stack, Divider, Button, Typography } from "@mui/material";
 import SwapHorizIcon from "@mui/icons-material/SwapHoriz";
@@ -11,6 +12,7 @@ import { getUser, switchRole } from "src/app/store/slices/user/userSlice";
 
 import { LanguageSwitcher } from "src/widgets/components";
 import { UserRole } from "src/shared/utils/enum";
+import { AppRoutes } from "src/app/routing/appRoutes";
 
 import "./AccountMenu.scss";
 
@@ -27,12 +29,22 @@ const AccountMenu = () => {
   return (
     <Box className="account-menu">
       <Box p="14px 20px">
-        <Stack position="relative" direction="column" alignItems="center" gap="4px" className="account-menu__user">
+        <Stack
+          position="relative"
+          direction="column"
+          alignItems="center"
+          gap="4px"
+          className={cn("account-menu__user", {
+            "account-menu__user--linked": user.role === UserRole.TEACHER,
+          })}
+        >
           <AccountCircleOutlinedIcon className="account-menu__avatar" />
           <Typography variant="h6" className="account-menu__user-name">
             @leshalurn
           </Typography>
-          <Link className="account-menu__user-link" to={user.userRolePath}></Link>
+          {user.role === UserRole.TEACHER && (
+            <Link className="account-menu__user-link" to={AppRoutes.teacher.profile}></Link>
+          )}
         </Stack>
       </Box>
       <Divider />
