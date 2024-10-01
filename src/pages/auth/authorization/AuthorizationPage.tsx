@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import { TabContext, TabList, TabPanel } from "@mui/lab";
@@ -9,6 +9,7 @@ import { AppRoutes, AuthPageSection } from "src/app/routing/appRoutes";
 import useTitle from "src/hooks/useTitle/useTitle";
 import { LoginForm, RegistrationForm } from "src/widgets/forms";
 import { PageProps } from "pages/type";
+import LocalStorageService from "src/shared/local-storage";
 
 import "./AuthorizationPage.scss";
 
@@ -18,6 +19,9 @@ const authorizationPage = ({ title }: PageProps) => {
   const { t } = useTranslation("auth");
 
   const { authType, role } = useParams();
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+
   const [value, setValue] = useState<AuthPageSection>(AuthPageSection.LOGIN);
 
   useEffect(() => {
@@ -25,6 +29,13 @@ const authorizationPage = ({ title }: PageProps) => {
       setValue(authType as AuthPageSection);
     }
   }, [authType]);
+
+  useEffect(() => {
+    const typePage = pathname.split("/")[2];
+    if (typePage === "registration" && LocalStorageService.isWaitingConfirmation()) {
+      navigate(AppRoutes.auth.accountVerification);
+    }
+  }, [pathname]);
 
   return (
     <Box component="section" className="section-auth">

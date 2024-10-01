@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useTranslation } from "react-i18next";
@@ -24,10 +24,14 @@ import { XlnteeColors } from "src/shared/themes/colors";
 
 import { RegistrationFormValues, validationSchema } from "./validation";
 
+import LocalStorageService from "src/shared/local-storage";
+import { UserRole } from "src/shared/utils/enum";
+
 const RegistrationForm = () => {
   const { role } = useParams();
 
   const { t } = useTranslation("auth");
+  const navigate = useNavigate();
 
   const {
     control,
@@ -40,7 +44,12 @@ const RegistrationForm = () => {
   });
 
   function onSubmit(data: RegistrationFormValues) {
-    console.log(data);
+    try {
+      LocalStorageService.emailConfirmation("1234", data.email, role as UserRole);
+      navigate(AppRoutes.auth.accountVerification);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   return (
@@ -63,7 +72,9 @@ const RegistrationForm = () => {
           {t("login-with")} Facebook
         </Button>
         <TextField
-          {...register("email")}
+          {...register("email", {
+            required: "test error",
+          })}
           error={!!errors.email?.message}
           helperText={errors.email?.message}
           type="email"
