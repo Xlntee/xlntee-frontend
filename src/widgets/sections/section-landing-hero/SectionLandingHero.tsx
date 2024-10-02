@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { Link as RouterLink } from "react-router-dom";
+
 import { Box, Button, Grid, Stack, Typography, Container } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
@@ -53,8 +54,8 @@ const SectionLandingHero: FC<SectionLandingHeroProps> = ({ title, subtitle, butt
               </Button>
             </Stack>
           </Grid>
-          <Grid item xs={6} md={5} mx="auto">
-            <img src={image.src} alt={image.alt} />
+          <Grid item xs={12} md={5} mx="auto">
+            <img src={image.src} alt={image.alt} width={320} height={320} className="section-hero__image" />
           </Grid>
         </Grid>
       </Container>

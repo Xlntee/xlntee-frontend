@@ -1,9 +1,13 @@
 import { useTranslation } from "react-i18next";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
 import { Box, Stack, Typography, Container, Grid } from "@mui/material";
 
 import { XlnteeColors } from "src/shared/themes/colors";
 import { ContactsLinks } from "src/shared/config/LinkConstants";
 import { ContactList, ContactLinkType } from "./ui";
+
+import "./SectionLandingContact.scss";
 
 const links: ContactLinkType[] = [
   {
@@ -38,14 +42,23 @@ const SectionLandingContact = () => {
                 pt={{ md: "34px" }}
                 mb={{ xs: "20px", md: "0" }}
               >
-                <img src="assets/x-logo-modal-extend.png" width={175} height={64} />
+                <img
+                  src="assets/x-logo-modal-extend.png"
+                  width={175}
+                  height={64}
+                  alt={t("teacher-landing.contactSubTitle")}
+                />
                 <Typography variant="body2" fontWeight={300} color={XlnteeColors.BlackElementColor}>
                   {t("teacher-landing.contactSubTitle")}
                 </Typography>
               </Stack>
             </Grid>
             <Grid item xs={12} md={6} textAlign={{ xs: "center", md: "left" }}>
-              <img src="assets/teacher-landing-contact.png" alt={t("teacher-landing.contactImageAltText")} />
+              <LazyLoadImage
+                src="assets/teacher-landing-contact.webp"
+                effect="blur"
+                className="section-contact__image"
+              />
             </Grid>
           </Grid>
           <ContactList items={links} />

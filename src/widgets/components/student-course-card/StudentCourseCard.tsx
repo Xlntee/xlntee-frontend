@@ -45,7 +45,7 @@ const StudentCourseCard: FC<StudentCourseCardProps> = ({
   return (
     <Box className="student-course-card">
       <Box className="student-course-card__image">
-        <img src={image} />
+        <img src={image} alt={title} />
         <Link to={href} className="student-course-card__link"></Link>
       </Box>
       <Box className="student-course-card__body">

@@ -17,7 +17,7 @@ const CourseCardProgress: FC<CourseCardProgressProps> = ({ title, image, progres
   return (
     <Box className="course-card-progress">
       <Box className="course-card-progress__image">
-        <img src={image} />
+        <img src={image} alt={title} />
       </Box>
       <Box className="course-card-progress__body">
         <Typography variant="body2" className="course-card-progress__title">

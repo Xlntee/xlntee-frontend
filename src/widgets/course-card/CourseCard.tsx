@@ -40,7 +40,7 @@ const CourseCard: FC<CourseCardProps> = ({
     <Box className={cn("course-card", className)}>
       <Box className="course-card__image-section">
         <Box bgcolor={imageSrc ? "transparent" : XlnteeColors.LightElementColor} className="course-card__image-inner">
-          {imageSrc && <img src={imageSrc} className="course-card__image" />}
+          {imageSrc && <img src={imageSrc} alt={title} className="course-card__image" />}
         </Box>
         {updateTime && (
           <Typography variant="body2" className="course-card__update-time">

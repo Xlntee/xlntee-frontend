@@ -31,7 +31,7 @@ const HeaderProfile: FC<HeaderProfileProps> = ({ children, navigationList, open 
       <Stack direction="column" gap="20px" width="320px">
         <Box className="navigation-drawer__header">
           <Box className="header-profile__logo">
-            <img src="/assets/x-logo-modal-extend.png" />
+            <img src="/assets/x-logo-modal-extend.png" alt="XIntee" width={100} height={36} />
           </Box>
           <MenuToggler active={true} onClick={onClose} />
         </Box>
