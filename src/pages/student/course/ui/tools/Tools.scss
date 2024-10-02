@@ -1,0 +1,22 @@
+.course-tools {
+  border: 1px solid rgb(var(--gray-stroke-color));
+  border-radius: 10px;
+  padding: 4px 10px;
+
+  &__button {
+    &.MuiButtonBase-root {
+      min-width: 40px;
+      min-height: 40px;
+    }
+  }
+
+  &__label {
+    .MuiCheckbox-root {
+      margin-right: 10px;
+    }
+
+    .MuiTypography-root {
+      font-size: 16px;
+    }
+  }
+}
