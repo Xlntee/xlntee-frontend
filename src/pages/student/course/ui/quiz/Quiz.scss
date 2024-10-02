@@ -1,0 +1,12 @@
+.quiz-label {
+  display: flex;
+  gap: 20px;
+  cursor: pointer;
+
+  &__text {
+    &.MuiTypography-root {
+      font-size: 20px;
+      font-weight: 300;
+    }
+  }
+}
