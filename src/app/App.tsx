@@ -6,8 +6,13 @@ import store, { persistor } from "./store/store";
 
 import { defaultTheme } from "src/shared/themes/themes";
 import AppRouter from "src/app/routing/AppRouter";
+import { disableReactDevTools } from "@fvilers/disable-react-devtools";
 
 import "src/i18n";
+
+if (import.meta.env.MODE === "production") {
+  disableReactDevTools();
+}
 
 function App() {
   return (

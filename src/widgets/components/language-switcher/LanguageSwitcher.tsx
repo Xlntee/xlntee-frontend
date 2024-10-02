@@ -40,6 +40,9 @@ const LanguageSwitcher: FC<LanguageSwitcherProps> = ({ compact = false }) => {
       onChange={(e) => {
         onHandleChangeLanguage(e.target.value);
       }}
+      inputProps={{
+        "aria-label": "Select language",
+      }}
     >
       {languages.map((item) => (
         <MenuItem value={item.code} key={item.code}>

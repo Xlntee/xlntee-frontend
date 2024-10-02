@@ -15,7 +15,7 @@ const CertificateCard: FC<CertificateCardProps> = ({ title, image, href }) => {
   return (
     <Box className="cartificate-card">
       <Box className="cartificate-card__image">
-        <img src={image} />
+        <img src={image} alt={title} />
       </Box>
       <Box className="cartificate-card__body">
         <Typography variant="body2" className="cartificate-card__title">

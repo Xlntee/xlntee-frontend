@@ -14,7 +14,6 @@ export const AppRoutes = {
   },
   student: {
     dashboard: "/student/dashboard",
-    profile: "/student/dashboard/profile",
     myLearning: "/student/dashboard/my-learning",
     myLearningSingle: "/student/dashboard/my-learning/:id",
     completedCourses: "/student/dashboard/completed-courses",
@@ -23,6 +22,8 @@ export const AppRoutes = {
     pricing: "/student/dashboard/pricing",
     support: "/student/dashboard/support",
     favoriteCourses: "/student/dashboard/favorite-courses",
+    emailUpdate: "/student/dashboard/email-update",
+    passwordUpdate: "/student/dashboard/password-update",
   },
   teacher: {
     dashboard: "/teacher/dashboard",
@@ -39,6 +40,8 @@ export const AppRoutes = {
     createCourseLecturer: "/teacher/dashboard/create-course/lecturer",
     createCoursePrice: "/teacher/dashboard/create-course/price",
     createCourseAdvertising: "/teacher/dashboard/create-course/advertising",
+    emailUpdate: "teacher/dashboard/email-update",
+    passwordUpdate: "teacher/dashboard/password-update",
   },
   notFound: "*",
   ui: "/ui",

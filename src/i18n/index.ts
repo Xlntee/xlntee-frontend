@@ -23,6 +23,7 @@ i18n
       "teacher-create-course",
       "dialog-modal",
     ],
+    initImmediate: false,
     react: {
       useSuspense: false,
     },

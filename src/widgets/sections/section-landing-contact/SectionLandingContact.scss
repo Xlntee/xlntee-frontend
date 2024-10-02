@@ -1,0 +1,16 @@
+@use "styles/mixins.scss" as mixins;
+
+.section-contact {
+  &__image {
+    max-width: 180px;
+    height: 100%;
+
+    @include mixins.media(mobile) {
+      max-width: 290px;
+    }
+
+    @include mixins.media(tablet) {
+      max-width: 342px;
+    }
+  }
+}

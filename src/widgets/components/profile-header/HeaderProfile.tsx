@@ -96,7 +96,7 @@ const HeaderProfile: FC<HeaderProfileProps> = ({ children, link, tools, classNam
     <Box component="header" className={cn("header-profile", className)}>
       <Container className="header-profile__container">
         <Box className="header-profile__logo">
-          <img src="/assets/x-logo-modal-extend.png" />
+          <img src="/assets/x-logo-modal-extend.png" alt="XIntee" width={86} height={30} />
         </Box>
         <Box className="header-profile__nav">
           {children ? (

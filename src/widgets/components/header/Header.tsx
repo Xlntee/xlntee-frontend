@@ -55,7 +55,7 @@ const HeaderProfile = () => {
     <Box component="header" className="header">
       <Container className="header__container">
         <Link to="/" className="header__logo">
-          <img src="/assets/x-logo-modal-extend.png" />
+          <img src="/assets/x-logo-modal-extend.png" alt="XIntee" width={86} height={30} />
         </Link>
         <Box className="header__nav">
           <Box className="header__nav-left">

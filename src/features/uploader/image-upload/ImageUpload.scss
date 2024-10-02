@@ -25,6 +25,11 @@
     }
   }
 
+  &__button-container {
+    display: flex;
+    justify-content: center;
+  }
+
   &__avatar {
     &.MuiAvatar-root {
       position: absolute;

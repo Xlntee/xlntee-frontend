@@ -20,7 +20,7 @@ const TeacherLandingPage = ({ title }: PageProps) => {
         subtitle={t("teacher-landing.hero-section.subtitle")}
         buttonTitle={t("teacher-landing.hero-section.heroButton")}
         image={{
-          src: "assets/teacher-landing-hero.png",
+          src: "assets/teacher-landing-hero.webp",
           alt: t("teacher-landing.hero-section.imageAltText"),
         }}
         features={heroSectionfeatures}
@@ -30,7 +30,7 @@ const TeacherLandingPage = ({ title }: PageProps) => {
         wordsList={aboutSectionWords}
         description={t("teacher-landing.about-section.description")}
         image={{
-          src: "assets/teacher-landing-about.png",
+          src: "assets/teacher-landing-about.webp",
           alt: t("teacher-landing.about-section.imageAltText"),
         }}
       />

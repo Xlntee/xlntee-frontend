@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useTranslation } from "react-i18next";
 
 import { Box, Container, Stack, Typography, Link as MuiLink, Grid } from "@mui/material";
@@ -27,13 +28,28 @@ const Footer = () => {
               alignItems={{ xs: "center", lg: "flex-start" }}
               justifyContent={{ xs: "center", lg: "flex-start" }}
             >
-              <MuiLink color={XlnteeColors.BlackElementColor} href="https://www.instagram.com/" target="_blank">
+              <MuiLink
+                color={XlnteeColors.BlackElementColor}
+                aria-label="instagram link"
+                href="https://www.instagram.com/"
+                target="_blank"
+              >
                 <InstagramIcon className="footer__social-network-icon" sx={{ fontSize: "20px" }} />
               </MuiLink>
-              <MuiLink color={XlnteeColors.BlackElementColor} href="https://www.linkedin.com/" target="_blank">
+              <MuiLink
+                color={XlnteeColors.BlackElementColor}
+                aria-label="linkedin link"
+                href="https://www.linkedin.com/"
+                target="_blank"
+              >
                 <LinkedInIcon className="footer__social-network-icon" sx={{ fontSize: "20px" }} />
               </MuiLink>
-              <MuiLink color={XlnteeColors.BlackElementColor} href="https://www.facebook.com/" target="_blank">
+              <MuiLink
+                color={XlnteeColors.BlackElementColor}
+                aria-label="facebook link"
+                href="https://www.facebook.com/"
+                target="_blank"
+              >
                 <FacebookIcon className="footer__social-network-icon" sx={{ fontSize: "20px" }} />
               </MuiLink>
             </Stack>
@@ -71,8 +87,8 @@ const Footer = () => {
             alignItems={{ xs: "center", lg: "flex-end" }}
             justifyContent={{ xs: "center", lg: "flex-end" }}
           >
-            <img className="footer__cards-image" src="/assets/mastercard-logo.png" />
-            <img className="footer__cards-image" src="/assets/visa-logo.png" />
+            <LazyLoadImage src="/assets/mastercard-logo.webp" alt="mastercard" effect="blur" width={54} height={54} />
+            <LazyLoadImage src="/assets/visa-logo.webp" alt="visa" effect="blur" width={54} height={54} />
           </Grid>
         </Grid>
       </Container>

@@ -110,8 +110,8 @@ const Footer = () => {
               xlntee.com це відкрита платформа знань, знаючі - навчають, амбітні - навчаються
             </Typography>
             <Stack flexDirection="row" alignSelf="flex-end">
-              <img width={100} height={100} src="/assets/mastercard-logo.png" />
-              <img width={100} height={100} src="/assets/visa-logo.png" />
+              <img width={100} height={100} src="/assets/mastercard-logo.webp" />
+              <img width={100} height={100} src="/assets/visa-logo.webp" />
             </Stack>
           </Stack>
         </Box>

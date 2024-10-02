@@ -27,4 +27,13 @@
       }
     }
   }
+
+  &__image {
+    object-fit: cover;
+    height: auto;
+
+    @include mixins.media(tablet_lg) {
+      height: 260px;
+    }
+  }
 }

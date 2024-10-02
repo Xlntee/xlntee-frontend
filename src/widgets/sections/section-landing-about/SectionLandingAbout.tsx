@@ -1,5 +1,8 @@
 import { FC } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
 import { Box, Grid, Container, Typography } from "@mui/material";
+
 import { XlnteeColors } from "src/shared/themes/colors";
 import { ArrowsWordsList } from "./ui";
 
@@ -25,7 +28,13 @@ const SectionLandingAbout: FC<SectionLandingAboutProps> = ({ title, wordsList, d
           </Typography>
           <Grid container direction="row" spacing={{ md: "40px" }} paddingInline={{ md: "30px" }}>
             <Grid item md={4} mx="auto">
-              <img src={image.src} alt={image.alt} />
+              <LazyLoadImage
+                src={image.src}
+                alt={image.alt}
+                width={260}
+                height={260}
+                className="section-about__image"
+              />
             </Grid>
             <Grid item md={8} display="flex" flexDirection="column" gap="16px">
               <ArrowsWordsList wordsArray={wordsList} />
