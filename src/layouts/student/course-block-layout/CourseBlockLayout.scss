@@ -37,6 +37,7 @@
   padding: 10px;
   box-shadow: var(--base-shadow);
   background-color: rgb(var(--light-color));
+  z-index: 1;
 
   overflow: hidden scroll;
   overscroll-behavior: contain;

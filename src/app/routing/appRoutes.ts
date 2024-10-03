@@ -15,6 +15,7 @@ export const AppRoutes = {
   student: {
     dashboard: "/student/dashboard",
     myLearning: "/student/dashboard/my-learning",
+    courseVideoSingle: "/student/dashboard/course",
     courseVideo: "/student/dashboard/course/:id/video",
     courseTest: "/student/dashboard/course/:id/test",
     completedCourses: "/student/dashboard/completed-courses",
