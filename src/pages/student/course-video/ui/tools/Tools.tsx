@@ -1,6 +1,7 @@
-import { FC } from "react";
+import { FC, useState } from "react";
+import cn from "classnames";
 
-import { Box, Checkbox, Stack, FormLabel, Typography, Button, FormControlLabel } from "@mui/material";
+import { Checkbox, Stack, Button, FormControlLabel } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import TextSnippetIcon from "@mui/icons-material/TextSnippet";
@@ -8,19 +9,41 @@ import CommentIcon from "@mui/icons-material/Comment";
 
 import "./Tools.scss";
 
-interface ToolsProps {}
+interface ToolsProps {
+  onClickTab: (value: string) => void;
+}
 
-const Tools: FC<ToolsProps> = ({}) => {
+export enum ToolsTabEnum {
+  Description = "description",
+  Comments = "comments",
+}
+
+const Tools: FC<ToolsProps> = ({ onClickTab }) => {
+  const [tab, setTab] = useState<string>(ToolsTabEnum.Description);
+
+  function onChooseTab(value: string) {
+    onClickTab(value);
+    setTab(value);
+  }
+
   return (
     <Stack className="course-tools" direction="row" flexWrap="wrap" gap="10px" justifyContent="space-between">
       <Stack direction="row" alignItems="center" gap="10px">
         <Button variant="black-text" className="course-tools__button">
           <ArrowBackIcon />
         </Button>
-        <Button variant="black-text" className="course-tools__button">
+        <Button
+          variant="black-text"
+          className={cn("course-tools__button", { active: tab === ToolsTabEnum.Description })}
+          onClick={() => onChooseTab(ToolsTabEnum.Description)}
+        >
           <TextSnippetIcon />
         </Button>
-        <Button variant="black-text" className="course-tools__button">
+        <Button
+          variant="black-text"
+          className={cn("course-tools__button", { active: tab === ToolsTabEnum.Comments })}
+          onClick={() => onChooseTab(ToolsTabEnum.Comments)}
+        >
           <CommentIcon />
         </Button>
       </Stack>

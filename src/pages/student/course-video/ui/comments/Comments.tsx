@@ -9,16 +9,14 @@ interface CommentsProps {
   comments: UserCommentsProps[];
 }
 
-const Comments: FC<CommentsProps> = ({ id, comments }) => {
+const Comments: FC<CommentsProps> = ({ comments }) => {
   return (
     <Box className="course-comments">
-      {comments.length ? (
-        <Stack direction="column" gap="10px">
-          {comments.map((comment) => (
-            <UserComments user={comment.user} comments={comment.comments} />
-          ))}
-        </Stack>
-      ) : null}
+      <Stack direction="column" gap="10px">
+        {comments.map((comment) => (
+          <UserComments key={comment.user.id} user={comment.user} comments={comment.comments} />
+        ))}
+      </Stack>
     </Box>
   );
 };

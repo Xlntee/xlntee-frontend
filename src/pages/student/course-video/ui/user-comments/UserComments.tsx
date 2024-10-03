@@ -30,28 +30,30 @@ const UserComment: FC<UserCommentsProps> = ({ comments, user }) => {
           ))}
         </Stack>
       ) : null}
-      <Box pl="50px">
-        <Button
-          variant="black-text"
-          size="small"
-          onClick={onToggleVisibilityComments}
-          sx={{
-            minWidth: "auto",
-            minHeight: "auto !important",
-            color: XlnteeColors.GrayColor700,
-            fontWeight: 400,
-          }}
-        >
-          {isOpenComments ? (
-            t("close-comments")
-          ) : (
-            <>
-              {t("review-answers.review")} {comments.length}{" "}
-              {comments.length > 1 ? t("review-answers.answers") : t("review-answers.answer")}
-            </>
-          )}
-        </Button>
-      </Box>
+      {comments.length !== 0 && (
+        <Box pl="50px">
+          <Button
+            variant="black-text"
+            size="small"
+            onClick={onToggleVisibilityComments}
+            sx={{
+              minWidth: "auto",
+              minHeight: "auto !important",
+              color: XlnteeColors.GrayColor700,
+              fontWeight: 400,
+            }}
+          >
+            {isOpenComments ? (
+              t("close-comments")
+            ) : (
+              <>
+                {t("review-answers.review")} {comments.length}{" "}
+                {comments.length > 1 ? t("review-answers.answers") : t("review-answers.answer")}
+              </>
+            )}
+          </Button>
+        </Box>
+      )}
     </Box>
   );
 };
