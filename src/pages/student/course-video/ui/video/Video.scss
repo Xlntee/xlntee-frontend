@@ -1,0 +1,51 @@
+@use "styles/mixins.scss" as mixins;
+
+.course-video {
+  position: relative;
+  box-shadow: var(--base-shadow);
+  margin-bottom: 20px;
+
+  video {
+    width: 100%;
+    object-fit: cover;
+
+    @include mixins.media(tablet) {
+      object-fit: contain;
+    }
+
+    @include mixins.media(desktop) {
+      max-height: 300px;
+      height: 30vw;
+    }
+
+    @include mixins.media(desktop_md) {
+      max-height: 400px;
+    }
+
+    @include mixins.media(desktop_lg) {
+      max-height: 528px;
+    }
+  }
+
+  &__toggle-play {
+    &.MuiButtonBase-root {
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .MuiSvgIcon-root {
+      font-size: 70px;
+      color: rgb(var(--dark-color) / 0.5);
+
+      &[data-testid="PauseIcon"] {
+        color: rgb(var(--light-color));
+        background-color: rgb(var(--dark-color) / 0.5);
+        border-radius: 50%;
+        font-size: 60px;
+      }
+    }
+  }
+}

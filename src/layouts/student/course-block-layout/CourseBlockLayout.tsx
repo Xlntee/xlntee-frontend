@@ -6,16 +6,69 @@ import { Box, Button, Stack, Typography } from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 import { AccordionProgress } from "src/features";
+import { CategoryLinkType, CategoryNavigation } from "./ui";
 
 import "./CourseBlockLayout.scss";
+
+interface CategoriesNavigation {
+  items: CategoryLinkType[];
+  completed: number;
+}
+
+const data: CategoryLinkType[] = [
+  {
+    id: "1",
+    type: "video",
+    href: "#",
+    title: "Lorem ipsum",
+    completed: false,
+  },
+  {
+    id: "2",
+    type: "quiz",
+    href: "#",
+    title: "Lorem ipsum",
+    completed: true,
+  },
+  {
+    id: "3",
+    type: "file",
+    href: "#",
+    title: "Lorem ipsum",
+    completed: false,
+  },
+  {
+    id: "4",
+    type: "video",
+    href: "#",
+    title: "Lorem ipsum",
+    completed: false,
+  },
+];
 
 const CourseLayout = () => {
   const LSMenuKey = "student-collapsed-menu";
   const [isOpenMenu, setIsOpenMenu] = useState<boolean>(localStorage.getItem(LSMenuKey) === "true");
   const [expandedObj, setExpandedObj] = useState<Record<string, boolean>>({});
 
+  const [navigation, setNavigation] = useState<CategoriesNavigation[]>([]);
+
+  const getCompletedCountCategories = (arr: CategoryLinkType[]) => {
+    return arr.reduce((acc, item) => acc + (item.completed ? 1 : 0), 0);
+  };
+
+  useEffect(() => {
+    setNavigation([
+      {
+        items: data,
+        completed: getCompletedCountCategories(data),
+      },
+    ]);
+    fillExpandedObj();
+  }, []);
+
   //test data
-  const arr = [false, false];
+  const arr = [false];
 
   function fillExpandedObj() {
     const obj: Record<string, boolean> = {};
@@ -45,9 +98,9 @@ const CourseLayout = () => {
     }
   }
 
-  useEffect(() => {
-    fillExpandedObj();
-  }, [open]);
+  // useEffect(() => {
+  //   fillExpandedObj();
+  // }, [open]);
 
   return (
     <Box className={cn("course-layout", { "open-navigation": isOpenMenu })}>
@@ -64,30 +117,27 @@ const CourseLayout = () => {
             <ArrowForwardIosIcon className="collapsed-navigation__toggler-icon" />
           </Button>
         </Box>
-        <Stack direction="column" gap="10px" position="relative">
-          {Object.entries(expandedObj).map((item, index) => (
-            <AccordionProgress
-              key={index}
-              open={item[1]}
-              onChange={(_, value) => onOpenAccordion(item[0], value)}
-              heading="Lorem ipsum dolor sit amet"
-              number={index + 1}
-              progress={{
-                complete: 2,
-                total: 4,
-              }}
-              className={cn({ squeeze: !isOpenMenu })}
-            >
-              <Box>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla delectus quas molestiae cum corporis ex
-                velit unde consectetur odio fugit. Illum tenetur, labore earum ducimus rerum enim. Odio facere animi
-                fuga non placeat nisi quasi provident modi nam, tempore eligendi minima ipsa nostrum, laudantium veniam
-                sapiente ut soluta mollitia pariatur?
-              </Box>
-            </AccordionProgress>
-          ))}
-          <Button className="collapsed-navigation__hidden-toggler" onClick={onToggleNavigation}></Button>
-        </Stack>
+        {Object.keys(expandedObj).length ? (
+          <Stack direction="column" gap="10px" position="relative">
+            {Object.entries(expandedObj).map((item, index) => (
+              <AccordionProgress
+                key={index}
+                open={item[1]}
+                onChange={(_, value) => onOpenAccordion(item[0], value)}
+                heading="Lorem ipsum dolor sit amet"
+                number={index + 1}
+                progress={{
+                  complete: navigation[index].completed,
+                  total: navigation[index].items.length,
+                }}
+                className={cn({ squeeze: !isOpenMenu })}
+              >
+                <CategoryNavigation items={navigation[index].items} />
+              </AccordionProgress>
+            ))}
+            <Button className="collapsed-navigation__hidden-toggler" onClick={onToggleNavigation}></Button>
+          </Stack>
+        ) : null}
       </Box>
       <Box component="section" className="course-layout__body">
         <Outlet />

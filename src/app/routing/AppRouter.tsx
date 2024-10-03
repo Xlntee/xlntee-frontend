@@ -36,7 +36,8 @@ const CreateCourseAdvertisingPage = lazy(() => import("src/pages/create-course/a
 
 const StudentLandingPage = lazy(() => import("src/pages/student/landing-page/LandingPage"));
 const StudentMyLearningPage = lazy(() => import("src/pages/student/my-learning/MyLearningPage"));
-const StudentCoursePage = lazy(() => import("src/pages/student/course/CoursePage"));
+const StudentCourseVideoPage = lazy(() => import("src/pages/student/course-video/CourseVideoPage"));
+const StudentCourseTestPage = lazy(() => import("src/pages/student/course-test/CourseTestPage"));
 const StudentCompletedCoursesPage = lazy(() => import("src/pages/student/completed-courses/CompletedCoursesPage"));
 const StudentCertificatesPage = lazy(() => import("src/pages/student/certificates/CertificatesPage"));
 const StudentFavoriteCoursesPage = lazy(() => import("src/pages/student/favorite-courses/FavoriteCoursesPage"));
@@ -316,10 +317,18 @@ const router = createBrowserRouter([
         element: <StudentCourseBlockLayout />,
         children: [
           {
-            path: AppRoutes.student.myLearningSingle,
+            path: AppRoutes.student.courseVideo,
             element: (
               <SuspenseWrapper>
-                <StudentCoursePage />
+                <StudentCourseVideoPage />
+              </SuspenseWrapper>
+            ),
+          },
+          {
+            path: AppRoutes.student.courseTest,
+            element: (
+              <SuspenseWrapper>
+                <StudentCourseTestPage />
               </SuspenseWrapper>
             ),
           },

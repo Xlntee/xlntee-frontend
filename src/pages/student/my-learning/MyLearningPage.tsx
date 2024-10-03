@@ -21,7 +21,7 @@ const MyLearningPage = ({ title }: PageProps) => {
                     title={course.title}
                     image={course.image}
                     progress={course.progress}
-                    href={`${AppRoutes.student.myLearning}/${course.id}`}
+                    href={`${AppRoutes.student.courseVideoSingle}/${course.id}/video`}
                   />
                 </Grid>
               ))

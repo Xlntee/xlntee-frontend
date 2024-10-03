@@ -84,6 +84,26 @@ $animation-speed: 0.3s !default;
         @content;
       }
     }
+  } @else if $breakpoint == desktop_md {
+    @if ($type == "max") {
+      @media (max-width: breakpoints.$desktop_md_max) {
+        @content;
+      }
+    } @else {
+      @media (min-width: breakpoints.$desktop_md) {
+        @content;
+      }
+    }
+  } @else if $breakpoint == desktop_lg {
+    @if ($type == "max") {
+      @media (max-width: breakpoints.$desktop_lg_max) {
+        @content;
+      }
+    } @else {
+      @media (min-width: breakpoints.$desktop_lg) {
+        @content;
+      }
+    }
   } @else {
     @if ($type == "max") {
       @media (max-width: $breakpoint) {
