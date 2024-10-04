@@ -1,0 +1,9 @@
+.checkbox-option {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  background-color: rgb(var(--light-element-color));
+  border-radius: 20px;
+}

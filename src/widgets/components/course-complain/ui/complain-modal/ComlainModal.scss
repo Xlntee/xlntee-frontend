@@ -1,0 +1,24 @@
+.complain-modal {
+
+  &__modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(var(--light-color));
+    max-width: 870px;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  &__form {
+    display: contents;
+  }
+
+  &__submit-btn {
+    align-self: end;
+  }
+}
