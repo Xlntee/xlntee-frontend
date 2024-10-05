@@ -1,9 +1,9 @@
 import { FC } from "react";
 import dayjs from "dayjs";
 
-import { Box, Stack, Typography, useTheme } from "@mui/material";
-
-import "./Notification.scss";
+import { Box, Stack, Typography } from "@mui/material";
+import { XlnteeColors } from "src/shared/themes/colors";
+import { datesFormat } from "src/shared/utils/const";
 
 type NotificationProps = {
   title: string;
@@ -12,9 +12,8 @@ type NotificationProps = {
 };
 
 const Notification: FC<NotificationProps> = ({ title, text, date }) => {
-  const theme = useTheme();
-  const dateTime = dayjs(date).format("HH:MM");
-  const dateSimple = dayjs(date).format("DD.MM.YYYY");
+  const dateTime = dayjs(date).format(datesFormat.time);
+  const dateSimple = dayjs(date).format(datesFormat.secondary);
 
   return (
     <Stack className="notification">

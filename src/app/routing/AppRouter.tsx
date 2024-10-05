@@ -10,7 +10,8 @@ import {
   TeacherCreateCourseBlockLayout,
   TeacherCreateCoursePageLayout,
   StudentCourseBlockLayout,
-  StudentCoursePageLayout
+  StudentCoursePageLayout,
+  UserManagerLayout
 } from "src/layouts";
 
 import { AppRoutes } from "./appRoutes";
@@ -287,6 +288,65 @@ const studentDashboardRoutes = [
   }
 ];
 
+const userManagerRoutes = [
+  {
+    index: true,
+    element: (
+      <SuspenseWrapper>
+        <UserManagerDashboaardPage />
+      </SuspenseWrapper>
+    )
+  },
+  {
+    path: AppUserManagerRoutes.users,
+    element: (
+      <SuspenseWrapper>
+        <UserManagerUsersPage />
+      </SuspenseWrapper>
+    )
+  },
+  {
+    path: `${AppUserManagerRoutes.userStudents}/:id`,
+    element: (
+      <SuspenseWrapper>
+        <UserManagerUserSinglePage />
+      </SuspenseWrapper>
+    )
+  },
+  {
+    path: AppUserManagerRoutes.requests,
+    element: (
+      <SuspenseWrapper>
+        <UserManagerRequestsPage />
+      </SuspenseWrapper>
+    )
+  },
+  {
+    path: AppUserManagerRoutes.courses,
+    element: (
+      <SuspenseWrapper>
+        <UserManagerCoursesPage />
+      </SuspenseWrapper>
+    )
+  },
+  {
+    path: `${AppUserManagerRoutes.courses}/:id`,
+    element: (
+      <SuspenseWrapper>
+        <UserManagerCourseSinglePage />
+      </SuspenseWrapper>
+    )
+  },
+  {
+    path: AppUserManagerRoutes.courseCategories,
+    element: (
+      <SuspenseWrapper>
+        <UserManagerCourseCategoriesPage />
+      </SuspenseWrapper>
+    )
+  }
+];
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -381,6 +441,11 @@ const router = createBrowserRouter([
         children: teacherDashboardCreateCourseRoutes
       }
     ]
+  },
+  {
+    path: AppUserManagerRoutes.home,
+    element: <ProtectedRoute element={<UserManagerLayout />} />,
+    children: userManagerRoutes
   }
 ]);
 

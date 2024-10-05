@@ -1,0 +1,86 @@
+{
+  "navigation": {
+    "finances": "Фінанси",
+    "users": "Користувачі",
+    "requests": "Запити",
+    "courses": "Курси",
+    "courseCategories": "Категорії курсів"
+  },
+  "statistic": {
+    "subscriptions": "Підписки",
+    "subscriptionsTotalAmount": "Загальна вартість підписок",
+    "saleCoursesTotalAmount": "Загальна кількість проданих курсів",
+    "complainsOnCourse": "Скарги на курс",
+    "refund": "Повернення",
+    "canceledSubscriptions": "Відмінені підписки",
+    "teachers": "Викладачі",
+    "students": "Студенти",
+    "text": "За останній місяць:"
+  },
+  "users": {
+    "activated-button": "Деактивувати",
+    "deactivated-button": "Активувати",
+    "table-users": {
+      "fullname": "ІПБ",
+      "email": "Ел. Пошта",
+      "dateRegistration": "Дата реєстрації",
+      "latestActivity": "Остання активність"
+    }
+  },
+  "courses": {
+    "title": "Курси",
+    "table": {
+      "name": "Назва",
+      "courseId": "Курс ID",
+      "dateCreation": "Дата створення",
+      "status": "Статус"
+    }
+  },
+  "user-wallet": {
+    "title": "Гаманець",
+    "availableAmount": "Доступна сума (продажі)",
+    "availableAmountRefferals": "Доступна сума (реферали)"
+  },
+  "transactions": {
+    "title": "Історія Транзакцій",
+    "table": {
+      "date": "Дата та час",
+      "amount": "Сума",
+      "appointment": "Призначення",
+      "cardNumber": "Номер нахунку",
+      "status": "Статус"
+    }
+  },
+  "courseCategories": {
+    "categories": "Категорії",
+    "subcategories": "Субкатегорії",
+    "themes": "Теми",
+    "name": "Назва"
+  },
+  "complain": {
+    "title": "Cкарги",
+    "table": {
+      "number": "Номер скарги",
+      "reason": "Причина",
+      "description": "Опис"
+    }
+  },
+  "refund": {
+    "title": "Поверення"
+  },
+  "about-course": {
+    "title": "Про курс",
+    "table": {
+      "price": "Ціна",
+      "sales": "Продажі",
+      "income": "Дохід",
+      "complains": "Скарги",
+      "refund": "Повернення",
+      "rating": "Рейтинг"
+    }
+  },
+  "students": "Студенти",
+  "teachers": "Викладачі",
+  "search": "Пошук",
+  "showMore": "Показати ще"
+}

@@ -23,6 +23,7 @@ i18n
       "teacher-create-course",
       "dialog-modal",
       "not-found"
+      "user-manager"
     ],
     partialBundledLanguages: true,
     initImmediate: true,

@@ -9,6 +9,7 @@ import "./Navigation.scss";
 
 type NavigationProps = {
   items: NavigationLinkType[];
+  large?: boolean;
 };
 
 export type NavigationLinkType = {
@@ -25,7 +26,7 @@ const Navigation: FC<NavigationProps> = ({ items }) => {
   const { onCloseDrawer } = useDrawer();
 
   return (
-    <Box component="nav" className="navigation">
+    <Box component="nav" className={cn("navigation", { "navigation--large": large })}>
       <List className="navigation__list">
         {items.map(({ id, path, name, icon, className }) => (
           <ListItem key={id} className="navigation__item">

@@ -1,0 +1,17 @@
+@use "styles/mixins.scss" as mixins;
+
+.statistic-card {
+  width: 100%;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include mixins.media(mobile) {
+    min-height: 200px;
+  }
+
+  @include mixins.media(tablet_lg) {
+    min-height: 242px;
+  }
+}

@@ -2,18 +2,33 @@
 @use "styles/breakpoints.scss" as breakpoints;
 
 .header {
-  padding-block: 8px;
-  box-shadow: var(--header-shadow);
+  --header-congainer-grid: 86px 1fr;
+  --header-bg-color: transparent;
+
+  $mobile_breakpoint_min: breakpoints.$mobile_breakpoint_min;
+  $mobile_breakpoint_max: breakpoints.$mobile_breakpoint_max;
+
+  padding-block: 6px;
+  box-shadow: 0 2px 5px 0 rgb(var(--dark-color) / 0.2);
+  background-color: var(--header-bg-color);
+
+  &.header--user-manager {
+    $mobile_breakpoint_min: breakpoints.$tablet_lg;
+    $mobile_breakpoint_max: breakpoints.$tablet_lg_max;
+
+    --header-congainer-grid: 100px 1fr;
+    --header-bg-color: rgb(var(--light-element-color));
+  }
 
   &__container {
     &.MuiContainer-root {
       display: grid;
       align-items: center;
       justify-content: space-between;
-      grid-template-columns: 86px 1fr;
+      grid-template-columns: var(--header-congainer-grid);
       gap: 20px;
 
-      @include mixins.media(breakpoints.$mobile_breakpoint_min) {
+      @include mixins.media($mobile_breakpoint_min) {
         gap: 40px;
       }
     }
@@ -30,13 +45,13 @@
     justify-content: space-between;
     align-items: center;
 
-    @include mixins.media(breakpoints.$mobile_breakpoint_min) {
+    @include mixins.media($mobile_breakpoint_min) {
       gap: 40px;
     }
   }
 
   &__nav-left .navigation {
-    @include mixins.media(breakpoints.$mobile_breakpoint_max, max) {
+    @include mixins.media($mobile_breakpoint_max, max) {
       display: none;
     }
   }

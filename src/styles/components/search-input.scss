@@ -1,0 +1,19 @@
+@use "styles/mixins.scss" as mixins;
+
+.search-input {
+  .MuiInputBase-root {
+    border-radius: 20px;
+
+    @include mixins.media(tablet) {
+      height: 40px;
+    }
+
+    @include mixins.media(tablet_lg) {
+      height: 48px;
+    }
+  }
+
+  .MuiInputBase-input {
+    padding-inline: 16px;
+  }
+}

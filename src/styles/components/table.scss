@@ -1,0 +1,114 @@
+@use "styles/mixins.scss" as mixins;
+
+.table {
+  &--users &__cell-th,
+  &--users &__cell-td {
+    &.MuiTableCell-root {
+      &:nth-child(1) {
+        width: 190px;
+        max-width: 190px;
+      }
+      &:nth-child(2) {
+        width: 150px;
+        max-width: 150px;
+        word-wrap: break-word;
+      }
+      &:nth-child(3) {
+        width: 110px;
+      }
+      &:nth-child(4) {
+        max-width: 90px;
+        width: 90px;
+      }
+    }
+  }
+
+  &--courses &__cell-th,
+  &--courses &__cell-td {
+    &.MuiTableCell-root {
+      &:nth-child(1) {
+        max-width: 280px;
+        width: 280px;
+      }
+      &:nth-child(2) {
+        width: 200px;
+        max-width: 200px;
+      }
+      &:nth-child(3) {
+        width: 200px;
+        max-width: 200px;
+      }
+      &:nth-child(4) {
+        max-width: 90px;
+        width: 90px;
+      }
+    }
+  }
+
+  &__inner {
+    &.MuiTable-root {
+      border-collapse: separate;
+      border-spacing: 0 10px;
+      width: 600px;
+
+      @include mixins.media(mobile) {
+        width: 680px;
+      }
+
+      @include mixins.media(tablet) {
+        width: 100%;
+      }
+    }
+  }
+
+  &__row {
+    border-bottom: 10px solid rgb(var(--light-element-color));
+  }
+
+  &__cell-th {
+    &.MuiTableCell-head {
+      font-size: 12px;
+      border: none;
+      padding: 0 10px 0 10px;
+      color: rgb(var(--element-color));
+      background-color: rgb(var(--light-element-color));
+      // width: var(--table-cell-width);
+      // min-width: var(--table-cell-min-width);
+    }
+  }
+
+  &__cell-td {
+    &.MuiTableCell-root {
+      padding: 0;
+      border: none;
+      padding: 6px 10px 6px 10px;
+      background-color: rgb(var(--light-color));
+      color: rgb(var(--element-color));
+      font-weight: 300;
+      font-size: 14px;
+      // width: var(--table-cell-width);
+      // min-width: var(--table-cell-min-width);
+
+      @include mixins.media(desktop) {
+        font-size: 16px;
+      }
+
+      &:first-child {
+        border-radius: 20px 0 0 20px;
+      }
+
+      &:last-child {
+        border-radius: 0 20px 20px 0;
+      }
+    }
+
+    a {
+      color: rgb(var(--link-color));
+      text-decoration: underline;
+
+      @include mixins.hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

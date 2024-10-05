@@ -56,3 +56,17 @@ export const rolePrivateRoutes: Record<Role, string> = {
   student: "/student/dashboard",
   teacher: "/teacher/dashboard"
 };
+export const AppUserManagerRoutes = {
+  home: "/dashboard",
+  users: "/dashboard/users",
+  userStudents: "/dashboard/users",
+  userTeacher: "/dashboard/users",
+  requests: "/dashboard/requests",
+  courses: "/dashboard/courses",
+  courseCategories: "/dashboard/course-categories"
+};
+
+export enum AuthPageSection {
+  LOGIN = "login",
+  REGISTRATION = "registration"
+}

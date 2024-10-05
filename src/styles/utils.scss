@@ -1,0 +1,35 @@
+@use "./mixins.scss" as mixins;
+
+.truncate-line-1 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.button-link {
+  &.MuiButtonBase-root {
+    display: inline-block;
+    padding: 0;
+    min-height: auto;
+    font-weight: 400;
+    text-decoration: underline;
+    color: rgb(var(--link-color));
+    min-width: auto;
+    font-size: inherit;
+    font-weight: inherit;
+    vertical-align: initial;
+
+    @include mixins.hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.button-preview {
+  &.MuiButtonBase-root {
+    border-radius: 25px;
+    border: 1px solid rgb(var(--gray-stroke-color));
+    background-color: rgb(var(--light-element-color));
+    font-weight: 400;
+  }
+}

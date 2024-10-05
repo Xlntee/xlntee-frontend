@@ -1,0 +1,89 @@
+{
+  "navigation": {
+    "finances": "Finances",
+    "users": "Users",
+    "requests": "Requests",
+    "courses": "Courses",
+    "courseCategories": "Course categories"
+  },
+  "statistic": {
+    "subscriptions": "Subscriptions",
+    "subscriptionsTotalAmount": "Number of subscriptions",
+    "saleCoursesTotalAmount": "Number of courses sold",
+    "complainsOnCourse": "Complaints about the course",
+    "refund": "Refund",
+    "canceledSubscriptions": "Canceled subscriptions",
+    "teachers": "Teachers",
+    "students": "Students",
+    "text": "Over the past month:"
+  },
+  "users": {
+    "activated-button": "Deactivate",
+    "deactivated-button": "Activate",
+    "table-users": {
+      "fullname": "Fullname",
+      "email": "Email",
+      "dateRegistration": "Date registration",
+      "latestActivity": "Latest activity"
+    }
+  },
+  "courses": {
+    "title": "Courses",
+    "table": {
+      "name": "Name",
+      "courseId": "CID (Course ID)",
+      "dateCreation": "Date creation",
+      "status": "Status"
+    }
+  },
+  "user-wallet": {
+    "title": "Wallet",
+    "availableAmount": "Available amount (sales)",
+    "availableAmountRefferals": "Available amount (refferals)"
+  },
+  "transactions": {
+    "title": "Transaction history",
+    "table": {
+      "date": "Date and time",
+      "amount": "Amount",
+      "appointment": "Appointment",
+      "cardNumber": "Card number",
+      "status": "Status"
+    }
+  },
+  "courseCategories": {
+    "categories": "Categories",
+    "subcategories": "Subcategories",
+    "themes": "Themes",
+    "category": "Category",
+    "subcategory": "Subcategory",
+    "theme": "Theme",
+    "name": "Name"
+  },
+  "complain": {
+    "title": "Complains",
+    "table": {
+      "number": "Complain number",
+      "reason": "Reason",
+      "description": "Description"
+    }
+  },
+  "refund": {
+    "title": "Refund"
+  },
+  "about-course": {
+    "title": "About the Course",
+    "table": {
+      "price": "Price",
+      "sales": "Sales",
+      "income": "Income",
+      "complains": "Complains",
+      "refund": "Refund",
+      "rating": "Rating"
+    }
+  },
+  "students": "Students",
+  "teachers": "Teachers",
+  "search": "Search",
+  "showMore": "Show more"
+}

@@ -2,12 +2,29 @@
 @use "styles/breakpoints.scss" as breakpoints;
 
 .navigation {
+  $mobile_breakpoint_min: breakpoints.$mobile_breakpoint_min;
+  --navigation-font-size: 14px;
+  --navigation-font-weight: 400;
+  --navigation-block-space: 0;
+
+  padding-block: var(--navigation-block-space);
+
+  &--large {
+    --navigation-font-size: 16px;
+    --navigation-font-weight: 300;
+    --navigation-block-space: 4px;
+  }
+
+  .header--user-manager & {
+    $mobile_breakpoint_min: breakpoints.$tablet_lg;
+  }
+
   &__list {
     display: flex;
     flex-direction: column;
     gap: 20px;
 
-    @include mixins.media(breakpoints.$mobile_breakpoint_min) {
+    @include mixins.media($mobile_breakpoint_min) {
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -51,6 +68,8 @@
   &__name {
     &.MuiTypography-root {
       color: currentColor;
+      font-size: var(--navigation-font-size);
+      font-weight: var(--navigation-font-weight);
     }
   }
 
@@ -66,6 +85,8 @@
 
     @include mixins.hover {
       color: rgb(var(--light-color));
+      font-size: var(--navigation-font-size);
+      font-weight: var(--navigation-font-weight);
     }
   }
 }
