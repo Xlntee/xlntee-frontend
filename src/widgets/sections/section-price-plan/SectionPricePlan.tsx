@@ -1,4 +1,4 @@
-import { Box, Grid, Container } from "@mui/material";
+import { Box, Grid, Container, Typography, Stack } from "@mui/material";
 import AllInclusiveIcon from "@mui/icons-material/AllInclusive";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import QuizIcon from "@mui/icons-material/Quiz";
@@ -59,16 +59,36 @@ const SectionPricePlan = () => {
   };
 
   return (
-    <Box component="section" className="section-price-plan">
+    <Box component="section" className="section-price-plan" py="40px">
       <Container>
-        <Grid container spacing="40px">
-          <Grid item xs={12} md={6} display="flex">
-            <PricePlanCard {...pricePlanCard1} />
-          </Grid>
-          <Grid item xs={12} md={6} display="flex">
-            <PricePlanCard {...pricePlanCard2} />
-          </Grid>
-        </Grid>
+        <Box maxWidth="1050px" marginInline="auto">
+          <Box border={`1px solid ${XlnteeColors.GrayStrokeColor}`} borderRadius="20px" p="20px" mb="40px">
+            <Stack direction={{ md: "row-reverse" }} justifyContent={{ md: "space-between" }} gap="20px">
+              <Box>
+                <Typography variant="h5">Тарифні Плани</Typography>
+              </Box>
+              <Box maxWidth="400px">
+                <Typography variant="h6" fontWeight={400}>
+                  Як це працює
+                </Typography>
+                <Typography variant="body2" fontWeight={300}>
+                  Тарифні плани дійють на основі комісії з продажу. Не потрібно платити до запуску курси або в процесі
+                  його створення, ви платите тільки після початку продажів, ніяких додаткових витрат.
+                </Typography>
+              </Box>
+            </Stack>
+          </Box>
+          <Box>
+            <Grid container spacing={{ xs: "30px", lg: "50px" }}>
+              <Grid item xs={12} md={6} display="flex">
+                <PricePlanCard {...pricePlanCard1} />
+              </Grid>
+              <Grid item xs={12} md={6} display="flex">
+                <PricePlanCard {...pricePlanCard2} />
+              </Grid>
+            </Grid>
+          </Box>
+        </Box>
       </Container>
     </Box>
   );

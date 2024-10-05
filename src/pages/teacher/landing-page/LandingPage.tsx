@@ -4,7 +4,7 @@ import { PageProps } from "pages/type";
 
 import useTitle from "src/hooks/useTitle/useTitle";
 import { SectionLandingHero, SectionLandingAbout, SectionLandingContact, SectionPricePlan } from "src/widgets/sections";
-import { SectionFeatures, SectionPriceTable } from "./ui";
+import { SectionFeatures } from "./ui";
 
 const TeacherLandingPage = ({ title }: PageProps) => {
   useTitle(title);
@@ -36,7 +36,6 @@ const TeacherLandingPage = ({ title }: PageProps) => {
       />
       <SectionFeatures />
       <SectionPricePlan />
-      <SectionPriceTable />
       <SectionLandingContact />
     </>
   );

@@ -27,43 +27,48 @@ const PricePlanCard: FC<PricePlanProps> = ({ pretitle, title, text, buttonText, 
       borderRadius="20px"
       bgcolor={bgColor}
       alignItems="center"
+      className="base-shadow"
     >
       <Typography variant="body1">{pretitle}</Typography>
       <Typography variant="h2">{title}</Typography>
       <Typography variant="body1" textAlign="center">
         {text}
       </Typography>
-      <Button
-        variant="outlined"
-        size="large"
-        sx={{
-          borderRadius: "50px",
-          borderWidth: 2,
-          fontWeight: 400,
-        }}
-      >
-        {buttonText}
-      </Button>
+      <Box marginBottom="30px">
+        <Button
+          variant="outlined"
+          size="large"
+          sx={{
+            borderRadius: "50px",
+            borderWidth: 2,
+            fontWeight: 400,
+          }}
+        >
+          {buttonText}
+        </Button>
+      </Box>
       {descriptionList.length ? (
-        <List>
-          {descriptionList.map((item) => (
-            <ListItem alignItems="flex-start" sx={{ marginBottom: "20px" }}>
-              <ListItemIcon
-                sx={{
-                  marginTop: 0,
-                }}
-              >
-                {item.icon}
-              </ListItemIcon>
-              <ListItemText>
-                <Typography variant="h6">{item.title}</Typography>
-                <Typography variant="h6" fontWeight={400}>
-                  {item.text}
-                </Typography>
-              </ListItemText>
-            </ListItem>
-          ))}
-        </List>
+        <Box maxWidth="370px" marginInline="auto">
+          <List>
+            {descriptionList.map((item) => (
+              <ListItem alignItems="flex-start" sx={{ marginBottom: "20px" }}>
+                <ListItemIcon
+                  sx={{
+                    marginTop: 0,
+                  }}
+                >
+                  {item.icon}
+                </ListItemIcon>
+                <ListItemText>
+                  <Typography variant="h6">{item.title}</Typography>
+                  <Typography variant="h6" fontWeight={400}>
+                    {item.text}
+                  </Typography>
+                </ListItemText>
+              </ListItem>
+            ))}
+          </List>
+        </Box>
       ) : null}
     </Stack>
   );
