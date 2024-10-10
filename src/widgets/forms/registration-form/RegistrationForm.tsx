@@ -1,4 +1,5 @@
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useTranslation } from "react-i18next";
@@ -8,15 +9,14 @@ import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 import SchoolOutlinedIcon from "@mui/icons-material/SchoolOutlined";
 
 import { AppRoutes } from "src/app/routing/appRoutes";
-import { XlnteeColors } from "src/shared/themes/colors";
+import LocalStorageService from "src/shared/local-storage";
+import { UserRole } from "src/shared/utils/enum";
+import { PasswordValidationPanel } from "src/features";
 
 import { RegistrationFormValues, validationSchema } from "./validation";
 
-import LocalStorageService from "src/shared/local-storage";
-import { UserRole } from "src/shared/utils/enum";
-
 const RegistrationForm = () => {
-  const { role } = useParams();
+  const [role, setRole] = useState<UserRole>(UserRole.STUDENT);
 
   const { t } = useTranslation("auth");
   const navigate = useNavigate();
@@ -49,7 +49,7 @@ const RegistrationForm = () => {
           className={cn("auth-form__btn-role", {
             active: role === UserRole.STUDENT,
           })}
-          onClick={() => navigate(`${AppRoutes.auth.registration}/${UserRole.STUDENT}`)}
+          onClick={() => setRole(UserRole.STUDENT)}
         >
           {t("as")}
           {""} {t("role-student")}
@@ -61,7 +61,7 @@ const RegistrationForm = () => {
           className={cn("auth-form__btn-role", {
             active: role === UserRole.TEACHER,
           })}
-          onClick={() => navigate(`${AppRoutes.auth.registration}/${UserRole.TEACHER}`)}
+          onClick={() => setRole(UserRole.TEACHER)}
         >
           {t("as")}
           {""} {t("role-teacher")}
@@ -92,19 +92,7 @@ const RegistrationForm = () => {
           type="password"
           placeholder={t("password-placeholder")}
         />
-        <Box
-          bgcolor={!!errors.password ? XlnteeColors.ErrorLightColor : XlnteeColors.LightElementColor}
-          borderRadius="4px"
-          p="8px"
-        >
-          <Typography
-            variant="caption"
-            color={!!errors.password ? XlnteeColors.ErrorDarkColor : XlnteeColors.GrayColor700}
-            fontWeight={300}
-          >
-            {t("password-requirements")} !@#$%^&*()_+/\.-~
-          </Typography>
-        </Box>
+        <PasswordValidationPanel isError={!!errors.password} />
         <Button variant="contained" className="auth-form__btn-submit" onClick={handleSubmit(onSubmit)}>
           {t("sign-up")}
         </Button>

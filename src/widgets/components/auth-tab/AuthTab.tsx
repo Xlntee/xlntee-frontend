@@ -5,7 +5,6 @@ import { useTranslation } from "react-i18next";
 import { Box } from "@mui/material";
 
 import { AppRoutes } from "src/app/routing/appRoutes";
-import { UserRole } from "src/shared/utils/enum";
 
 import "./AuthTab.scss";
 
@@ -22,7 +21,7 @@ const AuthTab: FC<AuthTabProps> = ({ children }) => {
         <NavLink to={AppRoutes.auth.login} className="auth-tab__button">
           {t("login")}
         </NavLink>
-        <NavLink to={`${AppRoutes.auth.registration}/${UserRole.STUDENT}`} className="auth-tab__button">
+        <NavLink to={AppRoutes.auth.registration} className="auth-tab__button">
           {t("registration")}
         </NavLink>
       </Box>

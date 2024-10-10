@@ -20,7 +20,7 @@ import PageLoader from "./PageLoader";
 import { AppRoutes } from "./appRoutes";
 import { ProtectedRoute } from "./ProtectedRoute";
 
-import { LoginForm, RegistrationForm, AccountVerificationForm } from "src/widgets/forms";
+import { LoginForm, RegistrationForm, AccountVerificationForm, PasswordUpdate } from "src/widgets/forms";
 import AuthTab from "src/widgets/components/auth-tab/AuthTab";
 
 // Lazy load the component
@@ -71,7 +71,7 @@ const authRoutes = [
         ),
       },
       {
-        path: `${AppRoutes.auth.registration}/:role`,
+        path: AppRoutes.auth.registration,
         element: (
           <SuspenseWrapper>
             <AuthTab>
@@ -85,6 +85,14 @@ const authRoutes = [
         element: (
           <SuspenseWrapper>
             <AccountVerificationForm />
+          </SuspenseWrapper>
+        ),
+      },
+      {
+        path: AppRoutes.auth.passwordUpdate,
+        element: (
+          <SuspenseWrapper>
+            <PasswordUpdate />
           </SuspenseWrapper>
         ),
       },

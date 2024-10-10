@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
@@ -18,7 +18,6 @@ import { LoginFormValues, validationSchema } from "./validation";
 const deviceId = "string";
 
 const LoginForm: FC = () => {
-  const { role } = useParams();
   const { t } = useTranslation("auth");
 
   const [login, { isLoading: isLoginLoading }] = useLoginMutation();
@@ -103,7 +102,7 @@ const LoginForm: FC = () => {
               {t("forgot-password")}? <Link to={AppRoutes.auth.passwordUpdate}>{t("recover-password")}</Link>
             </Typography>
             <Typography variant="caption" className="auth-form__caption-text">
-              {t("no-account")}? <Link to={`${AppRoutes.auth.registration}/${role}`}>{t("sign-up")}</Link>
+              {t("no-account")}? <Link to={AppRoutes.auth.registration}>{t("sign-up")}</Link>
             </Typography>
           </Stack>
         </Stack>

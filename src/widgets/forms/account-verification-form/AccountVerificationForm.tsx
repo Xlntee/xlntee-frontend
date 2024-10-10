@@ -37,7 +37,7 @@ const AccountVerificationPage = ({ title }: PageProps) => {
 
   function onRedirectToRegistration() {
     LocalStorageService.removeTokenConfirmation();
-    navigate(`${AppRoutes.auth.registration}/${confirmationState.role}`);
+    navigate(AppRoutes.auth.registration);
   }
 
   return (
