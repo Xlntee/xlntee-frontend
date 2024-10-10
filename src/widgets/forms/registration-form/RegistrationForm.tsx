@@ -1,23 +1,11 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { Controller, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useTranslation } from "react-i18next";
+import cn from "classnames";
 
-import {
-  Alert,
-  Box,
-  Button,
-  Checkbox,
-  FormControl,
-  FormControlLabel,
-  FormHelperText,
-  Stack,
-  TextField,
-  Typography,
-} from "@mui/material";
-import GoogleIcon from "@mui/icons-material/Google";
-import { FacebookOutlined } from "@mui/icons-material";
-import ErrorIcon from "@mui/icons-material/Error";
+import { Box, Button, Stack, TextField, Typography } from "@mui/material";
+import SchoolOutlinedIcon from "@mui/icons-material/SchoolOutlined";
 
 import { AppRoutes } from "src/app/routing/appRoutes";
 import { XlnteeColors } from "src/shared/themes/colors";
@@ -34,7 +22,6 @@ const RegistrationForm = () => {
   const navigate = useNavigate();
 
   const {
-    control,
     formState: { errors },
     register,
     handleSubmit,
@@ -54,23 +41,42 @@ const RegistrationForm = () => {
 
   return (
     <Box className="auth-form">
+      <Stack direction="row" gap="20px" mb="20px">
+        <Button
+          variant="black-outline"
+          size="small"
+          startIcon={<SchoolOutlinedIcon />}
+          className={cn("auth-form__btn-role", {
+            active: role === UserRole.STUDENT,
+          })}
+          onClick={() => navigate(`${AppRoutes.auth.registration}/${UserRole.STUDENT}`)}
+        >
+          {t("as")}
+          {""} {t("role-student")}
+        </Button>
+        <Button
+          variant="black-outline"
+          size="small"
+          startIcon={<SchoolOutlinedIcon />}
+          className={cn("auth-form__btn-role", {
+            active: role === UserRole.TEACHER,
+          })}
+          onClick={() => navigate(`${AppRoutes.auth.registration}/${UserRole.TEACHER}`)}
+        >
+          {t("as")}
+          {""} {t("role-teacher")}
+        </Button>
+      </Stack>
       <Stack direction="column" gap="20px">
-        <Button
-          aria-label="login with google button"
-          variant="black-outline"
-          className="auth-form__auth-btn"
-          startIcon={<GoogleIcon />}
-        >
-          {t("login-with")} Google
-        </Button>
-        <Button
-          aria-label="login with facebook button"
-          variant="black-outline"
-          className="auth-form__auth-btn"
-          startIcon={<FacebookOutlined />}
-        >
-          {t("login-with")} Facebook
-        </Button>
+        <TextField
+          {...register("fullName", {
+            required: "test error",
+          })}
+          error={!!errors.fullName?.message}
+          helperText={errors.fullName?.message}
+          type="text"
+          placeholder={t("fullname-placeholder")}
+        />
         <TextField
           {...register("email", {
             required: "test error",
@@ -86,44 +92,23 @@ const RegistrationForm = () => {
           type="password"
           placeholder={t("password-placeholder")}
         />
-        <TextField
-          {...register("confirm_password")}
-          error={!!errors.confirm_password?.message}
-          helperText={errors.confirm_password?.message}
-          type="password"
-          placeholder={t("confirm-password-placeholder")}
-        />
-        <Typography variant="caption" color={XlnteeColors.GrayColor700}>
-          {t("password-requirements")} !@#$%^&*()_+/\.-~
-        </Typography>
-        {!!errors.password?.message && errors.password?.message && (
-          <Alert icon={<ErrorIcon />} severity="error">
-            {t("password-does-not-match")}
-          </Alert>
-        )}
-        <FormControl error={Boolean(errors.agreement)} className="auth-form__terms-control">
-          <Controller
-            name="agreement"
-            control={control}
-            defaultValue={false}
-            render={({ field }) => (
-              <FormControlLabel
-                {...register("agreement")}
-                control={<Checkbox {...field} checked={field.value} />}
-                label={
-                  <Typography variant="body2" className="auth-form__terms-text">
-                    {t("terms.text")} <a href="#">{t("terms.link")}</a>
-                  </Typography>
-                }
-              />
-            )}
-          />
-          {errors.agreement && <FormHelperText>{errors.agreement.message}</FormHelperText>}
-        </FormControl>
+        <Box
+          bgcolor={!!errors.password ? XlnteeColors.ErrorLightColor : XlnteeColors.LightElementColor}
+          borderRadius="4px"
+          p="8px"
+        >
+          <Typography
+            variant="caption"
+            color={!!errors.password ? XlnteeColors.ErrorDarkColor : XlnteeColors.GrayColor700}
+            fontWeight={300}
+          >
+            {t("password-requirements")} !@#$%^&*()_+/\.-~
+          </Typography>
+        </Box>
         <Button variant="contained" className="auth-form__btn-submit" onClick={handleSubmit(onSubmit)}>
           {t("sign-up")}
         </Button>
-        <Stack direction="column" gap="4px" textAlign="center">
+        <Stack direction="column" gap="4px">
           <Typography variant="caption" className="auth-form__caption-text">
             {t("have-account")}? <Link to={`${AppRoutes.auth.login}/${role}`}>{t("login")}</Link>
           </Typography>
