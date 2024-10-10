@@ -110,7 +110,7 @@ const RegistrationForm = () => {
         </Button>
         <Stack direction="column" gap="4px">
           <Typography variant="caption" className="auth-form__caption-text">
-            {t("have-account")}? <Link to={`${AppRoutes.auth.login}/${role}`}>{t("login")}</Link>
+            {t("have-account")}? <Link to={AppRoutes.auth.login}>{t("login")}</Link>
           </Typography>
         </Stack>
       </Stack>
