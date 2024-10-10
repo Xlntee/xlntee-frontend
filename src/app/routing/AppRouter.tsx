@@ -7,6 +7,7 @@ import { UserRole } from "src/shared/utils/enum";
 import { getUserPathByRole } from "src/shared/utils/methods";
 
 import {
+  AuthLayout,
   PublicLayout,
   PrivateLayout,
   TeacherCreateCourseBlockLayout,
@@ -19,10 +20,10 @@ import PageLoader from "./PageLoader";
 import { AppRoutes } from "./appRoutes";
 import { ProtectedRoute } from "./ProtectedRoute";
 
+import { LoginForm, RegistrationForm, AccountVerificationForm, PasswordUpdate } from "src/widgets/forms";
+import AuthTab from "src/widgets/components/auth-tab/AuthTab";
+
 // Lazy load the component
-const AuthorizationRolesPage = lazy(() => import("pages/auth/authorization-roles/AuthorizationRolesPage"));
-const AuthorizationPage = lazy(() => import("pages/auth/authorization/AuthorizationPage"));
-const AccountVerificationPage = lazy(() => import("pages/auth/account-verification/AccountVerificationPage"));
 const EmailUpdatePage = lazy(() => import("src/pages/auth/email-update/EmailUpdatePage"));
 const PasswordUpdatePage = lazy(() => import("src/pages/auth/password-update/PasswordUpdatePage"));
 
@@ -55,28 +56,47 @@ const SuspenseWrapper = ({ children }: { children: ReactNode }) => {
 
 const authRoutes = [
   {
-    path: AppRoutes.auth.typeRole,
-    element: (
-      <SuspenseWrapper>
-        <AuthorizationPage title="Auth" />
-      </SuspenseWrapper>
-    ),
-  },
-  {
-    path: AppRoutes.auth.roles,
-    element: (
-      <SuspenseWrapper>
-        <AuthorizationRolesPage title="Auth roles" />
-      </SuspenseWrapper>
-    ),
-  },
-  {
-    path: AppRoutes.auth.accountVerification,
-    element: (
-      <SuspenseWrapper>
-        <AccountVerificationPage title="Account verification" />
-      </SuspenseWrapper>
-    ),
+    path: AppRoutes.auth.base,
+    element: <AuthLayout />,
+    children: [
+      {
+        index: true,
+        path: AppRoutes.auth.login,
+        element: (
+          <SuspenseWrapper>
+            <AuthTab>
+              <LoginForm />
+            </AuthTab>
+          </SuspenseWrapper>
+        ),
+      },
+      {
+        path: AppRoutes.auth.registration,
+        element: (
+          <SuspenseWrapper>
+            <AuthTab>
+              <RegistrationForm />
+            </AuthTab>
+          </SuspenseWrapper>
+        ),
+      },
+      {
+        path: AppRoutes.auth.accountVerification,
+        element: (
+          <SuspenseWrapper>
+            <AccountVerificationForm />
+          </SuspenseWrapper>
+        ),
+      },
+      {
+        path: AppRoutes.auth.passwordUpdate,
+        element: (
+          <SuspenseWrapper>
+            <PasswordUpdate />
+          </SuspenseWrapper>
+        ),
+      },
+    ],
   },
 ];
 

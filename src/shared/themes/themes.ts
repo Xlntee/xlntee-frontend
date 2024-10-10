@@ -420,6 +420,7 @@ defaultTheme.components = {
     styleOverrides: {
       root: {
         height: 36,
+        overflow: "hidden",
 
         [defaultTheme.breakpoints.up("md")]: {
           height: 50,
@@ -457,10 +458,12 @@ defaultTheme.components = {
         input: {
           height: 20,
           color: XlnteeColors.BlackTextColor,
+          backgroundColor: XlnteeColors.LightColor,
           fontSize: 14,
           paddingBlock: 8,
           paddingInline: 10,
           textAlign: "inherit",
+
           "&::placeholder": {
             color: defaultTheme.palette.grey["700"],
           },

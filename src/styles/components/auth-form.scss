@@ -36,32 +36,49 @@
     }
   }
 
+  &__btn-role {
+    &.MuiButtonBase-root {
+      width: 100%;
+      border-radius: 20px;
+      font-weight: 400;
+    }
+
+    &.active {
+      &.MuiButtonBase-root {
+        color: rgb(var(--light-color));
+        background-color: rgb(var(--dark-color));
+      }
+    }
+  }
+
   &__auth-btn {
     &.MuiButton-root {
+      min-width: 36px;
       min-height: 36px;
-      justify-content: start;
-      font-size: 14px;
+      font-size: 20px;
+      padding: 8px;
+      box-shadow: var(--base-shadow-invisible);
+      background-color: rgb(var(--light-color));
 
       @include mixins.media(tablet) {
-        font-size: 20px;
+        font-size: 30px;
+        min-width: 50px;
         min-height: 50px;
+      }
+
+      @include mixins.hover {
+        background-color: transparent;
+        box-shadow: var(--base-shadow);
       }
     }
 
-    .MuiButton-startIcon {
-      margin: 0;
+    svg {
+      width: 20px;
+      height: 20px;
 
       @include mixins.media(tablet) {
-        margin-right: 12px;
-        // margin: 0 12px 0 0;
-      }
-
-      svg {
-        font-size: 18px;
-
-        @include mixins.media(tablet) {
-          font-size: 36px;
-        }
+        width: 30px;
+        height: 30px;
       }
     }
   }

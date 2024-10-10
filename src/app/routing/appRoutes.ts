@@ -5,7 +5,6 @@ export const AppRoutes = {
   auth: {
     base: "/auth",
     typeRole: "/auth/:authType/:role",
-    roles: "/auth/roles",
     login: "/auth/login",
     registration: "/auth/registration",
     accountVerification: "/auth/account-verification",

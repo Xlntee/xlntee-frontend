@@ -23,6 +23,7 @@ body {
 
 a {
   text-decoration: none;
+  @include mixins.animate(color);
 }
 
 img {
@@ -44,6 +45,12 @@ img {
 
     @include mixins.hover {
       text-decoration: none;
+    }
+  }
+
+  &--bold {
+    &.MuiButtonBase-root {
+      font-weight: 700;
     }
   }
 }

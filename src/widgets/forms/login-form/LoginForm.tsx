@@ -1,13 +1,11 @@
 import { FC } from "react";
-import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
 import { useTranslation } from "react-i18next";
 
 import { Button, Stack, TextField, Typography } from "@mui/material";
-import GoogleIcon from "@mui/icons-material/Google";
-import { FacebookOutlined } from "@mui/icons-material";
 
 import { useAppDispatch } from "src/app/store/store";
 import { setCredentials } from "pages/auth/login/store/authSlice";
@@ -20,7 +18,6 @@ import { LoginFormValues, validationSchema } from "./validation";
 const deviceId = "string";
 
 const LoginForm: FC = () => {
-  const { role } = useParams();
   const { t } = useTranslation("auth");
 
   const [login, { isLoading: isLoginLoading }] = useLoginMutation();
@@ -55,22 +52,25 @@ const LoginForm: FC = () => {
     <ApiProvider api={authApiSlice}>
       <form onSubmit={onSubmit} className="auth-form">
         <Stack direction="column" gap="20px">
-          <Button
-            aria-label="login with google button"
-            className="auth-form__auth-btn"
-            variant="black-outline"
-            startIcon={<GoogleIcon />}
-          >
-            {t("login-with")} Google
-          </Button>
-          <Button
-            aria-label="login with facebook button"
-            className="auth-form__auth-btn"
-            variant="black-outline"
-            startIcon={<FacebookOutlined />}
-          >
-            {t("login-with")} Facebook
-          </Button>
+          <Stack direction="row" alignItems="center" justifyContent="center" gap="20px">
+            <Typography variant="body2">{t("login-with")}</Typography>
+            <Stack direction="row" gap="20px">
+              <Button
+                aria-label={`${t("login-with")} Google button`}
+                className="auth-form__auth-btn"
+                variant="black-outline"
+              >
+                <img src="/assets/google.svg" alt="google" />
+              </Button>
+              <Button
+                aria-label={`${t("login-with")} facebook button`}
+                className="auth-form__auth-btn"
+                variant="black-outline"
+              >
+                <img src="/assets/facebook.svg" alt="facebook" />
+              </Button>
+            </Stack>
+          </Stack>
           <TextField
             {...register("email")}
             error={!!errors.email?.message}
@@ -97,12 +97,12 @@ const LoginForm: FC = () => {
           >
             {t("login")}
           </Button>
-          <Stack direction="column" gap="4px" textAlign="center">
+          <Stack direction="column" gap="4px">
             <Typography variant="caption" className="auth-form__caption-text">
               {t("forgot-password")}? <Link to={AppRoutes.auth.passwordUpdate}>{t("recover-password")}</Link>
             </Typography>
             <Typography variant="caption" className="auth-form__caption-text">
-              {t("no-account")}? <Link to={`${AppRoutes.auth.registration}/${role}`}>{t("sign-up")}</Link>
+              {t("no-account")}? <Link to={AppRoutes.auth.registration}>{t("sign-up")}</Link>
             </Typography>
           </Stack>
         </Stack>

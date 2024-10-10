@@ -43,7 +43,7 @@ const HeaderProfile = () => {
       <Stack direction="row" alignItems="center" gap="10px" className="header__tools">
         <LanguageSwitcher compact />
         {!authUser && (
-          <Link to={AppRoutes.auth.roles} className="header__action">
+          <Link to={AppRoutes.auth.login} className="header__action">
             {t("login")}
           </Link>
         )}

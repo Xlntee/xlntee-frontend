@@ -18,5 +18,5 @@ export const ProtectedRoute = ({ element }: { element: ReactNode }) => {
     navigate(user.userRolePath);
   }, [user.userRolePath]);
 
-  return token ? element : <Navigate to={AppRoutes.auth.roles} state={{ from: location.pathname }} replace />;
+  return token ? element : <Navigate to={AppRoutes.auth.login} state={{ from: location.pathname }} replace />;
 };

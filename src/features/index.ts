@@ -13,3 +13,4 @@ export * from "./navigation-drawer";
 export * from "./otp-input";
 export * from "./course-card-progress";
 export * from "./certificate-card";
+export * from "./password-validation-panel";
