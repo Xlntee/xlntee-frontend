@@ -15,6 +15,7 @@ i18n
     ns: [
       "common",
       "auth",
+      "student",
       "teacher",
       "teacher-landing",
       "student-landing",

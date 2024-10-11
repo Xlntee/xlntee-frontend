@@ -1,8 +1,10 @@
-import { Box, Container, Grid } from "@mui/material";
+import { useTranslation } from "react-i18next";
+
+import { Box, Container } from "@mui/material";
 
 import useTitle from "src/hooks/useTitle/useTitle";
 import { PageProps } from "pages/type";
-import { CourseCardProgress } from "src/features";
+import { CardList, CourseCardProgress } from "src/features";
 import { AppRoutes } from "src/app/routing/appRoutes";
 
 import { myCourses } from "./data";
@@ -10,23 +12,23 @@ import { myCourses } from "./data";
 const CompletedCoursesPage = ({ title }: PageProps) => {
   useTitle(title);
 
+  const { t } = useTranslation("student");
+
   return (
     <Box component="section" py={7}>
       <Container>
-        <Grid container spacing={2}>
-          {myCourses.length > 0
-            ? myCourses.map((course) => (
-                <Grid item key={course.id} xs={12} sm={6} md={4}>
-                  <CourseCardProgress
-                    title={course.title}
-                    image={course.image}
-                    progress={course.progress}
-                    href={`${AppRoutes.student.myLearning}/${course.id}`}
-                  />
-                </Grid>
-              ))
-            : null}
-        </Grid>
+        <CardList
+          items={myCourses}
+          renderCard={(props) => (
+            <CourseCardProgress
+              title={props.title}
+              image={props.image}
+              progress={props.progress}
+              href={`${AppRoutes.student.myLearning}/${props.id}`}
+            />
+          )}
+          textForEmptyArray={t("dashboard.no-completed-courses")}
+        />
       </Container>
     </Box>
   );
