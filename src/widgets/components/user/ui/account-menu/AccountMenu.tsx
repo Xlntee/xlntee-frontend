@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import cn from "classnames";
 
@@ -20,10 +20,17 @@ const AccountMenu = () => {
   const { t } = useTranslation("auth");
 
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+
   const user = useAppSelector(getUser);
 
   function onToggleUserRole() {
     dispatch(switchRole());
+    if (user.role === UserRole.STUDENT) {
+      navigate(AppRoutes.teacher.dashboard);
+    } else if (user.role === UserRole.TEACHER) {
+      navigate(AppRoutes.student.dashboard);
+    }
   }
 
   return (

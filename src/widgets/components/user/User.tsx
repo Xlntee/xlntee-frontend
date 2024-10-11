@@ -1,18 +1,23 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Box, Tooltip, IconButton, Menu, Modal } from "@mui/material";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
+import { MenuToggler } from "src/features";
+import { useAppSelector } from "src/app/store/store";
+import { getUser } from "src/app/store/slices/user/userSlice";
+
 import { AccountMenu } from "./ui";
 
 import "./User.scss";
-import { MenuToggler } from "src/features";
 
 const User = () => {
   const breakpoint = 1024;
 
   const matches = useMediaQuery(`(min-width:${breakpoint}px)`);
+
+  const user = useAppSelector(getUser);
 
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
   const open = Boolean(anchorEl);
@@ -33,6 +38,12 @@ const User = () => {
   const onCloseModal = () => {
     setOpenModal(false);
   };
+
+  useEffect(() => {
+    if (openModal) {
+      onCloseModal();
+    }
+  }, [user.userRolePath]);
 
   return (
     <Box>
