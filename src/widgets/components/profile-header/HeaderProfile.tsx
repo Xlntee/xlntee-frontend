@@ -114,7 +114,7 @@ const HeaderProfile: FC<HeaderProfileProps> = ({ children, link, tools, classNam
               {tools}
               <User />
             </Stack>
-            <MenuToggler active={open} onClick={toggleDrawer} />
+            <MenuToggler active={open} onClick={toggleDrawer} className="header-profile__menu-toggler" />
           </Stack>
         </Box>
       </Container>

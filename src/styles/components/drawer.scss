@@ -1,0 +1,40 @@
+@use "styles/mixins.scss" as mixins;
+
+.drawer {
+  --drawer-width: 320px;
+
+  &--lg {
+    @include mixins.media(tablet) {
+      --drawer-width: 400px;
+    }
+
+    @include mixins.media(desktop) {
+      --drawer-width: auto;
+    }
+  }
+
+  &__inner {
+    width: var(--drawer-width);
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px 0 rgb(var(--dark-color) / 0.2);
+  }
+
+  &__close {
+    width: 30px;
+
+    svg {
+      width: 30px;
+    }
+  }
+
+  &__body {
+    padding: 20px 20px;
+  }
+}

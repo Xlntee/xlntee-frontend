@@ -15,5 +15,7 @@
     "review": "Review",
     "answer": "answer",
     "answers": "answers"
-  }
+  },
+  "notifications": "Notifications",
+  "no-notifications": "You don't have any notifications yet"
 }

@@ -1,11 +1,9 @@
 import { FC, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
-import { Box, Stack, Drawer, Divider } from "@mui/material";
+import { Box, Drawer, Divider } from "@mui/material";
 
 import { MenuToggler, Navigation, NavigationLinkType } from "src/features";
-
-import "./NavigationDrawer.scss";
 
 type HeaderProfileProps = {
   children?: React.ReactNode;
@@ -27,22 +25,20 @@ const HeaderProfile: FC<HeaderProfileProps> = ({ children, navigationList, open 
   }, [pathname]);
 
   return (
-    <Drawer anchor="left" open={visible} onClose={onClose} className="navigation-drawer">
-      <Stack direction="column" gap="20px" width="320px">
-        <Box className="navigation-drawer__header">
-          <Box className="header-profile__logo">
-            <img src="/assets/x-logo-modal-extend.png" alt="XIntee" width={100} height={36} />
-          </Box>
-          <MenuToggler active={true} onClick={onClose} />
+    <Drawer anchor="left" open={visible} onClose={onClose} className="navigation-drawer drawer">
+      <Box className="drawer__inner">
+        <Box className="drawer__header">
+          <img src="/assets/x-logo-modal-extend.png" alt="XIntee" width={100} height={36} />
+          <MenuToggler active={true} onClick={onClose} className="drawer__close" />
         </Box>
-        <Box paddingInline="20px">
+        <Box className="drawer__body">
           <Navigation items={navigationList} />
           <Box marginBlock="20px">
             <Divider />
           </Box>
           {children}
         </Box>
-      </Stack>
+      </Box>
     </Drawer>
   );
 };

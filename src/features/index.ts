@@ -15,3 +15,4 @@ export * from "./course-card-progress";
 export * from "./certificate-card";
 export * from "./price-plan-card";
 export * from "./password-validation-panel";
+export * from "./notification";

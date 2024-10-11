@@ -64,7 +64,7 @@ const HeaderProfile = () => {
           <Stack direction="row" alignItems="center" gap="10px" className="header__nav-right">
             <Tools />
             {authUser && <User />}
-            <MenuToggler active={open} onClick={toggleDrawer} />
+            <MenuToggler active={open} onClick={toggleDrawer} className="header__menu-toggler" />
           </Stack>
         </Box>
       </Container>
