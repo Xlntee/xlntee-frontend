@@ -50,8 +50,8 @@ const PricePlanCard: FC<PricePlanProps> = ({ pretitle, title, text, buttonText, 
       {descriptionList.length ? (
         <Box maxWidth="370px" marginInline="auto">
           <List>
-            {descriptionList.map((item) => (
-              <ListItem alignItems="flex-start" sx={{ marginBottom: "20px" }}>
+            {descriptionList.map((item, index) => (
+              <ListItem key={index} alignItems="flex-start" sx={{ marginBottom: "20px" }}>
                 <ListItemIcon
                   sx={{
                     marginTop: 0,
