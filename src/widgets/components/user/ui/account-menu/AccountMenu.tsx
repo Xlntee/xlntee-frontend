@@ -29,7 +29,7 @@ const AccountMenu = () => {
     if (user.role === UserRole.STUDENT) {
       navigate(AppRoutes.teacher.dashboard);
     } else if (user.role === UserRole.TEACHER) {
-      navigate(AppRoutes.student.dashboard);
+      navigate(AppRoutes.home);
     }
   }
 
@@ -45,13 +45,12 @@ const AccountMenu = () => {
             "account-menu__user--linked": user.role === UserRole.TEACHER,
           })}
         >
-          <AccountCircleOutlinedIcon className="account-menu__avatar" />
+          <Link to={`${user.role}/dashboard/profile`}>
+            <AccountCircleOutlinedIcon className="account-menu__avatar" />
+          </Link>
           <Typography variant="h6" className="account-menu__user-name">
-            @leshalurn
+            <Link to={`${user.role}/dashboard/profile`}>@leshalurn</Link>
           </Typography>
-          {user.role === UserRole.TEACHER && (
-            <Link className="account-menu__user-link" to={AppRoutes.teacher.profile}></Link>
-          )}
         </Stack>
       </Box>
       <Divider />
@@ -71,7 +70,7 @@ const AccountMenu = () => {
           <LanguageIcon />
           <LanguageSwitcher />
         </Stack>
-        <Link to={`${user.userRolePath}/support`} className="account-menu__link">
+        <Link to={`${user.role}/dashboard/support`} className="account-menu__link">
           {t("support-center")}
         </Link>
         <Button variant="black-text" className="account-menu__link">

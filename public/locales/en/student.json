@@ -1,0 +1,7 @@
+{
+  "dashboard": {
+    "no-courses": "You haven't started your courses yet",
+    "no-completed-courses": "You have not completed any courses yet",
+    "no-cetrificates": "You don't have any certificates yet"
+  }
+}

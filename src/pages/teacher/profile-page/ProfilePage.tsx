@@ -125,12 +125,12 @@ const ProfilePage = ({ title }: PageProps) => {
                       }}
                     />
                     {field.key === "email" && (
-                      <Link to={`${user.userRolePath}/email-update`}>
+                      <Link to={`${user.role}/dashboard/email-update`}>
                         <EditIcon />
                       </Link>
                     )}
                     {field.key === "password" && (
-                      <Link to={`${user.userRolePath}/password-update`}>
+                      <Link to={`${user.role}/dashboard/password-update`}>
                         <EditIcon />
                       </Link>
                     )}

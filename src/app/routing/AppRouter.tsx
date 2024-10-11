@@ -4,7 +4,6 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { useAppDispatch } from "src/app/store/store";
 import { setRole } from "src/app/store/slices/user/userSlice";
 import { UserRole } from "src/shared/utils/enum";
-import { getUserPathByRole } from "src/shared/utils/methods";
 
 import {
   AuthLayout,
@@ -213,14 +212,6 @@ const teacherDashboardCreateCourseRoutes = [
 
 const studentDashboardRoutes = [
   {
-    path: AppRoutes.student.dashboard,
-    element: (
-      <SuspenseWrapper>
-        <StatisticPage />
-      </SuspenseWrapper>
-    ),
-  },
-  {
     path: AppRoutes.student.myLearning,
     element: (
       <SuspenseWrapper>
@@ -379,7 +370,6 @@ const AppRouter = () => {
     dispatch(
       setRole({
         role: userRole,
-        userRolePath: getUserPathByRole(userRole as UserRole),
       }),
     );
   }, []);

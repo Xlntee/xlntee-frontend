@@ -4,6 +4,12 @@
   box-shadow: 0 0 3px 0 rgb(var(--dark-color) / 0.25);
   background-color: rgb(var(--light-color));
 
+  &__user {
+    a {
+      color: currentColor;
+    }
+  }
+
   &__avatar {
     &.MuiSvgIcon-root {
       font-size: 50px;
@@ -23,12 +29,6 @@
 
   &__user-name {
     @include mixins.animate(color);
-  }
-
-  &__user-link {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
   }
 
   &__link {

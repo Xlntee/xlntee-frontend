@@ -12,7 +12,7 @@ export const AppRoutes = {
     passwordUpdate: "/auth/password-update",
   },
   student: {
-    dashboard: "/student/dashboard",
+    profile: "/student/dashboard/profile",
     myLearning: "/student/dashboard/my-learning",
     courseVideoSingle: "/student/dashboard/course",
     courseVideo: "/student/dashboard/course/:id/video",
