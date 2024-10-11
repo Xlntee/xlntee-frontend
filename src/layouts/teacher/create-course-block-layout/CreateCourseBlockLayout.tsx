@@ -3,7 +3,7 @@ import { NavLink, Outlet, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import cn from "classnames";
 
-import { Box, Container, List, ListItem, Link, Stack, Button, Drawer } from "@mui/material";
+import { Box, Container, List, ListItem, Link, Stack, Button, Drawer, Typography } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
 import { AppRoutes } from "src/app/routing/appRoutes";
@@ -117,9 +117,18 @@ const CreateCourseBlockLayout = () => {
           </Box>
         </Box>
       </Container>
-      <Drawer anchor="left" open={openCourseNav} onClose={closeAsideMenu}>
-        <MenuToggler active={openCourseNav} onClick={closeAsideMenu} className="create-course-layout__menu-close" />
-        <AsideMenu />
+      <Drawer anchor="left" open={openCourseNav} onClose={closeAsideMenu} className="drawer drawer--lg">
+        <Box className="drawer__inner">
+          <Box className="drawer__header">
+            <Typography variant="body1" className="drawer__title">
+              {t("course_navigation")}
+            </Typography>
+            <MenuToggler active={openCourseNav} onClick={closeAsideMenu} className="drawer__close" />
+          </Box>
+          <Box className="drawer__body">
+            <AsideMenu />
+          </Box>
+        </Box>
       </Drawer>
     </Box>
   );

@@ -81,4 +81,12 @@
       display: none;
     }
   }
+
+  &__menu-toggler {
+    &.MuiButtonBase-root {
+      @include mixins.media(breakpoints.$mobile_breakpoint_min) {
+        display: none;
+      }
+    }
+  }
 }

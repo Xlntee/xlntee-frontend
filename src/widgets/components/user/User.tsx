@@ -60,7 +60,7 @@ const User = () => {
       </Menu>
       <Modal open={openModal} onClose={onCloseModal} className="account-menu-modal">
         <Box className="account-menu-modal__inner">
-          <MenuToggler active={openModal} onClick={onCloseModal} />
+          <MenuToggler active={openModal} onClick={onCloseModal} className="account-menu-modal__menu-toggler" />
           <AccountMenu />
         </Box>
       </Modal>
