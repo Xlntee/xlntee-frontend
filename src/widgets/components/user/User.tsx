@@ -43,7 +43,7 @@ const User = () => {
     if (openModal) {
       onCloseModal();
     }
-  }, [user.userRolePath]);
+  }, [user]);
 
   return (
     <Box>
