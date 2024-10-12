@@ -38,7 +38,7 @@ const PricePlanCard: FC<PricePlanProps> = ({ pretitle, title, text, button, desc
         <Button
           variant="outlined"
           size="large"
-          className="button-rounded-lg"
+          className="button-rounded-xl"
           sx={{
             fontWeight: 400,
             width: "250px",

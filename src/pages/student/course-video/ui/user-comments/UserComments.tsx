@@ -38,7 +38,6 @@ const UserComment: FC<UserCommentsProps> = ({ comments, user }) => {
             onClick={onToggleVisibilityComments}
             sx={{
               minWidth: "auto",
-              minHeight: "auto !important",
               color: XlnteeColors.GrayColor700,
               fontWeight: 400,
             }}

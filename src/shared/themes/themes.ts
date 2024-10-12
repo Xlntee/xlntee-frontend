@@ -257,11 +257,6 @@ defaultTheme.components = {
         style: {
           padding: 0,
           minWidth: "auto",
-          minHeight: "auto",
-
-          [defaultTheme.breakpoints.up("md")]: {
-            minHeight: "auto",
-          },
 
           ":hover": {
             backgroundColor: "transparent",
@@ -398,11 +393,6 @@ defaultTheme.components = {
           color: XlnteeColors.DarkColor,
           padding: 0,
           minWidth: "auto",
-          minHeight: "auto",
-
-          [defaultTheme.breakpoints.up("md")]: {
-            minHeight: "auto",
-          },
 
           "&:hover": {
             backgroundColor: "transparent",

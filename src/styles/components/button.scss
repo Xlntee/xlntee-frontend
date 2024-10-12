@@ -24,6 +24,12 @@
 
 .button-rounded-lg {
   &.MuiButtonBase-root {
+    border-radius: 30px;
+  }
+}
+
+.button-rounded-xl {
+  &.MuiButtonBase-root {
     border-radius: 50px;
   }
 }

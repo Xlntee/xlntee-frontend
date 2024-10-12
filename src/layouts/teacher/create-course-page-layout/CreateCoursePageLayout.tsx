@@ -27,7 +27,7 @@ const CreateCoursePageLayout = () => {
       >
         <Stack direction="row" gap="14px">
           <Button
-            className="button-preview"
+            className="button-preview button-rounded-md"
             variant="black-outline"
             size="small"
             startIcon={<RemoveRedEyeIcon />}
@@ -36,7 +36,7 @@ const CreateCoursePageLayout = () => {
             {tTeacherCreateCourse("button-landing-text")}
           </Button>
           <Button
-            className="button-preview"
+            className="button-preview button-rounded-md"
             variant="black-outline"
             size="small"
             startIcon={<SentimentSatisfiedAltIcon />}

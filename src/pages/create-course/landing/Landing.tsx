@@ -25,6 +25,8 @@ import { ListRequirements } from "./ui";
 import { landingValidationSchema, LandingFormValues } from "./validation";
 import { defaultValuesForm } from "./initialData";
 
+import "./Landing.scss";
+
 type TagType = "subjects" | "requirements";
 
 export interface AutocompleteFieldBoxProps {
@@ -196,11 +198,11 @@ const LandingPage = ({ title }: PageProps) => {
             </Box>
           </Grid>
         </Grid>
-        <Stack direction={{ sm: "row" }} flexWrap="wrap" gap="20px">
-          <Button variant="black-contain" size="large" sx={{ minWidth: "190px" }} onClick={handleSubmit(onSubmitForm)}>
+        <Stack direction={{ sm: "row" }} flexWrap="wrap" gap={{ sm: "20px", md: "40px" }}>
+          <Button variant="black-contain" size="medium" sx={{ minWidth: "190px" }} onClick={handleSubmit(onSubmitForm)}>
             {t("button_save")}
           </Button>
-          <Button variant="black-text" size="large" sx={{ minWidth: "190px" }}>
+          <Button variant="black-text" size="medium">
             {t("button_discard_changes")}
           </Button>
         </Stack>

@@ -8,5 +8,6 @@ import { useAppSelector } from "../store/store";
 export const ProtectedRoute = ({ element }: { element: ReactNode }) => {
   const token = useAppSelector(selectToken);
 
+  // return token ? element : element;
   return token ? element : <Navigate to={AppRoutes.auth.login} state={{ from: location.pathname }} replace />;
 };

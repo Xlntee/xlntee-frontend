@@ -1,4 +1,4 @@
-import { CSSProperties, useState } from "react";
+import { useState } from "react";
 import { Button, Container, Stack, Box, Typography, Grid, TextField, InputLabel, Divider } from "@mui/material";
 
 import { Snackbar } from "src/features";
@@ -10,7 +10,6 @@ import { UserRole } from "src/shared/utils/enum";
 
 const typographyList = ["h1", "h2", "h3", "h4", "h5", "h6"] as const;
 const buttonColorList = ["primary", "secondary", "success", "error"] as const;
-const buttonSizeList = ["small", "medium", "large"];
 
 const renderButtons = (variant: string, size: string, className?: string) => {
   return (
@@ -40,18 +39,6 @@ const renderButtonsGridCol = (variant: string, className?: string) => {
         {renderButtons(variant, "large", className)}
       </Stack>
     </Grid>
-  );
-};
-
-const renderButtonsBlack = (variant: "black-contain" | "black-outline" | "black-text", className?: string) => {
-  return (
-    <Stack gap={2} mb={2} direction="column">
-      {buttonSizeList.map((item) => (
-        <Button key={item} variant={variant} size={item as any} className={className}>
-          {variant}
-        </Button>
-      ))}
-    </Stack>
   );
 };
 

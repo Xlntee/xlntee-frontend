@@ -130,21 +130,10 @@ const SectionCourseHero: FC<SectionCourseHeroProps> = ({
                     )}
                   </Stack>
                   <Stack direction="row" gap="12px">
-                    <Button
-                      variant="black-outline"
-                      sx={{
-                        borderRadius: "50px",
-                      }}
-                    >
+                    <Button variant="black-outline" className="button-rounded-xl">
                       {t("teacher-preview.section-course-hero.actionViewCourse")}
                     </Button>
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      sx={{
-                        borderRadius: "50px",
-                      }}
-                    >
+                    <Button variant="contained" color="primary" className="button-rounded-xl">
                       {t("teacher-preview.section-course-hero.actionBuyCourse")}
                     </Button>
                   </Stack>
