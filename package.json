@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "lint": "eslint .  --report-unused-disable-directives --max-warnings 0",
     "format": "prettier --write . --config ./.prettierrc",
-    "precommit": "npm run lint && npm run format && git add -A ."
+    "precommit": "npm run lint && npm run format && git add -A .",
+    "prepare": "husky install"
   },
   "husky": {
     "hooks": {
