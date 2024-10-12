@@ -37,6 +37,7 @@ type FileLectureProps = {
 
 const BlockLecture: FC<BlockLectureProps> = ({ lessonId, id, index, onDelete }) => {
   const a = "";
+  const b = 1;
 
   const { t } = useTranslation("teacher-create-course");
 

@@ -9,7 +9,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint .  --report-unused-disable-directives --max-warnings 0",
-    "format": "prettier --write './**/*.{js,jsx,ts,tsx,json}' --config ./.prettierrc"
+    "format": "prettier --write . --config ./.prettierrc"
   },
   "husky": {
     "hooks": {
@@ -19,20 +19,20 @@
   },
   "lint-staged": {
     "*.ts": [
-      "eslint",
-      "format"
+      "eslint .  --report-unused-disable-directives --max-warnings 0",
+      "prettier --write . --config ./.prettierrc && git add -A ."
     ],
     "*.tsx": [
-      "eslint",
-      "format"
+      "eslint .  --report-unused-disable-directives --max-warnings 0",
+      "prettier --write . --config ./.prettierrc && git add -A ."
     ],
     "*.js": [
-      "eslint",
-      "format"
+      "eslint .  --report-unused-disable-directives --max-warnings 0",
+      "prettier --write . --config ./.prettierrc && git add -A ."
     ],
     "*.jsx": [
-      "eslint",
-      "format"
+      "eslint .  --report-unused-disable-directives --max-warnings 0",
+      "prettier --write . --config ./.prettierrc && git add -A ."
     ]
   },
   "dependencies": {
