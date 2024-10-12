@@ -66,7 +66,7 @@ const SectionFeatures = () => {
                 size="medium"
                 className="button-rounded-md"
               >
-                {t("features-section.Button")}
+                {t("features-section.button")}
               </Button>
             </Grid>
           </Grid>

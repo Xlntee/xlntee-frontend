@@ -3,7 +3,7 @@
     "title": "LMS for easy start, creation and growth",
     "subtitle": "create, improve, grow",
     "features": ["Dashboard", "Easy navigation", "Communication", "Payments", "Quizzes", "Analytics"],
-    "heroButton": "Try for Free",
+    "button": "Try for Free",
     "imageAltText": "Launch your online courses easily on xlntee"
   },
   "about-section": {

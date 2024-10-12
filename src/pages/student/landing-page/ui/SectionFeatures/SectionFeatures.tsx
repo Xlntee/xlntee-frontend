@@ -31,8 +31,8 @@ const icons: JSX.Element[] = [
 
 const SectionFeatures = () => {
   const { t, ready } = useTranslation("student-landing");
-  const captionList: string[] = t("student-landing.features-section.caption", { returnObjects: true });
-  const descriptionList: string[] = t("student-landing.features-section.description", { returnObjects: true });
+  const captionList: string[] = t("features-section.caption", { returnObjects: true });
+  const descriptionList: string[] = t("features-section.description", { returnObjects: true });
   const columnCount = 3;
 
   if (!ready) return "";
@@ -72,7 +72,7 @@ const SectionFeatures = () => {
                   fontWeight: 700,
                 }}
               >
-                {t("student-landing.features-section.Button")}
+                {t("features-section.button")}
               </Button>
             </Grid>
           </Grid>

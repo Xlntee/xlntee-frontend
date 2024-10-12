@@ -18,7 +18,7 @@ const TeacherLandingPage = ({ title }: PageProps) => {
       <SectionLandingHero
         title={t("hero-section.title")}
         subtitle={t("hero-section.subtitle")}
-        buttonTitle={t("hero-section.heroButton")}
+        buttonTitle={t("hero-section.button")}
         image={{
           src: "assets/teacher-landing-hero.webp",
           alt: t("hero-section.imageAltText"),
