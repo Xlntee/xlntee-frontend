@@ -93,15 +93,12 @@
   &__action {
     &.MuiButtonBase-root {
       font-weight: 300;
-      width: 100%;
-      padding: 4px 16px;
+      padding-inline: 16px;
       justify-content: start;
-      min-height: auto;
-      border-radius: 20px;
+      min-height: 36px;
+      font-size: 16px;
       color: rgb(var(--gray-color-600));
       background-color: rgb(var(--gray-stroke-color));
-
-      @include mixins.animate(color background-color);
 
       @include mixins.hover {
         color: rgb(var(--light-color));

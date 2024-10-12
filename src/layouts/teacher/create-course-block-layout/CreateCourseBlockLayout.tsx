@@ -73,7 +73,13 @@ const CreateCourseBlockLayout = () => {
               </ListItem>
             ))}
           </List>
-          <Button variant="black-text" size="medium" className="create-course-nav__action" disabled>
+          <Button
+            variant="black-text"
+            size="small"
+            fullWidth
+            disabled
+            className="create-course-nav__action button-rounded-sm"
+          >
             {t("publish.nav_title")}
           </Button>
         </Stack>
@@ -84,13 +90,7 @@ const CreateCourseBlockLayout = () => {
           <Progress value={0} title={t("students")} color="info">
             0/100
           </Progress>
-          <Button
-            size="small"
-            variant="black-contain"
-            sx={{
-              borderRadius: "20px",
-            }}
-          >
+          <Button size="small" variant="black-contain" className="button-rounded-sm">
             {t("change_plan")}
           </Button>
         </Stack>

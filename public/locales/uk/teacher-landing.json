@@ -1,75 +1,79 @@
 {
-  "teacher-landing.hero-section.title": "LMS для легкого старту, розвитку та зростання.",
-  "teacher-landing.hero-section.subtitle": "Створюй, розвивай і зростай",
-  "teacher-landing.hero-section.features": [
-    "Панель",
-    "Інтуїтивний інтерфейс",
-    "Комунікація",
-    "Оплати",
-    "Тести",
-    "Аналітика"
-  ],
-  "teacher-landing.hero-section.heroButton": "Спробуй безкоштовно",
-  "teacher-landing.hero-section.imageAltText": "Легкий запуск онлайн курсів на платформі xlntee",
-
-  "teacher-landing.about-section.title": "Викладачам, авторам курсів та освітнього бізнесу",
-  "teacher-landing.about-section.wordList": ["Створення", "Керування", "Розвиток", "Зростання"],
-  "teacher-landing.about-section.description": "Розширюйте можливості свого освітнього бізнесу, легко створюйте та продавайте свої навчальні продукти з інтуїтивним інтерфейсом, централізованним керуванням та аналітикою.",
-  "teacher-landing.about-section.imageAltText": "Досягнення цілей продажу онлайн курсів на xlntee",
-
-  "teacher-landing.features-section.caption": [
-    "Аналітика",
-    "Панель",
-    "Оплати",
-    "Кастомізація",
-    "Курси",
-    "Тести",
-    "Сертифікати",
-    "Лендінг сторінка"
-  ],
-  "teacher-landing.features-section.description": [
-    "Перетворюйте дані в користну інформацію для розвитку",
-    "Централізоване керування",
-    "Налаштування оплат",
-    "Підлаштовуйте продукт під свої потреби",
-    "Створюйте курси легко",
-    "Додавайте тести на перевірку знань",
-    "Надавайте сертифікати про завершення",
-    "Створюйте лендінги та просувайте свої курси"
-  ],
-  "teacher-landing.features-section.Button": "Безкоштовний період",
-
-  "teacher-landing.price-table-section.tableCaption": "Обери свій план",
-  "teacher-landing.price-table-section.firstPlanTitle": "Easy Start",
-  "teacher-landing.price-table-section.firstPlanDescription": "Легкий старт без витрат на створення та запуск навчальних продуктів — платиш тільки коли продаєш.",
-
-  "teacher-landing.price-table-section.getFree": "Отримати безкоштовно",
-  "teacher-landing.price-table-section.enroll": "Зареєструватися",
-  "teacher-landing.price-table-section.recommended": "Рекомендовано",
-  "teacher-landing.price-table-section.startForFree": "Почніть безкоштовно",
-
-  "teacher-landing.price-table-section.secondPlanTitle": "Business",
-  "teacher-landing.price-table-section.secondPlanDescription": "Коли є гарний продукт і хочеться розвиватися далі.",
-  "teacher-landing.price-table-section.thirdPlanTitle": "Xlntee Enterprise: рішення для підприємств",
-  "teacher-landing.price-table-section.thirdPlanDescription": "Створюйте якісні освітні продукти та керуйте ними з одного місця.",
-  "teacher-landing.price-table-section.thirdPlanButton": "Розрахувати ціну",
-  "teacher-landing.price-table-section.thirdPlanList": [
-    "Зручна система створення та редагування курсів",
-    "Централізоване керування",
-    "Професійна підтримка на всіх етапах"
-  ],
-  "teacher-landing.price-table-section.fourthPlanTitle": "Uncomercial",
-  "teacher-landing.price-table-section.fourthPlanDescription": "Коли присносиш користь не за гроші :)",
-  "teacher-landing.price-table-section.price": "Ціна",
-  "teacher-landing.price-table-section.commission": "Комісія 30%",
-  "teacher-landing.price-table-section.courseCount": "Кількість курсів",
-  "teacher-landing.price-table-section.courseCountDescription": "Кількість курсів / план*",
-  "teacher-landing.price-table-section.studentCount": "Кількість учнів",
-  "teacher-landing.price-table-section.studentCountDescription": "Кількість учнів на місяць*",
-  "teacher-landing.price-table-section.storage": "Сховище",
-  "teacher-landing.price-table-section.storageDescription": "Доступний об'єм сховища для створення курсу*",
-  "teacher-landing.price-table-section.certificates": "Сертифікати",
-
-  "teacher-landing.contactSubTitle": "Навчатися може бути простішим",
-  "teacher-landing.contactImageAltText": "Використовує всі можливості LMS xlntee для розробки онлайн-курсів"
+  "hero-section": {
+    "title": "LMS для легкого старту, розвитку та зростання.",
+    "subtitle": "Створюй, розвивай і зростай",
+    "features": ["Панель", "Інтуїтивний інтерфейс", "Комунікація", "Оплати", "Тести", "Аналітика"],
+    "button": "Спробуй безкоштовно",
+    "imageAltText": "Легкий запуск онлайн курсів на платформі xlntee"
+  },
+  "about-section": {
+    "title": "Викладачам, авторам курсів та освітнього бізнесу",
+    "wordList": ["Створення", "Керування", "Розвиток", "Зростання"],
+    "description": "Розширюйте можливості свого освітнього бізнесу, легко створюйте та продавайте свої навчальні продукти з інтуїтивним інтерфейсом, централізованним керуванням та аналітикою.",
+    "imageAltText": "Досягнення цілей продажу онлайн курсів на xlntee"
+  },
+  "features-section": {
+    "caption": ["Аналітика", "Панель", "Оплати", "Кастомізація", "Курси", "Тести", "Сертифікати", "Лендінг сторінка"],
+    "description": [
+      "Перетворюйте дані в користну інформацію для розвитку",
+      "Централізоване керування",
+      "Налаштування оплат",
+      "Підлаштовуйте продукт під свої потреби",
+      "Створюйте курси легко",
+      "Додавайте тести на перевірку знань",
+      "Надавайте сертифікати про завершення",
+      "Створюйте лендінги та просувайте свої курси"
+    ],
+    "button": "Безкоштовний період"
+  },
+  "price-plan": {
+    "title": "Як це працює",
+    "description": "Тарифні плани дійють на основі комісії з продажу. Не потрібно платити до запуску курси або в процесі його створення, ви платите тільки після початку продажів, ніяких додаткових витрат.",
+    "title-plan": "Тарифні Плани",
+    "cards": [
+      {
+        "pretitle": "Easy Start",
+        "title": "Процент %",
+        "text": "Швидкий стар без додаткових витрат. Створюй курси, розвивай продукт та рости.",
+        "button": "Обрати",
+        "descriptionList": [
+          {
+            "title": "Необмежена кількість курсів",
+            "text": "Створюйте необмежену кількість курсів"
+          },
+          {
+            "title": "Необмежена кількість студентів",
+            "text": "Ніяких обмежень на продажі, будьте вільні у розвитку вашого продукту"
+          },
+          {
+            "title": "Професійна підтримка акаунтів",
+            "text": "Отримайте підтримку у продовж всього шляху створення та розвитку вашого контенту"
+          }
+        ]
+      },
+      {
+        "pretitle": "Enterprise",
+        "title": "Процент %",
+        "text": "Запускайте курси швидше, керуйте бізнесом ефективніше, працюйте вільніше.",
+        "button": "Замовити демо",
+        "descriptionList": [
+          {
+            "title": "Швидке ствоерння контету",
+            "text": "Запускайте маштабні курси швидко з підтримкою нашої команди"
+          },
+          {
+            "title": "Керуання кількома курсами",
+            "text": "Оптимізуйте роботу з централізованим керуванням продуктами."
+          },
+          {
+            "title": "Професійна підтримка акаунтів",
+            "text": "Отримайте пріоритетну підтримку й індивідуальне навчання для вас та вашої команди."
+          }
+        ]
+      }
+    ]
+  },
+  "contacts": {
+    "title": "Навчатися може бути простішим"
+  }
 }

@@ -249,11 +249,11 @@ const GeneralPage = ({ title }: PageProps) => {
           </Box>
         </Grid>
       </Grid>
-      <Stack direction={{ sm: "row" }} flexWrap="wrap" gap="20px">
-        <Button variant="black-contain" size="large" sx={{ minWidth: "190px" }} onClick={handleSubmit(onSubmitForm)}>
+      <Stack direction={{ sm: "row" }} flexWrap="wrap" gap={{ sm: "20px", md: "40px" }}>
+        <Button variant="black-contain" size="medium" sx={{ minWidth: "190px" }} onClick={handleSubmit(onSubmitForm)}>
           {t("button_save")}
         </Button>
-        <Button variant="black-text" size="large" sx={{ minWidth: "190px" }}>
+        <Button variant="black-text" size="medium">
           {t("button_discard_changes")}
         </Button>
       </Stack>

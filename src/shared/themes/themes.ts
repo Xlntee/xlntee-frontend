@@ -218,7 +218,6 @@ defaultTheme.components = {
         lineHeight: 1.4,
         fontWeight: 700,
         boxShadow: "none",
-        // gap: 8,
         ":hover": {
           boxShadow: "none",
         },
@@ -228,9 +227,6 @@ defaultTheme.components = {
         borderRadius: 5,
         height: "auto",
         minHeight: 36,
-        [defaultTheme.breakpoints.up("md")]: {
-          minHeight: 40,
-        },
       },
       sizeMedium: {
         fontSize: 14,
@@ -260,6 +256,8 @@ defaultTheme.components = {
         },
         style: {
           padding: 0,
+          minWidth: "auto",
+
           ":hover": {
             backgroundColor: "transparent",
           },
@@ -297,9 +295,6 @@ defaultTheme.components = {
           color: XlnteeColors.LightColor,
           ":hover": {
             backgroundColor: XlnteeColors.BlackTextColor,
-          },
-          [defaultTheme.breakpoints.up("md")]: {
-            minHeight: 40,
           },
         },
       },
@@ -397,6 +392,8 @@ defaultTheme.components = {
         style: {
           color: XlnteeColors.DarkColor,
           padding: 0,
+          minWidth: "auto",
+
           "&:hover": {
             backgroundColor: "transparent",
           },

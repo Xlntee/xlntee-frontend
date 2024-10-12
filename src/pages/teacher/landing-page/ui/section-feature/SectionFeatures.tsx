@@ -15,8 +15,6 @@ import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import { AppRoutes } from "src/app/routing/appRoutes";
 import { Feature } from "src/widgets/components";
 
-//TODO: implement refactoring before component’s declaration
-
 const icons: JSX.Element[] = [
   <TrendingUpOutlinedIcon color="primary" />,
   <DashboardOutlinedIcon color="primary" />,
@@ -30,8 +28,8 @@ const icons: JSX.Element[] = [
 
 const SectionFeatures = () => {
   const { t, ready } = useTranslation("teacher-landing");
-  const captionList: string[] = t("teacher-landing.features-section.caption", { returnObjects: true });
-  const descriptionList: string[] = t("teacher-landing.features-section.description", { returnObjects: true });
+  const captionList: string[] = t("features-section.caption", { returnObjects: true });
+  const descriptionList: string[] = t("features-section.description", { returnObjects: true });
   const columnCount = 3;
 
   if (!ready) return "";
@@ -66,11 +64,9 @@ const SectionFeatures = () => {
                 color="primary"
                 variant="contained"
                 size="medium"
-                sx={{
-                  borderRadius: "25px",
-                }}
+                className="button-rounded-md"
               >
-                {t("teacher-landing.features-section.Button")}
+                {t("features-section.button")}
               </Button>
             </Grid>
           </Grid>

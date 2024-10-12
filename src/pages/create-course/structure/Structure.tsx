@@ -9,8 +9,6 @@ import { PageProps } from "pages/type";
 import { addLesson, selectLessons } from "./store/lessonsSlice";
 import { BlockLesson } from "./ui";
 
-import "./Structure.scss";
-
 const StructurePage = ({ title }: PageProps) => {
   useTitle(title);
   const { t } = useTranslation("teacher-create-course");
@@ -23,7 +21,7 @@ const StructurePage = ({ title }: PageProps) => {
   }
 
   return (
-    <Box className="create-course-structure">
+    <Box className="create-course-structure" mb="20px">
       {lessons.map((lesson, index, arr) => (
         <BlockLesson key={lesson.id} index={index} id={lesson.id} canDelete={arr.length > 1} />
       ))}
@@ -31,12 +29,13 @@ const StructurePage = ({ title }: PageProps) => {
         variant="black-outline"
         size="medium"
         fullWidth
-        className="create-course-structure__action-add-lesson"
+        className="button-rounded-md"
         onClick={() => dispatch(addLesson())}
+        sx={{ mb: "20px" }}
       >
         + {t("structure.add_lesson")}
       </Button>
-      <Button variant="black-contain" size="large" className="create-course-structure__action-save" onClick={onSave}>
+      <Button variant="black-contain" size="medium" onClick={onSave} sx={{ minWidth: "190px" }}>
         {t("button_save")}
       </Button>
     </Box>

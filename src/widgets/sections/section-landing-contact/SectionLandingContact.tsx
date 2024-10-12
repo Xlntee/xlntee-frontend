@@ -42,14 +42,9 @@ const SectionLandingContact = () => {
                 pt={{ md: "34px" }}
                 mb={{ xs: "20px", md: "0" }}
               >
-                <img
-                  src="assets/x-logo-modal-extend.png"
-                  width={175}
-                  height={64}
-                  alt={t("teacher-landing.contactSubTitle")}
-                />
+                <img src="assets/x-logo-modal-extend.png" width={175} height={64} alt={t("contacts.title")} />
                 <Typography variant="body2" fontWeight={300} color={XlnteeColors.BlackElementColor}>
-                  {t("teacher-landing.contactSubTitle")}
+                  {t("contacts.title")}
                 </Typography>
               </Stack>
             </Grid>

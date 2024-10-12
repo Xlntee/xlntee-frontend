@@ -44,9 +44,10 @@ const RegistrationForm = () => {
       <Stack direction="row" gap="20px" mb="20px">
         <Button
           variant="black-outline"
-          size="small"
+          size="medium"
+          fullWidth
           startIcon={<SchoolOutlinedIcon />}
-          className={cn("auth-form__btn-role", {
+          className={cn("auth-form__btn-role button-rounded-sm", {
             active: role === UserRole.STUDENT,
           })}
           onClick={() => setRole(UserRole.STUDENT)}
@@ -56,9 +57,10 @@ const RegistrationForm = () => {
         </Button>
         <Button
           variant="black-outline"
-          size="small"
+          size="medium"
+          fullWidth
           startIcon={<SchoolOutlinedIcon />}
-          className={cn("auth-form__btn-role", {
+          className={cn("auth-form__btn-role button-rounded-sm", {
             active: role === UserRole.TEACHER,
           })}
           onClick={() => setRole(UserRole.TEACHER)}

@@ -57,10 +57,10 @@ const AccountMenu = () => {
       <Stack direction="column" alignItems="start" gap="14px" p="14px 20px">
         <Button
           variant="black-outline"
-          fullWidth
           startIcon={<SwapHorizIcon fontSize="large" />}
-          sx={{ borderRadius: "30px" }}
+          fullWidth
           size="small"
+          className="button-rounded-lg"
           onClick={onToggleUserRole}
         >
           {user.role === UserRole.STUDENT && t(UserRole.TEACHER)}

@@ -12,21 +12,21 @@ export type PricePlanProps = {
   pretitle: string;
   title: string;
   text: string;
-  buttonText: string;
+  button: string;
   bgColor: string;
   descriptionList: PricePlanDescription[];
 };
 
-const PricePlanCard: FC<PricePlanProps> = ({ pretitle, title, text, buttonText, descriptionList, bgColor }) => {
+const PricePlanCard: FC<PricePlanProps> = ({ pretitle, title, text, button, descriptionList, bgColor }) => {
   return (
     <Stack
+      direction="column"
+      alignItems="center"
       gap="20px"
       width="100%"
-      direction="column"
       p="30px 30px 10px"
       borderRadius="20px"
       bgcolor={bgColor}
-      alignItems="center"
       className="base-shadow"
     >
       <Typography variant="body1">{pretitle}</Typography>
@@ -38,13 +38,13 @@ const PricePlanCard: FC<PricePlanProps> = ({ pretitle, title, text, buttonText, 
         <Button
           variant="outlined"
           size="large"
+          className="button-rounded-xl"
           sx={{
-            borderRadius: "50px",
-            borderWidth: 2,
             fontWeight: 400,
+            width: "250px",
           }}
         >
-          {buttonText}
+          {button}
         </Button>
       </Box>
       {descriptionList.length ? (

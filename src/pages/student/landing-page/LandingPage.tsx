@@ -9,28 +9,28 @@ const StudentLandingPage = ({ title }: PageProps) => {
   useTitle(title);
 
   const { t } = useTranslation("student-landing");
-  const heroSectionfeatures: string[] = t("student-landing.hero-section.features", { returnObjects: true });
-  const aboutSectionWords: string[] = t("student-landing.about-section.wordList", { returnObjects: true });
+  const heroSectionfeatures: string[] = t("hero-section.features", { returnObjects: true });
+  const aboutSectionWords: string[] = t("about-section.wordList", { returnObjects: true });
 
   return (
     <>
       <SectionLandingHero
-        title={t("student-landing.hero-section.title")}
-        subtitle={t("student-landing.hero-section.subtitle")}
-        buttonTitle={t("student-landing.hero-section.heroButton")}
+        title={t("hero-section.title")}
+        subtitle={t("hero-section.subtitle")}
+        buttonTitle={t("hero-section.button")}
         image={{
           src: "assets/student-landing-hero.png",
-          alt: t("student-landing.hero-section.imageAltText"),
+          alt: t("hero-section.imageAltText"),
         }}
         features={heroSectionfeatures}
       />
       <SectionLandingAbout
-        title={t("student-landing.about-section.title")}
+        title={t("about-section.title")}
         wordsList={aboutSectionWords}
-        description={t("student-landing.about-section.description")}
+        description={t("about-section.description")}
         image={{
           src: "assets/student-landing-about.png",
-          alt: "student-landing.about-section.imageAltText",
+          alt: "about-section.imageAltText",
         }}
       />
       <SectionFeatures />

@@ -33,7 +33,7 @@ const CoursePreviewPage = ({ title }: PageProps) => {
   if (!data) {
     return <div>No course data available</div>;
   }
-  //
+
   return (
     <>
       <Stack direction="column" gap="50px" py="40px">

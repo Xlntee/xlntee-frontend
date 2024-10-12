@@ -155,7 +155,7 @@ const BlockPromoCodes = () => {
                   value={promo.name}
                   InputProps={{ readOnly: true }}
                 />
-                <Button variant="black-text" onClick={() => onOpenModal(promo.id)}>
+                <Button variant="black-text" size="medium" onClick={() => onOpenModal(promo.id)}>
                   <DeleteOutlineIcon />
                 </Button>
               </Box>

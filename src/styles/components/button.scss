@@ -1,0 +1,35 @@
+.button-rounded-xxs {
+  &.MuiButtonBase-root {
+    border-radius: 5px;
+  }
+}
+
+.button-rounded-xs {
+  &.MuiButtonBase-root {
+    border-radius: 10px;
+  }
+}
+
+.button-rounded-sm {
+  &.MuiButtonBase-root {
+    border-radius: 20px;
+  }
+}
+
+.button-rounded-md {
+  &.MuiButtonBase-root {
+    border-radius: 25px;
+  }
+}
+
+.button-rounded-lg {
+  &.MuiButtonBase-root {
+    border-radius: 30px;
+  }
+}
+
+.button-rounded-xl {
+  &.MuiButtonBase-root {
+    border-radius: 50px;
+  }
+}
