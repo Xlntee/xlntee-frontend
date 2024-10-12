@@ -6,54 +6,58 @@ import OfflineBoltIcon from "@mui/icons-material/OfflineBolt";
 
 import { PricePlanCard, PricePlanProps } from "src/features";
 import { XlnteeColors } from "src/shared/themes/colors";
+import { useTranslation } from "react-i18next";
+
+interface PricePlanContentProps {
+  pretitle: string;
+  title: string;
+  text: string;
+  button: string;
+  descriptionList: {
+    title: string;
+    text: string;
+  }[];
+}
 
 const SectionPricePlan = () => {
+  const { t } = useTranslation("teacher-landing");
+
+  const cards: PricePlanContentProps[] = t("price-plan.cards", { returnObjects: true });
+
   const pricePlanCard1: PricePlanProps = {
-    pretitle: "Easy Start",
-    title: "Процент %",
-    text: "Швидкий стар без додаткових витрат. Створюй курси, розвивай продукт та рости.",
-    buttonText: "Обрати",
+    ...cards[0],
     bgColor: XlnteeColors.LightElementColor,
     descriptionList: [
       {
         icon: <AllInclusiveIcon sx={{ fontSize: "30px" }} />,
-        title: "Необмежена кількість курсів",
-        text: "Створюйте необмежену кількість курсів",
+        ...cards[0].descriptionList[0],
       },
       {
         icon: <AllInclusiveIcon sx={{ fontSize: "30px" }} />,
-        title: "Необмежена кількість студентів",
-        text: "Ніяких обмежень на продажі, будьте вільні у розвитку вашого продукту",
+        ...cards[0].descriptionList[1],
       },
       {
         icon: <SupportAgentIcon sx={{ fontSize: "30px" }} />,
-        title: "Професійна підтримка акаунтів",
-        text: "Отримайте підтримку у продовж всього шляху створення та розвитку вашого контенту",
+        ...cards[0].descriptionList[2],
       },
     ],
   };
 
   const pricePlanCard2: PricePlanProps = {
-    pretitle: "Enterprise",
-    title: "Процент %",
-    text: "Запускайте курси швидше, керуйте бізнесом ефективніше, працюйте вільніше.",
-    buttonText: "Замовити демо",
+    ...cards[1],
     bgColor: XlnteeColors.Violet200,
     descriptionList: [
       {
         icon: <OfflineBoltIcon sx={{ fontSize: "30px" }} />,
-        title: "Швидке ствоерння контету",
-        text: "Запускайте маштабні курси швидко з підтримкою нашої команди",
+        ...cards[1].descriptionList[0],
       },
       {
         icon: <QuizIcon sx={{ fontSize: "30px" }} />,
-        title: "Керуання кількома курсами",
-        text: "Оптимізуйте роботу з централізованим керуванням продуктами.",
+        ...cards[1].descriptionList[1],
       },
       {
         icon: <SupportAgentIcon sx={{ fontSize: "30px" }} />,
-        title: "Професійна підтримка акаунтів",
-        text: "Отримайте пріоритетну підтримку й індивідуальне навчання для вас та вашої команди. ",
+        ...cards[1].descriptionList[2],
       },
     ],
   };
@@ -65,15 +69,14 @@ const SectionPricePlan = () => {
           <Box border={`1px solid ${XlnteeColors.GrayStrokeColor}`} borderRadius="20px" p="20px" mb="40px">
             <Stack direction={{ md: "row-reverse" }} justifyContent={{ md: "space-between" }} gap="20px">
               <Box>
-                <Typography variant="h5">Тарифні Плани</Typography>
+                <Typography variant="h5">{t("price-plan.title-plan")}</Typography>
               </Box>
               <Box maxWidth="400px">
                 <Typography variant="h6" fontWeight={400}>
-                  Як це працює
+                  {t("price-plan.title")}
                 </Typography>
                 <Typography variant="body2" fontWeight={300}>
-                  Тарифні плани дійють на основі комісії з продажу. Не потрібно платити до запуску курси або в процесі
-                  його створення, ви платите тільки після початку продажів, ніяких додаткових витрат.
+                  {t("price-plan.description")}
                 </Typography>
               </Box>
             </Stack>

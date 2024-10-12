@@ -12,11 +12,11 @@ const typographyList = ["h1", "h2", "h3", "h4", "h5", "h6"] as const;
 const buttonColorList = ["primary", "secondary", "success", "error"] as const;
 const buttonSizeList = ["small", "medium", "large"];
 
-const renderButtons = (variant: string, size: string, styles?: CSSProperties) => {
+const renderButtons = (variant: string, size: string, className?: string) => {
   return (
     <>
       {buttonColorList.map((item) => (
-        <Button key={item} color={item} variant={variant as any} size={size as any} style={styles}>
+        <Button key={item} color={item} variant={variant as any} size={size as any} className={className}>
           {item}
         </Button>
       ))}
@@ -24,30 +24,30 @@ const renderButtons = (variant: string, size: string, styles?: CSSProperties) =>
   );
 };
 
-const renderButtonsGridCol = (variant: string, styles?: CSSProperties) => {
+const renderButtonsGridCol = (variant: string, className?: string) => {
   return (
     <Grid item xs={12} sm={6} md={3}>
       <Typography variant="h6">{variant} small</Typography>
-      <Stack gap={2} mb={2} direction="column">
-        {renderButtons(variant, "small", styles)}
+      <Stack gap={2} mb={2} direction="column" alignItems="start">
+        {renderButtons(variant, "small", className)}
       </Stack>
       <Typography variant="h6">{variant} medium</Typography>
-      <Stack gap={2} mb={2} direction="column">
-        {renderButtons(variant, "medium", styles)}
+      <Stack gap={2} mb={2} direction="column" alignItems="start">
+        {renderButtons(variant, "medium", className)}
       </Stack>
       <Typography variant="h6">{variant} large</Typography>
-      <Stack gap={2} mb={2} direction="column">
-        {renderButtons(variant, "large", styles)}
+      <Stack gap={2} mb={2} direction="column" alignItems="start">
+        {renderButtons(variant, "large", className)}
       </Stack>
     </Grid>
   );
 };
 
-const renderButtonsBlack = (variant: "black-contain" | "black-outline" | "black-text", styles?: CSSProperties) => {
+const renderButtonsBlack = (variant: "black-contain" | "black-outline" | "black-text", className?: string) => {
   return (
     <Stack gap={2} mb={2} direction="column">
       {buttonSizeList.map((item) => (
-        <Button key={item} variant={variant} size={item as any} style={styles}>
+        <Button key={item} variant={variant} size={item as any} className={className}>
           {variant}
         </Button>
       ))}
@@ -125,21 +125,15 @@ const UiPage = ({ title }: PageProps) => {
         </Grid>
         <Typography variant="h2">Buttons Rounded</Typography>
         <Grid container spacing={2}>
-          {renderButtonsGridCol("contained", {
-            borderRadius: 25,
-          })}
-          {renderButtonsGridCol("outlined", {
-            borderRadius: 25,
-          })}
-          {renderButtonsGridCol("text", {
-            borderRadius: 50,
-          })}
+          {renderButtonsGridCol("contained", "button-rounded-md")}
+          {renderButtonsGridCol("outlined", "button-rounded-md")}
+          {renderButtonsGridCol("text", "button-rounded-lg")}
         </Grid>
         <Typography variant="h2">Buttons custom variants</Typography>
         <Grid container spacing={4}>
-          <Grid item>{renderButtonsBlack("black-contain")}</Grid>
-          <Grid item>{renderButtonsBlack("black-outline")}</Grid>
-          <Grid item>{renderButtonsBlack("black-text")}</Grid>
+          {renderButtonsGridCol("black-contain", "button-rounded-md")}
+          {renderButtonsGridCol("black-outline", "button-rounded-md")}
+          {renderButtonsGridCol("black-text")}
         </Grid>
         <Box marginBlock={3}>
           <Divider />

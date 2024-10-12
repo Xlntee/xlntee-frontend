@@ -1,75 +1,88 @@
 {
-  "teacher-landing.hero-section.title": "LMS for easy start, creation and growth",
-  "teacher-landing.hero-section.subtitle": "create, improve, grow",
-  "teacher-landing.hero-section.features": [
-    "Dashboard",
-    "Easy navigation",
-    "Communication",
-    "Payments",
-    "Quizzes",
-    "Analytics"
-  ],
-  "teacher-landing.hero-section.heroButton": "Try for Free",
-  "teacher-landing.hero-section.imageAltText": "Launch your online courses easily on xlntee",
-
-  "teacher-landing.about-section.title": "For creators, lecturers, and educational businesses.",
-  "teacher-landing.about-section.wordList": ["Create", "Manage", "Earn", "Grow"],
-  "teacher-landing.about-section.description": "Empower your educational business, and courses delivery, manage, and sell easily. We offer intuitive design tools, centralized management, and detailed analytics to support continuous improvement and maximize earnings, nothing needlessly.",
-  "teacher-landing.about-section.imageAltText": "Succeed selling courses online with xlntee",
-
-  "teacher-landing.features-section.caption": [
-    "Analytics",
-    "Dashboard",
-    "Payments",
-    "Customization",
-    "Courses",
-    "Quizzes",
-    "Certificates",
-    "Landing pages"
-  ],
-  "teacher-landing.features-section.description": [
-    "Transforms data into actionable insights for businesses",
-    "Manage everything from one place",
-    "Promote, offer discounts, and get payments",
-    "Customize your product for your needs",
-    "Create and manage courses",
-    "Create tests for knowledge ",
-    "Provide certificates",
-    "Navigate students directly to your courses"
-  ],
-  "teacher-landing.features-section.Button": "Try for Free",
-
-  "teacher-landing.price-table-section.tableCaption": "Choose the best plan for you",
-  "teacher-landing.price-table-section.firstPlanTitle": "Easy Start",
-  "teacher-landing.price-table-section.firstPlanDescription": "Easy start with no costs to create and launch educational products — Pay when you sell.",
-
-  "teacher-landing.price-table-section.getFree": "Get for Free",
-  "teacher-landing.price-table-section.enroll": "Enroll",
-  "teacher-landing.price-table-section.recommended": "Recommended",
-  "teacher-landing.price-table-section.startForFree": "Start for Free",
-
-  "teacher-landing.price-table-section.secondPlanTitle": "Business",
-  "teacher-landing.price-table-section.secondPlanDescription": "When your product is good and it’s time for enlargement.",
-  "teacher-landing.price-table-section.thirdPlanTitle": "Xlntee Enterprise: Solution for businesses",
-  "teacher-landing.price-table-section.thirdPlanDescription": "Create and manage quality educational products from one place.",
-  "teacher-landing.price-table-section.thirdPlanButton": "Contact Enterprise Team",
-  "teacher-landing.price-table-section.thirdPlanList": [
-    "Create and edit courses conveniently",
-    "Centralized management system",
-    "Professional support on all implementation levels"
-  ],
-  "teacher-landing.price-table-section.fourthPlanTitle": "Uncomercial",
-  "teacher-landing.price-table-section.fourthPlanDescription": "When you provide knowledge for nothing because you like sharing :) ",
-  "teacher-landing.price-table-section.price": "Price",
-  "teacher-landing.price-table-section.commission": "Commission 30%",
-  "teacher-landing.price-table-section.courseCount": "Courses per plan",
-  "teacher-landing.price-table-section.courseCountDescription": "number of courses / plan*",
-  "teacher-landing.price-table-section.studentCount": "Students",
-  "teacher-landing.price-table-section.studentCountDescription": "Number of students per month*",
-  "teacher-landing.price-table-section.storage": "Storage",
-  "teacher-landing.price-table-section.storageDescription": "Storage for course creation*",
-  "teacher-landing.price-table-section.certificates": "Certificates",
-
-  "teacher-landing.contactSubTitle": "Education can be easier",
-  "teacher-landing.contactImageAltText": "Use all xlntee features to improve your online courses"
+  "hero-section": {
+    "title": "LMS for easy start, creation and growth",
+    "subtitle": "create, improve, grow",
+    "features": ["Dashboard", "Easy navigation", "Communication", "Payments", "Quizzes", "Analytics"],
+    "heroButton": "Try for Free",
+    "imageAltText": "Launch your online courses easily on xlntee"
+  },
+  "about-section": {
+    "title": "For creators, lecturers, and educational businesses.",
+    "wordList": ["Create", "Manage", "Earn", "Grow"],
+    "description": "Empower your educational business, and courses delivery, manage, and sell easily. We offer intuitive design tools, centralized management, and detailed analytics to support continuous improvement and maximize earnings, nothing needlessly.",
+    "imageAltText": "Succeed selling courses online with xlntee"
+  },
+  "features-section": {
+    "caption": [
+      "Analytics",
+      "Dashboard",
+      "Payments",
+      "Customization",
+      "Courses",
+      "Quizzes",
+      "Certificates",
+      "Landing pages"
+    ],
+    "description": [
+      "Transforms data into actionable insights for businesses",
+      "Manage everything from one place",
+      "Promote, offer discounts, and get payments",
+      "Customize your product for your needs",
+      "Create and manage courses",
+      "Create tests for knowledge ",
+      "Provide certificates",
+      "Navigate students directly to your courses"
+    ],
+    "Button": "Try for Free"
+  },
+  "price-plan": {
+    "title": "How it works",
+    "description": "Tariff plans are based on sales commission. There is no need to pay before launching the course or during its creation, you pay only after the start of sales, no additional costs.",
+    "title-plan": "Tariff Plans",
+    "cards": [
+      {
+        "pretitle": "Easy Start",
+        "title": "Percent %",
+        "text": "Quick start without additional costs. Create courses, develop a product and grow.",
+        "button": "Select",
+        "descriptionList": [
+          {
+            "title": "Unlimited number of courses",
+            "text": "Create unlimited courses"
+          },
+          {
+            "title": "Unlimited number of students",
+            "text": "No sales restrictions, be free to develop your product"
+          },
+          {
+            "title": "Professional account support",
+            "text": "Get support throughout the entire process of creating and developing your content"
+          }
+        ]
+      },
+      {
+        "pretitle": "Enterprise",
+        "title": "Percent %",
+        "text": "Run courses faster, manage business more efficiently, work slower.",
+        "button": "Order a demo",
+        "descriptionList": [
+          {
+            "title": "Quick Content Creation",
+            "text": "Launch large-scale courses quickly with the support of our team"
+          },
+          {
+            "title": "Manage multiple courses",
+            "text": "Streamline your work with centralized product management."
+          },
+          {
+            "title": "Professional account support",
+            "text": "Get priority support and personalized training for you and your team."
+          }
+        ]
+      }
+    ]
+  },
+  "contacts": {
+    "title": "Education can be easier"
+  }
 }
