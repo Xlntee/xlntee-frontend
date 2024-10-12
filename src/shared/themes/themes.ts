@@ -218,7 +218,6 @@ defaultTheme.components = {
         lineHeight: 1.4,
         fontWeight: 700,
         boxShadow: "none",
-        // gap: 8,
         ":hover": {
           boxShadow: "none",
         },
@@ -260,6 +259,13 @@ defaultTheme.components = {
         },
         style: {
           padding: 0,
+          minWidth: "auto",
+          minHeight: "auto",
+
+          [defaultTheme.breakpoints.up("md")]: {
+            minHeight: "auto",
+          },
+
           ":hover": {
             backgroundColor: "transparent",
           },
@@ -397,6 +403,13 @@ defaultTheme.components = {
         style: {
           color: XlnteeColors.DarkColor,
           padding: 0,
+          minWidth: "auto",
+          minHeight: "auto",
+
+          [defaultTheme.breakpoints.up("md")]: {
+            minHeight: "auto",
+          },
+
           "&:hover": {
             backgroundColor: "transparent",
           },

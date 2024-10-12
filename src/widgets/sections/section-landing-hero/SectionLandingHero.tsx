@@ -45,8 +45,8 @@ const SectionLandingHero: FC<SectionLandingHeroProps> = ({ title, subtitle, butt
                 color="secondary"
                 variant="contained"
                 size="large"
+                className="button-rounded-lg"
                 sx={{
-                  borderRadius: "50px",
                   px: "36px",
                 }}
               >
