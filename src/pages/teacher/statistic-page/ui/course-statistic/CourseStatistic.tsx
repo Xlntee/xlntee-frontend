@@ -19,9 +19,9 @@ interface CourseStatisticProps {
 const CourseStatistic: FC<CourseStatisticProps> = ({ id, title, status, updateTime, image }) => {
   const { t } = useTranslation("teacher");
 
-  const onDelete = (id: string) => alert(`course with id: ${id} deleted`);
-  const onEdit = (id: string) => alert(`course with id: ${id} editing`);
-  const onRestore = (id: string) => alert(`course with id: ${id} restored`);
+  const onDelete = (idCourse: string): void => alert(`course with id: ${idCourse} deleted`);
+  const onEdit = (idCourse: string): void => alert(`course with id: ${idCourse} editing`);
+  const onRestore = (idCourse: string): void => alert(`course with id: ${idCourse} restored`);
 
   return (
     <Box className="course-statistic">
@@ -40,7 +40,7 @@ const CourseStatistic: FC<CourseStatisticProps> = ({ id, title, status, updateTi
         direction={{ xs: "row" }}
         justifyContent={{
           xs: "space-between",
-          md: "start",
+          md: "start"
         }}
         flexWrap="wrap"
         flex="1"

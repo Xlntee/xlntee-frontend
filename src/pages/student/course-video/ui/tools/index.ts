@@ -1,1 +1,1 @@
-export { default as Tools, ToolsTabEnum } from "./Tools";
+export { default as Tools } from "./Tools";

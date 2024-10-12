@@ -10,14 +10,14 @@ import { apiSlice } from "../api/apiSlice";
 const authPersistConfig: PersistConfig<IAuthState> = {
   key: "auth",
   whitelist: ["token"],
-  storage,
+  storage
 };
 
 const rootReducer = combineReducers({
   auth: persistReducer(authPersistConfig, authReducer),
   lessons: lessonsReducer,
   user: userReducer,
-  [apiSlice.reducerPath]: apiSlice.reducer,
+  [apiSlice.reducerPath]: apiSlice.reducer
 });
 
 export default rootReducer;

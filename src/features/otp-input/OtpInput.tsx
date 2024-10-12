@@ -8,7 +8,7 @@ import {
   ChangeEvent,
   ClipboardEvent,
   FC,
-  useEffect,
+  useEffect
 } from "react";
 
 import { Stack } from "@mui/material";
@@ -26,17 +26,17 @@ interface OTPProps {
 const OTP: FC<OTPProps> = ({ separator, length, value, onChange }) => {
   const inputRefs = useRef<HTMLInputElement[]>(new Array(length).fill(null));
 
-  const focusInput = (targetIndex: number) => {
+  const focusInput = (targetIndex: number): void => {
     const targetInput = inputRefs.current[targetIndex];
     targetInput.focus();
   };
 
-  const selectInput = (targetIndex: number) => {
+  const selectInput = (targetIndex: number): void => {
     const targetInput = inputRefs.current[targetIndex];
     targetInput.select();
   };
 
-  const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>, currentIndex: number) => {
+  const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>, currentIndex: number): void => {
     switch (event.key) {
       case "ArrowLeft":
         event.preventDefault();
@@ -75,7 +75,7 @@ const OTP: FC<OTPProps> = ({ separator, length, value, onChange }) => {
     }
   };
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>, currentIndex: number) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>, currentIndex: number): void => {
     const currentValue = event.target.value;
     let indexToEnter = 0;
 
@@ -99,7 +99,7 @@ const OTP: FC<OTPProps> = ({ separator, length, value, onChange }) => {
     }
   };
 
-  const handlePaste = (event: ClipboardEvent<HTMLInputElement>, currentIndex: number) => {
+  const handlePaste = (event: ClipboardEvent<HTMLInputElement>, currentIndex: number): void => {
     event.preventDefault();
     const clipboardData = event.clipboardData;
 
@@ -142,8 +142,8 @@ const OTP: FC<OTPProps> = ({ separator, length, value, onChange }) => {
                 onChange: (event) => handleChange(event, index),
                 onClick: () => selectInput(index),
                 onPaste: (event) => handlePaste(event, index),
-                value: value[index] ?? "",
-              },
+                value: value[index] ?? ""
+              }
             }}
           />
           {index === length - 1 ? null : separator}
@@ -160,7 +160,7 @@ interface OTPInputProps {
 }
 
 const OTPInput: FC<OTPInputProps> = ({ length = 4, separator, onUpdate }) => {
-  const [otp, setOtp] = useState("");
+  const [otp, setOtp] = useState<string>("");
 
   useEffect(() => {
     if (otp.length === length) {

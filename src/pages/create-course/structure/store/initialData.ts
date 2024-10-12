@@ -7,7 +7,7 @@ export const getInitalAnswerVariant = (): TestConfiguratonVariant => {
   return {
     id: uuidv4(),
     title: "",
-    answer: false,
+    answer: false
   };
 };
 
@@ -15,14 +15,14 @@ export const getInitialTestConfiguration = (): MakeKeyRequired<TestConfiguraton,
   return {
     id: uuidv4(),
     question: "",
-    variants: [getInitalAnswerVariant(), getInitalAnswerVariant()],
+    variants: [getInitalAnswerVariant(), getInitalAnswerVariant()]
   };
 };
 
 export const getInitialLecture = (id?: string): Lecture => {
   return {
     id: id || uuidv4(),
-    title: "",
+    title: ""
   };
 };
 
@@ -35,9 +35,9 @@ export const initialState: ILessonsState = {
       lectures: [
         {
           id: uuidv4(),
-          title: "",
-        },
-      ],
-    },
-  ],
+          title: ""
+        }
+      ]
+    }
+  ]
 };

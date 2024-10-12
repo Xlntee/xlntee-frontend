@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -12,33 +12,33 @@ import { User } from "../user";
 
 import "./Header.scss";
 
-const HeaderProfile = () => {
+const HeaderProfile: FC = () => {
   const { t } = useTranslation("auth");
 
   const authUser = false;
 
   const [open, setOpen] = useState<boolean>(false);
 
-  const toggleDrawer = () => {
+  function toggleDrawer(): void {
     setOpen((prevState) => !prevState);
-  };
+  }
 
   const navList: NavigationLinkType[] = [
     {
       id: "1",
       name: t("teacher"),
       path: "/",
-      type: "link",
+      type: "link"
     },
     {
       id: "2",
       name: t("student"),
       path: "/student",
-      type: "link",
-    },
+      type: "link"
+    }
   ];
 
-  function Tools() {
+  function Tools(): JSX.Element {
     return (
       <Stack direction="row" alignItems="center" gap="10px" className="header__tools">
         <LanguageSwitcher compact />

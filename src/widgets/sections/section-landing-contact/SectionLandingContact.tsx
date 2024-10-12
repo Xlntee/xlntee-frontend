@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
@@ -12,19 +13,19 @@ import "./SectionLandingContact.scss";
 const links: ContactLinkType[] = [
   {
     title: "Support",
-    link: `mailto:${ContactsLinks.Support}`,
+    link: `mailto:${ContactsLinks.Support}`
   },
   {
     title: "Cooperation",
-    link: `mailto:${ContactsLinks.Cooperation}`,
+    link: `mailto:${ContactsLinks.Cooperation}`
   },
   {
     title: "Press",
-    link: `mailto:${ContactsLinks.Press}`,
-  },
+    link: `mailto:${ContactsLinks.Press}`
+  }
 ];
 
-const SectionLandingContact = () => {
+const SectionLandingContact: FC = () => {
   const { t } = useTranslation("teacher-landing");
 
   return (

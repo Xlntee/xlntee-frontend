@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import cn from "classnames";
@@ -16,7 +17,7 @@ import { AppRoutes } from "src/app/routing/appRoutes";
 
 import "./AccountMenu.scss";
 
-const AccountMenu = () => {
+const AccountMenu: FC = () => {
   const { t } = useTranslation("auth");
 
   const dispatch = useAppDispatch();
@@ -24,7 +25,7 @@ const AccountMenu = () => {
 
   const user = useAppSelector(getUser);
 
-  function onToggleUserRole() {
+  function onToggleUserRole(): void {
     dispatch(switchRole());
     if (user.role === UserRole.STUDENT) {
       navigate(AppRoutes.teacher.dashboard);
@@ -42,7 +43,7 @@ const AccountMenu = () => {
           alignItems="center"
           gap="4px"
           className={cn("account-menu__user", {
-            "account-menu__user--linked": user.role === UserRole.TEACHER,
+            "account-menu__user--linked": user.role === UserRole.TEACHER
           })}
         >
           <Link to={`${user.role}/dashboard/profile`}>

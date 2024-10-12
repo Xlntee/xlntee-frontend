@@ -1,4 +1,12 @@
-import { BaseQueryFn, FetchArgs, FetchBaseQueryError, createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { QueryReturnValue } from "@reduxjs/toolkit/dist/query/baseQueryTypes";
+import {
+  BaseQueryFn,
+  FetchArgs,
+  FetchBaseQueryError,
+  FetchBaseQueryMeta,
+  createApi,
+  fetchBaseQuery
+} from "@reduxjs/toolkit/query/react";
 import { logOut, setCredentials } from "pages/auth/login/store/authSlice";
 import { RootState } from "src/app/store/store";
 
@@ -13,14 +21,14 @@ const baseQuery = fetchBaseQuery({
     }
 
     return headers;
-  },
+  }
 });
 
 const baseQueryWithReauth: BaseQueryFn<string | FetchArgs, unknown, FetchBaseQueryError> = async (
   args,
   api,
-  extraOptions,
-) => {
+  extraOptions
+): Promise<QueryReturnValue<unknown, FetchBaseQueryError, FetchBaseQueryMeta>> => {
   let result = await baseQuery(args, api, extraOptions);
 
   if (result?.error?.status === 403) {
@@ -42,5 +50,5 @@ const baseQueryWithReauth: BaseQueryFn<string | FetchArgs, unknown, FetchBaseQue
 
 export const apiSlice = createApi({
   baseQuery: baseQueryWithReauth,
-  endpoints: () => ({}),
+  endpoints: () => ({})
 });

@@ -23,7 +23,7 @@ const Snackbar: FC<SnackbarProps> = ({
   horizontalPosition = "right",
   color = "error",
   hideDuration = 2000,
-  onClose,
+  onClose
 }) => {
   return (
     <MuiSnackbar

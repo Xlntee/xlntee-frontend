@@ -17,9 +17,9 @@ const LanguageSwitcher: FC<LanguageSwitcherProps> = ({ compact = false }) => {
 
   const [lang, setLang] = useState<string>("");
 
-  function onHandleChangeLanguage(lang: string) {
-    i18n.changeLanguage(lang);
-    setLang(lang);
+  function onHandleChangeLanguage(language: string): void {
+    i18n.changeLanguage(language);
+    setLang(language);
   }
 
   useEffect(() => {
@@ -41,7 +41,7 @@ const LanguageSwitcher: FC<LanguageSwitcherProps> = ({ compact = false }) => {
         onHandleChangeLanguage(e.target.value);
       }}
       inputProps={{
-        "aria-label": "Select language",
+        "aria-label": "Select language"
       }}
     >
       {languages.map((item) => (

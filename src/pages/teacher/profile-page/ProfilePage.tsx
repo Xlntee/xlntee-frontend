@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -32,7 +33,7 @@ type FieldProps = {
   placeholder: string;
 };
 
-const ProfilePage = ({ title }: PageProps) => {
+const ProfilePage: FC<PageProps> = ({ title }) => {
   useTitle(title);
   const { t } = useTranslation("auth");
   const { t: tCommon } = useTranslation("common");
@@ -43,60 +44,60 @@ const ProfilePage = ({ title }: PageProps) => {
     {
       key: "nickname",
       label: t("nickname-label"),
-      placeholder: t("nickname-placeholder"),
+      placeholder: t("nickname-placeholder")
     },
     {
       key: "phone",
       label: t("phone-label"),
-      placeholder: t("phone-placeholder"),
+      placeholder: t("phone-placeholder")
     },
     {
       key: "firstName",
       label: t("firstName-label"),
-      placeholder: t("firstName-placeholder"),
+      placeholder: t("firstName-placeholder")
     },
     {
       key: "email",
       label: t("email-label"),
-      placeholder: t("email-placeholder"),
+      placeholder: t("email-placeholder")
     },
     {
       key: "lastName",
       label: t("lastName-label"),
-      placeholder: t("lastName-placeholder"),
+      placeholder: t("lastName-placeholder")
     },
     {
       key: "password",
       label: t("password-label"),
-      placeholder: t("password-placeholder"),
+      placeholder: t("password-placeholder")
     },
     {
       key: "youtube",
       label: "Youtube",
-      placeholder: "https://",
+      placeholder: "https://"
     },
     {
       key: "facebook",
       label: "Facebook",
-      placeholder: "https://",
+      placeholder: "https://"
     },
     {
       key: "twitter",
       label: "Twitter",
-      placeholder: "https://",
+      placeholder: "https://"
     },
     {
       key: "instagram",
       label: "Instagram",
-      placeholder: "https://",
-    },
+      placeholder: "https://"
+    }
   ];
 
   const { register, handleSubmit } = useForm<ProfileFormValues>({
-    mode: "onSubmit",
+    mode: "onSubmit"
   });
 
-  function onSubmit(data: ProfileFormValues) {
+  function onSubmit(data: ProfileFormValues): void {
     console.log(data);
   }
 
@@ -121,7 +122,7 @@ const ProfilePage = ({ title }: PageProps) => {
                       fullWidth
                       placeholder={field.placeholder}
                       InputLabelProps={{
-                        shrink: true,
+                        shrink: true
                       }}
                     />
                     {field.key === "email" && (

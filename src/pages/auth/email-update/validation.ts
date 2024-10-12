@@ -1,5 +1,6 @@
 import * as yup from "yup";
 
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export const validationSchema = (oldEmail: string) =>
   yup.object().shape({
     new_email: yup
@@ -10,7 +11,7 @@ export const validationSchema = (oldEmail: string) =>
     confirm_email: yup
       .string()
       .oneOf([yup.ref("new_email")], "Emails must match")
-      .required("Confirm email is required"),
+      .required("Confirm email is required")
   });
 
 export type FormValues = {

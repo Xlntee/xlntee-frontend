@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { Outlet } from "react-router-dom";
 import { Box } from "@mui/material";
 
@@ -8,7 +9,7 @@ interface LayoutProps {
   showFooter?: boolean;
 }
 
-const PublicLayout = ({ showFooter = true }: LayoutProps) => {
+const PublicLayout: FC<LayoutProps> = ({ showFooter = true }) => {
   return (
     <>
       <Header />

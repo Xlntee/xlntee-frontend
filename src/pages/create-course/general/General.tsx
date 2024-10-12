@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import yup from "yup";
 import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -17,7 +17,7 @@ import {
   Autocomplete,
   Chip,
   Button,
-  FormHelperText,
+  FormHelperText
 } from "@mui/material";
 
 import useTitle from "src/hooks/useTitle/useTitle";
@@ -40,7 +40,7 @@ export interface SelectFieldBoxProps {
 
 export type FormValues = yup.InferType<typeof validationSchema>;
 
-const GeneralPage = ({ title }: PageProps) => {
+const GeneralPage: FC<PageProps> = ({ title }) => {
   const { t } = useTranslation("teacher-create-course");
 
   useTitle(title);
@@ -51,18 +51,18 @@ const GeneralPage = ({ title }: PageProps) => {
     handleSubmit,
     register,
     control,
-    formState: { errors },
+    formState: { errors }
   } = useForm<FormValues>({
     mode: "onSubmit",
     defaultValues: defaultValuesForm,
-    resolver: yupResolver(validationSchema),
+    resolver: yupResolver(validationSchema)
   });
 
   useEffect(() => {
     setSelectFields(data);
   }, []);
 
-  function onSubmitForm(data: FormValues) {
+  function onSubmitForm(data: FormValues): void {
     console.log(data);
   }
 
@@ -73,17 +73,17 @@ const GeneralPage = ({ title }: PageProps) => {
       options: [
         {
           title: "category 1",
-          value: "category_1",
+          value: "category_1"
         },
         {
           title: "category 2",
-          value: "category_2",
+          value: "category_2"
         },
         {
           title: "category 3",
-          value: "category_3",
-        },
-      ],
+          value: "category_3"
+        }
+      ]
     },
     {
       title: `${t("general.select_field_level")}*`,
@@ -91,21 +91,21 @@ const GeneralPage = ({ title }: PageProps) => {
       options: [
         {
           title: Difficulty.ALL,
-          value: Difficulty.ALL,
+          value: Difficulty.ALL
         },
         {
           title: Difficulty.EASY,
-          value: Difficulty.EASY,
+          value: Difficulty.EASY
         },
         {
           title: Difficulty.MIDDLE,
-          value: Difficulty.MIDDLE,
+          value: Difficulty.MIDDLE
         },
         {
           title: Difficulty.EXPERT,
-          value: Difficulty.EXPERT,
-        },
-      ],
+          value: Difficulty.EXPERT
+        }
+      ]
     },
     {
       title: `${t("general.select_field_subcategory")}*`,
@@ -113,17 +113,17 @@ const GeneralPage = ({ title }: PageProps) => {
       options: [
         {
           title: "subcategory 1",
-          value: "subcategory_1",
+          value: "subcategory_1"
         },
         {
           title: "subcategory 2",
-          value: "subcategory_2",
+          value: "subcategory_2"
         },
         {
           title: "subcategory 3",
-          value: "subcategory_3",
-        },
-      ],
+          value: "subcategory_3"
+        }
+      ]
     },
     {
       title: `${t("general.select_field_language")}*`,
@@ -131,14 +131,14 @@ const GeneralPage = ({ title }: PageProps) => {
       options: [
         {
           title: Language.ENGLISH,
-          value: Language.ENGLISH,
+          value: Language.ENGLISH
         },
         {
           title: Language.UKRAINIAN,
-          value: Language.UKRAINIAN,
-        },
-      ],
-    },
+          value: Language.UKRAINIAN
+        }
+      ]
+    }
   ];
 
   return (
@@ -184,28 +184,30 @@ const GeneralPage = ({ title }: PageProps) => {
       </Box>
       <Grid container columnSpacing={{ xs: "20px", md: "30px", xl: "50px" }}>
         {selectFields.length
-          ? selectFields.map(({ title, value, options }) => (
-              <Grid key={value} item xs={12} sm={6}>
+          ? selectFields.map((item) => (
+              <Grid key={item.value} item xs={12} sm={6}>
                 <Box className="field-box">
                   <Typography variant="h5" mb="8px" className="field-box__title">
                     {title}
                   </Typography>
                   <Controller
-                    name={value}
+                    name={item.value}
                     control={control}
                     render={({ field }) => (
-                      <Select {...field} error={!!errors[value]?.message}>
-                        {options.length
-                          ? options.map(({ title, value }) => (
-                              <MenuItem key={value} value={value}>
-                                {title}
+                      <Select {...field} error={!!errors[item.value]?.message}>
+                        {item.options.length
+                          ? item.options.map((option) => (
+                              <MenuItem key={option.value} value={option.value}>
+                                {option.title}
                               </MenuItem>
                             ))
                           : null}
                       </Select>
                     )}
                   />
-                  {errors[value]?.message && <FormHelperText error={true}>{errors[value]?.message}</FormHelperText>}
+                  {errors[item.value]?.message && (
+                    <FormHelperText error={true}>{errors[item.value]?.message}</FormHelperText>
+                  )}
                 </Box>
               </Grid>
             ))
@@ -230,6 +232,7 @@ const GeneralPage = ({ title }: PageProps) => {
                       clearIcon={false}
                       onChange={(_, newValue) => field.onChange(newValue)}
                       renderTags={(value, props) =>
+                        // eslint-disable-next-line react/jsx-key
                         value.map((option, index) => <Chip label={option} {...props({ index })} />)
                       }
                       renderInput={(params) => (

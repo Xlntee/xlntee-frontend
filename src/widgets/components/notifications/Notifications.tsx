@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { Button, Badge, Box, Stack, Drawer, Typography } from "@mui/material";
@@ -6,12 +6,12 @@ import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 
 import { MenuToggler, Notification } from "src/features";
 
-const Notifications = () => {
+const Notifications: FC = () => {
   const { t } = useTranslation("common");
 
   const [visible, setVisible] = useState<boolean>(false);
 
-  function onClose() {
+  function onClose(): void {
     setVisible(false);
   }
 

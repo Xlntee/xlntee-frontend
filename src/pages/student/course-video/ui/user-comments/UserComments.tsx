@@ -16,7 +16,7 @@ const UserComment: FC<UserCommentsProps> = ({ comments, user }) => {
   const { t } = useTranslation("common");
   const [isOpenComments, setIsOpenComments] = useState<boolean>(false);
 
-  function onToggleVisibilityComments() {
+  function onToggleVisibilityComments(): void {
     setIsOpenComments((prev) => !prev);
   }
 
@@ -39,7 +39,7 @@ const UserComment: FC<UserCommentsProps> = ({ comments, user }) => {
             sx={{
               minWidth: "auto",
               color: XlnteeColors.GrayColor700,
-              fontWeight: 400,
+              fontWeight: 400
             }}
           >
             {isOpenComments ? (

@@ -1,4 +1,4 @@
-import { useRef, useState, ChangeEvent, useEffect } from "react";
+import { useRef, useState, ChangeEvent, useEffect, FC } from "react";
 import cn from "classnames";
 
 import { Box, Button, Stack } from "@mui/material";
@@ -19,7 +19,7 @@ export type VideoUploadProps = UploaderProps & {
   showPreview?: boolean;
 };
 
-export default function VideoUpload({
+const VideoUpload: FC<VideoUploadProps> = ({
   video,
   width,
   height,
@@ -32,7 +32,7 @@ export default function VideoUpload({
   togglerVariant = "text",
   onChange,
   ...rest
-}: VideoUploadProps) {
+}: VideoUploadProps) => {
   const [uploadedFile, setUploadedFile] = useState<string>(video ?? "");
   const refFieldInputFile = useRef<HTMLInputElement>(null);
   const { alertColor, alertMessage, alertVisible, showAlert, closeAlert, setColorAlert, setMessageAlert } =
@@ -47,7 +47,7 @@ export default function VideoUpload({
     }
   }, [video]);
 
-  function handleChangeFile(e: ChangeEvent<HTMLInputElement>) {
+  function handleChangeFile(e: ChangeEvent<HTMLInputElement>): void {
     const file: File | null = e.currentTarget.files && e.currentTarget.files[0];
     if (!file) return;
 
@@ -61,9 +61,9 @@ export default function VideoUpload({
         showAlert();
         onChange && onChange(file, fileString);
       };
-    } catch (e) {
-      if (e instanceof Error) {
-        setMessageAlert(e.message);
+    } catch (error) {
+      if (error instanceof Error) {
+        setMessageAlert(error.message);
         setColorAlert("error");
         showAlert();
       }
@@ -97,4 +97,6 @@ export default function VideoUpload({
       <Snackbar open={alertVisible} onClose={closeAlert} color={alertColor} title={alertMessage} />
     </Stack>
   );
-}
+};
+
+export default VideoUpload;

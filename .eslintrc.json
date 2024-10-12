@@ -3,18 +3,24 @@
   "env": { "browser": true, "es2020": true },
   "extends": [
     "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    // "@typescript-eslint/eslint-plugin",
     "plugin:react-hooks/recommended",
     "react-app",
     "prettier"
   ],
+  "ignorePatterns": ["dist", "public", "node_modules"],
   "parser": "@typescript-eslint/parser",
-  "plugins": ["react-refresh", "react-hooks", "@typehut/recommended"],
+  "plugins": ["react-refresh", "react-hooks"],
   "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-uses-react": "off",
+    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
     "react-refresh/only-export-components": ["warn", { "allowConstantExport": true }],
     "react/self-closing-comp": ["error", { "component": true, "html": true }],
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/exhaustive-deps": ["off"],
     "eqeqeq": ["error", "smart"],
     "no-shadow": "off",
     "@typescript-eslint/no-shadow": "error",
@@ -30,16 +36,8 @@
     "max-nested-callbacks": ["error", 5],
     "max-depth": ["error", 4],
     "max-params": ["error", 5],
-    "formatjs/enforce-id": "error",
     "semi": "error",
-    "comma-dangle": [
-      "error",
-      {
-        "functions": "never",
-        "objects": "always-multiline",
-        "imports": "always-multiline",
-        "arrays": "always-multiline"
-      }
-    ]
+    "comma-dangle": ["error", "never"],
+    "prettier/prettier": ["error", { "trailingComma": "none" }]
   }
 }

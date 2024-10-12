@@ -8,5 +8,5 @@ export default yup.object().shape({
   level: yup.string().required("Level is required"),
   subcategory: yup.string().required("Subcategory is required"),
   language: yup.string().required("Language is required"),
-  certificate: yup.boolean().nullable().notRequired(),
+  certificate: yup.boolean().nullable().notRequired()
 });

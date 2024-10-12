@@ -8,7 +8,7 @@ import {
   AccordionProps,
   AccordionSummary as MuiAccordionSummary,
   AccordionSummaryProps,
-  Container,
+  Container
 } from "@mui/material";
 
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
@@ -19,6 +19,7 @@ import InsertDriveFileIcon from "@mui/icons-material/InsertDriveFile";
 
 import { styled } from "@mui/material/styles";
 import { XlnteeColors } from "src/shared/themes/colors";
+import { FC } from "react";
 
 const data = [
   {
@@ -27,21 +28,21 @@ const data = [
     details: [
       {
         icon: <VideocamIcon />,
-        title: "Що таке програмування?",
+        title: "Що таке програмування?"
       },
       {
         icon: <HelpCenterIcon />,
-        title: "Основи Python",
+        title: "Основи Python"
       },
       {
         icon: <InsertDriveFileIcon />,
-        title: "Де писати програиний код і як його перевіряти",
+        title: "Де писати програиний код і як його перевіряти"
       },
       {
         icon: <VideocamIcon />,
-        title: "Як написати калькулятор",
-      },
-    ],
+        title: "Як написати калькулятор"
+      }
+    ]
   },
   {
     section: "Розділ 2",
@@ -49,21 +50,21 @@ const data = [
     details: [
       {
         icon: <VideocamIcon />,
-        title: "Що таке програмування?",
+        title: "Що таке програмування?"
       },
       {
         icon: <HelpCenterIcon />,
-        title: "Основи Python",
+        title: "Основи Python"
       },
       {
         icon: <InsertDriveFileIcon />,
-        title: "Де писати програиний код і як його перевіряти",
+        title: "Де писати програиний код і як його перевіряти"
       },
       {
         icon: <VideocamIcon />,
-        title: "Як написати калькулятор",
-      },
-    ],
+        title: "Як написати калькулятор"
+      }
+    ]
   },
   {
     section: "Розділ 3",
@@ -71,21 +72,21 @@ const data = [
     details: [
       {
         icon: <VideocamIcon />,
-        title: "Що таке програмування?",
+        title: "Що таке програмування?"
       },
       {
         icon: <HelpCenterIcon />,
-        title: "Основи Python",
+        title: "Основи Python"
       },
       {
         icon: <InsertDriveFileIcon />,
-        title: "Де писати програиний код і як його перевіряти",
+        title: "Де писати програиний код і як його перевіряти"
       },
       {
         icon: <VideocamIcon />,
-        title: "Як написати калькулятор",
-      },
-    ],
+        title: "Як написати калькулятор"
+      }
+    ]
   },
   {
     section: "Розділ 4",
@@ -93,29 +94,29 @@ const data = [
     details: [
       {
         icon: <VideocamIcon />,
-        title: "Що таке програмування?",
+        title: "Що таке програмування?"
       },
       {
         icon: <HelpCenterIcon />,
-        title: "Основи Python",
+        title: "Основи Python"
       },
       {
         icon: <InsertDriveFileIcon />,
-        title: "Де писати програиний код і як його перевіряти",
+        title: "Де писати програиний код і як його перевіряти"
       },
       {
         icon: <VideocamIcon />,
-        title: "Як написати калькулятор",
-      },
-    ],
-  },
+        title: "Як написати калькулятор"
+      }
+    ]
+  }
 ];
 
 const Accordion = styled((props: AccordionProps) => <MuiAccordion disableGutters elevation={0} square {...props} />)(
   () => ({
     position: "static",
-    backgroundColor: "transparent",
-  }),
+    backgroundColor: "transparent"
+  })
 );
 
 const AccordionSummary = styled((props: AccordionSummaryProps) => (
@@ -128,11 +129,11 @@ const AccordionSummary = styled((props: AccordionSummaryProps) => (
   gap: "10px",
   minHeight: "36px",
   ".MuiAccordionSummary-content": {
-    margin: 0,
-  },
+    margin: 0
+  }
 }));
 
-const SectionCourseStructure = () => {
+const SectionCourseStructure: FC = () => {
   const { t } = useTranslation("teacher-preview");
 
   return (
@@ -163,8 +164,12 @@ const SectionCourseStructure = () => {
                 </AccordionSummary>
                 <MuiAccordionDetails>
                   <Stack pl={{ xs: "40px", md: "114px" }} flexDirection="column" gap="10px">
-                    {item.details.map((detail, index) => (
-                      <Box key={index} sx={{ display: "flex", alignItems: "center", gap: "10px" }} fontWeight={500}>
+                    {item.details.map((detail, detailIndex) => (
+                      <Box
+                        key={detailIndex}
+                        sx={{ display: "flex", alignItems: "center", gap: "10px" }}
+                        fontWeight={500}
+                      >
                         <Typography component="span" color="primary" display="flex" alignItems="center">
                           {detail.icon}
                         </Typography>

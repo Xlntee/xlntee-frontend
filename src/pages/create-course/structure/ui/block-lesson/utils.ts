@@ -12,7 +12,7 @@ export function getConvertedLessonFormValuesToLesson(lesson: LessonSingleFormVal
   return {
     id: customId,
     lectures: getConvretedLectureFormValuesToLecture(lectures as LectureSingleFormValues[]),
-    ...rest,
+    ...rest
   };
 }
 
@@ -26,9 +26,9 @@ function getConvretedLectureFormValuesToLecture(lectures: LectureSingleFormValue
       files: files as string[],
       video: video as string | undefined,
       testConfigurations: getConvertedTestConfigFormValuesToTestConfig(
-        item.testConfigurations as TestConfiguratonSingleFormValues[],
+        testConfigurations as TestConfiguratonSingleFormValues[]
       ),
-      ...rest,
+      ...rest
     };
 
     return lecture;
@@ -37,13 +37,15 @@ function getConvretedLectureFormValuesToLecture(lectures: LectureSingleFormValue
   return convertedArray;
 }
 
-function getConvertedTestConfigFormValuesToTestConfig(testConfiguraton?: TestConfiguratonSingleFormValues[]) {
+function getConvertedTestConfigFormValuesToTestConfig(
+  testConfiguraton?: TestConfiguratonSingleFormValues[]
+): TestConfiguraton[] | undefined {
   if (!testConfiguraton || !testConfiguraton?.length) return undefined;
   const convertedTestConfiguration: TestConfiguraton[] = testConfiguraton.map((item) => {
     const testConfig: TestConfiguraton = {
       id: item.customId,
       question: item.question,
-      variants: getConvertedVariantsFormValuesToVariants(item.variants as VariantSingleFormValues[]),
+      variants: getConvertedVariantsFormValuesToVariants(item.variants as VariantSingleFormValues[])
     };
 
     return testConfig;
@@ -57,7 +59,7 @@ function getConvertedVariantsFormValuesToVariants(variants: VariantSingleFormVal
     const testConfig: TestConfiguratonVariant = {
       id: item.customId,
       answer: item.answer as boolean,
-      title: item.title,
+      title: item.title
     };
     return testConfig;
   });

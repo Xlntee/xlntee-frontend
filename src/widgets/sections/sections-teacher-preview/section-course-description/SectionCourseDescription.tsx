@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
 import { Box, Typography, Stack, Container } from "@mui/material";
@@ -6,7 +7,7 @@ interface CoursePreviewDescriptionBlockProps {
   courseDescription: string;
 }
 
-const CoursePreviewDescriptionBlock: React.FC<CoursePreviewDescriptionBlockProps> = ({ courseDescription }) => {
+const CoursePreviewDescriptionBlock: FC<CoursePreviewDescriptionBlockProps> = ({ courseDescription }) => {
   const { t } = useTranslation("teacher-preview");
 
   return (

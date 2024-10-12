@@ -1,6 +1,8 @@
+import { FC } from "react";
+
 import { Box } from "@mui/material";
 
-const PageLoader = () => {
+const PageLoader: FC = () => {
   return <Box>Loading...</Box>;
 };
 

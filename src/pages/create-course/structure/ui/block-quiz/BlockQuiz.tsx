@@ -26,15 +26,15 @@ const BlockQuiz: FC<BlockQuizProps> = ({ lessonId, lectureId, lectureIndex, onCl
   const {
     register,
     control,
-    formState: { errors },
+    formState: { errors }
   } = useFormContext<LessonSingleFormValues>();
 
   const { fields, append, remove } = useFieldArray({
     control,
-    name: `lectures.${lectureIndex}.testConfigurations`,
+    name: `lectures.${lectureIndex}.testConfigurations`
   });
 
-  function onAddQuestion() {
+  function onAddQuestion(): void {
     const initialData = getInitialTestConfiguration();
     append({
       customId: initialData.id,
@@ -42,17 +42,17 @@ const BlockQuiz: FC<BlockQuizProps> = ({ lessonId, lectureId, lectureIndex, onCl
       variants: [
         {
           customId: initialData.variants[0].id,
-          ...initialData.variants[0],
+          ...initialData.variants[0]
         },
         {
           customId: initialData.variants[1].id,
-          ...initialData.variants[1],
-        },
-      ],
+          ...initialData.variants[1]
+        }
+      ]
     });
   }
 
-  function onDelete(index: number, isAbleDelete: boolean) {
+  function onDelete(index: number, isAbleDelete: boolean): void {
     remove(index);
     if (isAbleDelete) {
       onCloseQuiz();

@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
 import { Box, Button } from "@mui/material";
@@ -9,14 +10,14 @@ import { PageProps } from "pages/type";
 import { addLesson, selectLessons } from "./store/lessonsSlice";
 import { BlockLesson } from "./ui";
 
-const StructurePage = ({ title }: PageProps) => {
+const StructurePage: FC<PageProps> = ({ title }) => {
   useTitle(title);
   const { t } = useTranslation("teacher-create-course");
 
   const dispatch = useAppDispatch();
   const lessons = useAppSelector(selectLessons);
 
-  function onSave() {
+  function onSave(): void {
     console.log(lessons);
   }
 

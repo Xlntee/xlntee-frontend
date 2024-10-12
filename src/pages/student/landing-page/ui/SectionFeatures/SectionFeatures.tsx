@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { Link as RouterLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import cn from "classnames";
@@ -17,17 +18,17 @@ import { AppRoutes } from "src/app/routing/appRoutes";
 import { Feature } from "src/widgets/components";
 
 const icons: JSX.Element[] = [
-  <TrendingUpOutlinedIcon color="primary" />,
-  <DashboardOutlinedIcon color="primary" />,
-  <CreditCardIcon color="primary" />,
-  <PlayCircleOutlinedIcon color="primary" />,
-  <QuizOutlinedIcon color="primary" />,
-  <StarIcon color="primary" />,
-  <WorkspacePremiumOutlinedIcon color="primary" />,
-  <VisibilityOutlinedIcon color="primary" sx={{ fontSize: "28px" }} />,
+  <TrendingUpOutlinedIcon key={1} color="primary" />,
+  <DashboardOutlinedIcon key={2} color="primary" />,
+  <CreditCardIcon key={3} color="primary" />,
+  <PlayCircleOutlinedIcon key={4} color="primary" />,
+  <QuizOutlinedIcon key={5} color="primary" />,
+  <StarIcon key={6} color="primary" />,
+  <WorkspacePremiumOutlinedIcon key={7} color="primary" />,
+  <VisibilityOutlinedIcon key={8} color="primary" sx={{ fontSize: "28px" }} />
 ];
 
-const SectionFeatures = () => {
+const SectionFeatures: FC = () => {
   const { t, ready } = useTranslation("student-landing");
   const captionList: string[] = t("features-section.caption", { returnObjects: true });
   const descriptionList: string[] = t("features-section.description", { returnObjects: true });
@@ -52,7 +53,7 @@ const SectionFeatures = () => {
                           index === 0 ||
                           (index % columnCount === 0 &&
                             caption !== captionList[captionList.length - (columnCount - 1)]),
-                        "last-with-line": caption === captionList[captionList.length - (columnCount - 1)],
+                        "last-with-line": caption === captionList[captionList.length - (columnCount - 1)]
                       })}
                     />
                   </Grid>

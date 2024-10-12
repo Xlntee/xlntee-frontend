@@ -1,3 +1,4 @@
+import { FC } from "react";
 import cn from "classnames";
 
 import { Box, Typography } from "@mui/material";
@@ -11,7 +12,7 @@ interface FeatureProps {
   className: string;
 }
 
-const Feature = ({ icon, caption, description, className }: FeatureProps) => {
+const Feature: FC<FeatureProps> = ({ icon, caption, description, className }) => {
   return (
     <Box className={cn("feature", className)} display="flex" gap="10px">
       <Box className="feature__icon" flex="0 1 22px" pt="4px">

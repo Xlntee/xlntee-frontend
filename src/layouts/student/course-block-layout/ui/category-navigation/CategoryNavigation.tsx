@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 
 import { Box, List, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
 import VideocamIcon from "@mui/icons-material/Videocam";
@@ -23,7 +23,7 @@ interface CategoryNavigationProps {
 }
 
 const CategoryNavigation: FC<CategoryNavigationProps> = ({ items }) => {
-  function getIconRelateOnType(type: CategoryType) {
+  function getIconRelateOnType(type: CategoryType): ReactNode {
     if (type === "file") {
       return <InsertDriveFileIcon />;
     }

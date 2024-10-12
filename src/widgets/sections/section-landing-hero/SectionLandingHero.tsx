@@ -24,7 +24,6 @@ const SectionLandingHero: FC<SectionLandingHeroProps> = ({ title, subtitle, butt
   const theme = useTheme();
 
   const isFeaturesArray = Array.isArray(features);
-  SectionLandingHero;
 
   return (
     <Box component="section" className="section-hero">
@@ -47,7 +46,7 @@ const SectionLandingHero: FC<SectionLandingHeroProps> = ({ title, subtitle, butt
                 size="large"
                 className="button-rounded-lg"
                 sx={{
-                  px: "36px",
+                  px: "36px"
                 }}
               >
                 {buttonTitle}

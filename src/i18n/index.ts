@@ -10,7 +10,7 @@ i18n
   .init({
     fallbackLng: "uk",
     backend: {
-      loadPath: "/locales/{{lng}}/{{ns}}.json",
+      loadPath: "/locales/{{lng}}/{{ns}}.json"
     },
     ns: [
       "common",
@@ -22,25 +22,25 @@ i18n
       "teacher-preview",
       "teacher-courses",
       "teacher-create-course",
-      "dialog-modal",
+      "dialog-modal"
     ],
     initImmediate: false,
     react: {
-      useSuspense: false,
-    },
+      useSuspense: false
+    }
   });
 
 export const languages = [
   {
     code: "en",
     shortName: "En",
-    fullName: "English",
+    fullName: "English"
   },
   {
     code: "uk",
     shortName: "Uk",
-    fullName: "Ukrainian",
-  },
+    fullName: "Ukrainian"
+  }
 ];
 
 export default i18n;

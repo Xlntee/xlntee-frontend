@@ -10,11 +10,16 @@ interface ResponsiveType {
   xl: GridSize;
 }
 
-interface CardListProps<T> extends Partial<ResponsiveType> {
+interface CardListProps<T> {
   items: T[];
   startCard?: React.ReactNode;
   renderCard?: (item: T) => React.ReactNode;
   textForEmptyArray?: string;
+  xs?: GridSize;
+  sm?: GridSize;
+  md?: GridSize;
+  lg?: GridSize;
+  xl?: GridSize;
 }
 
 const defaultResponsive: ResponsiveType = {
@@ -22,10 +27,10 @@ const defaultResponsive: ResponsiveType = {
   sm: 6,
   md: 4,
   lg: 4,
-  xl: 4,
+  xl: 4
 };
 
-const CardList = function CardList<T extends { id: string }>({
+const CardList = <T extends { id: string }>({
   items,
   startCard,
   renderCard,
@@ -34,8 +39,8 @@ const CardList = function CardList<T extends { id: string }>({
   sm = defaultResponsive.sm,
   md = defaultResponsive.md,
   lg = defaultResponsive.lg,
-  xl = defaultResponsive.xl,
-}: CardListProps<T>) {
+  xl = defaultResponsive.xl
+}: CardListProps<T>): JSX.Element => {
   return (
     <Grid container spacing={2}>
       {startCard && (
@@ -48,7 +53,7 @@ const CardList = function CardList<T extends { id: string }>({
           xl={xl}
           display="flex"
           sx={{
-            minHeight: items.length === 0 ? "20vh" : "30vh",
+            minHeight: items.length === 0 ? "20vh" : "30vh"
           }}
         >
           {startCard}

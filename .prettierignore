@@ -1,6 +1,5 @@
 # Ignore artifacts:
 /*
-!/cypress
 !/src
 !/public
 !/*.json

@@ -31,7 +31,7 @@ const CourseCard: FC<CourseCardProps> = ({
   className,
   onDelete,
   onEdit,
-  onRestore,
+  onRestore
 }) => {
   const { t } = useTranslation("teacher-courses");
   const theme = useTheme();

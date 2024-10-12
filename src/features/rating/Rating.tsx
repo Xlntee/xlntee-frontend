@@ -16,7 +16,7 @@ interface RatingProps {
 
 const Rating: FC<RatingProps> = ({ rating = 0, reviewCount = 0, max = 5, precision = 0.5, size }) => {
   const sizeModification = cn({
-    "rating--large": size === "large",
+    "rating--large": size === "large"
   });
 
   const classnames = cn("rating", sizeModification);

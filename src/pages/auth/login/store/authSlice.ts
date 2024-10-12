@@ -8,11 +8,11 @@ export interface IAuthState {
 
 const initialState: IAuthState = {
   token: "",
-  email: "",
+  email: ""
 };
 
-export const selectToken = (state: RootState) => state.auth.token;
-export const selectEmail = (state: RootState) => state.auth.email;
+export const selectToken = (state: RootState): string => state.auth.token;
+export const selectEmail = (state: RootState): string => state.auth.email;
 
 const authSlice = createSlice({
   name: "auth",
@@ -27,8 +27,8 @@ const authSlice = createSlice({
     logOut: (state) => {
       state.token = "";
       state.email = "";
-    },
-  },
+    }
+  }
 });
 
 export const { setCredentials, logOut } = authSlice.actions;

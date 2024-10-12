@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 
 import { Box, Container } from "@mui/material";
 
@@ -11,14 +11,14 @@ import { CardList } from "src/features";
 import CreateCourseButton from "./ui/create-course-button/CreateCourseButton";
 import { MockCourse, myCourses } from "./myCourses-mock-data";
 
-const MyCoursesPage = ({ title }: PageProps) => {
+const MyCoursesPage: FC<PageProps> = ({ title }) => {
   useTitle(title);
 
   const [array, setArray] = useState<MockCourse[]>([]);
 
-  const onDelete = (id: string) => alert(`course with id: ${id} deleted`);
-  const onEdit = (id: string) => alert(`course with id: ${id} editing`);
-  const onRestore = (id: string) => alert(`course with id: ${id} restored`);
+  const onDelete = (id: string): void => alert(`course with id: ${id} deleted`);
+  const onEdit = (id: string): void => alert(`course with id: ${id} editing`);
+  const onRestore = (id: string): void => alert(`course with id: ${id} restored`);
 
   useEffect(() => {
     setArray(myCourses);

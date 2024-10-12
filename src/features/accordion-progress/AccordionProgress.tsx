@@ -26,7 +26,7 @@ const AccordionProgress: FC<AccordionProgressProps> = ({
   children,
   open,
   className,
-  onChange,
+  onChange
 }) => {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
 

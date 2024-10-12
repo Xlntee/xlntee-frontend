@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { Box, Container } from "@mui/material";
 
 import useTitle from "src/hooks/useTitle/useTitle";
@@ -7,7 +8,7 @@ import { CardList } from "src/features";
 
 import { myCourses } from "./data";
 
-const FavoriteCoursesPage = ({ title }: PageProps) => {
+const FavoriteCoursesPage: FC<PageProps> = ({ title }) => {
   useTitle(title);
 
   return (

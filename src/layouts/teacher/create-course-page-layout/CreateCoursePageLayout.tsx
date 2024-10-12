@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -10,7 +11,7 @@ import Footer from "src/widgets/footer/Footer";
 import { AppRoutes } from "src/app/routing/appRoutes";
 import { UserRole } from "src/shared/utils/enum";
 
-const CreateCoursePageLayout = () => {
+const CreateCoursePageLayout: FC = () => {
   const { t } = useTranslation("auth");
   const { t: tTeacherCreateCourse } = useTranslation("teacher-create-course");
 

@@ -25,19 +25,19 @@ const QuizAnswerList: FC<QuizAnswerListProps> = ({ lectureIndex, quizIndex }) =>
   const {
     register,
     control,
-    formState: { errors },
+    formState: { errors }
   } = useFormContext<LecturesArrayFormValues>();
 
   const { fields, append, remove } = useFieldArray({
     control,
-    name: `lectures.${lectureIndex}.testConfigurations.${quizIndex}.variants`,
+    name: `lectures.${lectureIndex}.testConfigurations.${quizIndex}.variants`
   });
 
-  function onAddAnswer() {
+  function onAddAnswer(): void {
     const initialData = getInitalAnswerVariant();
     append({
       customId: initialData.id,
-      ...initialData,
+      ...initialData
     });
   }
 

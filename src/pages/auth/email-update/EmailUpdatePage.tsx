@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useTranslation } from "react-i18next";
@@ -14,7 +14,7 @@ import { FormValues, validationSchema } from "./validation";
 
 import "./EmailUpdatePage.scss";
 
-const EmailUpdatePage = ({ title }: PageProps) => {
+const EmailUpdatePage: FC<PageProps> = ({ title }) => {
   useTitle(title);
 
   const { t } = useTranslation("auth");
@@ -24,10 +24,10 @@ const EmailUpdatePage = ({ title }: PageProps) => {
   const {
     formState: { errors },
     handleSubmit,
-    register,
+    register
   } = useForm<FormValues>({
     mode: "onSubmit",
-    resolver: yupResolver(validationSchema(email)),
+    resolver: yupResolver(validationSchema(email))
   });
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const EmailUpdatePage = ({ title }: PageProps) => {
 
   const [success, setSuccess] = useState<boolean>(false);
 
-  function onSubmitForm(data: FormValues) {
+  function onSubmitForm(data: FormValues): void {
     console.log(data);
     setSuccess(true);
   }

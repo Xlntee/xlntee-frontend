@@ -41,7 +41,7 @@ const PricePlanCard: FC<PricePlanProps> = ({ pretitle, title, text, button, desc
           className="button-rounded-xl"
           sx={{
             fontWeight: 400,
-            width: "250px",
+            width: "250px"
           }}
         >
           {button}
@@ -54,7 +54,7 @@ const PricePlanCard: FC<PricePlanProps> = ({ pretitle, title, text, button, desc
               <ListItem key={index} alignItems="flex-start" sx={{ marginBottom: "20px" }}>
                 <ListItemIcon
                   sx={{
-                    marginTop: 0,
+                    marginTop: 0
                   }}
                 >
                   {item.icon}

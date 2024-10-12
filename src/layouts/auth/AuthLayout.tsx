@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { FC, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 
@@ -9,7 +9,7 @@ import { AppRoutes } from "src/app/routing/appRoutes";
 
 import "./AuthLayout.scss";
 
-const AuthLayout = () => {
+const AuthLayout: FC = () => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const lastPathUrl = pathname.split("/")[2];

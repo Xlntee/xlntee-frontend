@@ -32,13 +32,13 @@ const StudentCourseCard: FC<StudentCourseCardProps> = ({
   discount,
   rating = 0,
   reviews = 0,
-  href,
+  href
 }) => {
   const { t } = useTranslation("common");
 
   const [isFavorite, setIsFavorite] = useState<boolean>(false);
 
-  function onToggleFavorite() {
+  function onToggleFavorite(): void {
     setIsFavorite((prev) => !prev);
   }
 
@@ -46,7 +46,7 @@ const StudentCourseCard: FC<StudentCourseCardProps> = ({
     <Box className="student-course-card">
       <Box className="student-course-card__image">
         <img src={image} alt={title} />
-        <Link to={href} className="student-course-card__link"></Link>
+        <Link to={href} className="student-course-card__link" />
       </Box>
       <Box className="student-course-card__body">
         <Typography variant="body2" className="student-course-card__title" mb="10px">

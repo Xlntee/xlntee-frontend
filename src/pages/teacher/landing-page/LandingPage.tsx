@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
 import { PageProps } from "pages/type";
@@ -6,7 +7,7 @@ import useTitle from "src/hooks/useTitle/useTitle";
 import { SectionLandingHero, SectionLandingAbout, SectionLandingContact } from "src/widgets/sections";
 import { SectionFeatures, SectionPricePlan } from "./ui";
 
-const TeacherLandingPage = ({ title }: PageProps) => {
+const TeacherLandingPage: FC<PageProps> = ({ title }) => {
   useTitle(title);
 
   const { t } = useTranslation("teacher-landing");
@@ -21,7 +22,7 @@ const TeacherLandingPage = ({ title }: PageProps) => {
         buttonTitle={t("hero-section.button")}
         image={{
           src: "assets/teacher-landing-hero.webp",
-          alt: t("hero-section.imageAltText"),
+          alt: t("hero-section.imageAltText")
         }}
         features={heroSectionfeatures}
       />
@@ -31,7 +32,7 @@ const TeacherLandingPage = ({ title }: PageProps) => {
         description={t("about-section.description")}
         image={{
           src: "assets/teacher-landing-about.webp",
-          alt: t("about-section.imageAltText"),
+          alt: t("about-section.imageAltText")
         }}
       />
       <SectionFeatures />

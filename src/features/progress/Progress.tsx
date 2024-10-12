@@ -21,14 +21,14 @@ const Progress: FC<IProgress> = ({
   title,
   showValue,
   className,
-  children,
+  children
 }) => {
   const cnModification = cn({
-    "progress--small": size === "sm",
+    "progress--small": size === "sm"
   });
 
   const classnames = cn("progress", cnModification, className, {
-    full: value === 100,
+    full: value === 100
   });
 
   return (

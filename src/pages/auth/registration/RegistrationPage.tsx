@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
 import { useForm } from "react-hook-form";
 
@@ -9,7 +9,7 @@ import {
   authApiSlice,
   useAcceptPolicyMutation,
   useSignUpMutation,
-  useVerifyEmailMutation,
+  useVerifyEmailMutation
 } from "../../auth/login/api/authApiSlice";
 
 import "./RegistartionPage.scss";
@@ -23,12 +23,12 @@ interface IFormData {
 enum RegistrationState {
   SIGN_UP,
   EMAIL_CONFIRMATION,
-  AGREEMENT_ACCEPTION,
+  AGREEMENT_ACCEPTION
 }
 
 const deviceId = "1111";
 
-const RegistrationPage = ({ title }: PageProps) => {
+const RegistrationPage: FC<PageProps> = ({ title }) => {
   useTitle(title);
 
   const { register, handleSubmit } = useForm<IFormData>();

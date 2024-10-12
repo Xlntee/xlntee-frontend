@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import cn from "classnames";
@@ -11,7 +11,7 @@ import { MenuToggler, Progress } from "src/features";
 
 import "./CreateCourseBlockLayout.scss";
 
-const CreateCourseBlockLayout = () => {
+const CreateCourseBlockLayout: FC = () => {
   const { t, ready } = useTranslation("teacher-create-course");
   const { pathname } = useLocation();
 
@@ -22,35 +22,35 @@ const CreateCourseBlockLayout = () => {
   const navList = [
     {
       title: t("general.nav_title"),
-      path: AppRoutes.teacher.createCourse,
+      path: AppRoutes.teacher.createCourse
     },
     {
       title: t("landing.nav_title"),
-      path: AppRoutes.teacher.createCourseLanding,
+      path: AppRoutes.teacher.createCourseLanding
     },
     {
       title: t("structure.nav_title"),
-      path: AppRoutes.teacher.createCourseStructure,
+      path: AppRoutes.teacher.createCourseStructure
     },
     {
       title: t("lecturer.nav_title"),
-      path: AppRoutes.teacher.createCourseLecturer,
+      path: AppRoutes.teacher.createCourseLecturer
     },
     {
       title: t("price.nav_title"),
-      path: AppRoutes.teacher.createCoursePrice,
+      path: AppRoutes.teacher.createCoursePrice
     },
     {
       title: t("advertising.nav_title"),
-      path: AppRoutes.teacher.createCourseAdvertising,
-    },
+      path: AppRoutes.teacher.createCourseAdvertising
+    }
   ];
 
-  function closeAsideMenu() {
+  function closeAsideMenu(): void {
     setOpenCourseNav(false);
   }
 
-  function AsideMenu() {
+  const AsideMenu: FC = () => {
     return (
       <Stack gap="20px" className="create-course-layout__aside-menu">
         <Stack className="create-course-nav" direction="column" gap="10px">
@@ -96,7 +96,7 @@ const CreateCourseBlockLayout = () => {
         </Stack>
       </Stack>
     );
-  }
+  };
 
   return (
     <Box className="create-course-layout" py="40px">

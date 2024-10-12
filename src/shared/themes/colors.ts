@@ -2,7 +2,7 @@ export enum YouniColors {
   DeepBlue = "#32449C",
   Green = "#35C587",
   DarkGray = "#0F0F0F",
-  WheatYellow = "#F9F8E4",
+  WheatYellow = "#F9F8E4"
 }
 
 export enum XlnteeColors {
@@ -34,5 +34,5 @@ export enum XlnteeColors {
   SuccessExtraLightColor = "#F2FFF3",
   SuccessLightColor = "#AFEDC0",
   SuccessDarkColor = "#329C56",
-  YellowColor = "#faaf00",
+  YellowColor = "#faaf00"
 }

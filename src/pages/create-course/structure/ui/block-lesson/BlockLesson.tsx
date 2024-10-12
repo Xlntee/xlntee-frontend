@@ -40,7 +40,7 @@ const BlockLesson: FC<BlockLessonProps> = ({ index, id, canDelete }) => {
 
   const formMethods = useForm<LessonSingleFormValues>({
     resolver: yupResolver(lessonSingleValidationSchema),
-    mode: "onSubmit",
+    mode: "onSubmit"
   });
 
   const {
@@ -48,49 +48,49 @@ const BlockLesson: FC<BlockLessonProps> = ({ index, id, canDelete }) => {
     formState: { errors },
     register,
     setValue,
-    handleSubmit,
+    handleSubmit
   } = formMethods;
 
   const { fields, append, remove } = useFieldArray({
     control,
-    name: "lectures",
+    name: "lectures"
   });
 
   useEffect(() => {
     setDefaultFormValues();
   }, []);
 
-  function setDefaultFormValues() {
-    const { id, title, lectures } = lessons[0];
+  function setDefaultFormValues(): void {
+    const { id: lessonId, title, lectures } = lessons[0];
     const { id: lectureId, title: lectureTitle } = lectures[0];
-    setValue("customId", id);
+    setValue("customId", lessonId);
     setValue("title", title);
     setValue("lectures", [
       {
         customId: lectureId,
-        title: lectureTitle,
-      },
+        title: lectureTitle
+      }
     ]);
   }
 
-  function onSubmit(data: LessonSingleFormValues) {
+  function onSubmit(data: LessonSingleFormValues): void {
     dispatch(
       updateLesson({
         lessonId: id,
-        payload: getConvertedLessonFormValuesToLesson(data),
-      }),
+        payload: getConvertedLessonFormValuesToLesson(data)
+      })
     );
   }
 
-  function onHandleDeleteLesson() {
+  function onHandleDeleteLesson(): void {
     onCloseModal();
   }
 
-  function onAddLecture() {
+  function onAddLecture(): void {
     const idValue = uuidv4();
     append({
       customId: idValue,
-      title: "",
+      title: ""
     });
   }
 
@@ -144,12 +144,12 @@ const BlockLesson: FC<BlockLessonProps> = ({ index, id, canDelete }) => {
         </Box>
         <Box className="block-lesson__body">
           <Stack direction="column" gap="20px" mb="20px">
-            {fields.map((lecture, index) => (
+            {fields.map((lecture, lectureIndex) => (
               <BlockLecture
                 key={lecture.customId}
                 lessonId={id}
                 id={lecture.customId}
-                index={index}
+                index={lectureIndex}
                 onDelete={remove}
               />
             ))}

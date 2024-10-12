@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 
 import { Box, Tooltip, IconButton, Menu, Modal } from "@mui/material";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
@@ -12,7 +12,7 @@ import { AccountMenu } from "./ui";
 
 import "./User.scss";
 
-const User = () => {
+const User: FC = () => {
   const breakpoint = 1024;
 
   const matches = useMediaQuery(`(min-width:${breakpoint}px)`);
@@ -23,7 +23,7 @@ const User = () => {
   const open = Boolean(anchorEl);
   const [openModal, setOpenModal] = useState<boolean>(false);
 
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+  const handleClick = (event: React.MouseEvent<HTMLElement>): void => {
     if (matches) {
       setAnchorEl(event.currentTarget);
     } else {
@@ -31,11 +31,11 @@ const User = () => {
     }
   };
 
-  const handleClose = () => {
+  const handleClose = (): void => {
     setAnchorEl(null);
   };
 
-  const onCloseModal = () => {
+  const onCloseModal = (): void => {
     setOpenModal(false);
   };
 

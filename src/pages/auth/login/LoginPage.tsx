@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
 import { useForm } from "react-hook-form";
@@ -18,7 +19,7 @@ interface IFormData {
 
 const deviceId = "string";
 
-const LoginPage = ({ title }: PageProps) => {
+const LoginPage: FC<PageProps> = ({ title }) => {
   useTitle(title);
 
   const { register, handleSubmit } = useForm<IFormData>();

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -12,7 +12,7 @@ import { FormValues, validationSchema } from "./validation";
 import { XlnteeColors } from "src/shared/themes/colors";
 import { PasswordValidationPanel } from "src/features";
 
-const PasswordUpdate = () => {
+const PasswordUpdate: FC = () => {
   const { t } = useTranslation("auth");
   const [isSubmit, setIsSubmit] = useState<boolean>(false);
 
@@ -20,13 +20,13 @@ const PasswordUpdate = () => {
     formState: { errors, defaultValues },
     register,
     handleSubmit,
-    getValues,
+    getValues
   } = useForm<FormValues>({
     resolver: yupResolver(validationSchema),
-    mode: "onSubmit",
+    mode: "onSubmit"
   });
 
-  function onSubmit(data: FormValues) {
+  function onSubmit(data: FormValues): void {
     console.log(data);
     setIsSubmit(true);
   }
