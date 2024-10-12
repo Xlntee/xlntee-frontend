@@ -52,30 +52,6 @@
     }
   }
 
-  &__action {
-    display: inline-flex;
-    align-items: center;
-    color: rgb(var(--light-color));
-    background-color: rgb(var(--dark-color));
-    border-radius: 20px;
-    font-weight: 600;
-    font-size: 12px;
-    min-height: 30px;
-    padding-inline: 10px;
-
-    @include mixins.animate(background-color);
-
-    @include mixins.media(breakpoints.$desktop) {
-      font-size: 14px;
-      min-height: 36px;
-      padding-inline: 20px;
-    }
-
-    @include mixins.hover {
-      background-color: rgb(var(--dark-color) / 0.7);
-    }
-  }
-
   .navigation-drawer &__tools {
     @include mixins.media(breakpoints.$tablet) {
       display: none;

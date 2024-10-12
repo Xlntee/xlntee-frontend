@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-import { Box, Container, Stack } from "@mui/material";
+import { Box, Container, Stack, Button } from "@mui/material";
 
 import { AppRoutes } from "src/app/routing/appRoutes";
 import { MenuToggler, Navigation, NavigationDrawer, NavigationLinkType } from "src/features";
@@ -43,9 +43,16 @@ const HeaderProfile = () => {
       <Stack direction="row" alignItems="center" gap="10px" className="header__tools">
         <LanguageSwitcher compact />
         {!authUser && (
-          <Link to={AppRoutes.auth.login} className="header__action">
+          <Button
+            component={Link}
+            to={AppRoutes.auth.login}
+            variant="black-contain"
+            size="small"
+            className="button-rounded-sm"
+            sx={{ paddingInline: "20px" }}
+          >
             {t("login")}
-          </Link>
+          </Button>
         )}
       </Stack>
     );

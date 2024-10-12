@@ -41,6 +41,7 @@ const PricePlanCard: FC<PricePlanProps> = ({ pretitle, title, text, button, desc
           className="button-rounded-lg"
           sx={{
             fontWeight: 400,
+            width: "250px",
           }}
         >
           {button}

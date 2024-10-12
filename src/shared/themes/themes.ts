@@ -227,9 +227,6 @@ defaultTheme.components = {
         borderRadius: 5,
         height: "auto",
         minHeight: 36,
-        [defaultTheme.breakpoints.up("md")]: {
-          minHeight: 40,
-        },
       },
       sizeMedium: {
         fontSize: 14,
@@ -303,9 +300,6 @@ defaultTheme.components = {
           color: XlnteeColors.LightColor,
           ":hover": {
             backgroundColor: XlnteeColors.BlackTextColor,
-          },
-          [defaultTheme.breakpoints.up("md")]: {
-            minHeight: 40,
           },
         },
       },
