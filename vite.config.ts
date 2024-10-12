@@ -11,8 +11,8 @@ export default defineConfig({
       pages: "/src/pages",
       components: "/src/components",
       src: "/src",
-      styles: "/src/styles",
-    },
+      styles: "/src/styles"
+    }
   },
   server: {
     proxy: {
@@ -20,8 +20,8 @@ export default defineConfig({
         // target: "http://54.93.209.213:8079/",
         target: "http://3.127.136.226:8079/",
         changeOrigin: true,
-        secure: false,
-      },
-    },
-  },
+        secure: false
+      }
+    }
+  }
 });

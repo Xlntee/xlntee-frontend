@@ -8,5 +8,5 @@ export default yup.object().shape({
   promoCode: yup
     .string()
     .matches(/^-?\d+$/)
-    .required("Must be a number"),
+    .required("Must be a number")
 });

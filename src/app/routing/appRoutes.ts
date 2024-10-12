@@ -9,7 +9,7 @@ export const AppRoutes = {
     registration: "/auth/registration",
     accountVerification: "/auth/account-verification",
     emailUpdate: "/auth/email-update",
-    passwordUpdate: "/auth/password-update",
+    passwordUpdate: "/auth/password-update"
   },
   student: {
     profile: "/student/dashboard/profile",
@@ -24,7 +24,7 @@ export const AppRoutes = {
     support: "/student/dashboard/support",
     favoriteCourses: "/student/dashboard/favorite-courses",
     emailUpdate: "/student/dashboard/email-update",
-    passwordUpdate: "/student/dashboard/password-update",
+    passwordUpdate: "/student/dashboard/password-update"
   },
   teacher: {
     dashboard: "/teacher/dashboard",
@@ -42,14 +42,14 @@ export const AppRoutes = {
     createCoursePrice: "/teacher/dashboard/create-course/price",
     createCourseAdvertising: "/teacher/dashboard/create-course/advertising",
     emailUpdate: "teacher/dashboard/email-update",
-    passwordUpdate: "teacher/dashboard/password-update",
+    passwordUpdate: "teacher/dashboard/password-update"
   },
   notFound: "*",
   ui: "/ui",
-  helpCenter: "/help-center",
+  helpCenter: "/help-center"
 };
 
 export enum AuthPageSection {
   LOGIN = "login",
-  REGISTRATION = "registration",
+  REGISTRATION = "registration"
 }

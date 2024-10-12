@@ -5,5 +5,5 @@ export const defaultValuesForm: LandingFormValues = {
   requirements: [],
   description: "",
   image: "",
-  video: "",
+  video: ""
 };

@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
 import { Button, Box, Typography } from "@mui/material";
@@ -5,7 +6,7 @@ import StarIcon from "@mui/icons-material/Star";
 
 import "./CourseRate.scss";
 
-const CourseRate = () => {
+const CourseRate: FC = () => {
   const { t } = useTranslation("auth");
 
   return (

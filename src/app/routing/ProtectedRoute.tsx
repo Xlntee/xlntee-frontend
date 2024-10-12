@@ -1,13 +1,17 @@
-import { ReactNode } from "react";
+import { FC, ReactNode } from "react";
 import { Navigate } from "react-router-dom";
 
 import { selectToken } from "pages/auth/login/store/authSlice";
 import { AppRoutes } from "./appRoutes";
 import { useAppSelector } from "../store/store";
 
-export const ProtectedRoute = ({ element }: { element: ReactNode }) => {
+interface ProtectedRouteProps {
+  element: ReactNode;
+}
+
+export const ProtectedRoute: FC<ProtectedRouteProps> = ({ element }) => {
   const token = useAppSelector(selectToken);
 
   // return token ? element : element;
-  return token ? element : <Navigate to={AppRoutes.auth.login} state={{ from: location.pathname }} replace />;
+  return token ? element : <Navigate to={AppRoutes.auth.login} state={{ from: window.location.pathname }} replace />;
 };

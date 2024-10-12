@@ -10,14 +10,14 @@ class LocalStorageService {
   static minutesMs = 60000;
   static expireTime = 3 * LocalStorageService.minutesMs;
 
-  static emailConfirmation(token: string, email: string, role: UserRole) {
+  static emailConfirmation(token: string, email: string, role: UserRole): void {
     const now = new Date();
 
     const tokenObj = JSON.stringify({
       value: token,
       email: email,
       role: role,
-      expire: now.getTime() + LocalStorageService.expireTime,
+      expire: now.getTime() + LocalStorageService.expireTime
     });
 
     localStorage.setItem(LocalStorageService.tokenKey, tokenObj);
@@ -46,17 +46,17 @@ class LocalStorageService {
     if (!tokenObj)
       return {
         email: "",
-        role: "",
+        role: ""
       };
 
     const { email, role } = JSON.parse(tokenObj);
     return {
       email,
-      role,
+      role
     };
   }
 
-  static removeTokenConfirmation() {
+  static removeTokenConfirmation(): void {
     localStorage.removeItem(LocalStorageService.tokenKey);
   }
 }

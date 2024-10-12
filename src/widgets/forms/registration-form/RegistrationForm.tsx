@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -15,7 +15,7 @@ import { PasswordValidationPanel } from "src/features";
 
 import { RegistrationFormValues, validationSchema } from "./validation";
 
-const RegistrationForm = () => {
+const RegistrationForm: FC = () => {
   const [role, setRole] = useState<UserRole>(UserRole.STUDENT);
 
   const { t } = useTranslation("auth");
@@ -24,13 +24,13 @@ const RegistrationForm = () => {
   const {
     formState: { errors },
     register,
-    handleSubmit,
+    handleSubmit
   } = useForm<RegistrationFormValues>({
     resolver: yupResolver(validationSchema),
-    mode: "onSubmit",
+    mode: "onSubmit"
   });
 
-  function onSubmit(data: RegistrationFormValues) {
+  function onSubmit(data: RegistrationFormValues): void {
     try {
       LocalStorageService.emailConfirmation("1234", data.email, role as UserRole);
       navigate(AppRoutes.auth.accountVerification);
@@ -48,7 +48,7 @@ const RegistrationForm = () => {
           fullWidth
           startIcon={<SchoolOutlinedIcon />}
           className={cn("auth-form__btn-role button-rounded-sm", {
-            active: role === UserRole.STUDENT,
+            active: role === UserRole.STUDENT
           })}
           onClick={() => setRole(UserRole.STUDENT)}
         >
@@ -61,7 +61,7 @@ const RegistrationForm = () => {
           fullWidth
           startIcon={<SchoolOutlinedIcon />}
           className={cn("auth-form__btn-role button-rounded-sm", {
-            active: role === UserRole.TEACHER,
+            active: role === UserRole.TEACHER
           })}
           onClick={() => setRole(UserRole.TEACHER)}
         >
@@ -72,7 +72,7 @@ const RegistrationForm = () => {
       <Stack direction="column" gap="20px">
         <TextField
           {...register("fullName", {
-            required: "test error",
+            required: "test error"
           })}
           error={!!errors.fullName?.message}
           helperText={errors.fullName?.message}
@@ -81,7 +81,7 @@ const RegistrationForm = () => {
         />
         <TextField
           {...register("email", {
-            required: "test error",
+            required: "test error"
           })}
           error={!!errors.email?.message}
           helperText={errors.email?.message}

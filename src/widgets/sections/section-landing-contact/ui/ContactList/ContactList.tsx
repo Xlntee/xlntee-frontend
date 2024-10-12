@@ -1,5 +1,10 @@
+import { FC } from "react";
+
 import { Stack, Typography, Link } from "@mui/material";
+
 import { XlnteeColors } from "src/shared/themes/colors";
+
+import "./ContactList.scss";
 
 interface ContactLinksProps {
   items: ContactLinkType[];
@@ -10,9 +15,7 @@ export type ContactLinkType = {
   link: string;
 };
 
-import "./ContactList.scss";
-
-const ContactLinks = ({ items }: ContactLinksProps) => {
+const ContactLinks: FC<ContactLinksProps> = ({ items }) => {
   return (
     <Stack direction="row" className="contact-list">
       {items.map((item, index) => (

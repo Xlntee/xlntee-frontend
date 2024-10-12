@@ -7,11 +7,11 @@ export const lectureSingleValidationSchema = yup.object({
   description: yup.string(),
   video: yup.string().notRequired(),
   files: yup.array().of(yup.string()).notRequired(),
-  testConfigurations: yup.array().of(testConfigurationSingleValidationSchema).notRequired(),
+  testConfigurations: yup.array().of(testConfigurationSingleValidationSchema).notRequired()
 });
 
 const lecturesArrayValidationSchema = yup.object({
-  lectures: yup.array().of(lectureSingleValidationSchema),
+  lectures: yup.array().of(lectureSingleValidationSchema)
 });
 
 export type LectureSingleFormValues = Required<yup.InferType<typeof lectureSingleValidationSchema>>;

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import { useForm } from "react-hook-form";
 import yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -25,7 +25,7 @@ interface PromoCode {
 
 export type FormValues = yup.InferType<typeof validationSchema>;
 
-const BlockPromoCodes = () => {
+const BlockPromoCodes: FC = () => {
   const { t } = useTranslation("teacher-create-course");
 
   const [promoCodes, setPromoCodes] = useState<PromoCode[]>([]);
@@ -37,14 +37,14 @@ const BlockPromoCodes = () => {
     handleSubmit,
     register,
     resetField,
-    formState: { errors },
+    formState: { errors }
   } = useForm<FormValues>({
     mode: "onSubmit",
     defaultValues: defaultValuesForm,
-    resolver: yupResolver(validationSchema),
+    resolver: yupResolver(validationSchema)
   });
 
-  function onSubmitForm({ discount, promoCode }: FormValues) {
+  function onSubmitForm({ discount, promoCode }: FormValues): void {
     const existsPromo = promoCodes.some((item) => item.name === promoCode);
     if (existsPromo) {
       setColorAlert("error");
@@ -58,14 +58,14 @@ const BlockPromoCodes = () => {
       {
         id: uuidv4().toString(),
         name: promoCode,
-        discount: +discount,
-      },
+        discount: +discount
+      }
     ]);
     resetField("discount");
     resetField("promoCode");
   }
 
-  function onDeletePromoCode(id: string) {
+  function onDeletePromoCode(id: string): void {
     const filteredPromoCodes = promoCodes.filter((item) => item.id !== id);
     setPromoCodes(filteredPromoCodes);
     onCloseModal();
@@ -118,7 +118,7 @@ const BlockPromoCodes = () => {
         </Button>
       </Box>
 
-      {!!promoCodes.length ? (
+      {promoCodes.length ? (
         <>
           <Box>
             <Typography variant="h6" mb="8px">

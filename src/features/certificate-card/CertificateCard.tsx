@@ -22,7 +22,7 @@ const CertificateCard: FC<CertificateCardProps> = ({ title, image, href }) => {
           {title}
         </Typography>
       </Box>
-      <Link className="cartificate-card__link" to={href}></Link>
+      <Link className="cartificate-card__link" to={href} />
     </Box>
   );
 };

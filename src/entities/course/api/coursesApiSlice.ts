@@ -8,21 +8,21 @@ export const courseApiSlice = apiSlice.injectEndpoints({
     getCourses: builder.query<PaginatedResponse<CourseSummary>, CoursesQueryParams>({
       query: (params) => ({
         url: "/courses",
-        params,
-      }),
+        params
+      })
     }),
     getTopCourses: builder.query<CourseSummary[], number>({
       query: (limit) => ({
         url: "/courses/top",
-        params: { limit },
-      }),
+        params: { limit }
+      })
     }),
     getCourse: builder.query<Course, string>({
       query: (id) => ({
-        url: `/courses/${id}`,
-      }),
-    }),
-  }),
+        url: `/courses/${id}`
+      })
+    })
+  })
 });
 
 export const { useGetCoursesQuery, useGetTopCoursesQuery, useGetCourseQuery } = courseApiSlice;

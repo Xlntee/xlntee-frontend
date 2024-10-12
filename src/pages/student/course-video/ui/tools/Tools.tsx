@@ -7,21 +7,18 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import TextSnippetIcon from "@mui/icons-material/TextSnippet";
 import CommentIcon from "@mui/icons-material/Comment";
 
+import { ToolsTabEnum } from "../../types";
+
 import "./Tools.scss";
 
 interface ToolsProps {
   onClickTab: (value: string) => void;
 }
 
-export enum ToolsTabEnum {
-  Description = "description",
-  Comments = "comments",
-}
-
 const Tools: FC<ToolsProps> = ({ onClickTab }) => {
   const [tab, setTab] = useState<string>(ToolsTabEnum.Description);
 
-  function onChooseTab(value: string) {
+  function onChooseTab(value: string): void {
     onClickTab(value);
     setTab(value);
   }

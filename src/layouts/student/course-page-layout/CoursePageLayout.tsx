@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { Outlet } from "react-router-dom";
 
 import { Box, Stack } from "@mui/material";
@@ -7,7 +8,7 @@ import Footer from "src/widgets/footer/Footer";
 import { UserRole } from "src/shared/utils/enum";
 import { Progress } from "src/features";
 
-const CoursePageLayout = () => {
+const CoursePageLayout: FC = () => {
   return (
     <>
       <HeaderProfile

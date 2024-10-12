@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { Box, Typography, TextField, InputAdornment, Button } from "@mui/material";
@@ -9,14 +9,14 @@ import { PageProps } from "pages/type";
 import useSnackbarAlert from "src/hooks/useSnackbarAlert";
 import { Snackbar } from "src/features";
 
-const AdvertisingPage = ({ title }: PageProps) => {
+const AdvertisingPage: FC<PageProps> = ({ title }) => {
   useTitle(title);
   const { t } = useTranslation("teacher-create-course");
 
   const [fieldValue, setFieldValue] = useState<string>("");
   const { alertMessage, alertVisible, showAlert, closeAlert, setMessageAlert } = useSnackbarAlert();
 
-  function onCopyToClipboard() {
+  function onCopyToClipboard(): void {
     if (!fieldValue.length) return;
 
     setMessageAlert(t("advertising.clipboard_message"));
@@ -43,7 +43,7 @@ const AdvertisingPage = ({ title }: PageProps) => {
                   <ContentCopyIcon />
                 </Button>
               </InputAdornment>
-            ),
+            )
           }}
         />
       </Box>

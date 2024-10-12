@@ -1,4 +1,4 @@
-import { useRef, useState, ChangeEvent, useEffect } from "react";
+import { useRef, useState, ChangeEvent, useEffect, FC } from "react";
 import cn from "classnames";
 
 import { Box, Button, Stack } from "@mui/material";
@@ -10,17 +10,15 @@ import "./FileUpload.scss";
 
 export type FileUploadProps = UploaderProps;
 
-export default function FileUpload({
+const FileUpload: FC<FileUploadProps> = ({
   file,
-  fileSize = 2000,
   buttonText,
-  title,
   buttonClassName,
   disabled,
   togglerVariant = "text",
   onChange,
   ...rest
-}: FileUploadProps) {
+}) => {
   const [uploadedFile, setUploadedFile] = useState<string>(file ?? "");
   const refFieldInputFile = useRef<HTMLInputElement>(null);
 
@@ -33,7 +31,7 @@ export default function FileUpload({
     }
   }, [file]);
 
-  function handleChangeFile(e: ChangeEvent<HTMLInputElement>) {
+  function handleChangeFile(e: ChangeEvent<HTMLInputElement>): void {
     const files: FileList | null = e.currentTarget.files;
     if (!files) return;
     onChange && onChange(files);
@@ -56,4 +54,6 @@ export default function FileUpload({
       </Box>
     </Stack>
   );
-}
+};
+
+export default FileUpload;

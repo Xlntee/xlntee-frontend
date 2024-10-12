@@ -24,31 +24,31 @@ export const authApiSlice = apiSlice.injectEndpoints({
       query: (credentials) => ({
         url: "/auth/login",
         method: "POST",
-        body: { ...credentials },
-      }),
+        body: { ...credentials }
+      })
     }),
     signUp: builder.mutation<{ userId: string }, IUserInfoBody>({
       query: (userInfo: IUserInfoBody) => ({
         url: "/auth/signup/personal-data",
         method: "POST",
-        body: { ...userInfo },
-      }),
+        body: { ...userInfo }
+      })
     }),
     verifyEmail: builder.mutation<{ userId: string }, IVerificationData>({
       query: (data: IVerificationData) => ({
         url: "/auth/signup/email",
         method: "POST",
-        body: { ...data },
-      }),
+        body: { ...data }
+      })
     }),
     acceptPolicy: builder.mutation<ILoginResponse, { userId: string }>({
       query: (data: IVerificationData) => ({
         url: "auth/signup/privacy-policy/accept",
         method: "POST",
-        body: { ...data },
-      }),
-    }),
-  }),
+        body: { ...data }
+      })
+    })
+  })
 });
 
 export const { useLoginMutation, useSignUpMutation, useVerifyEmailMutation, useAcceptPolicyMutation } = authApiSlice;

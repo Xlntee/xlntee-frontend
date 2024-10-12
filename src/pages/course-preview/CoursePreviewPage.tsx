@@ -1,24 +1,28 @@
+import { FC } from "react";
 import { useParams } from "react-router-dom";
+
+import { Stack } from "@mui/material";
+
 import { useGetCourseQuery } from "src/entities/course/api/coursesApiSlice";
 import {
   SectionCourseInfo,
   SectionCourseHero,
   SectionCourseStructure,
   SectionCourseDescription,
-  SectionCourseAbout,
+  SectionCourseAbout
 } from "src/widgets/sections/sections-teacher-preview";
 import useTitle from "src/hooks/useTitle/useTitle";
 import { PageProps } from "pages/type";
-import { Stack } from "@mui/material";
+
 import { Difficulty, Language } from "src/entities/course/model";
 
-const CoursePreviewPage = ({ title }: PageProps) => {
+const CoursePreviewPage: FC<PageProps> = ({ title }) => {
   useTitle(title);
 
   const { id } = useParams<{ id: string }>();
 
   const { data, isLoading, error } = useGetCourseQuery(id!, {
-    skip: !id,
+    skip: !id
   });
 
   //тимчасово, щоб ts не жалувався на undefined
@@ -61,7 +65,7 @@ const CoursePreviewPage = ({ title }: PageProps) => {
             "MBA",
             "Junior SEO manager",
             "Middle Product Manager",
-            "Junior JS developer",
+            "Junior JS developer"
           ]}
         />
       </Stack>

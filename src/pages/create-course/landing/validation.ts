@@ -8,7 +8,7 @@ export const landingValidationSchema = yup.object().shape({
     .min(1, "At least one tag is required"),
   description: yup.string().required("Description is required"),
   image: yup.string().required("Image is required"),
-  video: yup.string().required("Video is required"),
+  video: yup.string().required("Video is required")
 });
 
 export type LandingFormValues = yup.InferType<typeof landingValidationSchema>;

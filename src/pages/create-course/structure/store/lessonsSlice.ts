@@ -1,4 +1,4 @@
-import { createSelector, createSlice, current, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, current, PayloadAction } from "@reduxjs/toolkit";
 import { v4 as uuidv4 } from "uuid";
 
 import { RootState } from "src/app/store/store";
@@ -17,7 +17,7 @@ import {
   AddQuizPayload,
   AddFilePayload,
   UpdateLectureDescriptionPayload,
-  UpdateLessonPayload,
+  UpdateLessonPayload
 } from "./types";
 
 import { getInitialLecture, initialState } from "./initialData";
@@ -27,13 +27,7 @@ export interface ILessonsState {
   lessons: Lesson[];
 }
 
-export const selectLessons = (state: RootState) => state.lessons.lessons;
-
-export const selectLectureByLesson = (lessonId: string, lectureId: string) =>
-  createSelector([selectLessons], (lessons) => {
-    const { lessonIndex, lectureIndex } = getLectureIndexes(lessons, lessonId, lectureId);
-    return lessons[lessonIndex].lectures?.[lectureIndex];
-  });
+export const selectLessons = (state: RootState): Lesson[] => state.lessons.lessons;
 
 const lessonSlice = createSlice({
   name: "lesson",
@@ -51,7 +45,7 @@ const lessonSlice = createSlice({
         id: uuidv4().toString(),
         title: "",
         free: false,
-        lectures: [getInitialLecture()],
+        lectures: [getInitialLecture()]
       });
     },
     deleteLesson: (state: ILessonsState, action: PayloadAction<{ lessonId: string }>) => {
@@ -100,6 +94,7 @@ const lessonSlice = createSlice({
         }
       }
       if (type === "video") {
+        // eslint-disable-next-line
         copyLessons[lessonIndex].lectures[lectureIndex].video;
       }
 
@@ -195,7 +190,7 @@ const lessonSlice = createSlice({
       const { lessonIndex, lectureIndex } = getLectureIndexes(copyLessons, lessonId, lectureId);
       copyLessons[lessonIndex].lectures[lectureIndex] = {
         ...copyLessons[lessonIndex].lectures[lectureIndex],
-        testConfigurations: [quizInitialData],
+        testConfigurations: [quizInitialData]
       };
       state.lessons = copyLessons;
     },
@@ -207,8 +202,8 @@ const lessonSlice = createSlice({
       copyLessons[lessonIndex] = payload;
 
       state.lessons = copyLessons;
-    },
-  },
+    }
+  }
 });
 
 export const {
@@ -225,7 +220,7 @@ export const {
   addQuestion,
   deleteQuestion,
   addQuiz,
-  updateLesson,
+  updateLesson
 } = lessonSlice.actions;
 
 export default lessonSlice.reducer;

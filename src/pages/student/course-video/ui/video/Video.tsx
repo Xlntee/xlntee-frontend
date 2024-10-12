@@ -14,7 +14,7 @@ const Video: FC<VideoProps> = ({ video, type }) => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
-  function onPlayVideo() {
+  function onPlayVideo(): void {
     if (videoRef.current) {
       videoRef.current.play();
       setIsPlaying(!isPlaying);

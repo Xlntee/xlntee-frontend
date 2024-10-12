@@ -35,15 +35,15 @@ const HeaderProfile: FC<HeaderProfileProps> = ({ children, link, tools, classNam
       name: t("teacher-navigation.courses"),
       path: AppRoutes.teacher.myCourses,
       icon: <VideocamIcon />,
-      type: "link",
+      type: "link"
     },
     {
       id: "4",
       name: t("teacher-navigation.support"),
       path: AppRoutes.teacher.support,
       icon: <HelpOutlineIcon />,
-      type: "link",
-    },
+      type: "link"
+    }
   ];
 
   const studentNavList: NavigationLinkType[] = [
@@ -52,40 +52,40 @@ const HeaderProfile: FC<HeaderProfileProps> = ({ children, link, tools, classNam
       name: t("student-navigation.my-learning"),
       path: AppRoutes.student.myLearning,
       icon: <VideocamIcon />,
-      type: "link",
+      type: "link"
     },
     {
       id: "2",
       name: t("student-navigation.completed-courses"),
       path: AppRoutes.student.completedCourses,
       icon: <DoneOutlineIcon />,
-      type: "link",
+      type: "link"
     },
     {
       id: "3",
       name: t("student-navigation.certificates"),
       path: AppRoutes.student.certificates,
       icon: <LocalActivityIcon />,
-      type: "link",
+      type: "link"
     },
     {
       id: "4",
       name: t("student-navigation.support"),
       path: AppRoutes.student.support,
       icon: <HelpOutlineIcon />,
-      type: "link",
-    },
+      type: "link"
+    }
   ];
 
-  const toggleDrawer = () => {
+  const toggleDrawer = (): void => {
     setOpen((prevState) => !prevState);
   };
 
-  function onClose() {
+  function onClose(): void {
     setOpen(false);
   }
 
-  function getNavigation() {
+  function getNavigation(): NavigationLinkType[] {
     if (userRole === UserRole.STUDENT) {
       return studentNavList;
     }
@@ -118,7 +118,9 @@ const HeaderProfile: FC<HeaderProfileProps> = ({ children, link, tools, classNam
           </Stack>
         </Box>
       </Container>
-      <NavigationDrawer navigationList={getNavigation()} children={children} open={open} onClose={onClose} />
+      <NavigationDrawer navigationList={getNavigation()} open={open} onClose={onClose}>
+        {children}
+      </NavigationDrawer>
     </Box>
   );
 };

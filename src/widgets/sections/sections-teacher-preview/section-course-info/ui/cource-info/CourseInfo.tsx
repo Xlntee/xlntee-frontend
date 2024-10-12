@@ -24,16 +24,16 @@ const CoursePreviewInfoBlock: React.FC<CoursePreviewInfoBlockProps> = ({ title, 
           display: "flex",
           flexDirection: "column",
           gap: "20px",
-          padding: 0,
+          padding: 0
         }}
       >
-        {info.map((info, index) => (
+        {info.map((item, index) => (
           <ListItem key={index} sx={{ display: "flex", alignItems: "start", gap: "20px", padding: 0 }}>
             <Box pt="6px" width="20px">
-              <img src="/assets/course-preview-arrow.png" width={20} height={20} />
+              <img src="/assets/course-preview-arrow.png" width={20} height={20} alt="course" />
             </Box>
             <Typography variant="body1" flex={1}>
-              {info}
+              {item}
             </Typography>
           </ListItem>
         ))}

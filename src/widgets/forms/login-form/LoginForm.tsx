@@ -28,10 +28,10 @@ const LoginForm: FC = () => {
   const {
     formState: { errors },
     register,
-    handleSubmit,
+    handleSubmit
   } = useForm<LoginFormValues>({
     resolver: yupResolver(validationSchema),
-    mode: "onSubmit",
+    mode: "onSubmit"
   });
 
   const onSubmit = handleSubmit(async (data) => {

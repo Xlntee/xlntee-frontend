@@ -1,4 +1,4 @@
-import { useRef, useState, ChangeEvent, useEffect } from "react";
+import { useRef, useState, ChangeEvent, useEffect, FC } from "react";
 import cn from "classnames";
 
 import { Box, Button, Avatar, Typography, Stack } from "@mui/material";
@@ -25,7 +25,7 @@ export type ImageUploadProps = UploaderProps & {
   centeredContent?: boolean;
 };
 
-export default function ImageUpload({
+const ImageUpload: FC<ImageUploadProps> = ({
   image,
   viewType = "wide",
   width = "100%",
@@ -40,7 +40,7 @@ export default function ImageUpload({
   disabled,
   onChange,
   ...rest
-}: ImageUploadProps) {
+}) => {
   const [uploadedFile, setUploadedFile] = useState<string>(image ?? "");
   const refFieldInputFile = useRef<HTMLInputElement>(null);
   const { alertMessage, alertVisible, showAlert, closeAlert, setColorAlert, setMessageAlert } = useSnackbarAlert();
@@ -48,7 +48,7 @@ export default function ImageUpload({
   const viewTypeCn = cn({
     "image-upload--square": viewType === "square",
     "image-upload--wide": viewType === "wide",
-    "image-upload--avatar": viewType === "avatar",
+    "image-upload--avatar": viewType === "avatar"
   });
 
   useEffect(() => {
@@ -60,7 +60,7 @@ export default function ImageUpload({
     }
   }, [image]);
 
-  function handleChangeFile(e: ChangeEvent<HTMLInputElement>) {
+  function handleChangeFile(e: ChangeEvent<HTMLInputElement>): void {
     const file: File | null = e.currentTarget.files && e.currentTarget.files[0];
     if (!file) return;
 
@@ -71,9 +71,9 @@ export default function ImageUpload({
         setUploadedFile(fileString);
         onChange && onChange(file, fileString);
       };
-    } catch (e) {
-      if (e instanceof Error) {
-        setMessageAlert(e.message);
+    } catch (error) {
+      if (error instanceof Error) {
+        setMessageAlert(error.message);
         setColorAlert("error");
         showAlert();
       }
@@ -89,7 +89,7 @@ export default function ImageUpload({
       {showPreview ? (
         <Box className="image-upload__preview">
           {viewType !== "avatar" ? (
-            <img src={uploadedFile || ""} alt="image" width={width} height={height} />
+            <img src={uploadedFile || ""} alt="preview" width={width} height={height} />
           ) : (
             <Avatar src={uploadedFile} sx={{ width: width, height: height }} className="image-upload__avatar" />
           )}
@@ -125,4 +125,6 @@ export default function ImageUpload({
       <Snackbar open={alertVisible} onClose={closeAlert} title={alertMessage} />
     </Stack>
   );
-}
+};
+
+export default ImageUpload;

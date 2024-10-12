@@ -8,14 +8,14 @@ export const getLessonIndex = (lessons: Lesson[], lessonId: string): number => {
 export function getLectureIndexes(
   lessons: Lesson[],
   lessonId: string,
-  lectureId: string,
+  lectureId: string
 ): { lessonIndex: number; lectureIndex: number } {
   const lessonIndex = getLessonIndex(lessons, lessonId);
   const lectureIndex = lessons[lessonIndex].lectures.findIndex((lecture: Lecture) => lecture.id === lectureId);
 
   return {
     lessonIndex,
-    lectureIndex,
+    lectureIndex
   };
 }
 

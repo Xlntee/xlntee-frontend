@@ -8,5 +8,5 @@ export const defaultValuesForm: FormValues = {
   language: "",
   level: "",
   subcategory: "",
-  certificate: false,
+  certificate: false
 };

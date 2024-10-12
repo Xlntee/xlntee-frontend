@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { useForm } from "react-hook-form";
 import yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -17,17 +18,17 @@ import "./Price.scss";
 
 export type FormValues = yup.InferType<typeof validationSchema>;
 
-const PricePage = ({ title }: PageProps) => {
+const PricePage: FC<PageProps> = ({ title }) => {
   useTitle(title);
   const { t } = useTranslation("teacher-create-course");
 
   const { handleSubmit, register } = useForm<FormValues>({
     mode: "onSubmit",
     defaultValues: defaultValuesForm,
-    resolver: yupResolver(validationSchema),
+    resolver: yupResolver(validationSchema)
   });
 
-  function onSubmitForm(data: FormValues) {
+  function onSubmitForm(data: FormValues): void {
     console.log(data);
   }
 

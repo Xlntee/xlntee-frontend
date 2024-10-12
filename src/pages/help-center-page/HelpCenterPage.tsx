@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -18,7 +18,7 @@ interface FormData {
   supportFormText: string;
 }
 
-const HelpCenterPage = ({ title }: PageProps) => {
+const HelpCenterPage: FC<PageProps> = ({ title }) => {
   useTitle(title);
 
   const { t } = useTranslation("auth");
@@ -29,7 +29,7 @@ const HelpCenterPage = ({ title }: PageProps) => {
 
   const [isSubmit, setIsSubmit] = useState<boolean>(false);
 
-  const onSubmit = (data: FormData) => {
+  const onSubmit = (data: FormData): void => {
     console.log(data);
     setIsSubmit(true);
   };

@@ -1,10 +1,11 @@
+import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
 import { Box, Container, Grid } from "@mui/material";
 
 import { CourseInfo } from "./ui";
 
-const SectionCourseInfo = () => {
+const SectionCourseInfo: FC = () => {
   const { t, ready } = useTranslation("teacher-preview");
   const details1: string[] = t("teacher-preview.section-course-info.details1", { returnObjects: true });
   const details2: string[] = t("teacher-preview.section-course-info.details2", { returnObjects: true });
@@ -12,12 +13,12 @@ const SectionCourseInfo = () => {
   const data = [
     {
       title: t("teacher-preview.section-course-info.title1"),
-      details: details1,
+      details: details1
     },
     {
       title: t("teacher-preview.section-course-info.title2"),
-      details: details2,
-    },
+      details: details2
+    }
   ];
 
   if (!ready) return "";

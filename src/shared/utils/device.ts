@@ -1,4 +1,4 @@
-export function getDeviceId() {
+export function getDeviceId(): string {
   const navigatorInfo = window.navigator;
   const screenInfo = window.screen;
 

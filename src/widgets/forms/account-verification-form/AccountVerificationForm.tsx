@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -11,18 +11,18 @@ import { AppRoutes } from "src/app/routing/appRoutes";
 import LocalStorageService from "src/shared/local-storage";
 import { XlnteeColors } from "src/shared/themes/colors";
 
-const AccountVerificationPage = ({ title }: PageProps) => {
+const AccountVerificationPage: FC<PageProps> = ({ title }) => {
   useTitle(title);
 
   const [confirmationState, setConfirmationState] = useState<{ email: string; role: string }>({
     email: "",
-    role: "",
+    role: ""
   });
 
   const { t } = useTranslation("auth");
   const navigate = useNavigate();
 
-  const getShortEmail = (email: string) => {
+  const getShortEmail = (email: string): string => {
     return email;
   };
 
@@ -31,11 +31,11 @@ const AccountVerificationPage = ({ title }: PageProps) => {
     if (conf === null) return;
     setConfirmationState({
       email: conf.email,
-      role: conf.role,
+      role: conf.role
     });
   }, []);
 
-  function onRedirectToRegistration() {
+  function onRedirectToRegistration(): void {
     LocalStorageService.removeTokenConfirmation();
     navigate(AppRoutes.auth.registration);
   }

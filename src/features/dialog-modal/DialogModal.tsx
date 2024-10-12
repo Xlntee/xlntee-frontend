@@ -9,7 +9,7 @@ import {
   DialogContent,
   DialogContentText,
   DialogActions,
-  CircularProgress,
+  CircularProgress
 } from "@mui/material";
 
 export interface DialogModalProps {

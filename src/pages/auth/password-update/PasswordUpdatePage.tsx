@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useTranslation } from "react-i18next";
@@ -13,7 +13,7 @@ import { FormValues, validationSchema } from "./validation";
 
 import "./PasswordUpdatePage.scss";
 
-const PasswordUpdatePage = ({ title }: PageProps) => {
+const PasswordUpdatePage: FC<PageProps> = ({ title }) => {
   useTitle(title);
 
   const { t } = useTranslation("auth");
@@ -21,15 +21,15 @@ const PasswordUpdatePage = ({ title }: PageProps) => {
   const {
     formState: { errors },
     handleSubmit,
-    register,
+    register
   } = useForm<FormValues>({
     mode: "onSubmit",
-    resolver: yupResolver(validationSchema),
+    resolver: yupResolver(validationSchema)
   });
 
   const [success, setSuccess] = useState<boolean>(false);
 
-  function onSubmitForm(data: FormValues) {
+  function onSubmitForm(data: FormValues): void {
     console.log(data);
     setSuccess(true);
   }

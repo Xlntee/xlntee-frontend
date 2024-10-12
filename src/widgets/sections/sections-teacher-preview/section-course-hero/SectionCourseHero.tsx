@@ -32,7 +32,7 @@ interface SectionCourseHeroProps {
   reviewCount?: number;
 }
 
-const getNumberWithDiscount = (number: number, discout: number) => Math.round(number * (discout / 100));
+const getNumberWithDiscount = (number: number, discout: number): number => Math.round(number * (discout / 100));
 
 const SectionCourseHero: FC<SectionCourseHeroProps> = ({
   preview,
@@ -45,31 +45,31 @@ const SectionCourseHero: FC<SectionCourseHeroProps> = ({
   level,
   language,
   generateCertificate,
-  reviewCount,
+  reviewCount
 }) => {
   const { t } = useTranslation("teacher-preview");
 
   const info = [
     {
       icon: <UpdateOutlinedIcon />,
-      text: "10.10.2020",
+      text: "10.10.2020"
     },
     {
       icon: <LanguageOutlinedIcon />,
-      text: language,
+      text: language
     },
     {
       icon: <EqualizerIcon />,
-      text: level,
+      text: level
     },
     {
       icon: <WatchLaterOutlinedIcon />,
-      text: "75 годин",
+      text: "75 годин"
     },
     {
       icon: <LocalActivityIcon />,
-      text: generateCertificate ? "Видається сертифікат" : "Сертифікат не видається",
-    },
+      text: generateCertificate ? "Видається сертифікат" : "Сертифікат не видається"
+    }
   ];
 
   return (
@@ -79,7 +79,7 @@ const SectionCourseHero: FC<SectionCourseHeroProps> = ({
           <Grid item xs={12} lg={6}>
             <Box className="preview-course-image">
               <img src={preview} alt={title} />
-              <Button className="preview-course-image__action" startIcon={<PlayArrowIcon />}></Button>
+              <Button className="preview-course-image__action" startIcon={<PlayArrowIcon />} />
             </Box>
           </Grid>
           <Grid item xs={12} lg={6}>

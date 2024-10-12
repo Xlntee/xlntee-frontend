@@ -22,7 +22,7 @@ export const myCourses: MockCourse[] = [
     discount: 20,
     rating: 2.8,
     reviews: 110,
-    href: "#",
+    href: "#"
   },
   {
     id: "2",
@@ -34,6 +34,6 @@ export const myCourses: MockCourse[] = [
     discount: 20,
     rating: 2.8,
     reviews: 110,
-    href: "#",
-  },
+    href: "#"
+  }
 ];

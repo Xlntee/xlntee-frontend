@@ -1,3 +1,5 @@
+import { FC } from "react";
+
 import { List, ListItem, Typography } from "@mui/material";
 
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
@@ -8,7 +10,7 @@ interface CheckListProps {
   items: string[];
 }
 
-const CheckList = ({ items }: CheckListProps) => {
+const CheckList: FC<CheckListProps> = ({ items }) => {
   return (
     <List className="check-list">
       {items.map((item, index) => (

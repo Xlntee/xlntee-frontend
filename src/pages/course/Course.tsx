@@ -1,6 +1,8 @@
+import { FC } from "react";
+
 import { Box } from "@mui/material";
 
-const CoursePage = () => {
+const CoursePage: FC = () => {
   return (
     <Box>
       <p>

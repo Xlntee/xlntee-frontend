@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
 import { Button, Box, Typography } from "@mui/material";
@@ -5,7 +6,7 @@ import ShareIcon from "@mui/icons-material/Share";
 
 import "./CourseShare.scss";
 
-const CourseShare = () => {
+const CourseShare: FC = () => {
   const { t } = useTranslation("auth");
   return (
     <Box className="course-share">

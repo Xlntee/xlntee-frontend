@@ -5,7 +5,7 @@ enum EnumActionType {
   SHOW = "SHOW",
   CLOSE = "CLOSE",
   SET_COLOR = "SET_COLOR",
-  SET_MESSAGE = "SET_MESSAGE",
+  SET_MESSAGE = "SET_MESSAGE"
 }
 
 type ActionType = {
@@ -19,36 +19,46 @@ interface ActionState {
   color: string;
 }
 
+interface UseSnackbarAlertReturnType {
+  alertVisible: boolean;
+  alertMessage: string;
+  alertColor: AlertColor;
+  setMessageAlert: (message: string) => void;
+  setColorAlert: (color: AlertColor) => void;
+  showAlert: () => void;
+  closeAlert: () => void;
+}
+
 const initialState: ActionState = {
   show: false,
   message: "",
-  color: "error",
+  color: "error"
 };
 
-function reducer(state: ActionState, action: ActionType) {
+function reducer(state: ActionState, action: ActionType): ActionState {
   switch (action.type) {
     case "SHOW": {
       return {
         ...state,
-        show: true,
+        show: true
       };
     }
     case "CLOSE": {
       return {
         ...state,
-        show: false,
+        show: false
       };
     }
     case "SET_COLOR": {
       return {
         ...state,
-        color: action.payload,
+        color: action.payload
       };
     }
     case "SET_MESSAGE": {
       return {
         ...state,
-        message: action.payload,
+        message: action.payload
       };
     }
     default:
@@ -56,34 +66,34 @@ function reducer(state: ActionState, action: ActionType) {
   }
 }
 
-export const useSnackbarAlert = () => {
+export const useSnackbarAlert = (): UseSnackbarAlertReturnType => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  function showAlert() {
+  function showAlert(): void {
     dispatch({
       type: EnumActionType.SHOW,
-      payload: "",
+      payload: ""
     });
   }
 
-  function closeAlert() {
+  function closeAlert(): void {
     dispatch({
       type: EnumActionType.CLOSE,
-      payload: "",
+      payload: ""
     });
   }
 
-  function setMessageAlert(message: string) {
+  function setMessageAlert(message: string): void {
     dispatch({
       type: EnumActionType.SET_MESSAGE,
-      payload: message,
+      payload: message
     });
   }
 
-  function setColorAlert(color: AlertColor) {
+  function setColorAlert(color: AlertColor): void {
     dispatch({
       type: EnumActionType.SET_COLOR,
-      payload: color,
+      payload: color
     });
   }
 
@@ -94,7 +104,7 @@ export const useSnackbarAlert = () => {
     showAlert,
     closeAlert,
     setMessageAlert,
-    setColorAlert,
+    setColorAlert
   };
 };
 

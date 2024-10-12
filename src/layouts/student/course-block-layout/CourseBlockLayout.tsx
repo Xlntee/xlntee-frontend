@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import cn from "classnames";
 
@@ -21,39 +21,39 @@ const data: CategoryLinkType[] = [
     type: "video",
     href: "#",
     title: "Lorem ipsum",
-    completed: false,
+    completed: false
   },
   {
     id: "2",
     type: "quiz",
     href: "#",
     title: "Lorem ipsum",
-    completed: true,
+    completed: true
   },
   {
     id: "3",
     type: "file",
     href: "#",
     title: "Lorem ipsum",
-    completed: false,
+    completed: false
   },
   {
     id: "4",
     type: "video",
     href: "#",
     title: "Lorem ipsum",
-    completed: false,
-  },
+    completed: false
+  }
 ];
 
-const CourseLayout = () => {
+const CourseLayout: FC = () => {
   const LSMenuKey = "student-collapsed-menu";
   const [isOpenMenu, setIsOpenMenu] = useState<boolean>(localStorage.getItem(LSMenuKey) === "true");
   const [expandedObj, setExpandedObj] = useState<Record<string, boolean>>({});
 
   const [navigation, setNavigation] = useState<CategoriesNavigation[]>([]);
 
-  const getCompletedCountCategories = (arr: CategoryLinkType[]) => {
+  const getCompletedCountCategories = (arr: CategoryLinkType[]): number => {
     return arr.reduce((acc, item) => acc + (item.completed ? 1 : 0), 0);
   };
 
@@ -61,8 +61,8 @@ const CourseLayout = () => {
     setNavigation([
       {
         items: data,
-        completed: getCompletedCountCategories(data),
-      },
+        completed: getCompletedCountCategories(data)
+      }
     ]);
     fillExpandedObj();
   }, []);
@@ -70,26 +70,26 @@ const CourseLayout = () => {
   //test data
   const arr = [false];
 
-  function fillExpandedObj() {
+  function fillExpandedObj(): void {
     const obj: Record<string, boolean> = {};
     arr.forEach((item, index) => (obj[index] = item));
     setExpandedObj(obj);
   }
 
-  function collapseAll() {
+  function collapseAll(): void {
     const obj: Record<string, boolean> = {};
     arr.forEach((_, index) => (obj[index] = false));
     setExpandedObj(obj);
   }
 
-  function onOpenAccordion(key: string, value: boolean) {
+  function onOpenAccordion(key: string, value: boolean): void {
     setExpandedObj((prevState) => ({
       ...prevState,
-      [key]: value,
+      [key]: value
     }));
   }
 
-  function onToggleNavigation() {
+  function onToggleNavigation(): void {
     const isCollapsed = !isOpenMenu;
     setIsOpenMenu(isCollapsed);
     localStorage.setItem(LSMenuKey, isCollapsed.toString());
@@ -128,14 +128,14 @@ const CourseLayout = () => {
                 number={index + 1}
                 progress={{
                   complete: navigation[index].completed,
-                  total: navigation[index].items.length,
+                  total: navigation[index].items.length
                 }}
                 className={cn({ squeeze: !isOpenMenu })}
               >
                 <CategoryNavigation items={navigation[index].items} />
               </AccordionProgress>
             ))}
-            <Button className="collapsed-navigation__hidden-toggler" onClick={onToggleNavigation}></Button>
+            <Button className="collapsed-navigation__hidden-toggler" onClick={onToggleNavigation} />
           </Stack>
         ) : null}
       </Box>

@@ -1,3 +1,5 @@
+import { FC } from "react";
+
 import { Stack, Typography } from "@mui/material";
 
 import "./Skills.scss";
@@ -6,7 +8,7 @@ interface SkillsProps {
   items: string[];
 }
 
-const Skills = ({ items }: SkillsProps) => {
+const Skills: FC<SkillsProps> = ({ items }) => {
   return (
     <Stack className="skills" direction="row" flexWrap="wrap" justifyContent="center" gap="10px">
       {items.map((item, index) => (

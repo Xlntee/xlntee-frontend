@@ -47,16 +47,16 @@ const BlockLecture: FC<BlockLectureProps> = ({ lessonId, id, index, onDelete }) 
   const {
     register,
     formState: { errors },
-    setValue,
+    setValue
   } = useFormContext<LecturesArrayFormValues>();
   const { openModal, onOpenModal, onCloseModal } = useDialogModal();
 
-  function onDeleteLecture() {
+  function onDeleteLecture(): void {
     onDelete(index);
     onCloseModal();
   }
 
-  function onAddQuiz() {
+  function onAddQuiz(): void {
     setShowQuiz((prevState) => !prevState);
     const initialData = getInitialTestConfiguration();
     const { id: testConfigurationId, question, variants } = initialData;
@@ -68,29 +68,29 @@ const BlockLecture: FC<BlockLectureProps> = ({ lessonId, id, index, onDelete }) 
         variants: [
           {
             customId: variants[0].id,
-            ...variants[0],
+            ...variants[0]
           },
           {
             customId: variants[1].id,
-            ...variants[1],
-          },
-        ],
-      },
+            ...variants[1]
+          }
+        ]
+      }
     ]);
   }
 
-  function onAddVideo(file: File) {
+  function onAddVideo(file: File): void {
     setValue(`lectures.${index}.video`, "1");
     setVideoFile(file.name);
   }
 
-  function onAddFile(files: FileList) {
+  function onAddFile(fileList: FileList): void {
     const filesArr: FileLectureProps[] = [];
 
-    for (let file of files) {
+    for (let file of fileList) {
       filesArr.push({
         id: uuidv4(),
-        name: file.name,
+        name: file.name
       });
     }
 
@@ -99,7 +99,7 @@ const BlockLecture: FC<BlockLectureProps> = ({ lessonId, id, index, onDelete }) 
     setFiles(filesArr);
   }
 
-  function onChangeRichText(value: string) {
+  function onChangeRichText(value: string): void {
     setValue(`lectures.${index}.description`, value);
   }
 
@@ -189,8 +189,8 @@ const BlockLecture: FC<BlockLectureProps> = ({ lessonId, id, index, onDelete }) 
             disabled={!!files}
             togglerVariant="white-contain"
             buttonText={t("structure.file_upload_button_text")}
-            onChange={(files) => {
-              onAddFile(files as FileList);
+            onChange={(fileList) => {
+              onAddFile(fileList as FileList);
             }}
           />
           <Button variant="white-contain" size="medium" disabled={showQuiz} onClick={onAddQuiz}>

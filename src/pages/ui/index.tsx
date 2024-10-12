@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import { Button, Container, Stack, Box, Typography, Grid, TextField, InputLabel, Divider } from "@mui/material";
 
 import { Snackbar } from "src/features";
@@ -11,7 +11,7 @@ import { UserRole } from "src/shared/utils/enum";
 const typographyList = ["h1", "h2", "h3", "h4", "h5", "h6"] as const;
 const buttonColorList = ["primary", "secondary", "success", "error"] as const;
 
-const renderButtons = (variant: string, size: string, className?: string) => {
+const renderButtons = (variant: string, size: string, className?: string): JSX.Element => {
   return (
     <>
       {buttonColorList.map((item) => (
@@ -23,7 +23,7 @@ const renderButtons = (variant: string, size: string, className?: string) => {
   );
 };
 
-const renderButtonsGridCol = (variant: string, className?: string) => {
+const renderButtonsGridCol = (variant: string, className?: string): JSX.Element => {
   return (
     <Grid item xs={12} sm={6} md={3}>
       <Typography variant="h6">{variant} small</Typography>
@@ -42,7 +42,7 @@ const renderButtonsGridCol = (variant: string, className?: string) => {
   );
 };
 
-const UiPage = ({ title }: PageProps) => {
+const UiPage: FC<PageProps> = ({ title }) => {
   useTitle(title);
 
   const [showSnackbar, setShowSnackbar] = useState<boolean>(false);
@@ -141,7 +141,7 @@ const UiPage = ({ title }: PageProps) => {
                 variant="outlined"
                 fullWidth
                 InputLabelProps={{
-                  shrink: true,
+                  shrink: true
                 }}
               />
               <TextField
@@ -151,7 +151,7 @@ const UiPage = ({ title }: PageProps) => {
                 variant="outlined"
                 fullWidth
                 InputLabelProps={{
-                  shrink: true,
+                  shrink: true
                 }}
               />
             </Stack>

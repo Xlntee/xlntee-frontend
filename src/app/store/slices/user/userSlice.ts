@@ -5,12 +5,12 @@ import { UserRole } from "src/shared/utils/enum";
 export interface IUserState {
   role: string;
 }
-export const getUser = (state: RootState) => state.user;
+export const getUser = (state: RootState): IUserState => state.user;
 
 const userSlice = createSlice({
   name: "user",
   initialState: {
-    role: "",
+    role: ""
   },
   reducers: {
     setRole: (state: IUserState, action: PayloadAction<{ role: string }>) => {
@@ -25,8 +25,8 @@ const userSlice = createSlice({
       if (role === UserRole.TEACHER) {
         state.role = UserRole.STUDENT;
       }
-    },
-  },
+    }
+  }
 });
 
 export const { switchRole, setRole } = userSlice.actions;

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import ReactQuill from "react-quill";
 import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -14,7 +14,7 @@ import {
   Autocomplete,
   Chip,
   Button,
-  FormHelperText,
+  FormHelperText
 } from "@mui/material";
 
 import useTitle from "src/hooks/useTitle/useTitle";
@@ -36,7 +36,7 @@ export interface AutocompleteFieldBoxProps {
   value: TagType;
 }
 
-const LandingPage = ({ title }: PageProps) => {
+const LandingPage: FC<PageProps> = ({ title }) => {
   useTitle(title);
   const { t } = useTranslation("teacher-create-course");
 
@@ -48,14 +48,14 @@ const LandingPage = ({ title }: PageProps) => {
     register,
     control,
     setValue,
-    formState: { errors },
+    formState: { errors }
   } = useForm<LandingFormValues>({
     mode: "onSubmit",
     defaultValues: defaultValuesForm,
-    resolver: yupResolver(landingValidationSchema),
+    resolver: yupResolver(landingValidationSchema)
   });
 
-  function onSubmitForm(data: LandingFormValues) {
+  function onSubmitForm(data: LandingFormValues): void {
     console.log(data);
   }
 
@@ -64,28 +64,28 @@ const LandingPage = ({ title }: PageProps) => {
       title: `${t("landing.subjects_field_label")}`,
       subtitle: `${t("landing.subjects_field_description")}`,
       tags: [],
-      value: "subjects",
+      value: "subjects"
     },
     {
       title: `${t("landing.requirements_field_label")}`,
       subtitle: `${t("landing.requirements_field_description")}`,
       tags: [],
-      value: "requirements",
-    },
+      value: "requirements"
+    }
   ];
 
-  function onBlurRichText(richText: string) {
+  function onBlurRichText(richText: string): void {
     setValue("description", richText);
   }
 
-  function onUploadImage(file: File, fileBlob?: string) {
+  function onUploadImage(file: File, fileBlob?: string): void {
     if (fileBlob) {
       setValue("image", file.name);
       setPreviewImage(fileBlob);
     }
   }
 
-  function onUploadVideo(file: File, fileBlob?: string) {
+  function onUploadVideo(file: File, fileBlob?: string): void {
     if (fileBlob) {
       setValue("video", file.name);
       setPreviewVideo(fileBlob);
@@ -93,41 +93,42 @@ const LandingPage = ({ title }: PageProps) => {
   }
 
   const videoRequirements: { title: string; value: string }[] = t("landing.promo_video_requirements", {
-    returnObjects: true,
+    returnObjects: true
   });
   const imageRequirements: { title: string; value: string }[] = t("landing.promo_image_requirements", {
-    returnObjects: true,
+    returnObjects: true
   });
 
   return (
     <Box className="create-course-landing">
       <Stack gap="16px">
-        {fields.map(({ title, subtitle, tags, value }) => (
-          <Box key={value} className="field-box">
+        {fields.map((fieldItem) => (
+          <Box key={fieldItem.value} className="field-box">
             <FormLabel>
               <Typography className="field-box__title">{title}*</Typography>
-              <Typography className="field-box__subtitle">{subtitle}</Typography>
+              <Typography className="field-box__subtitle">{fieldItem.subtitle}</Typography>
               <Controller
-                name={value}
+                name={fieldItem.value}
                 control={control}
                 render={({ field }) => (
                   <>
                     <Autocomplete
-                      {...register(value)}
+                      {...register(fieldItem.value)}
                       multiple
                       freeSolo
-                      options={tags}
+                      options={fieldItem.tags}
                       value={field.value}
                       clearIcon={false}
                       onChange={(_, newValue) => field.onChange(newValue)}
                       renderTags={(value, props) =>
-                        value.map((option, index) => <Chip label={option} {...props({ index })} />)
+                        // eslint-disable-next-line react/jsx-key
+                        value.map((tag, index) => <Chip label={tag} {...props({ index })} />)
                       }
                       renderInput={(params) => (
                         <TextField
                           {...params}
-                          error={!!errors[value]?.message}
-                          helperText={errors[value]?.message}
+                          error={!!errors[fieldItem.value]?.message}
+                          helperText={errors[fieldItem.value]?.message}
                           variant="outlined"
                           placeholder={`${t("landing.autocomplete_field_placeholder")}...`}
                         />
@@ -194,7 +195,7 @@ const LandingPage = ({ title }: PageProps) => {
           </Grid>
           <Grid item xs={12} md={6} display="flex">
             <Box className="preview-box">
-              {previewImage && <img src={previewImage} alt="preview image" className="preview-box__file" />}
+              {previewImage && <img src={previewImage} alt="preview" className="preview-box__file" />}
             </Box>
           </Grid>
         </Grid>

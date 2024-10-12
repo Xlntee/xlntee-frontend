@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { FC, useRef } from "react";
 import ReactQuill from "react-quill";
 import { Controller, useForm } from "react-hook-form";
 import yup from "yup";
@@ -16,7 +16,7 @@ import { defaultValuesForm } from "./initialData";
 
 export type FormValues = yup.InferType<typeof validationSchema>;
 
-const LecturerPage = ({ title }: PageProps) => {
+const LecturerPage: FC<PageProps> = ({ title }) => {
   useTitle(title);
   const { t } = useTranslation("teacher-create-course");
 
@@ -26,18 +26,18 @@ const LecturerPage = ({ title }: PageProps) => {
     handleSubmit,
     register,
     control,
-    formState: { errors },
+    formState: { errors }
   } = useForm<FormValues>({
     mode: "onSubmit",
     defaultValues: defaultValuesForm,
-    resolver: yupResolver(validationSchema),
+    resolver: yupResolver(validationSchema)
   });
 
-  function onSubmitForm(data: FormValues) {
+  function onSubmitForm(data: FormValues): void {
     const description = refRichText.current?.value;
     console.log({
       ...data,
-      description,
+      description
     });
   }
 
@@ -84,6 +84,7 @@ const LecturerPage = ({ title }: PageProps) => {
                   clearIcon={false}
                   onChange={(_, newValue) => field.onChange(newValue)}
                   renderTags={(value, props) =>
+                    // eslint-disable-next-line react/jsx-key
                     value.map((option, index) => <Chip label={option} {...props({ index })} />)
                   }
                   renderInput={(params) => (

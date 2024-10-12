@@ -1,4 +1,4 @@
-import { Suspense, lazy, ReactNode, useEffect } from "react";
+import { Suspense, lazy, ReactNode, useEffect, FC } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import { useAppDispatch } from "src/app/store/store";
@@ -12,7 +12,7 @@ import {
   TeacherCreateCourseBlockLayout,
   TeacherCreateCoursePageLayout,
   StudentCourseBlockLayout,
-  StudentCoursePageLayout,
+  StudentCoursePageLayout
 } from "src/layouts";
 
 import PageLoader from "./PageLoader";
@@ -49,7 +49,7 @@ const StatisticPage = lazy(() => import("src/pages/teacher/statistic-page/Statis
 const ProfilePage = lazy(() => import("src/pages/teacher/profile-page/ProfilePage"));
 const HelpCenterPage = lazy(() => import("src/pages/help-center-page/HelpCenterPage"));
 
-const SuspenseWrapper = ({ children }: { children: ReactNode }) => {
+const SuspenseWrapper = ({ children }: { children: ReactNode }): JSX.Element => {
   return <Suspense fallback={<PageLoader />}>{children}</Suspense>;
 };
 
@@ -67,7 +67,7 @@ const authRoutes = [
               <LoginForm />
             </AuthTab>
           </SuspenseWrapper>
-        ),
+        )
       },
       {
         path: AppRoutes.auth.registration,
@@ -77,7 +77,7 @@ const authRoutes = [
               <RegistrationForm />
             </AuthTab>
           </SuspenseWrapper>
-        ),
+        )
       },
       {
         path: AppRoutes.auth.accountVerification,
@@ -85,7 +85,7 @@ const authRoutes = [
           <SuspenseWrapper>
             <AccountVerificationForm />
           </SuspenseWrapper>
-        ),
+        )
       },
       {
         path: AppRoutes.auth.passwordUpdate,
@@ -93,10 +93,10 @@ const authRoutes = [
           <SuspenseWrapper>
             <PasswordUpdate />
           </SuspenseWrapper>
-        ),
-      },
-    ],
-  },
+        )
+      }
+    ]
+  }
 ];
 
 const teacherDashboardRoutes = [
@@ -106,7 +106,7 @@ const teacherDashboardRoutes = [
       <SuspenseWrapper>
         <StatisticPage />
       </SuspenseWrapper>
-    ),
+    )
   },
   {
     path: AppRoutes.teacher.profile,
@@ -114,7 +114,7 @@ const teacherDashboardRoutes = [
       <SuspenseWrapper>
         <ProfilePage title="Profile" />
       </SuspenseWrapper>
-    ),
+    )
   },
   {
     path: AppRoutes.teacher.myCourses,
@@ -122,7 +122,7 @@ const teacherDashboardRoutes = [
       <SuspenseWrapper>
         <MyCoursesPage title="My courses" />
       </SuspenseWrapper>
-    ),
+    )
   },
   {
     path: AppRoutes.teacher.previewCourse,
@@ -130,7 +130,7 @@ const teacherDashboardRoutes = [
       <SuspenseWrapper>
         <CoursePreviewPage title="Course preview" />
       </SuspenseWrapper>
-    ),
+    )
   },
   {
     path: AppRoutes.teacher.support,
@@ -138,7 +138,7 @@ const teacherDashboardRoutes = [
       <SuspenseWrapper>
         <HelpCenterPage title="Help Center" />
       </SuspenseWrapper>
-    ),
+    )
   },
   {
     path: AppRoutes.teacher.emailUpdate,
@@ -146,7 +146,7 @@ const teacherDashboardRoutes = [
       <SuspenseWrapper>
         <EmailUpdatePage title="Email update" />
       </SuspenseWrapper>
-    ),
+    )
   },
   {
     path: AppRoutes.teacher.passwordUpdate,
@@ -154,8 +154,8 @@ const teacherDashboardRoutes = [
       <SuspenseWrapper>
         <PasswordUpdatePage title="Password update" />
       </SuspenseWrapper>
-    ),
-  },
+    )
+  }
 ];
 
 const teacherDashboardCreateCourseRoutes = [
@@ -166,7 +166,7 @@ const teacherDashboardCreateCourseRoutes = [
       <SuspenseWrapper>
         <CreateCourseGeneralPage title="Create course" />
       </SuspenseWrapper>
-    ),
+    )
   },
   {
     path: AppRoutes.teacher.createCourseLanding,
@@ -174,7 +174,7 @@ const teacherDashboardCreateCourseRoutes = [
       <SuspenseWrapper>
         <CreateCourseLandingPage title="Create course general" />
       </SuspenseWrapper>
-    ),
+    )
   },
   {
     path: AppRoutes.teacher.createCourseStructure,
@@ -182,7 +182,7 @@ const teacherDashboardCreateCourseRoutes = [
       <SuspenseWrapper>
         <CreateCourseStructurePage title="Create course general" />
       </SuspenseWrapper>
-    ),
+    )
   },
   {
     path: AppRoutes.teacher.createCourseLecturer,
@@ -190,7 +190,7 @@ const teacherDashboardCreateCourseRoutes = [
       <SuspenseWrapper>
         <CreateCourseLecturerPage title="Create course general" />
       </SuspenseWrapper>
-    ),
+    )
   },
   {
     path: AppRoutes.teacher.createCoursePrice,
@@ -198,7 +198,7 @@ const teacherDashboardCreateCourseRoutes = [
       <SuspenseWrapper>
         <CreateCoursePricePage title="Create course general" />
       </SuspenseWrapper>
-    ),
+    )
   },
   {
     path: AppRoutes.teacher.createCourseAdvertising,
@@ -206,8 +206,8 @@ const teacherDashboardCreateCourseRoutes = [
       <SuspenseWrapper>
         <CreateCourseAdvertisingPage title="Create course general" />
       </SuspenseWrapper>
-    ),
-  },
+    )
+  }
 ];
 
 const studentDashboardRoutes = [
@@ -217,7 +217,7 @@ const studentDashboardRoutes = [
       <SuspenseWrapper>
         <StudentMyLearningPage title="My learning" />
       </SuspenseWrapper>
-    ),
+    )
   },
   {
     path: AppRoutes.student.completedCourses,
@@ -225,7 +225,7 @@ const studentDashboardRoutes = [
       <SuspenseWrapper>
         <StudentCompletedCoursesPage title="Completed courses" />
       </SuspenseWrapper>
-    ),
+    )
   },
   {
     path: AppRoutes.student.certificates,
@@ -233,11 +233,11 @@ const studentDashboardRoutes = [
       <SuspenseWrapper>
         <StudentCertificatesPage title="Certificates" />
       </SuspenseWrapper>
-    ),
+    )
   },
   {
     path: AppRoutes.student.pricing,
-    element: <SuspenseWrapper>pricing</SuspenseWrapper>,
+    element: <SuspenseWrapper>pricing</SuspenseWrapper>
   },
   {
     path: AppRoutes.student.support,
@@ -245,7 +245,7 @@ const studentDashboardRoutes = [
       <SuspenseWrapper>
         <HelpCenterPage title="Help Center" />
       </SuspenseWrapper>
-    ),
+    )
   },
   {
     path: AppRoutes.student.favoriteCourses,
@@ -253,7 +253,7 @@ const studentDashboardRoutes = [
       <SuspenseWrapper>
         <StudentFavoriteCoursesPage title="Favorite courses" />
       </SuspenseWrapper>
-    ),
+    )
   },
   {
     path: AppRoutes.student.emailUpdate,
@@ -261,7 +261,7 @@ const studentDashboardRoutes = [
       <SuspenseWrapper>
         <EmailUpdatePage title="Email update" />
       </SuspenseWrapper>
-    ),
+    )
   },
   {
     path: AppRoutes.student.passwordUpdate,
@@ -269,8 +269,8 @@ const studentDashboardRoutes = [
       <SuspenseWrapper>
         <PasswordUpdatePage title="Password update" />
       </SuspenseWrapper>
-    ),
-  },
+    )
+  }
 ];
 
 const router = createBrowserRouter([
@@ -284,7 +284,7 @@ const router = createBrowserRouter([
           <SuspenseWrapper>
             <TeacherLandingPage title="Teacher landing" />
           </SuspenseWrapper>
-        ),
+        )
       },
       {
         path: AppRoutes.studentLanding,
@@ -292,7 +292,7 @@ const router = createBrowserRouter([
           <SuspenseWrapper>
             <StudentLandingPage title="Student landing" />
           </SuspenseWrapper>
-        ),
+        )
       },
       {
         path: AppRoutes.helpCenter,
@@ -300,7 +300,7 @@ const router = createBrowserRouter([
           <SuspenseWrapper>
             <HelpCenterPage title="Help Center" />
           </SuspenseWrapper>
-        ),
+        )
       },
       {
         path: AppRoutes.ui,
@@ -308,18 +308,18 @@ const router = createBrowserRouter([
           <SuspenseWrapper>
             <UiPage title="UI" />
           </SuspenseWrapper>
-        ),
+        )
       },
       {
         path: AppRoutes.notFound,
-        element: <div>404</div>,
+        element: <div>404</div>
       },
-      ...authRoutes,
-    ],
+      ...authRoutes
+    ]
   },
   {
     element: <ProtectedRoute element={<PrivateLayout userRole={UserRole.STUDENT} />} />,
-    children: studentDashboardRoutes,
+    children: studentDashboardRoutes
   },
   {
     element: <ProtectedRoute element={<StudentCoursePageLayout />} />,
@@ -333,7 +333,7 @@ const router = createBrowserRouter([
               <SuspenseWrapper>
                 <StudentCourseVideoPage />
               </SuspenseWrapper>
-            ),
+            )
           },
           {
             path: AppRoutes.student.courseTest,
@@ -341,36 +341,36 @@ const router = createBrowserRouter([
               <SuspenseWrapper>
                 <StudentCourseTestPage />
               </SuspenseWrapper>
-            ),
-          },
-        ],
-      },
-    ],
+            )
+          }
+        ]
+      }
+    ]
   },
   {
     element: <ProtectedRoute element={<PrivateLayout userRole={UserRole.TEACHER} />} />,
-    children: teacherDashboardRoutes,
+    children: teacherDashboardRoutes
   },
   {
     element: <ProtectedRoute element={<TeacherCreateCoursePageLayout />} />,
     children: [
       {
         element: <TeacherCreateCourseBlockLayout />,
-        children: teacherDashboardCreateCourseRoutes,
-      },
-    ],
-  },
+        children: teacherDashboardCreateCourseRoutes
+      }
+    ]
+  }
 ]);
 
-const AppRouter = () => {
-  const userRole = location.pathname.split("/")[1];
+const AppRouter: FC = () => {
+  const userRole = window.location.pathname.split("/")[1];
   const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(
       setRole({
-        role: userRole,
-      }),
+        role: userRole
+      })
     );
   }, []);
 

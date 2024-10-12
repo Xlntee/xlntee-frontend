@@ -10,12 +10,12 @@ export const myCourses: MockCourse[] = [
     id: "1",
     title: "How to sell anything online 1",
     image: "/assets/temp-course-image2.png",
-    progress: 100,
+    progress: 100
   },
   {
     id: "2",
     title: "How to sell anything online 2",
     image: "/assets/temp-course-image2.png",
-    progress: 100,
-  },
+    progress: 100
+  }
 ];

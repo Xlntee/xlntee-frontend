@@ -1,12 +1,13 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import { Box } from "@mui/material";
 
 import useTitle from "src/hooks/useTitle/useTitle";
 import { PageProps } from "pages/type";
 
-import { Comments, Description, Tools, Video, ToolsTabEnum } from "./ui";
+import { Comments, Description, Tools, Video } from "./ui";
+import { ToolsTabEnum } from "./types";
 
-const CoursePage = ({ title }: PageProps) => {
+const CoursePage: FC<PageProps> = ({ title }) => {
   useTitle(title);
 
   const [tab, setTab] = useState<string>(ToolsTabEnum.Description);
@@ -28,17 +29,17 @@ const CoursePage = ({ title }: PageProps) => {
                   id: "1",
                   nickname: "Yarikmama",
                   text: "Я також нічого не зрозумів, було добре отримати розгорнуту інформацію по другому модулю, на мій погляд - тема достатньо складна для розяснення за 5в.",
-                  date: "2024-03-03T14:07:35.193Z",
+                  date: "2024-03-03T14:07:35.193Z"
                 },
                 comments: [
                   {
                     id: "2",
                     nickname: "Yarikmama",
                     text: "Я також нічого не зрозумів, було добре отримати розгорнуту інформацію по другому модулю, на мій погляд - тема достатньо складна для розяснення за 5в.",
-                    date: "2024-09-03T14:07:35.193Z",
-                  },
-                ],
-              },
+                    date: "2024-09-03T14:07:35.193Z"
+                  }
+                ]
+              }
             ]}
           />
         )}

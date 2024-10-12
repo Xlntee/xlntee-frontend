@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
 import { Box, Container } from "@mui/material";
@@ -9,7 +10,7 @@ import { AppRoutes } from "src/app/routing/appRoutes";
 
 import { myCourses } from "./data";
 
-const CompletedCoursesPage = ({ title }: PageProps) => {
+const CompletedCoursesPage: FC<PageProps> = ({ title }) => {
   useTitle(title);
 
   const { t } = useTranslation("student");
