@@ -122,5 +122,6 @@
   "storage": "Зберігання",
   "students": "Студенти",
   "change_plan": "Змінити тарифний план",
-  "course_navigation": "Навігація по курсу"
+  "course_navigation": "Навігація по курсу",
+  "error-limits-plan": "Ви досягли межі свого плану"
 }
