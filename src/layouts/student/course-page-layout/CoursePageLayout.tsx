@@ -1,5 +1,6 @@
 import { FC } from "react";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import { Box, Stack } from "@mui/material";
 
@@ -7,11 +8,15 @@ import { CourseComplain, CourseRate, CourseShare, HeaderProfile } from "src/widg
 import Footer from "src/widgets/footer/Footer";
 import { UserRole } from "src/shared/utils/enum";
 import { Progress } from "src/features";
+import { AppRoutes } from "src/app/routing/appRoutes";
 
 const CoursePageLayout: FC = () => {
+  const { t } = useTranslation("auth");
+
   return (
     <>
       <HeaderProfile
+        link={<Link to={AppRoutes.student.myLearning}>{t("student-navigation.my-learning")}</Link>}
         userRole={UserRole.STUDENT}
         tools={
           <Stack direction="row" gap={{ xs: "8px", md: "14px" }} alignItems="center">
