@@ -7,6 +7,7 @@ import VideocamIcon from "@mui/icons-material/Videocam";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import DoneOutlineIcon from "@mui/icons-material/DoneOutline";
 import LocalActivityIcon from "@mui/icons-material/LocalActivity";
+import CreditCardIcon from "@mui/icons-material/CreditCard";
 
 import { MenuToggler, Navigation, NavigationDrawer, NavigationLinkType } from "src/features";
 import { UserRole } from "src/shared/utils/enum";
@@ -34,15 +35,25 @@ const HeaderProfile: FC<HeaderProfileProps> = ({ children, link, tools, classNam
       id: "1",
       name: t("teacher-navigation.courses"),
       path: AppRoutes.teacher.myCourses,
-      icon: <VideocamIcon />,
-      type: "link"
+      icon: <VideocamIcon />
+    },
+    {
+      id: "2",
+      name: t("teacher-navigation.billing"),
+      path: AppRoutes.teacher.billing,
+      icon: <CreditCardIcon />
+    },
+    {
+      id: "3",
+      name: t("teacher-navigation.support"),
+      path: AppRoutes.teacher.support,
+      icon: <HelpOutlineIcon />
     },
     {
       id: "4",
-      name: t("teacher-navigation.support"),
-      path: AppRoutes.teacher.support,
-      icon: <HelpOutlineIcon />,
-      type: "link"
+      name: t("teacher-navigation.tariff-plans"),
+      path: AppRoutes.teacher.tariffPlans,
+      className: "navigation__action"
     }
   ];
 
@@ -51,29 +62,25 @@ const HeaderProfile: FC<HeaderProfileProps> = ({ children, link, tools, classNam
       id: "1",
       name: t("student-navigation.my-learning"),
       path: AppRoutes.student.myLearning,
-      icon: <VideocamIcon />,
-      type: "link"
+      icon: <VideocamIcon />
     },
     {
       id: "2",
       name: t("student-navigation.completed-courses"),
       path: AppRoutes.student.completedCourses,
-      icon: <DoneOutlineIcon />,
-      type: "link"
+      icon: <DoneOutlineIcon />
     },
     {
       id: "3",
       name: t("student-navigation.certificates"),
       path: AppRoutes.student.certificates,
-      icon: <LocalActivityIcon />,
-      type: "link"
+      icon: <LocalActivityIcon />
     },
     {
       id: "4",
       name: t("student-navigation.support"),
       path: AppRoutes.student.support,
-      icon: <HelpOutlineIcon />,
-      type: "link"
+      icon: <HelpOutlineIcon />
     }
   ];
 
