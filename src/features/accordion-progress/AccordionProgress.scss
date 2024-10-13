@@ -7,7 +7,6 @@
   --collapsed-navigation-gap: 10px;
   --collapsed-navigation-padding-side: 10px;
   --collapsed-navigation-header-width: 80%;
-  --accordion-progress-height: auto;
 
   @include mixins.media(tablet_lg) {
     --collapsed-navigation-header-width: 100%;
@@ -21,7 +20,6 @@
     --collapsed-navigation-padding-side: 4px;
     --collapsed-navigation-header-width: 100%;
     --collapsed-navigation-arrow-opacity: 0;
-    --accordion-progress-height: 50px;
 
     .MuiAccordionSummary-expandIconWrapper {
       opacity: var(--collapsed-navigation-arrow-opacity);
@@ -52,13 +50,13 @@
 
   &__summary {
     &.MuiButtonBase-root {
-      min-height: var(--accordion-progress-height);
+      min-height: 50px;
       padding: 10px var(--collapsed-navigation-padding-side);
       position: static;
       justify-content: space-between;
 
       &.Mui-expanded {
-        min-height: auto;
+        min-height: 50px;
       }
     }
 

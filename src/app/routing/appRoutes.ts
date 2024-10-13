@@ -14,9 +14,10 @@ export const AppRoutes = {
   student: {
     profile: "/student/dashboard/profile",
     myLearning: "/student/dashboard/my-learning",
-    courseVideoSingle: "/student/dashboard/course",
+    courseSingle: "/student/dashboard/course",
     courseVideo: "/student/dashboard/course/:id/video",
     courseTest: "/student/dashboard/course/:id/test",
+    courseCertificate: "/student/dashboard/course/:id/certificate",
     completedCourses: "/student/dashboard/completed-courses",
     certificates: "/student/dashboard/certificates",
     certificatesSingle: "/student/dashboard/certificates/:id",
