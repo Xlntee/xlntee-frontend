@@ -14,7 +14,7 @@ import useDialogModal from "src/hooks/useDialogModal";
 import { XlnteeColors } from "src/shared/themes/colors";
 
 import { useAppDispatch, useAppSelector } from "src/app/store/store";
-import { selectLessons, updateLesson } from "../../store/lessonsSlice";
+import { deleteLesson, selectLessons, updateLesson } from "../../store/lessonsSlice";
 
 import { BlockLecture } from "../block-lecture";
 
@@ -83,6 +83,11 @@ const BlockLesson: FC<BlockLessonProps> = ({ index, id, canDelete }) => {
   }
 
   function onHandleDeleteLesson(): void {
+    dispatch(
+      deleteLesson({
+        lessonId: id
+      })
+    );
     onCloseModal();
   }
 
