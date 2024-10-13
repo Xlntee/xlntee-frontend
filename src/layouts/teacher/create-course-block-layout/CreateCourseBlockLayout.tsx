@@ -1,10 +1,11 @@
 import { FC, useState } from "react";
-import { NavLink, Outlet, useLocation } from "react-router-dom";
+import { NavLink, Outlet, Link as RouterLink, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import cn from "classnames";
 
 import { Box, Container, List, ListItem, Link, Stack, Button, Drawer, Typography } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import ErrorOutlineOutlinedIcon from "@mui/icons-material/ErrorOutlineOutlined";
 
 import { AppRoutes } from "src/app/routing/appRoutes";
 import { MenuToggler, Progress } from "src/features";
@@ -98,9 +99,22 @@ const CreateCourseBlockLayout: FC = () => {
     );
   };
 
+  const LimitError: FC = () => {
+    return (
+      <Stack direction="row" justifyContent="center" alignItems="center" gap="10px" className="error-limits">
+        <ErrorOutlineOutlinedIcon color="error" />
+        <Typography variant="body2" fontWeight={300}>
+          {t("error-limits-plan")} {""}
+          <RouterLink to="#">{t("change_plan")}</RouterLink>
+        </Typography>
+      </Stack>
+    );
+  };
+
   return (
-    <Box className="create-course-layout" py="40px">
+    <Box className="create-course-layout" pt={{ xs: "40px", md: "60px" }} pb="40px">
       <Container className="create-course-layout__container">
+        <LimitError />
         <Button
           variant="black-contain"
           className="create-course-layout__menu-opener"

@@ -7,7 +7,6 @@
 
   &__container {
     position: relative;
-    overflow: hidden;
   }
 
   &__grid {
@@ -38,6 +37,29 @@
 
       @include mixins.media(desktop) {
         display: none;
+      }
+    }
+  }
+
+  .error-limits {
+    padding: 4px 10px;
+    border-radius: 25px;
+    background-color: rgb(var(--warning-extra-light-color2));
+    margin-bottom: 30px;
+
+    @include mixins.media(tablet) {
+      position: absolute;
+      top: -50px;
+      left: 20px;
+      right: 20px;
+    }
+
+    a {
+      text-decoration: underline;
+      color: rgb(var(--link-color));
+
+      @include mixins.hover {
+        text-decoration: none;
       }
     }
   }

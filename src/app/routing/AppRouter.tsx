@@ -47,6 +47,7 @@ const UiPage = lazy(() => import("src/pages/ui"));
 const MyCoursesPage = lazy(() => import("src/pages/teacher/my-courses-page/MyCoursesPage"));
 const StatisticPage = lazy(() => import("src/pages/teacher/statistic-page/StatisticPage"));
 const ProfilePage = lazy(() => import("src/pages/teacher/profile-page/ProfilePage"));
+const TariffPlanPage = lazy(() => import("src/pages/teacher/tariff-plan-page/TariffPlanPage"));
 const HelpCenterPage = lazy(() => import("src/pages/help-center-page/HelpCenterPage"));
 
 const SuspenseWrapper = ({ children }: { children: ReactNode }): JSX.Element => {
@@ -137,6 +138,14 @@ const teacherDashboardRoutes = [
     element: (
       <SuspenseWrapper>
         <HelpCenterPage title="Help Center" />
+      </SuspenseWrapper>
+    )
+  },
+  {
+    path: AppRoutes.teacher.tariffPlans,
+    element: (
+      <SuspenseWrapper>
+        <TariffPlanPage title="Tariff plan" />
       </SuspenseWrapper>
     )
   },
@@ -234,10 +243,6 @@ const studentDashboardRoutes = [
         <StudentCertificatesPage title="Certificates" />
       </SuspenseWrapper>
     )
-  },
-  {
-    path: AppRoutes.student.pricing,
-    element: <SuspenseWrapper>pricing</SuspenseWrapper>
   },
   {
     path: AppRoutes.student.support,

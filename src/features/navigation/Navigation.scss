@@ -55,11 +55,16 @@
   }
 
   &__action {
-    background-color: rgb(var(--cta-color));
+    color: rgb(var(--light-color));
+    background-color: rgb(var(--link-color));
     padding: 4px 14px;
     border-radius: 25px;
 
-    &.MuiTypography-root {
+    &.active {
+      color: rgb(var(--light-color));
+    }
+
+    @include mixins.hover {
       color: rgb(var(--light-color));
     }
   }

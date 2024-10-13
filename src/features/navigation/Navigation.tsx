@@ -15,7 +15,7 @@ export type NavigationLinkType = {
   path: string;
   name: string;
   icon?: React.ReactNode;
-  type: "link" | "action";
+  className?: string;
 };
 
 const Navigation: FC<NavigationProps> = ({ items }) => {
@@ -24,31 +24,18 @@ const Navigation: FC<NavigationProps> = ({ items }) => {
   return (
     <Box component="nav" className="navigation">
       <List className="navigation__list">
-        {items.map(({ id, path, name, icon, type }) => {
-          if (type === "link") {
-            return (
-              <ListItem key={id} className="navigation__item">
-                <Link to={path} className={cn("navigation__link", { active: pathname === path })}>
-                  <Box component="span" className="navigation__icon">
-                    {icon}
-                  </Box>
-                  <Typography variant="caption" className="navigation__name">
-                    {name}
-                  </Typography>
-                </Link>
-              </ListItem>
-            );
-          }
-          return (
-            <ListItem key={id} className="navigation__item">
-              <Link to="/" className="navigation__link">
-                <Typography variant="caption" className="navigation__action">
-                  {name}
-                </Typography>
-              </Link>
-            </ListItem>
-          );
-        })}
+        {items.map(({ id, path, name, icon, className }) => (
+          <ListItem key={id} className="navigation__item">
+            <Link to={path} className={cn("navigation__link", { active: pathname === path }, className)}>
+              <Box component="span" className="navigation__icon">
+                {icon}
+              </Box>
+              <Typography variant="caption" className="navigation__name">
+                {name}
+              </Typography>
+            </Link>
+          </ListItem>
+        ))}
       </List>
     </Box>
   );

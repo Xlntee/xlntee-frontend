@@ -30,7 +30,7 @@ const AccountMenu: FC = () => {
     if (user.role === UserRole.STUDENT) {
       navigate(AppRoutes.teacher.dashboard);
     } else if (user.role === UserRole.TEACHER) {
-      navigate(AppRoutes.home);
+      navigate(AppRoutes.studentLanding);
     }
   }
 

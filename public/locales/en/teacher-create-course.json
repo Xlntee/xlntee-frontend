@@ -124,5 +124,6 @@
   "storage": "Storage",
   "students": "Students",
   "change_plan": "Change tariff plan",
-  "course_navigation": "Course navigation"
+  "course_navigation": "Course navigation",
+  "error-limits-plan": "You’ve reached the limits of your plan"
 }

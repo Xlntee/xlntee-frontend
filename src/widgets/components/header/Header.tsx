@@ -27,14 +27,12 @@ const HeaderProfile: FC = () => {
     {
       id: "1",
       name: t("teacher"),
-      path: "/",
-      type: "link"
+      path: "/"
     },
     {
       id: "2",
       name: t("student"),
-      path: "/student",
-      type: "link"
+      path: "/student"
     }
   ];
 
