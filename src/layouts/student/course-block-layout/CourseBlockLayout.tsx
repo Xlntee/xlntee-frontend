@@ -1,9 +1,10 @@
 import { FC, useEffect, useState } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import cn from "classnames";
 
 import { Box, Button, Stack, Typography } from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import LocalActivityIcon from "@mui/icons-material/LocalActivity";
 
 import { AccordionProgress } from "src/features";
 import { CategoryLinkType, CategoryNavigation } from "./ui";
@@ -135,6 +136,12 @@ const CourseLayout: FC = () => {
                 <CategoryNavigation items={navigation[index].items} />
               </AccordionProgress>
             ))}
+            <Button to="#" component={Link} variant="contained" className="collapsed-navigation__toggler-link">
+              <LocalActivityIcon />
+              <Typography variant="caption" className="collapsed-navigation__toggler-text">
+                Сертифікат
+              </Typography>
+            </Button>
             <Button className="collapsed-navigation__hidden-toggler" onClick={onToggleNavigation} />
           </Stack>
         ) : null}

@@ -41,12 +41,13 @@ const StudentCourseTestPage = lazy(() => import("src/pages/student/course-test/C
 const StudentCompletedCoursesPage = lazy(() => import("src/pages/student/completed-courses/CompletedCoursesPage"));
 const StudentCertificatesPage = lazy(() => import("src/pages/student/certificates/CertificatesPage"));
 const StudentFavoriteCoursesPage = lazy(() => import("src/pages/student/favorite-courses/FavoriteCoursesPage"));
+const StudentProfilePage = lazy(() => import("src/pages/student/profile-page/ProfilePage"));
 
 const TeacherLandingPage = lazy(() => import("src/pages/teacher/landing-page/LandingPage"));
 const UiPage = lazy(() => import("src/pages/ui"));
 const MyCoursesPage = lazy(() => import("src/pages/teacher/my-courses-page/MyCoursesPage"));
 const StatisticPage = lazy(() => import("src/pages/teacher/statistic-page/StatisticPage"));
-const ProfilePage = lazy(() => import("src/pages/teacher/profile-page/ProfilePage"));
+const TeacherProfilePage = lazy(() => import("src/pages/teacher/profile-page/ProfilePage"));
 const TariffPlanPage = lazy(() => import("src/pages/teacher/tariff-plan-page/TariffPlanPage"));
 const HelpCenterPage = lazy(() => import("src/pages/help-center-page/HelpCenterPage"));
 
@@ -113,7 +114,7 @@ const teacherDashboardRoutes = [
     path: AppRoutes.teacher.profile,
     element: (
       <SuspenseWrapper>
-        <ProfilePage title="Profile" />
+        <TeacherProfilePage title="Profile" />
       </SuspenseWrapper>
     )
   },
@@ -225,6 +226,14 @@ const studentDashboardRoutes = [
     element: (
       <SuspenseWrapper>
         <StudentMyLearningPage title="My learning" />
+      </SuspenseWrapper>
+    )
+  },
+  {
+    path: AppRoutes.student.profile,
+    element: (
+      <SuspenseWrapper>
+        <StudentProfilePage title="Profile" />
       </SuspenseWrapper>
     )
   },

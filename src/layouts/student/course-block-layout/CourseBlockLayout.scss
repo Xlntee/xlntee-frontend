@@ -1,5 +1,20 @@
 @use "styles/mixins.scss" as mixins;
 
+@mixin toggler-button($shadow: false, $padding-left: 12px, $padding-right: 12px) {
+  min-width: auto;
+  justify-content: space-between;
+  width: 100%;
+  height: 50px;
+  @if ($shadow == true) {
+    box-shadow: var(--base-shadow);
+  }
+  padding-left: $padding-left;
+  padding-right: $padding-right;
+  gap: 12px;
+
+  @include mixins.animate(padding);
+}
+
 .course-layout {
   --collapsed-navigation-width-sm: 70px;
   --collapsed-navigation-width-lg: 100%;
@@ -33,6 +48,9 @@
   --collapsed-navigation-toggler-icon-transform: scaleX(1);
   --collapsed-navigation-toggler-text-opacity: 0;
   --collapsed-navigation-hidden-toggler-visible: visible;
+  --collapsed-navigation-toggle-link-width: 0;
+  --collapsed-navigation-toggle-link-justify-content: center;
+  --collapsed-navigation-toggle-link-gap: 0;
 
   padding: 10px;
   box-shadow: var(--base-shadow);
@@ -63,19 +81,14 @@
     --collapsed-navigation-toggler-icon-transform: scaleX(-1);
     --collapsed-navigation-toggler-text-opacity: 1;
     --collapsed-navigation-hidden-toggler-visible: hidden;
+    --collapsed-navigation-toggle-link-width: auto;
+    --collapsed-navigation-toggle-link-justify-content: start;
+    --collapsed-navigation-toggle-link-gap: 12px;
   }
 
   &__toggler {
     &.MuiButtonBase-root {
-      min-width: auto;
-      padding: 0;
-      justify-content: space-between;
-      width: 100%;
-      height: 50px;
-      box-shadow: var(--base-shadow);
-      padding-right: 12px;
-
-      @include mixins.animate(padding);
+      @include toggler-button($shadow: true, $padding-left: 0, $padding-right: 12px);
     }
 
     &.active {
@@ -83,6 +96,35 @@
         padding-left: 12px;
         box-shadow: var(--base-shadow-invisible);
       }
+    }
+  }
+
+  &__toggler-link {
+    &.MuiButtonBase-root {
+      @include toggler-button($padding-left: 10px, $padding-right: 10px);
+
+      border-radius: 10px;
+      color: rgb(var(--light-color));
+      gap: var(--collapsed-navigation-toggle-link-gap);
+      justify-content: var(--collapsed-navigation-toggle-link-justify-content);
+      background-color: rgb(var(--primary-color));
+      border: 1px solid rgb(var(--primary-color));
+
+      @include mixins.hover {
+        background-color: rgb(var(--primary-color));
+      }
+
+      &.Mui-disabled {
+        color: rgb(var(--text-color));
+        border-color: rgb(var(--gray-stroke-color));
+        background-color: rgb(var(--light-element-color));
+      }
+    }
+
+    .MuiTypography-root {
+      color: currentColor;
+      font-weight: 400;
+      width: var(--collapsed-navigation-toggle-link-width);
     }
   }
 
