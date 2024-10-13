@@ -1,21 +1,24 @@
+import { FC, useState, MouseEvent } from "react";
+
 import { Button, Box, MenuItem, Menu } from "@mui/material";
 import NewReleasesOutlinedIcon from "@mui/icons-material/NewReleasesOutlined";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 
-import "./CourseComplain.scss";
-import { useState } from "react";
 import RefundModal from "./ui/refund-modal/RefungModal";
 import ComplainModal from "./ui/complain-modal/ComplainModal";
 
-const CourseRate = () => {
+import "./CourseComplain.scss";
+
+const CourseRate: FC = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleClick = (event: MouseEvent<HTMLButtonElement>): void => {
     setAnchorEl(event.currentTarget);
   };
-  const handleClose = () => {
+
+  function handleClose(): void {
     setAnchorEl(null);
-  };
+  }
 
   return (
     <Box className="course-complain">

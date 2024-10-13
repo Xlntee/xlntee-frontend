@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import { useForm } from "react-hook-form";
 
 import { Box, Button, Grid, Modal, TextField, Typography } from "@mui/material";
@@ -15,30 +15,35 @@ interface FormValues {
   details: string;
 }
 
-const RefundModal = () => {
+const RefundModal: FC = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [isSubmit, setIsSubmit] = useState<boolean>(false);
 
-  const handleModalOpen = () => setIsModalOpen(true);
-  const handleModalClose = () => setIsModalOpen(false);
+  function handleModalOpen(): void {
+    setIsModalOpen(true);
+  }
+
+  function handleModalClose(): void {
+    setIsModalOpen(false);
+  }
 
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState: { errors }
   } = useForm<FormValues>({
     defaultValues: {
       reasons: [],
-      details: "",
-    },
+      details: ""
+    }
   });
 
-  const onSubmit = (data: FormValues) => {
+  function onSubmit(data: FormValues): void {
     console.log(data);
     reset();
     setIsSubmit(true);
-  };
+  }
 
   return (
     <Box>
@@ -50,7 +55,7 @@ const RefundModal = () => {
           {isSubmit ? (
             <Grid container>
               <Grid item xs={6}>
-                <img src="/assets/refund-modal.png" />
+                <img src="/assets/refund-modal.png" alt="refund" />
               </Grid>
               <Grid item xs={6}>
                 <Typography>Дякуємо! Ваша заявка на повернення коштів була прийнята, її номер: RRID0595032</Typography>

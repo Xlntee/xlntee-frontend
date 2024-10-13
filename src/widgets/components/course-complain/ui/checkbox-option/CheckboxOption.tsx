@@ -8,6 +8,7 @@ interface CheckboxOptionProps {
   [x: string]: any;
 }
 
+// eslint-disable-next-line react/display-name
 const CheckboxOption = forwardRef<HTMLInputElement, CheckboxOptionProps>(({ value, label, ...rest }, ref) => {
   return (
     <Box className="checkbox-option">

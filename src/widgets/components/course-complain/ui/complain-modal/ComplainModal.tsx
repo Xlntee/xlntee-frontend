@@ -23,26 +23,26 @@ const ComplainModal: FC<ComplainModalProps> = ({ percentage }) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [isSubmit, setIsSubmit] = useState<boolean>(false);
 
-  const handleModalOpen = () => setIsModalOpen(true);
-  const handleModalClose = () => setIsModalOpen(false);
+  const handleModalOpen = (): void => setIsModalOpen(true);
+  const handleModalClose = (): void => setIsModalOpen(false);
 
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState: { errors }
   } = useForm<FormValues>({
     defaultValues: {
       reasons: [],
-      details: "",
-    },
+      details: ""
+    }
   });
 
-  const onSubmit = (data: FormValues) => {
+  function onSubmit(data: FormValues): void {
     console.log(data);
     reset();
     setIsSubmit(true);
-  };
+  }
 
   return (
     <Box className="complain-modal">
@@ -72,7 +72,7 @@ const ComplainModal: FC<ComplainModalProps> = ({ percentage }) => {
           {isSubmit ? (
             <Grid container>
               <Grid item xs={6}>
-                <img src="/assets/complain-modal.png" />
+                <img src="/assets/complain-modal.png" alt="complain" />
               </Grid>
               <Grid item xs={6}>
                 <Typography>Ваша скарга прийнята, її номер: RID0221039 </Typography>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { Button, Box, Typography, Modal, TextField, Stack, InputAdornment, IconButton } from "@mui/material";
@@ -23,10 +23,10 @@ const CourseShare: FC = () => {
   const [fieldValue, setFieldValue] = useState<string>("");
   const { alertMessage, alertVisible, showAlert, closeAlert, setMessageAlert } = useSnackbarAlert();
 
-  const handleModalOpen = () => setIsModalOpen(true);
-  const handleModalClose = () => setIsModalOpen(false);
+  const handleModalOpen = (): void => setIsModalOpen(true);
+  const handleModalClose = (): void => setIsModalOpen(false);
 
-  function onCopyToClipboard() {
+  function onCopyToClipboard(): void {
     if (!fieldValue.length) return;
 
     setMessageAlert("скопійовано");
@@ -59,7 +59,7 @@ const CourseShare: FC = () => {
                     <ContentCopyIcon />
                   </Button>
                 </InputAdornment>
-              ),
+              )
             }}
           />
           <Stack flexDirection="row" gap="5px">
@@ -76,7 +76,7 @@ const CourseShare: FC = () => {
               <InstagramIcon sx={{ fontSize: "36px" }} />
             </IconButton>
           </Stack>
-          <img src="/assets/share-modal.png" />
+          <img src="/assets/share-modal.png" alt="course share" />
           <Button sx={{ position: "absolute", top: 0, right: 0 }}>
             <CloseIcon fontSize="large" sx={{ color: XlnteeColors.BlackElementColor }} onClick={handleModalClose} />
           </Button>

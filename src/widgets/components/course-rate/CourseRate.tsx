@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useForm } from "react-hook-form";
 
@@ -15,19 +15,24 @@ interface FormData {
   rating: number;
 }
 
-const CourseRate = () => {
+const CourseRate: FC = () => {
   const { t } = useTranslation("auth");
 
   const { register, handleSubmit, setValue } = useForm<FormData>();
 
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
-  const handleModalOpen = () => setIsModalOpen(true);
-  const handleModalClose = () => setIsModalOpen(false);
+  function handleModalOpen(): void {
+    setIsModalOpen(true);
+  }
 
-  const onSubmit = (data: FormData) => {
+  function handleModalClose(): void {
+    setIsModalOpen(false);
+  }
+
+  function onSubmit(data: FormData): void {
     console.log(data);
-  };
+  }
 
   return (
     <Box className="course-rate">
@@ -43,7 +48,7 @@ const CourseRate = () => {
             Це допоможе нам тримати якість курсів на висоті, а іншим студентам додасть впевненості у своєму виборі
             курсів
           </Typography>
-          <img src="/assets/rating-modal.png" />
+          <img src="/assets/rating-modal.png" alt="course rate" />
           <form className="course-rate__form" onSubmit={handleSubmit(onSubmit)}>
             <Rating
               size="large"
