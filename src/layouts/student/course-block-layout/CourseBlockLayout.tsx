@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useParams } from "react-router-dom";
 import cn from "classnames";
 
 import { Box, Button, Stack, Typography } from "@mui/material";
@@ -10,6 +10,7 @@ import { AccordionProgress } from "src/features";
 import { CategoryLinkType, CategoryNavigation } from "./ui";
 
 import "./CourseBlockLayout.scss";
+import { AppRoutes } from "src/app/routing/appRoutes";
 
 interface CategoriesNavigation {
   items: CategoryLinkType[];
@@ -49,6 +50,8 @@ const data: CategoryLinkType[] = [
 
 const CourseLayout: FC = () => {
   const LSMenuKey = "student-collapsed-menu";
+  const { id } = useParams<{ id: string }>();
+
   const [isOpenMenu, setIsOpenMenu] = useState<boolean>(localStorage.getItem(LSMenuKey) === "true");
   const [expandedObj, setExpandedObj] = useState<Record<string, boolean>>({});
 
@@ -136,7 +139,12 @@ const CourseLayout: FC = () => {
                 <CategoryNavigation items={navigation[index].items} />
               </AccordionProgress>
             ))}
-            <Button to="#" component={Link} variant="contained" className="collapsed-navigation__toggler-link">
+            <Button
+              to={`${AppRoutes.student.courseSingle}/${id}/certificate`}
+              component={Link}
+              variant="contained"
+              className="collapsed-navigation__toggler-link"
+            >
               <LocalActivityIcon />
               <Typography variant="caption" className="collapsed-navigation__toggler-text">
                 Сертифікат

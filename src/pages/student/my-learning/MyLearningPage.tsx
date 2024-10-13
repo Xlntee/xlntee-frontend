@@ -25,7 +25,7 @@ const MyLearningPage: FC<PageProps> = ({ title }) => {
               title={props.title}
               image={props.image}
               progress={props.progress}
-              href={`${AppRoutes.student.courseVideoSingle}/${props.id}/video`}
+              href={`${AppRoutes.student.courseSingle}/${props.id}/video`}
             />
           )}
           textForEmptyArray={t("dashboard.no-courses")}
