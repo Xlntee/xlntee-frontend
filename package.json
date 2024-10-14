@@ -10,12 +10,14 @@
     "preview": "vite preview",
     "lint": "eslint .  --report-unused-disable-directives --max-warnings 0",
     "format": "prettier --write . --config ./.prettierrc",
-    "precommit": "npm run lint && npm run format && git add -A .",
+    "pre-commit": "npm run format && git add -A .",
+    "pre-push": "npm run lint && npm run build && git add -A .",
     "prepare": "husky install"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "pre-push": "lint-staged"
     }
   },
   "lint-staged": {
