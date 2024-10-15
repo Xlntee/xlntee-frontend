@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import { Button, Container, Stack, Box, Typography, Grid, TextField, InputLabel, Divider } from "@mui/material";
 
-import { Snackbar } from "src/features";
+import { DialogModal, Snackbar } from "src/features";
 
 import useTitle from "src/hooks/useTitle/useTitle";
 import { PageProps } from "pages/type";
@@ -46,6 +46,11 @@ const UiPage: FC<PageProps> = ({ title }) => {
   useTitle(title);
 
   const [showSnackbar, setShowSnackbar] = useState<boolean>(false);
+
+  const [modalObj, setModalObj] = useState<Record<string, boolean>>({
+    delete: false,
+    send: false
+  });
 
   return (
     <Box component="section" paddingBlock={4}>
@@ -164,6 +169,82 @@ const UiPage: FC<PageProps> = ({ title }) => {
             Snackbar open
           </Button>
           <Snackbar open={showSnackbar} onClose={() => setShowSnackbar(false)} title="Snackbar message" />
+        </Box>
+
+        <Box mb="20px">
+          <Typography variant="h2">Modal</Typography>
+          <Stack direction="row" gap="40px">
+            <Box>
+              <Button
+                size="small"
+                onClick={() =>
+                  setModalObj((prev) => {
+                    return {
+                      ...prev,
+                      delete: true
+                    };
+                  })
+                }
+                variant="contained"
+              >
+                Modal delete open
+              </Button>
+              <DialogModal
+                open={modalObj["delete"]}
+                handleAgree={() => console.log(1)}
+                handleClose={() => {
+                  setModalObj((prev) => {
+                    return {
+                      ...prev,
+                      delete: false
+                    };
+                  });
+                }}
+                showCloseButtonIcon
+                useCloseButton
+                type="delete"
+                title="Title"
+                text={
+                  <Typography>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt, ipsum!</Typography>
+                }
+              />
+            </Box>
+            <Box>
+              <Button
+                size="small"
+                onClick={() =>
+                  setModalObj((prev) => {
+                    return {
+                      ...prev,
+                      send: true
+                    };
+                  })
+                }
+                variant="contained"
+              >
+                Modal send open
+              </Button>
+              <DialogModal
+                open={modalObj["send"]}
+                handleAgree={() => console.log(1)}
+                handleClose={() => {
+                  setModalObj((prev) => {
+                    return {
+                      ...prev,
+                      send: false
+                    };
+                  });
+                }}
+                showCloseButtonIcon
+                useCloseButton
+                type="send"
+                title={"Title"}
+                text={
+                  <Typography>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt, ipsum!</Typography>
+                }
+              />
+            </Box>
+          </Stack>
         </Box>
 
         <Box mb="20px">

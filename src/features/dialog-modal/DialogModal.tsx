@@ -1,43 +1,61 @@
-import { FC } from "react";
-import { useTranslation } from "react-i18next";
+import { FC, ReactNode } from "react";
 
-import {
-  Button,
-  Dialog,
-  Stack,
-  DialogTitle,
-  DialogContent,
-  DialogContentText,
-  DialogActions,
-  CircularProgress
-} from "@mui/material";
+import { Button, Dialog, DialogTitle, DialogContent, DialogActions } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 
-export interface DialogModalProps {
+import "./DialogModal.scss";
+
+export type DialogModalProps = {
   open: boolean;
   title: string;
-  text?: string;
+  text?: ReactNode;
   loading?: boolean;
+  useCloseButton?: boolean;
+  showCloseButtonIcon?: boolean;
+  type?: "delete" | "send";
+  agreeButtonText: string;
+  deleteButtonText: string;
   handleAgree: () => void;
-  handleClose: () => void;
-}
+  handleClose?: () => void;
+};
 
-const DialogModal: FC<DialogModalProps> = ({ open, title, text, loading, handleAgree, handleClose }) => {
-  const { t } = useTranslation("dialog-modal");
-
+const DialogModal: FC<DialogModalProps> = ({
+  open,
+  title,
+  text,
+  loading,
+  useCloseButton,
+  showCloseButtonIcon,
+  type = "send",
+  agreeButtonText,
+  deleteButtonText,
+  handleAgree,
+  handleClose
+}) => {
   return (
-    <Dialog open={open} onClose={handleClose}>
-      <DialogTitle>{title}</DialogTitle>
-      <DialogContent>{text ? <DialogContentText>{text}</DialogContentText> : null}</DialogContent>
-      <DialogActions>
-        <Button color="error" variant="contained" onClick={handleClose}>
-          {t("dialog_modal_disagree")}
+    <Dialog open={open} onClose={handleClose} className="dialog-modal">
+      {showCloseButtonIcon && (
+        <Button variant="black-text" onClick={handleClose} className="dialog-modal__close-btn">
+          <CloseIcon />
         </Button>
-        <Stack spacing={2} direction="row" alignItems="center">
-          <Button color="success" variant="contained" onClick={handleAgree} autoFocus disabled={loading}>
-            {t("dialog_modal_agree")}
+      )}
+      <DialogTitle>{title}</DialogTitle>
+      <DialogContent>{text ? text : null}</DialogContent>
+      <DialogActions>
+        <Button
+          color={type === "send" ? "success" : type === "delete" ? "error" : "info"}
+          variant={type === "send" ? "black-contain" : type === "delete" ? "outlined" : "contained"}
+          onClick={handleAgree}
+          autoFocus
+          disabled={loading}
+        >
+          {agreeButtonText}
+        </Button>
+        {useCloseButton && (
+          <Button variant="black-text" onClick={handleClose}>
+            {deleteButtonText}
           </Button>
-          {loading ? <CircularProgress size={20} /> : null}
-        </Stack>
+        )}
       </DialogActions>
     </Dialog>
   );
