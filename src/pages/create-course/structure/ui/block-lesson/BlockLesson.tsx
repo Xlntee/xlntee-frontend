@@ -31,6 +31,7 @@ interface BlockLessonProps {
 
 const BlockLesson: FC<BlockLessonProps> = ({ index, id, canDelete }) => {
   const { t } = useTranslation("teacher-create-course");
+  const { t: dialogModalT } = useTranslation("dialog-modal");
 
   const dispatch = useAppDispatch();
   const lessons = useAppSelector(selectLessons);
@@ -182,6 +183,9 @@ const BlockLesson: FC<BlockLessonProps> = ({ index, id, canDelete }) => {
         <DialogModal
           open={openModal}
           title={t("structure.dialog_modal_delete_lesson")}
+          showCloseButtonIcon
+          primaryButtonText={dialogModalT("dialog_modal_agree")}
+          secondaryButtonText={dialogModalT("dialog_modal_disagree")}
           handleAgree={onHandleDeleteLesson}
           handleClose={onCloseModal}
         />

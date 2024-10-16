@@ -27,6 +27,7 @@ export type FormValues = yup.InferType<typeof validationSchema>;
 
 const BlockPromoCodes: FC = () => {
   const { t } = useTranslation("teacher-create-course");
+  const { t: dialogModalT } = useTranslation("dialog-modal");
 
   const [promoCodes, setPromoCodes] = useState<PromoCode[]>([]);
   const { alertMessage, alertVisible, alertColor, showAlert, closeAlert, setMessageAlert, setColorAlert } =
@@ -169,6 +170,8 @@ const BlockPromoCodes: FC = () => {
       <DialogModal
         open={openModal}
         title={t("price.dialog_modal_delete_promo_code")}
+        primaryButtonText={dialogModalT("dialog_modal_agree")}
+        secondaryButtonText={dialogModalT("dialog_modal_disagree")}
         handleAgree={() => selectedId && onDeletePromoCode(selectedId)}
         handleClose={onCloseModal}
       />

@@ -572,5 +572,53 @@ defaultTheme.components = {
         paddingInline: 10
       }
     }
+  },
+  MuiDialog: {
+    styleOverrides: {
+      paper: {
+        maxWidth: 540,
+        width: "100%",
+        padding: "40px 20px 30px",
+        borderRadius: 20,
+        boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.25)",
+
+        [defaultTheme.breakpoints.up("md")]: {
+          padding: 40
+        }
+      }
+    }
+  },
+  MuiDialogTitle: {
+    styleOverrides: {
+      root: {
+        padding: 0,
+        fontSize: 20,
+        marginBottom: 20
+      }
+    }
+  },
+  MuiDialogContent: {
+    styleOverrides: {
+      root: {
+        padding: 0,
+        marginBottom: 20
+      }
+    }
+  },
+  MuiDialogContentText: {
+    styleOverrides: {
+      root: {
+        padding: 0
+      }
+    }
+  },
+  MuiDialogActions: {
+    styleOverrides: {
+      root: {
+        padding: 0,
+        justifyContent: "center",
+        gap: "20px"
+      }
+    }
   }
 };

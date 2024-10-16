@@ -37,6 +37,7 @@ type FileLectureProps = {
 
 const BlockLecture: FC<BlockLectureProps> = ({ lessonId, id, index, onDelete }) => {
   const { t } = useTranslation("teacher-create-course");
+  const { t: dialogModalT } = useTranslation("dialog-modal");
 
   const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
 
@@ -201,6 +202,9 @@ const BlockLecture: FC<BlockLectureProps> = ({ lessonId, id, index, onDelete }) 
       <DialogModal
         open={openModal}
         title={t("structure.dialog_modal_delete_lecture")}
+        showCloseButtonIcon
+        primaryButtonText={dialogModalT("dialog_modal_agree")}
+        secondaryButtonText={dialogModalT("dialog_modal_disagree")}
         handleAgree={onDeleteLecture}
         handleClose={onCloseModal}
       />
