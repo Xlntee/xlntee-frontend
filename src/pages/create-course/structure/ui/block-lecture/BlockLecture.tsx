@@ -202,10 +202,9 @@ const BlockLecture: FC<BlockLectureProps> = ({ lessonId, id, index, onDelete }) 
       <DialogModal
         open={openModal}
         title={t("structure.dialog_modal_delete_lecture")}
-        useCloseButton
         showCloseButtonIcon
-        agreeButtonText={dialogModalT("dialog_modal_agree")}
-        deleteButtonText={dialogModalT("dialog_modal_disagree")}
+        primaryButtonText={dialogModalT("dialog_modal_agree")}
+        secondaryButtonText={dialogModalT("dialog_modal_disagree")}
         handleAgree={onDeleteLecture}
         handleClose={onCloseModal}
       />

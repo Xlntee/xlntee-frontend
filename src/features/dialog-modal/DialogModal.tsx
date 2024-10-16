@@ -7,14 +7,13 @@ import "./DialogModal.scss";
 
 export type DialogModalProps = {
   open: boolean;
-  title: string;
+  title?: string;
   text?: ReactNode;
   loading?: boolean;
-  useCloseButton?: boolean;
   showCloseButtonIcon?: boolean;
   type?: "delete" | "send";
-  agreeButtonText: string;
-  deleteButtonText: string;
+  primaryButtonText?: string;
+  secondaryButtonText?: string;
   handleAgree: () => void;
   handleClose?: () => void;
 };
@@ -24,11 +23,10 @@ const DialogModal: FC<DialogModalProps> = ({
   title,
   text,
   loading,
-  useCloseButton,
   showCloseButtonIcon,
   type = "send",
-  agreeButtonText,
-  deleteButtonText,
+  primaryButtonText,
+  secondaryButtonText,
   handleAgree,
   handleClose
 }) => {
@@ -39,24 +37,28 @@ const DialogModal: FC<DialogModalProps> = ({
           <CloseIcon />
         </Button>
       )}
-      <DialogTitle>{title}</DialogTitle>
+      {title && <DialogTitle>{title}</DialogTitle>}
       <DialogContent>{text ? text : null}</DialogContent>
-      <DialogActions>
-        <Button
-          color={type === "send" ? "success" : type === "delete" ? "error" : "info"}
-          variant={type === "send" ? "black-contain" : type === "delete" ? "outlined" : "contained"}
-          onClick={handleAgree}
-          autoFocus
-          disabled={loading}
-        >
-          {agreeButtonText}
-        </Button>
-        {useCloseButton && (
-          <Button variant="black-text" onClick={handleClose}>
-            {deleteButtonText}
-          </Button>
-        )}
-      </DialogActions>
+      {(primaryButtonText || secondaryButtonText) && (
+        <DialogActions>
+          {primaryButtonText && (
+            <Button
+              color={type === "send" ? "success" : type === "delete" ? "error" : "info"}
+              variant={type === "send" ? "black-contain" : type === "delete" ? "outlined" : "contained"}
+              onClick={handleAgree}
+              autoFocus
+              disabled={loading}
+            >
+              {primaryButtonText}
+            </Button>
+          )}
+          {secondaryButtonText && (
+            <Button variant="black-text" onClick={handleClose}>
+              {secondaryButtonText}
+            </Button>
+          )}
+        </DialogActions>
+      )}
     </Dialog>
   );
 };

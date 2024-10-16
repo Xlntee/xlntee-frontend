@@ -170,8 +170,8 @@ const BlockPromoCodes: FC = () => {
       <DialogModal
         open={openModal}
         title={t("price.dialog_modal_delete_promo_code")}
-        agreeButtonText={dialogModalT("dialog_modal_agree")}
-        deleteButtonText={dialogModalT("dialog_modal_disagree")}
+        primaryButtonText={dialogModalT("dialog_modal_agree")}
+        secondaryButtonText={dialogModalT("dialog_modal_disagree")}
         handleAgree={() => selectedId && onDeletePromoCode(selectedId)}
         handleClose={onCloseModal}
       />

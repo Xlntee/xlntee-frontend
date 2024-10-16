@@ -49,7 +49,8 @@ const UiPage: FC<PageProps> = ({ title }) => {
 
   const [modalObj, setModalObj] = useState<Record<string, boolean>>({
     delete: false,
-    send: false
+    send: false,
+    default: false
   });
 
   return (
@@ -172,8 +173,41 @@ const UiPage: FC<PageProps> = ({ title }) => {
         </Box>
 
         <Box mb="20px">
-          <Typography variant="h2">Modal</Typography>
+          <Typography variant="h2">Modals</Typography>
           <Stack direction="row" gap="40px">
+            <Box>
+              <Button
+                size="small"
+                onClick={() =>
+                  setModalObj((prev) => {
+                    return {
+                      ...prev,
+                      default: true
+                    };
+                  })
+                }
+                variant="contained"
+              >
+                Modal default
+              </Button>
+              <DialogModal
+                open={modalObj["default"]}
+                handleAgree={() => console.log(1)}
+                handleClose={() => {
+                  setModalObj((prev) => {
+                    return {
+                      ...prev,
+                      default: false
+                    };
+                  });
+                }}
+                showCloseButtonIcon
+                title={"Title"}
+                text={
+                  <Typography>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt, ipsum!</Typography>
+                }
+              />
+            </Box>
             <Box>
               <Button
                 size="small"
@@ -191,6 +225,14 @@ const UiPage: FC<PageProps> = ({ title }) => {
               </Button>
               <DialogModal
                 open={modalObj["delete"]}
+                showCloseButtonIcon
+                type="delete"
+                title="Title"
+                text={
+                  <Typography>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt, ipsum!</Typography>
+                }
+                primaryButtonText="Agree"
+                secondaryButtonText="Close"
                 handleAgree={() => console.log(1)}
                 handleClose={() => {
                   setModalObj((prev) => {
@@ -200,13 +242,6 @@ const UiPage: FC<PageProps> = ({ title }) => {
                     };
                   });
                 }}
-                showCloseButtonIcon
-                useCloseButton
-                type="delete"
-                title="Title"
-                text={
-                  <Typography>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt, ipsum!</Typography>
-                }
               />
             </Box>
             <Box>
@@ -226,6 +261,14 @@ const UiPage: FC<PageProps> = ({ title }) => {
               </Button>
               <DialogModal
                 open={modalObj["send"]}
+                showCloseButtonIcon
+                type="send"
+                title={"Title"}
+                text={
+                  <Typography>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt, ipsum!</Typography>
+                }
+                primaryButtonText="Send"
+                secondaryButtonText="Close"
                 handleAgree={() => console.log(1)}
                 handleClose={() => {
                   setModalObj((prev) => {
@@ -235,13 +278,6 @@ const UiPage: FC<PageProps> = ({ title }) => {
                     };
                   });
                 }}
-                showCloseButtonIcon
-                useCloseButton
-                type="send"
-                title={"Title"}
-                text={
-                  <Typography>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt, ipsum!</Typography>
-                }
               />
             </Box>
           </Stack>

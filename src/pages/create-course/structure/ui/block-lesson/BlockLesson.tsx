@@ -183,10 +183,9 @@ const BlockLesson: FC<BlockLessonProps> = ({ index, id, canDelete }) => {
         <DialogModal
           open={openModal}
           title={t("structure.dialog_modal_delete_lesson")}
-          useCloseButton
           showCloseButtonIcon
-          agreeButtonText={dialogModalT("dialog_modal_agree")}
-          deleteButtonText={dialogModalT("dialog_modal_disagree")}
+          primaryButtonText={dialogModalT("dialog_modal_agree")}
+          secondaryButtonText={dialogModalT("dialog_modal_disagree")}
           handleAgree={onHandleDeleteLesson}
           handleClose={onCloseModal}
         />
