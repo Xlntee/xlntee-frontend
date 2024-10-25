@@ -8,7 +8,7 @@ import { DialogModal } from "src/features";
 
 import useDialogModal from "src/hooks/useDialogModal";
 
-import { ReviewRate } from "../review-rate";
+import { ReviewRate } from "src/features/review-rate";
 
 import "./CourseRate.scss";
 

@@ -8,4 +8,3 @@ export * from "./course-rate";
 export * from "./course-share";
 export * from "./student-course-card";
 export * from "./price-plan-list";
-export * from "./review-rate";
