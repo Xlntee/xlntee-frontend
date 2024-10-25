@@ -1,4 +1,5 @@
 import { FC, ReactNode } from "react";
+import cn from "classnames";
 
 import { Button, Dialog, DialogTitle, DialogContent, DialogActions } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
@@ -8,12 +9,13 @@ import "./DialogModal.scss";
 export type DialogModalProps = {
   open: boolean;
   title?: string;
-  text?: ReactNode;
+  children?: ReactNode;
   loading?: boolean;
   showCloseButtonIcon?: boolean;
   type?: "delete" | "send";
   primaryButtonText?: string;
   secondaryButtonText?: string;
+  size?: "default" | "large";
   handleAgree: () => void;
   handleClose?: () => void;
 };
@@ -21,24 +23,29 @@ export type DialogModalProps = {
 const DialogModal: FC<DialogModalProps> = ({
   open,
   title,
-  text,
+  children,
   loading,
   showCloseButtonIcon,
   type = "send",
+  size = "default",
   primaryButtonText,
   secondaryButtonText,
   handleAgree,
   handleClose
 }) => {
   return (
-    <Dialog open={open} onClose={handleClose} className="dialog-modal">
+    <Dialog
+      open={open}
+      onClose={handleClose}
+      className={cn("dialog-modal", { "dialog-modal--large": size === "large" })}
+    >
       {showCloseButtonIcon && (
         <Button variant="black-text" onClick={handleClose} className="dialog-modal__close-btn">
           <CloseIcon />
         </Button>
       )}
       {title && <DialogTitle>{title}</DialogTitle>}
-      <DialogContent>{text ? text : null}</DialogContent>
+      <DialogContent>{children}</DialogContent>
       {(primaryButtonText || secondaryButtonText) && (
         <DialogActions>
           {primaryButtonText && (

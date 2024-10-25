@@ -151,9 +151,13 @@ defaultTheme.typography.h3 = {
 };
 
 defaultTheme.typography.h4 = {
-  fontSize: 24,
+  fontSize: 20,
   lineHeight: 1.45,
-  color: XlnteeColors.BlackTextColor
+
+  color: XlnteeColors.BlackTextColor,
+  [defaultTheme.breakpoints.up("lg")]: {
+    fontSize: 24
+  }
 };
 
 defaultTheme.typography.h5 = {

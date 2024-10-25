@@ -203,10 +203,9 @@ const UiPage: FC<PageProps> = ({ title }) => {
                 }}
                 showCloseButtonIcon
                 title={"Title"}
-                text={
-                  <Typography>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt, ipsum!</Typography>
-                }
-              />
+              >
+                <Typography>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt, ipsum!</Typography>
+              </DialogModal>
             </Box>
             <Box>
               <Button
@@ -228,9 +227,6 @@ const UiPage: FC<PageProps> = ({ title }) => {
                 showCloseButtonIcon
                 type="delete"
                 title="Title"
-                text={
-                  <Typography>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt, ipsum!</Typography>
-                }
                 primaryButtonText="Agree"
                 secondaryButtonText="Close"
                 handleAgree={() => console.log(1)}
@@ -242,7 +238,9 @@ const UiPage: FC<PageProps> = ({ title }) => {
                     };
                   });
                 }}
-              />
+              >
+                <Typography>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt, ipsum!</Typography>
+              </DialogModal>
             </Box>
             <Box>
               <Button
@@ -264,9 +262,6 @@ const UiPage: FC<PageProps> = ({ title }) => {
                 showCloseButtonIcon
                 type="send"
                 title={"Title"}
-                text={
-                  <Typography>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt, ipsum!</Typography>
-                }
                 primaryButtonText="Send"
                 secondaryButtonText="Close"
                 handleAgree={() => console.log(1)}
@@ -278,7 +273,9 @@ const UiPage: FC<PageProps> = ({ title }) => {
                     };
                   });
                 }}
-              />
+              >
+                <Typography>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt, ipsum!</Typography>
+              </DialogModal>
             </Box>
           </Stack>
         </Box>
