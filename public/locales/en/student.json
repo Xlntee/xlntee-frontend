@@ -3,5 +3,11 @@
     "no-courses": "You haven't started your courses yet",
     "no-completed-courses": "You have not completed any courses yet",
     "no-cetrificates": "You don't have any certificates yet"
+  },
+  "review": {
+    "title": "Please, let us know, what do you think abou this course",
+    "subtitle": "This will help us provide valuable high-quality education courses.",
+    "field-comment-placeholder": "Let us know what do you think so far...",
+    "submit": "Rate"
   }
 }
