@@ -18,4 +18,3 @@ export * from "./password-validation-panel";
 export * from "./notification";
 export * from "./placeholder-card";
 export * from "./card-list";
-export * from "./review-rate";

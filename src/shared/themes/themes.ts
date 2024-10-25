@@ -605,7 +605,7 @@ defaultTheme.components = {
     styleOverrides: {
       root: {
         padding: 0,
-        marginBottom: 20
+        marginBottom: 0
       }
     }
   },
@@ -620,6 +620,7 @@ defaultTheme.components = {
     styleOverrides: {
       root: {
         padding: 0,
+        marginTop: 20,
         justifyContent: "center",
         gap: "20px"
       }
