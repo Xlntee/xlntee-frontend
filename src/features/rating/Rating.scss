@@ -1,10 +1,18 @@
 .rating {
   --review-count-size: 16px;
   --rating-review-size: 16px;
+  --rating-icon-size: 16px;
+
+  &--medium {
+    --review-count-size: 20px;
+    --rating-review-size: 20px;
+    --rating-icon-size: 16px;
+  }
 
   &--large {
     --review-count-size: 20px;
     --rating-review-size: 20px;
+    --rating-icon-size: 50px;
   }
 
   &__count {
@@ -19,5 +27,9 @@
       font-size: var(--rating-review-size);
       color: rgb(var(--gray-color-600));
     }
+  }
+
+  .MuiSvgIcon-root {
+    font-size: var(--rating-icon-size);
   }
 }
