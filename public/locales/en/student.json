@@ -9,5 +9,8 @@
     "subtitle": "This will help us provide valuable high-quality education courses.",
     "field-comment-placeholder": "Let us know what do you think so far...",
     "submit": "Rate"
+  },
+  "share": {
+    "title": "Share the course"
   }
 }

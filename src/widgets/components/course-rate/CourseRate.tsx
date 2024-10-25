@@ -16,6 +16,7 @@ const CourseRate: FC = () => {
 
   const [rating, setRating] = useState<number | null>(null);
   const refComment = useRef<HTMLInputElement>(null);
+  const { openModal, onOpenModal, onCloseModal } = useDialogModal();
 
   function onSubmit(): void {
     let commentText: string = "";
@@ -25,8 +26,6 @@ const CourseRate: FC = () => {
     }
     console.log(commentText, rating);
   }
-
-  const { openModal, onOpenModal, onCloseModal } = useDialogModal();
 
   return (
     <Box className="course-share">
@@ -38,7 +37,6 @@ const CourseRate: FC = () => {
       >
         <Typography variant="caption">{t("rate")}</Typography>
       </Button>
-
       <DialogModal
         open={openModal}
         handleAgree={() => console.log(1)}
