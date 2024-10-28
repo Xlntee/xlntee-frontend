@@ -634,6 +634,9 @@ defaultTheme.components = {
         marginTop: 20,
         justifyContent: "center",
         gap: "20px"
+      }
+    }
+  },
   MuiPaper: {
     styleOverrides: {
       elevation12: {
