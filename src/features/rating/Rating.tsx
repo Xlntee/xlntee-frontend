@@ -1,38 +1,57 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import cn from "classnames";
 
-import { Stack, Typography, Rating as MuiRating } from "@mui/material";
+import { Stack, Typography, Rating as MuiRating, RatingProps as MuiRatingProps } from "@mui/material";
+import StarIcon from "@mui/icons-material/Star";
+import StarBorderIcon from "@mui/icons-material/StarBorder";
+
 import { XlnteeColors } from "src/shared/themes/colors";
 
 import "./Rating.scss";
 
-interface RatingProps {
-  rating: number;
+interface RatingProps extends MuiRatingProps {
   reviewCount?: number;
+  showRating?: boolean;
   max?: number;
   precision?: number;
-  size?: "small" | "large";
+  typeIcon?: "outline" | "contained";
 }
 
-const Rating: FC<RatingProps> = ({ rating = 0, reviewCount = 0, max = 5, precision = 0.5, size }) => {
+const Rating: FC<RatingProps> = ({
+  reviewCount = 0,
+  showRating = true,
+  max = 5,
+  typeIcon = "outline",
+  size,
+  value,
+  ...rest
+}) => {
+  const [valueRating, setValueRating] = useState<number | null | undefined>(null);
   const sizeModification = cn({
+    "rating--medium": size === "medium",
     "rating--large": size === "large"
   });
+
+  useEffect(() => {
+    setValueRating(value);
+  }, [value]);
 
   const classnames = cn("rating", sizeModification);
   return (
     <Stack direction="row" alignItems="center" gap="4px" className={classnames}>
-      <Typography variant="caption" color={XlnteeColors.YellowColor} className="rating__count">
-        {rating}
-      </Typography>
+      {showRating && (
+        <Typography variant="caption" color={XlnteeColors.YellowColor} className="rating__count">
+          {valueRating}
+        </Typography>
+      )}
       <MuiRating
-        readOnly
         color={XlnteeColors.YellowColor}
-        value={rating}
-        precision={precision}
+        value={valueRating}
         max={max}
         size={size}
         className="rating__list"
+        emptyIcon={typeIcon === "outline" ? <StarBorderIcon /> : <StarIcon />}
+        {...rest}
       />
       {reviewCount ? (
         <Typography

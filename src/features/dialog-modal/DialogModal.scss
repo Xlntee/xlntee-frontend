@@ -1,5 +1,14 @@
 .dialog-modal {
-  .MuiPaper-root {
+  &--large {
+    .MuiPaper-root {
+      max-width: 700px;
+    }
+  }
+
+  &--extra-large {
+    .MuiPaper-root {
+      max-width: 870px;
+    }
   }
 
   &__close-btn {

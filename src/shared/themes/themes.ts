@@ -151,9 +151,13 @@ defaultTheme.typography.h3 = {
 };
 
 defaultTheme.typography.h4 = {
-  fontSize: 24,
+  fontSize: 20,
   lineHeight: 1.45,
-  color: XlnteeColors.BlackTextColor
+
+  color: XlnteeColors.BlackTextColor,
+  [defaultTheme.breakpoints.up("lg")]: {
+    fontSize: 24
+  }
 };
 
 defaultTheme.typography.h5 = {
@@ -601,7 +605,7 @@ defaultTheme.components = {
     styleOverrides: {
       root: {
         padding: 0,
-        marginBottom: 20
+        marginBottom: 0
       }
     }
   },
@@ -616,6 +620,7 @@ defaultTheme.components = {
     styleOverrides: {
       root: {
         padding: 0,
+        marginTop: 20,
         justifyContent: "center",
         gap: "20px"
       }

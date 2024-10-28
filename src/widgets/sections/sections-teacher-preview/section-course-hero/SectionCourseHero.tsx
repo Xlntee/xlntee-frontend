@@ -110,7 +110,7 @@ const SectionCourseHero: FC<SectionCourseHeroProps> = ({
                 <Typography fontWeight={300} maxWidth={{ lg: "80%" }}>
                   {description}
                 </Typography>
-                {rating && <Rating rating={rating} reviewCount={reviewCount} size="large" />}
+                {rating && <Rating readOnly value={rating} reviewCount={reviewCount} size="medium" />}
                 <Stack direction="row" alignItems="center" flexWrap="wrap" gap="20px">
                   <Stack direction="row" gap="14px">
                     {discount ? (

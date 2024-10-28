@@ -55,7 +55,7 @@ const StudentCourseCard: FC<StudentCourseCardProps> = ({
         <Stack direction="column" gap="20px" mb="20px">
           <Stack direction="row" justifyContent="space-between" alignItems="center" flexWrap="wrap" gap="10px">
             <Box className="student-course-card__date">{date}</Box>
-            <Rating rating={rating} reviewCount={reviews} size="small" />
+            <Rating readOnly value={rating} reviewCount={reviews} size="small" />
           </Stack>
           <Stack direction="row" justifyContent="space-between" alignItems="center" flexWrap="wrap" gap="10px">
             <Box className="student-course-card__price">
