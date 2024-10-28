@@ -5,6 +5,12 @@
     }
   }
 
+  &--extra-large {
+    .MuiPaper-root {
+      max-width: 870px;
+    }
+  }
+
   &__close-btn {
     &.MuiButtonBase-root {
       position: absolute;

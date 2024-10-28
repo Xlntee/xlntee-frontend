@@ -15,8 +15,9 @@ export type DialogModalProps = {
   type?: "delete" | "send";
   primaryButtonText?: string;
   secondaryButtonText?: string;
-  size?: "default" | "large";
-  handleAgree: () => void;
+  size?: "default" | "large" | "extra-large";
+  className?: string;
+  handleAgree?: () => void;
   handleClose?: () => void;
 };
 
@@ -30,15 +31,21 @@ const DialogModal: FC<DialogModalProps> = ({
   size = "default",
   primaryButtonText,
   secondaryButtonText,
+  className,
   handleAgree,
   handleClose
 }) => {
+  const classnames = cn(
+    "dialog-modal",
+    {
+      "dialog-modal--large": size === "large",
+      "dialog-modal--extra-large": size === "extra-large"
+    },
+    className
+  );
+
   return (
-    <Dialog
-      open={open}
-      onClose={handleClose}
-      className={cn("dialog-modal", { "dialog-modal--large": size === "large" })}
-    >
+    <Dialog open={open} onClose={handleClose} className={classnames}>
       {showCloseButtonIcon && (
         <Button variant="black-text" onClick={handleClose} className="dialog-modal__close-btn">
           <CloseIcon />
