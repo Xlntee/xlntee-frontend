@@ -83,9 +83,9 @@ const ComplainForm: FC = () => {
         <InfoCourseComplain
           image="/assets/complain.png"
           imageDescription={t("complain.imageDescription")}
-          message1={t("complain.message1")}
-          message2={t("complain.message2")}
-          code="R021039"
+          message={t("complain.message", {
+            code: "R021039"
+          })}
         />
       )}
     </Box>

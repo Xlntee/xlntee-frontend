@@ -54,6 +54,7 @@ const SectionLandingContact: FC = () => {
                 src="assets/teacher-landing-contact.webp"
                 effect="blur"
                 className="section-contact__image"
+                alt={t("contacts.title")}
               />
             </Grid>
           </Grid>

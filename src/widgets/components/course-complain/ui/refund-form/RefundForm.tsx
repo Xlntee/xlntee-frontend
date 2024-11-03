@@ -84,9 +84,9 @@ const RefundForm: FC = () => {
         <InfoCourseComplain
           image="/assets/refund.png"
           imageDescription={t("refund.imageDescription")}
-          message1={t("refund.message1")}
-          message2={t("refund.message2")}
-          code="R021039"
+          message={t("refund.message", {
+            code: "R021039"
+          })}
         />
       )}
     </Box>

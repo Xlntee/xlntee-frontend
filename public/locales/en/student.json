@@ -27,8 +27,7 @@
     "requirements": "You can choose several reasons for a refund",
     "submit": "send",
     "imageDescription": "complain",
-    "message1": "Your complaint has been sent, its numer:",
-    "message2": "Sorry if your experience was not good and thank you for letting us know so we can improve."
+    "message": "Your complaint has been sent, its numer: <strong>{{code}}</strong> Sorry if your experience was not good and thank you for letting us know so we can improve."
   },
   "refund": {
     "title": "Please select the reason for the refund",
@@ -44,7 +43,6 @@
     "requirements": "You can choose several reasons for a refund",
     "submit": "send",
     "imageDescription": "refund",
-    "message1": "Your refund request has been sent, its number:",
-    "message2": "It might take up to 3 business days to be reviewed, you will receive all information about the status of the request to your email or in notifications tab."
+    "message": "Your refund request has been sent, its number: <strong>{{code}}</strong> It might take up to 3 business days to be reviewed, you will receive all information about the status of the request to your email or in notifications tab."
   }
 }

@@ -1,4 +1,4 @@
-import { Suspense, lazy, ReactNode, useEffect, FC } from "react";
+import { lazy, useEffect, FC } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import { useAppDispatch } from "src/app/store/store";
@@ -15,12 +15,12 @@ import {
   StudentCoursePageLayout
 } from "src/layouts";
 
-import PageLoader from "./PageLoader";
 import { AppRoutes } from "./appRoutes";
 import { ProtectedRoute } from "./ProtectedRoute";
 
 import { LoginForm, RegistrationForm, AccountVerificationForm, PasswordUpdate } from "src/widgets/forms";
 import AuthTab from "src/widgets/components/auth-tab/AuthTab";
+import { SuspenseWrapper } from "src/shared/utils/suspense-wrapper";
 
 // Lazy load the component
 const EmailUpdatePage = lazy(() => import("src/pages/auth/email-update/EmailUpdatePage"));
@@ -51,10 +51,6 @@ const StatisticPage = lazy(() => import("src/pages/teacher/statistic-page/Statis
 const TeacherProfilePage = lazy(() => import("src/pages/teacher/profile-page/ProfilePage"));
 const TariffPlanPage = lazy(() => import("src/pages/teacher/tariff-plan-page/TariffPlanPage"));
 const HelpCenterPage = lazy(() => import("src/pages/help-center-page/HelpCenterPage"));
-
-const SuspenseWrapper = ({ children }: { children: ReactNode }): JSX.Element => {
-  return <Suspense fallback={<PageLoader />}>{children}</Suspense>;
-};
 
 const authRoutes = [
   {
@@ -232,11 +228,7 @@ const studentDashboardRoutes = [
   },
   {
     path: AppRoutes.student.profile,
-    element: (
-      <SuspenseWrapper>
-        <StudentProfilePage title="Profile" />
-      </SuspenseWrapper>
-    )
+    element: <StudentProfilePage title="Profile" />
   },
   {
     path: AppRoutes.student.completedCourses,
