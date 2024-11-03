@@ -60,8 +60,10 @@ const PricePlanCard: FC<PricePlanProps> = ({ pretitle, title, text, button, desc
                   {item.icon}
                 </ListItemIcon>
                 <ListItemText>
-                  <Typography variant="h6">{item.title}</Typography>
-                  <Typography variant="h6" fontWeight={400}>
+                  <Typography variant="body2" fontWeight={700} fontSize={18}>
+                    {item.title}
+                  </Typography>
+                  <Typography variant="body2" fontWeight={400} fontSize={18}>
                     {item.text}
                   </Typography>
                 </ListItemText>

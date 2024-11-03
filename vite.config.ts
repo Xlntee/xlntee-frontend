@@ -6,7 +6,7 @@ import { visualizer } from "rollup-plugin-visualizer";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), visualizer({ open: true })],
+  plugins: [react(), visualizer({ open: true })], // make visualizer true to see diagram of libs
   resolve: {
     alias: {
       pages: "/src/pages",
@@ -28,13 +28,11 @@ export default defineConfig({
   build: {
     chunkSizeWarningLimit: 600,
     rollupOptions: {
+      treeshake: true,
       output: {
         manualChunks(id) {
-          if (id.includes("node_modules")) {
-            return "vendor"; // Split vendor libraries
-          }
-          if (id.includes("src/components/")) {
-            return "components"; // Split components into their own chunk
+          if (id.includes("@mui")) {
+            return "mui"; // Split vendor libraries
           }
         }
       }

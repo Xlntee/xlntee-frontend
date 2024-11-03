@@ -16,10 +16,12 @@ const SectionPricePlan: FC = () => {
           <Box border={`1px solid ${XlnteeColors.GrayStrokeColor}`} borderRadius="20px" p="20px" mb="40px">
             <Stack direction={{ md: "row-reverse" }} justifyContent={{ md: "space-between" }} gap="20px">
               <Box>
-                <Typography variant="h5">{t("price-plan.title-plan")}</Typography>
+                <Typography variant="body2" fontSize={20} fontWeight={700}>
+                  {t("price-plan.title-plan")}
+                </Typography>
               </Box>
               <Box maxWidth="400px">
-                <Typography variant="h6" fontWeight={400}>
+                <Typography variant="body2" fontSize={18} fontWeight={400}>
                   {t("price-plan.title")}
                 </Typography>
                 <Typography variant="body2" fontWeight={300}>
