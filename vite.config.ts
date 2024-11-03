@@ -6,7 +6,7 @@ import { visualizer } from "rollup-plugin-visualizer";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), visualizer({ open: true })], // make visualizer true to see diagram of libs
+  plugins: [react(), visualizer({ open: false })], // make visualizer true to see diagram of libs
   resolve: {
     alias: {
       pages: "/src/pages",
