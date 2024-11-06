@@ -105,7 +105,7 @@ const LandingPage: FC<PageProps> = ({ title }) => {
         {fields.map((fieldItem) => (
           <Box key={fieldItem.value} className="field-box">
             <FormLabel>
-              <Typography className="field-box__title">{title}*</Typography>
+              <Typography className="field-box__title">{fieldItem.title}*</Typography>
               <Typography className="field-box__subtitle">{fieldItem.subtitle}</Typography>
               <Controller
                 name={fieldItem.value}

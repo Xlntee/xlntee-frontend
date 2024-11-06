@@ -2,16 +2,15 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import HttpApi from "i18next-http-backend";
 import LanguageDetector from "i18next-browser-languagedetector";
+import resourcesToBackend from "i18next-resources-to-backend";
 
 i18n
   .use(HttpApi)
   .use(LanguageDetector)
   .use(initReactI18next)
+  .use(resourcesToBackend((language: any, namespace: any) => import(`../locales/${language}/${namespace}.json`)))
   .init({
     fallbackLng: "uk",
-    backend: {
-      loadPath: "/locales/{{lng}}/{{ns}}.json"
-    },
     ns: [
       "common",
       "auth",
@@ -24,7 +23,8 @@ i18n
       "teacher-create-course",
       "dialog-modal"
     ],
-    initImmediate: false,
+    partialBundledLanguages: true,
+    initImmediate: true,
     react: {
       useSuspense: false
     }
