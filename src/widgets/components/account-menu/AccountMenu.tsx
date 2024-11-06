@@ -9,7 +9,8 @@ import LanguageIcon from "@mui/icons-material/Language";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 
 import { useAppSelector, useAppDispatch } from "src/app/store/store";
-import { getUser, switchRole } from "src/app/store/slices/user/userSlice";
+import { getUser, switchRole } from "src/app/store/slices/user/slice";
+import { closeLatestDialog } from "src/app/store/slices/dialog/slice";
 
 import { LanguageSwitcher } from "src/widgets/components";
 import { UserRole } from "src/shared/utils/enum";
@@ -26,6 +27,7 @@ const AccountMenu: FC = () => {
   const user = useAppSelector(getUser);
 
   function onToggleUserRole(): void {
+    dispatch(closeLatestDialog());
     dispatch(switchRole());
     if (user.role === UserRole.STUDENT) {
       navigate(AppRoutes.teacher.dashboard);

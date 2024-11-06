@@ -9,6 +9,7 @@ import { HeaderProfile, Notifications } from "src/widgets/components";
 import Footer from "src/widgets/footer/Footer";
 import { UserRole } from "src/shared/utils/enum";
 import { AppRoutes } from "src/app/routing/appRoutes";
+import { RootDialog } from "src/widgets/dialogs/RootDialog";
 
 interface PrivateLayoutProps {
   userRole: UserRole;
@@ -39,6 +40,7 @@ const PrivateLayout: FC<PrivateLayoutProps> = ({ userRole }) => {
         <Outlet />
       </Box>
       <Footer />
+      <RootDialog />
     </>
   );
 };

@@ -2,7 +2,7 @@ import { lazy, useEffect, FC } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import { useAppDispatch } from "src/app/store/store";
-import { setRole } from "src/app/store/slices/user/userSlice";
+import { setRole } from "src/app/store/slices/user/slice";
 import { UserRole } from "src/shared/utils/enum";
 
 import {
