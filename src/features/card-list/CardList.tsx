@@ -63,7 +63,7 @@ const CardList = <T extends { id: string }>({
         <>
           {items.map((item) => (
             <Grid item key={item.id} xs={xs} sm={sm} md={md} lg={lg} xl={xl}>
-              {renderCard && renderCard(item)}
+              {renderCard?.(item)}
             </Grid>
           ))}
         </>
