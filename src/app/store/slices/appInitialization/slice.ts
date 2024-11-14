@@ -19,6 +19,4 @@ const appInitializationSlice = createSlice({
   }
 });
 
-export const {} = appInitializationSlice.actions;
-
 export default appInitializationSlice.reducer;
