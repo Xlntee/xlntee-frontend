@@ -10,7 +10,7 @@ import useTitle from "src/hooks/useTitle/useTitle";
 import { PageProps } from "pages/type";
 import { ImageUpload } from "src/features";
 import { useAppSelector } from "src/app/store/store";
-import { getUser } from "src/app/store/slices/user/userSlice";
+import { getUser } from "src/app/store/slices/user/slice";
 
 interface ProfileFormValues {
   firstName: string;

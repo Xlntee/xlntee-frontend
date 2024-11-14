@@ -580,15 +580,10 @@ defaultTheme.components = {
   MuiDialog: {
     styleOverrides: {
       paper: {
-        maxWidth: 540,
         width: "100%",
-        padding: "40px 20px 30px",
-        borderRadius: 20,
-        boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.25)",
-
-        [defaultTheme.breakpoints.up("md")]: {
-          padding: 40
-        }
+        boxShadow: "none",
+        margin: 32,
+        backgroundColor: "transparent"
       }
     }
   },

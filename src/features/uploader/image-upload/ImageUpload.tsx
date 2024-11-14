@@ -69,7 +69,7 @@ const ImageUpload: FC<ImageUploadProps> = ({
       fileReader.onloadend = () => {
         const fileString: string = fileReader.result as string;
         setUploadedFile(fileString);
-        onChange && onChange(file, fileString);
+        onChange?.(file, fileString);
       };
     } catch (error) {
       if (error instanceof Error) {

@@ -5,6 +5,7 @@ import cn from "classnames";
 import { Box, Stack } from "@mui/material";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 
+import { RootDialog } from "src/widgets/dialogs/RootDialog";
 import { HeaderProfile, Notifications } from "src/widgets/components";
 import Footer from "src/widgets/footer/Footer";
 import { UserRole } from "src/shared/utils/enum";
@@ -39,6 +40,7 @@ const PrivateLayout: FC<PrivateLayoutProps> = ({ userRole }) => {
         <Outlet />
       </Box>
       <Footer />
+      <RootDialog />
     </>
   );
 };

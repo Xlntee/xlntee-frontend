@@ -34,7 +34,7 @@ const FileUpload: FC<FileUploadProps> = ({
   function handleChangeFile(e: ChangeEvent<HTMLInputElement>): void {
     const files: FileList | null = e.currentTarget.files;
     if (!files) return;
-    onChange && onChange(files);
+    onChange?.(files);
   }
 
   return (

@@ -6,6 +6,7 @@ import { Box, Stack, Button } from "@mui/material";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import SentimentSatisfiedAltIcon from "@mui/icons-material/SentimentSatisfiedAlt";
 
+import { RootDialog } from "src/widgets/dialogs/RootDialog";
 import { HeaderProfile, Notifications } from "src/widgets/components";
 import Footer from "src/widgets/footer/Footer";
 import { AppRoutes } from "src/app/routing/appRoutes";
@@ -51,6 +52,7 @@ const CreateCoursePageLayout: FC = () => {
         <Outlet />
       </Box>
       <Footer />
+      <RootDialog />
     </>
   );
 };

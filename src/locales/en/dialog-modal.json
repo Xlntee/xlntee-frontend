@@ -1,4 +1,7 @@
 {
   "dialog_modal_agree": "Agree",
-  "dialog_modal_disagree": "Disagree"
+  "dialog_modal_disagree": "Disagree",
+  "dialog_modal_delete_promo_code": "Do you want to delete promo code?",
+  "dialog_modal_delete_lecture": "Do you want to delete lecture?",
+  "dialog_modal_delete_lesson": "Do you want to delete lesson?"
 }

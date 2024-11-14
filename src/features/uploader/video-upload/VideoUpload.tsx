@@ -59,7 +59,7 @@ const VideoUpload: FC<VideoUploadProps> = ({
         setMessageAlert("Upload to browser success");
         setColorAlert("success");
         showAlert();
-        onChange && onChange(file, fileString);
+        onChange?.(file, fileString);
       };
     } catch (error) {
       if (error instanceof Error) {
