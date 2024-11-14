@@ -1,13 +1,13 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { DialogItem, DialogNames, PayloadDialogProps } from "./type";
+import { DialogItem, DialogNames, DialogSize, PayloadDialogProps } from "./type";
 
 export interface IDialogState {
-  isDialogOpen: boolean;
   stack: DialogItem[];
+  dialogSize: DialogSize;
 }
 
 const initialState: IDialogState = {
-  isDialogOpen: false,
+  dialogSize: "default",
   stack: []
 };
 
@@ -16,7 +16,8 @@ const dialogSlice = createSlice({
   initialState,
   reducers: {
     openDialog: (state: IDialogState, action: PayloadAction<PayloadDialogProps>) => {
-      const { dialogName, dialogProps, options } = action.payload;
+      const { dialogName, dialogProps, options, dialogSize = "default" } = action.payload;
+      state.dialogSize = dialogSize;
       state.stack.push({
         dialogName: dialogName,
         dialogProps: dialogProps,
@@ -24,13 +25,15 @@ const dialogSlice = createSlice({
       });
     },
     closeDialogByName: (state: IDialogState, action: PayloadAction<{ dialogName: DialogNames }>) => {
-      state.stack = state.stack.filter((dialog) => dialog.dialogName !== action.payload.dialogName);
+      const updateStack = state.stack.filter((dialog) => dialog.dialogName !== action.payload.dialogName);
+      state.stack = updateStack;
+      state.dialogSize = "default";
     },
     closeAllDialogs: (state: IDialogState) => {
       state.stack = [];
     },
     closeLatestDialog: (state: IDialogState) => {
-      state.stack = state.stack.slice(0, -1);
+      state.stack = state.stack.slice(0, 0);
     }
   }
 });

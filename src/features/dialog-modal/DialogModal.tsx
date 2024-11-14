@@ -1,7 +1,7 @@
 import { FC, ReactNode } from "react";
 import cn from "classnames";
 
-import { Button, Dialog, DialogTitle, DialogContent, DialogActions } from "@mui/material";
+import { Box, Button, Dialog, DialogTitle, DialogContent, DialogActions } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 
 import "./DialogModal.scss";
@@ -46,33 +46,35 @@ const DialogModal: FC<DialogModalProps> = ({
 
   return (
     <Dialog open={open} onClose={handleClose} className={classnames}>
-      {showCloseButtonIcon && (
-        <Button variant="black-text" onClick={handleClose} className="dialog-modal__close-btn">
-          <CloseIcon />
-        </Button>
-      )}
-      {title && <DialogTitle>{title}</DialogTitle>}
-      <DialogContent>{children}</DialogContent>
-      {(primaryButtonText || secondaryButtonText) && (
-        <DialogActions>
-          {primaryButtonText && (
-            <Button
-              color={type === "send" ? "success" : type === "delete" ? "error" : "info"}
-              variant={type === "send" ? "black-contain" : type === "delete" ? "outlined" : "contained"}
-              onClick={handleAgree}
-              autoFocus
-              disabled={loading}
-            >
-              {primaryButtonText}
-            </Button>
-          )}
-          {secondaryButtonText && (
-            <Button variant="black-text" onClick={handleClose}>
-              {secondaryButtonText}
-            </Button>
-          )}
-        </DialogActions>
-      )}
+      <Box className="dialog-box">
+        {showCloseButtonIcon && (
+          <Button variant="black-text" onClick={handleClose} className="dialog-modal__close-btn">
+            <CloseIcon />
+          </Button>
+        )}
+        {title && <DialogTitle>{title}</DialogTitle>}
+        <DialogContent>{children}</DialogContent>
+        {(primaryButtonText || secondaryButtonText) && (
+          <DialogActions>
+            {primaryButtonText && (
+              <Button
+                color={type === "send" ? "success" : type === "delete" ? "error" : "info"}
+                variant={type === "send" ? "black-contain" : type === "delete" ? "outlined" : "contained"}
+                onClick={handleAgree}
+                autoFocus
+                disabled={loading}
+              >
+                {primaryButtonText}
+              </Button>
+            )}
+            {secondaryButtonText && (
+              <Button variant="black-text" onClick={handleClose}>
+                {secondaryButtonText}
+              </Button>
+            )}
+          </DialogActions>
+        )}
+      </Box>
     </Dialog>
   );
 };

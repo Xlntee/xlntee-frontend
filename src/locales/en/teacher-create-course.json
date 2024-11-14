@@ -73,8 +73,6 @@
     "lecture_quiz_question_placeholder": "Question",
     "lecture_quiz_add_answer": "Add an answer",
     "lecture_quiz_add_question": "Add a question",
-    "dialog_modal_delete_lecture": "Do you want to delete lecture?",
-    "dialog_modal_delete_lesson": "Do you want to delete lesson?",
     "quiz_answer_field_placeholder": "Answer"
   },
   "lecturer": {
@@ -104,8 +102,7 @@
     "promo_field_code_placeholder": "Code name",
     "promo_button_create": "Create",
     "promo_created_title": "Created Promo Codes",
-    "promo_created_empty": "No promo codes",
-    "dialog_modal_delete_promo_code": "Do you want to delete promo code?"
+    "promo_created_empty": "No promo codes"
   },
   "advertising": {
     "nav_title": "Advertising",

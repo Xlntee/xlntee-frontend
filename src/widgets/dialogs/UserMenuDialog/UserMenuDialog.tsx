@@ -13,13 +13,13 @@ import "./UserMenuDialog.scss";
 const UserMenuDialog: FC = () => {
   const dispatch = useAppDispatch();
 
-  function close(): void {
+  function onCloseDialog(): void {
     dispatch(closeDialogByName({ dialogName: "USER_MENU_DIALOG" }));
   }
 
   return (
     <Box className="dialog-box dialog-box--fullscreen user-menu-dialog">
-      <MenuToggler active={true} onClick={close} className="dialog-box__close-btn" />
+      <MenuToggler active={true} onClick={onCloseDialog} className="dialog-box__close-btn" />
       <AccountMenu />
     </Box>
   );

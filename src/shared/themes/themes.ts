@@ -580,17 +580,10 @@ defaultTheme.components = {
   MuiDialog: {
     styleOverrides: {
       paper: {
-        maxWidth: "100%",
         width: "100%",
-        margin: 0,
-        maxHeight: "100%",
-        backgroundColor: "transparent",
-        alignItems: "center",
-        justifyContent: "center"
-      },
-      container: {
-        justifyContent: "stretch",
-        alignItems: "stretch"
+        boxShadow: "none",
+        margin: 32,
+        backgroundColor: "transparent"
       }
     }
   },

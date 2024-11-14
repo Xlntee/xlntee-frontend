@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import { Box, Stack } from "@mui/material";
 
+import { RootDialog } from "src/widgets/dialogs/RootDialog";
 import { CourseComplain, CourseRate, CourseShare, HeaderProfile } from "src/widgets/components";
 import Footer from "src/widgets/footer/Footer";
 import { UserRole } from "src/shared/utils/enum";
@@ -34,6 +35,7 @@ const CoursePageLayout: FC = () => {
         <Outlet />
       </Box>
       <Footer />
+      <RootDialog />
     </>
   );
 };

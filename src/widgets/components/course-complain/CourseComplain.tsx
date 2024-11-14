@@ -6,23 +6,22 @@ import NewReleasesOutlinedIcon from "@mui/icons-material/NewReleasesOutlined";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
 
-import { DialogModal } from "src/features";
-import useDialogModal from "src/hooks/useDialogModal";
-
-import { ComplainForm, RefundForm } from "./ui";
+import { useDispatch } from "react-redux";
+import { openDialog } from "src/app/store/slices/dialog/slice";
 
 import "./CourseComplain.scss";
 
-enum FormEnum {
-  Complain = "complain",
-  Refund = "refund"
-}
+const Dialogs = {
+  complain: "complain",
+  refund: "refund"
+} as const;
+
+type DialogType = typeof Dialogs;
 
 const CourseRate: FC = () => {
+  const dispatch = useDispatch();
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
-  const [modalForm, setModalForm] = useState<FormEnum | null>(null);
   const open = Boolean(anchorEl);
-  const { openModal, onOpenModal, onCloseModal } = useDialogModal();
 
   function handleClick(event: MouseEvent<HTMLElement>): void {
     setAnchorEl(event.currentTarget);
@@ -32,13 +31,27 @@ const CourseRate: FC = () => {
     setAnchorEl(null);
   }
 
-  function onHandleClickModal(type: FormEnum): void {
-    handleCloseMenu();
-
-    if (type === FormEnum.Complain) setModalForm(FormEnum.Complain);
-    if (type === FormEnum.Refund) setModalForm(FormEnum.Refund);
-
-    onOpenModal();
+  function onHandleClickModal(type: keyof DialogType): void {
+    switch (type) {
+      case Dialogs.complain: {
+        dispatch(
+          openDialog({
+            dialogName: "STUDENT_COURSE_COMPLAIN_DIALOG",
+            dialogSize: "large"
+          })
+        );
+        break;
+      }
+      case Dialogs.refund: {
+        dispatch(
+          openDialog({
+            dialogName: "STUDENT_COURSE_REFUND_DIALOG",
+            dialogSize: "large"
+          })
+        );
+        break;
+      }
+    }
   }
 
   return (
@@ -70,7 +83,7 @@ const CourseRate: FC = () => {
             variant="black-text"
             startIcon={<NewReleasesOutlinedIcon />}
             className="course-complain-menu__button"
-            onClick={() => onHandleClickModal(FormEnum.Complain)}
+            onClick={() => onHandleClickModal(Dialogs.complain)}
           >
             Complain
           </Button>
@@ -78,22 +91,12 @@ const CourseRate: FC = () => {
             variant="black-text"
             startIcon={<CreditCardIcon />}
             className="course-complain-menu__button"
-            onClick={() => onHandleClickModal(FormEnum.Refund)}
+            onClick={() => onHandleClickModal(Dialogs.refund)}
           >
             Refund
           </Button>
         </Stack>
       </Menu>
-      <DialogModal
-        open={openModal}
-        className="course-modal"
-        size="extra-large"
-        showCloseButtonIcon
-        handleClose={onCloseModal}
-      >
-        {modalForm === FormEnum.Complain && <ComplainForm />}
-        {modalForm === FormEnum.Refund && <RefundForm />}
-      </DialogModal>
     </Box>
   );
 };

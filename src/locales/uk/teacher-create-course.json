@@ -72,8 +72,6 @@
     "lecture_quiz_question_placeholder": "Питання",
     "lecture_quiz_add_answer": "Додайте відповідь",
     "lecture_quiz_add_question": "Додайте запитання",
-    "dialog_modal_delete_lecture": "Ви хочете видалити урок?",
-    "dialog_modal_delete_lesson": "Ви хочете видалити урок?",
     "quiz_answer_field_placeholder": "Відповідь"
   },
   "lecturer": {
@@ -103,8 +101,7 @@
     "promo_field_code_placeholder": "Кодове ім'я",
     "promo_button_create": "створити",
     "promo_created_title": "Створені промокоди",
-    "promo_created_empty": "Без промокодів",
-    "dialog_modal_delete_promo_code": "Бажаєте видалити промокод?"
+    "promo_created_empty": "Без промокодів"
   },
   "advertising": {
     "nav_title": "Реклама",

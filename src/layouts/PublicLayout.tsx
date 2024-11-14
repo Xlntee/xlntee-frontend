@@ -2,22 +2,18 @@ import { FC } from "react";
 import { Outlet } from "react-router-dom";
 import { Box } from "@mui/material";
 
+import { RootDialog } from "src/widgets/dialogs/RootDialog";
 import { Header } from "src/widgets/components";
 import Footer from "src/widgets/footer/Footer";
-import { RootDialog } from "src/widgets/dialogs/RootDialog";
 
-interface LayoutProps {
-  showFooter?: boolean;
-}
-
-const PublicLayout: FC<LayoutProps> = ({ showFooter = true }) => {
+const PublicLayout: FC = () => {
   return (
     <>
       <Header />
       <Box component="main" sx={{ flexGrow: 1 }}>
         <Outlet />
       </Box>
-      {showFooter && <Footer />}
+      <Footer />
       <RootDialog />
     </>
   );

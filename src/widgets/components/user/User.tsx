@@ -31,7 +31,8 @@ const User: FC = () => {
     } else {
       dispatch(
         openDialog({
-          dialogName: "USER_MENU_DIALOG"
+          dialogName: "USER_MENU_DIALOG",
+          dialogSize: "fullscreen"
         })
       );
     }

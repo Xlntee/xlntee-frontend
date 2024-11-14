@@ -1,4 +1,7 @@
 {
   "dialog_modal_agree": "Згоден",
-  "dialog_modal_disagree": "Не згоден"
+  "dialog_modal_disagree": "Не згоден",
+  "dialog_modal_delete_promo_code": "Бажаєте видалити промокод?",
+  "dialog_modal_delete_lecture": "Ви хочете видалити урок?",
+  "dialog_modal_delete_lesson": "Ви хочете видалити урок?"
 }

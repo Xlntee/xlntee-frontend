@@ -1,25 +1,24 @@
 @use "styles/mixins.scss" as mixins;
+
 .course-share {
-  &__toggler {
-    &.MuiButtonBase-root {
-      font-weight: 400;
-      font-size: 14px;
-    }
+  &.MuiButtonBase-root {
+    font-weight: 400;
+    font-size: 14px;
+  }
 
-    .MuiButton-startIcon {
-      margin-right: 2px;
+  .MuiButton-startIcon {
+    margin-right: 2px;
 
-      > svg {
-        @include mixins.media(tablet) {
-          font-size: 30px;
-        }
+    > svg {
+      @include mixins.media(tablet) {
+        font-size: 30px;
       }
     }
+  }
 
-    .MuiTypography-caption {
-      @include mixins.media(tablet, max) {
-        display: none;
-      }
+  .MuiTypography-caption {
+    @include mixins.media(tablet, max) {
+      display: none;
     }
   }
 }
