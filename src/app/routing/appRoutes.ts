@@ -1,7 +1,6 @@
 export const AppRoutes = {
   home: "/",
   studentLanding: "/student",
-
   auth: {
     base: "/auth",
     typeRole: "/auth/:authType/:role",
@@ -49,8 +48,3 @@ export const AppRoutes = {
   ui: "/ui",
   helpCenter: "/help-center"
 };
-
-export enum AuthPageSection {
-  LOGIN = "login",
-  REGISTRATION = "registration"
-}

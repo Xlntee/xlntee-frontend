@@ -10,7 +10,7 @@ import { RootDialog } from "src/widgets/dialogs/RootDialog";
 import { HeaderProfile, Notifications } from "src/widgets/components";
 import Footer from "src/widgets/footer/Footer";
 import { AppRoutes } from "src/app/routing/appRoutes";
-import { UserRole } from "src/shared/utils/enum";
+import { UserRoles } from "src/shared/utils/user-role";
 
 const CreateCoursePageLayout: FC = () => {
   const { t } = useTranslation("auth");
@@ -20,7 +20,7 @@ const CreateCoursePageLayout: FC = () => {
     <>
       <HeaderProfile
         link={<Link to={AppRoutes.teacher.dashboard}>{t("dashboard")}</Link>}
-        userRole={UserRole.TEACHER}
+        userRole={UserRoles.teacher}
         tools={
           <Stack direction="row" gap="10px" alignItems="center">
             <Notifications />

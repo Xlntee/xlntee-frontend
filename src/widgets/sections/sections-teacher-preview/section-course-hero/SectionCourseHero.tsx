@@ -13,7 +13,7 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
 import { Rating } from "src/features";
-import { Difficulty, Language } from "src/entities/course/model";
+import { DifficultyType, LanguageType } from "src/entities/course/model";
 import { XlnteeColors } from "src/shared/themes/colors";
 
 import "./SectionCourseHero.scss";
@@ -26,8 +26,8 @@ interface SectionCourseHeroProps {
   rating?: number;
   price: number;
   discount: number;
-  level: Difficulty;
-  language: Language;
+  level: DifficultyType;
+  language: LanguageType;
   generateCertificate: boolean;
   reviewCount?: number;
 }
@@ -70,7 +70,7 @@ const SectionCourseHero: FC<SectionCourseHeroProps> = ({
       icon: <LocalActivityIcon />,
       text: generateCertificate ? "Видається сертифікат" : "Сертифікат не видається"
     }
-  ];
+  ] as const;
 
   return (
     <Box component="section" className="section-course-hero" py="50px">

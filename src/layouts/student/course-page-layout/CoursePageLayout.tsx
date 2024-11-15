@@ -7,7 +7,7 @@ import { Box, Stack } from "@mui/material";
 import { RootDialog } from "src/widgets/dialogs/RootDialog";
 import { CourseComplain, CourseRate, CourseShare, HeaderProfile } from "src/widgets/components";
 import Footer from "src/widgets/footer/Footer";
-import { UserRole } from "src/shared/utils/enum";
+import { UserRoles } from "src/shared/utils/user-role";
 import { Progress } from "src/features";
 import { AppRoutes } from "src/app/routing/appRoutes";
 
@@ -18,7 +18,7 @@ const CoursePageLayout: FC = () => {
     <>
       <HeaderProfile
         link={<Link to={AppRoutes.student.myLearning}>{t("student-navigation.my-learning")}</Link>}
-        userRole={UserRole.STUDENT}
+        userRole={UserRoles.student}
         tools={
           <Stack direction="row" gap={{ xs: "8px", md: "14px" }} alignItems="center">
             <CourseRate />

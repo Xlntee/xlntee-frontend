@@ -33,14 +33,14 @@ const StatisticPage: FC<PageProps> = ({ title }) => {
           <CourseStatistic
             id="1"
             title="Lorem ipsum"
-            status={CourseStatus.MODERATION}
+            status={CourseStatus.moderation}
             updateTime="23.11.2022"
             image="/assets/temp-course-image2.png"
           />
           <CourseStatistic
             id="1"
             title="Lorem ipsum"
-            status={CourseStatus.MODERATION}
+            status={CourseStatus.moderation}
             updateTime="23.11.2022"
             image="/assets/temp-course-image2.png"
           />

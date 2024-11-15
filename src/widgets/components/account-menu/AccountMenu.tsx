@@ -13,7 +13,7 @@ import { getUser, switchRole } from "src/app/store/slices/user/slice";
 import { closeLatestDialog } from "src/app/store/slices/dialog/slice";
 
 import { LanguageSwitcher } from "src/widgets/components";
-import { UserRole } from "src/shared/utils/enum";
+import { UserRoles } from "src/shared/utils/user-role";
 import { AppRoutes } from "src/app/routing/appRoutes";
 
 import "./AccountMenu.scss";
@@ -29,9 +29,9 @@ const AccountMenu: FC = () => {
   function onToggleUserRole(): void {
     dispatch(closeLatestDialog());
     dispatch(switchRole());
-    if (user.role === UserRole.STUDENT) {
+    if (user.role === UserRoles.student) {
       navigate(AppRoutes.teacher.dashboard);
-    } else if (user.role === UserRole.TEACHER) {
+    } else if (user.role === UserRoles.teacher) {
       navigate(AppRoutes.studentLanding);
     }
   }
@@ -45,7 +45,7 @@ const AccountMenu: FC = () => {
           alignItems="center"
           gap="4px"
           className={cn("account-menu__user", {
-            "account-menu__user--linked": user.role === UserRole.TEACHER
+            "account-menu__user--linked": user.role === UserRoles.teacher
           })}
         >
           <Link to={`${user.role}/dashboard/profile`}>
@@ -66,8 +66,8 @@ const AccountMenu: FC = () => {
           className="button-rounded-lg"
           onClick={onToggleUserRole}
         >
-          {user.role === UserRole.STUDENT && t(UserRole.TEACHER)}
-          {user.role === UserRole.TEACHER && t(UserRole.STUDENT)}
+          {user.role === UserRoles.student && t(UserRoles.teacher)}
+          {user.role === UserRoles.teacher && t(UserRoles.student)}
         </Button>
         <Stack direction="row" alignItems="center" gap="10px" width="100%">
           <LanguageIcon />

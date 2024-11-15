@@ -20,11 +20,7 @@ interface IFormData {
   code?: string;
 }
 
-enum RegistrationState {
-  SIGN_UP,
-  EMAIL_CONFIRMATION,
-  AGREEMENT_ACCEPTION
-}
+type RegistrationStateType = "SIGN_UP" | "EMAIL_CONFIRMATION" | "AGREEMENT_ACCEPTION";
 
 const deviceId = "1111";
 
@@ -35,7 +31,7 @@ const RegistrationPage: FC<PageProps> = ({ title }) => {
 
   const [userId, setUserId] = useState("");
 
-  const [state, setState] = useState<RegistrationState>(RegistrationState.SIGN_UP);
+  const [state, setState] = useState<RegistrationStateType>("SIGN_UP");
 
   const [signUp, { isLoading: isSignUpLoading }] = useSignUpMutation();
   const [verifyEmail, { isLoading: isVerificationLoading }] = useVerifyEmailMutation();
@@ -45,31 +41,31 @@ const RegistrationPage: FC<PageProps> = ({ title }) => {
     if (isSignUpLoading || isVerificationLoading || isPolicyAcceptionLoading) return;
 
     switch (state) {
-      case RegistrationState.SIGN_UP: {
+      case "SIGN_UP": {
         try {
           const res = await signUp({ ...data, deviceId }).unwrap();
 
           setUserId(res.userId);
-          setState(RegistrationState.EMAIL_CONFIRMATION);
+          setState("EMAIL_CONFIRMATION");
         } catch (error) {
           console.error(error);
         }
         return;
       }
-      case RegistrationState.EMAIL_CONFIRMATION: {
+      case "EMAIL_CONFIRMATION": {
         if (!data.code) return;
 
         try {
           const res = await verifyEmail({ userId, code: data.code }).unwrap();
 
           setUserId(res.userId);
-          setState(RegistrationState.AGREEMENT_ACCEPTION);
+          setState("AGREEMENT_ACCEPTION");
         } catch (error) {
           console.error(error);
         }
         return;
       }
-      case RegistrationState.AGREEMENT_ACCEPTION: {
+      case "AGREEMENT_ACCEPTION": {
         try {
           const res = await acceptPolicy({ userId }).unwrap();
 
@@ -91,19 +87,19 @@ const RegistrationPage: FC<PageProps> = ({ title }) => {
             type="email"
             {...register("email")}
             autoFocus
-            disabled={state !== RegistrationState.SIGN_UP}
+            disabled={state !== "SIGN_UP"}
           />
           <input
             className="registration-page__input"
             type="password"
             {...register("password")}
-            disabled={state !== RegistrationState.SIGN_UP}
+            disabled={state !== "SIGN_UP"}
           />
           <input
             className="registration-page__input"
             type="text"
             {...register("code")}
-            disabled={state !== RegistrationState.EMAIL_CONFIRMATION}
+            disabled={state !== "EMAIL_CONFIRMATION"}
           />
           <button className="registration-page__submit" type="submit">
             Submit

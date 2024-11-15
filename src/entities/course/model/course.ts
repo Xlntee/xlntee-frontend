@@ -1,8 +1,8 @@
-import { Language } from "./courseLanguage";
-import { CourseStatus } from "./courseStatus";
-import { Difficulty } from "./difficultyLevels";
+import { LanguageType } from "./courseLanguage";
+import { CourseStatusType } from "./courseStatus";
+import { DifficultyType } from "./difficultyLevels";
 import { Lecture } from "./lecture";
-import { PriceType } from "./priceType";
+import { PriceLevelType } from "./priceLevel";
 
 export type GeneralSetting = {
   title: string;
@@ -11,8 +11,8 @@ export type GeneralSetting = {
   categoryId: number;
   subCategoryId: number;
   topicId: number;
-  level: Difficulty;
-  language: Language;
+  level: DifficultyType;
+  language: LanguageType;
   tags?: string[];
 };
 
@@ -31,7 +31,7 @@ export type CourseSettings = {
 
 export type PriceSettings = {
   freeCourse: boolean;
-  lectures: PriceType;
+  lectures: PriceLevelType;
 };
 
 export type CourseDetails = {
@@ -50,9 +50,9 @@ export type CourseSummary = {
   name: string;
   courseRating: number;
   price: number;
-  level: Difficulty;
+  level: DifficultyType;
   discount: number;
   photoId: string;
   publishedDate: Date;
-  courseStatus: CourseStatus;
+  courseStatus: CourseStatusType;
 };

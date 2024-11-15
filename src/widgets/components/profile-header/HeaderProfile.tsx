@@ -10,7 +10,7 @@ import LocalActivityIcon from "@mui/icons-material/LocalActivity";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
 
 import { MenuToggler, Navigation, NavigationDrawer, NavigationLinkType } from "src/features";
-import { UserRole } from "src/shared/utils/enum";
+import { Role, UserRoles } from "src/shared/utils/user-role";
 import { AppRoutes } from "src/app/routing/appRoutes";
 
 import { User } from "../user";
@@ -21,7 +21,7 @@ type HeaderProfileProps = {
   children?: React.ReactNode;
   className?: string;
   link?: React.ReactNode;
-  userRole: UserRole;
+  userRole: Role;
   tools?: React.ReactNode;
 };
 
@@ -93,7 +93,7 @@ const HeaderProfile: FC<HeaderProfileProps> = ({ children, link, tools, classNam
   }
 
   function getNavigation(): NavigationLinkType[] {
-    if (userRole === UserRole.STUDENT) {
+    if (userRole === UserRoles.student) {
       return studentNavList;
     }
     return teacherNavList;

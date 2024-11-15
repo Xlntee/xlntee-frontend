@@ -26,7 +26,7 @@ interface CourseCardProps {
 const CourseCard: FC<CourseCardProps> = ({
   title,
   updateTime,
-  status = CourseStatus.DRAFT,
+  status = CourseStatus.draft,
   imageSrc,
   className,
   onDelete,
@@ -59,7 +59,7 @@ const CourseCard: FC<CourseCardProps> = ({
         </Typography>
       </Box>
       <Box className="course-card__overlay">
-        {status === CourseStatus.DELETED ? (
+        {status === CourseStatus.deleted ? (
           <Button
             onClick={onRestore}
             variant="text"

@@ -49,8 +49,8 @@ const CoursePreviewPage: FC<PageProps> = ({ title }) => {
           discount={24}
           price={1999}
           rating={4.8}
-          language={Language.ENGLISH}
-          level={Difficulty.ALL}
+          language={Language.english}
+          level={Difficulty.all}
           generateCertificate={false}
           reviewCount={4.8}
         />

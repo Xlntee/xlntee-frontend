@@ -10,13 +10,13 @@ import SchoolOutlinedIcon from "@mui/icons-material/SchoolOutlined";
 
 import { AppRoutes } from "src/app/routing/appRoutes";
 import LocalStorageService from "src/shared/local-storage";
-import { UserRole } from "src/shared/utils/enum";
+import { Role, UserRoles } from "src/shared/utils/user-role";
 import { PasswordValidationPanel } from "src/features";
 
 import { RegistrationFormValues, validationSchema } from "./validation";
 
 const RegistrationForm: FC = () => {
-  const [role, setRole] = useState<UserRole>(UserRole.STUDENT);
+  const [role, setRole] = useState<Role>(UserRoles.student);
 
   const { t } = useTranslation("auth");
   const navigate = useNavigate();
@@ -32,7 +32,7 @@ const RegistrationForm: FC = () => {
 
   function onSubmit(data: RegistrationFormValues): void {
     try {
-      LocalStorageService.emailConfirmation("1234", data.email, role as UserRole);
+      LocalStorageService.emailConfirmation("1234", data.email, role);
       navigate(AppRoutes.auth.accountVerification);
     } catch (error) {
       console.error(error);
@@ -48,9 +48,9 @@ const RegistrationForm: FC = () => {
           fullWidth
           startIcon={<SchoolOutlinedIcon />}
           className={cn("auth-form__btn-role button-rounded-sm", {
-            active: role === UserRole.STUDENT
+            active: role === UserRoles.student
           })}
-          onClick={() => setRole(UserRole.STUDENT)}
+          onClick={() => setRole(UserRoles.student)}
         >
           {t("as")}
           {""} {t("role-student")}
@@ -61,9 +61,9 @@ const RegistrationForm: FC = () => {
           fullWidth
           startIcon={<SchoolOutlinedIcon />}
           className={cn("auth-form__btn-role button-rounded-sm", {
-            active: role === UserRole.TEACHER
+            active: role === UserRoles.teacher
           })}
-          onClick={() => setRole(UserRole.TEACHER)}
+          onClick={() => setRole(UserRoles.teacher)}
         >
           {t("as")}
           {""} {t("role-teacher")}

@@ -90,20 +90,20 @@ const GeneralPage: FC<PageProps> = ({ title }) => {
       value: "level",
       options: [
         {
-          title: Difficulty.ALL,
-          value: Difficulty.ALL
+          title: Difficulty.all,
+          value: Difficulty.all
         },
         {
-          title: Difficulty.EASY,
-          value: Difficulty.EASY
+          title: Difficulty.easy,
+          value: Difficulty.easy
         },
         {
-          title: Difficulty.MIDDLE,
-          value: Difficulty.MIDDLE
+          title: Difficulty.middle,
+          value: Difficulty.middle
         },
         {
-          title: Difficulty.EXPERT,
-          value: Difficulty.EXPERT
+          title: Difficulty.expert,
+          value: Difficulty.expert
         }
       ]
     },
@@ -130,12 +130,12 @@ const GeneralPage: FC<PageProps> = ({ title }) => {
       value: "language",
       options: [
         {
-          title: Language.ENGLISH,
-          value: Language.ENGLISH
+          title: Language.english,
+          value: Language.english
         },
         {
-          title: Language.UKRAINIAN,
-          value: Language.UKRAINIAN
+          title: Language.ukrainian,
+          value: Language.ukrainian
         }
       ]
     }

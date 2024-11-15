@@ -4,8 +4,8 @@ import { Box, Tooltip, IconButton, Menu } from "@mui/material";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-import { useAppDispatch, useAppSelector } from "src/app/store/store";
-import { getUser } from "src/app/store/slices/user/slice";
+import { useAppDispatch } from "src/app/store/store";
+import { getUserRole } from "src/app/store/slices/user/selectors";
 import { openDialog } from "src/app/store/slices/dialog/slice";
 
 import { AccountMenu } from "../account-menu";
@@ -14,10 +14,7 @@ import "./User.scss";
 
 const User: FC = () => {
   const breakpoint = 1024;
-
   const matches = useMediaQuery(`(min-width:${breakpoint}px)`);
-
-  const user = useAppSelector(getUser);
 
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
   const open = Boolean(anchorEl);
@@ -50,7 +47,7 @@ const User: FC = () => {
     if (openModal) {
       onCloseModal();
     }
-  }, [user]);
+  }, [getUserRole]);
 
   return (
     <Box>

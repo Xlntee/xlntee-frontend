@@ -1,6 +1,6 @@
-export enum CourseStatus {
-  DRAFT = "draft",
-  PUBLISHED = "published",
-  DELETED = "deleted",
-  MODERATION = "moderation"
-}
+export const CourseStatus = {
+  draft: "draft",
+  published: "published",
+  deleted: "deleted",
+  moderation: "moderation"
+} as const;

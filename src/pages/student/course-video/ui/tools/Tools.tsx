@@ -7,7 +7,7 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import TextSnippetIcon from "@mui/icons-material/TextSnippet";
 import CommentIcon from "@mui/icons-material/Comment";
 
-import { ToolsTabEnum } from "../../types";
+import { ToolsTab } from "../../types";
 
 import "./Tools.scss";
 
@@ -16,7 +16,7 @@ interface ToolsProps {
 }
 
 const Tools: FC<ToolsProps> = ({ onClickTab }) => {
-  const [tab, setTab] = useState<string>(ToolsTabEnum.Description);
+  const [tab, setTab] = useState<string>(ToolsTab.description);
 
   function onChooseTab(value: string): void {
     onClickTab(value);
@@ -31,15 +31,15 @@ const Tools: FC<ToolsProps> = ({ onClickTab }) => {
         </Button>
         <Button
           variant="black-text"
-          className={cn("course-tools__button", { active: tab === ToolsTabEnum.Description })}
-          onClick={() => onChooseTab(ToolsTabEnum.Description)}
+          className={cn("course-tools__button", { active: tab === ToolsTab.description })}
+          onClick={() => onChooseTab(ToolsTab.description)}
         >
           <TextSnippetIcon />
         </Button>
         <Button
           variant="black-text"
-          className={cn("course-tools__button", { active: tab === ToolsTabEnum.Comments })}
-          onClick={() => onChooseTab(ToolsTabEnum.Comments)}
+          className={cn("course-tools__button", { active: tab === ToolsTab.comments })}
+          onClick={() => onChooseTab(ToolsTab.comments)}
         >
           <CommentIcon />
         </Button>

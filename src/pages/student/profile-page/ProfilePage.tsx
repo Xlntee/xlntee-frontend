@@ -6,11 +6,11 @@ import { useTranslation } from "react-i18next";
 import { Box, Container, Grid, Button, TextField, FormLabel, Typography, Stack } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 
+import { getUserRole } from "src/app/store/slices/user/selectors";
+
 import useTitle from "src/hooks/useTitle/useTitle";
 import { PageProps } from "pages/type";
 import { ImageUpload } from "src/features";
-import { useAppSelector } from "src/app/store/store";
-import { getUser } from "src/app/store/slices/user/slice";
 
 interface ProfileFormValues {
   firstName: string;
@@ -33,8 +33,6 @@ const ProfilePage: FC<PageProps> = ({ title }) => {
   useTitle(title);
   const { t } = useTranslation("auth");
   const { t: tCommon } = useTranslation("common");
-
-  const user = useAppSelector(getUser);
 
   const fields: FieldProps[] = [
     {
@@ -102,12 +100,12 @@ const ProfilePage: FC<PageProps> = ({ title }) => {
                       }}
                     />
                     {field.key === "email" && (
-                      <Link to={`${user.role}/dashboard/email-update`}>
+                      <Link to={`${getUserRole}/dashboard/email-update`}>
                         <EditIcon />
                       </Link>
                     )}
                     {field.key === "password" && (
-                      <Link to={`${user.role}/dashboard/password-update`}>
+                      <Link to={`${getUserRole}/dashboard/password-update`}>
                         <EditIcon />
                       </Link>
                     )}

@@ -13,15 +13,15 @@ import "./SectionLandingContact.scss";
 const links: ContactLinkType[] = [
   {
     title: "Support",
-    link: `mailto:${ContactsLinks.Support}`
+    link: `mailto:${ContactsLinks.support}`
   },
   {
     title: "Cooperation",
-    link: `mailto:${ContactsLinks.Cooperation}`
+    link: `mailto:${ContactsLinks.cooperation}`
   },
   {
     title: "Press",
-    link: `mailto:${ContactsLinks.Press}`
+    link: `mailto:${ContactsLinks.press}`
   }
 ];
 

@@ -3,7 +3,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import { useAppDispatch } from "src/app/store/store";
 import { setRole } from "src/app/store/slices/user/slice";
-import { UserRole } from "src/shared/utils/enum";
+import { Role, UserRoles } from "src/shared/utils/user-role";
 
 import {
   AuthLayout,
@@ -325,7 +325,7 @@ const router = createBrowserRouter([
     ]
   },
   {
-    element: <ProtectedRoute element={<PrivateLayout userRole={UserRole.STUDENT} />} />,
+    element: <ProtectedRoute element={<PrivateLayout userRole={UserRoles.student} />} />,
     children: studentDashboardRoutes
   },
   {
@@ -363,7 +363,7 @@ const router = createBrowserRouter([
     ]
   },
   {
-    element: <ProtectedRoute element={<PrivateLayout userRole={UserRole.TEACHER} />} />,
+    element: <ProtectedRoute element={<PrivateLayout userRole={UserRoles.teacher} />} />,
     children: teacherDashboardRoutes
   },
   {
@@ -384,7 +384,7 @@ const AppRouter: FC = () => {
   useEffect(() => {
     dispatch(
       setRole({
-        role: userRole
+        role: userRole as Role
       })
     );
   }, []);
