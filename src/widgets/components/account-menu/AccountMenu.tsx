@@ -17,6 +17,8 @@ import { UserRoles } from "src/shared/utils/user-role";
 import { AppRoutes } from "src/app/routing/appRoutes";
 
 import "./AccountMenu.scss";
+import AuthStudentContainer from "../auth-student-container";
+import AuthTeacherContainer from "../auth-teacher-container";
 
 const AccountMenu: FC = () => {
   const { t } = useTranslation("auth");
@@ -66,8 +68,8 @@ const AccountMenu: FC = () => {
           className="button-rounded-lg"
           onClick={onToggleUserRole}
         >
-          {user.role === UserRoles.student && t(UserRoles.teacher)}
-          {user.role === UserRoles.teacher && t(UserRoles.student)}
+          <AuthStudentContainer>{t(UserRoles.teacher)}</AuthStudentContainer>
+          <AuthTeacherContainer>{t(UserRoles.student)}</AuthTeacherContainer>
         </Button>
         <Stack direction="row" alignItems="center" gap="10px" width="100%">
           <LanguageIcon />

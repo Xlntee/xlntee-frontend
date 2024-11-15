@@ -8,3 +8,5 @@ export * from "./course-rate";
 export * from "./course-share";
 export * from "./student-course-card";
 export * from "./price-plan-list";
+export * from "./auth-student-container";
+export * from "./auth-teacher-container";

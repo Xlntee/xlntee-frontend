@@ -96,7 +96,10 @@ const HeaderProfile: FC<HeaderProfileProps> = ({ children, link, tools, classNam
     if (userRole === UserRoles.student) {
       return studentNavList;
     }
-    return teacherNavList;
+    if (userRole === UserRoles.teacher) {
+      return teacherNavList;
+    }
+    return [];
   }
 
   return (
