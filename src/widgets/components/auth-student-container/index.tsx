@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import { useAuth } from "src/app/context";
+import { useAuth } from "src/hooks/useAuth";
 
 type AuthStudentContainerProps = {
   children?: React.ReactNode;

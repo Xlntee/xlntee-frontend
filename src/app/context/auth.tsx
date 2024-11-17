@@ -1,11 +1,11 @@
-import { createContext, useContext, ReactNode, useMemo, memo } from "react";
+import { createContext, ReactNode, useMemo, memo } from "react";
 
 import { getUserRole } from "src/app/store/slices/user/selectors";
 
 import { Role } from "src/shared/utils/user-role";
 import { useAppSelector } from "../store/store";
 
-type AuthContextType = {
+export type AuthContextType = {
   userRole: Role | null;
   isStudentRole?: boolean;
   isTeacherRole?: boolean;
@@ -33,15 +33,6 @@ function AuthProvider({ children }: AuthContextProps): JSX.Element {
   }, [userRole]);
 
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
-}
-
-export function useAuth(): AuthContextType {
-  const context = useContext(AuthContext);
-
-  if (context === undefined) {
-    throw new Error("useAuth must be used within a AuthProvider");
-  }
-  return context;
 }
 
 const AuthProviderMemo = memo(AuthProvider);

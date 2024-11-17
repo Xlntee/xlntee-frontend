@@ -10,11 +10,11 @@ import { Role, UserRoles } from "src/shared/utils/user-role";
 
 import useHeaderNavigationStudent from "src/hooks/useHeaderNavigationStudent";
 import useHeaderNavigationTeacher from "src/hooks/useHeaderNavigationTeacher";
+import { useAuth } from "src/hooks/useAuth";
 
 import { User } from "../user";
 
 import "./HeaderProfile.scss";
-import { useAuth } from "src/app/context";
 
 type HeaderProfileProps = {
   children?: React.ReactNode;
