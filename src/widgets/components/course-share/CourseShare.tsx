@@ -4,23 +4,19 @@ import { useTranslation } from "react-i18next";
 import { Button, Typography } from "@mui/material";
 import ShareIcon from "@mui/icons-material/Share";
 
-import { useDispatch } from "react-redux";
-import { openDialog } from "src/app/store/slices/dialog/slice";
+import useDialog from "src/hooks/useDialog";
 
 import "./CourseShare.scss";
 
 const CourseShare: FC = () => {
   const { t } = useTranslation("auth");
-
-  const dispatch = useDispatch();
+  const { onOpenDialog } = useDialog();
 
   function onOpenModal(): void {
-    dispatch(
-      openDialog({
-        dialogName: "STUDENT_COURSE_SHARE_DIALOG",
-        dialogSize: "large"
-      })
-    );
+    onOpenDialog({
+      dialogName: "STUDENT_COURSE_SHARE_DIALOG",
+      dialogSize: "large"
+    });
   }
 
   return (

@@ -6,8 +6,7 @@ import NewReleasesOutlinedIcon from "@mui/icons-material/NewReleasesOutlined";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
 
-import { useDispatch } from "react-redux";
-import { openDialog } from "src/app/store/slices/dialog/slice";
+import useDialog from "src/hooks/useDialog";
 
 import "./CourseComplain.scss";
 
@@ -19,7 +18,7 @@ const Dialogs = {
 type DialogType = typeof Dialogs;
 
 const CourseRate: FC = () => {
-  const dispatch = useDispatch();
+  const { onOpenDialog } = useDialog();
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
   const open = Boolean(anchorEl);
 
@@ -34,21 +33,17 @@ const CourseRate: FC = () => {
   function onHandleClickModal(type: keyof DialogType): void {
     switch (type) {
       case Dialogs.complain: {
-        dispatch(
-          openDialog({
-            dialogName: "STUDENT_COURSE_COMPLAIN_DIALOG",
-            dialogSize: "large"
-          })
-        );
+        onOpenDialog({
+          dialogName: "STUDENT_COURSE_COMPLAIN_DIALOG",
+          dialogSize: "large"
+        });
         break;
       }
       case Dialogs.refund: {
-        dispatch(
-          openDialog({
-            dialogName: "STUDENT_COURSE_REFUND_DIALOG",
-            dialogSize: "large"
-          })
-        );
+        onOpenDialog({
+          dialogName: "STUDENT_COURSE_REFUND_DIALOG",
+          dialogSize: "large"
+        });
         break;
       }
     }

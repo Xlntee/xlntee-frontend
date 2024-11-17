@@ -3,17 +3,14 @@ import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
 import { InfoCourseComplain, MenuToggler } from "src/features";
-import { useAppDispatch, useAppSelector } from "src/app/store/store";
-import { closeDialogByName } from "src/app/store/slices/dialog/slice";
-import { getAllDialogsSelector, getDialogByName } from "src/app/store/slices/dialog/selectors";
+import useDialog from "src/hooks/useDialog";
 
 const RefundInfoDialog: FC = () => {
   const { t } = useTranslation("student");
-  const dispatch = useAppDispatch();
-  const allDialogs = useAppSelector(getAllDialogsSelector);
+  const { getOptionsFromDialog, onCloseDialogByName } = useDialog();
 
   function onCloseDialog(): void {
-    dispatch(closeDialogByName({ dialogName: "REFUND_INFO_DIALOG" }));
+    onCloseDialogByName("REFUND_INFO_DIALOG");
   }
 
   return (
@@ -23,7 +20,7 @@ const RefundInfoDialog: FC = () => {
         image="/assets/refund.png"
         imageDescription={t("refund.imageDescription")}
         message={t("refund.message", {
-          code: getDialogByName(allDialogs, "REFUND_INFO_DIALOG").options.id
+          code: getOptionsFromDialog("REFUND_INFO_DIALOG").id
         })}
       />
     </Box>

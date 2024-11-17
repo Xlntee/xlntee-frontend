@@ -4,10 +4,9 @@ import { Box, Tooltip, IconButton, Menu } from "@mui/material";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-import { useAppDispatch } from "src/app/store/store";
 import { getUserRole } from "src/app/store/slices/user/selectors";
-import { openDialog } from "src/app/store/slices/dialog/slice";
 
+import useDialog from "src/hooks/useDialog";
 import { AccountMenu } from "../account-menu";
 
 import "./User.scss";
@@ -19,19 +18,16 @@ const User: FC = () => {
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
   const open = Boolean(anchorEl);
   const [openModal, setOpenModal] = useState<boolean>(false);
-
-  const dispatch = useAppDispatch();
+  const { onOpenDialog } = useDialog();
 
   const handleClick = (event: React.MouseEvent<HTMLElement>): void => {
     if (matches) {
       setAnchorEl(event.currentTarget);
     } else {
-      dispatch(
-        openDialog({
-          dialogName: "USER_MENU_DIALOG",
-          dialogSize: "fullscreen"
-        })
-      );
+      onOpenDialog({
+        dialogName: "USER_MENU_DIALOG",
+        dialogSize: "fullscreen"
+      });
     }
   };
 

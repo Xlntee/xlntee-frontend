@@ -4,18 +4,17 @@ import { useTranslation } from "react-i18next";
 import { Stack, Button, Box, Typography, TextField } from "@mui/material";
 
 import { MenuToggler, Rating } from "src/features";
-import { useAppDispatch } from "src/app/store/store";
-import { closeDialogByName } from "src/app/store/slices/dialog/slice";
+import useDialog from "src/hooks/useDialog";
 
 const StudentCourseRateDialog: FC = () => {
   const { t } = useTranslation("student");
-  const dispatch = useAppDispatch();
+  const { onCloseDialogByName } = useDialog();
 
   const [rating, setRating] = useState<number | null>(null);
   const refComment = useRef<HTMLInputElement>(null);
 
   function onCloseDialog(): void {
-    dispatch(closeDialogByName({ dialogName: "STUDENT_COURSE_RATE_DIALOG" }));
+    onCloseDialogByName("STUDENT_COURSE_RATE_DIALOG");
   }
 
   function onSubmit(): void {
