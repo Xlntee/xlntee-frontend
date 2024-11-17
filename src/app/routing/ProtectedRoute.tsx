@@ -12,6 +12,5 @@ interface ProtectedRouteProps {
 export const ProtectedRoute: FC<ProtectedRouteProps> = ({ element }) => {
   const token = useAppSelector(selectToken);
 
-  return token ? element : element;
-  // return token ? element : <Navigate to={AppRoutes.auth.login} state={{ from: window.location.pathname }} replace />;
+  return token ? element : <Navigate to={AppRoutes.auth.login} state={{ from: window.location.pathname }} replace />;
 };
