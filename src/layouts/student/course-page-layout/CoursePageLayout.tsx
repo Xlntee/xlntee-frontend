@@ -8,8 +8,9 @@ import { RootDialog } from "src/widgets/dialogs/RootDialog";
 import { CourseComplain, CourseRate, CourseShare, HeaderProfile } from "src/widgets/components";
 import Footer from "src/widgets/footer/Footer";
 import { UserRoles } from "src/shared/utils/user-role";
-import { Progress } from "src/features";
 import { AppRoutes } from "src/app/routing/appRoutes";
+import RootDrawer from "src/widgets/drawers/RootDrawers";
+import { CourseProgress } from "src/widgets/student";
 
 const CoursePageLayout: FC = () => {
   const { t } = useTranslation("auth");
@@ -28,7 +29,7 @@ const CoursePageLayout: FC = () => {
         }
       >
         <Box maxWidth="300px" width="100%">
-          <Progress value={60} showValue={true} />
+          <CourseProgress />
         </Box>
       </HeaderProfile>
       <Box component="main" sx={{ flexGrow: 1 }}>
@@ -36,6 +37,7 @@ const CoursePageLayout: FC = () => {
       </Box>
       <Footer />
       <RootDialog />
+      <RootDrawer />
     </>
   );
 };

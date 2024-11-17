@@ -7,6 +7,8 @@ import { useAppSelector } from "../store/store";
 
 type AuthContextType = {
   userRole: Role | null;
+  isStudentRole?: boolean;
+  isTeacherRole?: boolean;
 };
 
 interface AuthContextProps {
@@ -24,7 +26,9 @@ function AuthProvider({ children }: AuthContextProps): JSX.Element {
 
   const values = useMemo(() => {
     return {
-      userRole: userRole
+      userRole: userRole,
+      isStudentRole: userRole === "student",
+      isTeacherRole: userRole === "teacher"
     };
   }, [userRole]);
 

@@ -1,21 +1,20 @@
-import { FC, useState } from "react";
-import { useTranslation } from "react-i18next";
+import { FC } from "react";
 import cn from "classnames";
 
 import { Box, Container, Stack } from "@mui/material";
-import VideocamIcon from "@mui/icons-material/Videocam";
-import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
-import DoneOutlineIcon from "@mui/icons-material/DoneOutline";
-import LocalActivityIcon from "@mui/icons-material/LocalActivity";
-import CreditCardIcon from "@mui/icons-material/CreditCard";
 
-import { MenuToggler, Navigation, NavigationDrawer, NavigationLinkType } from "src/features";
+import useDrawer from "src/hooks/useDrawer";
+
+import { MenuToggler, Navigation, NavigationLinkType } from "src/features";
 import { Role, UserRoles } from "src/shared/utils/user-role";
-import { AppRoutes } from "src/app/routing/appRoutes";
+
+import useHeaderNavigationStudent from "src/hooks/useHeaderNavigationStudent";
+import useHeaderNavigationTeacher from "src/hooks/useHeaderNavigationTeacher";
 
 import { User } from "../user";
 
 import "./HeaderProfile.scss";
+import { useAuth } from "src/app/context";
 
 type HeaderProfileProps = {
   children?: React.ReactNode;
@@ -26,78 +25,27 @@ type HeaderProfileProps = {
 };
 
 const HeaderProfile: FC<HeaderProfileProps> = ({ children, link, tools, className, userRole }) => {
-  const { t } = useTranslation("auth");
+  const { isOpenDrawer, onOpenDrawer } = useDrawer();
+  const { navigationList: studentNavigationList } = useHeaderNavigationStudent();
+  const { navigationList: teacherNavigationList } = useHeaderNavigationTeacher();
+  const { isStudentRole, isTeacherRole } = useAuth();
+  const isOpen = isOpenDrawer("STUDENT_COURSE_NAVIGATION_DRAWER");
 
-  const [open, setOpen] = useState<boolean>(false);
-
-  const teacherNavList: NavigationLinkType[] = [
-    {
-      id: "1",
-      name: t("teacher-navigation.courses"),
-      path: AppRoutes.teacher.myCourses,
-      icon: <VideocamIcon />
-    },
-    {
-      id: "2",
-      name: t("teacher-navigation.billing"),
-      path: AppRoutes.teacher.billing,
-      icon: <CreditCardIcon />
-    },
-    {
-      id: "3",
-      name: t("teacher-navigation.support"),
-      path: AppRoutes.teacher.support,
-      icon: <HelpOutlineIcon />
-    },
-    {
-      id: "4",
-      name: t("teacher-navigation.tariff-plans"),
-      path: AppRoutes.teacher.tariffPlans,
-      className: "navigation__action"
+  function toggleDrawer(): void {
+    if (isStudentRole) {
+      onOpenDrawer("STUDENT_COURSE_NAVIGATION_DRAWER");
     }
-  ];
-
-  const studentNavList: NavigationLinkType[] = [
-    {
-      id: "1",
-      name: t("student-navigation.my-learning"),
-      path: AppRoutes.student.myLearning,
-      icon: <VideocamIcon />
-    },
-    {
-      id: "2",
-      name: t("student-navigation.completed-courses"),
-      path: AppRoutes.student.completedCourses,
-      icon: <DoneOutlineIcon />
-    },
-    {
-      id: "3",
-      name: t("student-navigation.certificates"),
-      path: AppRoutes.student.certificates,
-      icon: <LocalActivityIcon />
-    },
-    {
-      id: "4",
-      name: t("student-navigation.support"),
-      path: AppRoutes.student.support,
-      icon: <HelpOutlineIcon />
+    if (isTeacherRole) {
+      onOpenDrawer("TEACHER_CREATE_COURSE_NAVIGATION_DRAWER");
     }
-  ];
-
-  const toggleDrawer = (): void => {
-    setOpen((prevState) => !prevState);
-  };
-
-  function onClose(): void {
-    setOpen(false);
   }
 
   function getNavigation(): NavigationLinkType[] {
     if (userRole === UserRoles.student) {
-      return studentNavList;
+      return studentNavigationList;
     }
     if (userRole === UserRoles.teacher) {
-      return teacherNavList;
+      return teacherNavigationList;
     }
     return [];
   }
@@ -119,18 +67,25 @@ const HeaderProfile: FC<HeaderProfileProps> = ({ children, link, tools, classNam
               <Navigation items={getNavigation()} />
             </Box>
           )}
-          <Stack direction="row" alignItems="center" gap="10px" className="header-profile__nav-right">
-            <Stack direction="row" alignItems="center" gap="10px" className="header-profile__tools">
+          <Stack
+            direction="row"
+            alignItems="center"
+            gap={{ xs: "4px", md: "10px" }}
+            className="header-profile__nav-right"
+          >
+            <Stack
+              direction="row"
+              alignItems="center"
+              gap={{ xs: "4px", md: "10px" }}
+              className="header-profile__tools"
+            >
               {tools}
               <User />
             </Stack>
-            <MenuToggler active={open} onClick={toggleDrawer} className="header-profile__menu-toggler" />
+            <MenuToggler active={isOpen} onClick={toggleDrawer} className="header-profile__menu-toggler" />
           </Stack>
         </Box>
       </Container>
-      <NavigationDrawer navigationList={getNavigation()} open={open} onClose={onClose}>
-        {children}
-      </NavigationDrawer>
     </Box>
   );
 };

@@ -1,59 +1,28 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
 
-import { Box, Container, Stack, Button } from "@mui/material";
+import { Box, Container, Stack } from "@mui/material";
 
-import { AppRoutes } from "src/app/routing/appRoutes";
-import { MenuToggler, Navigation, NavigationDrawer, NavigationLinkType } from "src/features";
+import { MenuToggler, Navigation } from "src/features";
 
-import { LanguageSwitcher } from "../language-switcher";
+import useDrawer from "src/hooks/useDrawer";
+import useHeaderNavigation from "src/hooks/useHeaderNavigation";
+
 import { User } from "../user";
+import { HeaderTools } from "../header-tools";
 
 import "./Header.scss";
 
 const HeaderProfile: FC = () => {
-  const { t } = useTranslation("auth");
+  const { onOpenDrawer, isOpenDrawer } = useDrawer();
+  const { navigationList } = useHeaderNavigation();
+
+  const isOpen = isOpenDrawer("BASE_NAVIGATION_DRAWER");
 
   const authUser = false;
 
-  const [open, setOpen] = useState<boolean>(false);
-
-  function toggleDrawer(): void {
-    setOpen((prevState) => !prevState);
-  }
-
-  const navList: NavigationLinkType[] = [
-    {
-      id: "1",
-      name: t("teacher"),
-      path: "/"
-    },
-    {
-      id: "2",
-      name: t("student"),
-      path: "/student"
-    }
-  ];
-
-  function Tools(): JSX.Element {
-    return (
-      <Stack direction="row" alignItems="center" gap="10px" className="header__tools">
-        <LanguageSwitcher compact />
-        {!authUser && (
-          <Button
-            component={Link}
-            to={AppRoutes.auth.login}
-            variant="black-contain"
-            size="small"
-            className="button-rounded-sm"
-            sx={{ paddingInline: "20px" }}
-          >
-            {t("login")}
-          </Button>
-        )}
-      </Stack>
-    );
+  function openMenu(): void {
+    onOpenDrawer("BASE_NAVIGATION_DRAWER");
   }
 
   return (
@@ -64,18 +33,15 @@ const HeaderProfile: FC = () => {
         </Link>
         <Box className="header__nav">
           <Box className="header__nav-left">
-            <Navigation items={navList} />
+            <Navigation items={navigationList} />
           </Box>
           <Stack direction="row" alignItems="center" gap="10px" className="header__nav-right">
-            <Tools />
+            <HeaderTools />
             {authUser && <User />}
-            <MenuToggler active={open} onClick={toggleDrawer} className="header__menu-toggler" />
+            <MenuToggler active={isOpen} onClick={openMenu} className="header__menu-toggler" />
           </Stack>
         </Box>
       </Container>
-      <NavigationDrawer navigationList={navList} open={open} onClose={() => setOpen(false)}>
-        <Tools />
-      </NavigationDrawer>
     </Box>
   );
 };

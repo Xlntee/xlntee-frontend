@@ -1,12 +1,15 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect } from "react";
 import { Outlet, Link as RouterLink, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import cn from "classnames";
 
-import { Box, Container, Stack, Button, Drawer, Typography } from "@mui/material";
+import { Box, Container, Stack, Button, Typography } from "@mui/material";
 import ErrorOutlineOutlinedIcon from "@mui/icons-material/ErrorOutlineOutlined";
 
-import { MenuToggler } from "src/features";
+import { closeDrawer } from "src/app/store/slices/drawer/slice";
+import { useAppDispatch } from "src/app/store/store";
+
+import useDrawer from "src/hooks/useDrawer";
 import { SidebarMenu } from "./ui";
 
 import "./CreateCourseBlockLayout.scss";
@@ -14,11 +17,17 @@ import "./CreateCourseBlockLayout.scss";
 const CreateCourseBlockLayout: FC = () => {
   const { t } = useTranslation("teacher-create-course");
   const { pathname } = useLocation();
+  const dispatch = useAppDispatch();
+  const { onOpenDrawer, isOpenDrawer } = useDrawer();
 
-  const [openCourseNav, setOpenCourseNav] = useState<boolean>(false);
+  const isOpen = isOpenDrawer("CREATE_COURSE_DRAWER");
 
   function closeAsideMenu(): void {
-    setOpenCourseNav(false);
+    dispatch(closeDrawer());
+  }
+
+  function openMenu(): void {
+    onOpenDrawer("CREATE_COURSE_DRAWER");
   }
 
   useEffect(() => {
@@ -41,15 +50,16 @@ const CreateCourseBlockLayout: FC = () => {
     <Box className="create-course-layout" pt={{ xs: "40px", md: "60px" }} pb="40px">
       <Container className="create-course-layout__container">
         <LimitError />
-        <Button
-          variant="black-contain"
-          className="create-course-layout__menu-opener"
-          onClick={() => setOpenCourseNav((prev) => !prev)}
-        >
+        <Button variant="black-contain" className="create-course-layout__menu-opener" onClick={openMenu}>
           {t("course_navigation")}
         </Button>
         <Box className="create-course-layout__grid">
-          <Box component="aside" className={cn("create-course-layout__aside", { open: openCourseNav })}>
+          <Box
+            component="aside"
+            className={cn("create-course-layout__aside", {
+              open: isOpen
+            })}
+          >
             <SidebarMenu />
           </Box>
           <Box component="section" className="create-course-layout__body">
@@ -57,19 +67,6 @@ const CreateCourseBlockLayout: FC = () => {
           </Box>
         </Box>
       </Container>
-      <Drawer anchor="left" open={openCourseNav} onClose={closeAsideMenu} className="drawer drawer--lg">
-        <Box className="drawer__inner">
-          <Box className="drawer__header">
-            <Typography variant="body1" className="drawer__title">
-              {t("course_navigation")}
-            </Typography>
-            <MenuToggler active={openCourseNav} onClick={closeAsideMenu} className="drawer__close" />
-          </Box>
-          <Box className="drawer__body">
-            <SidebarMenu />
-          </Box>
-        </Box>
-      </Drawer>
     </Box>
   );
 };

@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Box, Typography } from "@mui/material";
 
-import useTitle from "src/hooks/useTitle/useTitle";
+import useTitle from "src/hooks/useTitle";
 import { PageProps } from "pages/type";
 
 const CourseCertificate: FC<PageProps> = ({ title }) => {

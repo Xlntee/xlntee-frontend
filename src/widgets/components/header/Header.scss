@@ -52,12 +52,6 @@
     }
   }
 
-  .navigation-drawer &__tools {
-    @include mixins.media(breakpoints.$tablet) {
-      display: none;
-    }
-  }
-
   &__menu-toggler {
     &.MuiButtonBase-root {
       @include mixins.media(breakpoints.$mobile_breakpoint_min) {

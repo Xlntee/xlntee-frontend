@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import { PageProps } from "pages/type";
 
-import useTitle from "src/hooks/useTitle/useTitle";
+import useTitle from "src/hooks/useTitle";
 import { SectionLandingHero, SectionLandingAbout, SectionLandingContact } from "src/widgets/sections";
 import { SectionFeatures, SectionPricePlan } from "./ui";
 

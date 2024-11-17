@@ -71,7 +71,6 @@ const CourseLayout: FC = () => {
     fillExpandedObj();
   }, []);
 
-  //test data
   const arr = [false];
 
   function fillExpandedObj(): void {

@@ -8,6 +8,7 @@ import lessonsReducer from "src/pages/create-course/structure/store/lessonsSlice
 import userReducer from "./slices/user/slice";
 import appInitializationReducer from "./slices/appInitialization/slice";
 import dialogReducer from "./slices/dialog/slice";
+import drawerReducer from "./slices/drawer/slice";
 import { apiSlice } from "../api/apiSlice";
 
 const authPersistConfig: PersistConfig<IAuthState> = {
@@ -22,6 +23,7 @@ const rootReducer = combineReducers({
   lessons: lessonsReducer,
   user: userReducer,
   dialog: dialogReducer,
+  drawer: drawerReducer,
   [apiSlice.reducerPath]: apiSlice.reducer
 });
 

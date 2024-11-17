@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 
 import { Box, Typography, TextField, Stack, FormLabel, Autocomplete, Chip, Button } from "@mui/material";
 
-import useTitle from "src/hooks/useTitle/useTitle";
+import useTitle from "src/hooks/useTitle";
 import { ImageUpload } from "src/features";
 import { PageProps } from "pages/type";
 

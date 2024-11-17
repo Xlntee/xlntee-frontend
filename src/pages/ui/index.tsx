@@ -3,7 +3,7 @@ import { Button, Container, Stack, Box, Typography, Grid, TextField, InputLabel,
 
 import { DialogModal, Snackbar } from "src/features";
 
-import useTitle from "src/hooks/useTitle/useTitle";
+import useTitle from "src/hooks/useTitle";
 import { PageProps } from "pages/type";
 import { Header, HeaderProfile } from "src/widgets/components";
 import { UserRoles } from "src/shared/utils/user-role";

@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 
 import { Box, FormLabel, Divider, Checkbox, Stack, Typography, Grid, TextField, Button } from "@mui/material";
 
-import useTitle from "src/hooks/useTitle/useTitle";
+import useTitle from "src/hooks/useTitle";
 import { PageProps } from "pages/type";
 import { XlnteeColors } from "src/shared/themes/colors";
 

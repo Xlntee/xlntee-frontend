@@ -8,7 +8,7 @@ import EditIcon from "@mui/icons-material/Edit";
 
 import { getUserRole } from "src/app/store/slices/user/selectors";
 
-import useTitle from "src/hooks/useTitle/useTitle";
+import useTitle from "src/hooks/useTitle";
 import { PageProps } from "pages/type";
 import { ImageUpload } from "src/features";
 

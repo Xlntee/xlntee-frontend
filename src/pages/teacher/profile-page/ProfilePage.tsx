@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import { Box, Container, Grid, Button, TextField, FormLabel, Typography, Stack } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 
-import useTitle from "src/hooks/useTitle/useTitle";
+import useTitle from "src/hooks/useTitle";
 import { PageProps } from "pages/type";
 import { ImageUpload } from "src/features";
 import { useAppSelector } from "src/app/store/store";

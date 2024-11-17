@@ -6,11 +6,12 @@ import { Box, Stack } from "@mui/material";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 
 import { RootDialog } from "src/widgets/dialogs/RootDialog";
-import { HeaderProfile, Notifications } from "src/widgets/components";
+import { HeaderProfile, NotificationToggler } from "src/widgets/components";
 import Footer from "src/widgets/footer/Footer";
 import { Role } from "src/shared/utils/user-role";
 import { AppRoutes } from "src/app/routing/appRoutes";
 import AuthStudentContainer from "src/widgets/components/auth-student-container";
+import RootDrawer from "src/widgets/drawers/RootDrawers";
 
 interface PrivateLayoutProps {
   userRole: Role;
@@ -33,7 +34,7 @@ const PrivateLayout: FC<PrivateLayoutProps> = ({ userRole }) => {
                 <FavoriteBorderOutlinedIcon />
               </Link>
             </AuthStudentContainer>
-            <Notifications />
+            <NotificationToggler />
           </Stack>
         }
       />
@@ -42,6 +43,7 @@ const PrivateLayout: FC<PrivateLayoutProps> = ({ userRole }) => {
       </Box>
       <Footer />
       <RootDialog />
+      <RootDrawer />
     </>
   );
 };

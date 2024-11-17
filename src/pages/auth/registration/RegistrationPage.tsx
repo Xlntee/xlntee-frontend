@@ -2,7 +2,7 @@ import { FC, useState } from "react";
 import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
 import { useForm } from "react-hook-form";
 
-import useTitle from "src/hooks/useTitle/useTitle";
+import useTitle from "src/hooks/useTitle";
 import { PageProps } from "pages/type";
 
 import {

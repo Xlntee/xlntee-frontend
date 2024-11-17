@@ -17,7 +17,7 @@ import {
   FormHelperText
 } from "@mui/material";
 
-import useTitle from "src/hooks/useTitle/useTitle";
+import useTitle from "src/hooks/useTitle";
 import { PageProps } from "pages/type";
 import { ImageUpload, VideoUpload } from "src/features";
 

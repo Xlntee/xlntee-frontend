@@ -11,7 +11,7 @@ import {
   SectionCourseDescription,
   SectionCourseAbout
 } from "src/widgets/sections/sections-teacher-preview";
-import useTitle from "src/hooks/useTitle/useTitle";
+import useTitle from "src/hooks/useTitle";
 import { PageProps } from "pages/type";
 
 import { Difficulty, Language } from "src/entities/course/model";

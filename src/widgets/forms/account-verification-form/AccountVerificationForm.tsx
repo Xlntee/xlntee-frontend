@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import { Button, Typography, Stack } from "@mui/material";
 
-import useTitle from "src/hooks/useTitle/useTitle";
+import useTitle from "src/hooks/useTitle";
 import { OtpInput } from "src/features";
 import { PageProps } from "pages/type";
 import { AppRoutes } from "src/app/routing/appRoutes";

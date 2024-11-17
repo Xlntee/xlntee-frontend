@@ -22,7 +22,7 @@ interface ActionState {
   color: string;
 }
 
-interface UseSnackbarAlertReturnType {
+interface UseSnackbarAlert {
   alertVisible: boolean;
   alertMessage: string;
   alertColor: AlertColor;
@@ -69,7 +69,7 @@ function reducer(state: ActionState, action: ActionType): ActionState {
   }
 }
 
-export const useSnackbarAlert = (): UseSnackbarAlertReturnType => {
+export const useSnackbarAlert = (): UseSnackbarAlert => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   function showAlert(): void {

@@ -1,0 +1,19 @@
+@use "styles/mixins.scss" as mixins;
+
+.drawer {
+  --drawer-width: 320px;
+
+  &--lg {
+    @include mixins.media(tablet) {
+      --drawer-width: 400px;
+    }
+
+    @include mixins.media(desktop) {
+      --drawer-width: auto;
+    }
+  }
+
+  &__inner {
+    width: var(--drawer-width);
+  }
+}
