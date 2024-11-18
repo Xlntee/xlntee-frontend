@@ -1,5 +1,5 @@
 export * from "./course-preview";
-export * from "./create-course";
+export * from "./teacher/create-course";
 export * from "./auth/login";
 export * from "./auth/registration";
 export * from "./student/landing-page";

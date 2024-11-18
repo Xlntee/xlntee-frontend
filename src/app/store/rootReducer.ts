@@ -2,7 +2,7 @@ import { combineReducers } from "redux";
 import { persistReducer, PersistConfig } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
-import lessonsReducer from "src/pages/create-course/structure/store/lessonsSlice";
+import lessonsReducer from "pages/teacher/create-course/structure/store/lessonsSlice";
 
 import userReducer from "./slices/user/slice";
 import appInitializationReducer from "./slices/appInitialization/slice";

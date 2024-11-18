@@ -25,12 +25,12 @@ const EmailUpdatePage = lazy(() => import("src/pages/auth/email-update/EmailUpda
 const PasswordUpdatePage = lazy(() => import("src/pages/auth/password-update/PasswordUpdatePage"));
 
 const CoursePreviewPage = lazy(() => import("src/pages/course-preview/CoursePreviewPage"));
-const CreateCourseGeneralPage = lazy(() => import("src/pages/create-course/general/General"));
-const CreateCourseLandingPage = lazy(() => import("src/pages/create-course/landing/Landing"));
-const CreateCourseStructurePage = lazy(() => import("src/pages/create-course/structure/Structure"));
-const CreateCourseLecturerPage = lazy(() => import("src/pages/create-course/lecturer/Lecturer"));
-const CreateCoursePricePage = lazy(() => import("src/pages/create-course/price/Price"));
-const CreateCourseAdvertisingPage = lazy(() => import("src/pages/create-course/advertising/Advertising"));
+const CreateCourseGeneralPage = lazy(() => import("pages/teacher/create-course/general/General"));
+const CreateCourseLandingPage = lazy(() => import("pages/teacher/create-course/landing/Landing"));
+const CreateCourseStructurePage = lazy(() => import("pages/teacher/create-course/structure/Structure"));
+const CreateCourseLecturerPage = lazy(() => import("pages/teacher/create-course/lecturer/Lecturer"));
+const CreateCoursePricePage = lazy(() => import("pages/teacher/create-course/price/Price"));
+const CreateCourseAdvertisingPage = lazy(() => import("pages/teacher/create-course/advertising/Advertising"));
 
 const StudentLandingPage = lazy(() => import("src/pages/student/landing-page/LandingPage"));
 const StudentMyLearningPage = lazy(() => import("src/pages/student/my-learning/MyLearningPage"));
