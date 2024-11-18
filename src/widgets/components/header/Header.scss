@@ -2,8 +2,8 @@
 @use "styles/breakpoints.scss" as breakpoints;
 
 .header {
-  padding-block: 6px;
-  box-shadow: 0 2px 5px 0 rgb(var(--dark-color) / 0.2);
+  padding-block: 8px;
+  box-shadow: var(--header-shadow);
 
   &__container {
     &.MuiContainer-root {
@@ -17,6 +17,11 @@
         gap: 40px;
       }
     }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
   }
 
   &__nav {
@@ -41,6 +46,20 @@
 
     .MuiButtonBase-root {
       min-width: auto;
+    }
+
+    svg {
+      color: rgb(var(--dark-color));
+
+      @include mixins.media(tablet) {
+        font-size: 30px;
+      }
+    }
+  }
+
+  &__menu-toggler {
+    @include mixins.media(tablet) {
+      font-size: 30px;
     }
   }
 }

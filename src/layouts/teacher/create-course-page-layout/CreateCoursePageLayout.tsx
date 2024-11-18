@@ -2,7 +2,7 @@ import { FC } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-import { Box, Stack } from "@mui/material";
+import { Box } from "@mui/material";
 
 import { RootDialog } from "src/widgets/dialogs/RootDialog";
 import { HeaderProfile, NotificationToggler, Footer } from "src/widgets/components";
@@ -19,11 +19,7 @@ const CreateCoursePageLayout: FC = () => {
       <HeaderProfile
         link={<Link to={AppRoutes.teacher.dashboard}>{t("dashboard")}</Link>}
         userRole={UserRoles.teacher}
-        tools={
-          <Stack direction="row" gap="10px" alignItems="center">
-            <NotificationToggler />
-          </Stack>
-        }
+        tools={<NotificationToggler />}
       >
         <CoursePreviewButtons />
       </HeaderProfile>
