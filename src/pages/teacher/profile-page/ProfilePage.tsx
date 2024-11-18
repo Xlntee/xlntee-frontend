@@ -9,8 +9,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import useTitle from "src/hooks/useTitle";
 import { PageProps } from "pages/type";
 import { ImageUpload } from "src/features";
-import { useAppSelector } from "src/app/store/store";
-import { getUser } from "src/app/store/slices/user/slice";
+import { useAuth } from "src/hooks/useAuth";
 
 interface ProfileFormValues {
   firstName: string;
@@ -37,8 +36,7 @@ const ProfilePage: FC<PageProps> = ({ title }) => {
   useTitle(title);
   const { t } = useTranslation("auth");
   const { t: tCommon } = useTranslation("common");
-
-  const user = useAppSelector(getUser);
+  const { userRole } = useAuth();
 
   const fields: FieldProps[] = [
     {
@@ -126,12 +124,12 @@ const ProfilePage: FC<PageProps> = ({ title }) => {
                       }}
                     />
                     {field.key === "email" && (
-                      <Link to={`${user.role}/dashboard/email-update`}>
+                      <Link to={`${userRole}/dashboard/email-update`}>
                         <EditIcon />
                       </Link>
                     )}
                     {field.key === "password" && (
-                      <Link to={`${user.role}/dashboard/password-update`}>
+                      <Link to={`${userRole}/dashboard/password-update`}>
                         <EditIcon />
                       </Link>
                     )}

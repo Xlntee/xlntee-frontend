@@ -8,32 +8,35 @@ import SwapHorizIcon from "@mui/icons-material/SwapHoriz";
 import LanguageIcon from "@mui/icons-material/Language";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 
-import { useAppSelector, useAppDispatch } from "src/app/store/store";
-import { getUser, switchRole } from "src/app/store/slices/user/slice";
+import { useAppDispatch } from "src/app/store/store";
+import { switchRole } from "src/app/store/slices/user/slice";
 import { closeLatestDialog } from "src/app/store/slices/dialog/slice";
 
 import { LanguageSwitcher } from "src/widgets/components";
 import { UserRoles } from "src/shared/utils/user-role";
 import { AppRoutes } from "src/app/routing/appRoutes";
+import { useAuth } from "src/hooks/useAuth";
 
-import "./AccountMenu.scss";
 import AuthStudentContainer from "../auth-student-container";
 import AuthTeacherContainer from "../auth-teacher-container";
+
+import "./AccountMenu.scss";
 
 const AccountMenu: FC = () => {
   const { t } = useTranslation("auth");
 
+  const { userRole, isStudentRole, isTeacherRole } = useAuth();
+
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-
-  const user = useAppSelector(getUser);
 
   function onToggleUserRole(): void {
     dispatch(closeLatestDialog());
     dispatch(switchRole());
-    if (user.role === UserRoles.student) {
+    if (isStudentRole) {
       navigate(AppRoutes.teacher.dashboard);
-    } else if (user.role === UserRoles.teacher) {
+    }
+    if (isTeacherRole) {
       navigate(AppRoutes.studentLanding);
     }
   }
@@ -47,14 +50,14 @@ const AccountMenu: FC = () => {
           alignItems="center"
           gap="4px"
           className={cn("account-menu__user", {
-            "account-menu__user--linked": user.role === UserRoles.teacher
+            "account-menu__user--linked": isTeacherRole
           })}
         >
-          <Link to={`${user.role}/dashboard/profile`}>
+          <Link to={`${userRole}/dashboard/profile`}>
             <AccountCircleOutlinedIcon className="account-menu__avatar" />
           </Link>
           <Typography variant="h6" className="account-menu__user-name">
-            <Link to={`${user.role}/dashboard/profile`}>@leshalurn</Link>
+            <Link to={`${userRole}/dashboard/profile`}>@leshalurn</Link>
           </Typography>
         </Stack>
       </Box>
@@ -75,7 +78,7 @@ const AccountMenu: FC = () => {
           <LanguageIcon />
           <LanguageSwitcher />
         </Stack>
-        <Link to={`${user.role}/dashboard/support`} className="account-menu__link">
+        <Link to={`${userRole}/dashboard/support`} className="account-menu__link">
           {t("support-center")}
         </Link>
         <Button variant="black-text" className="account-menu__link">

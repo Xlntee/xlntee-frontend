@@ -1,9 +1,7 @@
-import { lazy, useEffect, FC } from "react";
+import { lazy, FC } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
-import { useAppDispatch } from "src/app/store/store";
-import { setRole } from "src/app/store/slices/user/slice";
-import { Role, UserRoles } from "src/shared/utils/user-role";
+import { UserRoles } from "src/shared/utils/user-role";
 
 import {
   AuthLayout,
@@ -378,17 +376,6 @@ const router = createBrowserRouter([
 ]);
 
 const AppRouter: FC = () => {
-  const userRole = window.location.pathname.split("/")[1];
-  const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    dispatch(
-      setRole({
-        role: userRole as Role
-      })
-    );
-  }, []);
-
   return <RouterProvider router={router} />;
 };
 
