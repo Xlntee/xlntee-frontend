@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import { Box, Stack } from "@mui/material";
 
-import CourseCard from "src/widgets/course-card/CourseCard";
+import { CourseCard } from "src/widgets/components";
 import { StatisticInfo } from "src/features";
 
 import "./CourseStatistic.scss";
