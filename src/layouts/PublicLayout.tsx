@@ -2,10 +2,9 @@ import { FC } from "react";
 import { Outlet } from "react-router-dom";
 import { Box } from "@mui/material";
 
-import { RootDialog } from "src/widgets/dialogs/RootDialog";
-import { Header } from "src/widgets/components";
-import Footer from "src/widgets/footer/Footer";
+import { Header, Footer } from "src/widgets/components";
 import RootDrawer from "src/widgets/drawers/RootDrawers";
+import { RootDialog } from "src/widgets/dialogs/RootDialog";
 
 const PublicLayout: FC = () => {
   return (

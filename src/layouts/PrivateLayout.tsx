@@ -5,13 +5,12 @@ import cn from "classnames";
 import { Box, Stack } from "@mui/material";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 
-import { RootDialog } from "src/widgets/dialogs/RootDialog";
-import { HeaderProfile, NotificationToggler } from "src/widgets/components";
-import Footer from "src/widgets/footer/Footer";
-import { Role } from "src/shared/utils/user-role";
 import { AppRoutes } from "src/app/routing/appRoutes";
+import { RootDialog } from "src/widgets/dialogs/RootDialog";
+import { HeaderProfile, NotificationToggler, Footer } from "src/widgets/components";
 import AuthStudentContainer from "src/widgets/components/auth-student-container";
 import RootDrawer from "src/widgets/drawers/RootDrawers";
+import { Role } from "src/shared/utils/user-role";
 
 interface PrivateLayoutProps {
   userRole: Role;

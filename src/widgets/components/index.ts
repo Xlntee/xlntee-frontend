@@ -11,3 +11,4 @@ export * from "./price-plan-list";
 export * from "./auth-student-container";
 export * from "./auth-teacher-container";
 export * from "./course-card";
+export * from "./footer";

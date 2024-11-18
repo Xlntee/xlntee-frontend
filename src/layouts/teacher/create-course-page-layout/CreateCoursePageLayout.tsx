@@ -5,8 +5,7 @@ import { useTranslation } from "react-i18next";
 import { Box, Stack } from "@mui/material";
 
 import { RootDialog } from "src/widgets/dialogs/RootDialog";
-import { HeaderProfile, NotificationToggler } from "src/widgets/components";
-import Footer from "src/widgets/footer/Footer";
+import { HeaderProfile, NotificationToggler, Footer } from "src/widgets/components";
 import { AppRoutes } from "src/app/routing/appRoutes";
 import { UserRoles } from "src/shared/utils/user-role";
 import RootDrawer from "src/widgets/drawers/RootDrawers";

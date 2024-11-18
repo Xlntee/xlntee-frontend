@@ -5,8 +5,7 @@ import { useTranslation } from "react-i18next";
 import { Box, Stack } from "@mui/material";
 
 import { RootDialog } from "src/widgets/dialogs/RootDialog";
-import { CourseComplain, CourseRate, CourseShare, HeaderProfile } from "src/widgets/components";
-import Footer from "src/widgets/footer/Footer";
+import { CourseComplain, CourseRate, CourseShare, HeaderProfile, Footer } from "src/widgets/components";
 import { UserRoles } from "src/shared/utils/user-role";
 import { AppRoutes } from "src/app/routing/appRoutes";
 import RootDrawer from "src/widgets/drawers/RootDrawers";
