@@ -25,20 +25,6 @@
     position: relative;
     z-index: 2;
     background-color: rgb(var(--light-color));
-
-    @include mixins.media(desktop, max) {
-      display: none;
-    }
-  }
-
-  &__menu-opener {
-    &.MuiButtonBase-root {
-      margin-bottom: 20px;
-
-      @include mixins.media(desktop) {
-        display: none;
-      }
-    }
   }
 
   .error-limits {

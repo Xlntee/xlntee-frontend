@@ -7,6 +7,7 @@ import { MenuToggler, Navigation } from "src/features";
 
 import useDrawer from "src/hooks/useDrawer";
 import useHeaderNavigation from "src/hooks/useHeaderNavigation";
+import { HideMediaContainer } from "src/features/hide-media-container";
 
 import { User } from "../user";
 import { HeaderTools } from "../header-tools";
@@ -38,7 +39,9 @@ const HeaderProfile: FC = () => {
           <Stack direction="row" alignItems="center" gap="10px" className="header__nav-right">
             <HeaderTools />
             {authUser && <User />}
-            <MenuToggler active={isOpen} onClick={openMenu} className="header__menu-toggler" />
+            <HideMediaContainer type="up" breakpoint="xl">
+              <MenuToggler active={isOpen} onClick={openMenu} />
+            </HideMediaContainer>
           </Stack>
         </Box>
       </Container>

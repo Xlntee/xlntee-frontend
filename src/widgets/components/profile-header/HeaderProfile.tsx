@@ -11,6 +11,7 @@ import { Role, UserRoles } from "src/shared/utils/user-role";
 import useHeaderNavigationStudent from "src/hooks/useHeaderNavigationStudent";
 import useHeaderNavigationTeacher from "src/hooks/useHeaderNavigationTeacher";
 import { useAuth } from "src/hooks/useAuth";
+import { HideMediaContainer } from "src/features/hide-media-container";
 
 import { User } from "../user";
 
@@ -82,7 +83,9 @@ const HeaderProfile: FC<HeaderProfileProps> = ({ children, link, tools, classNam
               {tools}
               <User />
             </Stack>
-            <MenuToggler active={isOpen} onClick={toggleDrawer} className="header-profile__menu-toggler" />
+            <HideMediaContainer type="up" breakpoint="xl">
+              <MenuToggler active={isOpen} onClick={toggleDrawer} className="header-profile__menu-toggler" />
+            </HideMediaContainer>
           </Stack>
         </Box>
       </Container>

@@ -15,10 +15,4 @@
       }
     }
   }
-
-  .MuiTypography-caption {
-    @include mixins.media(tablet, max) {
-      display: none;
-    }
-  }
 }

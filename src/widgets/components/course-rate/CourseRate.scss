@@ -1,6 +1,6 @@
 @use "styles/mixins.scss" as mixins;
 
-.course-share {
+.course-rate {
   &.MuiButtonBase-root {
     font-weight: 400;
     font-size: 14px;
@@ -13,12 +13,6 @@
       @include mixins.media(tablet) {
         font-size: 30px;
       }
-    }
-  }
-
-  .MuiTypography-caption {
-    @include mixins.media(tablet, max) {
-      display: none;
     }
   }
 }

@@ -5,6 +5,7 @@ import { Button, Typography } from "@mui/material";
 import ShareIcon from "@mui/icons-material/Share";
 
 import useDialog from "src/hooks/useDialog";
+import { HideMediaContainer } from "src/features/hide-media-container";
 
 import "./CourseShare.scss";
 
@@ -21,9 +22,11 @@ const CourseShare: FC = () => {
 
   return (
     <Button startIcon={<ShareIcon />} variant="black-text" className="course-share" onClick={() => onOpenModal()}>
-      <Typography variant="caption" textAlign="center">
-        {t("share")}
-      </Typography>
+      <HideMediaContainer type="down" breakpoint="md">
+        <Typography variant="caption" textAlign="center">
+          {t("share")}
+        </Typography>
+      </HideMediaContainer>
     </Button>
   );
 };

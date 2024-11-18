@@ -29,7 +29,6 @@
   &__link {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
     color: rgb(var(--element-color));
 
     @include mixins.animate(color);
@@ -46,6 +45,7 @@
   &__icon {
     display: flex;
     color: currentColor;
+    margin-right: 6px;
   }
 
   &__name {
