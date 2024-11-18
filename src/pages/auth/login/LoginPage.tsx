@@ -3,11 +3,11 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
 import { useForm } from "react-hook-form";
 
+import { authApiSlice, useLoginMutation } from "src/app/store/slices/auth/api";
+import { setCredentials } from "src/app/store/slices/auth/slice";
 import { useAppDispatch } from "src/app/store/store";
 import useTitle from "src/hooks/useTitle";
 
-import { setCredentials } from "./store/authSlice";
-import { authApiSlice, useLoginMutation } from "./api/authApiSlice";
 import { PageProps } from "pages/type";
 
 import "./LoginPage.scss";

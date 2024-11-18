@@ -2,7 +2,6 @@ import { combineReducers } from "redux";
 import { persistReducer, PersistConfig } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
-import authReducer, { IAuthState } from "src/pages/auth/login/store/authSlice";
 import lessonsReducer from "src/pages/create-course/structure/store/lessonsSlice";
 
 import userReducer from "./slices/user/slice";
@@ -10,6 +9,7 @@ import appInitializationReducer from "./slices/appInitialization/slice";
 import dialogReducer from "./slices/dialog/slice";
 import drawerReducer from "./slices/drawer/slice";
 import { apiSlice } from "../api/apiSlice";
+import authReducer, { IAuthState } from "./slices/auth/slice";
 
 const authPersistConfig: PersistConfig<IAuthState> = {
   key: "auth",

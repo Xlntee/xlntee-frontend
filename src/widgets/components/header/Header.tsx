@@ -5,22 +5,23 @@ import { Box, Container, Stack } from "@mui/material";
 
 import { MenuToggler, Navigation } from "src/features";
 
+import { useAuth } from "src/hooks/useAuth";
 import useDrawer from "src/hooks/useDrawer";
 import useHeaderNavigation from "src/hooks/useHeaderNavigation";
+
 import { HideMediaContainer } from "src/features/hide-media-container";
+import { HeaderTools } from "../header-tools";
 
 import { User } from "../user";
-import { HeaderTools } from "../header-tools";
 
 import "./Header.scss";
 
 const HeaderProfile: FC = () => {
   const { onOpenDrawer, isOpenDrawer } = useDrawer();
   const { navigationList } = useHeaderNavigation();
+  const { isAuth } = useAuth();
 
   const isOpen = isOpenDrawer("BASE_NAVIGATION_DRAWER");
-
-  const authUser = false;
 
   function openMenu(): void {
     onOpenDrawer("BASE_NAVIGATION_DRAWER");
@@ -38,7 +39,7 @@ const HeaderProfile: FC = () => {
           </Box>
           <Stack direction="row" alignItems="center" gap="10px" className="header__nav-right">
             <HeaderTools />
-            {authUser && <User />}
+            {isAuth && <User />}
             <HideMediaContainer type="up" breakpoint="xl">
               <MenuToggler active={isOpen} onClick={openMenu} />
             </HideMediaContainer>

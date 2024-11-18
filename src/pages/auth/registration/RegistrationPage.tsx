@@ -10,7 +10,7 @@ import {
   useAcceptPolicyMutation,
   useSignUpMutation,
   useVerifyEmailMutation
-} from "../../auth/login/api/authApiSlice";
+} from "src/app/store/slices/auth/api";
 
 import "./RegistartionPage.scss";
 

@@ -43,12 +43,4 @@
       min-width: auto;
     }
   }
-
-  &__nav-right &__tools {
-    &.MuiStack-root {
-      @include mixins.media(breakpoints.$tablet, max) {
-        display: none;
-      }
-    }
-  }
 }

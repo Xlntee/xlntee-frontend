@@ -5,7 +5,7 @@ export interface IAppInitializationState {
 }
 
 const appInitializationSlice = createSlice({
-  name: "dialog",
+  name: "appInitialization",
   initialState: {
     loading: false
   },

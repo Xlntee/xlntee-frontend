@@ -1,18 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { RootState } from "src/app/store/store";
 
 export interface IAuthState {
   token: string;
   email: string;
+  isAuth: boolean;
 }
 
 const initialState: IAuthState = {
   token: "",
-  email: ""
+  email: "",
+  isAuth: true
 };
-
-export const selectToken = (state: RootState): string => state.auth.token;
-export const selectEmail = (state: RootState): string => state.auth.email;
 
 const authSlice = createSlice({
   name: "auth",
@@ -23,6 +21,7 @@ const authSlice = createSlice({
 
       state.token = accessToken;
       state.email = email;
+      state.isAuth = true;
     },
     logOut: (state) => {
       state.token = "";

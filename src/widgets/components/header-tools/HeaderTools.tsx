@@ -5,17 +5,18 @@ import { useTranslation } from "react-i18next";
 import { Stack, Button } from "@mui/material";
 
 import { AppRoutes } from "src/app/routing/appRoutes";
+import { useAuth } from "src/hooks/useAuth";
 
 import { LanguageSwitcher } from "../language-switcher";
 
 const HeaderTools: FC = () => {
   const { t } = useTranslation("auth");
-  const authUser = false;
+  const { isAuth } = useAuth();
 
   return (
     <Stack direction="row" alignItems="center" gap="10px" className="header__tools">
       <LanguageSwitcher compact />
-      {!authUser && (
+      {!isAuth && (
         <Button
           component={Link}
           to={AppRoutes.auth.login}
