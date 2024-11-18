@@ -24,7 +24,7 @@ import { SuspenseWrapper } from "src/shared/utils/suspense-wrapper";
 const EmailUpdatePage = lazy(() => import("src/pages/auth/email-update/EmailUpdatePage"));
 const PasswordUpdatePage = lazy(() => import("src/pages/auth/password-update/PasswordUpdatePage"));
 
-const CoursePreviewPage = lazy(() => import("src/pages/course-preview/CoursePreviewPage"));
+const CoursePreviewPage = lazy(() => import("pages/teacher/course-preview/CoursePreviewPage"));
 const CreateCourseGeneralPage = lazy(() => import("pages/teacher/create-course/general/General"));
 const CreateCourseLandingPage = lazy(() => import("pages/teacher/create-course/landing/Landing"));
 const CreateCourseStructurePage = lazy(() => import("pages/teacher/create-course/structure/Structure"));

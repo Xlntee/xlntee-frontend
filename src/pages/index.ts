@@ -1,4 +1,4 @@
-export * from "./course-preview";
+export * from "./teacher/course-preview";
 export * from "./teacher/create-course";
 export * from "./auth/login";
 export * from "./auth/registration";
