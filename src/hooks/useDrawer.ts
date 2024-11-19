@@ -28,7 +28,9 @@ export default function useDrawer(): UseDrawer {
   }
 
   function onCloseDrawer(): void {
-    dispatch(closeDrawer());
+    if (drawerName) {
+      dispatch(closeDrawer());
+    }
   }
 
   return {
