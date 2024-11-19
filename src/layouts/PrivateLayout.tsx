@@ -37,7 +37,7 @@ const PrivateLayout: FC<PrivateLayoutProps> = ({ userRole }) => {
           </Stack>
         }
       />
-      <Box component="main" sx={{ flexGrow: 1 }}>
+      <Box component="main">
         <Outlet />
       </Box>
       <Footer />

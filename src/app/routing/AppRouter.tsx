@@ -20,6 +20,8 @@ import { LoginForm, RegistrationForm, AccountVerificationForm, PasswordUpdate } 
 import AuthTab from "src/widgets/components/auth-tab/AuthTab";
 import { SuspenseWrapper } from "src/shared/utils/suspense-wrapper";
 
+import NotFoundPage from "src/pages/not-found/NotFoundPage";
+
 // Lazy load the component
 const EmailUpdatePage = lazy(() => import("src/pages/auth/email-update/EmailUpdatePage"));
 const PasswordUpdatePage = lazy(() => import("src/pages/auth/password-update/PasswordUpdatePage"));
@@ -44,6 +46,7 @@ const StudentProfilePage = lazy(() => import("src/pages/student/profile-page/Pro
 
 const TeacherLandingPage = lazy(() => import("src/pages/teacher/landing-page/LandingPage"));
 const UiPage = lazy(() => import("src/pages/ui"));
+
 const MyCoursesPage = lazy(() => import("src/pages/teacher/my-courses-page/MyCoursesPage"));
 const StatisticPage = lazy(() => import("src/pages/teacher/statistic-page/StatisticPage"));
 const TeacherProfilePage = lazy(() => import("src/pages/teacher/profile-page/ProfilePage"));
@@ -226,7 +229,11 @@ const studentDashboardRoutes = [
   },
   {
     path: AppRoutes.student.profile,
-    element: <StudentProfilePage title="Profile" />
+    element: (
+      <SuspenseWrapper>
+        <StudentProfilePage title="Profile" />
+      </SuspenseWrapper>
+    )
   },
   {
     path: AppRoutes.student.completedCourses,
@@ -309,6 +316,10 @@ const router = createBrowserRouter([
       },
       {
         path: AppRoutes.ui,
+        element: <UiPage title="UI" />
+      },
+      {
+        path: AppRoutes.ui,
         element: (
           <SuspenseWrapper>
             <UiPage title="UI" />
@@ -316,8 +327,8 @@ const router = createBrowserRouter([
         )
       },
       {
-        path: AppRoutes.notFound,
-        element: <div>404</div>
+        path: AppRoutes.anyRoute,
+        element: <NotFoundPage title="Not found" />
       },
       ...authRoutes
     ]

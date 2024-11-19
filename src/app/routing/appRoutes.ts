@@ -1,3 +1,5 @@
+import { Role } from "src/shared/utils/user-role";
+
 export const AppRoutes = {
   home: "/",
   studentLanding: "/student",
@@ -44,7 +46,13 @@ export const AppRoutes = {
     emailUpdate: "teacher/dashboard/email-update",
     passwordUpdate: "teacher/dashboard/password-update"
   },
-  notFound: "*",
+  anyRoute: "*",
+  notFound: "/404",
   ui: "/ui",
   helpCenter: "/help-center"
+};
+
+export const rolePrivateRoutes: Record<Role, string> = {
+  student: "/student/dashboard",
+  teacher: "/teacher/dashboard"
 };

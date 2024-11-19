@@ -37,7 +37,7 @@ export const languages = [
     fullName: "English"
   },
   {
-    code: "uk",
+    code: "uk-UA",
     shortName: "Uk",
     fullName: "Ukrainian"
   }

@@ -23,16 +23,15 @@
       }
     }
 
+    .MuiSelect-nativeInput {
+      height: 100%;
+    }
+
     &.MuiInputBase-root {
       height: 30px;
       width: 30px;
       border-radius: 10px;
       color: var(--lang-switcher-color);
-
-      @include mixins.media(desktop) {
-        height: 36px;
-        width: 36px;
-      }
     }
 
     .MuiOutlinedInput-notchedOutline {

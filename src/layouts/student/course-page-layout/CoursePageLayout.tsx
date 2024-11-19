@@ -31,7 +31,7 @@ const CoursePageLayout: FC = () => {
           <CourseProgress />
         </Box>
       </HeaderProfile>
-      <Box component="main" sx={{ flexGrow: 1 }}>
+      <Box component="main">
         <Outlet />
       </Box>
       <Footer />

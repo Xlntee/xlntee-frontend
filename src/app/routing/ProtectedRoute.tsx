@@ -1,16 +1,25 @@
 import { FC, ReactNode } from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 
 import { useAuth } from "src/hooks/useAuth";
 
-import { AppRoutes } from "./appRoutes";
+import { AppRoutes, rolePrivateRoutes } from "./appRoutes";
 
 interface ProtectedRouteProps {
   element: ReactNode;
 }
 
-export const ProtectedRoute: FC<ProtectedRouteProps> = ({ element }) => {
-  const { isAuth } = useAuth();
+const NavigateToNotFound: FC = () => {
+  return <Navigate to={AppRoutes.notFound} state={{ from: window.location.pathname }} replace />;
+};
 
-  return isAuth ? element : <Navigate to={AppRoutes.auth.login} state={{ from: window.location.pathname }} replace />;
+export const ProtectedRoute: FC<ProtectedRouteProps> = ({ element }) => {
+  const { isAuth, userRole } = useAuth();
+  const { pathname } = useLocation();
+
+  if (userRole && !pathname.includes(rolePrivateRoutes[userRole])) {
+    return <NavigateToNotFound />;
+  }
+
+  return isAuth ? element : <NavigateToNotFound />;
 };

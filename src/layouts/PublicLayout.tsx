@@ -10,7 +10,7 @@ const PublicLayout: FC = () => {
   return (
     <>
       <Header />
-      <Box component="main" sx={{ flexGrow: 1 }}>
+      <Box component="main">
         <Outlet />
       </Box>
       <Footer />
