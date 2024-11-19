@@ -44,7 +44,7 @@ const Tools: FC<ToolsProps> = ({ onClickTab }) => {
           <CommentIcon />
         </Button>
       </Stack>
-      <Stack direction="row" alignItems="center" gap="10px">
+      <Stack direction="row" alignItems="center" gap="10px" pl="10px">
         <FormControlLabel control={<Checkbox />} label="Completed lecture" className="course-tools__label" />
         <Button variant="black-text" className="course-tools__button">
           <ArrowForwardIcon />

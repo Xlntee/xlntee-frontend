@@ -68,18 +68,8 @@ const HeaderProfile: FC<HeaderProfileProps> = ({ children, link, tools, classNam
               <Navigation items={getNavigation()} />
             </Box>
           )}
-          <Stack
-            direction="row"
-            alignItems="center"
-            gap={{ xs: "4px", md: "10px" }}
-            className="header-profile__nav-right"
-          >
-            <Stack
-              direction="row"
-              alignItems="center"
-              gap={{ xs: "4px", md: "10px" }}
-              className="header-profile__tools"
-            >
+          <Stack direction="row" alignItems="center" gap="10px" className="header-profile__nav-right">
+            <Stack direction="row" alignItems="center" gap="10px" className="header-profile__tools">
               {tools}
               <User />
             </Stack>

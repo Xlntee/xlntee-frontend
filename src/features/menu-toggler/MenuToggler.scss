@@ -2,11 +2,7 @@
 @use "styles/breakpoints.scss" as breakpoints;
 
 .menu-toggler {
-  --menu-toggler-size: 24px;
-
-  @include mixins.media(breakpoints.$mobile_breakpoint_min) {
-    --menu-toggler-size: 30px;
-  }
+  --menu-toggler-size: 30px;
 
   &.MuiButtonBase-root {
     padding: 0;

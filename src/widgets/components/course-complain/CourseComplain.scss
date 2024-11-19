@@ -2,13 +2,15 @@
 
 .course-complain {
   &__toggler {
+    > .MuiSvgIcon-root {
+      font-size: 30px;
+    }
+
     .MuiButton-endIcon {
       margin-left: 0;
 
       > svg {
-        @include mixins.media(tablet) {
-          font-size: 30px;
-        }
+        font-size: 30px;
       }
     }
   }
