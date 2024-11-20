@@ -9,7 +9,7 @@ const TariffPlanPage: FC<PageProps> = ({ title }) => {
   useTitle(title);
 
   return (
-    <Box component="section" py={7}>
+    <Box component="section" py="40px">
       <Container>
         <Box maxWidth="1050px" marginInline="auto">
           <PricePlanList />

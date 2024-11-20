@@ -16,7 +16,7 @@ const MyLearningPage: FC<PageProps> = ({ title }) => {
   const { t } = useTranslation("student");
 
   return (
-    <Box component="section" py={7}>
+    <Box component="section" py="40px">
       <Container>
         <CardList
           items={myCourses}

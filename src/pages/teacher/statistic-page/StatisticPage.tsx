@@ -10,7 +10,7 @@ const StatisticPage: FC<PageProps> = ({ title }) => {
   useTitle(title);
 
   return (
-    <Box component="section" py={7}>
+    <Box component="section" py="40px">
       <Container>
         <Stack direction="row" alignItems="center" justifyContent="end" gap="10px" mb="20px">
           <TextField

@@ -100,7 +100,7 @@ const ProfilePage: FC<PageProps> = ({ title }) => {
   }
 
   return (
-    <Box component="section" py={7}>
+    <Box component="section" py="40px">
       <Container>
         <Box maxWidth="800px" marginInline="auto">
           <Box maxWidth={{ xs: "100px", md: "140px" }} marginInline="auto" mb="20px">

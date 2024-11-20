@@ -8,7 +8,7 @@ const CourseCertificate: FC<PageProps> = ({ title }) => {
   useTitle(title);
 
   return (
-    <Box py={7}>
+    <Box py="40px">
       <Box maxWidth="500px" marginInline="auto">
         <Box marginInline="auto" maxWidth="224px" width="100%" marginBottom="20px">
           <img src="/assets/congratulations.png" alt="congratulations" />

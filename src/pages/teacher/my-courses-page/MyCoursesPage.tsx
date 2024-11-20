@@ -25,7 +25,7 @@ const MyCoursesPage: FC<PageProps> = ({ title }) => {
   }, []);
 
   return (
-    <Box component="section" py={7}>
+    <Box component="section" py="40px">
       <Container>
         <CardList
           items={array}
