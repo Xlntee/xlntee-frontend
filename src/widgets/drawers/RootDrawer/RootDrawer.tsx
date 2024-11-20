@@ -8,7 +8,7 @@ import { SuspenseWrapper } from "src/shared/utils/suspense-wrapper";
 import useDrawer from "src/hooks/useDrawer";
 import drawers from "../index";
 
-import "./RootDrawers.scss";
+import "./RootDrawer.scss";
 
 const RootDrawer: FC = () => {
   const { pathname } = useLocation();

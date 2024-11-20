@@ -8,7 +8,7 @@ import { RootDialog } from "src/widgets/dialogs/RootDialog";
 import { HeaderProfile, NotificationToggler, Footer } from "src/widgets/components";
 import { AppRoutes } from "src/app/routing/appRoutes";
 import { UserRoles } from "src/shared/utils/user-role";
-import RootDrawer from "src/widgets/drawers/RootDrawers";
+import { RootDrawer } from "src/widgets/drawers/RootDrawer";
 import { CoursePreviewButtons } from "src/widgets/teacher";
 
 const CreateCoursePageLayout: FC = () => {

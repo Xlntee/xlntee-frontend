@@ -8,7 +8,7 @@ import { RootDialog } from "src/widgets/dialogs/RootDialog";
 import { CourseComplain, CourseRate, CourseShare, HeaderProfile, Footer } from "src/widgets/components";
 import { UserRoles } from "src/shared/utils/user-role";
 import { AppRoutes } from "src/app/routing/appRoutes";
-import RootDrawer from "src/widgets/drawers/RootDrawers";
+import { RootDrawer } from "src/widgets/drawers/RootDrawer";
 import { CourseProgress } from "src/widgets/student";
 
 const CoursePageLayout: FC = () => {

@@ -9,7 +9,7 @@ import { AppRoutes } from "src/app/routing/appRoutes";
 import { RootDialog } from "src/widgets/dialogs/RootDialog";
 import { HeaderProfile, NotificationToggler, Footer } from "src/widgets/components";
 import AuthStudentContainer from "src/widgets/components/auth-student-container";
-import RootDrawer from "src/widgets/drawers/RootDrawers";
+import { RootDrawer } from "src/widgets/drawers/RootDrawer";
 import { Role } from "src/shared/utils/user-role";
 
 interface PrivateLayoutProps {
