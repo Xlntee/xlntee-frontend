@@ -19,4 +19,6 @@ const appInitializationSlice = createSlice({
   }
 });
 
+export const { startLoading, stopLoading } = appInitializationSlice.actions;
+
 export default appInitializationSlice.reducer;

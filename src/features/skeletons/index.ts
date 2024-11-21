@@ -1,1 +1,1 @@
-export * from "./grid-cards";
+export * from "./grid-card-skeleton";

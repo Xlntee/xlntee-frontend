@@ -21,7 +21,7 @@ import AuthTab from "src/widgets/components/auth-tab/AuthTab";
 import { SuspenseWrapper } from "src/shared/utils/suspense-wrapper";
 
 import NotFoundPage from "src/pages/not-found/NotFoundPage";
-import { GridCards } from "src/features/skeletons";
+import { GridCardSkeleton } from "src/features/skeletons";
 
 // Lazy load the component
 const EmailUpdatePage = lazy(() => import("src/pages/auth/email-update/EmailUpdatePage"));
@@ -223,7 +223,7 @@ const studentDashboardRoutes = [
   {
     path: AppRoutes.student.myLearning,
     element: (
-      <SuspenseWrapper loaderComponent={<GridCards />}>
+      <SuspenseWrapper loaderComponent={<GridCardSkeleton />}>
         <StudentMyLearningPage title="My learning" />
       </SuspenseWrapper>
     )
@@ -239,7 +239,7 @@ const studentDashboardRoutes = [
   {
     path: AppRoutes.student.completedCourses,
     element: (
-      <SuspenseWrapper loaderComponent={<GridCards />}>
+      <SuspenseWrapper loaderComponent={<GridCardSkeleton />}>
         <StudentCompletedCoursesPage title="Completed courses" />
       </SuspenseWrapper>
     )
@@ -247,7 +247,7 @@ const studentDashboardRoutes = [
   {
     path: AppRoutes.student.certificates,
     element: (
-      <SuspenseWrapper loaderComponent={<GridCards />}>
+      <SuspenseWrapper loaderComponent={<GridCardSkeleton />}>
         <StudentCertificatesPage title="Certificates" />
       </SuspenseWrapper>
     )
@@ -263,7 +263,7 @@ const studentDashboardRoutes = [
   {
     path: AppRoutes.student.favoriteCourses,
     element: (
-      <SuspenseWrapper loaderComponent={<GridCards />}>
+      <SuspenseWrapper loaderComponent={<GridCardSkeleton />}>
         <StudentFavoriteCoursesPage title="Favorite courses" />
       </SuspenseWrapper>
     )
