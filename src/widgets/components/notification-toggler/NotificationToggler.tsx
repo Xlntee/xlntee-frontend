@@ -14,7 +14,7 @@ const NotificationToggler: FC = () => {
   }
 
   return (
-    <Button variant="black-text" onClick={openMenu}>
+    <Button variant="black-text" aria-label="notification drawer opener" onClick={openMenu}>
       <Badge variant="dot" color="primary">
         <NotificationsNoneIcon />
       </Badge>

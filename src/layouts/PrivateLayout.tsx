@@ -29,6 +29,7 @@ const PrivateLayout: FC<PrivateLayoutProps> = ({ userRole }) => {
               <Link
                 to={AppRoutes.student.favoriteCourses}
                 className={cn({ active: pathname === AppRoutes.student.favoriteCourses })}
+                aria-label="link to favorite"
               >
                 <FavoriteBorderOutlinedIcon />
               </Link>

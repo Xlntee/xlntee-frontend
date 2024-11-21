@@ -52,6 +52,7 @@ const User: FC = () => {
           onClick={handleClick}
           size="small"
           aria-controls="account-menu"
+          aria-label="user menu opener"
           aria-haspopup="true"
           aria-expanded={open ? "true" : undefined}
         >
