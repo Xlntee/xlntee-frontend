@@ -8,12 +8,11 @@ import { useTranslation } from "react-i18next";
 import { Button, Stack, TextField, Typography } from "@mui/material";
 
 import { useAppDispatch } from "src/app/store/store";
-import { setCredentials } from "pages/auth/login/store/authSlice";
 import { AppRoutes } from "src/app/routing/appRoutes";
 
-import { authApiSlice, useLoginMutation } from "./api/authApiSlice";
-
 import { LoginFormValues, validationSchema } from "./validation";
+import { authApiSlice, useLoginMutation } from "src/app/store/slices/auth/api";
+import { setCredentials } from "src/app/store/slices/auth/slice";
 
 const deviceId = "string";
 

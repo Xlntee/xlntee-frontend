@@ -2,19 +2,20 @@ import { FC } from "react";
 import { Outlet } from "react-router-dom";
 import { Box } from "@mui/material";
 
+import { Header, Footer } from "src/widgets/components";
+import { RootDrawer } from "src/widgets/drawers/RootDrawer";
 import { RootDialog } from "src/widgets/dialogs/RootDialog";
-import { Header } from "src/widgets/components";
-import Footer from "src/widgets/footer/Footer";
 
 const PublicLayout: FC = () => {
   return (
     <>
       <Header />
-      <Box component="main" sx={{ flexGrow: 1 }}>
+      <Box component="main">
         <Outlet />
       </Box>
       <Footer />
       <RootDialog />
+      <RootDrawer />
     </>
   );
 };

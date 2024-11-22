@@ -4,17 +4,14 @@ import { useTranslation } from "react-i18next";
 import { Box } from "@mui/material";
 
 import { InfoCourseComplain, MenuToggler } from "src/features";
-import { useAppDispatch, useAppSelector } from "src/app/store/store";
-import { closeDialogByName } from "src/app/store/slices/dialog/slice";
-import { getAllDialogsSelector, getDialogByName } from "src/app/store/slices/dialog/selectors";
+import useDialog from "src/hooks/useDialog";
 
 const ComplainInfoDialog: FC = () => {
   const { t } = useTranslation("student");
-  const dispatch = useAppDispatch();
-  const allDialogs = useAppSelector(getAllDialogsSelector);
+  const { getOptionsFromDialog, onCloseDialogByName } = useDialog();
 
   function onCloseDialog(): void {
-    dispatch(closeDialogByName({ dialogName: "COMPLAIN_INFO_DIALOG" }));
+    onCloseDialogByName("COMPLAIN_INFO_DIALOG");
   }
 
   return (
@@ -22,9 +19,9 @@ const ComplainInfoDialog: FC = () => {
       <MenuToggler active={true} onClick={onCloseDialog} className="dialog-box__close-btn" />
       <InfoCourseComplain
         image="/assets/complain.png"
-        imageDescription={t("complain.imageDescription")}
+        imageDescription={t("complain.image-description")}
         message={t("complain.message", {
-          code: getDialogByName(allDialogs, "COMPLAIN_INFO_DIALOG").options.id
+          code: getOptionsFromDialog("COMPLAIN_INFO_DIALOG").id
         })}
       />
     </Box>

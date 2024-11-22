@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 
 import { Box, Container, Typography, InputLabel, TextField, Stack, Button, Grid } from "@mui/material";
 
-import useTitle from "src/hooks/useTitle/useTitle";
+import useTitle from "src/hooks/useTitle";
 import { PageProps } from "pages/type";
 import { XlnteeColors } from "src/shared/themes/colors";
 import { getSecureEmail } from "src/shared/utils/methods";
@@ -57,7 +57,7 @@ const EmailUpdatePage: FC<PageProps> = ({ title }) => {
             </Typography>
             <Stack gap="20px">
               <Box>
-                <InputLabel htmlFor="email">Current email address</InputLabel>
+                <InputLabel htmlFor="email">{t("current-email-address")}</InputLabel>
                 <TextField
                   id="email"
                   aria-label="email input"
@@ -69,7 +69,7 @@ const EmailUpdatePage: FC<PageProps> = ({ title }) => {
                 />
               </Box>
               <Box>
-                <InputLabel htmlFor="new_email">New email address</InputLabel>
+                <InputLabel htmlFor="new_email">{t("new-email-address")}</InputLabel>
                 <TextField
                   {...register("new_email")}
                   error={!!errors.new_email?.message}
@@ -82,7 +82,7 @@ const EmailUpdatePage: FC<PageProps> = ({ title }) => {
                 />
               </Box>
               <Box>
-                <InputLabel htmlFor="confirm_email">Confirm new email</InputLabel>
+                <InputLabel htmlFor="confirm_email">{t("confirm-new-email")}</InputLabel>
                 <TextField
                   {...register("confirm_email")}
                   error={!!errors.confirm_email?.message}
@@ -111,9 +111,9 @@ const EmailUpdatePage: FC<PageProps> = ({ title }) => {
                 {t("credential-update-content.title-email")}
               </Typography>
               <Typography variant="h3" fontWeight={300} fontSize={{ xs: "16px", lg: "20px" }} mb={{ xs: "10px" }}>
-                {t("credential-update-content.subtitle1")}
-                test@test.com
-                {t("credential-update-content.subtitle2")}
+                {t("credential-update-content.subtitle", {
+                  email: "test@test.com"
+                })}
               </Typography>
               <Typography
                 fontWeight={300}

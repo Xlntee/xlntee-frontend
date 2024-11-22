@@ -4,37 +4,30 @@ import { Box, Tooltip, IconButton, Menu } from "@mui/material";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-import { useAppDispatch, useAppSelector } from "src/app/store/store";
-import { getUser } from "src/app/store/slices/user/slice";
-import { openDialog } from "src/app/store/slices/dialog/slice";
+import { getUserRole } from "src/app/store/slices/user/selectors";
 
+import useDialog from "src/hooks/useDialog";
 import { AccountMenu } from "../account-menu";
 
 import "./User.scss";
 
 const User: FC = () => {
   const breakpoint = 1024;
-
   const matches = useMediaQuery(`(min-width:${breakpoint}px)`);
-
-  const user = useAppSelector(getUser);
 
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
   const open = Boolean(anchorEl);
   const [openModal, setOpenModal] = useState<boolean>(false);
-
-  const dispatch = useAppDispatch();
+  const { onOpenDialog } = useDialog();
 
   const handleClick = (event: React.MouseEvent<HTMLElement>): void => {
     if (matches) {
       setAnchorEl(event.currentTarget);
     } else {
-      dispatch(
-        openDialog({
-          dialogName: "USER_MENU_DIALOG",
-          dialogSize: "fullscreen"
-        })
-      );
+      onOpenDialog({
+        dialogName: "USER_MENU_DIALOG",
+        dialogSize: "fullscreen"
+      });
     }
   };
 
@@ -50,7 +43,7 @@ const User: FC = () => {
     if (openModal) {
       onCloseModal();
     }
-  }, [user]);
+  }, [getUserRole]);
 
   return (
     <Box>
@@ -59,6 +52,7 @@ const User: FC = () => {
           onClick={handleClick}
           size="small"
           aria-controls="account-menu"
+          aria-label="user menu opener"
           aria-haspopup="true"
           aria-expanded={open ? "true" : undefined}
         >

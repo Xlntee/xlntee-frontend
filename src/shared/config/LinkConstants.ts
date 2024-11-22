@@ -1,5 +1,5 @@
-export enum ContactsLinks {
-  Support = "support@xlntee.com",
-  Cooperation = "cooperation@xlntee.com",
-  Press = "press@xlntee.com"
-}
+export const ContactsLinks = {
+  support: "support@xlntee.com",
+  cooperation: "cooperation@xlntee.com",
+  press: "press@xlntee.com"
+};

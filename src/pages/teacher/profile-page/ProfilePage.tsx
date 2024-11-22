@@ -6,11 +6,10 @@ import { useTranslation } from "react-i18next";
 import { Box, Container, Grid, Button, TextField, FormLabel, Typography, Stack } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 
-import useTitle from "src/hooks/useTitle/useTitle";
+import useTitle from "src/hooks/useTitle";
 import { PageProps } from "pages/type";
 import { ImageUpload } from "src/features";
-import { useAppSelector } from "src/app/store/store";
-import { getUser } from "src/app/store/slices/user/slice";
+import { useAuth } from "src/hooks/useAuth";
 
 interface ProfileFormValues {
   firstName: string;
@@ -37,8 +36,7 @@ const ProfilePage: FC<PageProps> = ({ title }) => {
   useTitle(title);
   const { t } = useTranslation("auth");
   const { t: tCommon } = useTranslation("common");
-
-  const user = useAppSelector(getUser);
+  const { userRole } = useAuth();
 
   const fields: FieldProps[] = [
     {
@@ -102,7 +100,7 @@ const ProfilePage: FC<PageProps> = ({ title }) => {
   }
 
   return (
-    <Box component="section" py={7}>
+    <Box component="section" py="40px">
       <Container>
         <Box maxWidth="800px" marginInline="auto">
           <Box maxWidth={{ xs: "100px", md: "140px" }} marginInline="auto" mb="20px">
@@ -126,12 +124,12 @@ const ProfilePage: FC<PageProps> = ({ title }) => {
                       }}
                     />
                     {field.key === "email" && (
-                      <Link to={`${user.role}/dashboard/email-update`}>
+                      <Link to={`${userRole}/dashboard/email-update`}>
                         <EditIcon />
                       </Link>
                     )}
                     {field.key === "password" && (
-                      <Link to={`${user.role}/dashboard/password-update`}>
+                      <Link to={`${userRole}/dashboard/password-update`}>
                         <EditIcon />
                       </Link>
                     )}
@@ -141,7 +139,7 @@ const ProfilePage: FC<PageProps> = ({ title }) => {
             ))}
           </Grid>
           <Button variant="black-contain" sx={{ minWidth: "140px" }} onClick={handleSubmit(onSubmit)}>
-            Save
+            {tCommon("button-save")}
           </Button>
         </Box>
       </Container>

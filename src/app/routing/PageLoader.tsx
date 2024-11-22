@@ -1,9 +1,13 @@
 import { FC } from "react";
 
-import { Box } from "@mui/material";
+import { Stack, CircularProgress } from "@mui/material";
 
 const PageLoader: FC = () => {
-  return <Box>Loading...</Box>;
+  return (
+    <Stack minHeight="500px" justifyContent="center" alignItems="center" width="100%">
+      <CircularProgress />
+    </Stack>
+  );
 };
 
 export default PageLoader;

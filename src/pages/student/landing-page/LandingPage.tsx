@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
-import useTitle from "src/hooks/useTitle/useTitle";
+import useTitle from "src/hooks/useTitle";
 import { PageProps } from "pages/type";
 import { SectionLandingHero, SectionLandingAbout, SectionLandingContact } from "src/widgets/sections";
 import { SectionFeatures } from "./ui";
@@ -11,7 +11,7 @@ const StudentLandingPage: FC<PageProps> = ({ title }) => {
 
   const { t } = useTranslation("student-landing");
   const heroSectionfeatures: string[] = t("hero-section.features", { returnObjects: true });
-  const aboutSectionWords: string[] = t("about-section.wordList", { returnObjects: true });
+  const aboutSectionWords: string[] = t("about-section.word-list", { returnObjects: true });
 
   return (
     <>
@@ -21,7 +21,7 @@ const StudentLandingPage: FC<PageProps> = ({ title }) => {
         buttonTitle={t("hero-section.button")}
         image={{
           src: "assets/student-landing-hero.png",
-          alt: t("hero-section.imageAltText")
+          alt: t("hero-section.image-alt-text")
         }}
         features={heroSectionfeatures}
       />
@@ -31,7 +31,7 @@ const StudentLandingPage: FC<PageProps> = ({ title }) => {
         description={t("about-section.description")}
         image={{
           src: "assets/student-landing-about.png",
-          alt: "about-section.imageAltText"
+          alt: "about-section.image-alt-text"
         }}
       />
       <SectionFeatures />

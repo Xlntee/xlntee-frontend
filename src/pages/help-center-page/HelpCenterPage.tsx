@@ -7,7 +7,7 @@ import { Box, Button, Container, Stack, TextField, Typography } from "@mui/mater
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import CheckIcon from "@mui/icons-material/Check";
 
-import useTitle from "src/hooks/useTitle/useTitle";
+import useTitle from "src/hooks/useTitle";
 import { XlnteeColors } from "src/shared/themes/colors";
 
 import { PageProps } from "pages/type";

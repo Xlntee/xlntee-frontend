@@ -2,57 +2,33 @@ import { FC } from "react";
 import { Link, Outlet } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-import { Box, Stack, Button } from "@mui/material";
-import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
-import SentimentSatisfiedAltIcon from "@mui/icons-material/SentimentSatisfiedAlt";
+import { Box } from "@mui/material";
 
 import { RootDialog } from "src/widgets/dialogs/RootDialog";
-import { HeaderProfile, Notifications } from "src/widgets/components";
-import Footer from "src/widgets/footer/Footer";
+import { HeaderProfile, NotificationToggler, Footer } from "src/widgets/components";
 import { AppRoutes } from "src/app/routing/appRoutes";
-import { UserRole } from "src/shared/utils/enum";
+import { UserRoles } from "src/shared/utils/user-role";
+import { RootDrawer } from "src/widgets/drawers/RootDrawer";
+import { CoursePreviewButtons } from "src/widgets/teacher";
 
 const CreateCoursePageLayout: FC = () => {
   const { t } = useTranslation("auth");
-  const { t: tTeacherCreateCourse } = useTranslation("teacher-create-course");
 
   return (
     <>
       <HeaderProfile
         link={<Link to={AppRoutes.teacher.dashboard}>{t("dashboard")}</Link>}
-        userRole={UserRole.TEACHER}
-        tools={
-          <Stack direction="row" gap="10px" alignItems="center">
-            <Notifications />
-          </Stack>
-        }
+        userRole={UserRoles.teacher}
+        tools={<NotificationToggler />}
       >
-        <Stack direction="row" gap="14px">
-          <Button
-            className="button-preview button-rounded-md"
-            variant="black-outline"
-            size="small"
-            startIcon={<RemoveRedEyeIcon />}
-            disabled
-          >
-            {tTeacherCreateCourse("button-landing-text")}
-          </Button>
-          <Button
-            className="button-preview button-rounded-md"
-            variant="black-outline"
-            size="small"
-            startIcon={<SentimentSatisfiedAltIcon />}
-            disabled
-          >
-            {tTeacherCreateCourse("button-preview-text")}
-          </Button>
-        </Stack>
+        <CoursePreviewButtons />
       </HeaderProfile>
-      <Box component="main" sx={{ flexGrow: 1 }}>
+      <Box component="main">
         <Outlet />
       </Box>
       <Footer />
       <RootDialog />
+      <RootDrawer />
     </>
   );
 };

@@ -1,4 +1,4 @@
-export enum ToolsTabEnum {
-  Description = "description",
-  Comments = "comments"
-}
+export const ToolsTab = {
+  description: "description",
+  comments: "comments"
+} as const;

@@ -5,7 +5,7 @@ export interface IAppInitializationState {
 }
 
 const appInitializationSlice = createSlice({
-  name: "dialog",
+  name: "appInitialization",
   initialState: {
     loading: false
   },
@@ -18,5 +18,7 @@ const appInitializationSlice = createSlice({
     }
   }
 });
+
+export const { startLoading, stopLoading } = appInitializationSlice.actions;
 
 export default appInitializationSlice.reducer;

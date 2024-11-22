@@ -5,11 +5,11 @@ import { useTranslation } from "react-i18next";
 import { Box, Stack } from "@mui/material";
 
 import { RootDialog } from "src/widgets/dialogs/RootDialog";
-import { CourseComplain, CourseRate, CourseShare, HeaderProfile } from "src/widgets/components";
-import Footer from "src/widgets/footer/Footer";
-import { UserRole } from "src/shared/utils/enum";
-import { Progress } from "src/features";
+import { CourseComplain, CourseRate, CourseShare, HeaderProfile, Footer } from "src/widgets/components";
+import { UserRoles } from "src/shared/utils/user-role";
 import { AppRoutes } from "src/app/routing/appRoutes";
+import { RootDrawer } from "src/widgets/drawers/RootDrawer";
+import { CourseProgress } from "src/widgets/student";
 
 const CoursePageLayout: FC = () => {
   const { t } = useTranslation("auth");
@@ -18,7 +18,7 @@ const CoursePageLayout: FC = () => {
     <>
       <HeaderProfile
         link={<Link to={AppRoutes.student.myLearning}>{t("student-navigation.my-learning")}</Link>}
-        userRole={UserRole.STUDENT}
+        userRole={UserRoles.student}
         tools={
           <Stack direction="row" gap={{ xs: "8px", md: "14px" }} alignItems="center">
             <CourseRate />
@@ -28,14 +28,15 @@ const CoursePageLayout: FC = () => {
         }
       >
         <Box maxWidth="300px" width="100%">
-          <Progress value={60} showValue={true} />
+          <CourseProgress />
         </Box>
       </HeaderProfile>
-      <Box component="main" sx={{ flexGrow: 1 }}>
+      <Box component="main">
         <Outlet />
       </Box>
       <Footer />
       <RootDialog />
+      <RootDrawer />
     </>
   );
 };

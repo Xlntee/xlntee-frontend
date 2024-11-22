@@ -147,7 +147,7 @@ const SectionCourseStructure: FC = () => {
           border={`1px solid ${XlnteeColors.GrayStrokeColor}`}
         >
           <Typography variant="h2" fontWeight={400}>
-            {t("teacher-preview.section-course-structure.title")}
+            {t("section-course-structure.title")}
           </Typography>
           <Stack gap="10px">
             {data.map((item, index) => (

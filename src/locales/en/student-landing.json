@@ -11,13 +11,13 @@
       "Certificates"
     ],
     "button": "Get Started",
-    "imageAltText": "Convenient online learning"
+    "image-alt-text": "Convenient online learning"
   },
   "about-section": {
     "title": "For Students",
-    "wordList": ["Preview", "Learn", "Succeed"],
+    "word-list": ["Preview", "Learn", "Succeed"],
     "description": "Study in a convenient format, get familiar with the lecturer and course materials before purchasing, be sure of your choice by viewing other students' testimonials, and get a completion certificate",
-    "imageAltText": "Succeed by learning in a convenient format"
+    "image-alt-text": "Succeed by learning in a convenient format"
   },
   "features-section": {
     "caption": [

@@ -4,12 +4,11 @@ import { useTranslation } from "react-i18next";
 import { Box, Stack, Typography, List, ListItem, FormControlLabel, Checkbox, Button, TextField } from "@mui/material";
 
 import { MenuToggler } from "src/features";
-import { useAppDispatch } from "src/app/store/store";
-import { closeDialogByName, openDialog } from "src/app/store/slices/dialog/slice";
+import useDialog from "src/hooks/useDialog";
 
 const RefundForm: FC = () => {
   const { t } = useTranslation("student");
-  const dispatch = useAppDispatch();
+  const { onOpenDialog, onCloseDialogByName } = useDialog();
 
   const complainList: string[] = t("refund.list", {
     returnObjects: true
@@ -43,21 +42,18 @@ const RefundForm: FC = () => {
   ];
 
   function onCloseDialog(): void {
-    dispatch(closeDialogByName({ dialogName: "STUDENT_COURSE_REFUND_DIALOG" }));
+    onCloseDialogByName("STUDENT_COURSE_REFUND_DIALOG");
   }
 
   function onSubmit(): void {
-    console.log("StudentCourseRefundDialog");
     onCloseDialog();
-    dispatch(
-      openDialog({
-        dialogName: "REFUND_INFO_DIALOG",
-        dialogSize: "large",
-        options: {
-          id: "11234"
-        }
-      })
-    );
+    onOpenDialog({
+      dialogName: "REFUND_INFO_DIALOG",
+      dialogSize: "large",
+      options: {
+        id: "1234"
+      }
+    });
   }
 
   return (

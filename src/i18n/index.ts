@@ -21,7 +21,8 @@ i18n
       "teacher-preview",
       "teacher-courses",
       "teacher-create-course",
-      "dialog-modal"
+      "dialog-modal",
+      "not-found"
     ],
     partialBundledLanguages: true,
     initImmediate: true,
@@ -37,7 +38,7 @@ export const languages = [
     fullName: "English"
   },
   {
-    code: "uk",
+    code: "uk-UA",
     shortName: "Uk",
     fullName: "Ukrainian"
   }

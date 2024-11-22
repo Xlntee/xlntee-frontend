@@ -31,6 +31,7 @@ const dialogSlice = createSlice({
     },
     closeAllDialogs: (state: IDialogState) => {
       state.stack = [];
+      state.dialogSize = "default";
     },
     closeLatestDialog: (state: IDialogState) => {
       state.stack = state.stack.slice(0, 0);

@@ -7,12 +7,11 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 
 import { MenuToggler } from "src/features";
-import { useAppDispatch } from "src/app/store/store";
-import { closeDialogByName } from "src/app/store/slices/dialog/slice";
+import useDialog from "src/hooks/useDialog";
 
 const StudentCourseShareDialog: FC = () => {
   const { t } = useTranslation("student");
-  const dispatch = useAppDispatch();
+  const { onCloseDialogByName } = useDialog();
 
   const [fieldValue, setFieldValue] = useState<string>("");
 
@@ -22,7 +21,7 @@ const StudentCourseShareDialog: FC = () => {
   }
 
   function onCloseDialog(): void {
-    dispatch(closeDialogByName({ dialogName: "STUDENT_COURSE_SHARE_DIALOG" }));
+    onCloseDialogByName("STUDENT_COURSE_SHARE_DIALOG");
   }
 
   return (

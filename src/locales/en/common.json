@@ -17,5 +17,13 @@
     "answers": "answers"
   },
   "notifications": "Notifications",
-  "no-notifications": "You don't have any notifications yet"
+  "no-notifications": "You don't have any notifications yet",
+  "upload-success": "Upload success",
+  "memory-gb": "GB",
+  "certificate": "Certificate",
+  "button-save": "Save",
+  "button-discard-changes": "Discard changes",
+  "button-submit": "Submit",
+  "complain": "Complain",
+  "refund": "Refund"
 }

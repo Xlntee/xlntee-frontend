@@ -1,4 +1,4 @@
-import { UserRole } from "./utils/enum";
+import { Role } from "./utils/user-role";
 
 type ConfirmationDataType = {
   email: string;
@@ -10,7 +10,7 @@ class LocalStorageService {
   static minutesMs = 60000;
   static expireTime = 3 * LocalStorageService.minutesMs;
 
-  static emailConfirmation(token: string, email: string, role: UserRole): void {
+  static emailConfirmation(token: string, email: string, role: Role): void {
     const now = new Date();
 
     const tokenObj = JSON.stringify({

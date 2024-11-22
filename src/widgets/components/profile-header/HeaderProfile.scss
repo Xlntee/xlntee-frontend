@@ -2,8 +2,8 @@
 @use "styles/breakpoints.scss" as breakpoints;
 
 .header-profile {
-  padding-block: 6px;
-  box-shadow: 0 2px 5px 0 rgb(var(--dark-color) / 0.2);
+  padding-block: 8px;
+  box-shadow: var(--header-shadow);
   position: relative;
   z-index: 1;
 
@@ -71,7 +71,7 @@
     .MuiButtonBase-root {
       min-width: auto;
       padding: 0;
-      min-height: 36px;
+      min-height: 30px;
     }
 
     svg {
@@ -95,14 +95,6 @@
 
       svg {
         color: inherit;
-      }
-    }
-  }
-
-  &__menu-toggler {
-    &.MuiButtonBase-root {
-      @include mixins.media(breakpoints.$mobile_breakpoint_min) {
-        display: none;
       }
     }
   }

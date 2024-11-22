@@ -10,15 +10,7 @@
     margin-right: 2px;
 
     > svg {
-      @include mixins.media(tablet) {
-        font-size: 30px;
-      }
-    }
-  }
-
-  .MuiTypography-caption {
-    @include mixins.media(tablet, max) {
-      display: none;
+      font-size: 30px;
     }
   }
 }

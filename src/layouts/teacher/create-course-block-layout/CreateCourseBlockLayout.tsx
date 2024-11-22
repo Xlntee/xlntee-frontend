@@ -1,103 +1,39 @@
-import { FC, useState } from "react";
-import { NavLink, Outlet, Link as RouterLink, useLocation } from "react-router-dom";
+import { FC, useEffect } from "react";
+import { Outlet, Link as RouterLink, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import cn from "classnames";
 
-import { Box, Container, List, ListItem, Link, Stack, Button, Drawer, Typography } from "@mui/material";
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import { Box, Container, Stack, Button, Typography } from "@mui/material";
 import ErrorOutlineOutlinedIcon from "@mui/icons-material/ErrorOutlineOutlined";
 
-import { AppRoutes } from "src/app/routing/appRoutes";
-import { MenuToggler, Progress } from "src/features";
+import { closeDrawer } from "src/app/store/slices/drawer/slice";
+import { useAppDispatch } from "src/app/store/store";
+import { HideMediaContainer } from "src/features/hide-media-container";
+
+import useDrawer from "src/hooks/useDrawer";
+import { SidebarMenu } from "./ui";
 
 import "./CreateCourseBlockLayout.scss";
 
 const CreateCourseBlockLayout: FC = () => {
-  const { t, ready } = useTranslation("teacher-create-course");
+  const { t } = useTranslation("teacher-create-course");
   const { pathname } = useLocation();
+  const dispatch = useAppDispatch();
+  const { onOpenDrawer, isOpenDrawer } = useDrawer();
 
-  const [openCourseNav, setOpenCourseNav] = useState<boolean>(false);
-
-  if (!ready) return "";
-
-  const navList = [
-    {
-      title: t("general.nav_title"),
-      path: AppRoutes.teacher.createCourse
-    },
-    {
-      title: t("landing.nav_title"),
-      path: AppRoutes.teacher.createCourseLanding
-    },
-    {
-      title: t("structure.nav_title"),
-      path: AppRoutes.teacher.createCourseStructure
-    },
-    {
-      title: t("lecturer.nav_title"),
-      path: AppRoutes.teacher.createCourseLecturer
-    },
-    {
-      title: t("price.nav_title"),
-      path: AppRoutes.teacher.createCoursePrice
-    },
-    {
-      title: t("advertising.nav_title"),
-      path: AppRoutes.teacher.createCourseAdvertising
-    }
-  ];
+  const isOpen = isOpenDrawer("CREATE_COURSE_DRAWER");
 
   function closeAsideMenu(): void {
-    setOpenCourseNav(false);
+    dispatch(closeDrawer());
   }
 
-  const AsideMenu: FC = () => {
-    return (
-      <Stack gap="20px" className="create-course-layout__aside-menu">
-        <Stack className="create-course-nav" direction="column" gap="10px">
-          <List className="create-course-nav__list">
-            {navList.map(({ title, path }, index) => (
-              <ListItem key={index} className="create-course-nav__item">
-                <Link
-                  component={NavLink}
-                  to={path}
-                  className={cn("create-course-nav__link", { "active-page": pathname === path })}
-                  onClick={closeAsideMenu}
-                >
-                  {title}
-                </Link>
-                {index === 0 && (
-                  <Box component="span">
-                    <CheckCircleIcon color="success" fontSize="small" />
-                  </Box>
-                )}
-              </ListItem>
-            ))}
-          </List>
-          <Button
-            variant="black-text"
-            size="small"
-            fullWidth
-            disabled
-            className="create-course-nav__action button-rounded-sm"
-          >
-            {t("publish.nav_title")}
-          </Button>
-        </Stack>
-        <Stack gap="10px">
-          <Progress value={0} title={t("storage")} color="warning">
-            11/120 ГБ
-          </Progress>
-          <Progress value={0} title={t("students")} color="info">
-            0/100
-          </Progress>
-          <Button size="small" variant="black-contain" className="button-rounded-sm">
-            {t("change_plan")}
-          </Button>
-        </Stack>
-      </Stack>
-    );
-  };
+  function openMenu(): void {
+    onOpenDrawer("CREATE_COURSE_DRAWER");
+  }
+
+  useEffect(() => {
+    closeAsideMenu();
+  }, [pathname]);
 
   const LimitError: FC = () => {
     return (
@@ -105,7 +41,7 @@ const CreateCourseBlockLayout: FC = () => {
         <ErrorOutlineOutlinedIcon color="error" />
         <Typography variant="body2" fontWeight={300}>
           {t("error-limits-plan")} {""}
-          <RouterLink to="#">{t("change_plan")}</RouterLink>
+          <RouterLink to="#">{t("change-plan")}</RouterLink>
         </Typography>
       </Stack>
     );
@@ -115,35 +51,27 @@ const CreateCourseBlockLayout: FC = () => {
     <Box className="create-course-layout" pt={{ xs: "40px", md: "60px" }} pb="40px">
       <Container className="create-course-layout__container">
         <LimitError />
-        <Button
-          variant="black-contain"
-          className="create-course-layout__menu-opener"
-          onClick={() => setOpenCourseNav((prev) => !prev)}
-        >
-          {t("course_navigation")}
-        </Button>
-        <Box className="create-course-layout__grid">
-          <Box component="aside" className={cn("create-course-layout__aside", { open: openCourseNav })}>
-            <AsideMenu />
-          </Box>
+        <HideMediaContainer type="up" breakpoint="xl">
+          <Button variant="black-contain" onClick={openMenu}>
+            {t("course-navigation")}
+          </Button>
+        </HideMediaContainer>
+        <Box pt="20px" className="create-course-layout__grid">
+          <HideMediaContainer type="down" breakpoint="xl">
+            <Box
+              component="aside"
+              className={cn("create-course-layout__aside", {
+                open: isOpen
+              })}
+            >
+              <SidebarMenu />
+            </Box>
+          </HideMediaContainer>
           <Box component="section" className="create-course-layout__body">
             <Outlet />
           </Box>
         </Box>
       </Container>
-      <Drawer anchor="left" open={openCourseNav} onClose={closeAsideMenu} className="drawer drawer--lg">
-        <Box className="drawer__inner">
-          <Box className="drawer__header">
-            <Typography variant="body1" className="drawer__title">
-              {t("course_navigation")}
-            </Typography>
-            <MenuToggler active={openCourseNav} onClick={closeAsideMenu} className="drawer__close" />
-          </Box>
-          <Box className="drawer__body">
-            <AsideMenu />
-          </Box>
-        </Box>
-      </Drawer>
     </Box>
   );
 };

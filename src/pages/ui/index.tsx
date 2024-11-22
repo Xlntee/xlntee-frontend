@@ -3,10 +3,10 @@ import { Button, Container, Stack, Box, Typography, Grid, TextField, InputLabel,
 
 import { DialogModal, Snackbar } from "src/features";
 
-import useTitle from "src/hooks/useTitle/useTitle";
+import useTitle from "src/hooks/useTitle";
 import { PageProps } from "pages/type";
 import { Header, HeaderProfile } from "src/widgets/components";
-import { UserRole } from "src/shared/utils/enum";
+import { UserRoles } from "src/shared/utils/user-role";
 
 const typographyList = ["h1", "h2", "h3", "h4", "h5", "h6"] as const;
 const buttonColorList = ["primary", "secondary", "success", "error"] as const;
@@ -291,13 +291,13 @@ const UiPage: FC<PageProps> = ({ title }) => {
           <Typography mb="20px" variant="h3">
             Student
           </Typography>
-          <HeaderProfile userRole={UserRole.STUDENT} />
+          <HeaderProfile userRole={UserRoles.student} />
         </Box>
         <Box mb="20px">
           <Typography mb="20px" variant="h3">
             Teacher
           </Typography>
-          <HeaderProfile userRole={UserRole.TEACHER} />
+          <HeaderProfile userRole={UserRoles.teacher} />
         </Box>
       </Container>
     </Box>

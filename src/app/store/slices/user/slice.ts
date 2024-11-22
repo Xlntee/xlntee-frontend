@@ -1,29 +1,32 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { RootState } from "src/app/store/store";
-import { UserRole } from "src/shared/utils/enum";
+import { UserRoles, Role } from "src/shared/utils/user-role";
+import { RootState } from "../../store";
 
 export interface IUserState {
-  role: string;
+  role: Role | null;
 }
+
+const initialState: IUserState = {
+  role: null
+};
+
 export const getUser = (state: RootState): IUserState => state.user;
 
 const userSlice = createSlice({
   name: "user",
-  initialState: {
-    role: ""
-  },
+  initialState,
   reducers: {
-    setRole: (state: IUserState, action: PayloadAction<{ role: string }>) => {
+    setRole: (state: IUserState, action: PayloadAction<{ role: Role }>) => {
       const { role } = action.payload;
       state.role = role;
     },
     switchRole: (state: IUserState) => {
       const role = state.role;
-      if (role === UserRole.STUDENT) {
-        state.role = UserRole.TEACHER;
+      if (role === UserRoles.student) {
+        state.role = UserRoles.teacher;
       }
-      if (role === UserRole.TEACHER) {
-        state.role = UserRole.STUDENT;
+      if (role === UserRoles.teacher) {
+        state.role = UserRoles.student;
       }
     }
   }

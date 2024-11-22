@@ -7,8 +7,8 @@ import {
   createApi,
   fetchBaseQuery
 } from "@reduxjs/toolkit/query/react";
-import { logOut, setCredentials } from "pages/auth/login/store/authSlice";
 import { RootState } from "src/app/store/store";
+import { logOut, setCredentials } from "../store/slices/auth/slice";
 
 const baseQuery = fetchBaseQuery({
   baseUrl: "/api/v1",

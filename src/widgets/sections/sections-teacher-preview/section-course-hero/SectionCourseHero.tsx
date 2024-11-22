@@ -13,7 +13,7 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
 import { Rating } from "src/features";
-import { Difficulty, Language } from "src/entities/course/model";
+import { DifficultyType, LanguageType } from "src/entities/course/model";
 import { XlnteeColors } from "src/shared/themes/colors";
 
 import "./SectionCourseHero.scss";
@@ -26,8 +26,8 @@ interface SectionCourseHeroProps {
   rating?: number;
   price: number;
   discount: number;
-  level: Difficulty;
-  language: Language;
+  level: DifficultyType;
+  language: LanguageType;
   generateCertificate: boolean;
   reviewCount?: number;
 }
@@ -70,7 +70,7 @@ const SectionCourseHero: FC<SectionCourseHeroProps> = ({
       icon: <LocalActivityIcon />,
       text: generateCertificate ? "Видається сертифікат" : "Сертифікат не видається"
     }
-  ];
+  ] as const;
 
   return (
     <Box component="section" className="section-course-hero" py="50px">
@@ -100,7 +100,7 @@ const SectionCourseHero: FC<SectionCourseHeroProps> = ({
               </Box>
               <Stack direction="column" gap="10px">
                 <Typography color={XlnteeColors.BrandColor} maxWidth={{ lg: "80%" }}>
-                  {t("teacher-preview.section-course-hero.creator")}
+                  {t("section-course-hero.creator")}
                   &nbsp;
                   {nickname}
                 </Typography>
@@ -131,10 +131,10 @@ const SectionCourseHero: FC<SectionCourseHeroProps> = ({
                   </Stack>
                   <Stack direction="row" gap="12px">
                     <Button variant="black-outline" className="button-rounded-xl">
-                      {t("teacher-preview.section-course-hero.actionViewCourse")}
+                      {t("section-course-hero.actionViewCourse")}
                     </Button>
                     <Button variant="contained" color="primary" className="button-rounded-xl">
-                      {t("teacher-preview.section-course-hero.actionBuyCourse")}
+                      {t("section-course-hero.actionBuyCourse")}
                     </Button>
                   </Stack>
                 </Stack>

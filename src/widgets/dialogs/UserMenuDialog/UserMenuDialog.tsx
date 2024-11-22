@@ -2,19 +2,17 @@ import { FC } from "react";
 
 import { Box } from "@mui/material";
 
-import { useAppDispatch } from "src/app/store/store";
-import { closeDialogByName } from "src/app/store/slices/dialog/slice";
-
 import { MenuToggler } from "src/features";
 import { AccountMenu } from "src/widgets/components/account-menu";
+import useDialog from "src/hooks/useDialog";
 
 import "./UserMenuDialog.scss";
 
 const UserMenuDialog: FC = () => {
-  const dispatch = useAppDispatch();
+  const { onCloseDialogByName } = useDialog();
 
   function onCloseDialog(): void {
-    dispatch(closeDialogByName({ dialogName: "USER_MENU_DIALOG" }));
+    onCloseDialogByName("USER_MENU_DIALOG");
   }
 
   return (

@@ -5,14 +5,15 @@ import cn from "classnames";
 import { Box, Stack } from "@mui/material";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 
-import { RootDialog } from "src/widgets/dialogs/RootDialog";
-import { HeaderProfile, Notifications } from "src/widgets/components";
-import Footer from "src/widgets/footer/Footer";
-import { UserRole } from "src/shared/utils/enum";
 import { AppRoutes } from "src/app/routing/appRoutes";
+import { RootDialog } from "src/widgets/dialogs/RootDialog";
+import { HeaderProfile, NotificationToggler, Footer } from "src/widgets/components";
+import AuthStudentContainer from "src/widgets/components/auth-student-container";
+import { RootDrawer } from "src/widgets/drawers/RootDrawer";
+import { Role } from "src/shared/utils/user-role";
 
 interface PrivateLayoutProps {
-  userRole: UserRole;
+  userRole: Role;
 }
 
 const PrivateLayout: FC<PrivateLayoutProps> = ({ userRole }) => {
@@ -24,23 +25,25 @@ const PrivateLayout: FC<PrivateLayoutProps> = ({ userRole }) => {
         userRole={userRole}
         tools={
           <Stack direction="row" gap="10px" alignItems="center">
-            {userRole === UserRole.STUDENT && (
+            <AuthStudentContainer>
               <Link
                 to={AppRoutes.student.favoriteCourses}
                 className={cn({ active: pathname === AppRoutes.student.favoriteCourses })}
+                aria-label="link to favorite"
               >
                 <FavoriteBorderOutlinedIcon />
               </Link>
-            )}
-            <Notifications />
+            </AuthStudentContainer>
+            <NotificationToggler />
           </Stack>
         }
       />
-      <Box component="main" sx={{ flexGrow: 1 }}>
+      <Box component="main">
         <Outlet />
       </Box>
       <Footer />
       <RootDialog />
+      <RootDrawer />
     </>
   );
 };

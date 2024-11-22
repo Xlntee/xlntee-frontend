@@ -15,7 +15,7 @@ const CoursePreviewDescriptionBlock: FC<CoursePreviewDescriptionBlockProps> = ({
       <Container>
         <Stack p={{ xs: "20px", md: "26px 32px" }} gap="18px" borderRadius="20px">
           <Typography variant="h2" fontWeight={400}>
-            {t("teacher-preview.section-course-description.title")}
+            {t("section-course-description.title")}
           </Typography>
           <Box pl={{ xs: "16px", md: "28px" }}>
             <Typography variant="body1">{courseDescription}</Typography>

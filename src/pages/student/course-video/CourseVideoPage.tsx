@@ -1,26 +1,26 @@
 import { FC, useState } from "react";
 import { Box } from "@mui/material";
 
-import useTitle from "src/hooks/useTitle/useTitle";
+import useTitle from "src/hooks/useTitle";
 import { PageProps } from "pages/type";
 
 import { Comments, Description, Tools, Video } from "./ui";
-import { ToolsTabEnum } from "./types";
+import { ToolsTab } from "./types";
 
 const CoursePage: FC<PageProps> = ({ title }) => {
   useTitle(title);
 
-  const [tab, setTab] = useState<string>(ToolsTabEnum.Description);
+  const [tab, setTab] = useState<string>(ToolsTab.description);
 
   return (
     <Box pb="20px">
       <Video video="https://tekeye.uk/html/images/Joren_Falls_Izu_Jap.mp4" type="video/mp4" />
       <Box px="20px">
         <Tools onClickTab={(v) => setTab(v)} />
-        {tab === ToolsTabEnum.Description && (
+        {tab === ToolsTab.description && (
           <Description text="композиційно-стилістичний спосіб викладуматеріалу в художньому, передусім епічному творі, полягає  послідовному відтворенні логічних зв'язків між явищами, поняттями,  фіксуванні окремих ознак, рис, властивостей персонажів, зображуваних краєвидів, інтер'єрів, предметів тощо.поширений композиційно-стилістичний спосіб викладу матеріалупослідовному відтворенні логічних зв'язків між явищами, поняттями, фіксуванні окремих ознак, рис, властивостей персонажів, зображуваних краєвидів, інтер'єрів, предметів тощо" />
         )}
-        {tab === ToolsTabEnum.Comments && (
+        {tab === ToolsTab.comments && (
           <Comments
             id="1"
             comments={[

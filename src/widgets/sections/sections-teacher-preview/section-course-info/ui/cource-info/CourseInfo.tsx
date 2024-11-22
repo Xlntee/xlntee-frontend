@@ -13,7 +13,7 @@ const CoursePreviewInfoBlock: React.FC<CoursePreviewInfoBlockProps> = ({ title, 
       gap="14px"
       p={{ xs: "20px", md: "26px 32px" }}
       borderRadius="20px"
-      bgcolor="#f9f9f9"
+      bgcolor={XlnteeColors.GrayColor800}
       border={`1px solid ${XlnteeColors.GrayColor400}`}
     >
       <Typography variant="h2" fontWeight={400}>

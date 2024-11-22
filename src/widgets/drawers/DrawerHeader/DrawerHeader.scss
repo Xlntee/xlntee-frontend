@@ -1,0 +1,16 @@
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 10px 20px;
+  box-shadow: var(--header-shadow);
+
+  &__close {
+    width: 30px;
+
+    svg {
+      width: 30px;
+    }
+  }
+}

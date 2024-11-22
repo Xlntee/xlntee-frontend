@@ -1,9 +1,7 @@
-import { lazy, useEffect, FC } from "react";
+import { lazy, FC } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
-import { useAppDispatch } from "src/app/store/store";
-import { setRole } from "src/app/store/slices/user/slice";
-import { UserRole } from "src/shared/utils/enum";
+import { UserRoles } from "src/shared/utils/user-role";
 
 import {
   AuthLayout,
@@ -22,17 +20,20 @@ import { LoginForm, RegistrationForm, AccountVerificationForm, PasswordUpdate } 
 import AuthTab from "src/widgets/components/auth-tab/AuthTab";
 import { SuspenseWrapper } from "src/shared/utils/suspense-wrapper";
 
+import NotFoundPage from "src/pages/not-found/NotFoundPage";
+import { GridCardSkeleton } from "src/features/skeletons";
+
 // Lazy load the component
 const EmailUpdatePage = lazy(() => import("src/pages/auth/email-update/EmailUpdatePage"));
 const PasswordUpdatePage = lazy(() => import("src/pages/auth/password-update/PasswordUpdatePage"));
 
-const CoursePreviewPage = lazy(() => import("src/pages/course-preview/CoursePreviewPage"));
-const CreateCourseGeneralPage = lazy(() => import("src/pages/create-course/general/General"));
-const CreateCourseLandingPage = lazy(() => import("src/pages/create-course/landing/Landing"));
-const CreateCourseStructurePage = lazy(() => import("src/pages/create-course/structure/Structure"));
-const CreateCourseLecturerPage = lazy(() => import("src/pages/create-course/lecturer/Lecturer"));
-const CreateCoursePricePage = lazy(() => import("src/pages/create-course/price/Price"));
-const CreateCourseAdvertisingPage = lazy(() => import("src/pages/create-course/advertising/Advertising"));
+const CoursePreviewPage = lazy(() => import("pages/teacher/course-preview/CoursePreviewPage"));
+const CreateCourseGeneralPage = lazy(() => import("pages/teacher/create-course/general/General"));
+const CreateCourseLandingPage = lazy(() => import("pages/teacher/create-course/landing/Landing"));
+const CreateCourseStructurePage = lazy(() => import("pages/teacher/create-course/structure/Structure"));
+const CreateCourseLecturerPage = lazy(() => import("pages/teacher/create-course/lecturer/Lecturer"));
+const CreateCoursePricePage = lazy(() => import("pages/teacher/create-course/price/Price"));
+const CreateCourseAdvertisingPage = lazy(() => import("pages/teacher/create-course/advertising/Advertising"));
 
 const StudentLandingPage = lazy(() => import("src/pages/student/landing-page/LandingPage"));
 const StudentMyLearningPage = lazy(() => import("src/pages/student/my-learning/MyLearningPage"));
@@ -46,6 +47,7 @@ const StudentProfilePage = lazy(() => import("src/pages/student/profile-page/Pro
 
 const TeacherLandingPage = lazy(() => import("src/pages/teacher/landing-page/LandingPage"));
 const UiPage = lazy(() => import("src/pages/ui"));
+
 const MyCoursesPage = lazy(() => import("src/pages/teacher/my-courses-page/MyCoursesPage"));
 const StatisticPage = lazy(() => import("src/pages/teacher/statistic-page/StatisticPage"));
 const TeacherProfilePage = lazy(() => import("src/pages/teacher/profile-page/ProfilePage"));
@@ -221,19 +223,23 @@ const studentDashboardRoutes = [
   {
     path: AppRoutes.student.myLearning,
     element: (
-      <SuspenseWrapper>
+      <SuspenseWrapper loaderComponent={<GridCardSkeleton />}>
         <StudentMyLearningPage title="My learning" />
       </SuspenseWrapper>
     )
   },
   {
     path: AppRoutes.student.profile,
-    element: <StudentProfilePage title="Profile" />
+    element: (
+      <SuspenseWrapper>
+        <StudentProfilePage title="Profile" />
+      </SuspenseWrapper>
+    )
   },
   {
     path: AppRoutes.student.completedCourses,
     element: (
-      <SuspenseWrapper>
+      <SuspenseWrapper loaderComponent={<GridCardSkeleton />}>
         <StudentCompletedCoursesPage title="Completed courses" />
       </SuspenseWrapper>
     )
@@ -241,7 +247,7 @@ const studentDashboardRoutes = [
   {
     path: AppRoutes.student.certificates,
     element: (
-      <SuspenseWrapper>
+      <SuspenseWrapper loaderComponent={<GridCardSkeleton />}>
         <StudentCertificatesPage title="Certificates" />
       </SuspenseWrapper>
     )
@@ -257,7 +263,7 @@ const studentDashboardRoutes = [
   {
     path: AppRoutes.student.favoriteCourses,
     element: (
-      <SuspenseWrapper>
+      <SuspenseWrapper loaderComponent={<GridCardSkeleton />}>
         <StudentFavoriteCoursesPage title="Favorite courses" />
       </SuspenseWrapper>
     )
@@ -311,6 +317,10 @@ const router = createBrowserRouter([
       },
       {
         path: AppRoutes.ui,
+        element: <UiPage title="UI" />
+      },
+      {
+        path: AppRoutes.ui,
         element: (
           <SuspenseWrapper>
             <UiPage title="UI" />
@@ -318,14 +328,14 @@ const router = createBrowserRouter([
         )
       },
       {
-        path: AppRoutes.notFound,
-        element: <div>404</div>
+        path: AppRoutes.anyRoute,
+        element: <NotFoundPage title="Not found" />
       },
       ...authRoutes
     ]
   },
   {
-    element: <ProtectedRoute element={<PrivateLayout userRole={UserRole.STUDENT} />} />,
+    element: <ProtectedRoute element={<PrivateLayout userRole={UserRoles.student} />} />,
     children: studentDashboardRoutes
   },
   {
@@ -363,7 +373,7 @@ const router = createBrowserRouter([
     ]
   },
   {
-    element: <ProtectedRoute element={<PrivateLayout userRole={UserRole.TEACHER} />} />,
+    element: <ProtectedRoute element={<PrivateLayout userRole={UserRoles.teacher} />} />,
     children: teacherDashboardRoutes
   },
   {
@@ -378,17 +388,6 @@ const router = createBrowserRouter([
 ]);
 
 const AppRouter: FC = () => {
-  const userRole = window.location.pathname.split("/")[1];
-  const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    dispatch(
-      setRole({
-        role: userRole
-      })
-    );
-  }, []);
-
   return <RouterProvider router={router} />;
 };
 

@@ -25,7 +25,8 @@ const CourseCardProgress: FC<CourseCardProgressProps> = ({ title, image, progres
         </Typography>
         <Progress size="sm" value={progress} className="course-card-progress__progress" />
       </Box>
-      <Link className="course-card-progress__link" to={href} />
+
+      <Link className="course-card-progress__link" aria-label={`link to course ${title}`} to={href} />
     </Box>
   );
 };

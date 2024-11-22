@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import { Box, Container } from "@mui/material";
 
-import useTitle from "src/hooks/useTitle/useTitle";
+import useTitle from "src/hooks/useTitle";
 import { PageProps } from "pages/type";
 import { CardList, CourseCardProgress } from "src/features";
 import { AppRoutes } from "src/app/routing/appRoutes";
@@ -16,7 +16,7 @@ const MyLearningPage: FC<PageProps> = ({ title }) => {
   const { t } = useTranslation("student");
 
   return (
-    <Box component="section" py={7}>
+    <Box component="section" py="40px">
       <Container>
         <CardList
           items={myCourses}

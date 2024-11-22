@@ -1,15 +1,18 @@
 import { AlertColor } from "@mui/material";
 import { useReducer } from "react";
 
-enum EnumActionType {
-  SHOW = "SHOW",
-  CLOSE = "CLOSE",
-  SET_COLOR = "SET_COLOR",
-  SET_MESSAGE = "SET_MESSAGE"
-}
+const SnackbarActions = {
+  show: "SHOW",
+  close: "CLOSE",
+  setColor: "SET_COLOR",
+  setMessage: "SET_MESSAGE"
+} as const;
+
+type SnackbarActionKey = keyof typeof SnackbarActions;
+type SnackbarActionsType = (typeof SnackbarActions)[SnackbarActionKey];
 
 type ActionType = {
-  type: EnumActionType;
+  type: SnackbarActionsType;
   payload: string;
 };
 
@@ -19,7 +22,7 @@ interface ActionState {
   color: string;
 }
 
-interface UseSnackbarAlertReturnType {
+interface UseSnackbarAlert {
   alertVisible: boolean;
   alertMessage: string;
   alertColor: AlertColor;
@@ -66,33 +69,33 @@ function reducer(state: ActionState, action: ActionType): ActionState {
   }
 }
 
-export const useSnackbarAlert = (): UseSnackbarAlertReturnType => {
+export const useSnackbarAlert = (): UseSnackbarAlert => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   function showAlert(): void {
     dispatch({
-      type: EnumActionType.SHOW,
+      type: SnackbarActions.show,
       payload: ""
     });
   }
 
   function closeAlert(): void {
     dispatch({
-      type: EnumActionType.CLOSE,
+      type: SnackbarActions.close,
       payload: ""
     });
   }
 
   function setMessageAlert(message: string): void {
     dispatch({
-      type: EnumActionType.SET_MESSAGE,
+      type: SnackbarActions.setMessage,
       payload: message
     });
   }
 
   function setColorAlert(color: AlertColor): void {
     dispatch({
-      type: EnumActionType.SET_COLOR,
+      type: SnackbarActions.setColor,
       payload: color
     });
   }

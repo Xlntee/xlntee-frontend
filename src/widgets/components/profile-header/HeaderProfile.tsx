@@ -1,17 +1,17 @@
-import { FC, useState } from "react";
-import { useTranslation } from "react-i18next";
+import { FC } from "react";
 import cn from "classnames";
 
 import { Box, Container, Stack } from "@mui/material";
-import VideocamIcon from "@mui/icons-material/Videocam";
-import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
-import DoneOutlineIcon from "@mui/icons-material/DoneOutline";
-import LocalActivityIcon from "@mui/icons-material/LocalActivity";
-import CreditCardIcon from "@mui/icons-material/CreditCard";
 
-import { MenuToggler, Navigation, NavigationDrawer, NavigationLinkType } from "src/features";
-import { UserRole } from "src/shared/utils/enum";
-import { AppRoutes } from "src/app/routing/appRoutes";
+import useDrawer from "src/hooks/useDrawer";
+
+import { MenuToggler, Navigation, NavigationLinkType } from "src/features";
+import { Role, UserRoles } from "src/shared/utils/user-role";
+
+import useHeaderNavigationStudent from "src/hooks/useHeaderNavigationStudent";
+import useHeaderNavigationTeacher from "src/hooks/useHeaderNavigationTeacher";
+import { useAuth } from "src/hooks/useAuth";
+import { HideMediaContainer } from "src/features/hide-media-container";
 
 import { User } from "../user";
 
@@ -21,82 +21,34 @@ type HeaderProfileProps = {
   children?: React.ReactNode;
   className?: string;
   link?: React.ReactNode;
-  userRole: UserRole;
+  userRole: Role;
   tools?: React.ReactNode;
 };
 
 const HeaderProfile: FC<HeaderProfileProps> = ({ children, link, tools, className, userRole }) => {
-  const { t } = useTranslation("auth");
+  const { isOpenDrawer, onOpenDrawer } = useDrawer();
+  const { navigationList: studentNavigationList } = useHeaderNavigationStudent();
+  const { navigationList: teacherNavigationList } = useHeaderNavigationTeacher();
+  const { isStudentRole, isTeacherRole } = useAuth();
+  const isOpen = isOpenDrawer("STUDENT_COURSE_NAVIGATION_DRAWER");
 
-  const [open, setOpen] = useState<boolean>(false);
-
-  const teacherNavList: NavigationLinkType[] = [
-    {
-      id: "1",
-      name: t("teacher-navigation.courses"),
-      path: AppRoutes.teacher.myCourses,
-      icon: <VideocamIcon />
-    },
-    {
-      id: "2",
-      name: t("teacher-navigation.billing"),
-      path: AppRoutes.teacher.billing,
-      icon: <CreditCardIcon />
-    },
-    {
-      id: "3",
-      name: t("teacher-navigation.support"),
-      path: AppRoutes.teacher.support,
-      icon: <HelpOutlineIcon />
-    },
-    {
-      id: "4",
-      name: t("teacher-navigation.tariff-plans"),
-      path: AppRoutes.teacher.tariffPlans,
-      className: "navigation__action"
+  function toggleDrawer(): void {
+    if (isStudentRole) {
+      onOpenDrawer("STUDENT_COURSE_NAVIGATION_DRAWER");
     }
-  ];
-
-  const studentNavList: NavigationLinkType[] = [
-    {
-      id: "1",
-      name: t("student-navigation.my-learning"),
-      path: AppRoutes.student.myLearning,
-      icon: <VideocamIcon />
-    },
-    {
-      id: "2",
-      name: t("student-navigation.completed-courses"),
-      path: AppRoutes.student.completedCourses,
-      icon: <DoneOutlineIcon />
-    },
-    {
-      id: "3",
-      name: t("student-navigation.certificates"),
-      path: AppRoutes.student.certificates,
-      icon: <LocalActivityIcon />
-    },
-    {
-      id: "4",
-      name: t("student-navigation.support"),
-      path: AppRoutes.student.support,
-      icon: <HelpOutlineIcon />
+    if (isTeacherRole) {
+      onOpenDrawer("TEACHER_CREATE_COURSE_NAVIGATION_DRAWER");
     }
-  ];
-
-  const toggleDrawer = (): void => {
-    setOpen((prevState) => !prevState);
-  };
-
-  function onClose(): void {
-    setOpen(false);
   }
 
   function getNavigation(): NavigationLinkType[] {
-    if (userRole === UserRole.STUDENT) {
-      return studentNavList;
+    if (userRole === UserRoles.student) {
+      return studentNavigationList;
     }
-    return teacherNavList;
+    if (userRole === UserRoles.teacher) {
+      return teacherNavigationList;
+    }
+    return [];
   }
 
   return (
@@ -121,13 +73,12 @@ const HeaderProfile: FC<HeaderProfileProps> = ({ children, link, tools, classNam
               {tools}
               <User />
             </Stack>
-            <MenuToggler active={open} onClick={toggleDrawer} className="header-profile__menu-toggler" />
+            <HideMediaContainer type="up" breakpoint="xl">
+              <MenuToggler active={isOpen} onClick={toggleDrawer} className="header-profile__menu-toggler" />
+            </HideMediaContainer>
           </Stack>
         </Box>
       </Container>
-      <NavigationDrawer navigationList={getNavigation()} open={open} onClose={onClose}>
-        {children}
-      </NavigationDrawer>
     </Box>
   );
 };
