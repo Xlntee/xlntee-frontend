@@ -61,14 +61,14 @@ const LandingPage: FC<PageProps> = ({ title }) => {
 
   const fields: AutocompleteFieldBoxProps[] = [
     {
-      title: `${t("landing.subjects_field_label")}`,
-      subtitle: `${t("landing.subjects_field_description")}`,
+      title: `${t("landing.subjects-field-label")}`,
+      subtitle: `${t("landing.subjects-field-description")}`,
       tags: [],
       value: "subjects"
     },
     {
-      title: `${t("landing.requirements_field_label")}`,
-      subtitle: `${t("landing.requirements_field_description")}`,
+      title: `${t("landing.requirements-field-label")}`,
+      subtitle: `${t("landing.requirements-field-description")}`,
       tags: [],
       value: "requirements"
     }
@@ -92,10 +92,10 @@ const LandingPage: FC<PageProps> = ({ title }) => {
     }
   }
 
-  const videoRequirements: { title: string; value: string }[] = t("landing.promo_video_requirements", {
+  const videoRequirements: { title: string; value: string }[] = t("landing.promo-video-requirements", {
     returnObjects: true
   });
-  const imageRequirements: { title: string; value: string }[] = t("landing.promo_image_requirements", {
+  const imageRequirements: { title: string; value: string }[] = t("landing.promo-image-requirements", {
     returnObjects: true
   });
 
@@ -130,7 +130,7 @@ const LandingPage: FC<PageProps> = ({ title }) => {
                           error={!!errors[fieldItem.value]?.message}
                           helperText={errors[fieldItem.value]?.message}
                           variant="outlined"
-                          placeholder={`${t("landing.autocomplete_field_placeholder")}...`}
+                          placeholder={`${t("landing.autocomplete-field-placeholder")}...`}
                         />
                       )}
                     />
@@ -141,8 +141,8 @@ const LandingPage: FC<PageProps> = ({ title }) => {
           </Box>
         ))}
         <Box className="field-box">
-          <Typography className="field-box__title">{t("landing.describe-course_field_label")}*</Typography>
-          <Typography className="field-box__subtitle">{t("landing.describe-course_field_description")}</Typography>
+          <Typography className="field-box__title">{t("landing.describe-course-field-label")}*</Typography>
+          <Typography className="field-box__subtitle">{t("landing.describe-course-field-description")}</Typography>
           <Box>
             <ReactQuill onBlur={(_val1, _val2, data) => onBlurRichText(data.getHTML())} theme="snow" />
             {errors.description?.message && <FormHelperText error={true}>{errors.description?.message}</FormHelperText>}
@@ -153,8 +153,8 @@ const LandingPage: FC<PageProps> = ({ title }) => {
         <Grid container justifyContent="space-between">
           <Grid item xs={12} md={4}>
             <Box className="field-box">
-              <Typography className="field-box__title">{t("landing.promo_video_label")}*</Typography>
-              <Typography className="field-box__subtitle">{t("landing.promo_video_description")}</Typography>
+              <Typography className="field-box__title">{t("landing.promo-video-label")}*</Typography>
+              <Typography className="field-box__subtitle">{t("landing.promo-video-description")}</Typography>
               {typeof videoRequirements === "object" && videoRequirements.length && (
                 <Box mb="10px">
                   <ListRequirements items={videoRequirements} />
@@ -162,7 +162,7 @@ const LandingPage: FC<PageProps> = ({ title }) => {
               )}
               <VideoUpload
                 showPreview={false}
-                buttonText={`${t("landing.promo_button_text")}`}
+                buttonText={`${t("landing.promo-button-text")}`}
                 onChange={(file, fileBlob) => onUploadVideo(file as File, fileBlob)}
               />
             </Box>
@@ -177,8 +177,8 @@ const LandingPage: FC<PageProps> = ({ title }) => {
         <Grid container justifyContent="space-between">
           <Grid item xs={12} md={4}>
             <Box className="field-box">
-              <Typography className="field-box__title">{t("landing.promo_image_label")}*</Typography>
-              <Typography className="field-box__subtitle">{t("landing.promo_image_description")}</Typography>
+              <Typography className="field-box__title">{t("landing.promo-image-label")}*</Typography>
+              <Typography className="field-box__subtitle">{t("landing.promo-image-description")}</Typography>
               {typeof imageRequirements === "object" && imageRequirements.length && (
                 <Box mb="10px">
                   <ListRequirements items={imageRequirements} />
@@ -187,7 +187,7 @@ const LandingPage: FC<PageProps> = ({ title }) => {
               <ImageUpload
                 viewType="wide"
                 showPreview={false}
-                buttonText={`${t("landing.promo_button_text")}`}
+                buttonText={`${t("landing.promo-button-text")}`}
                 onChange={(file, fileBlob) => onUploadImage(file as File, fileBlob)}
               />
             </Box>
@@ -201,10 +201,10 @@ const LandingPage: FC<PageProps> = ({ title }) => {
         </Grid>
         <Stack direction={{ sm: "row" }} flexWrap="wrap" gap={{ sm: "20px", md: "40px" }}>
           <Button variant="black-contain" size="medium" sx={{ minWidth: "190px" }} onClick={handleSubmit(onSubmitForm)}>
-            {t("button_save")}
+            {t("button-save")}
           </Button>
           <Button variant="black-text" size="medium">
-            {t("button_discard_changes")}
+            {t("button-discard-changes")}
           </Button>
         </Stack>
       </Stack>

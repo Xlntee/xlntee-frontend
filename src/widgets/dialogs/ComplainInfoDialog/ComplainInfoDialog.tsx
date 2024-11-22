@@ -19,7 +19,7 @@ const ComplainInfoDialog: FC = () => {
       <MenuToggler active={true} onClick={onCloseDialog} className="dialog-box__close-btn" />
       <InfoCourseComplain
         image="/assets/complain.png"
-        imageDescription={t("complain.imageDescription")}
+        imageDescription={t("complain.image-description")}
         message={t("complain.message", {
           code: getOptionsFromDialog("COMPLAIN_INFO_DIALOG").id
         })}

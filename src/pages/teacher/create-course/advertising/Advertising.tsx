@@ -19,7 +19,7 @@ const AdvertisingPage: FC<PageProps> = ({ title }) => {
   function onCopyToClipboard(): void {
     if (!fieldValue.length) return;
 
-    setMessageAlert(t("advertising.clipboard_message"));
+    setMessageAlert(t("advertising.clipboard-message"));
     navigator.clipboard.writeText(fieldValue);
     showAlert();
   }
@@ -28,13 +28,13 @@ const AdvertisingPage: FC<PageProps> = ({ title }) => {
     <Box className="create-course-advertising">
       <Box className="field-box">
         <Typography variant="h5" className="field-box__title">
-          {t("advertising.course_url_label")}*
+          {t("advertising.course-url-label")}*
         </Typography>
-        <Typography className="field-box__subtitle">{t("advertising.course_url_description")}</Typography>
+        <Typography className="field-box__subtitle">{t("advertising.course-url-description")}</Typography>
         <TextField
           variant="outlined"
           fullWidth
-          placeholder={`${t("advertising.course_url_placeholder")}...`}
+          placeholder={`${t("advertising.course-url-placeholder")}...`}
           onChange={(e) => setFieldValue(e.currentTarget.value)}
           InputProps={{
             endAdornment: (

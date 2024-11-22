@@ -52,8 +52,7 @@ const RegistrationForm: FC = () => {
           })}
           onClick={() => setRole(UserRoles.student)}
         >
-          {t("as")}
-          {""} {t("role-student")}
+          {t("registration-as-student")}
         </Button>
         <Button
           variant="black-outline"
@@ -65,8 +64,7 @@ const RegistrationForm: FC = () => {
           })}
           onClick={() => setRole(UserRoles.teacher)}
         >
-          {t("as")}
-          {""} {t("role-teacher")}
+          {t("registration-as-teacher")}
         </Button>
       </Stack>
       <Stack direction="column" gap="20px">

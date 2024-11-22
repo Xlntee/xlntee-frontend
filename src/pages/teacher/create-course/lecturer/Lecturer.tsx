@@ -48,28 +48,28 @@ const LecturerPage: FC<PageProps> = ({ title }) => {
           showPreview={true}
           centeredContent={true}
           viewType="avatar"
-          buttonText={t("lecturer.image_upload_button_text")}
-          title={t("lecturer.image_upload_title")}
+          buttonText={t("lecturer.image-upload-button-text")}
+          title={t("lecturer.image-upload-title")}
         />
       </Box>
       <Box className="field-box">
         <Typography variant="h5" className="field-box__title">
-          {t("lecturer.fullname_field_label")}
+          {t("lecturer.fullname-field-label")}
         </Typography>
-        <Typography className="field-box__subtitle">{t("lecturer.fullname_field_description")}</Typography>
+        <Typography className="field-box__subtitle">{t("lecturer.fullname-field-description")}</Typography>
         <TextField
           {...register("username")}
           error={!!errors.username?.message}
           helperText={errors.username?.message}
           variant="outlined"
           fullWidth
-          placeholder={`${t("lecturer.fullname_field_placeholder")}...`}
+          placeholder={`${t("lecturer.fullname-field-placeholder")}...`}
         />
       </Box>
       <Box className="field-box">
         <FormLabel>
-          <Typography className="field-box__title">{t("lecturer.skills_field_label")}*</Typography>
-          <Typography className="field-box__subtitle">{t("lecturer.skills_field_description")}</Typography>
+          <Typography className="field-box__title">{t("lecturer.skills-field-label")}*</Typography>
+          <Typography className="field-box__subtitle">{t("lecturer.skills-field-description")}</Typography>
           <Controller
             name="tags"
             control={control}
@@ -93,7 +93,7 @@ const LecturerPage: FC<PageProps> = ({ title }) => {
                       error={!!errors.tags?.message}
                       helperText={errors.tags?.message}
                       variant="outlined"
-                      placeholder={`${t("lecturer.skills_field_placeholder")}...`}
+                      placeholder={`${t("lecturer.skills-field-placeholder")}...`}
                     />
                   )}
                 />
@@ -103,16 +103,16 @@ const LecturerPage: FC<PageProps> = ({ title }) => {
         </FormLabel>
       </Box>
       <Box className="field-box">
-        <Typography className="field-box__title">{t("lecturer.about_field_label")}</Typography>
-        <Typography className="field-box__subtitle">{t("lecturer.about_field_description")}</Typography>
+        <Typography className="field-box__title">{t("lecturer.about-field-label")}</Typography>
+        <Typography className="field-box__subtitle">{t("lecturer.about-field-description")}</Typography>
         <ReactQuill ref={refRichText} theme="snow" />
       </Box>
       <Stack direction={{ sm: "row" }} flexWrap="wrap" gap={{ sm: "20px", md: "40px" }}>
         <Button variant="black-contain" size="medium" sx={{ minWidth: "190px" }} onClick={handleSubmit(onSubmitForm)}>
-          {t("button_save")}
+          {t("button-save")}
         </Button>
         <Button variant="black-text" size="medium">
-          {t("button_discard_changes")}
+          {t("button-discard-changes")}
         </Button>
       </Stack>
     </Stack>

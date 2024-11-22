@@ -45,28 +45,28 @@ const PricePage: FC<PageProps> = ({ title }) => {
           <FormLabel className="field-box">
             <Stack direction="row" alignItems="start" gap="10px">
               <Checkbox {...register("paid")} />
-              <Typography className="field-box__title">{t("price.checkbox_label")}</Typography>
+              <Typography className="field-box__title">{t("price.checkbox-label")}</Typography>
             </Stack>
           </FormLabel>
           <FormLabel className="field-box">
             <Typography mb="8px" className="field-box__title">
-              {t("price.price_field_label")}
+              {t("price.price-field-label")}
             </Typography>
             <TextField
               {...register("price")}
               variant="outlined"
               fullWidth
-              placeholder={`${t("price.price_field_placeholder")}...`}
+              placeholder={`${t("price.price-field-placeholder")}...`}
             />
           </FormLabel>
         </Grid>
         <Grid item xs={12} md={6}>
           <Box borderRadius="20px" padding="10px 20px" bgcolor={XlnteeColors.LightElementColor}>
             <Typography variant="h6" color={XlnteeColors.BlackElementColor}>
-              {t("price.info_box_title")}
+              {t("price.info-box-title")}
             </Typography>
             <Typography fontWeight={300} fontSize="14px !important" color={XlnteeColors.GrayColor600}>
-              {t("price.info_box_text")}
+              {t("price.info-box-text")}
             </Typography>
           </Box>
         </Grid>
@@ -74,10 +74,10 @@ const PricePage: FC<PageProps> = ({ title }) => {
       <BlockPromoCodes />
       <Stack direction={{ sm: "row" }} flexWrap="wrap" gap={{ sm: "20px", md: "40px" }}>
         <Button variant="black-contain" size="medium" sx={{ minWidth: "190px" }} onClick={handleSubmit(onSubmitForm)}>
-          {t("button_save")}
+          {t("button-save")}
         </Button>
         <Button variant="black-text" size="medium">
-          {t("button_discard_changes")}
+          {t("button-discard-changes")}
         </Button>
       </Stack>
     </Box>

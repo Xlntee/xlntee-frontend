@@ -25,7 +25,7 @@ const SectionCourseAbout: FC<SectionCourseAboutProps> = ({ name, skills, descrip
           border={`1px solid ${XlnteeColors.GrayColor400}`}
         >
           <Typography variant="h2" fontWeight={400}>
-            {t("teacher-preview.section-about-teacher.title")}
+            {t("section-about-teacher.title")}
           </Typography>
           <Box maxWidth="1080px" mx="auto">
             <Stack direction="column" alignItems="center" gap="10px" mb="20px">

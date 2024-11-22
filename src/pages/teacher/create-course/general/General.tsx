@@ -68,7 +68,7 @@ const GeneralPage: FC<PageProps> = ({ title }) => {
 
   const data: SelectFieldBoxProps[] = [
     {
-      title: `${t("general.select_field_label")}*`,
+      title: `${t("general.select-field-label")}*`,
       value: "category",
       options: [
         {
@@ -86,7 +86,7 @@ const GeneralPage: FC<PageProps> = ({ title }) => {
       ]
     },
     {
-      title: `${t("general.select_field_level")}*`,
+      title: `${t("general.select-field-level")}*`,
       value: "level",
       options: [
         {
@@ -108,7 +108,7 @@ const GeneralPage: FC<PageProps> = ({ title }) => {
       ]
     },
     {
-      title: `${t("general.select_field_subcategory")}*`,
+      title: `${t("general.select-field-subcategory")}*`,
       value: "subcategory",
       options: [
         {
@@ -126,7 +126,7 @@ const GeneralPage: FC<PageProps> = ({ title }) => {
       ]
     },
     {
-      title: `${t("general.select_field_language")}*`,
+      title: `${t("general.select-field-language")}*`,
       value: "language",
       options: [
         {
@@ -145,30 +145,30 @@ const GeneralPage: FC<PageProps> = ({ title }) => {
     <Box className="create-course-general">
       <Box className="field-box">
         <Typography variant="h5" className="field-box__title">
-          {t("general.title_field_label")}*
+          {t("general.title-field-label")}*
         </Typography>
-        <Typography className="field-box__subtitle">{t("general.title_field_description")}</Typography>
+        <Typography className="field-box__subtitle">{t("general.title-field-description")}</Typography>
         <TextField
           {...register("title")}
           error={!!errors["title"]?.message}
           helperText={errors["title"]?.message}
           variant="outlined"
           fullWidth
-          placeholder={`${t("general.title_field_placeholder")}...`}
+          placeholder={`${t("general.title-field-placeholder")}...`}
         />
       </Box>
       <Box className="field-box">
         <Typography variant="h5" className="field-box__title">
-          {t("general.description_field_label")}*
+          {t("general.description-field-label")}*
         </Typography>
-        <Typography className="field-box__subtitle">{t("general.description_field_description")}</Typography>
+        <Typography className="field-box__subtitle">{t("general.description-field-description")}</Typography>
         <TextField
           {...register("description")}
           error={!!errors["description"]?.message}
           helperText={errors["description"]?.message}
           variant="outlined"
           fullWidth
-          placeholder={`${t("general.description_field_placeholder")}...`}
+          placeholder={`${t("general.description-field-placeholder")}...`}
         />
       </Box>
       <Box className="field-box">
@@ -176,8 +176,8 @@ const GeneralPage: FC<PageProps> = ({ title }) => {
           <Stack direction="row" alignItems="start" gap="10px">
             <Checkbox {...register("certificate")} />
             <Box>
-              <Typography className="field-box__title">{t("general.checkbox_label")}</Typography>
-              <Typography className="field-box__subtitle">{t("general.checkbox_description")}</Typography>
+              <Typography className="field-box__title">{t("general.checkbox-label")}</Typography>
+              <Typography className="field-box__subtitle">{t("general.checkbox-description")}</Typography>
             </Box>
           </Stack>
         </FormLabel>
@@ -216,7 +216,7 @@ const GeneralPage: FC<PageProps> = ({ title }) => {
           <Box className="field-box">
             <FormLabel>
               <Typography mb="8px" className="field-box__title">
-                {t("general.tags_field_label")}*
+                {t("general.tags-field-label")}*
               </Typography>
               <Controller
                 name="tags"
@@ -254,10 +254,10 @@ const GeneralPage: FC<PageProps> = ({ title }) => {
       </Grid>
       <Stack direction={{ sm: "row" }} flexWrap="wrap" gap={{ sm: "20px", md: "40px" }}>
         <Button variant="black-contain" size="medium" sx={{ minWidth: "190px" }} onClick={handleSubmit(onSubmitForm)}>
-          {t("button_save")}
+          {t("button-save")}
         </Button>
         <Button variant="black-text" size="medium">
-          {t("button_discard_changes")}
+          {t("button-discard-changes")}
         </Button>
       </Stack>
     </Box>

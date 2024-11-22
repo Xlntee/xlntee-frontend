@@ -1,22 +1,32 @@
 {
-  "teacher-preview.section-course-hero.creator": "Creator’s",
-  "teacher-preview.section-course-hero.actionViewCourse": "View course",
-  "teacher-preview.section-course-hero.actionBuyCourse": "Buy course",
-  "teacher-preview.section-course-info.title1": "The course teaches",
-  "teacher-preview.section-course-info.details1": [
-    "what is OOP",
-    "Code writing logic and syntax basics",
-    "Basic libraries, how to use them and what you need them for",
-    "Where to start your journey as a programmer, where to gain experience and on which platforms"
-  ],
-  "teacher-preview.section-course-info.title2": "What you need to know",
-  "teacher-preview.section-course-info.details2": [
-    "Basic skills of working in RSN",
-    "How code works, basic programming concepts",
-    "What is a programming language and where is this language used",
-    "Understanding the difference between front-end and back-end development"
-  ],
-  "teacher-preview.section-course-structure.title": "Course structure",
-  "teacher-preview.section-course-description.title": "Course description",
-  "teacher-preview.section-about-teacher.title": "Lecturer"
+  "section-course-hero": {
+    "creator": "Creator’s",
+    "actionViewCourse": "View course",
+    "actionBuyCourse": "Buy courseз"
+  },
+  "section-course-info": {
+    "title1": "The course teaches",
+    "details1": [
+      "what is OOP",
+      "Code writing logic and syntax basics",
+      "Basic libraries, how to use them and what you need them for",
+      "Where to start your journey as a programmer, where to gain experience and on which platforms"
+    ],
+    "title2": "What you need to know",
+    "details2": [
+      "Basic skills of working in RSN",
+      "How code works, basic programming concepts",
+      "What is a programming language and where is this language used",
+      "Understanding the difference between front-end and back-end development"
+    ]
+  },
+  "section-course-structure": {
+    "title": "Course structure"
+  },
+  "section-course-description": {
+    "title": "Course description"
+  },
+  "section-about-teacher": {
+    "title": "Lecturer"
+  }
 }

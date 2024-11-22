@@ -131,7 +131,7 @@ const BlockLecture: FC<BlockLectureProps> = ({ lessonId, id, index, onDelete }) 
         helperText={errors.lectures?.[index]?.title?.message}
         variant="outlined"
         fullWidth
-        placeholder={t("structure.title_lecture_placeholder") + "..."}
+        placeholder={t("structure.title-lecture-placeholder") + "..."}
         className="text-field-light block-lecture__title"
       />
       <Box className="block-lecture__body">
@@ -180,7 +180,7 @@ const BlockLecture: FC<BlockLectureProps> = ({ lessonId, id, index, onDelete }) 
             disabled={!!videoFile}
             showPreview={false}
             togglerVariant="white-contain"
-            buttonText={t("structure.video_upload_button_text")}
+            buttonText={t("structure.video-upload-button-text")}
             onChange={(file) => {
               onAddVideo(file as File);
             }}
@@ -189,13 +189,13 @@ const BlockLecture: FC<BlockLectureProps> = ({ lessonId, id, index, onDelete }) 
             multiple
             disabled={!!files}
             togglerVariant="white-contain"
-            buttonText={t("structure.file_upload_button_text")}
+            buttonText={t("structure.file-upload-button-text")}
             onChange={(fileList) => {
               onAddFile(fileList as FileList);
             }}
           />
           <Button variant="white-contain" size="medium" disabled={showQuiz} onClick={onAddQuiz}>
-            + {t("structure.lecture_add_quiz")}
+            + {t("structure.lecture-add-quiz")}
           </Button>
         </Box>
       </Box>

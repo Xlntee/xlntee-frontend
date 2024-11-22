@@ -34,10 +34,10 @@ const StructurePage: FC<PageProps> = ({ title }) => {
         onClick={() => dispatch(addLesson())}
         sx={{ mb: "20px" }}
       >
-        + {t("structure.add_lesson")}
+        + {t("structure.add-lesson")}
       </Button>
       <Button variant="black-contain" size="medium" onClick={onSave} sx={{ minWidth: "190px" }}>
-        {t("button_save")}
+        {t("button-save")}
       </Button>
     </Box>
   );

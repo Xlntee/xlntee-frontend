@@ -76,14 +76,14 @@ const BlockPromoCodes: FC = () => {
     <Box className="block-promo-codes">
       <Box>
         <Typography variant="h6" mb="8px">
-          {t("price.promo_title")}
+          {t("price.promo-title")}
         </Typography>
         <Divider />
       </Box>
       <Box className="promo-row">
         <Box className="promo-row__field">
           <InputLabel shrink={false} htmlFor="discount-field">
-            {t("price.promo_field_discount_label")} (%)
+            {t("price.promo-field-discount-label")} (%)
           </InputLabel>
           <TextField
             {...register("discount")}
@@ -97,7 +97,7 @@ const BlockPromoCodes: FC = () => {
         </Box>
         <Box className="promo-row__field">
           <InputLabel shrink={false} htmlFor="promo-code-field">
-            {t("price.promo_field_code_label")}
+            {t("price.promo-field-code-label")}
           </InputLabel>
           <TextField
             {...register("promoCode")}
@@ -106,7 +106,7 @@ const BlockPromoCodes: FC = () => {
             id="promo-code-field"
             variant="outlined"
             size="small"
-            placeholder={`${t("price.promo_field_code_placeholder")}`}
+            placeholder={`${t("price.promo-field-code-placeholder")}`}
           />
         </Box>
         <Button
@@ -115,7 +115,7 @@ const BlockPromoCodes: FC = () => {
           sx={{ minWidth: "156px", fontWeight: 400 }}
           onClick={handleSubmit(onSubmitForm)}
         >
-          {t("price.promo_button_create")}
+          {t("price.promo-button-create")}
         </Button>
       </Box>
 
@@ -123,17 +123,17 @@ const BlockPromoCodes: FC = () => {
         <>
           <Box>
             <Typography variant="h6" mb="8px">
-              {t("price.promo_created_title")}
+              {t("price.promo-created-title")}
             </Typography>
             <Divider />
           </Box>
           <Box>
             <Box className="promo-row">
               <Box className="promo-row__field">
-                <Typography className="promo-field__label">{t("price.promo_field_discount_label")} (%)</Typography>
+                <Typography className="promo-field__label">{t("price.promo-field-discount-label")} (%)</Typography>
               </Box>
               <Box className="promo-row__field">
-                <Typography className="promo-field__label">{t("price.promo_field_code_label")}</Typography>
+                <Typography className="promo-field__label">{t("price.promo-field-code-label")}</Typography>
               </Box>
             </Box>
             {promoCodes.map((promo) => (
@@ -164,7 +164,7 @@ const BlockPromoCodes: FC = () => {
           </Box>
         </>
       ) : (
-        <Typography variant="h6">{t("price.promo_created_empty")}</Typography>
+        <Typography variant="h6">{t("price.promo-created-empty")}</Typography>
       )}
       <Snackbar color={alertColor} open={alertVisible} onClose={closeAlert} title={alertMessage} />
       <DialogModal

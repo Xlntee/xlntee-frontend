@@ -118,7 +118,7 @@ const BlockLesson: FC<BlockLessonProps> = ({ index, id, canDelete }) => {
               <Checkbox {...register("free")} />
               <Box>
                 <Typography variant="body2" color={XlnteeColors.GrayColor600}>
-                  {t("structure.free_section")}
+                  {t("structure.free-section")}
                 </Typography>
               </Box>
             </Stack>
@@ -144,7 +144,7 @@ const BlockLesson: FC<BlockLessonProps> = ({ index, id, canDelete }) => {
             id="title"
             variant="outlined"
             fullWidth
-            placeholder={`${t("structure.title_lesson_placeholder")}...`}
+            placeholder={`${t("structure.title-lesson-placeholder")}...`}
             // defaultValue={title}
           />
         </Box>
@@ -168,7 +168,7 @@ const BlockLesson: FC<BlockLessonProps> = ({ index, id, canDelete }) => {
               className="block-lesson__action-add-lecture"
               onClick={onAddLecture}
             >
-              + {t("structure.add_lecture")}
+              + {t("structure.add-lecture")}
             </Button>
             <Button
               variant="black-contain"
@@ -176,7 +176,7 @@ const BlockLesson: FC<BlockLessonProps> = ({ index, id, canDelete }) => {
               className="block-lesson__action-save-lecture"
               onClick={handleSubmit(onSubmit)}
             >
-              {t("structure.save_section")}
+              {t("structure.save-section")}
             </Button>
           </Stack>
         </Box>

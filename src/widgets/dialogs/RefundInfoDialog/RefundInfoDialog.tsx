@@ -18,7 +18,7 @@ const RefundInfoDialog: FC = () => {
       <MenuToggler active={true} onClick={onCloseDialog} className="dialog-box__close-btn" />
       <InfoCourseComplain
         image="/assets/refund.png"
-        imageDescription={t("refund.imageDescription")}
+        imageDescription={t("refund.image-description")}
         message={t("refund.message", {
           code: getOptionsFromDialog("REFUND_INFO_DIALOG").id
         })}

@@ -62,7 +62,7 @@ const BlockQuiz: FC<BlockQuizProps> = ({ lessonId, lectureId, lectureIndex, onCl
   return (
     <Stack className="block-quiz" direction="column" gap="20px">
       <Typography variant="body2" className="block-quiz__info-message">
-        {t("structure.lecture_quiz_info_message")}
+        {t("structure.lecture-quiz-info-message")}
         <Checkbox checked />
       </Typography>
       {fields?.length
@@ -80,7 +80,7 @@ const BlockQuiz: FC<BlockQuizProps> = ({ lessonId, lectureId, lectureIndex, onCl
                     helperText={errors.lectures?.[lectureIndex]?.testConfigurations?.[index]?.question?.message}
                     variant="outlined"
                     fullWidth
-                    placeholder={`${t("structure.lecture_quiz_question_placeholder")}...`}
+                    placeholder={`${t("structure.lecture-quiz-question-placeholder")}...`}
                     className="quiz-question__text-field"
                   />
                   <Button
@@ -114,7 +114,7 @@ const BlockQuiz: FC<BlockQuizProps> = ({ lessonId, lectureId, lectureIndex, onCl
           className="block-quiz__action-add-quetion"
           onClick={onAddQuestion}
         >
-          + {t("structure.lecture_quiz_add_question")}
+          + {t("structure.lecture-quiz-add-question")}
         </Button>
       </Box>
     </Stack>

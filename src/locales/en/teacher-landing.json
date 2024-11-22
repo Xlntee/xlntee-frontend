@@ -4,13 +4,13 @@
     "subtitle": "create, improve, grow",
     "features": ["Dashboard", "Easy navigation", "Communication", "Payments", "Quizzes", "Analytics"],
     "button": "Try for Free",
-    "imageAltText": "Launch your online courses easily on xlntee"
+    "image-alt-text": "Launch your online courses easily on xlntee"
   },
   "about-section": {
     "title": "For creators, lecturers, and educational businesses.",
-    "wordList": ["Create", "Manage", "Earn", "Grow"],
+    "word-list": ["Create", "Manage", "Earn", "Grow"],
     "description": "Empower your educational business, and courses delivery, manage, and sell easily. We offer intuitive design tools, centralized management, and detailed analytics to support continuous improvement and maximize earnings, nothing needlessly.",
-    "imageAltText": "Succeed selling courses online with xlntee"
+    "image-alt-text": "Succeed selling courses online with xlntee"
   },
   "features-section": {
     "caption": [
@@ -33,7 +33,7 @@
       "Provide certificates",
       "Navigate students directly to your courses"
     ],
-    "Button": "Try for Free"
+    "button": "Try for Free"
   },
   "price-plan": {
     "title": "How it works",

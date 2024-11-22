@@ -12,7 +12,7 @@ const TeacherLandingPage: FC<PageProps> = ({ title }) => {
 
   const { t } = useTranslation("teacher-landing");
   const heroSectionfeatures: string[] = t("hero-section.features", { returnObjects: true });
-  const aboutSectionWords: string[] = t("about-section.wordList", { returnObjects: true });
+  const aboutSectionWords: string[] = t("about-section.word-list", { returnObjects: true });
 
   return (
     <>
@@ -22,7 +22,7 @@ const TeacherLandingPage: FC<PageProps> = ({ title }) => {
         buttonTitle={t("hero-section.button")}
         image={{
           src: "assets/teacher-landing-hero.webp",
-          alt: t("hero-section.imageAltText")
+          alt: t("hero-section.image-alt-text")
         }}
         features={heroSectionfeatures}
       />
@@ -32,7 +32,7 @@ const TeacherLandingPage: FC<PageProps> = ({ title }) => {
         description={t("about-section.description")}
         image={{
           src: "assets/teacher-landing-about.webp",
-          alt: t("about-section.imageAltText")
+          alt: t("about-section.image-alt-text")
         }}
       />
       <SectionFeatures />

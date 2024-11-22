@@ -23,7 +23,7 @@ const SidebarMenu: FC = () => {
           disabled
           className="create-course-nav__action button-rounded-sm"
         >
-          {t("publish.nav_title")}
+          {t("publish.nav-title")}
         </Button>
       </Stack>
       <Stack gap="10px">
@@ -34,7 +34,7 @@ const SidebarMenu: FC = () => {
           0/100
         </Progress>
         <Button size="small" variant="black-contain" className="button-rounded-sm">
-          {t("change_plan")}
+          {t("change-plan")}
         </Button>
       </Stack>
     </Stack>

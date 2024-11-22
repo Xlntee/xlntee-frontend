@@ -14,27 +14,27 @@ const NavigationList: FC = () => {
 
   const navList = [
     {
-      title: t("general.nav_title"),
+      title: t("general.nav-title"),
       path: AppRoutes.teacher.createCourse
     },
     {
-      title: t("landing.nav_title"),
+      title: t("landing.nav-title"),
       path: AppRoutes.teacher.createCourseLanding
     },
     {
-      title: t("structure.nav_title"),
+      title: t("structure.nav-title"),
       path: AppRoutes.teacher.createCourseStructure
     },
     {
-      title: t("lecturer.nav_title"),
+      title: t("lecturer.nav-title"),
       path: AppRoutes.teacher.createCourseLecturer
     },
     {
-      title: t("price.nav_title"),
+      title: t("price.nav-title"),
       path: AppRoutes.teacher.createCoursePrice
     },
     {
-      title: t("advertising.nav_title"),
+      title: t("advertising.nav-title"),
       path: AppRoutes.teacher.createCourseAdvertising
     }
   ];

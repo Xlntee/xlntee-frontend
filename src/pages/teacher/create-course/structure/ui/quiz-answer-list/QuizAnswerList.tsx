@@ -61,7 +61,7 @@ const QuizAnswerList: FC<QuizAnswerListProps> = ({ lectureIndex, quizIndex }) =>
                 }
                 variant="outlined"
                 fullWidth
-                placeholder={`${t("structure.quiz_answer_field_placeholder")}...`}
+                placeholder={`${t("structure.quiz-answer-field-placeholder")}...`}
                 className="text-field-light"
               />
               <Button variant="black-text" size="medium" onClick={() => remove(index)} className="quiz-answer__action">
@@ -78,7 +78,7 @@ const QuizAnswerList: FC<QuizAnswerListProps> = ({ lectureIndex, quizIndex }) =>
           className="quiz-answer-list__action-add-answer"
           onClick={onAddAnswer}
         >
-          + {t("structure.lecture_quiz_add_answer")}
+          + {t("structure.lecture-quiz-add-answer")}
         </Button>
       </Box>
       {errors.lectures?.[lectureIndex]?.testConfigurations?.[quizIndex]?.variants?.type && (

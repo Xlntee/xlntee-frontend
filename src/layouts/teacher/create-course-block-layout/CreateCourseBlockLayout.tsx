@@ -41,7 +41,7 @@ const CreateCourseBlockLayout: FC = () => {
         <ErrorOutlineOutlinedIcon color="error" />
         <Typography variant="body2" fontWeight={300}>
           {t("error-limits-plan")} {""}
-          <RouterLink to="#">{t("change_plan")}</RouterLink>
+          <RouterLink to="#">{t("change-plan")}</RouterLink>
         </Typography>
       </Stack>
     );
@@ -53,7 +53,7 @@ const CreateCourseBlockLayout: FC = () => {
         <LimitError />
         <HideMediaContainer type="up" breakpoint="xl">
           <Button variant="black-contain" onClick={openMenu}>
-            {t("course_navigation")}
+            {t("course-navigation")}
           </Button>
         </HideMediaContainer>
         <Box pt="20px" className="create-course-layout__grid">

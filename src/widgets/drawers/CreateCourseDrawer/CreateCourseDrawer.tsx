@@ -14,7 +14,7 @@ const CreateCourseDrawer: FC = () => {
     <>
       <DrawerHeader>
         <Typography variant="body1" className="drawer__title">
-          {t("course_navigation")}
+          {t("course-navigation")}
         </Typography>
       </DrawerHeader>
       <DrawerBody>
