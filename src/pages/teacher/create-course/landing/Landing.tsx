@@ -39,6 +39,7 @@ export interface AutocompleteFieldBoxProps {
 const LandingPage: FC<PageProps> = ({ title }) => {
   useTitle(title);
   const { t } = useTranslation("teacher-create-course");
+  const { t: tCommon } = useTranslation("common");
 
   const [previewImage, setPreviewImage] = useState<string | null>(null);
   const [previewVideo, setPreviewVideo] = useState<string | null>(null);
@@ -201,10 +202,10 @@ const LandingPage: FC<PageProps> = ({ title }) => {
         </Grid>
         <Stack direction={{ sm: "row" }} flexWrap="wrap" gap={{ sm: "20px", md: "40px" }}>
           <Button variant="black-contain" size="medium" sx={{ minWidth: "190px" }} onClick={handleSubmit(onSubmitForm)}>
-            {t("button-save")}
+            {tCommon("button-save")}
           </Button>
           <Button variant="black-text" size="medium">
-            {t("button-discard-changes")}
+            {tCommon("button-discard-changes")}
           </Button>
         </Stack>
       </Stack>

@@ -101,7 +101,8 @@
     "promo-field-code-placeholder": "Кодове ім'я",
     "promo-button-create": "створити",
     "promo-created-title": "Створені промокоди",
-    "promo-created-empty": "Без промокодів"
+    "promo-created-empty": "Без промокодів",
+    "promo-exist": "Цей промокод вже існує"
   },
   "advertising": {
     "nav-title": "Реклама",
@@ -114,8 +115,6 @@
   },
   "button-landing-text": "Лендінг",
   "button-preview-text": "Перегляд курсу",
-  "button-save": "Зберегти",
-  "button-discard-changes": "відхилити зміни",
   "storage": "Зберігання",
   "students": "Студенти",
   "change-plan": "Змінити тарифний план",

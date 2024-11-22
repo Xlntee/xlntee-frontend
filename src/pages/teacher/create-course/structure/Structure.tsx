@@ -13,6 +13,7 @@ import { BlockLesson } from "./ui";
 const StructurePage: FC<PageProps> = ({ title }) => {
   useTitle(title);
   const { t } = useTranslation("teacher-create-course");
+  const { t: tCommon } = useTranslation("common");
 
   const dispatch = useAppDispatch();
   const lessons = useAppSelector(selectLessons);
@@ -37,7 +38,7 @@ const StructurePage: FC<PageProps> = ({ title }) => {
         + {t("structure.add-lesson")}
       </Button>
       <Button variant="black-contain" size="medium" onClick={onSave} sx={{ minWidth: "190px" }}>
-        {t("button-save")}
+        {tCommon("button-save")}
       </Button>
     </Box>
   );

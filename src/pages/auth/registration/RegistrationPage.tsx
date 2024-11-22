@@ -1,6 +1,7 @@
 import { FC, useState } from "react";
 import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 
 import useTitle from "src/hooks/useTitle";
 import { PageProps } from "pages/type";
@@ -26,6 +27,7 @@ const deviceId = "1111";
 
 const RegistrationPage: FC<PageProps> = ({ title }) => {
   useTitle(title);
+  const { t } = useTranslation("common");
 
   const { register, handleSubmit } = useForm<IFormData>();
 
@@ -102,7 +104,7 @@ const RegistrationPage: FC<PageProps> = ({ title }) => {
             disabled={state !== "EMAIL_CONFIRMATION"}
           />
           <button className="registration-page__submit" type="submit">
-            Submit
+            {t("button-submit")}
           </button>
         </form>
       </div>

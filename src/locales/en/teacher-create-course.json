@@ -102,7 +102,8 @@
     "promo-field-code-placeholder": "Code name",
     "promo-button-create": "Create",
     "promo-created-title": "Created Promo Codes",
-    "promo-created-empty": "No promo codes"
+    "promo-created-empty": "No promo codes",
+    "promo-exist": "This promocode already exist"
   },
   "advertising": {
     "nav-title": "Advertising",
@@ -116,8 +117,6 @@
   },
   "button-landing-text": "Landing",
   "button-preview-text": "Preview",
-  "button-save": "Save",
-  "button-discard-changes": "Discard changes",
   "storage": "Storage",
   "students": "Students",
   "change-plan": "Change tariff plan",

@@ -17,5 +17,13 @@
     "answers": "відповіді"
   },
   "notifications": "Сповіщення",
-  "no-notifications": "У вас ще немає сповіщень"
+  "no-notifications": "У вас ще немає сповіщень",
+  "upload-success": "Успішне завантаження",
+  "memory-gb": "ГБ",
+  "certificate": "Сертифікат",
+  "button-save": "Зберегти",
+  "button-discard-changes": "Відхилити зміни",
+  "button-submit": "Надіслати",
+  "complain": "Поскаржитися",
+  "refund": "Повернення коштів"
 }

@@ -1,4 +1,5 @@
 import { useRef, useState, ChangeEvent, useEffect, FC } from "react";
+import { useTranslation } from "react-i18next";
 import cn from "classnames";
 
 import { Box, Button, Stack } from "@mui/material";
@@ -33,6 +34,8 @@ const VideoUpload: FC<VideoUploadProps> = ({
   onChange,
   ...rest
 }: VideoUploadProps) => {
+  const { t } = useTranslation("common");
+
   const [uploadedFile, setUploadedFile] = useState<string>(video ?? "");
   const refFieldInputFile = useRef<HTMLInputElement>(null);
   const { alertColor, alertMessage, alertVisible, showAlert, closeAlert, setColorAlert, setMessageAlert } =
@@ -56,7 +59,7 @@ const VideoUpload: FC<VideoUploadProps> = ({
       fileReader.onloadend = () => {
         const fileString: string = fileReader.result as string;
         setUploadedFile(fileString);
-        setMessageAlert("Upload to browser success");
+        setMessageAlert(t("upload-success"));
         setColorAlert("success");
         showAlert();
         onChange?.(file, fileString);

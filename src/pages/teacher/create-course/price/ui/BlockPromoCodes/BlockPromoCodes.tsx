@@ -49,7 +49,7 @@ const BlockPromoCodes: FC = () => {
     const existsPromo = promoCodes.some((item) => item.name === promoCode);
     if (existsPromo) {
       setColorAlert("error");
-      setMessageAlert("This promocode already exist");
+      setMessageAlert(t("price.promo-exist"));
       showAlert();
       return;
     }

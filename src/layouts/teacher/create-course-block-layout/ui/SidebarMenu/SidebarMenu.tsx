@@ -11,6 +11,7 @@ import "./SidebarMenu.scss";
 
 const SidebarMenu: FC = () => {
   const { t } = useTranslation("teacher-create-course");
+  const { t: tCommon } = useTranslation("common");
 
   return (
     <Stack gap="20px" className="create-course-layout__aside-menu">
@@ -28,7 +29,7 @@ const SidebarMenu: FC = () => {
       </Stack>
       <Stack gap="10px">
         <Progress value={0} title={t("storage")} color="warning">
-          11/120 ГБ
+          11/120 {tCommon("memory-gb")}
         </Progress>
         <Progress value={0} title={t("students")} color="info">
           0/100

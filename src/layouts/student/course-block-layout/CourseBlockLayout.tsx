@@ -1,5 +1,6 @@
 import { FC, useEffect, useState } from "react";
 import { Outlet, Link, useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import cn from "classnames";
 
 import { Box, Button, Stack, Typography } from "@mui/material";
@@ -7,10 +8,11 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import LocalActivityIcon from "@mui/icons-material/LocalActivity";
 
 import { AccordionProgress } from "src/features";
+import { AppRoutes } from "src/app/routing/appRoutes";
+
 import { CategoryLinkType, CategoryNavigation } from "./ui";
 
 import "./CourseBlockLayout.scss";
-import { AppRoutes } from "src/app/routing/appRoutes";
 
 interface CategoriesNavigation {
   items: CategoryLinkType[];
@@ -50,6 +52,8 @@ const data: CategoryLinkType[] = [
 
 const CourseLayout: FC = () => {
   const LSMenuKey = "student-collapsed-menu";
+  const { t } = useTranslation("common");
+
   const { id } = useParams<{ id: string }>();
 
   const [isOpenMenu, setIsOpenMenu] = useState<boolean>(localStorage.getItem(LSMenuKey) === "true");
@@ -101,10 +105,6 @@ const CourseLayout: FC = () => {
     }
   }
 
-  // useEffect(() => {
-  //   fillExpandedObj();
-  // }, [open]);
-
   return (
     <Box className={cn("course-layout", { "open-navigation": isOpenMenu })}>
       <Box component="aside" className={cn("collapsed-navigation", { expanded: isOpenMenu })}>
@@ -146,7 +146,7 @@ const CourseLayout: FC = () => {
             >
               <LocalActivityIcon />
               <Typography variant="caption" className="collapsed-navigation__toggler-text">
-                Сертифікат
+                {t("certificate")}
               </Typography>
             </Button>
             <Button className="collapsed-navigation__hidden-toggler" onClick={onToggleNavigation} />

@@ -115,7 +115,7 @@ const ProfilePage: FC<PageProps> = ({ title }) => {
             ))}
           </Grid>
           <Button variant="black-contain" sx={{ minWidth: "140px" }} onClick={handleSubmit(onSubmit)}>
-            Save
+            {tCommon("button-save")}
           </Button>
         </Box>
       </Container>

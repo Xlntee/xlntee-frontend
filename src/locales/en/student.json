@@ -44,5 +44,9 @@
     "submit": "send",
     "image-description": "refund",
     "message": "Your refund request has been sent, its number: <strong>{{code}}</strong> It might take up to 3 business days to be reviewed, you will receive all information about the status of the request to your email or in notifications tab."
+  },
+  "course-certificate": {
+    "title": "Congratulations!",
+    "text": "You’ve successfully completed the course, now you can view and download your certificate below."
   }
 }

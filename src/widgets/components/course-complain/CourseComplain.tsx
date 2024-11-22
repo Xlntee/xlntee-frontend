@@ -1,4 +1,5 @@
 import { FC, MouseEvent, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import { Box, Tooltip, Stack, Button, Menu } from "@mui/material";
 
@@ -18,6 +19,8 @@ const Dialogs = {
 type DialogType = typeof Dialogs;
 
 const CourseRate: FC = () => {
+  const { t } = useTranslation("common");
+
   const { onOpenDialog } = useDialog();
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
   const open = Boolean(anchorEl);
@@ -80,7 +83,7 @@ const CourseRate: FC = () => {
             className="course-complain-menu__button"
             onClick={() => onHandleClickModal(Dialogs.complain)}
           >
-            Complain
+            {t("complain")}
           </Button>
           <Button
             variant="black-text"
@@ -88,7 +91,7 @@ const CourseRate: FC = () => {
             className="course-complain-menu__button"
             onClick={() => onHandleClickModal(Dialogs.refund)}
           >
-            Refund
+            {t("refund")}
           </Button>
         </Stack>
       </Menu>
