@@ -12,10 +12,11 @@ import { Visibility, VisibilityOff } from "@mui/icons-material";
 type PasswordFieldProps = {
   name: string;
   rules?: UseControllerProps["rules"];
+  showErrorMessage?: boolean;
 } & MuiTextFieldProps;
 
 const PasswordField: FC<PasswordFieldProps> = (props) => {
-  const { name, rules } = props;
+  const { name, rules, showErrorMessage = true } = props;
 
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
@@ -39,7 +40,7 @@ const PasswordField: FC<PasswordFieldProps> = (props) => {
       autoCorrect="off"
       autoComplete="off"
       error={!!error}
-      helperText={error?.message}
+      helperText={showErrorMessage && error?.message}
       InputProps={{
         endAdornment: (
           <InputAdornment position="end">

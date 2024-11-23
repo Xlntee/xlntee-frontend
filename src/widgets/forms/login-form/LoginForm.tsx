@@ -74,12 +74,7 @@ const LoginForm: FC = () => {
             </Stack>
           </Stack>
           <TextField name="email" type="email" aria-label="email input" placeholder={t("email-placeholder")} />
-          <PasswordField
-            name="password"
-            type="text"
-            aria-label="password input"
-            placeholder={t("password-placeholder")}
-          />
+          <PasswordField name="password" aria-label="password input" placeholder={t("password-placeholder")} />
           <Button
             aria-label="login button"
             variant="contained"
