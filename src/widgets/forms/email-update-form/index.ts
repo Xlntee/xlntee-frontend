@@ -1,1 +1,1 @@
-export { default as EmailUpdateForm } from "./EmailUpdateForm";
+export { default as EmailUpdateForm, type EmailUpdateFormValues } from "./EmailUpdateForm";
