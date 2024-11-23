@@ -1,22 +1,11 @@
 .help-center-page {
   padding-block: 50px;
 
-  &__text-field {
-    .MuiOutlinedInput-root {
-      border-radius: 25px;
-      height: auto;
-    }
-  }
-
   &__caption {
     text-align: center;
     font-size: 24px;
     color: rgb(var(--dark-color));
     margin-bottom: 30px;
-  }
-
-  &__submit-button {
-    float: right;
   }
 
   &__return-btn {

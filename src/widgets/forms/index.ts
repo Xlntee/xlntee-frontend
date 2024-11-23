@@ -5,3 +5,4 @@ export * from "./account-verification-form";
 export * from "./password-update";
 export * from "./email-update-form";
 export * from "./password-update-form";
+export * from "./help-center-form";
