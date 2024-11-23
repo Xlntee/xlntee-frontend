@@ -13,14 +13,14 @@ const ProfilePage: FC<PageProps> = ({ title }) => {
   useTitle(title);
   const { t } = useTranslation("common");
 
-  const StudentImageUpload = withUserImageUpload(ImageUpload);
+  const WithUserImageUpload = withUserImageUpload(ImageUpload);
 
   return (
     <Box component="section" py="40px">
       <Container>
         <Box maxWidth="800px" marginInline="auto">
           <Box maxWidth={{ xs: "100px", md: "140px" }} marginInline="auto" mb="20px">
-            <StudentImageUpload viewType="avatar" buttonText={t("upload-button")} />
+            <WithUserImageUpload viewType="avatar" buttonText={t("upload-button")} />
           </Box>
           <StudentProfileForm />
         </Box>
