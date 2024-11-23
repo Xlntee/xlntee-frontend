@@ -5,8 +5,11 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useTranslation } from "react-i18next";
 import cn from "classnames";
 
-import { Box, Button, Stack, TextField, Typography } from "@mui/material";
+import { Button, Stack, Typography } from "@mui/material";
 import SchoolOutlinedIcon from "@mui/icons-material/SchoolOutlined";
+
+import { TextField, PasswordField } from "src/features/form-fields";
+import { RootForm } from "src/widgets/forms";
 
 import { AppRoutes } from "src/app/routing/appRoutes";
 import LocalStorageService from "src/shared/local-storage";
@@ -21,14 +24,14 @@ const RegistrationForm: FC = () => {
 
   const [role, setRole] = useState<Role>(UserRoles.student);
 
-  const {
-    formState: { errors },
-    register,
-    handleSubmit
-  } = useForm<RegistrationFormValues>({
+  const methods = useForm<RegistrationFormValues>({
     resolver: yupResolver(useValidationSchema()),
     mode: "onSubmit"
   });
+
+  const {
+    formState: { errors }
+  } = methods;
 
   function onSubmit(data: RegistrationFormValues): void {
     try {
@@ -40,7 +43,7 @@ const RegistrationForm: FC = () => {
   }
 
   return (
-    <Box className="auth-form">
+    <RootForm methods={methods} onSubmit={onSubmit} className="auth-form">
       <Stack direction="row" gap="20px" mb="20px">
         <Button
           variant="black-outline"
@@ -68,32 +71,16 @@ const RegistrationForm: FC = () => {
         </Button>
       </Stack>
       <Stack direction="column" gap="20px">
-        <TextField
-          {...register("fullname", {
-            required: "test error"
-          })}
-          error={!!errors.fullname?.message}
-          helperText={errors.fullname?.message}
-          type="text"
-          placeholder={t("fullname-placeholder")}
-        />
-        <TextField
-          {...register("email", {
-            required: "test error"
-          })}
-          error={!!errors.email?.message}
-          helperText={errors.email?.message}
-          type="email"
-          placeholder={t("email-placeholder")}
-        />
-        <TextField
-          {...register("password")}
-          error={!!errors.password?.message}
-          type="password"
+        <TextField name="fullname" aria-label="password input" placeholder={t("fullname-placeholder")} />
+        <TextField name="email" type="email" aria-label="email input" placeholder={t("email-placeholder")} />
+        <PasswordField
+          name="password"
+          showErrorMessage={false}
+          aria-label="password input"
           placeholder={t("password-placeholder")}
         />
         <PasswordValidationPanel isError={!!errors.password} />
-        <Button variant="contained" className="auth-form__btn-submit" onClick={handleSubmit(onSubmit)}>
+        <Button type="submit" variant="contained" className="auth-form__btn-submit">
           {t("sign-up")}
         </Button>
         <Stack direction="column" gap="4px">
@@ -102,7 +89,7 @@ const RegistrationForm: FC = () => {
           </Typography>
         </Stack>
       </Stack>
-    </Box>
+    </RootForm>
   );
 };
 
