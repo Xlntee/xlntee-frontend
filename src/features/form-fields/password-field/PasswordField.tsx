@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { ChangeEvent, FC, useState } from "react";
 import { useFormContext, useController, UseControllerProps } from "react-hook-form";
 
 import {
@@ -16,7 +16,7 @@ type PasswordFieldProps = {
 } & MuiTextFieldProps;
 
 const PasswordField: FC<PasswordFieldProps> = (props) => {
-  const { name, rules, showErrorMessage = true } = props;
+  const { name, rules, showErrorMessage = true, onChange } = props;
 
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
@@ -30,17 +30,22 @@ const PasswordField: FC<PasswordFieldProps> = (props) => {
     setShowPassword((prev) => !prev);
   }
 
+  function defaultOnChange(e: ChangeEvent<HTMLInputElement>): void {
+    field.onChange(e);
+  }
+
   return (
     <MuiTextField
       {...props}
       {...register(name)}
-      value={field.value}
+      value={field.value || ""}
       type={showPassword ? "text" : "password"}
       autoCapitalize="none"
       autoCorrect="off"
       autoComplete="off"
       error={!!error}
       helperText={showErrorMessage && error?.message}
+      onChange={onChange || defaultOnChange}
       InputProps={{
         endAdornment: (
           <InputAdornment position="end">
