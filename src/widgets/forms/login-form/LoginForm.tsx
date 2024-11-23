@@ -5,14 +5,21 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
 import { useTranslation } from "react-i18next";
 
-import { Button, Stack, TextField, Typography } from "@mui/material";
+import { Button, Stack, Typography } from "@mui/material";
+import { RootForm } from "src/widgets/forms";
+import { PasswordField, TextField } from "src/features/form-fields";
 
 import { useAppDispatch } from "src/app/store/store";
 import { AppRoutes } from "src/app/routing/appRoutes";
 
-import { LoginFormValues, useValidationSchema } from "./validation";
+import { useValidationSchema } from "./validation";
 import { authApiSlice, useLoginMutation } from "src/app/store/slices/auth/api";
 import { setCredentials } from "src/app/store/slices/auth/slice";
+
+export type LoginFormValues = {
+  email: string;
+  password: string;
+};
 
 const deviceId = "string";
 
@@ -24,16 +31,12 @@ const LoginForm: FC = () => {
 
   const [login, { isLoading: isLoginLoading }] = useLoginMutation();
 
-  const {
-    formState: { errors },
-    register,
-    handleSubmit
-  } = useForm<LoginFormValues>({
+  const methods = useForm<LoginFormValues>({
     resolver: yupResolver(useValidationSchema()),
     mode: "onSubmit"
   });
 
-  const onSubmit = handleSubmit(async (data) => {
+  async function onSubmit(data: LoginFormValues): Promise<void> {
     try {
       const res = await login({ ...data, deviceId }).unwrap();
 
@@ -45,11 +48,11 @@ const LoginForm: FC = () => {
     } catch (error) {
       console.error(error);
     }
-  });
+  }
 
   return (
     <ApiProvider api={authApiSlice}>
-      <form onSubmit={onSubmit} className="auth-form">
+      <RootForm methods={methods} onSubmit={onSubmit} className="auth-form">
         <Stack direction="column" gap="20px">
           <Stack direction="row" alignItems="center" justifyContent="center" gap="20px">
             <Typography variant="body2">{t("login-with")}</Typography>
@@ -70,21 +73,11 @@ const LoginForm: FC = () => {
               </Button>
             </Stack>
           </Stack>
-          <TextField
-            {...register("email")}
-            error={!!errors.email?.message}
-            helperText={errors.email?.message}
-            aria-label="email input"
-            type="email"
-            placeholder={t("email-placeholder")}
-            autoFocus
-          />
-          <TextField
-            {...register("password")}
-            error={!!errors.password?.message}
-            helperText={errors.password?.message}
+          <TextField name="email" type="email" aria-label="email input" placeholder={t("email-placeholder")} />
+          <PasswordField
+            name="password"
+            type="text"
             aria-label="password input"
-            type="password"
             placeholder={t("password-placeholder")}
           />
           <Button
@@ -105,7 +98,7 @@ const LoginForm: FC = () => {
             </Typography>
           </Stack>
         </Stack>
-      </form>
+      </RootForm>
     </ApiProvider>
   );
 };

@@ -1,10 +1,7 @@
 import { useTranslation } from "react-i18next";
 import * as yup from "yup";
 
-export type LoginFormValues = {
-  email: string;
-  password: string;
-};
+import { LoginFormValues } from "./LoginForm";
 
 export const useValidationSchema = (): yup.ObjectSchema<LoginFormValues> => {
   const { t } = useTranslation("auth");
