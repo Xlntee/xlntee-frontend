@@ -22,7 +22,7 @@ import { PageProps } from "pages/type";
 import { ImageUpload, VideoUpload } from "src/features";
 
 import { ListRequirements } from "./ui";
-import { landingValidationSchema, LandingFormValues } from "./validation";
+import { LandingFormValues, useValidationSchema } from "./validation";
 import { defaultValuesForm } from "./initialData";
 
 import "./Landing.scss";
@@ -53,7 +53,7 @@ const LandingPage: FC<PageProps> = ({ title }) => {
   } = useForm<LandingFormValues>({
     mode: "onSubmit",
     defaultValues: defaultValuesForm,
-    resolver: yupResolver(landingValidationSchema)
+    resolver: yupResolver(useValidationSchema())
   });
 
   function onSubmitForm(data: LandingFormValues): void {

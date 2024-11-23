@@ -1,5 +1,4 @@
 import { FC, useEffect, useState } from "react";
-import yup from "yup";
 import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useTranslation } from "react-i18next";
@@ -23,7 +22,7 @@ import {
 import useTitle from "src/hooks/useTitle";
 import { PageProps } from "pages/type";
 
-import validationSchema from "./validation";
+import { GeneralFormValues, useValidationSchema } from "./validation";
 import { defaultValuesForm } from "./initialData";
 import { Difficulty, Language } from "src/entities/course/model";
 
@@ -38,8 +37,6 @@ export interface SelectFieldBoxProps {
   }[];
 }
 
-export type FormValues = yup.InferType<typeof validationSchema>;
-
 const GeneralPage: FC<PageProps> = ({ title }) => {
   const { t } = useTranslation("teacher-create-course");
   const { t: tCommon } = useTranslation("common");
@@ -53,17 +50,17 @@ const GeneralPage: FC<PageProps> = ({ title }) => {
     register,
     control,
     formState: { errors }
-  } = useForm<FormValues>({
+  } = useForm<GeneralFormValues>({
     mode: "onSubmit",
     defaultValues: defaultValuesForm,
-    resolver: yupResolver(validationSchema)
+    resolver: yupResolver(useValidationSchema())
   });
 
   useEffect(() => {
     setSelectFields(data);
   }, []);
 
-  function onSubmitForm(data: FormValues): void {
+  function onSubmitForm(data: GeneralFormValues): void {
     console.log(data);
   }
 
@@ -189,7 +186,7 @@ const GeneralPage: FC<PageProps> = ({ title }) => {
               <Grid key={item.value} item xs={12} sm={6}>
                 <Box className="field-box">
                   <Typography variant="h5" mb="8px" className="field-box__title">
-                    {title}
+                    {item.title}
                   </Typography>
                   <Controller
                     name={item.value}

@@ -1,12 +1,31 @@
+import { useTranslation } from "react-i18next";
 import * as yup from "yup";
 
-export default yup.object().shape({
-  title: yup.string().required("Title is required"),
-  description: yup.string().required("Description is required"),
-  tags: yup.array().of(yup.string().required("Tags cannot be empty")).min(1, "At least one tag is required"),
-  category: yup.string().required("Category is required"),
-  level: yup.string().required("Level is required"),
-  subcategory: yup.string().required("Subcategory is required"),
-  language: yup.string().required("Language is required"),
-  certificate: yup.boolean().nullable().notRequired()
-});
+export type GeneralFormValues = {
+  title: string;
+  description: string;
+  tags?: string[];
+  category: string;
+  level: string;
+  subcategory: string;
+  language: string;
+  certificate?: boolean | null;
+};
+
+export const useValidationSchema = (): yup.ObjectSchema<GeneralFormValues> => {
+  const { t } = useTranslation("teacher-create-course");
+
+  return yup.object().shape({
+    title: yup.string().required(t("general.validation.title")),
+    description: yup.string().required(t("general.validation.short-description")),
+    tags: yup
+      .array()
+      .of(yup.string().required(t("general.validation.tags")))
+      .min(1, t("general.validation.tags-requirements")),
+    category: yup.string().required(t("general.validation.category")),
+    level: yup.string().required(t("general.validation.level")),
+    subcategory: yup.string().required(t("general.validation.subcategory")),
+    language: yup.string().required(t("general.validation.language")),
+    certificate: yup.boolean().nullable().notRequired()
+  });
+};

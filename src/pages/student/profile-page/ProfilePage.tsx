@@ -34,6 +34,10 @@ const ProfilePage: FC<PageProps> = ({ title }) => {
   const { t } = useTranslation("auth");
   const { t: tCommon } = useTranslation("common");
 
+  const { register, handleSubmit } = useForm<ProfileFormValues>({
+    mode: "onSubmit"
+  });
+
   const fields: FieldProps[] = [
     {
       key: "nickname",
@@ -66,10 +70,6 @@ const ProfilePage: FC<PageProps> = ({ title }) => {
       placeholder: t("password-placeholder")
     }
   ];
-
-  const { register, handleSubmit } = useForm<ProfileFormValues>({
-    mode: "onSubmit"
-  });
 
   function onSubmit(data: ProfileFormValues): void {
     console.log(data);

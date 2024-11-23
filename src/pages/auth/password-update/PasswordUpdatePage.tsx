@@ -9,7 +9,7 @@ import useTitle from "src/hooks/useTitle";
 import { PageProps } from "pages/type";
 import { XlnteeColors } from "src/shared/themes/colors";
 
-import { FormValues, validationSchema } from "./validation";
+import { PasswordUpdateFormValues, useValidationSchema } from "./validation";
 
 import "./PasswordUpdatePage.scss";
 
@@ -22,14 +22,14 @@ const PasswordUpdatePage: FC<PageProps> = ({ title }) => {
     formState: { errors },
     handleSubmit,
     register
-  } = useForm<FormValues>({
+  } = useForm<PasswordUpdateFormValues>({
     mode: "onSubmit",
-    resolver: yupResolver(validationSchema)
+    resolver: yupResolver(useValidationSchema())
   });
 
   const [success, setSuccess] = useState<boolean>(false);
 
-  function onSubmitForm(data: FormValues): void {
+  function onSubmitForm(data: PasswordUpdateFormValues): void {
     console.log(data);
     setSuccess(true);
   }

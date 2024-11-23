@@ -10,7 +10,7 @@ import { Button, Stack, TextField, Typography } from "@mui/material";
 import { useAppDispatch } from "src/app/store/store";
 import { AppRoutes } from "src/app/routing/appRoutes";
 
-import { LoginFormValues, validationSchema } from "./validation";
+import { LoginFormValues, useValidationSchema } from "./validation";
 import { authApiSlice, useLoginMutation } from "src/app/store/slices/auth/api";
 import { setCredentials } from "src/app/store/slices/auth/slice";
 
@@ -18,18 +18,18 @@ const deviceId = "string";
 
 const LoginForm: FC = () => {
   const { t } = useTranslation("auth");
-
-  const [login, { isLoading: isLoginLoading }] = useLoginMutation();
   const { state } = useLocation();
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
+
+  const [login, { isLoading: isLoginLoading }] = useLoginMutation();
 
   const {
     formState: { errors },
     register,
     handleSubmit
   } = useForm<LoginFormValues>({
-    resolver: yupResolver(validationSchema),
+    resolver: yupResolver(useValidationSchema()),
     mode: "onSubmit"
   });
 

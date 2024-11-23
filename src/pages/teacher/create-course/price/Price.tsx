@@ -1,7 +1,5 @@
 import { FC } from "react";
 import { useForm } from "react-hook-form";
-import yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
 import { useTranslation } from "react-i18next";
 
 import { Box, FormLabel, Divider, Checkbox, Stack, Typography, Grid, TextField, Button } from "@mui/material";
@@ -11,25 +9,26 @@ import { PageProps } from "pages/type";
 import { XlnteeColors } from "src/shared/themes/colors";
 
 import { defaultValuesForm } from "./initialData";
-import validationSchema from "./validation";
 import { BlockPromoCodes } from "./ui";
 
 import "./Price.scss";
 
-export type FormValues = yup.InferType<typeof validationSchema>;
+export type PriceFormValues = {
+  paid: boolean;
+  price: string;
+};
 
 const PricePage: FC<PageProps> = ({ title }) => {
   useTitle(title);
   const { t } = useTranslation("teacher-create-course");
   const { t: tCommon } = useTranslation("common");
 
-  const { handleSubmit, register } = useForm<FormValues>({
+  const { handleSubmit, register } = useForm<PriceFormValues>({
     mode: "onSubmit",
-    defaultValues: defaultValuesForm,
-    resolver: yupResolver(validationSchema)
+    defaultValues: defaultValuesForm
   });
 
-  function onSubmitForm(data: FormValues): void {
+  function onSubmitForm(data: PriceFormValues): void {
     console.log(data);
   }
 

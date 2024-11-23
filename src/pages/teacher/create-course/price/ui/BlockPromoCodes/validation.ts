@@ -4,9 +4,9 @@ export default yup.object().shape({
   discount: yup
     .string()
     .matches(/^-?\d+$/)
-    .required("Must be a number"),
+    .required(),
   promoCode: yup
     .string()
     .matches(/^-?\d+$/)
-    .required("Must be a number")
+    .required()
 });

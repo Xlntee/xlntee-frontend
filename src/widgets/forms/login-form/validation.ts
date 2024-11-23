@@ -1,8 +1,16 @@
+import { useTranslation } from "react-i18next";
 import * as yup from "yup";
 
-export const validationSchema = yup.object().shape({
-  email: yup.string().email("Wrong email").required("Email is required"),
-  password: yup.string().required("Password is required")
-});
+export type LoginFormValues = {
+  email: string;
+  password: string;
+};
 
-export type LoginFormValues = yup.InferType<typeof validationSchema>;
+export const useValidationSchema = (): yup.ObjectSchema<LoginFormValues> => {
+  const { t } = useTranslation("auth");
+
+  return yup.object().shape({
+    email: yup.string().email(t("validation.email-invalid-format")).required(t("validation.email")),
+    password: yup.string().required(t("validation.password"))
+  });
+};

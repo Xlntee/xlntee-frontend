@@ -10,7 +10,7 @@ import { PageProps } from "pages/type";
 import { XlnteeColors } from "src/shared/themes/colors";
 import { getSecureEmail } from "src/shared/utils/methods";
 
-import { FormValues, validationSchema } from "./validation";
+import { EmailUpdateFormValues, useValidationSchema } from "./validation";
 
 import "./EmailUpdatePage.scss";
 
@@ -25,9 +25,9 @@ const EmailUpdatePage: FC<PageProps> = ({ title }) => {
     formState: { errors },
     handleSubmit,
     register
-  } = useForm<FormValues>({
+  } = useForm<EmailUpdateFormValues>({
     mode: "onSubmit",
-    resolver: yupResolver(validationSchema(email))
+    resolver: yupResolver(useValidationSchema(email))
   });
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const EmailUpdatePage: FC<PageProps> = ({ title }) => {
 
   const [success, setSuccess] = useState<boolean>(false);
 
-  function onSubmitForm(data: FormValues): void {
+  function onSubmitForm(data: EmailUpdateFormValues): void {
     console.log(data);
     setSuccess(true);
   }

@@ -13,20 +13,20 @@ import LocalStorageService from "src/shared/local-storage";
 import { Role, UserRoles } from "src/shared/utils/user-role";
 import { PasswordValidationPanel } from "src/features";
 
-import { RegistrationFormValues, validationSchema } from "./validation";
+import { RegistrationFormValues, useValidationSchema } from "./validation";
 
 const RegistrationForm: FC = () => {
-  const [role, setRole] = useState<Role>(UserRoles.student);
-
   const { t } = useTranslation("auth");
   const navigate = useNavigate();
+
+  const [role, setRole] = useState<Role>(UserRoles.student);
 
   const {
     formState: { errors },
     register,
     handleSubmit
   } = useForm<RegistrationFormValues>({
-    resolver: yupResolver(validationSchema),
+    resolver: yupResolver(useValidationSchema()),
     mode: "onSubmit"
   });
 
@@ -69,11 +69,11 @@ const RegistrationForm: FC = () => {
       </Stack>
       <Stack direction="column" gap="20px">
         <TextField
-          {...register("fullName", {
+          {...register("fullname", {
             required: "test error"
           })}
-          error={!!errors.fullName?.message}
-          helperText={errors.fullName?.message}
+          error={!!errors.fullname?.message}
+          helperText={errors.fullname?.message}
           type="text"
           placeholder={t("fullname-placeholder")}
         />

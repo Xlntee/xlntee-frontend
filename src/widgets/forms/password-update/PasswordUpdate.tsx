@@ -8,12 +8,13 @@ import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 
 import { AppRoutes } from "src/app/routing/appRoutes";
 
-import { FormValues, validationSchema } from "./validation";
+import { PasswordUpdateFormValues, useValidationSchema } from "./validation";
 import { XlnteeColors } from "src/shared/themes/colors";
 import { PasswordValidationPanel } from "src/features";
 
 const PasswordUpdate: FC = () => {
   const { t } = useTranslation("auth");
+
   const [isSubmit, setIsSubmit] = useState<boolean>(false);
 
   const {
@@ -21,12 +22,13 @@ const PasswordUpdate: FC = () => {
     register,
     handleSubmit,
     getValues
-  } = useForm<FormValues>({
-    resolver: yupResolver(validationSchema),
+  } = useForm<PasswordUpdateFormValues>({
+    resolver: yupResolver(useValidationSchema()),
     mode: "onSubmit"
   });
+  console.log("errors", errors);
 
-  function onSubmit(data: FormValues): void {
+  function onSubmit(data: PasswordUpdateFormValues): void {
     console.log(data);
     setIsSubmit(true);
   }

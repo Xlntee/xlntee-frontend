@@ -1,7 +1,6 @@
 import { FC, useRef } from "react";
 import ReactQuill from "react-quill";
 import { Controller, useForm } from "react-hook-form";
-import yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useTranslation } from "react-i18next";
 
@@ -11,10 +10,8 @@ import useTitle from "src/hooks/useTitle";
 import { ImageUpload } from "src/features";
 import { PageProps } from "pages/type";
 
-import validationSchema from "./validation";
+import { LectureFormValues, useValidationSchema } from "./validation";
 import { defaultValuesForm } from "./initialData";
-
-export type FormValues = yup.InferType<typeof validationSchema>;
 
 const LecturerPage: FC<PageProps> = ({ title }) => {
   useTitle(title);
@@ -28,13 +25,13 @@ const LecturerPage: FC<PageProps> = ({ title }) => {
     register,
     control,
     formState: { errors }
-  } = useForm<FormValues>({
+  } = useForm<LectureFormValues>({
     mode: "onSubmit",
     defaultValues: defaultValuesForm,
-    resolver: yupResolver(validationSchema)
+    resolver: yupResolver(useValidationSchema())
   });
 
-  function onSubmitForm(data: FormValues): void {
+  function onSubmitForm(data: LectureFormValues): void {
     const description = refRichText.current?.value;
     console.log({
       ...data,

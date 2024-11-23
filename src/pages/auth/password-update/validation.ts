@@ -1,18 +1,24 @@
 import * as yup from "yup";
+import { useTranslation } from "react-i18next";
 
 import { passwordRegex } from "src/shared/utils/const";
 
-export const validationSchema = yup.object().shape({
-  password: yup.string().required("Password is required"),
-  new_password: yup
-    .string()
-    .notOneOf(["password"], "New email should not be the same as the old email")
-    .matches(
-      passwordRegex,
-      "Password must be at least 8 characters long and contain at least one lowercase letter, one uppercase letter, one number, and one special character (!@#$%^&*()_+\\/.-~)"
-    )
-    .required("Password is required"),
-  confirm_password: yup.string().oneOf([yup.ref("new_password")], "Passwords must match")
-});
+export type PasswordUpdateFormValues = {
+  password: string;
+  new_password: string;
+  confirm_password?: string;
+};
 
-export type FormValues = yup.InferType<typeof validationSchema>;
+export const useValidationSchema = (): yup.ObjectSchema<PasswordUpdateFormValues> => {
+  const { t } = useTranslation("auth");
+
+  return yup.object().shape({
+    password: yup.string().required(t("validation.password")),
+    new_password: yup
+      .string()
+      .notOneOf(["password"], t("validation.confirm-password"))
+      .matches(passwordRegex, t("validation.confirm-password-requirements") + " (!@#$%^&*()_+\\/.-~)")
+      .required(t("validation.password")),
+    confirm_password: yup.string().oneOf([yup.ref("new_password")], t("validation.passwords-match"))
+  });
+};

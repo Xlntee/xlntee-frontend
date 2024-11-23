@@ -1,20 +1,23 @@
 import * as yup from "yup";
+import { useTranslation } from "react-i18next";
 
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-export const validationSchema = (oldEmail: string) =>
-  yup.object().shape({
-    new_email: yup
-      .string()
-      .email("Invalid email format")
-      .notOneOf([oldEmail], "New email should not be the same as the old email")
-      .required("New email is required"),
-    confirm_email: yup
-      .string()
-      .oneOf([yup.ref("new_email")], "Emails must match")
-      .required("Confirm email is required")
-  });
-
-export type FormValues = {
+export type EmailUpdateFormValues = {
   new_email: string;
   confirm_email: string;
+};
+
+export const useValidationSchema = (oldEmail: string): yup.ObjectSchema<EmailUpdateFormValues> => {
+  const { t } = useTranslation("auth");
+
+  return yup.object().shape({
+    new_email: yup
+      .string()
+      .email(t("validation.email-invalid-format"))
+      .notOneOf([oldEmail], t("validation.new-email-requirements"))
+      .required(t("validation.new-email")),
+    confirm_email: yup
+      .string()
+      .oneOf([yup.ref("new_email")], t("validation.emails-match"))
+      .required(t("validation.confirm-email"))
+  });
 };
