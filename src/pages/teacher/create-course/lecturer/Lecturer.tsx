@@ -1,13 +1,15 @@
 import { FC, useRef } from "react";
 import ReactQuill from "react-quill";
-import { Controller, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useTranslation } from "react-i18next";
 
-import { Box, Typography, TextField, Stack, FormLabel, Autocomplete, Chip, Button } from "@mui/material";
+import { Box, Typography, Stack, FormLabel, Button } from "@mui/material";
 
 import useTitle from "src/hooks/useTitle";
 import { ImageUpload } from "src/features";
+import { AutocompleteField, TextField } from "src/features/form-fields";
+import { RootForm } from "src/widgets/forms";
 import { PageProps } from "pages/type";
 
 import { useValidationSchema } from "./validation";
@@ -25,18 +27,13 @@ const LecturerPage: FC<PageProps> = ({ title }) => {
 
   const refRichText = useRef<ReactQuill | null>(null);
 
-  const {
-    handleSubmit,
-    register,
-    control,
-    formState: { errors }
-  } = useForm<LectureFormFields>({
+  const methods = useForm<LectureFormFields>({
     mode: "onSubmit",
     defaultValues: defaultValuesForm,
     resolver: yupResolver(useValidationSchema())
   });
 
-  function onSubmitForm(data: LectureFormFields): void {
+  function onSubmit(data: LectureFormFields): void {
     const description = refRichText.current?.value;
     console.log({
       ...data,
@@ -55,69 +52,40 @@ const LecturerPage: FC<PageProps> = ({ title }) => {
           title={t("lecturer.image-upload-title")}
         />
       </Box>
-      <Box className="field-box">
-        <Typography variant="h5" className="field-box__title">
-          {t("lecturer.fullname-field-label")}
-        </Typography>
-        <Typography className="field-box__subtitle">{t("lecturer.fullname-field-description")}</Typography>
-        <TextField
-          {...register("username")}
-          error={!!errors.username?.message}
-          helperText={errors.username?.message}
-          variant="outlined"
-          fullWidth
-          placeholder={`${t("lecturer.fullname-field-placeholder")}...`}
-        />
-      </Box>
-      <Box className="field-box">
-        <FormLabel>
-          <Typography className="field-box__title">{t("lecturer.skills-field-label")}*</Typography>
-          <Typography className="field-box__subtitle">{t("lecturer.skills-field-description")}</Typography>
-          <Controller
-            name="tags"
-            control={control}
-            render={({ field }) => (
-              <>
-                <Autocomplete
-                  {...register("tags")}
-                  multiple
-                  freeSolo
-                  options={[]}
-                  value={field.value}
-                  clearIcon={false}
-                  onChange={(_, newValue) => field.onChange(newValue)}
-                  renderTags={(value, props) =>
-                    // eslint-disable-next-line react/jsx-key
-                    value.map((option, index) => <Chip label={option} {...props({ index })} />)
-                  }
-                  renderInput={(params) => (
-                    <TextField
-                      {...params}
-                      error={!!errors.tags?.message}
-                      helperText={errors.tags?.message}
-                      variant="outlined"
-                      placeholder={`${t("lecturer.skills-field-placeholder")}...`}
-                    />
-                  )}
-                />
-              </>
-            )}
+      <RootForm methods={methods} onSubmit={onSubmit}>
+        <Box className="field-box">
+          <Typography variant="h5" className="field-box__title">
+            {t("lecturer.fullname-field-label")}
+          </Typography>
+          <Typography className="field-box__subtitle">{t("lecturer.fullname-field-description")}</Typography>
+          <TextField
+            name="username"
+            variant="outlined"
+            fullWidth
+            placeholder={`${t("lecturer.fullname-field-placeholder")}...`}
           />
-        </FormLabel>
-      </Box>
-      <Box className="field-box">
-        <Typography className="field-box__title">{t("lecturer.about-field-label")}</Typography>
-        <Typography className="field-box__subtitle">{t("lecturer.about-field-description")}</Typography>
-        <ReactQuill ref={refRichText} theme="snow" />
-      </Box>
-      <Stack direction={{ sm: "row" }} flexWrap="wrap" gap={{ sm: "20px", md: "40px" }}>
-        <Button variant="black-contain" size="medium" sx={{ minWidth: "190px" }} onClick={handleSubmit(onSubmitForm)}>
-          {tCommon("button-save")}
-        </Button>
-        <Button variant="black-text" size="medium">
-          {tCommon("button-discard-changes")}
-        </Button>
-      </Stack>
+        </Box>
+        <Box className="field-box">
+          <FormLabel>
+            <Typography className="field-box__title">{t("lecturer.skills-field-label")}*</Typography>
+            <Typography className="field-box__subtitle">{t("lecturer.skills-field-description")}</Typography>
+            <AutocompleteField name="tags" placeholder={`${t("lecturer.skills-field-placeholder")}...`} />
+          </FormLabel>
+        </Box>
+        <Box className="field-box">
+          <Typography className="field-box__title">{t("lecturer.about-field-label")}</Typography>
+          <Typography className="field-box__subtitle">{t("lecturer.about-field-description")}</Typography>
+          <ReactQuill ref={refRichText} theme="snow" />
+        </Box>
+        <Stack direction={{ sm: "row" }} flexWrap="wrap" gap={{ sm: "20px", md: "40px" }}>
+          <Button type="submit" variant="black-contain" size="medium" sx={{ minWidth: "190px" }}>
+            {tCommon("button-save")}
+          </Button>
+          <Button variant="black-text" size="medium">
+            {tCommon("button-discard-changes")}
+          </Button>
+        </Stack>
+      </RootForm>
     </Stack>
   );
 };
