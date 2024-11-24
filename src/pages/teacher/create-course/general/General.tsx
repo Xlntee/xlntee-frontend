@@ -137,7 +137,7 @@ const GeneralPage: FC<PageProps> = ({ title }) => {
   return (
     <Box className="create-course-general">
       <RootForm methods={methods} onSubmit={onSubmit}>
-        <Box className="field-box">
+        <FormLabel className="field-box">
           <Typography variant="h5" className="field-box__title">
             {t("general.title-field-label")}*
           </Typography>
@@ -148,8 +148,8 @@ const GeneralPage: FC<PageProps> = ({ title }) => {
             fullWidth
             placeholder={`${t("general.title-field-placeholder")}...`}
           />
-        </Box>
-        <Box className="field-box">
+        </FormLabel>
+        <FormLabel className="field-box">
           <Typography variant="h5" className="field-box__title">
             {t("general.description-field-label")}*
           </Typography>
@@ -160,44 +160,42 @@ const GeneralPage: FC<PageProps> = ({ title }) => {
             fullWidth
             placeholder={`${t("general.description-field-placeholder")}...`}
           />
-        </Box>
+        </FormLabel>
         <Box className="field-box">
           <Stack direction="row" alignItems="start">
-            <CheckboxField name="certificate" />
-            <Box>
+            <CheckboxField id="certificate" name="certificate" />
+            <FormLabel htmlFor="certificate">
               <Typography className="field-box__title">{t("general.checkbox-label")}</Typography>
               <Typography className="field-box__subtitle">{t("general.checkbox-description")}</Typography>
-            </Box>
+            </FormLabel>
           </Stack>
         </Box>
         <Grid container columnSpacing={{ xs: "20px", md: "30px", xl: "50px" }}>
           {selectFields.length
             ? selectFields.map((item) => (
                 <Grid key={item.value} item xs={12} sm={6}>
-                  <Box className="field-box">
+                  <FormLabel className="field-box">
                     <Typography variant="h5" mb="8px" className="field-box__title">
                       {item.title}
                     </Typography>
                     <SelectField name={item.value} options={item.options} />
-                  </Box>
+                  </FormLabel>
                 </Grid>
               ))
             : null}
           <Grid item xs={12} sm={6}>
-            <Box className="field-box">
-              <FormLabel>
-                <Typography mb="8px" className="field-box__title">
-                  {t("general.tags-field-label")}*
-                </Typography>
-                <AutocompleteField
-                  name="tags"
-                  placeholder={`${t("general.tags_field_placeholder")}...`}
-                  onChange={(e) => {
-                    console.log("change", e);
-                  }}
-                />
-              </FormLabel>
-            </Box>
+            <FormLabel className="field-box">
+              <Typography mb="8px" className="field-box__title">
+                {t("general.tags-field-label")}*
+              </Typography>
+              <AutocompleteField
+                name="tags"
+                placeholder={`${t("general.tags_field_placeholder")}...`}
+                onChange={(e) => {
+                  console.log("change", e);
+                }}
+              />
+            </FormLabel>
           </Grid>
         </Grid>
         <Stack direction={{ sm: "row" }} flexWrap="wrap" gap={{ sm: "20px", md: "40px" }}>
