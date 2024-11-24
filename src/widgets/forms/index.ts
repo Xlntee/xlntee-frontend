@@ -9,3 +9,4 @@ export * from "./help-center-form";
 export * from "./student-profile-form";
 export * from "./teacher-profile-form";
 export * from "./lecturer-form";
+export * from "./price-form";
