@@ -405,6 +405,16 @@ defaultTheme.components = {
       }
     ]
   },
+  MuiFormControlLabel: {
+    styleOverrides: {
+      root: {
+        marginLeft: 0,
+        ".MuiButtonBase-root": {
+          marginRight: 10
+        }
+      }
+    }
+  },
   MuiInputLabel: {
     styleOverrides: {
       root: {
@@ -422,7 +432,6 @@ defaultTheme.components = {
       root: {
         height: 36,
         overflow: "hidden",
-
         [defaultTheme.breakpoints.up("md")]: {
           height: 50
         },
@@ -432,6 +441,9 @@ defaultTheme.components = {
         "&.Mui-focused fieldset": {
           borderColor: XlnteeColors.DarkColor,
           borderWidth: 4
+        },
+        "&.Mui-error .MuiOutlinedInput-notchedOutline": {
+          borderColor: XlnteeColors.ErrorDarkColor
         }
       }
     }
@@ -449,7 +461,10 @@ defaultTheme.components = {
   MuiFormHelperText: {
     styleOverrides: {
       root: {
-        marginInline: 0
+        marginInline: 0,
+        "&.Mui-error": {
+          color: XlnteeColors.ErrorDarkColor
+        }
       }
     }
   },
