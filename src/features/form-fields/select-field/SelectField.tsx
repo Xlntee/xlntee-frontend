@@ -1,27 +1,21 @@
-import { ChangeEvent, FC } from "react";
+import { FC } from "react";
 import { useFormContext, useController, UseControllerProps, Controller } from "react-hook-form";
 
-import {
-  Box,
-  Checkbox as MuiCheckbox,
-  CheckboxProps as MuiCheckboxProps,
-  FormControlLabel,
-  FormHelperText
-} from "@mui/material";
+import { Box, SelectProps, MenuItem, Select, FormHelperText, SelectChangeEvent } from "@mui/material";
 
-type CheckboxFieldProps = {
+type SelectFieldProps = {
   name: string;
   rules?: UseControllerProps["rules"];
   showErrorMessage?: boolean;
-  label?: string;
   className?: string;
-} & MuiCheckboxProps;
+  options: any[];
+} & SelectProps;
 
-const CheckboxField: FC<CheckboxFieldProps> = ({
+const SelectField: FC<SelectFieldProps> = ({
   name,
   rules,
   showErrorMessage = true,
-  label,
+  options,
   className,
   onChange,
   ...props
@@ -32,7 +26,8 @@ const CheckboxField: FC<CheckboxFieldProps> = ({
     fieldState: { error }
   } = useController({ name, control, rules: rules || {} });
 
-  function defaultOnChange(e: ChangeEvent<HTMLInputElement>): void {
+  function defaultOnChange(e: SelectChangeEvent<unknown>): void {
+    console.log(e);
     field.onChange(e);
   }
 
@@ -42,18 +37,15 @@ const CheckboxField: FC<CheckboxFieldProps> = ({
         name={name}
         control={control}
         render={(propery) => (
-          <FormControlLabel
-            control={
-              <MuiCheckbox
-                {...propery.field}
-                {...props}
-                name={field.name}
-                checked={field.value || false}
-                onChange={onChange || defaultOnChange}
-              />
-            }
-            label={label}
-          />
+          <Select {...propery.field} {...props} onChange={onChange || defaultOnChange}>
+            {options.length
+              ? options.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.title}
+                  </MenuItem>
+                ))
+              : null}
+          </Select>
         )}
       />
       {showErrorMessage && <>{!!error && <FormHelperText error={true}>{error.message}</FormHelperText>}</>}
@@ -61,4 +53,4 @@ const CheckboxField: FC<CheckboxFieldProps> = ({
   );
 };
 
-export default CheckboxField;
+export default SelectField;

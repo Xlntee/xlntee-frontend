@@ -409,6 +409,7 @@ defaultTheme.components = {
     styleOverrides: {
       root: {
         marginLeft: 0,
+        marginRight: 0,
         ".MuiButtonBase-root": {
           marginRight: 10
         }
