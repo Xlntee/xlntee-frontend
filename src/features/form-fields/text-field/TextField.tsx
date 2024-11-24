@@ -6,11 +6,11 @@ import { TextField as MuiTextField, TextFieldProps as MuiTextFieldProps } from "
 type TextFieldProps = {
   name: string;
   rules?: UseControllerProps["rules"];
+  showErrorMessage?: boolean;
   className?: string;
 } & MuiTextFieldProps;
 
-const TextField: FC<TextFieldProps> = (props) => {
-  const { name, rules, className, onChange } = props;
+const TextField: FC<TextFieldProps> = ({ name, rules, className, showErrorMessage = true, onChange, ...props }) => {
   const { control, register } = useFormContext();
   const {
     field,
@@ -30,7 +30,7 @@ const TextField: FC<TextFieldProps> = (props) => {
       autoCorrect="off"
       autoComplete="off"
       error={!!error}
-      helperText={error?.message}
+      helperText={showErrorMessage && error?.message}
       className={className}
       onChange={onChange || defaultOnChange}
     />

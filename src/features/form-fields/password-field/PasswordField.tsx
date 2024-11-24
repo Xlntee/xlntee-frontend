@@ -15,11 +15,8 @@ type PasswordFieldProps = {
   showErrorMessage?: boolean;
 } & MuiTextFieldProps;
 
-const PasswordField: FC<PasswordFieldProps> = (props) => {
-  const { name, rules, showErrorMessage = true, onChange } = props;
-
+const PasswordField: FC<PasswordFieldProps> = ({ name, rules, showErrorMessage = true, onChange, ...props }) => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
-
   const { control, register } = useFormContext();
   const {
     field,
