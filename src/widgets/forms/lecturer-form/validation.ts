@@ -1,6 +1,6 @@
 import * as yup from "yup";
 import { useTranslation } from "react-i18next";
-import { LectureFormFields } from "./Lecturer";
+import { LectureFormFields } from "./LecturerForm";
 
 export const useValidationSchema = (): yup.ObjectSchema<LectureFormFields> => {
   const { t } = useTranslation("teacher-create-course");

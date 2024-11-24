@@ -1,4 +1,4 @@
-import { LectureFormFields } from "./Lecturer";
+import { LectureFormFields } from "./LecturerForm";
 
 export const defaultValuesForm: LectureFormFields = {
   username: "",

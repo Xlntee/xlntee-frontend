@@ -8,3 +8,4 @@ export * from "./user-password-update-form";
 export * from "./help-center-form";
 export * from "./student-profile-form";
 export * from "./teacher-profile-form";
+export * from "./lecturer-form";
