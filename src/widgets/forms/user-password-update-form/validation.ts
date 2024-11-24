@@ -1,9 +1,9 @@
 import * as yup from "yup";
 import { useTranslation } from "react-i18next";
-import { PasswordUpdateFormValues } from "./UserPasswordUpdateForm";
+import { UserPasswordUpdateFormValues } from "./UserPasswordUpdateForm";
 import { passwordRegex } from "src/shared/utils/const";
 
-export const useValidationSchema = (): yup.ObjectSchema<PasswordUpdateFormValues> => {
+export const useValidationSchema = (): yup.ObjectSchema<UserPasswordUpdateFormValues> => {
   const { t } = useTranslation("auth");
 
   return yup.object().shape({
