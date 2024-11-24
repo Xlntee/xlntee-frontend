@@ -5,19 +5,17 @@ import { Box, Container, Typography } from "@mui/material";
 
 import useTitle from "src/hooks/useTitle";
 import { PageProps } from "pages/type";
-import { PasswordUpdateForm, PasswordUpdateFormValues } from "src/widgets/forms";
+import { UserPasswordUpdateForm, UserPasswordUpdateFormValues } from "src/widgets/forms";
 import { InfoBlock } from "../info-block";
 
-import "./PasswordUpdatePage.scss";
-
-const PasswordUpdatePage: FC<PageProps> = ({ title }) => {
+const UserPasswordUpdatePage: FC<PageProps> = ({ title }) => {
   useTitle(title);
 
   const { t } = useTranslation("auth");
 
   const [success, setSuccess] = useState<boolean>(false);
 
-  function onSubmitForm(data: PasswordUpdateFormValues): void {
+  function onSubmitForm(data: UserPasswordUpdateFormValues): void {
     console.log(data);
     setSuccess(true);
   }
@@ -30,7 +28,7 @@ const PasswordUpdatePage: FC<PageProps> = ({ title }) => {
             <Typography variant="h3" mb="20px" textAlign="center">
               {t("credential-update-content.title-password")}
             </Typography>
-            <PasswordUpdateForm onSubmit={onSubmitForm} />
+            <UserPasswordUpdateForm onSubmit={onSubmitForm} />
           </Box>
         ) : (
           <InfoBlock
@@ -44,4 +42,4 @@ const PasswordUpdatePage: FC<PageProps> = ({ title }) => {
   );
 };
 
-export default PasswordUpdatePage;
+export default UserPasswordUpdatePage;

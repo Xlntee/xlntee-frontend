@@ -9,25 +9,25 @@ import { PasswordField } from "src/features/form-fields";
 
 import { useValidationSchema } from "./validation";
 
-export type PasswordUpdateFormValues = {
+export type UserPasswordUpdateFormValues = {
   password: string;
   new_password: string;
   confirm_password: string;
 };
 
-type PasswordUpdateFormProps = {
-  onSubmit: (props: PasswordUpdateFormValues) => void;
+type UserPasswordUpdateFormProps = {
+  onSubmit: (props: UserPasswordUpdateFormValues) => void;
 };
 
-const PasswordUpdateForm: FC<PasswordUpdateFormProps> = ({ onSubmit }) => {
+const UserPasswordUpdateForm: FC<UserPasswordUpdateFormProps> = ({ onSubmit }) => {
   const { t } = useTranslation("auth");
 
-  const methods = useForm<PasswordUpdateFormValues>({
+  const methods = useForm<UserPasswordUpdateFormValues>({
     resolver: yupResolver(useValidationSchema()),
     mode: "onSubmit"
   });
 
-  async function onHandleSubmit(data: PasswordUpdateFormValues): Promise<void> {
+  async function onHandleSubmit(data: UserPasswordUpdateFormValues): Promise<void> {
     console.log(data);
     onSubmit(data);
   }
@@ -72,4 +72,4 @@ const PasswordUpdateForm: FC<PasswordUpdateFormProps> = ({ onSubmit }) => {
   );
 };
 
-export default PasswordUpdateForm;
+export default UserPasswordUpdateForm;
