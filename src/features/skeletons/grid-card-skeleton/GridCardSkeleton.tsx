@@ -5,10 +5,10 @@ import { CardList } from "src/features/card-list";
 import { CardSkeleton } from "../card-skeleton";
 
 type GridCardsProps = {
-  countItems: number;
+  countItems?: number;
 };
 
-const GridCards: FC<GridCardsProps> = ({ countItems }) => {
+const GridCardSkeleton: FC<GridCardsProps> = ({ countItems = 3 }) => {
   const [list, setList] = useState<{ id: string }[]>([]);
 
   function fillList(): void {
@@ -37,4 +37,4 @@ const GridCards: FC<GridCardsProps> = ({ countItems }) => {
   );
 };
 
-export default GridCards;
+export default GridCardSkeleton;
