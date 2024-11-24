@@ -13,23 +13,23 @@ import { useValidationSchema } from "./validation";
 
 import "./HelpCenterForm.scss";
 
-export interface HelpCenterFormValues {
+export type HelpCenterFormFields = {
   support: string;
-}
+};
 
 interface HelpCenterFormProps {
-  onSubmit: (props: HelpCenterFormValues) => void;
+  onSubmit: (props: HelpCenterFormFields) => void;
 }
 
 const HelpCenterForm: FC<HelpCenterFormProps> = ({ onSubmit }) => {
   const { t } = useTranslation("auth");
 
-  const methods = useForm<HelpCenterFormValues>({
+  const methods = useForm<HelpCenterFormFields>({
     resolver: yupResolver(useValidationSchema()),
     mode: "onSubmit"
   });
 
-  function onHandleSubmit(data: HelpCenterFormValues): void {
+  function onHandleSubmit(data: HelpCenterFormFields): void {
     onSubmit(data);
   }
 

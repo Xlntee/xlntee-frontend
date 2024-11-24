@@ -1,8 +1,8 @@
 import * as yup from "yup";
 import { useTranslation } from "react-i18next";
-import { EmailUpdateFormValues } from "./EmailUpdateForm";
+import { EmailUpdateFormFields } from "./EmailUpdateForm";
 
-export const useValidationSchema = (oldEmail: string): yup.ObjectSchema<EmailUpdateFormValues> => {
+export const useValidationSchema = (oldEmail: string): yup.ObjectSchema<EmailUpdateFormFields> => {
   const { t } = useTranslation("auth");
 
   return yup.object().shape({

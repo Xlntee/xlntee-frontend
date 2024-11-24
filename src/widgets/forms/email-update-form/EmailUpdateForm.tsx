@@ -11,25 +11,25 @@ import { getSecureEmail } from "src/shared/utils/methods";
 
 import { useValidationSchema } from "./validation";
 
-export type EmailUpdateFormValues = {
+export type EmailUpdateFormFields = {
   new_email: string;
   confirm_email: string;
 };
 
 interface EmailUpdateFormProps {
   oldEmail: string;
-  onSubmit: (props: EmailUpdateFormValues) => void;
+  onSubmit: (props: EmailUpdateFormFields) => void;
 }
 
 const EmailUpdateForm: FC<EmailUpdateFormProps> = ({ oldEmail, onSubmit }) => {
   const { t } = useTranslation("auth");
 
-  const methods = useForm<EmailUpdateFormValues>({
+  const methods = useForm<EmailUpdateFormFields>({
     resolver: yupResolver(useValidationSchema(oldEmail)),
     mode: "onSubmit"
   });
 
-  async function onHandleSubmit(data: EmailUpdateFormValues): Promise<void> {
+  async function onHandleSubmit(data: EmailUpdateFormFields): Promise<void> {
     onSubmit(data);
   }
 

@@ -10,20 +10,20 @@ import { PasswordValidationPanel } from "src/features";
 import { TextField, PasswordField } from "src/features/form-fields";
 import { RootForm } from "../root-form";
 
-export type PasswordUpdateFormValues = {
+export type PasswordUpdateFormFields = {
   email: string;
   password: string;
   confirm_password: string;
 };
 
 interface AuthPasswordUpdateFormProps {
-  onSubmit: (data: PasswordUpdateFormValues) => void;
+  onSubmit: (data: PasswordUpdateFormFields) => void;
 }
 
 const AuthPasswordUpdateForm: FC<AuthPasswordUpdateFormProps> = ({ onSubmit }) => {
   const { t } = useTranslation("auth");
 
-  const methods = useForm<PasswordUpdateFormValues>({
+  const methods = useForm<PasswordUpdateFormFields>({
     resolver: yupResolver(useValidationSchema()),
     mode: "onSubmit"
   });
@@ -31,7 +31,7 @@ const AuthPasswordUpdateForm: FC<AuthPasswordUpdateFormProps> = ({ onSubmit }) =
     formState: { errors }
   } = methods;
 
-  function onHandleSubmit(data: PasswordUpdateFormValues): void {
+  function onHandleSubmit(data: PasswordUpdateFormFields): void {
     onSubmit(data);
   }
 

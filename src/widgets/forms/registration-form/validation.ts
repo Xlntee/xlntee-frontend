@@ -2,14 +2,9 @@ import * as yup from "yup";
 import { useTranslation } from "react-i18next";
 
 import { passwordRegex } from "src/shared/utils/const";
+import { RegistrationFormFields } from "./RegistrationForm";
 
-export type RegistrationFormValues = {
-  fullname: string;
-  email: string;
-  password: string;
-};
-
-export const useValidationSchema = (): yup.ObjectSchema<RegistrationFormValues> => {
+export const useValidationSchema = (): yup.ObjectSchema<RegistrationFormFields> => {
   const { t } = useTranslation("auth");
 
   return yup.object().shape({

@@ -16,8 +16,6 @@ function RootForm<T extends FieldValues>({
   onSubmit,
   onError
 }: RootFormProps<T>): JSX.Element {
-  // const { getValues, setValue } = methods;
-
   const errorHandler: SubmitErrorHandler<T> = (errors): void => {
     console.log(errors);
     onError?.(errors);

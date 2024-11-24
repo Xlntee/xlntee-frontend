@@ -10,7 +10,7 @@ import { TextField } from "src/features/form-fields";
 import { RootForm } from "src/widgets/forms";
 import { useAuth } from "src/hooks/useAuth";
 
-interface TeacherProfileFormValues {
+type TeacherProfileFormFields = {
   firstName: string;
   phone: string;
   lastName: string;
@@ -21,11 +21,11 @@ interface TeacherProfileFormValues {
   facebook: string;
   twitter: string;
   instagram: string;
-}
+};
 
-type ProfileFormKeys = keyof TeacherProfileFormValues;
+type ProfileFormKeys = keyof TeacherProfileFormFields;
 
-type FieldProps = {
+type FieldType = {
   name: ProfileFormKeys;
   label: string;
   placeholder: string;
@@ -33,14 +33,14 @@ type FieldProps = {
 
 const TeacherProfileForm: FC = () => {
   const { t } = useTranslation("auth");
-  const { userRole } = useAuth();
   const { t: tCommon } = useTranslation("common");
+  const { userRole } = useAuth();
 
-  const methods = useForm<TeacherProfileFormValues>({
+  const methods = useForm<TeacherProfileFormFields>({
     mode: "onSubmit"
   });
 
-  const fields: FieldProps[] = [
+  const fields: FieldType[] = [
     {
       name: "nickname",
       label: t("nickname-label"),
@@ -93,7 +93,7 @@ const TeacherProfileForm: FC = () => {
     }
   ];
 
-  function onSubmit(data: TeacherProfileFormValues): void {
+  function onSubmit(data: TeacherProfileFormFields): void {
     console.log(data);
   }
 

@@ -16,7 +16,7 @@ import { useValidationSchema } from "./validation";
 import { authApiSlice, useLoginMutation } from "src/app/store/slices/auth/api";
 import { setCredentials } from "src/app/store/slices/auth/slice";
 
-export type LoginFormValues = {
+export type LoginFormFields = {
   email: string;
   password: string;
 };
@@ -31,12 +31,12 @@ const LoginForm: FC = () => {
 
   const [login, { isLoading: isLoginLoading }] = useLoginMutation();
 
-  const methods = useForm<LoginFormValues>({
+  const methods = useForm<LoginFormFields>({
     resolver: yupResolver(useValidationSchema()),
     mode: "onSubmit"
   });
 
-  async function onSubmit(data: LoginFormValues): Promise<void> {
+  async function onSubmit(data: LoginFormFields): Promise<void> {
     try {
       const res = await login({ ...data, deviceId }).unwrap();
 

@@ -1,1 +1,1 @@
-export { default as HelpCenterForm, type HelpCenterFormValues } from "./HelpCenterForm";
+export { default as HelpCenterForm, type HelpCenterFormFields } from "./HelpCenterForm";

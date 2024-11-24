@@ -5,7 +5,7 @@ import { Box, Container, Typography } from "@mui/material";
 
 import useTitle from "src/hooks/useTitle";
 import { PageProps } from "pages/type";
-import { UserPasswordUpdateForm, UserPasswordUpdateFormValues } from "src/widgets/forms";
+import { UserPasswordUpdateForm, UserPasswordUpdateFormFields } from "src/widgets/forms";
 import { InfoBlock } from "../info-block";
 
 const UserPasswordUpdatePage: FC<PageProps> = ({ title }) => {
@@ -15,7 +15,7 @@ const UserPasswordUpdatePage: FC<PageProps> = ({ title }) => {
 
   const [success, setSuccess] = useState<boolean>(false);
 
-  function onSubmitForm(data: UserPasswordUpdateFormValues): void {
+  function onSubmitForm(data: UserPasswordUpdateFormFields): void {
     console.log(data);
     setSuccess(true);
   }

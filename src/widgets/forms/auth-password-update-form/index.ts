@@ -1,1 +1,1 @@
-export { default as AuthPasswordUpdateForm, type PasswordUpdateFormValues } from "./AuthPasswordUpdateForm";
+export { default as AuthPasswordUpdateForm, type PasswordUpdateFormFields } from "./AuthPasswordUpdateForm";

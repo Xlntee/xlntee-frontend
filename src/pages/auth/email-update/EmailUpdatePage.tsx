@@ -5,7 +5,7 @@ import { Box, Container, Typography } from "@mui/material";
 
 import useTitle from "src/hooks/useTitle";
 import { PageProps } from "pages/type";
-import { EmailUpdateForm, EmailUpdateFormValues } from "src/widgets/forms";
+import { EmailUpdateForm, EmailUpdateFormFields } from "src/widgets/forms";
 import { InfoBlock } from "../info-block";
 
 import "./EmailUpdatePage.scss";
@@ -21,7 +21,7 @@ const EmailUpdatePage: FC<PageProps> = ({ title }) => {
     setEmail("test@gmail.com");
   }, []);
 
-  function onSubmit(data: EmailUpdateFormValues): void {
+  function onSubmit(data: EmailUpdateFormFields): void {
     console.log(data);
     setSuccess(true);
   }

@@ -16,7 +16,13 @@ import LocalStorageService from "src/shared/local-storage";
 import { Role, UserRoles } from "src/shared/utils/user-role";
 import { PasswordValidationPanel } from "src/features";
 
-import { RegistrationFormValues, useValidationSchema } from "./validation";
+import { useValidationSchema } from "./validation";
+
+export type RegistrationFormFields = {
+  fullname: string;
+  email: string;
+  password: string;
+};
 
 const RegistrationForm: FC = () => {
   const { t } = useTranslation("auth");
@@ -24,7 +30,7 @@ const RegistrationForm: FC = () => {
 
   const [role, setRole] = useState<Role>(UserRoles.student);
 
-  const methods = useForm<RegistrationFormValues>({
+  const methods = useForm<RegistrationFormFields>({
     resolver: yupResolver(useValidationSchema()),
     mode: "onSubmit"
   });
@@ -33,7 +39,7 @@ const RegistrationForm: FC = () => {
     formState: { errors }
   } = methods;
 
-  function onSubmit(data: RegistrationFormValues): void {
+  function onSubmit(data: RegistrationFormFields): void {
     try {
       LocalStorageService.emailConfirmation("1234", data.email, role);
       navigate(AppRoutes.auth.accountVerification);

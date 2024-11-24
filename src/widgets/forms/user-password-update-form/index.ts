@@ -1,1 +1,1 @@
-export { default as UserPasswordUpdateForm, type UserPasswordUpdateFormValues } from "./UserPasswordUpdateForm";
+export { default as UserPasswordUpdateForm, type UserPasswordUpdateFormFields } from "./UserPasswordUpdateForm";

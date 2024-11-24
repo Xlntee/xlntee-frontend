@@ -9,7 +9,7 @@ import { AppRoutes } from "src/app/routing/appRoutes";
 import { XlnteeColors } from "src/shared/themes/colors";
 import { PageProps } from "pages/type";
 import useTitle from "src/hooks/useTitle";
-import { AuthPasswordUpdateForm, PasswordUpdateFormValues } from "src/widgets/forms";
+import { AuthPasswordUpdateForm, PasswordUpdateFormFields } from "src/widgets/forms";
 
 const AuthPasswordUpdatePage: FC<PageProps> = ({ title }) => {
   useTitle(title);
@@ -18,7 +18,7 @@ const AuthPasswordUpdatePage: FC<PageProps> = ({ title }) => {
   const [isSubmit, setIsSubmit] = useState<boolean>(false);
   const [selectedEmail, setSelectedEmail] = useState<string | null>(null);
 
-  function onSubmit(data: PasswordUpdateFormValues): void {
+  function onSubmit(data: PasswordUpdateFormFields): void {
     console.log(data);
     setIsSubmit(true);
     setSelectedEmail(data.email);

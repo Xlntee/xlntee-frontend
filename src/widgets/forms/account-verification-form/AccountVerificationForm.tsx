@@ -11,7 +11,7 @@ import { AppRoutes } from "src/app/routing/appRoutes";
 import LocalStorageService from "src/shared/local-storage";
 import { XlnteeColors } from "src/shared/themes/colors";
 
-type ConfirmationFormValues = {
+type ConfirmationFormFields = {
   email: string;
   role: string;
 };
@@ -19,7 +19,7 @@ type ConfirmationFormValues = {
 const AccountVerificationPage: FC<PageProps> = ({ title }) => {
   useTitle(title);
 
-  const [confirmationState, setConfirmationState] = useState<ConfirmationFormValues>({
+  const [confirmationState, setConfirmationState] = useState<ConfirmationFormFields>({
     email: "",
     role: ""
   });

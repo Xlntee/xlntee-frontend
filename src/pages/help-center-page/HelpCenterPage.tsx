@@ -7,7 +7,7 @@ import CheckIcon from "@mui/icons-material/Check";
 
 import useTitle from "src/hooks/useTitle";
 import { XlnteeColors } from "src/shared/themes/colors";
-import { HelpCenterForm, HelpCenterFormValues } from "src/widgets/forms";
+import { HelpCenterForm, HelpCenterFormFields } from "src/widgets/forms";
 import { PageProps } from "pages/type";
 
 import "./HelpCenterPage.scss";
@@ -18,7 +18,7 @@ const HelpCenterPage: FC<PageProps> = ({ title }) => {
   const { t } = useTranslation("auth");
   const [isSubmit, setIsSubmit] = useState<boolean>(false);
 
-  function onSubmit(data: HelpCenterFormValues): void {
+  function onSubmit(data: HelpCenterFormFields): void {
     console.log(data);
     setIsSubmit(true);
   }
