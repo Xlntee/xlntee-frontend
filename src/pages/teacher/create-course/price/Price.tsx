@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+import * as yup from "yup";
 
 import { Box, FormLabel, Divider, Stack, Typography, Grid, Button } from "@mui/material";
 
@@ -12,10 +13,18 @@ import { CheckboxField, TextField } from "src/features/form-fields";
 
 import { defaultValuesForm } from "./initialData";
 import { BlockPromoCodes } from "./ui";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 export type PriceFormFields = {
   paid: boolean;
   price: string;
+};
+
+const useValidationSchema = (): yup.ObjectSchema<PriceFormFields> => {
+  return yup.object().shape({
+    paid: yup.boolean().oneOf([true], "Error").required(),
+    price: yup.string().required("Required !!!")
+  });
 };
 
 const PricePage: FC<PageProps> = ({ title }) => {
@@ -24,6 +33,7 @@ const PricePage: FC<PageProps> = ({ title }) => {
   const { t: tCommon } = useTranslation("common");
 
   const methods = useForm<PriceFormFields>({
+    resolver: yupResolver(useValidationSchema()),
     defaultValues: defaultValuesForm,
     mode: "onSubmit"
   });

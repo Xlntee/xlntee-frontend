@@ -11,7 +11,8 @@ export const useValidationSchema = (): yup.ObjectSchema<GeneralFormFields> => {
     tags: yup
       .array()
       .of(yup.string().required(t("general.validation.tags")))
-      .min(1, t("general.validation.tags-requirements")),
+      .min(1, t("general.validation.tags-requirements"))
+      .required(),
     category: yup.string().required(t("general.validation.category")),
     level: yup.string().required(t("general.validation.level")),
     subcategory: yup.string().required(t("general.validation.subcategory")),
