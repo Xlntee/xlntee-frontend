@@ -16,10 +16,10 @@ export type EmailUpdateFormFields = {
   confirm_email: string;
 };
 
-interface EmailUpdateFormProps {
+type EmailUpdateFormProps = {
   oldEmail: string;
   onSubmit: (props: EmailUpdateFormFields) => void;
-}
+};
 
 const EmailUpdateForm: FC<EmailUpdateFormProps> = ({ oldEmail, onSubmit }) => {
   const { t } = useTranslation("auth");

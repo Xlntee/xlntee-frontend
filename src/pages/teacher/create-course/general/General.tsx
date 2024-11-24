@@ -22,20 +22,31 @@ import {
 import useTitle from "src/hooks/useTitle";
 import { PageProps } from "pages/type";
 
-import { GeneralFormValues, useValidationSchema } from "./validation";
+import { useValidationSchema } from "./validation";
 import { defaultValuesForm } from "./initialData";
 import { Difficulty, Language } from "src/entities/course/model";
 
 type SelectType = "category" | "level" | "subcategory" | "language";
 
-export interface SelectFieldBoxProps {
+export type GeneralFormFields = {
+  title: string;
+  description: string;
+  tags?: string[];
+  category: string;
+  level: string;
+  subcategory: string;
+  language: string;
+  certificate?: boolean | null;
+};
+
+export type SelectFieldBoxProps = {
   title: string;
   value: SelectType;
   options: {
     title: string;
     value: string;
   }[];
-}
+};
 
 const GeneralPage: FC<PageProps> = ({ title }) => {
   const { t } = useTranslation("teacher-create-course");
@@ -50,7 +61,7 @@ const GeneralPage: FC<PageProps> = ({ title }) => {
     register,
     control,
     formState: { errors }
-  } = useForm<GeneralFormValues>({
+  } = useForm<GeneralFormFields>({
     mode: "onSubmit",
     defaultValues: defaultValuesForm,
     resolver: yupResolver(useValidationSchema())
@@ -60,7 +71,7 @@ const GeneralPage: FC<PageProps> = ({ title }) => {
     setSelectFields(data);
   }, []);
 
-  function onSubmitForm(data: GeneralFormValues): void {
+  function onSubmitForm(data: GeneralFormFields): void {
     console.log(data);
   }
 

@@ -14,10 +14,10 @@ import { CategoryLinkType, CategoryNavigation } from "./ui";
 
 import "./CourseBlockLayout.scss";
 
-interface CategoriesNavigation {
+type CategoriesNavigationType = {
   items: CategoryLinkType[];
   completed: number;
-}
+};
 
 const data: CategoryLinkType[] = [
   {
@@ -59,7 +59,7 @@ const CourseLayout: FC = () => {
   const [isOpenMenu, setIsOpenMenu] = useState<boolean>(localStorage.getItem(LSMenuKey) === "true");
   const [expandedObj, setExpandedObj] = useState<Record<string, boolean>>({});
 
-  const [navigation, setNavigation] = useState<CategoriesNavigation[]>([]);
+  const [navigation, setNavigation] = useState<CategoriesNavigationType[]>([]);
 
   const getCompletedCountCategories = (arr: CategoryLinkType[]): number => {
     return arr.reduce((acc, item) => acc + (item.completed ? 1 : 0), 0);

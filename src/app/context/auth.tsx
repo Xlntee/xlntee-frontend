@@ -14,9 +14,9 @@ export type AuthContextType = {
   isTeacherRole?: boolean;
 };
 
-interface AuthContextProps {
+type AuthContextProps = {
   children?: ReactNode;
-}
+};
 
 const initialState: AuthContextType = {
   userRole: null,

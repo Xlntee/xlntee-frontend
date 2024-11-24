@@ -1,13 +1,13 @@
-import React from "react";
+import { FC } from "react";
 import { Stack, List, Box, ListItem, Typography } from "@mui/material";
 import { XlnteeColors } from "src/shared/themes/colors";
 
-interface CoursePreviewInfoBlockProps {
+type CoursePreviewInfoBlockProps = {
   title: string;
   info: string[];
-}
+};
 
-const CoursePreviewInfoBlock: React.FC<CoursePreviewInfoBlockProps> = ({ title, info }) => {
+const CoursePreviewInfoBlock: FC<CoursePreviewInfoBlockProps> = ({ title, info }) => {
   return (
     <Stack
       gap="14px"

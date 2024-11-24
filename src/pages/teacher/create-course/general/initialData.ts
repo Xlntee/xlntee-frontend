@@ -1,6 +1,6 @@
-import { GeneralFormValues } from "./validation";
+import { GeneralFormFields } from "./General";
 
-export const defaultValuesForm: GeneralFormValues = {
+export const defaultValuesForm: GeneralFormFields = {
   title: "",
   description: "",
   tags: [],

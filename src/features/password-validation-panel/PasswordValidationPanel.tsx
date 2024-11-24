@@ -5,9 +5,9 @@ import { Box, Typography } from "@mui/material";
 
 import { XlnteeColors } from "src/shared/themes/colors";
 
-interface PasswordValidationPanelProps {
+type PasswordValidationPanelProps = {
   isError?: boolean;
-}
+};
 
 const PasswordValidationPanel: FC<PasswordValidationPanelProps> = ({ isError = false }) => {
   const { t } = useTranslation("auth");

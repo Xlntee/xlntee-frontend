@@ -1,12 +1,8 @@
 import * as yup from "yup";
 import { useTranslation } from "react-i18next";
+import { LectureFormFields } from "./Lecturer";
 
-export type LectureFormValues = {
-  username: string;
-  tags?: string[];
-};
-
-export const useValidationSchema = (): yup.ObjectSchema<LectureFormValues> => {
+export const useValidationSchema = (): yup.ObjectSchema<LectureFormFields> => {
   const { t } = useTranslation("teacher-create-course");
 
   return yup.object().shape({

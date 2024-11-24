@@ -4,7 +4,7 @@ import { LinearProgress, Box, Typography } from "@mui/material";
 
 import "./Progress.scss";
 
-interface IProgress {
+type ProgressProps = {
   value?: number;
   color?: "primary" | "secondary" | "success" | "info" | "warning";
   title?: string;
@@ -12,9 +12,9 @@ interface IProgress {
   children?: ReactNode;
   size?: "sm" | "lg";
   className?: string;
-}
+};
 
-const Progress: FC<IProgress> = ({
+const Progress: FC<ProgressProps> = ({
   value = 0,
   color = "success",
   size = "lg",

@@ -9,7 +9,7 @@ import { CheckList } from "./ui";
 
 import "./SectionLandingHero.scss";
 
-interface SectionLandingHeroProps {
+type SectionLandingHeroProps = {
   title: string;
   subtitle: string;
   buttonTitle: string;
@@ -18,7 +18,7 @@ interface SectionLandingHeroProps {
     src: string;
     alt: string;
   };
-}
+};
 
 const SectionLandingHero: FC<SectionLandingHeroProps> = ({ title, subtitle, buttonTitle, features, image }) => {
   const theme = useTheme();

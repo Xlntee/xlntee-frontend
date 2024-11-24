@@ -22,19 +22,27 @@ import { PageProps } from "pages/type";
 import { ImageUpload, VideoUpload } from "src/features";
 
 import { ListRequirements } from "./ui";
-import { LandingFormValues, useValidationSchema } from "./validation";
+import { useValidationSchema } from "./validation";
 import { defaultValuesForm } from "./initialData";
 
 import "./Landing.scss";
 
 type TagType = "subjects" | "requirements";
 
-export interface AutocompleteFieldBoxProps {
+export type LandingFormFields = {
+  subjects?: string[];
+  requirements?: string[];
+  description: string;
+  image: string;
+  video: string;
+};
+
+export type AutocompleteFieldBoxProps = {
   title: string;
   subtitle: string;
   tags: string[];
   value: TagType;
-}
+};
 
 const LandingPage: FC<PageProps> = ({ title }) => {
   useTitle(title);
@@ -50,13 +58,13 @@ const LandingPage: FC<PageProps> = ({ title }) => {
     control,
     setValue,
     formState: { errors }
-  } = useForm<LandingFormValues>({
+  } = useForm<LandingFormFields>({
     mode: "onSubmit",
     defaultValues: defaultValuesForm,
     resolver: yupResolver(useValidationSchema())
   });
 
-  function onSubmitForm(data: LandingFormValues): void {
+  function onSubmitForm(data: LandingFormFields): void {
     console.log(data);
   }
 

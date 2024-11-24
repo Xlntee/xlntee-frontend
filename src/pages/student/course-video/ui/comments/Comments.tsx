@@ -4,10 +4,10 @@ import { Box, Stack } from "@mui/material";
 
 import { UserComments, UserCommentsProps } from "../user-comments";
 
-interface CommentsProps {
+type CommentsProps = {
   id: string;
   comments: UserCommentsProps[];
-}
+};
 
 const Comments: FC<CommentsProps> = ({ comments }) => {
   return (

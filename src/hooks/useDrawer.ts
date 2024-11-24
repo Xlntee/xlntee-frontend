@@ -3,16 +3,16 @@ import { closeDrawer, openDrawer } from "src/app/store/slices/drawer/slice";
 import { DrawerNames, DrawerProps } from "src/app/store/slices/drawer/type";
 import { useAppDispatch, useAppSelector } from "src/app/store/store";
 
-interface UseDrawer {
+type UseDrawerProps = {
   activeDrawerName: DrawerNames | null;
   isDrawerOpened: boolean;
   drawerProps: DrawerProps;
   isOpenDrawer: (name: DrawerNames) => boolean;
   onOpenDrawer: (name: DrawerNames, props?: DrawerProps) => void;
   onCloseDrawer: () => void;
-}
+};
 
-export default function useDrawer(): UseDrawer {
+export default function useDrawer(): UseDrawerProps {
   const drawerName = useAppSelector(getDrawerNameSelector);
   const isDrawerOpened = useAppSelector(isDrawerOpenedSelector);
   const drawerProps = useAppSelector(getDrawerProps);

@@ -13,12 +13,12 @@ import { LessonSingleFormValues } from "../block-lesson/validation";
 
 import "./BlockQuiz.scss";
 
-interface BlockQuizProps {
+type BlockQuizProps = {
   lessonId: string;
   lectureId: string;
   lectureIndex: number;
   onCloseQuiz: () => void;
-}
+};
 
 const BlockQuiz: FC<BlockQuizProps> = ({ lessonId, lectureId, lectureIndex, onCloseQuiz }) => {
   const { t } = useTranslation("teacher-create-course");

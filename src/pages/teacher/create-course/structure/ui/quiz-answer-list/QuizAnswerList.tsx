@@ -11,13 +11,13 @@ import { LecturesArrayFormValues } from "../block-lecture/validation";
 
 import "./QuizAnswer.scss";
 
-interface QuizAnswerListProps {
+type QuizAnswerListProps = {
   lessonId: string;
   lectureId: string;
   quizId: string;
   lectureIndex: number;
   quizIndex: number;
-}
+};
 
 const QuizAnswerList: FC<QuizAnswerListProps> = ({ lectureIndex, quizIndex }) => {
   const { t } = useTranslation("teacher-create-course");

@@ -1,6 +1,6 @@
-import { LandingFormValues } from "./validation";
+import { LandingFormFields } from "./Landing";
 
-export const defaultValuesForm: LandingFormValues = {
+export const defaultValuesForm: LandingFormFields = {
   subjects: [],
   requirements: [],
   description: "",

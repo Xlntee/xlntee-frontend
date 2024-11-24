@@ -1,6 +1,6 @@
-import { LectureFormValues } from "./validation";
+import { LectureFormFields } from "./Lecturer";
 
-export const defaultValuesForm: LectureFormValues = {
+export const defaultValuesForm: LectureFormFields = {
   username: "",
   tags: []
 };

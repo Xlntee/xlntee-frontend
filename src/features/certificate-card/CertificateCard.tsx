@@ -5,11 +5,11 @@ import { Box, Typography } from "@mui/material";
 
 import "./CertificateCard.scss";
 
-interface CertificateCardProps {
+type CertificateCardProps = {
   image: string;
   title: string;
   href: string;
-}
+};
 
 const CertificateCard: FC<CertificateCardProps> = ({ title, image, href }) => {
   return (

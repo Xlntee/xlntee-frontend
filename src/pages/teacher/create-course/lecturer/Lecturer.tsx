@@ -10,8 +10,13 @@ import useTitle from "src/hooks/useTitle";
 import { ImageUpload } from "src/features";
 import { PageProps } from "pages/type";
 
-import { LectureFormValues, useValidationSchema } from "./validation";
+import { useValidationSchema } from "./validation";
 import { defaultValuesForm } from "./initialData";
+
+export type LectureFormFields = {
+  username: string;
+  tags?: string[];
+};
 
 const LecturerPage: FC<PageProps> = ({ title }) => {
   useTitle(title);
@@ -25,13 +30,13 @@ const LecturerPage: FC<PageProps> = ({ title }) => {
     register,
     control,
     formState: { errors }
-  } = useForm<LectureFormValues>({
+  } = useForm<LectureFormFields>({
     mode: "onSubmit",
     defaultValues: defaultValuesForm,
     resolver: yupResolver(useValidationSchema())
   });
 
-  function onSubmitForm(data: LectureFormValues): void {
+  function onSubmitForm(data: LectureFormFields): void {
     const description = refRichText.current?.value;
     console.log({
       ...data,

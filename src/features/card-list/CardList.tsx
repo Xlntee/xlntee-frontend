@@ -2,15 +2,15 @@ import { Grid, GridSize, Stack } from "@mui/material";
 
 import { PlaceholderCard } from "src/features";
 
-interface ResponsiveType {
+type ResponsiveType = {
   xs: GridSize;
   sm: GridSize;
   md: GridSize;
   lg: GridSize;
   xl: GridSize;
-}
+};
 
-interface CardListProps<T> {
+type CardListProps<T> = {
   items: T[];
   startCard?: React.ReactNode;
   renderCard?: (item: T) => React.ReactNode;
@@ -20,7 +20,7 @@ interface CardListProps<T> {
   md?: GridSize;
   lg?: GridSize;
   xl?: GridSize;
-}
+};
 
 const defaultResponsive: ResponsiveType = {
   xs: 12,

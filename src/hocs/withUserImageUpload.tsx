@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 
-interface UserImageUpload {
+type UserImageUpload = {
   image: string;
   onChange: (file: FileList | File, fileBlob?: string) => void;
-}
+};
 
 function withUserImageUpload<P extends object = UserImageUpload>(WrappedComponent: React.ComponentType<P>): FC<P> {
   const Component: FC<P> = (props: P) => {

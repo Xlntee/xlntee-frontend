@@ -23,12 +23,12 @@ import { LecturesArrayFormValues } from "./validation";
 
 import "./BlockLecture.scss";
 
-interface BlockLectureProps {
+type BlockLectureProps = {
   id: string;
   index: number;
   lessonId: string;
   onDelete: (index: number) => void;
-}
+};
 
 type FileLectureProps = {
   id: string;

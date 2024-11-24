@@ -23,11 +23,11 @@ import { getConvertedLessonFormValuesToLesson } from "./utils";
 
 import "./BlockLesson.scss";
 
-interface BlockLessonProps {
+type BlockLessonProps = {
   id: string;
   index: number;
   canDelete: boolean;
-}
+};
 
 const BlockLesson: FC<BlockLessonProps> = ({ index, id, canDelete }) => {
   const { t } = useTranslation("teacher-create-course");

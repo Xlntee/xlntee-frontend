@@ -12,9 +12,9 @@ import AuthStudentContainer from "src/widgets/components/auth-student-container"
 import { RootDrawer } from "src/widgets/drawers/RootDrawer";
 import { Role } from "src/shared/utils/user-role";
 
-interface PrivateLayoutProps {
+type PrivateLayoutProps = {
   userRole: Role;
-}
+};
 
 const PrivateLayout: FC<PrivateLayoutProps> = ({ userRole }) => {
   const { pathname } = useLocation();

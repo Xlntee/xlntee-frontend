@@ -1,18 +1,8 @@
 import { useTranslation } from "react-i18next";
 import * as yup from "yup";
+import { GeneralFormFields } from "./General";
 
-export type GeneralFormValues = {
-  title: string;
-  description: string;
-  tags?: string[];
-  category: string;
-  level: string;
-  subcategory: string;
-  language: string;
-  certificate?: boolean | null;
-};
-
-export const useValidationSchema = (): yup.ObjectSchema<GeneralFormValues> => {
+export const useValidationSchema = (): yup.ObjectSchema<GeneralFormFields> => {
   const { t } = useTranslation("teacher-create-course");
 
   return yup.object().shape({

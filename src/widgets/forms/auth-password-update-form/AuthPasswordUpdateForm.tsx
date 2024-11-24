@@ -16,9 +16,9 @@ export type PasswordUpdateFormFields = {
   confirm_password: string;
 };
 
-interface AuthPasswordUpdateFormProps {
+type AuthPasswordUpdateFormProps = {
   onSubmit: (data: PasswordUpdateFormFields) => void;
-}
+};
 
 const AuthPasswordUpdateForm: FC<AuthPasswordUpdateFormProps> = ({ onSubmit }) => {
   const { t } = useTranslation("auth");

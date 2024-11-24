@@ -17,11 +17,11 @@ import { defaultValuesForm } from "./initialData";
 
 import "./BlockPromoCodes.scss";
 
-interface PromoCode {
+type PromoCode = {
   id: string;
   discount: number;
   name: string;
-}
+};
 
 export type FormValues = yup.InferType<typeof validationSchema>;
 

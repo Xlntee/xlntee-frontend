@@ -8,13 +8,13 @@ import { StatisticInfo } from "src/features";
 
 import "./CourseStatistic.scss";
 
-interface CourseStatisticProps {
+type CourseStatisticProps = {
   id: string;
   title: string;
   status: string;
   updateTime: string;
   image: string;
-}
+};
 
 const CourseStatistic: FC<CourseStatisticProps> = ({ id, title, status, updateTime, image }) => {
   const { t } = useTranslation("teacher");

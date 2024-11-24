@@ -17,9 +17,9 @@ export type HelpCenterFormFields = {
   support: string;
 };
 
-interface HelpCenterFormProps {
+type HelpCenterFormProps = {
   onSubmit: (props: HelpCenterFormFields) => void;
-}
+};
 
 const HelpCenterForm: FC<HelpCenterFormProps> = ({ onSubmit }) => {
   const { t } = useTranslation("auth");

@@ -16,12 +16,12 @@ import { Input as BaseInput } from "@mui/base/Input";
 
 import "./OtpInput.scss";
 
-interface OTPProps {
+type OTPProps = {
   separator?: ReactNode;
   length: number;
   value: string;
   onChange: Dispatch<React.SetStateAction<string>>;
-}
+};
 
 const OTP: FC<OTPProps> = ({ separator, length, value, onChange }) => {
   const inputRefs = useRef<HTMLInputElement[]>(new Array(length).fill(null));
@@ -153,11 +153,11 @@ const OTP: FC<OTPProps> = ({ separator, length, value, onChange }) => {
   );
 };
 
-interface OTPInputProps {
+type OTPInputProps = {
   length: number;
   separator?: boolean;
   onUpdate: (value: string) => void;
-}
+};
 
 const OTPInput: FC<OTPInputProps> = ({ length = 4, separator, onUpdate }) => {
   const [otp, setOtp] = useState<string>("");

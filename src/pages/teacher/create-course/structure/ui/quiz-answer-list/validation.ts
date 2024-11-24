@@ -12,7 +12,6 @@ export const variantsValidationSchema = yup.object({
 
 const variants = yup.array().required().of(validationSchema).required();
 
-// TestConfiguratonSingleFormValues
 export type VariantSingleFormValues = yup.InferType<typeof validationSchema>;
 export type FormValuesVariantsArr = yup.InferType<typeof variants>;
 export type FormValuesVariants = yup.InferType<typeof variantsValidationSchema>;

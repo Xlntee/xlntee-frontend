@@ -8,7 +8,7 @@ import { ArrowsWordsList } from "./ui";
 
 import "./SectionLandingAbout.scss";
 
-interface SectionLandingAboutProps {
+type SectionLandingAboutProps = {
   title: string;
   wordsList: string[];
   description: string;
@@ -16,7 +16,7 @@ interface SectionLandingAboutProps {
     src: string;
     alt: string;
   };
-}
+};
 
 const SectionLandingAbout: FC<SectionLandingAboutProps> = ({ title, wordsList, description, image }) => {
   return (

@@ -5,11 +5,11 @@ import { Typography, Button, Grid } from "@mui/material";
 
 import { XlnteeColors } from "src/shared/themes/colors";
 
-interface InfoBlockProps {
+type InfoBlockProps = {
   image: string;
   title: string;
   email: string;
-}
+};
 
 const InfoBlock: FC<InfoBlockProps> = ({ image, title, email }) => {
   const { t } = useTranslation("auth");

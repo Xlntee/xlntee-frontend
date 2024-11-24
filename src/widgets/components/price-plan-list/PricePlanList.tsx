@@ -10,7 +10,7 @@ import OfflineBoltIcon from "@mui/icons-material/OfflineBolt";
 import { PricePlanCard, PricePlanProps } from "src/features";
 import { XlnteeColors } from "src/shared/themes/colors";
 
-interface PricePlanContentProps {
+type PricePlanContentProps = {
   pretitle: string;
   title: string;
   text: string;
@@ -19,7 +19,7 @@ interface PricePlanContentProps {
     title: string;
     text: string;
   }[];
-}
+};
 
 const PricePlanList: FC = () => {
   const { t } = useTranslation("teacher-landing");

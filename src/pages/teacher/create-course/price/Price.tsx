@@ -13,7 +13,7 @@ import { BlockPromoCodes } from "./ui";
 
 import "./Price.scss";
 
-export type PriceFormValues = {
+export type PriceFormFields = {
   paid: boolean;
   price: string;
 };
@@ -23,12 +23,12 @@ const PricePage: FC<PageProps> = ({ title }) => {
   const { t } = useTranslation("teacher-create-course");
   const { t: tCommon } = useTranslation("common");
 
-  const { handleSubmit, register } = useForm<PriceFormValues>({
+  const { handleSubmit, register } = useForm<PriceFormFields>({
     mode: "onSubmit",
     defaultValues: defaultValuesForm
   });
 
-  function onSubmitForm(data: PriceFormValues): void {
+  function onSubmitForm(data: PriceFormFields): void {
     console.log(data);
   }
 

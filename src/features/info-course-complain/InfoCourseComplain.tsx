@@ -2,11 +2,11 @@ import { FC } from "react";
 
 import { Stack, Box, Typography } from "@mui/material";
 
-interface InfoCourseComplainProps {
+type InfoCourseComplainProps = {
   image: string;
   imageDescription: string;
   message: string;
-}
+};
 
 const InfoCourseComplain: FC<InfoCourseComplainProps> = ({ image, imageDescription, message }) => {
   return (

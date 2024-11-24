@@ -1,6 +1,6 @@
-import { PriceFormValues } from "./Price";
+import { PriceFormFields } from "./Price";
 
-export const defaultValuesForm: PriceFormValues = {
+export const defaultValuesForm: PriceFormFields = {
   paid: false,
   price: ""
 };

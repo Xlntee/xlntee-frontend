@@ -7,9 +7,9 @@ import CreditCardIcon from "@mui/icons-material/CreditCard";
 import { AppRoutes } from "src/app/routing/appRoutes";
 import { NavigationLinkType } from "src/features";
 
-interface useHeaderNavigationTeacherProps {
+type useHeaderNavigationTeacherProps = {
   navigationList: NavigationLinkType[];
-}
+};
 
 export default function useHeaderNavigationTeacher(): useHeaderNavigationTeacherProps {
   const { t } = useTranslation("auth");

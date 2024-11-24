@@ -4,12 +4,12 @@ import { Typography, List, ListItem } from "@mui/material";
 
 import "./ListRequirements.scss";
 
-interface ListRequirementsProps {
+type ListRequirementsProps = {
   items: {
     title: string;
     value: string;
   }[];
-}
+};
 
 const ListRequirements: FC<ListRequirementsProps> = ({ items }) => {
   return (

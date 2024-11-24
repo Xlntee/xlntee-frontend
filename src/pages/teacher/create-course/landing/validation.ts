@@ -1,15 +1,8 @@
 import { useTranslation } from "react-i18next";
 import * as yup from "yup";
+import { LandingFormFields } from "./Landing";
 
-export type LandingFormValues = {
-  subjects?: string[];
-  requirements?: string[];
-  description: string;
-  image: string;
-  video: string;
-};
-
-export const useValidationSchema = (): yup.ObjectSchema<LandingFormValues> => {
+export const useValidationSchema = (): yup.ObjectSchema<LandingFormFields> => {
   const { t } = useTranslation("teacher-create-course");
 
   return yup.object().shape({

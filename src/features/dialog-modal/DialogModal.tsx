@@ -6,7 +6,7 @@ import CloseIcon from "@mui/icons-material/Close";
 
 import "./DialogModal.scss";
 
-export type DialogModalProps = {
+type DialogModalProps = {
   open: boolean;
   title?: string;
   children?: ReactNode;
