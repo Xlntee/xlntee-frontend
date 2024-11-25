@@ -1,4 +1,4 @@
-import { GeneralFormFields } from "./General";
+import { GeneralFormFields } from "./GeneralForm";
 
 export const defaultValuesForm: GeneralFormFields = {
   title: "",

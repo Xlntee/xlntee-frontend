@@ -1,31 +1,20 @@
 import { FC, useState } from "react";
 import ReactQuill from "react-quill";
-import { Controller, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useTranslation } from "react-i18next";
 
-import {
-  Box,
-  Typography,
-  TextField,
-  Stack,
-  FormLabel,
-  Grid,
-  Autocomplete,
-  Chip,
-  Button,
-  FormHelperText
-} from "@mui/material";
+import { Box, Typography, Stack, FormLabel, Grid, Button, FormHelperText } from "@mui/material";
 
-import useTitle from "src/hooks/useTitle";
-import { PageProps } from "pages/type";
-import { ImageUpload, VideoUpload } from "src/features";
+import { ImageUpload, ListRequirements, VideoUpload } from "src/features";
+import { AutocompleteField } from "src/features/form-fields";
 
-import { ListRequirements } from "./ui";
 import { useValidationSchema } from "./validation";
 import { defaultValuesForm } from "./initialData";
 
-import "./Landing.scss";
+import { RootForm } from "../../root-form";
+
+import "./LandingForm.scss";
 
 type TagType = "subjects" | "requirements";
 
@@ -44,27 +33,24 @@ export type AutocompleteFieldBoxProps = {
   value: TagType;
 };
 
-const LandingPage: FC<PageProps> = ({ title }) => {
-  useTitle(title);
+const LandingForm: FC = () => {
   const { t } = useTranslation("teacher-create-course");
   const { t: tCommon } = useTranslation("common");
 
   const [previewImage, setPreviewImage] = useState<string | null>(null);
   const [previewVideo, setPreviewVideo] = useState<string | null>(null);
 
-  const {
-    handleSubmit,
-    register,
-    control,
-    setValue,
-    formState: { errors }
-  } = useForm<LandingFormFields>({
+  const methods = useForm<LandingFormFields>({
     mode: "onSubmit",
     defaultValues: defaultValuesForm,
     resolver: yupResolver(useValidationSchema())
   });
+  const {
+    setValue,
+    formState: { errors }
+  } = methods;
 
-  function onSubmitForm(data: LandingFormFields): void {
+  function onSubmit(data: LandingFormFields): void {
     console.log(data);
   }
 
@@ -109,42 +95,16 @@ const LandingPage: FC<PageProps> = ({ title }) => {
   });
 
   return (
-    <Box className="create-course-landing">
+    <RootForm className="landing-form" methods={methods} onSubmit={onSubmit}>
       <Stack gap="16px">
         {fields.map((fieldItem) => (
           <Box key={fieldItem.value} className="field-box">
             <FormLabel>
               <Typography className="field-box__title">{fieldItem.title}*</Typography>
               <Typography className="field-box__subtitle">{fieldItem.subtitle}</Typography>
-              <Controller
+              <AutocompleteField
                 name={fieldItem.value}
-                control={control}
-                render={({ field }) => (
-                  <>
-                    <Autocomplete
-                      {...register(fieldItem.value)}
-                      multiple
-                      freeSolo
-                      options={fieldItem.tags}
-                      value={field.value}
-                      clearIcon={false}
-                      onChange={(_, newValue) => field.onChange(newValue)}
-                      renderTags={(value, props) =>
-                        // eslint-disable-next-line react/jsx-key
-                        value.map((tag, index) => <Chip label={tag} {...props({ index })} />)
-                      }
-                      renderInput={(params) => (
-                        <TextField
-                          {...params}
-                          error={!!errors[fieldItem.value]?.message}
-                          helperText={errors[fieldItem.value]?.message}
-                          variant="outlined"
-                          placeholder={`${t("landing.autocomplete-field-placeholder")}...`}
-                        />
-                      )}
-                    />
-                  </>
-                )}
+                placeholder={`${t("landing.autocomplete-field-placeholder")}...`}
               />
             </FormLabel>
           </Box>
@@ -209,7 +169,7 @@ const LandingPage: FC<PageProps> = ({ title }) => {
           </Grid>
         </Grid>
         <Stack direction={{ sm: "row" }} flexWrap="wrap" gap={{ sm: "20px", md: "40px" }}>
-          <Button variant="black-contain" size="medium" sx={{ minWidth: "190px" }} onClick={handleSubmit(onSubmitForm)}>
+          <Button type="submit" variant="black-contain" size="medium" sx={{ minWidth: "190px" }}>
             {tCommon("button-save")}
           </Button>
           <Button variant="black-text" size="medium">
@@ -217,8 +177,8 @@ const LandingPage: FC<PageProps> = ({ title }) => {
           </Button>
         </Stack>
       </Stack>
-    </Box>
+    </RootForm>
   );
 };
 
-export default LandingPage;
+export default LandingForm;

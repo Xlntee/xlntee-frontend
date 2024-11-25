@@ -118,7 +118,6 @@ const BlockPromoCodes: FC = () => {
           {t("price.promo-button-create")}
         </Button>
       </Box>
-
       {promoCodes.length ? (
         <>
           <Box>
