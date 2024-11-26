@@ -5,10 +5,10 @@ import PlayCircleFilledWhiteIcon from "@mui/icons-material/PlayCircleFilledWhite
 
 import "./Video.scss";
 
-interface VideoProps {
+type VideoProps = {
   video: string;
   type: string;
-}
+};
 
 const Video: FC<VideoProps> = ({ video, type }) => {
   const videoRef = useRef<HTMLVideoElement | null>(null);

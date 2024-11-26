@@ -18,9 +18,9 @@ export type CategoryLinkType = {
   completed: boolean;
 };
 
-interface CategoryNavigationProps {
+type CategoryNavigationProps = {
   items: CategoryLinkType[];
-}
+};
 
 const CategoryNavigation: FC<CategoryNavigationProps> = ({ items }) => {
   function getIconRelateOnType(type: CategoryType): ReactNode {

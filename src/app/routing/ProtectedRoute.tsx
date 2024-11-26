@@ -5,9 +5,9 @@ import { useAuth } from "src/hooks/useAuth";
 
 import { AppRoutes, rolePrivateRoutes } from "./appRoutes";
 
-interface ProtectedRouteProps {
+type ProtectedRouteProps = {
   element: ReactNode;
-}
+};
 
 const NavigateToNotFound: FC = () => {
   return <Navigate to={AppRoutes.notFound} state={{ from: window.location.pathname }} replace />;

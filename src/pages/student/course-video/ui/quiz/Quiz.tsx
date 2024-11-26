@@ -12,11 +12,11 @@ type QuizQuestion = {
   answer: boolean;
 };
 
-interface QuizProps {
+type QuizProps = {
   number: number;
   title: string;
   items: QuizQuestion[];
-}
+};
 
 const Quiz: FC<QuizProps> = ({ number, title, items }) => {
   return (

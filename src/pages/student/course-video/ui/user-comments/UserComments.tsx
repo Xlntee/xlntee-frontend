@@ -7,10 +7,10 @@ import { XlnteeColors } from "src/shared/themes/colors";
 
 import { UserSingleComment, UserSingleCommentProps } from "../user-single-comment";
 
-export interface UserCommentsProps {
+export type UserCommentsProps = {
   user: UserSingleCommentProps;
   comments: UserSingleCommentProps[];
-}
+};
 
 const UserComment: FC<UserCommentsProps> = ({ comments, user }) => {
   const { t } = useTranslation("common");

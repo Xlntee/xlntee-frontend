@@ -4,7 +4,7 @@ import cn from "classnames";
 import { Button, Snackbar as MuiSnackbar, Alert, AlertColor } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 
-interface SnackbarProps {
+type SnackbarProps = {
   title: string;
   className?: string;
   open?: boolean;
@@ -13,7 +13,7 @@ interface SnackbarProps {
   color?: AlertColor;
   hideDuration?: number;
   onClose?: () => void;
-}
+};
 
 const Snackbar: FC<SnackbarProps> = ({
   title,

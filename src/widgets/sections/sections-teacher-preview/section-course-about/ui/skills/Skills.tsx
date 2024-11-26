@@ -4,9 +4,9 @@ import { Stack, Typography } from "@mui/material";
 
 import "./Skills.scss";
 
-interface SkillsProps {
+type SkillsProps = {
   items: string[];
-}
+};
 
 const Skills: FC<SkillsProps> = ({ items }) => {
   return (

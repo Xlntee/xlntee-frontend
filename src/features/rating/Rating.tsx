@@ -9,13 +9,13 @@ import { XlnteeColors } from "src/shared/themes/colors";
 
 import "./Rating.scss";
 
-interface RatingProps extends MuiRatingProps {
+type RatingProps = MuiRatingProps & {
   reviewCount?: number;
   showRating?: boolean;
   max?: number;
   precision?: number;
   typeIcon?: "outline" | "contained";
-}
+};
 
 const Rating: FC<RatingProps> = ({
   reviewCount = 0,

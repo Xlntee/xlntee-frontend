@@ -1,0 +1,24 @@
+@use "styles/mixins.scss" as mixins;
+
+.promo-code-create {
+  display: grid;
+  align-items: end;
+  gap: 24px;
+
+  @include mixins.media(tablet) {
+    grid-template-columns: 100px 242px max-content;
+  }
+
+  &__field {
+    margin-bottom: 0;
+
+    .MuiTypography-root {
+      color: rgb(var(--gray-color-600));
+      margin-bottom: 10px;
+    }
+
+    .MuiFormControl-root {
+      text-align: center;
+    }
+  }
+}

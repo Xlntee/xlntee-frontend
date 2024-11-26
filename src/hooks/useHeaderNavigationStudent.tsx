@@ -8,9 +8,9 @@ import LocalActivityIcon from "@mui/icons-material/LocalActivity";
 import { AppRoutes } from "src/app/routing/appRoutes";
 import { NavigationLinkType } from "src/features";
 
-interface useHeaderNavigationStudentProps {
+type useHeaderNavigationStudentProps = {
   navigationList: NavigationLinkType[];
-}
+};
 
 export default function useHeaderNavigationStudent(): useHeaderNavigationStudentProps {
   const { t } = useTranslation("auth");

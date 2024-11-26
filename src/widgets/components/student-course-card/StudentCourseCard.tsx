@@ -10,7 +10,7 @@ import { Rating } from "src/features";
 
 import "./StudentCourseCard.scss";
 
-interface StudentCourseCardProps {
+type StudentCourseCardProps = {
   id: string;
   image: string;
   title: string;
@@ -21,7 +21,7 @@ interface StudentCourseCardProps {
   price: number;
   newPrice?: number;
   href: string;
-}
+};
 
 const StudentCourseCard: FC<StudentCourseCardProps> = ({
   image,

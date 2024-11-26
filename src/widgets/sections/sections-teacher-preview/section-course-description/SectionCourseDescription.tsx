@@ -3,9 +3,9 @@ import { useTranslation } from "react-i18next";
 
 import { Box, Typography, Stack, Container } from "@mui/material";
 
-interface CoursePreviewDescriptionBlockProps {
+type CoursePreviewDescriptionBlockProps = {
   courseDescription: string;
-}
+};
 
 const CoursePreviewDescriptionBlock: FC<CoursePreviewDescriptionBlockProps> = ({ courseDescription }) => {
   const { t } = useTranslation("teacher-preview");

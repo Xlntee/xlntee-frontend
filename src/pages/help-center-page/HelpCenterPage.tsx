@@ -1,38 +1,27 @@
 import { FC, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-import { Box, Button, Container, Stack, TextField, Typography } from "@mui/material";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import CheckIcon from "@mui/icons-material/Check";
 
 import useTitle from "src/hooks/useTitle";
 import { XlnteeColors } from "src/shared/themes/colors";
-
+import { HelpCenterForm, HelpCenterFormFields } from "src/widgets/forms";
 import { PageProps } from "pages/type";
 
 import "./HelpCenterPage.scss";
 
-interface FormData {
-  supportFormText: string;
-}
-
 const HelpCenterPage: FC<PageProps> = ({ title }) => {
   useTitle(title);
-
+  const navigate = useNavigate();
   const { t } = useTranslation("auth");
-
-  let navigate = useNavigate();
-
-  const { register, handleSubmit } = useForm<FormData>();
-
   const [isSubmit, setIsSubmit] = useState<boolean>(false);
 
-  const onSubmit = (data: FormData): void => {
+  function onSubmit(data: HelpCenterFormFields): void {
     console.log(data);
     setIsSubmit(true);
-  };
+  }
 
   //TODO: render button when user not authorized
 
@@ -54,19 +43,7 @@ const HelpCenterPage: FC<PageProps> = ({ title }) => {
           </Stack>
         ) : (
           <Stack maxWidth="880px" margin="0 auto" pb="25px">
-            <form onSubmit={handleSubmit(onSubmit)}>
-              <TextField
-                className="help-center-page__text-field"
-                multiline
-                fullWidth
-                rows={6}
-                placeholder={t("help-center.placeholder")}
-                {...register("supportFormText", { required: true })}
-              />
-              <Button type="submit" endIcon={<ArrowForwardIcon />} className="help-center-page__submit-button">
-                {t("help-center.submit-btn")}
-              </Button>
-            </form>
+            <HelpCenterForm onSubmit={onSubmit} />
           </Stack>
         )}
 

@@ -6,14 +6,14 @@ import { useTranslation } from "react-i18next";
 import { Stack, Box, Avatar, Typography, Button } from "@mui/material";
 import { XlnteeColors } from "src/shared/themes/colors";
 
-export interface UserSingleCommentProps {
+export type UserSingleCommentProps = {
   id: string;
   image?: string;
   nickname: string;
   date: string;
   text: string;
   onClickAnswer?: () => void;
-}
+};
 
 const UserComment: FC<UserSingleCommentProps> = ({ image, nickname, date, text, onClickAnswer }) => {
   const { t } = useTranslation("common");

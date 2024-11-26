@@ -1,9 +1,9 @@
 import { useTranslation } from "react-i18next";
 import { NavigationLinkType } from "src/features";
 
-interface UseHeaderNavigationProps {
+type UseHeaderNavigationProps = {
   navigationList: NavigationLinkType[];
-}
+};
 
 export default function useHeaderNavigation(): UseHeaderNavigationProps {
   const { t } = useTranslation("auth");

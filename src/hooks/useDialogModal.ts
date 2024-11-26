@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-interface UseDialogModal {
+type UseDialogModalProps = {
   openModal: boolean;
   selectedId: string | null;
   onOpenModal: (id?: string) => void;
   onCloseModal: () => void;
-}
+};
 
-export default function useDialogModal(): UseDialogModal {
+export default function useDialogModal(): UseDialogModalProps {
   const [openModal, setOpenModal] = useState<boolean>(false);
   const [selectedId, setSelectedId] = useState<string | null>(null);
 

@@ -11,9 +11,9 @@ import { ToolsTab } from "../../types";
 
 import "./Tools.scss";
 
-interface ToolsProps {
+type ToolsProps = {
   onClickTab: (value: string) => void;
-}
+};
 
 const Tools: FC<ToolsProps> = ({ onClickTab }) => {
   const [tab, setTab] = useState<string>(ToolsTab.description);

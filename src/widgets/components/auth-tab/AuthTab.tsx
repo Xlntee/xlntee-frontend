@@ -8,9 +8,9 @@ import { AppRoutes } from "src/app/routing/appRoutes";
 
 import "./AuthTab.scss";
 
-interface AuthTabProps {
+type AuthTabProps = {
   children?: React.ReactNode;
-}
+};
 
 const AuthTab: FC<AuthTabProps> = ({ children }) => {
   const { t } = useTranslation("auth");

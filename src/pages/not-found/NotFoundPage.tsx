@@ -10,7 +10,7 @@ import { AppRoutes } from "src/app/routing/appRoutes";
 
 const NotFoundPage: FC<PageProps> = ({ title }) => {
   useTitle(title);
-  const { t } = useTranslation("common");
+  const { t } = useTranslation("not-found");
 
   return (
     <Stack component="section" py="20px" flex="1" flexDirection="column" justifyContent="center">

@@ -6,12 +6,12 @@ import { Progress } from "../progress";
 
 import "./CourseCardProgress.scss";
 
-interface CourseCardProgressProps {
+type CourseCardProgressProps = {
   image?: string;
   title: string;
   progress?: number;
   href: string;
-}
+};
 
 const CourseCardProgress: FC<CourseCardProgressProps> = ({ title, image, progress = 0, href }) => {
   return (

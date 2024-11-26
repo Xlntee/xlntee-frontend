@@ -1,86 +1,91 @@
 import { FC } from "react";
 import { useForm } from "react-hook-form";
-import yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
 import { useTranslation } from "react-i18next";
+import { yupResolver } from "@hookform/resolvers/yup";
 
-import { Box, FormLabel, Divider, Checkbox, Stack, Typography, Grid, TextField, Button } from "@mui/material";
+import { Box, FormLabel, Divider, Stack, Typography, Grid, Button } from "@mui/material";
 
 import useTitle from "src/hooks/useTitle";
 import { PageProps } from "pages/type";
 import { XlnteeColors } from "src/shared/themes/colors";
+import { RootForm } from "src/widgets/forms";
+import { CheckboxField, TextField } from "src/features/form-fields";
 
-import { defaultValuesForm } from "./initialData";
-import validationSchema from "./validation";
-import { BlockPromoCodes } from "./ui";
+import { defaultValuesForm } from "./initialDate";
+import BlockPromoCodes from "./ui/block-promo-codes";
+import { PromoCodeCreateFormFields } from "./ui/promo-code-create";
+import { useValidationSchema } from "./validation";
 
-import "./Price.scss";
-
-export type FormValues = yup.InferType<typeof validationSchema>;
+export type PriceFormFields = PromoCodeCreateFormFields & {
+  paid: boolean;
+  price: string;
+};
 
 const PricePage: FC<PageProps> = ({ title }) => {
   useTitle(title);
   const { t } = useTranslation("teacher-create-course");
   const { t: tCommon } = useTranslation("common");
 
-  const { handleSubmit, register } = useForm<FormValues>({
-    mode: "onSubmit",
+  const methods = useForm<PriceFormFields>({
+    resolver: yupResolver(useValidationSchema()),
     defaultValues: defaultValuesForm,
-    resolver: yupResolver(validationSchema)
+    mode: "onSubmit"
   });
+  const { trigger } = methods;
 
-  function onSubmitForm(data: FormValues): void {
-    console.log(data);
+  function onSubmit(): void {
+    trigger([]);
   }
 
   return (
-    <Box className="create-course-price">
-      <Box>
+    <Box>
+      <Box mb="20px">
         <Typography variant="h6" mb="8px">
           {t("price.title")}
         </Typography>
         <Divider />
       </Box>
-      <Grid container columnSpacing="20px" rowGap="20px">
-        <Grid item xs={12} md={6}>
-          <FormLabel className="field-box">
-            <Stack direction="row" alignItems="start" gap="10px">
-              <Checkbox {...register("paid")} />
-              <Typography className="field-box__title">{t("price.checkbox-label")}</Typography>
+      <RootForm methods={methods}>
+        <Grid container columnSpacing="20px" rowGap="20px" flexDirection={{ md: "row-reverse" }} mb="20px">
+          <Grid item xs={12} md={6}>
+            <Box borderRadius="20px" padding="10px 20px" bgcolor={XlnteeColors.LightElementColor}>
+              <Typography variant="h6" color={XlnteeColors.BlackElementColor}>
+                {t("price.info-box-title")}
+              </Typography>
+              <Typography fontWeight={300} fontSize="14px !important" color={XlnteeColors.GrayColor600}>
+                {t("price.info-box-text")}
+              </Typography>
+            </Box>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Stack gap="20px">
+              <CheckboxField name="paid" label={t("price.checkbox-label")} className="field-box" />
+              <FormLabel className="field-box">
+                <Typography mb="8px" className="field-box__title">
+                  {t("price.price-field-label")}
+                </Typography>
+                <TextField
+                  name="price"
+                  variant="outlined"
+                  fullWidth
+                  placeholder={`${t("price.price-field-placeholder")}...`}
+                />
+              </FormLabel>
             </Stack>
-          </FormLabel>
-          <FormLabel className="field-box">
-            <Typography mb="8px" className="field-box__title">
-              {t("price.price-field-label")}
-            </Typography>
-            <TextField
-              {...register("price")}
-              variant="outlined"
-              fullWidth
-              placeholder={`${t("price.price-field-placeholder")}...`}
-            />
-          </FormLabel>
+          </Grid>
         </Grid>
-        <Grid item xs={12} md={6}>
-          <Box borderRadius="20px" padding="10px 20px" bgcolor={XlnteeColors.LightElementColor}>
-            <Typography variant="h6" color={XlnteeColors.BlackElementColor}>
-              {t("price.info-box-title")}
-            </Typography>
-            <Typography fontWeight={300} fontSize="14px !important" color={XlnteeColors.GrayColor600}>
-              {t("price.info-box-text")}
-            </Typography>
-          </Box>
-        </Grid>
-      </Grid>
-      <BlockPromoCodes />
-      <Stack direction={{ sm: "row" }} flexWrap="wrap" gap={{ sm: "20px", md: "40px" }}>
-        <Button variant="black-contain" size="medium" sx={{ minWidth: "190px" }} onClick={handleSubmit(onSubmitForm)}>
-          {tCommon("button-save")}
-        </Button>
-        <Button variant="black-text" size="medium">
-          {tCommon("button-discard-changes")}
-        </Button>
-      </Stack>
+        <Box mb="20px">
+          <BlockPromoCodes />
+        </Box>
+        <Stack direction={{ sm: "row" }} flexWrap="wrap" gap={{ sm: "20px", md: "40px" }} mb="20px">
+          <Button onClick={onSubmit} variant="black-contain" size="medium" sx={{ minWidth: "190px" }}>
+            {tCommon("button-save")}
+          </Button>
+          <Button variant="black-text" size="medium">
+            {tCommon("button-discard-changes")}
+          </Button>
+        </Stack>
+      </RootForm>
     </Box>
   );
 };

@@ -14,7 +14,17 @@
     "select-field-subcategory": "Subcategory",
     "select-field-language": "Language",
     "tags-field-label": "Course tags",
-    "tags_field_placeholder": "Add"
+    "tags_field_placeholder": "Add",
+    "validation": {
+      "title": "Course title is required",
+      "short-description": "Course title is required",
+      "category": "Category is required",
+      "level": "Level is required",
+      "subcategory": "Subcategory is required",
+      "language": "Language is required",
+      "tags": "Tags cannot be empty",
+      "tags-requirements": "At least one tag is required"
+    }
   },
   "landing": {
     "nav-title": "Landing page",
@@ -53,7 +63,16 @@
         "value": "2 MB"
       }
     ],
-    "promo-button-text": "Upload"
+    "promo-button-text": "Upload",
+    "validation": {
+      "subjects": "Subjects cannot be empty",
+      "subjects-requirements": "At least one tag is required",
+      "requirements": "Requirements cannot be empty",
+      "requirements-requirements": "At least one tag is required",
+      "description": "Description is required",
+      "image": "Image is required",
+      "video": "Video is required"
+    }
   },
   "structure": {
     "nav-title": "Course Structure",
@@ -73,7 +92,10 @@
     "lecture-quiz-question-placeholder": "Question",
     "lecture-quiz-add-answer": "Add an answer",
     "lecture-quiz-add-question": "Add a question",
-    "quiz-answer-field-placeholder": "Answer"
+    "quiz-answer-field-placeholder": "Answer",
+    "validation": {
+      "quiz-title": "Answer is required"
+    }
   },
   "lecturer": {
     "nav-title": "Lecturer",
@@ -86,7 +108,12 @@
     "about-field-label": "About the lecturer",
     "about-field-description": "Tell more about the course lecturer",
     "image-upload-title": "Lecturer photo",
-    "image-upload-button-text": "Upload"
+    "image-upload-button-text": "Upload",
+    "validation": {
+      "username": "Username is required",
+      "tags": "Tags cannot be empty",
+      "tags-requirements": "At least one tag is required"
+    }
   },
   "price": {
     "nav-title": "Price",

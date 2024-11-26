@@ -18,3 +18,4 @@ export * from "./notification";
 export * from "./placeholder-card";
 export * from "./card-list";
 export * from "./info-course-complain";
+export * from "./list-requirements";

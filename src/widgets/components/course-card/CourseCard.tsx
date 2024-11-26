@@ -12,16 +12,16 @@ import { CourseStatus } from "src/shared/config/CourseStatus";
 
 import "./CourseCard.scss";
 
-interface CourseCardProps {
+type CourseCardProps = {
   title: string;
   updateTime?: string;
   status?: string;
   imageSrc?: string;
+  className?: string;
   onDelete: () => void;
   onEdit: () => void;
   onRestore: () => void;
-  className?: string;
-}
+};
 
 const CourseCard: FC<CourseCardProps> = ({
   title,

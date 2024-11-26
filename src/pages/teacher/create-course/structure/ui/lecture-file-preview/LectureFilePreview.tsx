@@ -7,11 +7,11 @@ import DescriptionIcon from "@mui/icons-material/Description";
 
 import "./LectureFilePreview.scss";
 
-interface LectureFilePreviewProps {
+type LectureFilePreviewProps = {
   type: "file" | "video";
   value?: string;
   onDelete: () => void;
-}
+};
 
 const LectureFilePreview: FC<LectureFilePreviewProps> = ({ type, value, onDelete }) => {
   return (

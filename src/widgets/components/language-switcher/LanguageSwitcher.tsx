@@ -7,9 +7,9 @@ import { languages } from "src/i18n";
 
 import "./LanguageSwitcher.scss";
 
-interface LanguageSwitcherProps {
+type LanguageSwitcherProps = {
   compact?: boolean;
-}
+};
 
 const LanguageSwitcher: FC<LanguageSwitcherProps> = ({ compact = false }) => {
   const { i18n } = useTranslation();

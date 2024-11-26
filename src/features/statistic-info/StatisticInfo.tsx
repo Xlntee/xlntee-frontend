@@ -4,10 +4,10 @@ import { Box, Typography } from "@mui/material";
 
 import "./StatisticInfo.scss";
 
-interface StatisticInfoProps {
+type StatisticInfoProps = {
   text: string;
   value: string;
-}
+};
 
 const StatisticInfo: FC<StatisticInfoProps> = ({ text, value }) => {
   return (

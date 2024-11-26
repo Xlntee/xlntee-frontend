@@ -6,9 +6,9 @@ import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 
 import "./CheckList.scss";
 
-interface CheckListProps {
+type CheckListProps = {
   items: string[];
-}
+};
 
 const CheckList: FC<CheckListProps> = ({ items }) => {
   return (

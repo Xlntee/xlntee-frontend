@@ -8,21 +8,21 @@ const SnackbarActions = {
   setMessage: "SET_MESSAGE"
 } as const;
 
-type SnackbarActionKey = keyof typeof SnackbarActions;
-type SnackbarActionsType = (typeof SnackbarActions)[SnackbarActionKey];
+type SnackbarActionKeyType = keyof typeof SnackbarActions;
+type SnackbarActionsType = (typeof SnackbarActions)[SnackbarActionKeyType];
 
 type ActionType = {
   type: SnackbarActionsType;
   payload: string;
 };
 
-interface ActionState {
+type ActionStateProps = {
   show: boolean;
   message: string;
   color: string;
-}
+};
 
-interface UseSnackbarAlert {
+type UseSnackbarAlertProps = {
   alertVisible: boolean;
   alertMessage: string;
   alertColor: AlertColor;
@@ -30,15 +30,15 @@ interface UseSnackbarAlert {
   setColorAlert: (color: AlertColor) => void;
   showAlert: () => void;
   closeAlert: () => void;
-}
+};
 
-const initialState: ActionState = {
+const initialState: ActionStateProps = {
   show: false,
   message: "",
   color: "error"
 };
 
-function reducer(state: ActionState, action: ActionType): ActionState {
+function reducer(state: ActionStateProps, action: ActionType): ActionStateProps {
   switch (action.type) {
     case "SHOW": {
       return {
@@ -69,7 +69,7 @@ function reducer(state: ActionState, action: ActionType): ActionState {
   }
 }
 
-export const useSnackbarAlert = (): UseSnackbarAlert => {
+export const useSnackbarAlert = (): UseSnackbarAlertProps => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   function showAlert(): void {

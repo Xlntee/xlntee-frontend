@@ -7,9 +7,9 @@ import { XlnteeColors } from "src/shared/themes/colors";
 
 import "./CreateCourseButton.scss";
 
-interface CreateCourseButtonProps {
+type CreateCourseButtonProps = {
   path: string;
-}
+};
 
 const CreateCourseButton: FC<CreateCourseButtonProps> = ({ path }) => {
   return (

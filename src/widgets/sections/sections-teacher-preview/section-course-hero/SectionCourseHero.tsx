@@ -18,7 +18,7 @@ import { XlnteeColors } from "src/shared/themes/colors";
 
 import "./SectionCourseHero.scss";
 
-interface SectionCourseHeroProps {
+type SectionCourseHeroProps = {
   preview: string;
   nickname: string;
   title: string;
@@ -30,7 +30,7 @@ interface SectionCourseHeroProps {
   language: LanguageType;
   generateCertificate: boolean;
   reviewCount?: number;
-}
+};
 
 const getNumberWithDiscount = (number: number, discout: number): number => Math.round(number * (discout / 100));
 

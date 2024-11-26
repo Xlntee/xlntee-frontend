@@ -2,28 +2,28 @@ import { FC } from "react";
 import { useFieldArray, useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-import { Box, TextField, Checkbox, Button, List, ListItem, FormHelperText } from "@mui/material";
+import { Box, Button, List, ListItem, FormHelperText } from "@mui/material";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 
-import { getInitalAnswerVariant } from "../../store/initialData";
+import { CheckboxField, TextField } from "src/features/form-fields";
 
+import { getInitalAnswerVariant } from "../../store/initialData";
 import { LecturesArrayFormValues } from "../block-lecture/validation";
 
 import "./QuizAnswer.scss";
 
-interface QuizAnswerListProps {
+type QuizAnswerListProps = {
   lessonId: string;
   lectureId: string;
   quizId: string;
   lectureIndex: number;
   quizIndex: number;
-}
+};
 
 const QuizAnswerList: FC<QuizAnswerListProps> = ({ lectureIndex, quizIndex }) => {
   const { t } = useTranslation("teacher-create-course");
 
   const {
-    register,
     control,
     formState: { errors }
   } = useFormContext<LecturesArrayFormValues>();
@@ -47,12 +47,12 @@ const QuizAnswerList: FC<QuizAnswerListProps> = ({ lectureIndex, quizIndex }) =>
         {fields.map((variant, index) => (
           <ListItem key={variant.customId}>
             <Box className="quiz-answer">
-              <Checkbox
-                {...register(`lectures.${lectureIndex}.testConfigurations.${quizIndex}.variants.${index}.answer`)}
+              <CheckboxField
+                name={`lectures.${lectureIndex}.testConfigurations.${quizIndex}.variants.${index}.answer`}
                 className="quiz-answer__checkbox"
               />
               <TextField
-                {...register(`lectures.${lectureIndex}.testConfigurations.${quizIndex}.variants.${index}.title`)}
+                name={`lectures.${lectureIndex}.testConfigurations.${quizIndex}.variants.${index}.title`}
                 error={
                   !!errors.lectures?.[lectureIndex]?.testConfigurations?.[quizIndex]?.variants?.[index]?.title?.message
                 }

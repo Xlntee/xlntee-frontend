@@ -3,10 +3,11 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import { visualizer } from "rollup-plugin-visualizer";
+import { splitVendorChunkPlugin } from "vite";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), visualizer({ open: false })], // make visualizer true to see diagram of libs
+  plugins: [react(), splitVendorChunkPlugin(), visualizer({ open: false })], // make visualizer true to see diagram of libs
   resolve: {
     alias: {
       pages: "/src/pages",
@@ -31,9 +32,7 @@ export default defineConfig({
       treeshake: true,
       output: {
         manualChunks(id) {
-          if (id.includes("@mui")) {
-            return "mui"; // Split vendor libraries
-          }
+          if (id.includes("node_modules")) return id.toString().split("node_modules/")[1].split("/")[0].toString();
         }
       }
     }

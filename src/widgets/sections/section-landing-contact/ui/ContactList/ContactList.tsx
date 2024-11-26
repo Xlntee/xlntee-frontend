@@ -6,9 +6,9 @@ import { XlnteeColors } from "src/shared/themes/colors";
 
 import "./ContactList.scss";
 
-interface ContactLinksProps {
+type ContactLinksProps = {
   items: ContactLinkType[];
-}
+};
 
 export type ContactLinkType = {
   title: string;

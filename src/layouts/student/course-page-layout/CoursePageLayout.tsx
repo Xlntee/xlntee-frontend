@@ -4,11 +4,11 @@ import { useTranslation } from "react-i18next";
 
 import { Box, Stack } from "@mui/material";
 
-import { RootDialog } from "src/widgets/dialogs/RootDialog";
+import { RootDialog } from "src/widgets/dialogs/root-dialog";
 import { CourseComplain, CourseRate, CourseShare, HeaderProfile, Footer } from "src/widgets/components";
 import { UserRoles } from "src/shared/utils/user-role";
 import { AppRoutes } from "src/app/routing/appRoutes";
-import { RootDrawer } from "src/widgets/drawers/RootDrawer";
+import { RootDrawer } from "src/widgets/drawers/root-drawer";
 import { CourseProgress } from "src/widgets/student";
 
 const CoursePageLayout: FC = () => {

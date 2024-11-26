@@ -1,17 +1,18 @@
 import * as yup from "yup";
+import { useTranslation } from "react-i18next";
 
 import { passwordRegex } from "src/shared/utils/const";
+import { RegistrationFormFields } from "./RegistrationForm";
 
-export const validationSchema = yup.object().shape({
-  fullName: yup.string().required("Full name is required"),
-  email: yup.string().email("Wrong email").required("Email is required"),
-  password: yup
-    .string()
-    .matches(
-      passwordRegex,
-      "Password must be at least 8 characters long and contain at least one lowercase letter, one uppercase letter, one number, and one special character (!@#$%^&*()_+\\/.-~)"
-    )
-    .required("Password is required")
-});
+export const useValidationSchema = (): yup.ObjectSchema<RegistrationFormFields> => {
+  const { t } = useTranslation("auth");
 
-export type RegistrationFormValues = yup.InferType<typeof validationSchema>;
+  return yup.object().shape({
+    fullname: yup.string().required(t("validation.fullname")),
+    email: yup.string().email(t("validation.email-invalid-format")).required(t("validation.email")),
+    password: yup
+      .string()
+      .matches(passwordRegex, t("validation.confirm-password-requirements") + " (!@#$%^&*()_+\\/.-~)")
+      .required(t("validation.password"))
+  });
+};

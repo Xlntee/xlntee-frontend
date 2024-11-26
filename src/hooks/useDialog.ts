@@ -3,15 +3,15 @@ import { closeDialogByName, openDialog, closeAllDialogs } from "src/app/store/sl
 import { DialogItem, DialogNames, PayloadDialogProps } from "src/app/store/slices/dialog/type";
 import { useAppDispatch, useAppSelector } from "src/app/store/store";
 
-interface UseDialog {
+type UseDialogProps = {
   allDialogs: DialogItem[];
   onOpenDialog: (props: PayloadDialogProps) => void;
   onCloseDialogByName: (name: DialogNames) => void;
   getOptionsFromDialog: (name: DialogNames) => any;
   closeDialogs: () => any;
-}
+};
 
-export default function useDialog(): UseDialog {
+export default function useDialog(): UseDialogProps {
   const dispatch = useAppDispatch();
 
   const allDialogs = useAppSelector(getAllDialogsSelector);

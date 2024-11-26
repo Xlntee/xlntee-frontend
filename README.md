@@ -247,7 +247,7 @@ import LocalComponent from 'src/widgets'
 
 import './Card.scss'
 
-interface CardProps {
+type CardProps = {
     title: string,
     description: string,
     className?: string

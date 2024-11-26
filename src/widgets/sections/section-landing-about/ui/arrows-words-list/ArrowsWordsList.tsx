@@ -1,11 +1,11 @@
-import React, { Fragment } from "react";
+import { FC, Fragment } from "react";
 import { Stack, Typography } from "@mui/material";
 
-interface ArrowsWordsListProps {
+type ArrowsWordsListProps = {
   wordsArray: string[];
-}
+};
 
-const ArrowsWordsList: React.FC<ArrowsWordsListProps> = ({ wordsArray }) => {
+const ArrowsWordsList: FC<ArrowsWordsListProps> = ({ wordsArray }) => {
   const isWordsListArray = Array.isArray(wordsArray);
 
   return (

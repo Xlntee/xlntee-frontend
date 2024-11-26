@@ -5,56 +5,56 @@ import ReactQuill from "react-quill";
 import cn from "classnames";
 import { v4 as uuidv4 } from "uuid";
 
-import { Box, Typography, TextField, Stack, Button } from "@mui/material";
+import { Box, Typography, Stack, Button } from "@mui/material";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import ArticleIcon from "@mui/icons-material/Article";
 
+import useDialog from "src/hooks/useDialog";
 import { XlnteeColors } from "src/shared/themes/colors";
-import { DialogModal, FileUpload, VideoUpload } from "src/features";
-import useDialogModal from "src/hooks/useDialogModal";
+import { FileUpload, VideoUpload } from "src/features";
+
+import { TextField } from "src/features/form-fields";
 
 import { getInitialTestConfiguration } from "../../store/initialData";
 
-import { LectureFilePreview } from "../lecture-file-preview";
 import { BlockQuiz } from "../block-quiz";
-
+import { LectureFilePreview } from "../lecture-file-preview";
 import { LecturesArrayFormValues } from "./validation";
 
 import "./BlockLecture.scss";
 
-interface BlockLectureProps {
+type BlockLectureProps = {
   id: string;
   index: number;
   lessonId: string;
-  onDelete: (index: number) => void;
-}
+};
 
 type FileLectureProps = {
   id: string;
   name: string;
 };
 
-const BlockLecture: FC<BlockLectureProps> = ({ lessonId, id, index, onDelete }) => {
+const BlockLecture: FC<BlockLectureProps> = ({ lessonId, id, index }) => {
   const { t } = useTranslation("teacher-create-course");
-  const { t: dialogModalT } = useTranslation("dialog-modal");
+
+  const { onOpenDialog } = useDialog();
+  const { setValue } = useFormContext<LecturesArrayFormValues>();
 
   const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
-
   const [files, setFiles] = useState<FileLectureProps[] | null>(null);
   const [videoFile, setVideoFile] = useState<string | null>(null);
   const [showQuiz, setShowQuiz] = useState<boolean>(false);
 
-  const {
-    register,
-    formState: { errors },
-    setValue
-  } = useFormContext<LecturesArrayFormValues>();
-  const { openModal, onOpenModal, onCloseModal } = useDialogModal();
-
-  function onDeleteLecture(): void {
-    onDelete(index);
-    onCloseModal();
+  function onOpenModal(indexLecture: number): void {
+    onOpenDialog({
+      dialogName: "DELETE_LECTURE_DIALOG",
+      options: {
+        id: indexLecture,
+        lessonId: lessonId,
+        lectureId: id
+      }
+    });
   }
 
   function onAddQuiz(): void {
@@ -120,15 +120,13 @@ const BlockLecture: FC<BlockLectureProps> = ({ lessonId, id, index, onDelete }) 
           variant="white-text"
           size="medium"
           className="block-lecture__action-delete"
-          onClick={() => onOpenModal(id)}
+          onClick={() => onOpenModal(index)}
         >
           <DeleteOutlineIcon />
         </Button>
       </Box>
       <TextField
-        {...register(`lectures.${index}.title`)}
-        error={!!errors.lectures?.[index]?.title?.message}
-        helperText={errors.lectures?.[index]?.title?.message}
+        name={`lectures.${index}.title`}
         variant="outlined"
         fullWidth
         placeholder={t("structure.title-lecture-placeholder") + "..."}
@@ -199,15 +197,6 @@ const BlockLecture: FC<BlockLectureProps> = ({ lessonId, id, index, onDelete }) 
           </Button>
         </Box>
       </Box>
-      <DialogModal
-        open={openModal}
-        title={t("structure.dialog_modal_delete_lecture")}
-        showCloseButtonIcon
-        primaryButtonText={dialogModalT("dialog_modal_agree")}
-        secondaryButtonText={dialogModalT("dialog_modal_disagree")}
-        handleAgree={onDeleteLecture}
-        handleClose={onCloseModal}
-      />
     </Stack>
   );
 };

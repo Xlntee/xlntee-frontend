@@ -5,12 +5,12 @@ import { Box, Typography } from "@mui/material";
 
 import "./Feature.scss";
 
-interface FeatureProps {
+type FeatureProps = {
   icon: JSX.Element;
   caption: string;
   description: string;
   className: string;
-}
+};
 
 const Feature: FC<FeatureProps> = ({ icon, caption, description, className }) => {
   return (

@@ -4,9 +4,9 @@ import { Box, Typography } from "@mui/material";
 
 import { XlnteeColors } from "src/shared/themes/colors";
 
-interface DescriptionProps {
+type DescriptionProps = {
   text: string;
-}
+};
 
 const Description: FC<DescriptionProps> = ({ text }) => {
   return (

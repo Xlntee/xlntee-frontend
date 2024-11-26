@@ -5,11 +5,11 @@ import { Avatar, Box, Stack, Container, Typography } from "@mui/material";
 import { XlnteeColors } from "src/shared/themes/colors";
 import { Skills } from "./ui";
 
-interface SectionCourseAboutProps {
+type SectionCourseAboutProps = {
   name: string;
   description: string;
   skills: string[];
-}
+};
 
 const SectionCourseAbout: FC<SectionCourseAboutProps> = ({ name, skills, description }) => {
   const { t } = useTranslation("teacher-preview");
