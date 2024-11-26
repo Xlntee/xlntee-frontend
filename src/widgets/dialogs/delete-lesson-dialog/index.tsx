@@ -3,27 +3,37 @@ import { useTranslation } from "react-i18next";
 
 import { Box, Button, DialogTitle, DialogActions } from "@mui/material";
 
+import { useAppDispatch } from "src/app/store/store";
 import { MenuToggler } from "src/features";
+
+import { deleteLesson } from "pages/teacher/create-course/structure/store/lessonsSlice";
+
 import useDialog from "src/hooks/useDialog";
 
-const DeletePromoCodeDialog: FC = () => {
+const DeleteLessonDialog: FC = () => {
   const { t } = useTranslation("dialog-modal");
+  const dispatch = useAppDispatch();
 
   const { onCloseDialogByName, getOptionsFromDialog } = useDialog();
 
   function onAgreeDialog(): void {
-    const options = getOptionsFromDialog("DELETE_PROMO_CODE_DIALOG");
-    console.log("getOptionsFromDialog", options);
+    const options = getOptionsFromDialog("DELETE_LESSON_DIALOG");
+    dispatch(
+      deleteLesson({
+        lessonId: options.id
+      })
+    );
+    onCloseDialog();
   }
 
   function onCloseDialog(): void {
-    onCloseDialogByName("DELETE_PROMO_CODE_DIALOG");
+    onCloseDialogByName("DELETE_LESSON_DIALOG");
   }
 
   return (
     <Box className="dialog-box">
       <MenuToggler active={true} onClick={onCloseDialog} className="dialog-box__close-btn" />
-      <DialogTitle>{t("dialog_modal_delete_promo_code")}</DialogTitle>
+      <DialogTitle>{t("dialog_modal_delete_lesson")}</DialogTitle>
       <DialogActions>
         <Button color={"success"} variant={"black-contain"} autoFocus onClick={onAgreeDialog}>
           {t("dialog_modal_agree")}
@@ -36,4 +46,4 @@ const DeletePromoCodeDialog: FC = () => {
   );
 };
 
-export default DeletePromoCodeDialog;
+export default DeleteLessonDialog;

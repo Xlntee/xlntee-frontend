@@ -30,7 +30,7 @@ const BlockPromoCodes: FC = () => {
 
   function onOpenModal(id: string): void {
     onOpenDialog({
-      dialogName: "DELETE_PROMO_CODE",
+      dialogName: "DELETE_PROMO_CODE_DIALOG",
       options: {
         id: id
       }

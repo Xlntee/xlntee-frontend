@@ -9,19 +9,18 @@ import { Box, Typography, Stack, Button } from "@mui/material";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 
-import { DialogModal } from "src/features";
-import useDialogModal from "src/hooks/useDialogModal";
 import { RootForm } from "src/widgets/forms";
 import { CheckboxField, TextField } from "src/features/form-fields";
 
 import { useAppDispatch, useAppSelector } from "src/app/store/store";
-import { deleteLesson, selectLessons, updateLesson } from "../../store/lessonsSlice";
+import { selectLessons, updateLesson } from "../../store/lessonsSlice";
 
 import { BlockLecture } from "../block-lecture";
 import { lessonSingleValidationSchema, LessonSingleFormValues } from "./validation";
 import { getConvertedLessonFormValuesToLesson } from "./utils";
 
 import "./BlockLesson.scss";
+import useDialog from "src/hooks/useDialog";
 
 type BlockLessonProps = {
   id: string;
@@ -31,21 +30,18 @@ type BlockLessonProps = {
 
 const BlockLesson: FC<BlockLessonProps> = ({ index, id, canDelete }) => {
   const { t } = useTranslation("teacher-create-course");
-  const { t: dialogModalT } = useTranslation("dialog-modal");
 
+  const { onOpenDialog } = useDialog();
   const dispatch = useAppDispatch();
   const lessons = useAppSelector(selectLessons);
 
-  const { openModal, onOpenModal, onCloseModal } = useDialogModal();
   const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
 
   const methods = useForm<LessonSingleFormValues>({
     resolver: yupResolver(lessonSingleValidationSchema),
     mode: "onSubmit"
   });
-
   const { control, setValue } = methods;
-
   const { fields, append, remove } = useFieldArray({
     control,
     name: "lectures"
@@ -69,7 +65,6 @@ const BlockLesson: FC<BlockLessonProps> = ({ index, id, canDelete }) => {
   }
 
   function onSubmit(data: LessonSingleFormValues): void {
-    console.log("data", data);
     dispatch(
       updateLesson({
         lessonId: id,
@@ -78,13 +73,13 @@ const BlockLesson: FC<BlockLessonProps> = ({ index, id, canDelete }) => {
     );
   }
 
-  function onHandleDeleteLesson(): void {
-    dispatch(
-      deleteLesson({
-        lessonId: id
-      })
-    );
-    onCloseModal();
+  function onOpenModal(idLesson: string): void {
+    onOpenDialog({
+      dialogName: "DELETE_LESSON_DIALOG",
+      options: {
+        id: idLesson
+      }
+    });
   }
 
   function onAddLecture(): void {
@@ -160,15 +155,6 @@ const BlockLesson: FC<BlockLessonProps> = ({ index, id, canDelete }) => {
           </Button>
         </Stack>
       </Box>
-      <DialogModal
-        open={openModal}
-        title={t("structure.dialog_modal_delete_lesson")}
-        showCloseButtonIcon
-        primaryButtonText={dialogModalT("dialog_modal_agree")}
-        secondaryButtonText={dialogModalT("dialog_modal_disagree")}
-        handleAgree={onHandleDeleteLesson}
-        handleClose={onCloseModal}
-      />
     </RootForm>
   );
 };
