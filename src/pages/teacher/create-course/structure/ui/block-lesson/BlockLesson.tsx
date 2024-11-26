@@ -13,14 +13,14 @@ import { RootForm } from "src/widgets/forms";
 import { CheckboxField, TextField } from "src/features/form-fields";
 
 import { useAppDispatch, useAppSelector } from "src/app/store/store";
-import { selectLessons, updateLesson } from "../../store/lessonsSlice";
+import { addLecture, selectLessons, updateLesson } from "../../store/lessonsSlice";
 
 import { BlockLecture } from "../block-lecture";
 import { lessonSingleValidationSchema, LessonSingleFormValues } from "./validation";
 import { getConvertedLessonFormValuesToLesson } from "./utils";
+import useDialog from "src/hooks/useDialog";
 
 import "./BlockLesson.scss";
-import useDialog from "src/hooks/useDialog";
 
 type BlockLessonProps = {
   id: string;
@@ -42,7 +42,7 @@ const BlockLesson: FC<BlockLessonProps> = ({ index, id, canDelete }) => {
     mode: "onSubmit"
   });
   const { control, setValue } = methods;
-  const { fields, append, remove } = useFieldArray({
+  const { fields, append } = useFieldArray({
     control,
     name: "lectures"
   });
@@ -88,6 +88,12 @@ const BlockLesson: FC<BlockLessonProps> = ({ index, id, canDelete }) => {
       customId: idValue,
       title: ""
     });
+    dispatch(
+      addLecture({
+        lessonId: id,
+        lectureId: idValue
+      })
+    );
   }
 
   return (
@@ -136,7 +142,7 @@ const BlockLesson: FC<BlockLessonProps> = ({ index, id, canDelete }) => {
               lessonId={id}
               id={lecture.customId}
               index={lectureIndex}
-              onDelete={remove}
+              // onDelete={remove}
             />
           ))}
         </Stack>

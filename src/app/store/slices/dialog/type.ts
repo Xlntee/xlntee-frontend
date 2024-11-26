@@ -7,7 +7,8 @@ export type DialogNames =
   | "STUDENT_COURSE_SHARE_DIALOG"
   | "USER_MENU_DIALOG"
   | "DELETE_PROMO_CODE_DIALOG"
-  | "DELETE_LESSON_DIALOG";
+  | "DELETE_LESSON_DIALOG"
+  | "DELETE_LECTURE_DIALOG";
 
 export type PayloadDialogProps = {
   dialogName: DialogNames;
