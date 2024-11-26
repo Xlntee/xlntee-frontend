@@ -58,7 +58,7 @@ const BlockPromoCodes: FC = () => {
     ]);
 
     resetField("discount");
-    resetField("code");
+    resetField("promoCode");
   }
 
   return (

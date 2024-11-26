@@ -10,9 +10,9 @@
   }
 
   &__field {
-    .MuiTypography-root,
-    .MuiFormLabel-root {
-      font-size: 14px;
+    margin-bottom: 0;
+
+    .MuiTypography-root {
       color: rgb(var(--gray-color-600));
       margin-bottom: 10px;
     }

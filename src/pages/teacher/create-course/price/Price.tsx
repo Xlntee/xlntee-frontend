@@ -46,7 +46,7 @@ const PricePage: FC<PageProps> = ({ title }) => {
         <Divider />
       </Box>
       <RootForm methods={methods}>
-        <Grid container columnSpacing="20px" rowGap="20px" flexDirection={{ md: "row-reverse" }}>
+        <Grid container columnSpacing="20px" rowGap="20px" flexDirection={{ md: "row-reverse" }} mb="20px">
           <Grid item xs={12} md={6}>
             <Box borderRadius="20px" padding="10px 20px" bgcolor={XlnteeColors.LightElementColor}>
               <Typography variant="h6" color={XlnteeColors.BlackElementColor}>
@@ -58,18 +58,20 @@ const PricePage: FC<PageProps> = ({ title }) => {
             </Box>
           </Grid>
           <Grid item xs={12} md={6}>
-            <CheckboxField name="paid" label={t("price.checkbox-label")} className="field-box" />
-            <FormLabel className="field-box">
-              <Typography mb="8px" className="field-box__title">
-                {t("price.price-field-label")}
-              </Typography>
-              <TextField
-                name="price"
-                variant="outlined"
-                fullWidth
-                placeholder={`${t("price.price-field-placeholder")}...`}
-              />
-            </FormLabel>
+            <Stack gap="20px">
+              <CheckboxField name="paid" label={t("price.checkbox-label")} className="field-box" />
+              <FormLabel className="field-box">
+                <Typography mb="8px" className="field-box__title">
+                  {t("price.price-field-label")}
+                </Typography>
+                <TextField
+                  name="price"
+                  variant="outlined"
+                  fullWidth
+                  placeholder={`${t("price.price-field-placeholder")}...`}
+                />
+              </FormLabel>
+            </Stack>
           </Grid>
         </Grid>
         <Box mb="20px">

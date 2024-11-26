@@ -3,7 +3,8 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useTranslation } from "react-i18next";
 
-import { Button, Stack, Box, InputLabel } from "@mui/material";
+import { Button, Stack, Box, FormLabel, Typography } from "@mui/material";
+
 import { RootForm } from "src/widgets/forms";
 import { TextField } from "src/features/form-fields";
 
@@ -36,8 +37,10 @@ const EmailUpdateForm: FC<EmailUpdateFormProps> = ({ oldEmail, onSubmit }) => {
   return (
     <RootForm methods={methods} onSubmit={onHandleSubmit} className="auth-form">
       <Stack gap="20px">
-        <Box>
-          <InputLabel htmlFor="email">{t("current-email-address")}</InputLabel>
+        <FormLabel className="field-box">
+          <Typography variant="h5" className="field-box__title">
+            {t("current-email-address")}
+          </Typography>
           <TextField
             name="email"
             type="email"
@@ -47,13 +50,17 @@ const EmailUpdateForm: FC<EmailUpdateFormProps> = ({ oldEmail, onSubmit }) => {
             fullWidth
             disabled
           />
-        </Box>
-        <Box>
-          <InputLabel htmlFor="new_email">{t("new-email-address")}</InputLabel>
+        </FormLabel>
+        <FormLabel className="field-box">
+          <Typography variant="h5" className="field-box__title">
+            {t("new-email-address")}
+          </Typography>
           <TextField name="new_email" type="email" aria-label="new email input" placeholder="New email" fullWidth />
-        </Box>
-        <Box>
-          <InputLabel htmlFor="confirm_email">{t("confirm-new-email")}</InputLabel>
+        </FormLabel>
+        <FormLabel className="field-box">
+          <Typography variant="h5" className="field-box__title">
+            {t("confirm-new-email")}
+          </Typography>
           <TextField
             name="confirm_email"
             type="email"
@@ -61,7 +68,7 @@ const EmailUpdateForm: FC<EmailUpdateFormProps> = ({ oldEmail, onSubmit }) => {
             placeholder={t("confirm-new-email")}
             fullWidth
           />
-        </Box>
+        </FormLabel>
         <Box textAlign="center">
           <Button type="submit" variant="contained" className="auth-form__btn-submit">
             Next

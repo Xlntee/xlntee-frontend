@@ -99,7 +99,7 @@ const TeacherProfileForm: FC = () => {
 
   return (
     <RootForm methods={methods} onSubmit={onSubmit}>
-      <Grid container columnSpacing={{ sm: "20px", md: "40px" }}>
+      <Grid container columnSpacing={{ sm: "20px", md: "40px" }} rowGap="20px" mb="20px">
         {fields.map(({ name, label, placeholder }) => (
           <Grid key={name} item xs={12} sm={6}>
             <FormLabel className="field-box">

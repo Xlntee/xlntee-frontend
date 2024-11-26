@@ -96,7 +96,7 @@ const LandingForm: FC = () => {
 
   return (
     <RootForm className="landing-form" methods={methods} onSubmit={onSubmit}>
-      <Stack gap="16px">
+      <Stack gap="20px">
         {fields.map((fieldItem) => (
           <Box key={fieldItem.value} className="field-box">
             <FormLabel>
@@ -117,8 +117,6 @@ const LandingForm: FC = () => {
             {errors.description?.message && <FormHelperText error={true}>{errors.description?.message}</FormHelperText>}
           </Box>
         </Box>
-      </Stack>
-      <Stack gap="24px">
         <Grid container justifyContent="space-between">
           <Grid item xs={12} md={4}>
             <Box className="field-box">

@@ -39,37 +39,37 @@ const LecturerForm: FC = () => {
 
   return (
     <RootForm methods={methods} onSubmit={onSubmit}>
-      <Box className="field-box">
-        <Typography variant="h5" className="field-box__title">
-          {t("lecturer.fullname-field-label")}
-        </Typography>
-        <Typography className="field-box__subtitle">{t("lecturer.fullname-field-description")}</Typography>
-        <TextField
-          name="username"
-          variant="outlined"
-          fullWidth
-          placeholder={`${t("lecturer.fullname-field-placeholder")}...`}
-        />
-      </Box>
-      <Box className="field-box">
-        <FormLabel>
+      <Stack gap="20px">
+        <FormLabel className="field-box">
+          <Typography variant="h5" className="field-box__title">
+            {t("lecturer.fullname-field-label")}
+          </Typography>
+          <Typography className="field-box__subtitle">{t("lecturer.fullname-field-description")}</Typography>
+          <TextField
+            name="username"
+            variant="outlined"
+            fullWidth
+            placeholder={`${t("lecturer.fullname-field-placeholder")}...`}
+          />
+        </FormLabel>
+        <FormLabel className="field-box">
           <Typography className="field-box__title">{t("lecturer.skills-field-label")}*</Typography>
           <Typography className="field-box__subtitle">{t("lecturer.skills-field-description")}</Typography>
           <AutocompleteField name="tags" placeholder={`${t("lecturer.skills-field-placeholder")}...`} />
         </FormLabel>
-      </Box>
-      <Box className="field-box">
-        <Typography className="field-box__title">{t("lecturer.about-field-label")}</Typography>
-        <Typography className="field-box__subtitle">{t("lecturer.about-field-description")}</Typography>
-        <ReactQuill ref={refRichText} theme="snow" />
-      </Box>
-      <Stack direction={{ sm: "row" }} flexWrap="wrap" gap={{ sm: "20px", md: "40px" }}>
-        <Button type="submit" variant="black-contain" size="medium" sx={{ minWidth: "190px" }}>
-          {tCommon("button-save")}
-        </Button>
-        <Button variant="black-text" size="medium">
-          {tCommon("button-discard-changes")}
-        </Button>
+        <Box className="field-box">
+          <Typography className="field-box__title">{t("lecturer.about-field-label")}</Typography>
+          <Typography className="field-box__subtitle">{t("lecturer.about-field-description")}</Typography>
+          <ReactQuill ref={refRichText} theme="snow" />
+        </Box>
+        <Stack direction={{ sm: "row" }} flexWrap="wrap" gap={{ sm: "20px", md: "40px" }}>
+          <Button type="submit" variant="black-contain" size="medium" sx={{ minWidth: "190px" }}>
+            {tCommon("button-save")}
+          </Button>
+          <Button variant="black-text" size="medium">
+            {tCommon("button-discard-changes")}
+          </Button>
+        </Stack>
       </Stack>
     </RootForm>
   );

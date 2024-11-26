@@ -2,7 +2,7 @@ import { FC } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-import { Box, Button, InputLabel } from "@mui/material";
+import { Box, Button, FormLabel, Typography } from "@mui/material";
 
 import { TextField } from "src/features/form-fields";
 
@@ -35,10 +35,10 @@ const PromoCodeCreate: FC<PromoCodeCreateProps> = ({ onSubmit }) => {
 
   return (
     <Box className="promo-code-create">
-      <Box className="promo-code-create__field">
-        <InputLabel shrink={false} htmlFor="discount-field">
+      <FormLabel className="field-box promo-code-create__field">
+        <Typography variant="caption" className="field-box__title">
           {t("price.promo-field-discount-label")} (%)
-        </InputLabel>
+        </Typography>
         <TextField
           id="discount"
           name="discount"
@@ -49,11 +49,11 @@ const PromoCodeCreate: FC<PromoCodeCreateProps> = ({ onSubmit }) => {
           placeholder="(%)"
           showErrorMessage={false}
         />
-      </Box>
-      <Box className="promo-code-create__field">
-        <InputLabel shrink={false} htmlFor="promo-code-field">
+      </FormLabel>
+      <FormLabel className="field-box promo-code-create__field">
+        <Typography variant="caption" className="field-box__title">
           {t("price.promo-field-code-label")}
-        </InputLabel>
+        </Typography>
         <TextField
           id="promoCode"
           name="promoCode"
@@ -63,7 +63,7 @@ const PromoCodeCreate: FC<PromoCodeCreateProps> = ({ onSubmit }) => {
           placeholder={`${t("price.promo-field-code-placeholder")}`}
           showErrorMessage={false}
         />
-      </Box>
+      </FormLabel>
       <Button variant="outlined" size="medium" sx={{ minWidth: "156px", fontWeight: 400 }} onClick={onHandleSubmit}>
         {t("price.promo-button-create")}
       </Button>

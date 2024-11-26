@@ -3,7 +3,8 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useTranslation } from "react-i18next";
 
-import { Button, Stack, Box, InputLabel } from "@mui/material";
+import { Button, Stack, Box, FormLabel, Typography } from "@mui/material";
+
 import { RootForm } from "src/widgets/forms";
 import { PasswordField } from "src/features/form-fields";
 
@@ -35,33 +36,39 @@ const UserPasswordUpdateForm: FC<UserPasswordUpdateFormProps> = ({ onSubmit }) =
   return (
     <RootForm methods={methods} onSubmit={onHandleSubmit} className="auth-form">
       <Stack gap="20px">
-        <Box>
-          <InputLabel htmlFor="current_password">{t("current-password-label")}</InputLabel>
+        <FormLabel>
+          <Typography variant="h5" className="field-box__title">
+            {t("current-password-label")}
+          </Typography>
           <PasswordField
             name="password"
             aria-label="current password input"
             placeholder={t("current-password-placeholder")}
             fullWidth
           />
-        </Box>
-        <Box>
-          <InputLabel htmlFor="new_password">{t("new-password-label")}</InputLabel>
+        </FormLabel>
+        <FormLabel>
+          <Typography variant="h5" className="field-box__title">
+            {t("new-password-label")}
+          </Typography>
           <PasswordField
             name="new_password"
             aria-label="new password input"
             placeholder={t("new-password-placeholder")}
             fullWidth
           />
-        </Box>
-        <Box>
-          <InputLabel htmlFor="new_password">{t("confirm-password-label")}</InputLabel>
+        </FormLabel>
+        <FormLabel>
+          <Typography variant="h5" className="field-box__title">
+            {t("confirm-password-label")}
+          </Typography>
           <PasswordField
             name="confirm_password"
             aria-label="confirm password input"
             placeholder={t("confirm-password-placeholder")}
             fullWidth
           />
-        </Box>
+        </FormLabel>
         <Box textAlign="center">
           <Button type="submit" variant="contained" className="auth-form__btn-submit">
             Next
