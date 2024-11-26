@@ -2,7 +2,7 @@ import { FC } from "react";
 
 import useDrawer from "src/hooks/useDrawer";
 import useHeaderNavigationTeacher from "src/hooks/useHeaderNavigationTeacher";
-import { NavigationDrawer } from "../NavigationDrawer";
+import NavigationDrawer from "../navigation-drawer";
 
 const TeacherCreateCourseNavigationDrawer: FC = () => {
   const { isOpenDrawer, onCloseDrawer } = useDrawer();

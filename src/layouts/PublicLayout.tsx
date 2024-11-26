@@ -3,8 +3,8 @@ import { Outlet } from "react-router-dom";
 import { Box } from "@mui/material";
 
 import { Header, Footer } from "src/widgets/components";
-import { RootDrawer } from "src/widgets/drawers/RootDrawer";
-import { RootDialog } from "src/widgets/dialogs/RootDialog";
+import { RootDrawer } from "src/widgets/drawers/root-drawer";
+import { RootDialog } from "src/widgets/dialogs/root-dialog";
 
 const PublicLayout: FC = () => {
   return (

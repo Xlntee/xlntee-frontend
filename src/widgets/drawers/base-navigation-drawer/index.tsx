@@ -1,8 +1,9 @@
 import { FC } from "react";
 
-import { NavigationDrawer } from "../NavigationDrawer";
 import useDrawer from "src/hooks/useDrawer";
 import useHeaderNavigation from "src/hooks/useHeaderNavigation";
+
+import NavigationDrawer from "../navigation-drawer";
 
 const HeaderProfile: FC = () => {
   const { isOpenDrawer, onCloseDrawer } = useDrawer();

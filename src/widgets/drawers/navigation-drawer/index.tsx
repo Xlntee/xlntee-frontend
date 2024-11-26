@@ -3,8 +3,8 @@ import { FC } from "react";
 import { Box, Divider } from "@mui/material";
 
 import { Navigation, NavigationLinkType } from "src/features";
-import { DrawerHeader } from "../DrawerHeader";
-import { DrawerBody } from "../DrawerBody";
+import DrawerHeader from "../drawer-header";
+import DrawerBody from "../drawer-body";
 
 type NavigationDrawerProps = {
   children?: React.ReactNode;

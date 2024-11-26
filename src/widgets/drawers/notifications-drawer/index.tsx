@@ -4,8 +4,8 @@ import { useTranslation } from "react-i18next";
 import { Box, Stack, Typography } from "@mui/material";
 
 import { Notification } from "src/features";
-import { DrawerHeader } from "../DrawerHeader";
-import { DrawerBody } from "../DrawerBody";
+import DrawerHeader from "../drawer-header";
+import DrawerBody from "../drawer-body";
 
 const NotificationsDrawer: FC = () => {
   const { t } = useTranslation("common");
