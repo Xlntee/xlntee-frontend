@@ -5,7 +5,7 @@ import ReactQuill from "react-quill";
 import cn from "classnames";
 import { v4 as uuidv4 } from "uuid";
 
-import { Box, Typography, TextField, Stack, Button } from "@mui/material";
+import { Box, Typography, Stack, Button } from "@mui/material";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import ArticleIcon from "@mui/icons-material/Article";
@@ -14,11 +14,12 @@ import { XlnteeColors } from "src/shared/themes/colors";
 import { DialogModal, FileUpload, VideoUpload } from "src/features";
 import useDialogModal from "src/hooks/useDialogModal";
 
+import { TextField } from "src/features/form-fields";
+
 import { getInitialTestConfiguration } from "../../store/initialData";
 
-import { LectureFilePreview } from "../lecture-file-preview";
 import { BlockQuiz } from "../block-quiz";
-
+import { LectureFilePreview } from "../lecture-file-preview";
 import { LecturesArrayFormValues } from "./validation";
 
 import "./BlockLecture.scss";
@@ -45,11 +46,7 @@ const BlockLecture: FC<BlockLectureProps> = ({ lessonId, id, index, onDelete }) 
   const [videoFile, setVideoFile] = useState<string | null>(null);
   const [showQuiz, setShowQuiz] = useState<boolean>(false);
 
-  const {
-    register,
-    formState: { errors },
-    setValue
-  } = useFormContext<LecturesArrayFormValues>();
+  const { setValue } = useFormContext<LecturesArrayFormValues>();
   const { openModal, onOpenModal, onCloseModal } = useDialogModal();
 
   function onDeleteLecture(): void {
@@ -126,9 +123,7 @@ const BlockLecture: FC<BlockLectureProps> = ({ lessonId, id, index, onDelete }) 
         </Button>
       </Box>
       <TextField
-        {...register(`lectures.${index}.title`)}
-        error={!!errors.lectures?.[index]?.title?.message}
-        helperText={errors.lectures?.[index]?.title?.message}
+        name={`lectures.${index}.title`}
         variant="outlined"
         fullWidth
         placeholder={t("structure.title-lecture-placeholder") + "..."}

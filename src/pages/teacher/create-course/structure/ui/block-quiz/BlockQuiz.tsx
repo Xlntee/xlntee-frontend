@@ -2,7 +2,7 @@ import { FC } from "react";
 import { useFieldArray, useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-import { Box, Typography, TextField, Stack, Button, Checkbox } from "@mui/material";
+import { Box, Typography, Stack, Button, Checkbox } from "@mui/material";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import QuizIcon from "@mui/icons-material/Quiz";
 
@@ -12,6 +12,7 @@ import { QuizAnswerList } from "../quiz-answer-list";
 import { LessonSingleFormValues } from "../block-lesson/validation";
 
 import "./BlockQuiz.scss";
+import { TextField } from "src/features/form-fields";
 
 type BlockQuizProps = {
   lessonId: string;
@@ -23,11 +24,7 @@ type BlockQuizProps = {
 const BlockQuiz: FC<BlockQuizProps> = ({ lessonId, lectureId, lectureIndex, onCloseQuiz }) => {
   const { t } = useTranslation("teacher-create-course");
 
-  const {
-    register,
-    control,
-    formState: { errors }
-  } = useFormContext<LessonSingleFormValues>();
+  const { control } = useFormContext<LessonSingleFormValues>();
 
   const { fields, append, remove } = useFieldArray({
     control,
@@ -75,9 +72,7 @@ const BlockQuiz: FC<BlockQuizProps> = ({ lessonId, lectureId, lectureIndex, onCl
                     {index + 1}
                   </Typography>
                   <TextField
-                    {...register(`lectures.${lectureIndex}.testConfigurations.${index}.question`)}
-                    error={!!errors.lectures?.[lectureIndex]?.testConfigurations?.[index]?.question?.message}
-                    helperText={errors.lectures?.[lectureIndex]?.testConfigurations?.[index]?.question?.message}
+                    name={`lectures.${lectureIndex}.testConfigurations.${index}.question`}
                     variant="outlined"
                     fullWidth
                     placeholder={`${t("structure.lecture-quiz-question-placeholder")}...`}

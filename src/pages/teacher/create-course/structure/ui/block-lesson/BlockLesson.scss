@@ -18,6 +18,17 @@
     flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
+
+    .MuiFormControlLabel-root {
+      .MuiCheckbox-root {
+        margin-right: 4px;
+      }
+
+      .MuiFormControlLabel-label {
+        font-size: 14px;
+        color: rgb(var(--gray-color-600));
+      }
+    }
   }
 
   &__action-delete {
