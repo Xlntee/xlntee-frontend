@@ -4,18 +4,18 @@ import { useTranslation } from "react-i18next";
 
 import { Box } from "@mui/material";
 
-import { RootDialog } from "src/widgets/dialogs/root-dialog";
 import { HeaderProfile, NotificationToggler, Footer } from "src/widgets/components";
 import { AppRoutes } from "src/app/routing/appRoutes";
 import { UserRoles } from "src/shared/utils/user-role";
-import { RootDrawer } from "src/widgets/drawers/root-drawer";
 import { CoursePreviewButtons } from "src/widgets/teacher";
+
+import RootLayout from "src/layouts/RootLayout";
 
 const CreateCoursePageLayout: FC = () => {
   const { t } = useTranslation("auth");
 
   return (
-    <>
+    <RootLayout>
       <HeaderProfile
         link={<Link to={AppRoutes.teacher.dashboard}>{t("dashboard")}</Link>}
         userRole={UserRoles.teacher}
@@ -27,9 +27,7 @@ const CreateCoursePageLayout: FC = () => {
         <Outlet />
       </Box>
       <Footer />
-      <RootDialog />
-      <RootDrawer />
-    </>
+    </RootLayout>
   );
 };
 
