@@ -22,7 +22,7 @@ i18n
       "teacher-courses",
       "teacher-create-course",
       "dialog-modal",
-      "not-found"
+      "not-found",
       "user-manager"
     ],
     partialBundledLanguages: true,

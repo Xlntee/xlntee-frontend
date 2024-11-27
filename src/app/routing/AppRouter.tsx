@@ -14,7 +14,7 @@ import {
   UserManagerLayout
 } from "src/layouts";
 
-import { AppRoutes } from "./appRoutes";
+import { AppRoutes, AppUserManagerRoutes } from "./appRoutes";
 import { ProtectedRoute } from "./ProtectedRoute";
 
 import { LoginForm, RegistrationForm, AccountVerificationForm } from "src/widgets/forms";
@@ -55,6 +55,14 @@ const StatisticPage = lazy(() => import("src/pages/teacher/statistic-page/Statis
 const TeacherProfilePage = lazy(() => import("src/pages/teacher/profile-page/ProfilePage"));
 const TariffPlanPage = lazy(() => import("src/pages/teacher/tariff-plan-page/TariffPlanPage"));
 const HelpCenterPage = lazy(() => import("src/pages/help-center-page/HelpCenterPage"));
+
+const UserManagerDashboaardPage = lazy(() => import("pages/user-manager/dashboard"));
+const UserManagerUsersPage = lazy(() => import("pages/user-manager/users"));
+const UserManagerUserSinglePage = lazy(() => import("pages/user-manager/user-single"));
+const UserManagerRequestsPage = lazy(() => import("pages/user-manager/requests"));
+const UserManagerCoursesPage = lazy(() => import("pages/user-manager/courses"));
+const UserManagerCourseSinglePage = lazy(() => import("pages/user-manager/course-single"));
+const UserManagerCourseCategoriesPage = lazy(() => import("pages/user-manager/courseCategories"));
 
 const authRoutes = [
   {

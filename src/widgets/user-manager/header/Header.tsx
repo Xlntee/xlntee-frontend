@@ -2,7 +2,7 @@ import { FC, useState } from "react";
 
 import { Box, Container, Typography, Stack } from "@mui/material";
 
-import { MenuToggler, Navigation, NavigationDrawer, NavigationLinkType } from "src/features";
+import { MenuToggler, Navigation, NavigationLinkType } from "src/features";
 import { LanguageSwitcher } from "src/widgets/components";
 import { useTranslation } from "react-i18next";
 import { AppUserManagerRoutes } from "src/app/routing/appRoutes";
@@ -52,7 +52,7 @@ const Header: FC = () => {
         </Typography>
         <Box className="header__nav">
           <Box className="header__nav-left">
-            <Navigation items={navList} large={true} />
+            <Navigation items={navList} />
           </Box>
           <Stack direction="row" alignItems="center" gap="10px" className="header__nav-right">
             <LanguageSwitcher compact />
@@ -60,7 +60,6 @@ const Header: FC = () => {
           </Stack>
         </Box>
       </Container>
-      <NavigationDrawer navigationList={navList} open={open} onClose={() => setOpen(false)} />
     </Box>
   );
 };
