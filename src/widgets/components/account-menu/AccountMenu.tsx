@@ -21,11 +21,13 @@ import AuthStudentContainer from "../auth-student-container";
 import AuthTeacherContainer from "../auth-teacher-container";
 
 import "./AccountMenu.scss";
+import useDialog from "src/hooks/useDialog";
 
 const AccountMenu: FC = () => {
   const { t } = useTranslation("auth");
 
   const { userRole, isStudentRole, isTeacherRole } = useAuth();
+  const { closeDialogs } = useDialog();
 
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
@@ -57,7 +59,9 @@ const AccountMenu: FC = () => {
             <AccountCircleOutlinedIcon className="account-menu__avatar" />
           </Link>
           <Typography variant="h6" className="account-menu__user-name">
-            <Link to={`${userRole}/dashboard/profile`}>@leshalurn</Link>
+            <Link to={`${userRole}/dashboard/profile`} onClick={closeDialogs}>
+              @leshalurn
+            </Link>
           </Typography>
         </Stack>
       </Box>
