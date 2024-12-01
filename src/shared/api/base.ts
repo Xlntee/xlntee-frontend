@@ -4,20 +4,16 @@ import {
   FetchArgs,
   FetchBaseQueryError,
   FetchBaseQueryMeta,
-  createApi,
   fetchBaseQuery
 } from "@reduxjs/toolkit/query/react";
 import { RootState } from "src/app/store/store";
-import { logOut, setCredentials } from "../store/slices/auth/slice";
+import { logOut } from "src/app/store/slices/auth/slice";
 
-const baseQuery = fetchBaseQuery({
-  baseUrl: "https://dummyjson.com",
+export const baseQuery = fetchBaseQuery({
+  baseUrl: "https://reqres.in/api",
   // baseUrl: "/api/v1",
-  credentials: "include",
   prepareHeaders: (headers, { getState }) => {
     const token = (getState() as RootState).auth.token;
-
-    headers.set("Content-Type", "application/json");
 
     if (token) {
       headers.set("authorization", `Bearer ${token}`);
@@ -27,7 +23,7 @@ const baseQuery = fetchBaseQuery({
   }
 });
 
-const baseQueryWithReauth: BaseQueryFn<string | FetchArgs, unknown, FetchBaseQueryError> = async (
+export const baseQueryWithReauth: BaseQueryFn<string | FetchArgs, unknown, FetchBaseQueryError> = async (
   args,
   api,
   extraOptions
@@ -39,8 +35,7 @@ const baseQueryWithReauth: BaseQueryFn<string | FetchArgs, unknown, FetchBaseQue
 
     if (refreshRes?.data) {
       const state = api.getState();
-
-      api.dispatch(setCredentials({ ...refreshRes.data, state }));
+      console.log("state", state);
 
       result = await baseQuery(args, api, extraOptions);
     } else {
@@ -50,8 +45,3 @@ const baseQueryWithReauth: BaseQueryFn<string | FetchArgs, unknown, FetchBaseQue
 
   return result;
 };
-
-export const apiSlice = createApi({
-  baseQuery: baseQueryWithReauth,
-  endpoints: () => ({})
-});

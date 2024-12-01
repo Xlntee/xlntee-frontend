@@ -7,7 +7,7 @@ export interface IUserState {
 }
 
 const initialState: IUserState = {
-  role: "teacher"
+  role: null
 };
 
 export const getUser = (state: RootState): IUserState => state.user;

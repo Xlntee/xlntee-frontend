@@ -7,7 +7,8 @@ export const useValidationSchema = (): yup.ObjectSchema<LoginFormFields> => {
   const { t } = useTranslation("auth");
 
   return yup.object().shape({
-    email: yup.string().email(t("validation.email-invalid-format")).required(t("validation.email")),
+    // email: yup.string().email(t("validation.email-invalid-format")).required(t("validation.email")),
+    email: yup.string().required(),
     password: yup.string().required(t("validation.password"))
   });
 };

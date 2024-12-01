@@ -1,5 +1,5 @@
-import { FC } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { FC, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
@@ -9,49 +9,51 @@ import { Button, Stack, Typography } from "@mui/material";
 import { RootForm } from "src/widgets/forms";
 import { PasswordField, TextField } from "src/features/form-fields";
 
-import { useAppDispatch } from "src/app/store/store";
 import { AppRoutes } from "src/app/routing/appRoutes";
 
 import { useValidationSchema } from "./validation";
-import { authApiSlice, useLoginMutation } from "src/app/store/slices/auth/api";
-import { setCredentials } from "src/app/store/slices/auth/slice";
+import { loginApiSlice, useLoginMutation } from "./api";
 
 export type LoginFormFields = {
   email: string;
   password: string;
 };
 
-const deviceId = "string";
+// const deviceId = "string";
 
 const LoginForm: FC = () => {
   const { t } = useTranslation("auth");
-  const { state } = useLocation();
   const navigate = useNavigate();
-  const dispatch = useAppDispatch();
 
-  const [login, { isLoading: isLoginLoading }] = useLoginMutation();
+  const [login, { isLoading, error, isError, isSuccess }] = useLoginMutation();
 
   const methods = useForm<LoginFormFields>({
     resolver: yupResolver(useValidationSchema()),
     mode: "onSubmit"
   });
 
+  useEffect(() => {
+    if (isSuccess) {
+      navigate("/");
+    }
+    if (isError) {
+      console.log("error", error);
+    }
+  }, [isLoading]);
+
   async function onSubmit(data: LoginFormFields): Promise<void> {
     try {
-      const res = await login({ ...data, deviceId }).unwrap();
-
-      dispatch(setCredentials(res));
-
-      if (state?.from) {
-        navigate(state.from);
-      }
-    } catch (error) {
-      console.error(error);
+      await login({
+        username: data.email,
+        password: data.password
+      }).unwrap();
+    } catch (e) {
+      console.error(e);
     }
   }
 
   return (
-    <ApiProvider api={authApiSlice}>
+    <ApiProvider api={loginApiSlice}>
       <RootForm methods={methods} onSubmit={onSubmit} className="auth-form">
         <Stack direction="column" gap="20px">
           <Stack direction="row" alignItems="center" justifyContent="center" gap="20px">
@@ -73,13 +75,15 @@ const LoginForm: FC = () => {
               </Button>
             </Stack>
           </Stack>
-          <TextField name="email" type="email" aria-label="email input" placeholder={t("email-placeholder")} />
+          <p>emilys</p>
+          <TextField name="email" type="text" aria-label="email input" placeholder={t("email-placeholder")} />
+          <p>emilyspass</p>
           <PasswordField name="password" aria-label="password input" placeholder={t("password-placeholder")} />
           <Button
             aria-label="login button"
             variant="contained"
             type="submit"
-            disabled={isLoginLoading}
+            disabled={isLoading}
             className="auth-form__btn-submit"
           >
             {t("login")}

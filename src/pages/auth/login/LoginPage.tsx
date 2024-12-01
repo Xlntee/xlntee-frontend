@@ -28,13 +28,9 @@ const LoginPage: FC<PageProps> = ({ title }) => {
   const { state } = useLocation();
   const navigate = useNavigate();
 
-  const dispatch = useAppDispatch();
-
   const onSubmit = handleSubmit(async (data) => {
     try {
-      const res = await login({ ...data, deviceId }).unwrap();
-
-      dispatch(setCredentials(res));
+      await login({ ...data, deviceId }).unwrap();
 
       if (state?.from) {
         navigate(state.from);
