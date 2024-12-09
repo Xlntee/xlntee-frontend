@@ -14,12 +14,15 @@ const NavigateToNotFound: FC = () => {
 };
 
 export const ProtectedRoute: FC<ProtectedRouteProps> = ({ element }) => {
-  const { isAuth, userRole } = useAuth();
+  const { isAppLoading, isAuth, userRole } = useAuth();
   const { pathname } = useLocation();
 
-  if (userRole && !pathname.includes(rolePrivateRoutes[userRole])) {
-    return <NavigateToNotFound />;
+  if (isAppLoading === false) {
+    if (!isAuth) return <NavigateToNotFound />;
+    if (userRole !== null && !pathname.includes(rolePrivateRoutes[userRole])) {
+      return <NavigateToNotFound />;
+    }
   }
 
-  return isAuth ? element : <NavigateToNotFound />;
+  return element;
 };

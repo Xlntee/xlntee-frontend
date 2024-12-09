@@ -28,10 +28,13 @@ const userSlice = createSlice({
       if (role === UserRoles.teacher) {
         state.role = UserRoles.student;
       }
+    },
+    clearUser: (state: IUserState) => {
+      state.role = null;
     }
   }
 });
 
-export const { switchRole, setRole } = userSlice.actions;
+export const { switchRole, setRole, clearUser } = userSlice.actions;
 
 export default userSlice.reducer;

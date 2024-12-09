@@ -21,7 +21,8 @@ const HeaderProfile: FC = () => {
   const { t } = useTranslation("auth");
   const { onOpenDrawer, isOpenDrawer } = useDrawer();
   const { navigationList } = useHeaderNavigation();
-  const { isAuth } = useAuth();
+
+  const { isAuth, isAppLoading } = useAuth();
 
   const isOpen = isOpenDrawer("BASE_NAVIGATION_DRAWER");
 
@@ -41,19 +42,23 @@ const HeaderProfile: FC = () => {
           </Box>
           <Stack direction="row" alignItems="center" gap="10px" className="header__nav-right">
             <LanguageSwitcher compact />
-            {isAuth ? (
-              <User />
-            ) : (
-              <Button
-                component={Link}
-                to={AppRoutes.auth.login}
-                variant="black-contain"
-                size="small"
-                className="button-rounded-sm"
-                sx={{ paddingInline: "20px" }}
-              >
-                {t("login")}
-              </Button>
+            {!isAppLoading && (
+              <>
+                {isAuth ? (
+                  <User />
+                ) : (
+                  <Button
+                    component={Link}
+                    to={AppRoutes.auth.login}
+                    variant="black-contain"
+                    size="small"
+                    className="button-rounded-sm"
+                    sx={{ paddingInline: "20px" }}
+                  >
+                    {t("login")}
+                  </Button>
+                )}
+              </>
             )}
             <HideMediaContainer type="up" breakpoint="xl">
               <MenuToggler active={isOpen} onClick={openMenu} />

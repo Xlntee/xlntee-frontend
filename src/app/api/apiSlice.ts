@@ -8,14 +8,16 @@ import {
   fetchBaseQuery
 } from "@reduxjs/toolkit/query/react";
 import { RootState } from "src/app/store/store";
-import { logOut, setCredentials } from "../store/slices/auth/slice";
+import { setCredentials } from "../store/slices/auth/slice";
+import Cookies from "js-cookie";
+import { logOut } from "../store/slices/auth/logout";
 
 const baseQuery = fetchBaseQuery({
   baseUrl: "https://dummyjson.com",
   // baseUrl: "/api/v1",
   credentials: "include",
   prepareHeaders: (headers, { getState }) => {
-    const token = (getState() as RootState).auth.token;
+    const token = (getState() as RootState).auth.token || Cookies.get("accessToken");
 
     headers.set("Content-Type", "application/json");
 

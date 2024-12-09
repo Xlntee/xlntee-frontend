@@ -23,13 +23,13 @@ const authSlice = createSlice({
       state.email = email;
       state.isAuth = true;
     },
-    logOut: (state) => {
+    clearAuth: (state) => {
       state.token = "";
       state.email = "";
     }
   }
 });
 
-export const { setCredentials, logOut } = authSlice.actions;
+export const { setCredentials, clearAuth } = authSlice.actions;
 
 export default authSlice.reducer;
