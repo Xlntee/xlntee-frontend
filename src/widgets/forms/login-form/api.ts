@@ -1,8 +1,6 @@
-import { Cookie } from "@mui/icons-material";
 import { apiSlice } from "src/app/api/apiSlice";
 import { setCredentials } from "src/app/store/slices/auth/slice";
 import { setRole } from "src/app/store/slices/user/slice";
-import LocalStorageService from "src/shared/local-storage";
 import Cookies from "js-cookie";
 
 interface IUserLogin {
@@ -30,8 +28,6 @@ export const loginApiSlice = apiSlice.injectEndpoints({
           const response = await queryFulfilled;
           const { email, accessToken } = response.data;
 
-          LocalStorageService.saveAccessToken(accessToken);
-
           Cookies.set("accessToken", accessToken);
 
           await dispatch(
@@ -45,7 +41,6 @@ export const loginApiSlice = apiSlice.injectEndpoints({
               role: "teacher"
             })
           );
-          // await dispatch(userApi.endpoints.getMe.initiate(null));
         } catch (error) {
           console.log(error);
         }
