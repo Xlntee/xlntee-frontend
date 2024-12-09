@@ -30,8 +30,8 @@ const icons: JSX.Element[] = [
 
 const SectionFeatures: FC = () => {
   const { t, ready } = useTranslation("student-landing");
-  const captionList: string[] = t("features-section.caption", { returnObjects: true });
-  const descriptionList: string[] = t("features-section.description", { returnObjects: true });
+  const captionList = t("features-section.caption", { returnObjects: true }) as string[];
+  const descriptionList = t("features-section.description", { returnObjects: true }) as string[];
   const columnCount = 3;
 
   if (!ready) return "";

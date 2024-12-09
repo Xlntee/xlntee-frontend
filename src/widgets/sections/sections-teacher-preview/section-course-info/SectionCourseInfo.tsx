@@ -7,8 +7,8 @@ import { CourseInfo } from "./ui";
 
 const SectionCourseInfo: FC = () => {
   const { t, ready } = useTranslation("teacher-preview");
-  const details1: string[] = t("section-course-info.details1", { returnObjects: true });
-  const details2: string[] = t("section-course-info.details2", { returnObjects: true });
+  const details1 = t("section-course-info.details1", { returnObjects: true }) as string[];
+  const details2 = t("section-course-info.details2", { returnObjects: true }) as string[];
 
   const data = [
     {

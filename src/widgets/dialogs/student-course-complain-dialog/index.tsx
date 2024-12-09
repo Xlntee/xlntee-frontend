@@ -10,9 +10,9 @@ const StudentCourseComplainDialog: FC = () => {
   const { t } = useTranslation("student");
   const { onOpenDialog, onCloseDialogByName } = useDialog();
 
-  const complainList: string[] = t("complain.list", {
+  const complainList = t("complain.list", {
     returnObjects: true
-  });
+  }) as string[];
 
   const checkList = [
     {

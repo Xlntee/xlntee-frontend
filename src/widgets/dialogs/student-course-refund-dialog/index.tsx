@@ -10,9 +10,9 @@ const RefundForm: FC = () => {
   const { t } = useTranslation("student");
   const { onOpenDialog, onCloseDialogByName } = useDialog();
 
-  const complainList: string[] = t("refund.list", {
+  const complainList = t("refund.list", {
     returnObjects: true
-  });
+  }) as string[];
 
   const checkList = [
     {

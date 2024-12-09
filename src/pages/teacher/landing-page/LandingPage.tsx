@@ -11,8 +11,8 @@ const TeacherLandingPage: FC<PageProps> = ({ title }) => {
   useTitle(title);
 
   const { t } = useTranslation("teacher-landing");
-  const heroSectionfeatures: string[] = t("hero-section.features", { returnObjects: true });
-  const aboutSectionWords: string[] = t("about-section.word-list", { returnObjects: true });
+  const heroSectionfeatures = t("hero-section.features", { returnObjects: true }) as string[];
+  const aboutSectionWords = t("about-section.word-list", { returnObjects: true }) as string[];
 
   return (
     <>
