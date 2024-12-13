@@ -30,7 +30,7 @@
   .error-limits {
     padding: 4px 10px;
     border-radius: 25px;
-    background-color: rgb(var(--warning-extra-light-color2));
+    background-color: rgb(var(--warning-extra-light-color));
     margin-bottom: 30px;
 
     @include mixins.media(tablet) {

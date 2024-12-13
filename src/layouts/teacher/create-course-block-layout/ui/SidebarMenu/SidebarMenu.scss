@@ -41,7 +41,7 @@
 
       &:not([aria-current="page"]) {
         @include mixins.hover {
-          color: rgb(var(--primary-color));
+          color: rgb(var(--brand-color));
         }
       }
     }
@@ -54,12 +54,12 @@
       justify-content: start;
       min-height: 36px;
       font-size: 16px;
-      color: rgb(var(--gray-color-600));
+      color: rgb(var(--gray-color-400));
       background-color: rgb(var(--gray-stroke-color));
 
       @include mixins.hover {
         color: rgb(var(--light-color));
-        background-color: rgb(var(--dark-color));
+        background-color: rgb(var(--main-element-color));
       }
     }
   }

@@ -1,11 +1,10 @@
 import { useRef, useState, ChangeEvent, useEffect, FC } from "react";
 import cn from "classnames";
 
-import { Box, Button, Avatar, Typography, Stack } from "@mui/material";
+import { Box, Button, Avatar, Typography, Stack, useTheme } from "@mui/material";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 
 import useSnackbarAlert from "src/hooks/useSnackbarAlert";
-import { XlnteeColors } from "src/shared/themes/colors";
 import { Snackbar } from "src/features/snackbar";
 
 import { getUploadedFile } from "../utils";
@@ -41,6 +40,7 @@ const ImageUpload: FC<ImageUploadProps> = ({
   onChange,
   ...rest
 }) => {
+  const theme = useTheme();
   const [uploadedFile, setUploadedFile] = useState<string>(image ?? "");
   const refFieldInputFile = useRef<HTMLInputElement>(null);
   const { alertMessage, alertVisible, showAlert, closeAlert, setColorAlert, setMessageAlert } = useSnackbarAlert();
@@ -97,7 +97,7 @@ const ImageUpload: FC<ImageUploadProps> = ({
       ) : null}
       {title && (
         <Box>
-          <Typography variant="body2" color={XlnteeColors.GrayColor600}>
+          <Typography variant="body2" color={theme.palette.grey["400"]}>
             {title}
           </Typography>
         </Box>

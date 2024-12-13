@@ -1,7 +1,8 @@
-import { Box, CircularProgress } from "@mui/material";
-import { XlnteeColors } from "src/shared/themes/colors";
+import { Box, CircularProgress, useTheme } from "@mui/material";
 
 export function AppLoader(): JSX.Element {
+  const theme = useTheme();
+
   return (
     <Box
       sx={{
@@ -12,7 +13,7 @@ export function AppLoader(): JSX.Element {
         position: "fixed",
         inset: 0,
         zIndex: 1000,
-        backgroundColor: XlnteeColors.LightColor
+        backgroundColor: theme.palette.primary.contrastText
       }}
     >
       <CircularProgress />

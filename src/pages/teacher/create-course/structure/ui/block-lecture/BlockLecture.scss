@@ -4,7 +4,7 @@
   --collapsed: block;
 
   border-radius: 10px;
-  background-color: rgb(var(--primary-color));
+  background-color: rgb(var(--brand-color));
   color: rgb(var(--light-color));
   padding: 16px;
 
@@ -51,7 +51,7 @@
   }
 
   .quill {
-    color: rgb(var(--dark-color));
+    color: rgb(var(--main-element-color));
     background-color: rgb(var(--light-color));
     border-radius: 10px;
     overflow: hidden;

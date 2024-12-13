@@ -12,7 +12,7 @@
     padding-block: 8px;
     padding: 4px 10px;
     border-radius: 25px;
-    background-color: rgb(var(--primary-color));
+    background-color: rgb(var(--brand-color));
 
     @include mixins.media(tablet) {
       padding-inline: 24px;

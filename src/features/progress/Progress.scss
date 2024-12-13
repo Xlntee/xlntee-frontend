@@ -33,7 +33,7 @@
   }
 
   .MuiLinearProgress-barColorInfo {
-    background-color: rgb(var(--primary-light-color));
+    background-color: rgb(var(--brand-color));
   }
 
   .MuiLinearProgress-colorSuccess + &__value.MuiTypography-root {
@@ -44,7 +44,7 @@
     @include text-position;
 
     &.MuiTypography-root {
-      color: rgb(var(--dark-color));
+      color: rgb(var(--main-element-color));
     }
   }
 

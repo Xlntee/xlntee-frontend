@@ -1,8 +1,7 @@
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
-import { Avatar, Box, Stack, Container, Typography } from "@mui/material";
-import { XlnteeColors } from "src/shared/themes/colors";
+import { Avatar, Box, Stack, Container, Typography, useTheme } from "@mui/material";
 import { Skills } from "./ui";
 
 type SectionCourseAboutProps = {
@@ -13,6 +12,7 @@ type SectionCourseAboutProps = {
 
 const SectionCourseAbout: FC<SectionCourseAboutProps> = ({ name, skills, description }) => {
   const { t } = useTranslation("teacher-preview");
+  const theme = useTheme();
 
   return (
     <Box component="section" className="section-about-teacher">
@@ -21,8 +21,7 @@ const SectionCourseAbout: FC<SectionCourseAboutProps> = ({ name, skills, descrip
           gap="20px"
           p={{ xs: "20px", md: "26px 32px" }}
           borderRadius="20px"
-          bgcolor={XlnteeColors.GrayColor800}
-          border={`1px solid ${XlnteeColors.GrayColor400}`}
+          border={`1px solid ${theme.palette.grey["300"]}`}
         >
           <Typography variant="h2" fontWeight={400}>
             {t("section-about-teacher.title")}

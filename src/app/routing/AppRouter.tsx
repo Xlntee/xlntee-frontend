@@ -318,10 +318,6 @@ const router = createBrowserRouter([
       },
       {
         path: AppRoutes.ui,
-        element: <UiPage title="UI" />
-      },
-      {
-        path: AppRoutes.ui,
         element: (
           <SuspenseWrapper>
             <UiPage title="UI" />

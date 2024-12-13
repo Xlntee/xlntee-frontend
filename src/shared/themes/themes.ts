@@ -1,6 +1,6 @@
 import { createTheme } from "@mui/material";
 
-import { XlnteeColors, YouniColors } from "./colors";
+import { XlnteeColors } from "./colors";
 
 declare module "@mui/material/Button" {
   interface ButtonPropsVariantOverrides {
@@ -29,37 +29,31 @@ export const defaultTheme = createTheme({
       contrastText: XlnteeColors.LightColor
     },
     secondary: {
-      main: XlnteeColors.CallToActionColor,
+      main: XlnteeColors.BrandColor,
       contrastText: XlnteeColors.LightColor
     },
     warning: {
       main: XlnteeColors.WarningBaseColor,
-      "100": XlnteeColors.WarningExtraLightColor,
-      "200": XlnteeColors.WarningLightColor
+      light: XlnteeColors.ErrorLightColor
     },
     success: {
-      main: XlnteeColors.SuccessBaseColor,
-      "100": XlnteeColors.SuccessExtraLightColor,
-      "200": XlnteeColors.SuccessLightColor,
-      "900": XlnteeColors.SuccessDarkColor
+      main: XlnteeColors.SuccessBaseColor
     },
     info: {
-      main: XlnteeColors.LinkColor,
-      light: XlnteeColors.Violet100
+      main: XlnteeColors.BrandColor,
+      light: XlnteeColors.Violet100,
+      dark: XlnteeColors.Violet200
     },
     grey: {
       "100": XlnteeColors.LightElementColor,
       "200": XlnteeColors.GrayStrokeColor,
       "300": XlnteeColors.GrayColor300,
       "400": XlnteeColors.GrayColor400,
-      "500": XlnteeColors.GrayColor500,
-      "600": XlnteeColors.GrayColor600,
-      "700": XlnteeColors.GrayColor700,
-      "800": XlnteeColors.GrayColor800
+      "500": XlnteeColors.GrayColor500
     },
     text: {
-      primary: XlnteeColors.BlackTextColor,
-      secondary: XlnteeColors.BlackElementColor
+      primary: XlnteeColors.MainBlackElementColor,
+      secondary: XlnteeColors.MainBlackElementColor
     }
   },
   typography: {
@@ -72,14 +66,6 @@ export const defaultTheme = createTheme({
           display: "flex",
           flexDirection: "column",
           alignItems: "center"
-        }
-      }
-    },
-    MuiAppBar: {
-      styleOverrides: {
-        root: {
-          backgroundColor: YouniColors.DarkGray,
-          height: 75
         }
       }
     },
@@ -123,7 +109,7 @@ export const defaultTheme = createTheme({
 defaultTheme.typography.h1 = {
   fontSize: 32,
   lineHeight: 1.2,
-  color: XlnteeColors.BlackTextColor,
+  color: XlnteeColors.MainBlackElementColor,
 
   [defaultTheme.breakpoints.up("lg")]: {
     fontSize: 48
@@ -133,49 +119,41 @@ defaultTheme.typography.h1 = {
 defaultTheme.typography.h2 = {
   fontSize: 30,
   lineHeight: 1.2,
-  color: XlnteeColors.BlackTextColor,
+  color: XlnteeColors.MainBlackElementColor,
 
   [defaultTheme.breakpoints.up("lg")]: {
-    fontSize: 34
+    fontSize: 48
   }
 };
 
 defaultTheme.typography.h3 = {
-  fontSize: 28,
+  fontSize: 24,
   lineHeight: 1.35,
-  color: XlnteeColors.BlackTextColor,
-
-  [defaultTheme.breakpoints.up("lg")]: {
-    fontSize: 30
-  }
+  color: XlnteeColors.MainBlackElementColor
 };
 
 defaultTheme.typography.h4 = {
   fontSize: 20,
   lineHeight: 1.45,
-
-  color: XlnteeColors.BlackTextColor,
-  [defaultTheme.breakpoints.up("lg")]: {
-    fontSize: 24
-  }
+  color: XlnteeColors.MainBlackElementColor
 };
 
 defaultTheme.typography.h5 = {
-  fontSize: 20,
+  fontSize: 16,
   lineHeight: 1.45,
-  color: XlnteeColors.BlackTextColor
+  color: XlnteeColors.MainBlackElementColor
 };
 
 defaultTheme.typography.h6 = {
-  fontSize: 18,
+  fontSize: 16,
   lineHeight: 1.2,
-  color: XlnteeColors.BlackTextColor
+  color: XlnteeColors.MainBlackElementColor
 };
 
 defaultTheme.typography.body1 = {
   fontSize: 18,
   lineHeight: 1.5,
-  color: XlnteeColors.BlackTextColor,
+  color: XlnteeColors.MainBlackElementColor,
 
   [defaultTheme.breakpoints.up("lg")]: {
     fontSize: 20
@@ -185,13 +163,13 @@ defaultTheme.typography.body1 = {
 defaultTheme.typography.body2 = {
   fontSize: 16,
   lineHeight: 1.35,
-  color: XlnteeColors.BlackTextColor
+  color: XlnteeColors.MainBlackElementColor
 };
 
 defaultTheme.typography.caption = {
   fontSize: 14,
   lineHeight: 1.35,
-  color: XlnteeColors.BlackTextColor
+  color: XlnteeColors.MainBlackElementColor
 };
 
 defaultTheme.components = {
@@ -295,10 +273,10 @@ defaultTheme.components = {
           borderRadius: 5,
           height: "auto",
           minHeight: 36,
-          backgroundColor: XlnteeColors.DarkColor,
+          backgroundColor: XlnteeColors.MainBlackElementColor,
           color: XlnteeColors.LightColor,
           ":hover": {
-            backgroundColor: XlnteeColors.BlackTextColor
+            backgroundColor: XlnteeColors.MainBlackElementColor
           }
         }
       },
@@ -312,10 +290,10 @@ defaultTheme.components = {
           borderRadius: 5,
           minHeight: 36,
           height: "auto",
-          backgroundColor: XlnteeColors.DarkColor,
+          backgroundColor: XlnteeColors.MainBlackElementColor,
           color: XlnteeColors.LightColor,
           ":hover": {
-            backgroundColor: XlnteeColors.BlackTextColor
+            backgroundColor: XlnteeColors.MainBlackElementColor
           },
           [defaultTheme.breakpoints.up("md")]: {
             fontSize: 16,
@@ -333,10 +311,10 @@ defaultTheme.components = {
           borderRadius: 5,
           height: "auto",
           minHeight: 36,
-          backgroundColor: XlnteeColors.DarkColor,
+          backgroundColor: XlnteeColors.MainBlackElementColor,
           color: XlnteeColors.LightColor,
           ":hover": {
-            backgroundColor: XlnteeColors.BlackTextColor
+            backgroundColor: XlnteeColors.MainBlackElementColor
           },
           [defaultTheme.breakpoints.up("md")]: {
             fontSize: 20,
@@ -349,13 +327,13 @@ defaultTheme.components = {
           variant: "black-outline"
         },
         style: {
-          color: XlnteeColors.DarkColor,
-          borderColor: XlnteeColors.DarkColor,
+          color: XlnteeColors.MainBlackElementColor,
+          borderColor: XlnteeColors.MainBlackElementColor,
           borderWidth: 1,
           borderStyle: "solid",
           "&:hover": {
             color: XlnteeColors.LightColor,
-            backgroundColor: XlnteeColors.DarkColor
+            backgroundColor: XlnteeColors.MainBlackElementColor
           }
         }
       },
@@ -394,7 +372,7 @@ defaultTheme.components = {
           variant: "black-text"
         },
         style: {
-          color: XlnteeColors.DarkColor,
+          color: XlnteeColors.MainBlackElementColor,
           padding: 0,
           minWidth: "auto",
 
@@ -423,7 +401,7 @@ defaultTheme.components = {
         lineHeight: 1.4,
         marginBottom: 2,
         "&.Mui-focused": {
-          color: `${XlnteeColors.DarkColor}`
+          color: `${XlnteeColors.MainBlackElementColor}`
         }
       }
     }
@@ -437,14 +415,14 @@ defaultTheme.components = {
           height: 50
         },
         fieldset: {
-          borderColor: defaultTheme.palette.grey["400"]
+          borderColor: defaultTheme.palette.grey["300"]
         },
         "&.Mui-focused fieldset": {
-          borderColor: XlnteeColors.DarkColor,
+          borderColor: XlnteeColors.MainBlackElementColor,
           borderWidth: 4
         },
         "&.Mui-error .MuiOutlinedInput-notchedOutline": {
-          borderColor: XlnteeColors.ErrorDarkColor
+          borderColor: XlnteeColors.WarningBaseColor
         }
       }
     }
@@ -453,7 +431,7 @@ defaultTheme.components = {
     styleOverrides: {
       root: {
         "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-          borderColor: `${XlnteeColors.DarkColor} !important`,
+          borderColor: `${XlnteeColors.MainBlackElementColor} !important`,
           borderWidth: `1px !important`
         }
       }
@@ -464,7 +442,7 @@ defaultTheme.components = {
       root: {
         marginInline: 0,
         "&.Mui-error": {
-          color: XlnteeColors.ErrorDarkColor
+          color: XlnteeColors.WarningBaseColor
         }
       }
     }
@@ -474,7 +452,7 @@ defaultTheme.components = {
       root: {
         input: {
           height: 20,
-          color: XlnteeColors.BlackTextColor,
+          color: XlnteeColors.MainBlackElementColor,
           backgroundColor: XlnteeColors.LightColor,
           fontSize: 14,
           paddingBlock: 8,
@@ -482,7 +460,7 @@ defaultTheme.components = {
           textAlign: "inherit",
 
           "&::placeholder": {
-            color: defaultTheme.palette.grey["700"]
+            color: defaultTheme.palette.grey["500"]
           },
 
           [defaultTheme.breakpoints.up("md")]: {
@@ -528,10 +506,10 @@ defaultTheme.components = {
         height: 26,
         "& .MuiSvgIcon-root": {
           fontSize: 26,
-          color: XlnteeColors.DarkColor
+          color: XlnteeColors.MainBlackElementColor
         },
         "&.Mui-checked": {
-          color: XlnteeColors.DarkColor
+          color: XlnteeColors.MainBlackElementColor
         }
       }
     }

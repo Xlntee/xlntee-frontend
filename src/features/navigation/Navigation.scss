@@ -29,7 +29,7 @@
   &__link {
     display: inline-flex;
     align-items: center;
-    color: rgb(var(--element-color));
+    color: rgb(var(--main-element-color));
 
     @include mixins.animate(color);
 

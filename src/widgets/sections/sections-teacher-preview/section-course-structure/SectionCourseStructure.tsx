@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
 import {
@@ -18,8 +19,8 @@ import HelpCenterIcon from "@mui/icons-material/HelpCenter";
 import InsertDriveFileIcon from "@mui/icons-material/InsertDriveFile";
 
 import { styled } from "@mui/material/styles";
-import { XlnteeColors } from "src/shared/themes/colors";
-import { FC } from "react";
+
+import "./SectionCourseStructure.scss";
 
 const data = [
   {
@@ -143,8 +144,7 @@ const SectionCourseStructure: FC = () => {
           p={{ xs: "20px", md: "26px 32px" }}
           borderRadius="20px"
           gap="24px"
-          bgcolor={XlnteeColors.LightElementColor}
-          border={`1px solid ${XlnteeColors.GrayStrokeColor}`}
+          className="section-course-structure__inner"
         >
           <Typography variant="h2" fontWeight={400}>
             {t("section-course-structure.title")}

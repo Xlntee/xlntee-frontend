@@ -3,7 +3,6 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import { Box, Grid, Container, Typography } from "@mui/material";
 
-import { XlnteeColors } from "src/shared/themes/colors";
 import { ArrowsWordsList } from "./ui";
 
 import "./SectionLandingAbout.scss";
@@ -23,7 +22,7 @@ const SectionLandingAbout: FC<SectionLandingAboutProps> = ({ title, wordsList, d
     <Box component="section" className="section-about">
       <Container>
         <Box className="section-about__panel">
-          <Typography variant="h2" color={XlnteeColors.BlackTextColor} className="section-about__title">
+          <Typography variant="h2" className="section-about__title">
             {title}
           </Typography>
           <Grid container direction="row" spacing={{ md: "40px" }} paddingInline={{ md: "30px" }}>

@@ -1,14 +1,13 @@
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
-import { Grid } from "@mui/material";
+import { Grid, useTheme } from "@mui/material";
 import AllInclusiveIcon from "@mui/icons-material/AllInclusive";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import QuizIcon from "@mui/icons-material/Quiz";
 import OfflineBoltIcon from "@mui/icons-material/OfflineBolt";
 
 import { PricePlanCard, PricePlanProps } from "src/features";
-import { XlnteeColors } from "src/shared/themes/colors";
 
 type PricePlanContentProps = {
   pretitle: string;
@@ -22,13 +21,14 @@ type PricePlanContentProps = {
 };
 
 const PricePlanList: FC = () => {
+  const theme = useTheme();
   const { t } = useTranslation("teacher-landing");
 
   const cards = t("price-plan.cards", { returnObjects: true }) as PricePlanContentProps[];
 
   const pricePlanCard1: PricePlanProps = {
     ...cards[0],
-    bgColor: XlnteeColors.LightElementColor,
+    bgColor: theme.palette.grey["100"],
     descriptionList: [
       {
         icon: <AllInclusiveIcon sx={{ fontSize: "30px" }} />,
@@ -47,7 +47,7 @@ const PricePlanList: FC = () => {
 
   const pricePlanCard2: PricePlanProps = {
     ...cards[1],
-    bgColor: XlnteeColors.Violet200,
+    bgColor: theme.palette.info.dark,
     descriptionList: [
       {
         icon: <OfflineBoltIcon sx={{ fontSize: "30px" }} />,

@@ -107,15 +107,14 @@
       color: rgb(var(--light-color));
       gap: var(--collapsed-navigation-toggle-link-gap);
       justify-content: var(--collapsed-navigation-toggle-link-justify-content);
-      background-color: rgb(var(--primary-color));
-      border: 1px solid rgb(var(--primary-color));
+      background-color: rgb(var(--brand-color));
+      border: 1px solid rgb(var(--brand-color));
 
       @include mixins.hover {
-        background-color: rgb(var(--primary-color));
+        background-color: rgb(var(--brand-color));
       }
 
       &.Mui-disabled {
-        color: rgb(var(--text-color));
         border-color: rgb(var(--gray-stroke-color));
         background-color: rgb(var(--light-element-color));
       }

@@ -332,7 +332,7 @@ export default SectionAbout;
 
   ```
     .card {
-      background-color: rgb(var(--primary-color));
+      background-color: rgb(var(--brand-color));
     }
   ```
   
@@ -342,7 +342,7 @@ export default SectionAbout;
     @use "styles/breakpoints.scss" as breakpoints;
    
     .card {
-      background-color: rgb(var(--primary-color));
+      background-color: rgb(var(--brand-color));
     }
   ```
   
@@ -352,7 +352,7 @@ export default SectionAbout;
     @use "path-to-file/breakpoints.scss" as breakpoints;
    
     .card {
-      background-color: rgb(var(--primary-color));
+      background-color: rgb(var(--brand-color));
     }
   ```
 

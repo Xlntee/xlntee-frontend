@@ -3,11 +3,10 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { yupResolver } from "@hookform/resolvers/yup";
 
-import { Box, FormLabel, Divider, Stack, Typography, Grid, Button } from "@mui/material";
+import { Box, FormLabel, Divider, Stack, Typography, Grid, Button, useTheme } from "@mui/material";
 
 import useTitle from "src/hooks/useTitle";
 import { PageProps } from "pages/type";
-import { XlnteeColors } from "src/shared/themes/colors";
 import { RootForm } from "src/widgets/forms";
 import { CheckboxField, TextField } from "src/features/form-fields";
 
@@ -23,6 +22,7 @@ export type PriceFormFields = PromoCodeCreateFormFields & {
 
 const PricePage: FC<PageProps> = ({ title }) => {
   useTitle(title);
+  const theme = useTheme();
   const { t } = useTranslation("teacher-create-course");
   const { t: tCommon } = useTranslation("common");
 
@@ -48,11 +48,9 @@ const PricePage: FC<PageProps> = ({ title }) => {
       <RootForm methods={methods}>
         <Grid container columnSpacing="20px" rowGap="20px" flexDirection={{ md: "row-reverse" }} mb="20px">
           <Grid item xs={12} md={6}>
-            <Box borderRadius="20px" padding="10px 20px" bgcolor={XlnteeColors.LightElementColor}>
-              <Typography variant="h6" color={XlnteeColors.BlackElementColor}>
-                {t("price.info-box-title")}
-              </Typography>
-              <Typography fontWeight={300} fontSize="14px !important" color={XlnteeColors.GrayColor600}>
+            <Box borderRadius="20px" padding="10px 20px" bgcolor={theme.palette.grey["100"]}>
+              <Typography variant="h6">{t("price.info-box-title")}</Typography>
+              <Typography fontWeight={300} fontSize="14px !important" color={theme.palette.grey["400"]}>
                 {t("price.info-box-text")}
               </Typography>
             </Box>

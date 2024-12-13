@@ -41,13 +41,9 @@
     }
   }
 
-  &__date {
-    color: rgb(var(--gray-color-500));
-  }
-
   &__discount {
     color: rgb(var(--light-color));
-    background-color: rgb(var(--cta-color));
+    background-color: rgb(var(--action-color));
     border-radius: 20px;
     display: inline-block;
     padding: 4px 8px;

@@ -1,19 +1,19 @@
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
-import { Box, Container, Typography, Stack } from "@mui/material";
+import { Box, Container, Typography, Stack, useTheme } from "@mui/material";
 
-import { XlnteeColors } from "src/shared/themes/colors";
 import { PricePlanList } from "src/widgets/components";
 
 const SectionPricePlan: FC = () => {
+  const theme = useTheme();
   const { t } = useTranslation("teacher-landing");
 
   return (
     <Box component="section" className="section-price-plan" py="40px">
       <Container>
         <Box maxWidth="1050px" marginInline="auto">
-          <Box border={`1px solid ${XlnteeColors.GrayStrokeColor}`} borderRadius="20px" p="20px" mb="40px">
+          <Box border={`1px solid ${theme.palette.grey["200"]}`} borderRadius="20px" p="20px" mb="40px">
             <Stack direction={{ md: "row-reverse" }} justifyContent={{ md: "space-between" }} gap="20px">
               <Box>
                 <Typography variant="body2" fontSize={20} fontWeight={700}>

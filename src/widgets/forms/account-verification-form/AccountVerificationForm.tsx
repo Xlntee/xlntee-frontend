@@ -2,14 +2,13 @@ import { FC, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-import { Button, Typography, Stack } from "@mui/material";
+import { Button, Typography, Stack, useTheme } from "@mui/material";
 
 import useTitle from "src/hooks/useTitle";
 import { OtpInput } from "src/features";
 import { PageProps } from "pages/type";
 import { AppRoutes } from "src/app/routing/appRoutes";
 import LocalStorageService from "src/shared/local-storage";
-import { XlnteeColors } from "src/shared/themes/colors";
 
 type ConfirmationFormFields = {
   email: string;
@@ -18,14 +17,15 @@ type ConfirmationFormFields = {
 
 const AccountVerificationPage: FC<PageProps> = ({ title }) => {
   useTitle(title);
+  const theme = useTheme();
+
+  const { t } = useTranslation("auth");
+  const navigate = useNavigate();
 
   const [confirmationState, setConfirmationState] = useState<ConfirmationFormFields>({
     email: "",
     role: ""
   });
-
-  const { t } = useTranslation("auth");
-  const navigate = useNavigate();
 
   const getShortEmail = (email: string): string => {
     return email;
@@ -50,7 +50,7 @@ const AccountVerificationPage: FC<PageProps> = ({ title }) => {
       <Typography
         variant="body2"
         paddingBlock="12px"
-        borderBottom={`1px solid ${XlnteeColors.GrayStrokeColor}`}
+        borderBottom={`1px solid ${theme.palette.grey["200"]}`}
         fontWeight={300}
         className="account-verification-form__title"
       >

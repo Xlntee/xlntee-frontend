@@ -2,8 +2,6 @@ import { FC } from "react";
 
 import { Stack, Typography, Link } from "@mui/material";
 
-import { XlnteeColors } from "src/shared/themes/colors";
-
 import "./ContactList.scss";
 
 type ContactLinksProps = {
@@ -20,9 +18,7 @@ const ContactLinks: FC<ContactLinksProps> = ({ items }) => {
     <Stack direction="row" className="contact-list">
       {items.map((item, index) => (
         <Stack key={index} direction={{ sm: "row" }} alignItems="center" gap={1} className="contact-list__item">
-          <Typography variant="body2" color={XlnteeColors.BlackElementColor}>
-            {item.title}
-          </Typography>
+          <Typography variant="body2">{item.title}</Typography>
           <Link variant="body2" href={item.link}>
             {item.link}
           </Link>

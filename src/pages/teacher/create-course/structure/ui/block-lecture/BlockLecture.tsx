@@ -5,15 +5,13 @@ import ReactQuill from "react-quill";
 import cn from "classnames";
 import { v4 as uuidv4 } from "uuid";
 
-import { Box, Typography, Stack, Button } from "@mui/material";
+import { Box, Typography, Stack, Button, useTheme } from "@mui/material";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import ArticleIcon from "@mui/icons-material/Article";
 
 import useDialog from "src/hooks/useDialog";
-import { XlnteeColors } from "src/shared/themes/colors";
 import { FileUpload, VideoUpload } from "src/features";
-
 import { TextField } from "src/features/form-fields";
 
 import { getInitialTestConfiguration } from "../../store/initialData";
@@ -37,6 +35,7 @@ type FileLectureProps = {
 
 const BlockLecture: FC<BlockLectureProps> = ({ lessonId, id, index }) => {
   const { t } = useTranslation("teacher-create-course");
+  const theme = useTheme();
 
   const { onOpenDialog } = useDialog();
   const { setValue } = useFormContext<LecturesArrayFormValues>();
@@ -107,7 +106,7 @@ const BlockLecture: FC<BlockLectureProps> = ({ lessonId, id, index }) => {
   return (
     <Stack direction="column" gap="20px" className={cn("block-lecture", { "block-lecture--collapsed": isCollapsed })}>
       <Box className="block-lecture__header">
-        <Typography variant="h4" color={XlnteeColors.LightColor}>
+        <Typography variant="h4" color={theme.palette.primary.contrastText}>
           {t("structure.lecture")} #{index + 1}
         </Typography>
         <Button

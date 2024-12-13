@@ -4,7 +4,7 @@
   &__caption {
     text-align: center;
     font-size: 24px;
-    color: rgb(var(--dark-color));
+    color: rgb(var(--main-element-color));
     margin-bottom: 30px;
   }
 
@@ -12,7 +12,7 @@
     border-radius: 50px;
     padding-inline: 30px;
     font-weight: 400;
-    color: rbg(var(--dark-color));
+    color: rbg(var(--main-element-color));
   }
 
   &__image {
@@ -23,6 +23,6 @@
 
   &__check-icon {
     font-size: 250px;
-    color: rgb(var(--primary-color));
+    color: rgb(var(--brand-color));
   }
 }

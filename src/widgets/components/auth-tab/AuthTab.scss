@@ -13,7 +13,7 @@
     display: inline-block;
     padding-block: 12px;
     font-weight: 300;
-    color: rgb(var(--text-color));
+    color: currentColor;
 
     @include mixins.hover {
       color: rgb(var(--link-color));

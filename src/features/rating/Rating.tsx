@@ -1,11 +1,9 @@
 import { FC, useEffect, useState } from "react";
 import cn from "classnames";
 
-import { Stack, Typography, Rating as MuiRating, RatingProps as MuiRatingProps } from "@mui/material";
+import { Stack, Typography, Rating as MuiRating, RatingProps as MuiRatingProps, useTheme } from "@mui/material";
 import StarIcon from "@mui/icons-material/Star";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
-
-import { XlnteeColors } from "src/shared/themes/colors";
 
 import "./Rating.scss";
 
@@ -26,6 +24,7 @@ const Rating: FC<RatingProps> = ({
   value,
   ...rest
 }) => {
+  const theme = useTheme();
   const [valueRating, setValueRating] = useState<number | null | undefined>(null);
   const sizeModification = cn({
     "rating--medium": size === "medium",
@@ -40,12 +39,11 @@ const Rating: FC<RatingProps> = ({
   return (
     <Stack direction="row" alignItems="center" gap="4px" className={classnames}>
       {showRating && (
-        <Typography variant="caption" color={XlnteeColors.YellowColor} className="rating__count">
+        <Typography variant="caption" className="rating__count">
           {valueRating}
         </Typography>
       )}
       <MuiRating
-        color={XlnteeColors.YellowColor}
         value={valueRating}
         max={max}
         size={size}
@@ -57,7 +55,7 @@ const Rating: FC<RatingProps> = ({
         <Typography
           fontWeight={300}
           variant="caption"
-          color={XlnteeColors.GrayColor600}
+          color={theme.palette.grey["400"]}
           className="rating__review-count"
         >
           ({`${reviewCount}`})

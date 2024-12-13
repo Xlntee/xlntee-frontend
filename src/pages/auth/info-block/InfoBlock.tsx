@@ -3,8 +3,6 @@ import { useTranslation } from "react-i18next";
 
 import { Typography, Button, Grid } from "@mui/material";
 
-import { XlnteeColors } from "src/shared/themes/colors";
-
 type InfoBlockProps = {
   image: string;
   title: string;
@@ -28,12 +26,7 @@ const InfoBlock: FC<InfoBlockProps> = ({ image, title, email }) => {
             email: email
           })}
         </Typography>
-        <Typography
-          fontWeight={300}
-          maxWidth={{ md: "480px" }}
-          fontSize={{ xs: "16px", lg: "18px" }}
-          color={XlnteeColors.GrayColor700}
-        >
+        <Typography fontWeight={300} maxWidth={{ md: "480px" }} fontSize={{ xs: "16px", lg: "18px" }}>
           {t("credential-update-content.check-email")} {""}
           <Button className="button-link">{t("resend-email")}.</Button>
         </Typography>

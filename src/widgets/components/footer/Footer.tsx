@@ -8,7 +8,6 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FacebookIcon from "@mui/icons-material/Facebook";
 
-import { XlnteeColors } from "src/shared/themes/colors";
 import { AppRoutes } from "src/app/routing/appRoutes";
 
 import "./Footer.scss";
@@ -30,28 +29,28 @@ const Footer: FC = () => {
               justifyContent={{ xs: "center", lg: "flex-start" }}
             >
               <MuiLink
-                color={XlnteeColors.BlackElementColor}
                 aria-label="instagram link"
                 href="https://www.instagram.com/"
                 target="_blank"
+                className="footer__social-link"
               >
-                <InstagramIcon className="footer__social-network-icon" sx={{ fontSize: "20px" }} />
+                <InstagramIcon sx={{ fontSize: "20px" }} />
               </MuiLink>
               <MuiLink
-                color={XlnteeColors.BlackElementColor}
                 aria-label="linkedin link"
                 href="https://www.linkedin.com/"
                 target="_blank"
+                className="footer__social-link"
               >
-                <LinkedInIcon className="footer__social-network-icon" sx={{ fontSize: "20px" }} />
+                <LinkedInIcon sx={{ fontSize: "20px" }} />
               </MuiLink>
               <MuiLink
-                color={XlnteeColors.BlackElementColor}
                 aria-label="facebook link"
                 href="https://www.facebook.com/"
                 target="_blank"
+                className="footer__social-link"
               >
-                <FacebookIcon className="footer__social-network-icon" sx={{ fontSize: "20px" }} />
+                <FacebookIcon sx={{ fontSize: "20px" }} />
               </MuiLink>
             </Stack>
           </Grid>

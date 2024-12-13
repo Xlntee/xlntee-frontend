@@ -2,11 +2,10 @@ import { FC, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-import { Box, Button, Container, Stack, Typography } from "@mui/material";
+import { Box, Button, Container, Stack, Typography, useTheme } from "@mui/material";
 import CheckIcon from "@mui/icons-material/Check";
 
 import useTitle from "src/hooks/useTitle";
-import { XlnteeColors } from "src/shared/themes/colors";
 import { HelpCenterForm, HelpCenterFormFields } from "src/widgets/forms";
 import { PageProps } from "pages/type";
 
@@ -14,6 +13,7 @@ import "./HelpCenterPage.scss";
 
 const HelpCenterPage: FC<PageProps> = ({ title }) => {
   useTitle(title);
+  const theme = useTheme();
   const navigate = useNavigate();
   const { t } = useTranslation("auth");
   const [isSubmit, setIsSubmit] = useState<boolean>(false);
@@ -34,7 +34,7 @@ const HelpCenterPage: FC<PageProps> = ({ title }) => {
         {isSubmit ? (
           <Stack alignItems="center">
             <CheckIcon className="help-center-page__check-icon" />
-            <Typography variant="caption" color={XlnteeColors.BrandColor}>
+            <Typography variant="caption" color={theme.palette.primary.main}>
               {t("help-center.info-text")}
             </Typography>
             <Button className="help-center-page__return-btn" onClick={() => navigate(-1)}>

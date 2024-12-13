@@ -44,7 +44,7 @@
     align-items: center;
     z-index: 1;
     opacity: var(--course-card-overlay-opacity);
-    background-color: rgb(var(--dark-color) / 0.7);
+    background-color: rgb(var(--main-element-color) / 0.7);
     @include mixins.animate(opacity);
   }
 
@@ -52,7 +52,6 @@
     padding-inline: 16px;
     font-weight: 400;
     font-size: 16px;
-    color: rgb(var(--text-color));
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -66,7 +65,7 @@
     top: 14px;
     left: 8px;
     z-index: 1;
-    color: rgb(var(--dark-color));
+    color: rgb(var(--main-element-color));
     background-color: rgb(var(--light-color));
     padding-inline: 8px;
     border-radius: 10px;
@@ -84,7 +83,7 @@
     bottom: 14px;
     left: 8px;
     z-index: 1;
-    color: rgb(var(--dark-color));
+    color: rgb(var(--main-element-color));
     background-color: rgb(var(--light-color));
     padding-inline: 8px;
     border-radius: 10px;
