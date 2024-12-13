@@ -4,6 +4,7 @@ import persistStore from "redux-persist/es/persistStore";
 
 import rootReducer from "./rootReducer";
 import { apiSlice } from "../api/apiSlice";
+import { middlewares } from "./middlewares";
 
 const store = configureStore({
   reducer: rootReducer,
@@ -11,10 +12,10 @@ const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: false
-    }).concat(apiSlice.middleware)
+    }).concat([apiSlice.middleware, ...middlewares])
 });
 
-export type RootState = ReturnType<typeof store.getState>;
+export type RootState = ReturnType<typeof rootReducer>;
 export type AppDispatch = typeof store.dispatch;
 export type AppThunk<ReturnType = void> = ThunkAction<ReturnType, RootState, unknown, Action<string>>;
 

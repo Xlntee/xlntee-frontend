@@ -2,7 +2,7 @@ import { startLoading, stopLoading } from "../store/slices/appInitialization/sli
 import { authApiSlice } from "../store/slices/auth/api";
 import { AppDispatch } from "../store/store";
 
-export const initializeAppFetch = () => async (dispatch: AppDispatch) => {
+export const initializeApp = () => async (dispatch: AppDispatch) => {
   try {
     dispatch(startLoading());
     await dispatch(authApiSlice.endpoints.getMe.initiate());

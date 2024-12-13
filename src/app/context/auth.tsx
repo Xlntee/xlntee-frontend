@@ -3,12 +3,12 @@ import { createContext, ReactNode, useMemo, memo, useEffect } from "react";
 import { getUserRole } from "src/app/store/slices/user/selectors";
 
 import { Role } from "src/shared/utils/user-role";
-
-import { useAppDispatch, useAppSelector } from "../store/store";
-import { getIsAuthSelector } from "../store/slices/auth/selectors";
-import { initializeAppFetch } from "../api/initializeApi";
-import { getIsAppLoadingSelector } from "../store/slices/appInitialization/selectors";
 import { AppLoader } from "src/features";
+// useAppDispatch
+import { useAppSelector } from "../store/store";
+import { getIsAuthSelector } from "../store/slices/auth/selectors";
+// import { initializeApp } from "../api/initializeApp";
+import { getIsAppLoadingSelector } from "../store/slices/appInitialization/selectors";
 
 export type AuthContextType = {
   isAuth: boolean;
@@ -31,18 +31,10 @@ const initialState: AuthContextType = {
 export const AuthContext = createContext<AuthContextType>(initialState);
 
 function AuthProvider({ children }: AuthContextProps): JSX.Element {
-  const dispatch = useAppDispatch();
+  // const dispatch = useAppDispatch();
   const userRole = useAppSelector(getUserRole);
   const isAuth = useAppSelector(getIsAuthSelector);
   const isAppLoading = useAppSelector(getIsAppLoadingSelector);
-
-  async function runAppInitialize(): Promise<void> {
-    await dispatch(initializeAppFetch());
-  }
-
-  useEffect(() => {
-    runAppInitialize();
-  }, []);
 
   const values = useMemo(() => {
     return {
@@ -53,6 +45,10 @@ function AuthProvider({ children }: AuthContextProps): JSX.Element {
       isAppLoading: isAppLoading
     };
   }, [isAuth, userRole, isAppLoading]);
+
+  useEffect(() => {
+    // dispatch(initializeApp());
+  }, []);
 
   return (
     <AuthContext.Provider value={values}>

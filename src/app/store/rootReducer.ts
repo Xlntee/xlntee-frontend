@@ -4,11 +4,11 @@ import storage from "redux-persist/lib/storage";
 
 import lessonsReducer from "pages/teacher/create-course/structure/store/lessonsSlice";
 
+import { apiSlice } from "../api/apiSlice";
 import userReducer from "./slices/user/slice";
 import appInitializationReducer from "./slices/appInitialization/slice";
 import dialogReducer from "./slices/dialog/slice";
 import drawerReducer from "./slices/drawer/slice";
-import { apiSlice } from "../api/apiSlice";
 import authReducer, { IAuthState } from "./slices/auth/slice";
 
 const authPersistConfig: PersistConfig<IAuthState> = {

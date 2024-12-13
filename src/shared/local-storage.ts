@@ -59,10 +59,6 @@ class LocalStorageService {
   static removeTokenConfirmation(): void {
     localStorage.removeItem(LocalStorageService.tokenKey);
   }
-
-  static saveAccessToken(accessToken: string): void {
-    localStorage.setItem("accessToken", accessToken);
-  }
 }
 
 export default LocalStorageService;

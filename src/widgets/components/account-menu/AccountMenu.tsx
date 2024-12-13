@@ -17,7 +17,7 @@ import { UserRoles } from "src/shared/utils/user-role";
 import { AppRoutes } from "src/app/routing/appRoutes";
 import { useAuth } from "src/hooks/useAuth";
 import useDialog from "src/hooks/useDialog";
-import { logOut } from "src/app/store/slices/auth/logout";
+import { logOut } from "src/app/store/modules/auth/actions";
 
 import AuthStudentContainer from "../auth-student-container";
 import AuthTeacherContainer from "../auth-teacher-container";

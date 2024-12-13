@@ -1,52 +1,37 @@
-import { FC, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { FC } from "react";
+import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
-import { useTranslation } from "react-i18next";
 
 import { Button, Stack, Typography } from "@mui/material";
+
 import { RootForm } from "src/widgets/forms";
+import { AppRoutes } from "src/app/routing/appRoutes";
 import { PasswordField, TextField } from "src/features/form-fields";
 
-import { AppRoutes } from "src/app/routing/appRoutes";
-
+import { loginApiSlice } from "./api";
+import { useLogin } from "./useLogin";
 import { useValidationSchema } from "./validation";
-import { loginApiSlice, useLoginMutation } from "./api";
 
 export type LoginFormFields = {
   email: string;
   password: string;
 };
 
-// const deviceId = "string";
-
 const LoginForm: FC = () => {
   const { t } = useTranslation("auth");
-  const navigate = useNavigate();
-
-  const [login, { isLoading, error, isError, isSuccess }] = useLoginMutation();
+  const { handleLogin, isLoading } = useLogin();
 
   const methods = useForm<LoginFormFields>({
     resolver: yupResolver(useValidationSchema()),
     mode: "onSubmit"
   });
 
-  useEffect(() => {
-    if (isSuccess) {
-      navigate("/");
-    }
-    if (isError) {
-      console.log("error", error);
-    }
-  }, [isLoading]);
-
-  async function onSubmit(data: LoginFormFields): Promise<void> {
+  async function onSubmit(props: LoginFormFields): Promise<void> {
     try {
-      await login({
-        username: data.email,
-        password: data.password
-      }).unwrap();
+      handleLogin(props);
     } catch (e) {
       console.error(e);
     }
@@ -75,9 +60,7 @@ const LoginForm: FC = () => {
               </Button>
             </Stack>
           </Stack>
-          <p>emilys</p>
           <TextField name="email" type="text" aria-label="email input" placeholder={t("email-placeholder")} />
-          <p>emilyspass</p>
           <PasswordField name="password" aria-label="password input" placeholder={t("password-placeholder")} />
           <Button
             aria-label="login button"

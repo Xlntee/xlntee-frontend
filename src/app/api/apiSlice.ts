@@ -1,3 +1,4 @@
+import Cookies from "js-cookie";
 import { QueryReturnValue } from "@reduxjs/toolkit/dist/query/baseQueryTypes";
 import {
   BaseQueryFn,
@@ -7,17 +8,19 @@ import {
   createApi,
   fetchBaseQuery
 } from "@reduxjs/toolkit/query/react";
-import { RootState } from "src/app/store/store";
+
+import { cookieKeys } from "src/shared/utils/cookie-keys";
+
 import { setCredentials } from "../store/slices/auth/slice";
-import Cookies from "js-cookie";
-import { logOut } from "../store/slices/auth/logout";
+import { logOut } from "../store/modules/auth/actions";
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: "https://dummyjson.com",
-  // baseUrl: "/api/v1",
+  baseUrl: "/api/v1",
   credentials: "include",
-  prepareHeaders: (headers, { getState }) => {
-    const token = (getState() as RootState).auth.token || Cookies.get("accessToken");
+  // baseUrl: "https://dummyjson.com", // temp for test
+  // credentials: "same-origin", // temp for test
+  prepareHeaders: (headers) => {
+    const token = Cookies.get(cookieKeys.accessToken);
 
     headers.set("Content-Type", "application/json");
 
@@ -36,8 +39,20 @@ const baseQueryWithReauth: BaseQueryFn<string | FetchArgs, unknown, FetchBaseQue
 ): Promise<QueryReturnValue<unknown, FetchBaseQueryError, FetchBaseQueryMeta>> => {
   let result = await baseQuery(args, api, extraOptions);
 
-  if (result?.error?.status === 403) {
-    const refreshRes = await baseQuery("auth/refresh-token", api, extraOptions);
+  if (result?.error?.status === 401) {
+    const refreshToken = Cookies.get(cookieKeys.refreshToken);
+
+    Cookies.remove(cookieKeys.accessToken);
+
+    const refreshRes = await baseQuery(
+      {
+        url: "auth/refresh",
+        method: "POST",
+        body: { token: refreshToken }
+      },
+      api,
+      extraOptions
+    );
 
     if (refreshRes?.data) {
       const state = api.getState();

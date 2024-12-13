@@ -1,13 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export interface IAuthState {
-  token: string;
   email: string;
   isAuth: boolean;
 }
 
 const initialState: IAuthState = {
-  token: "",
   email: "",
   isAuth: false
 };
@@ -17,15 +15,14 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     setCredentials: (state, action) => {
-      const { accessToken, email } = action.payload;
+      const { email } = action.payload;
 
-      state.token = accessToken;
       state.email = email;
       state.isAuth = true;
     },
     clearAuth: (state) => {
-      state.token = "";
       state.email = "";
+      state.isAuth = false;
     }
   }
 });
