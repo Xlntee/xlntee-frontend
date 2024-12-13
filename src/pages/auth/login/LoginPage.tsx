@@ -4,8 +4,6 @@ import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
 import { useForm } from "react-hook-form";
 
 import { authApiSlice, useLoginMutation } from "src/app/store/slices/auth/api";
-import { setCredentials } from "src/app/store/slices/auth/slice";
-import { useAppDispatch } from "src/app/store/store";
 import useTitle from "src/hooks/useTitle";
 
 import { PageProps } from "pages/type";
@@ -28,13 +26,9 @@ const LoginPage: FC<PageProps> = ({ title }) => {
   const { state } = useLocation();
   const navigate = useNavigate();
 
-  const dispatch = useAppDispatch();
-
   const onSubmit = handleSubmit(async (data) => {
     try {
-      const res = await login({ ...data, deviceId }).unwrap();
-
-      dispatch(setCredentials(res));
+      await login({ ...data, deviceId }).unwrap();
 
       if (state?.from) {
         navigate(state.from);

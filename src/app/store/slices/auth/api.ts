@@ -1,10 +1,6 @@
 import { apiSlice } from "src/app/api/apiSlice";
-
-interface IUserInfoBody {
-  email: string;
-  password: string;
-  deviceId: string;
-}
+import { actionsKeys } from "../../actionKeys";
+import { IAuthLogin } from "../../modules/auth/types";
 
 interface IVerificationData {
   userId: string;
@@ -20,15 +16,16 @@ interface ILoginResponse {
 
 export const authApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
-    login: builder.mutation<ILoginResponse, IUserInfoBody>({
+    login: builder.mutation<ILoginResponse, IAuthLogin>({
       query: (credentials) => ({
         url: "/auth/login",
         method: "POST",
-        body: { ...credentials }
+        body: { ...credentials },
+        credentials: "same-origin"
       })
     }),
-    signUp: builder.mutation<{ userId: string }, IUserInfoBody>({
-      query: (userInfo: IUserInfoBody) => ({
+    signUp: builder.mutation<{ userId: string }, any>({
+      query: (userInfo: any) => ({
         url: "/auth/signup/personal-data",
         method: "POST",
         body: { ...userInfo }
@@ -47,6 +44,21 @@ export const authApiSlice = apiSlice.injectEndpoints({
         method: "POST",
         body: { ...data }
       })
+    }),
+    getMe: builder.query<ILoginResponse, void>({
+      query: () => ({
+        url: "/auth/me",
+        method: "GET",
+        credentials: "same-origin"
+      }),
+      onQueryStarted: async (_, { dispatch, queryFulfilled }) => {
+        try {
+          const response = await queryFulfilled;
+          dispatch({ type: actionsKeys.authLoginUser, payload: response.data });
+        } catch (error) {
+          console.log(error);
+        }
+      }
     })
   })
 });

@@ -15,6 +15,7 @@ type AutocompleteFieldProps = {
   rules?: UseControllerProps["rules"];
   showErrorMessage?: boolean;
   className?: string;
+  placeholder?: string;
   options?: ReadonlyArray<string>;
 } & Omit<AutocompleteProps<string, boolean, boolean, boolean>, "renderInput" | "options">;
 

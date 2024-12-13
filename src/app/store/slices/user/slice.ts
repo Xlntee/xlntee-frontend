@@ -7,7 +7,7 @@ export interface IUserState {
 }
 
 const initialState: IUserState = {
-  role: "teacher"
+  role: null
 };
 
 export const getUser = (state: RootState): IUserState => state.user;
@@ -28,10 +28,13 @@ const userSlice = createSlice({
       if (role === UserRoles.teacher) {
         state.role = UserRoles.student;
       }
+    },
+    clearUser: (state: IUserState) => {
+      state.role = null;
     }
   }
 });
 
-export const { switchRole, setRole } = userSlice.actions;
+export const { switchRole, setRole, clearUser } = userSlice.actions;
 
 export default userSlice.reducer;

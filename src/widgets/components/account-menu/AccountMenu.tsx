@@ -16,12 +16,13 @@ import { LanguageSwitcher } from "src/widgets/components";
 import { UserRoles } from "src/shared/utils/user-role";
 import { AppRoutes } from "src/app/routing/appRoutes";
 import { useAuth } from "src/hooks/useAuth";
+import useDialog from "src/hooks/useDialog";
+import { logOut } from "src/app/store/modules/auth/actions";
 
 import AuthStudentContainer from "../auth-student-container";
 import AuthTeacherContainer from "../auth-teacher-container";
 
 import "./AccountMenu.scss";
-import useDialog from "src/hooks/useDialog";
 
 const AccountMenu: FC = () => {
   const { t } = useTranslation("auth");
@@ -41,6 +42,12 @@ const AccountMenu: FC = () => {
     if (isTeacherRole) {
       navigate(AppRoutes.studentLanding);
     }
+  }
+
+  function onLogout(): void {
+    dispatch(closeLatestDialog());
+    dispatch(logOut());
+    navigate(AppRoutes.home);
   }
 
   return (
@@ -85,7 +92,7 @@ const AccountMenu: FC = () => {
         <Link to={`${userRole}/dashboard/support`} className="account-menu__link">
           {t("support-center")}
         </Link>
-        <Button variant="black-text" className="account-menu__link">
+        <Button variant="black-text" className="account-menu__link" onClick={onLogout}>
           {t("sign-out")}
         </Button>
       </Stack>

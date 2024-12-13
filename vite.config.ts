@@ -16,6 +16,13 @@ export default defineConfig({
       styles: "/src/styles"
     }
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: "modern-compiler"
+      }
+    }
+  },
   server: {
     proxy: {
       "/api/v1": {

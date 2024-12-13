@@ -6,5 +6,3 @@ import { RootState } from "../../store";
 const selectState = (state: RootState): IAuthState => state.auth;
 
 export const getIsAuthSelector = createSelector(selectState, (state) => state.isAuth);
-
-export const getAuthTokenSelector = createSelector(selectState, (state) => state.token);

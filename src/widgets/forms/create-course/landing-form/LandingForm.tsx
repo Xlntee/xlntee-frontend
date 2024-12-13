@@ -33,6 +33,11 @@ export type AutocompleteFieldBoxProps = {
   value: TagType;
 };
 
+type ImageType = {
+  title: string;
+  value: string;
+};
+
 const LandingForm: FC = () => {
   const { t } = useTranslation("teacher-create-course");
   const { t: tCommon } = useTranslation("common");
@@ -87,12 +92,12 @@ const LandingForm: FC = () => {
     }
   }
 
-  const videoRequirements: { title: string; value: string }[] = t("landing.promo-video-requirements", {
+  const videoRequirements = t("landing.promo-video-requirements", {
     returnObjects: true
-  });
-  const imageRequirements: { title: string; value: string }[] = t("landing.promo-image-requirements", {
+  }) as ImageType[];
+  const imageRequirements = t("landing.promo-image-requirements", {
     returnObjects: true
-  });
+  }) as ImageType[];
 
   return (
     <RootForm className="landing-form" methods={methods} onSubmit={onSubmit}>

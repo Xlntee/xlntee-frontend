@@ -24,7 +24,7 @@ type PricePlanContentProps = {
 const PricePlanList: FC = () => {
   const { t } = useTranslation("teacher-landing");
 
-  const cards: PricePlanContentProps[] = t("price-plan.cards", { returnObjects: true });
+  const cards = t("price-plan.cards", { returnObjects: true }) as PricePlanContentProps[];
 
   const pricePlanCard1: PricePlanProps = {
     ...cards[0],

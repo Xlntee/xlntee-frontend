@@ -64,7 +64,7 @@ const StudentCourseCard: FC<StudentCourseCardProps> = ({
             </Box>
             <Stack direction="row" justifyContent="flex-end" alignItems="center" gap="10px">
               {discount && <Box className="student-course-card__discount">-{discount}%</Box>}
-              <Button className="student-course-card__favorite-toggler" onClick={onToggleFavorite}>
+              <Button variant="text" className="student-course-card__favorite-toggler" onClick={onToggleFavorite}>
                 {isFavorite ? <FavoriteIcon /> : <FavoriteBorderIcon />}
               </Button>
             </Stack>
