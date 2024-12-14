@@ -7,7 +7,7 @@ import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import EditIcon from "@mui/icons-material/Edit";
 import RestoreFromTrashIcon from "@mui/icons-material/RestoreFromTrash";
 
-import { CourseStatus } from "src/shared/config/CourseStatus";
+import { CourseStatus } from "src/shared/config/course-status";
 
 import "./CourseCard.scss";
 

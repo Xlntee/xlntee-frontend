@@ -4,7 +4,6 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import { Box, Stack, Typography, Container, Grid } from "@mui/material";
 
-import { ContactsLinks } from "src/shared/config/LinkConstants";
 import { ContactList, ContactLinkType } from "./ui";
 
 import "./SectionLandingContact.scss";
@@ -12,15 +11,15 @@ import "./SectionLandingContact.scss";
 const links: ContactLinkType[] = [
   {
     title: "Support",
-    link: `mailto:${ContactsLinks.support}`
+    link: `mailto:support@xlntee.com",`
   },
   {
     title: "Cooperation",
-    link: `mailto:${ContactsLinks.cooperation}`
+    link: `mailto:cooperation@xlntee.com",`
   },
   {
     title: "Press",
-    link: `mailto:${ContactsLinks.press}`
+    link: `mailto:press@xlntee.com"`
   }
 ];
 

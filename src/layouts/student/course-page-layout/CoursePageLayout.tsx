@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { Box, Stack } from "@mui/material";
 
 import { CourseComplain, CourseRate, CourseShare, HeaderProfile, Footer } from "src/widgets/components";
-import { UserRoles } from "src/shared/utils/user-role";
+import { UserRoles } from "src/shared/config/user-role";
 import { AppRoutes } from "src/shared/routes";
 import { CourseProgress } from "src/widgets/student";
 

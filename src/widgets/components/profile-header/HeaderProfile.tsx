@@ -6,7 +6,7 @@ import { Box, Container, Stack } from "@mui/material";
 import useDrawer from "src/hooks/useDrawer";
 
 import { MenuToggler, Navigation, NavigationLinkType } from "src/features";
-import { Role, UserRoles } from "src/shared/utils/user-role";
+import { Role, UserRoles } from "src/shared/config/user-role";
 import useHeaderNavigationStudent from "src/hooks/useHeaderNavigationStudent";
 import useHeaderNavigationTeacher from "src/hooks/useHeaderNavigationTeacher";
 import { useAuth } from "src/hooks/useAuth";

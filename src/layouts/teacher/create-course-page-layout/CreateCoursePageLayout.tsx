@@ -6,7 +6,7 @@ import { Box } from "@mui/material";
 
 import { HeaderProfile, NotificationToggler, Footer } from "src/widgets/components";
 import { AppRoutes } from "src/shared/routes";
-import { UserRoles } from "src/shared/utils/user-role";
+import { UserRoles } from "src/shared/config/user-role";
 import { CoursePreviewButtons } from "src/widgets/teacher";
 
 import RootLayout from "src/layouts/RootLayout";

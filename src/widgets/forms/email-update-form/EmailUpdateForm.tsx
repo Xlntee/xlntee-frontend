@@ -8,7 +8,7 @@ import { Button, Stack, Box, FormLabel, Typography } from "@mui/material";
 import { RootForm } from "src/widgets/forms";
 import { TextField } from "src/features/form-fields";
 
-import { getSecureEmail } from "src/shared/utils/methods";
+import { getSecureEmail } from "src/shared/config/methods";
 
 import { useValidationSchema } from "./validation";
 

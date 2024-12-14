@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { UserRoles, Role } from "src/shared/utils/user-role";
+import { UserRoles, Role } from "src/shared/config/user-role";
 import { RootState } from "../../store";
 
 export interface IUserState {

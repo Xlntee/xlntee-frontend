@@ -13,7 +13,7 @@ import { RootForm } from "src/widgets/forms";
 
 import { AppRoutes } from "src/shared/routes";
 import LocalStorageService from "src/shared/local-storage";
-import { Role, UserRoles } from "src/shared/utils/user-role";
+import { Role, UserRoles } from "src/shared/config/user-role";
 import { PasswordValidationPanel } from "src/features";
 
 import { useValidationSchema } from "./validation";

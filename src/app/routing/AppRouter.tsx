@@ -1,7 +1,7 @@
 import { lazy, FC } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
-import { UserRoles } from "src/shared/utils/user-role";
+import { UserRoles } from "src/shared/config/user-role";
 
 import {
   AuthLayout,
@@ -18,10 +18,10 @@ import { ProtectedRoute } from "./ProtectedRoute";
 import { AppRoutes } from "src/shared/routes";
 import { LoginForm, RegistrationForm, AccountVerificationForm } from "src/widgets/forms";
 import AuthTab from "src/widgets/components/auth-tab/AuthTab";
-import { SuspenseWrapper } from "src/shared/utils/suspense-wrapper";
 
 import NotFoundPage from "src/pages/not-found/NotFoundPage";
 import { GridCardSkeleton } from "src/features/skeletons";
+import { SuspenseWrapper } from "src/shared/ui/suspens-wrapper";
 
 // Lazy load the component
 const EmailUpdatePage = lazy(() => import("src/pages/auth/email-update/EmailUpdatePage"));

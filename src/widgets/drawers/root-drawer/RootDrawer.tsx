@@ -2,8 +2,7 @@ import { FC } from "react";
 
 import { Box, Drawer } from "@mui/material";
 
-import { SuspenseWrapper } from "src/shared/utils/suspense-wrapper";
-
+import { SuspenseWrapper } from "src/shared/ui/suspens-wrapper";
 import useDrawer from "src/hooks/useDrawer";
 import drawers from "../index";
 

@@ -2,7 +2,7 @@ import { createContext, ReactNode, useMemo, memo, useEffect } from "react";
 
 import { getUserRole } from "src/app/store/slices/user/selectors";
 
-import { Role } from "src/shared/utils/user-role";
+import { Role } from "src/shared/config/user-role";
 import { AppLoader } from "src/features";
 // useAppDispatch
 import { useAppSelector } from "../store/store";

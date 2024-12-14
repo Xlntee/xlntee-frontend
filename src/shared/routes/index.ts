@@ -1,4 +1,4 @@
-import { Role } from "../utils/user-role";
+import { Role } from "../config/user-role";
 
 export const AppRoutes = {
   home: "/",

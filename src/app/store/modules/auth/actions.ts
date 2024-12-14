@@ -1,5 +1,5 @@
 import Cookies from "js-cookie";
-import { cookieKeys } from "src/shared/utils/cookie-keys";
+import { cookieKeys } from "src/shared/config/cookie-keys";
 
 import { AppDispatch } from "../../store";
 import { clearAuth } from "../../slices/auth/slice";

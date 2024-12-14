@@ -4,8 +4,8 @@ import { SerializedError } from "@reduxjs/toolkit";
 
 import { useAppDispatch } from "src/app/store/store";
 import { authApiSlice, useLoginMutation } from "src/app/store/slices/auth/api";
-import { cookieKeys } from "src/shared/utils/cookie-keys";
-import { getDeviceId } from "src/shared/utils/device";
+import { cookieKeys } from "src/shared/config/cookie-keys";
+import { getDeviceId } from "src/shared/config/device";
 
 type LoginProps = {
   email: string;

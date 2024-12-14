@@ -6,7 +6,7 @@ import { DialogModal, Snackbar } from "src/features";
 import useTitle from "src/hooks/useTitle";
 import { PageProps } from "pages/type";
 import { Header, HeaderProfile } from "src/widgets/components";
-import { UserRoles } from "src/shared/utils/user-role";
+import { UserRoles } from "src/shared/config/user-role";
 
 const typographyList = ["h1", "h2", "h3", "h4", "h5", "h6"] as const;
 const buttonColorList = ["primary", "secondary", "success", "error"] as const;

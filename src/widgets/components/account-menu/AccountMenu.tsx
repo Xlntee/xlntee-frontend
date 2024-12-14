@@ -13,7 +13,7 @@ import { switchRole } from "src/app/store/slices/user/slice";
 import { closeLatestDialog } from "src/app/store/slices/dialog/slice";
 
 import { LanguageSwitcher } from "src/widgets/components";
-import { UserRoles } from "src/shared/utils/user-role";
+import { UserRoles } from "src/shared/config/user-role";
 import { AppRoutes } from "src/shared/routes";
 import { useAuth } from "src/hooks/useAuth";
 import useDialog from "src/hooks/useDialog";

@@ -8,7 +8,7 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import { AppRoutes } from "src/shared/routes";
 import { HeaderProfile, NotificationToggler, Footer } from "src/widgets/components";
 import AuthStudentContainer from "src/widgets/components/auth-student-container";
-import { Role } from "src/shared/utils/user-role";
+import { Role } from "src/shared/config/user-role";
 
 import RootLayout from "./RootLayout";
 

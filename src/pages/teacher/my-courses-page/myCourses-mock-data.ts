@@ -1,4 +1,4 @@
-import { CourseStatus } from "src/shared/config/CourseStatus";
+import { CourseStatus } from "src/shared/config/course-status";
 
 export type MockCourse = {
   id: string;

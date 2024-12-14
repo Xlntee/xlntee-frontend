@@ -4,7 +4,7 @@ import { Box, Stack, TextField, Container } from "@mui/material";
 import useTitle from "src/hooks/useTitle";
 import { PageProps } from "pages/type";
 import CourseStatistic from "./ui/course-statistic/CourseStatistic";
-import { CourseStatus } from "src/shared/config/CourseStatus";
+import { CourseStatus } from "src/shared/config/course-status";
 
 const StatisticPage: FC<PageProps> = ({ title }) => {
   useTitle(title);
