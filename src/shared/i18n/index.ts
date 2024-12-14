@@ -8,7 +8,7 @@ i18n
   .use(HttpApi)
   .use(LanguageDetector)
   .use(initReactI18next)
-  .use(resourcesToBackend((language: any, namespace: any) => import(`../locales/${language}/${namespace}.json`)))
+  .use(resourcesToBackend((language: any, namespace: any) => import(`./locales/${language}/${namespace}.json`)))
   .init({
     fallbackLng: "uk",
     ns: [
