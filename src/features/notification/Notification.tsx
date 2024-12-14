@@ -2,7 +2,6 @@ import { FC } from "react";
 import dayjs from "dayjs";
 
 import { Box, Stack, Typography } from "@mui/material";
-import { XlnteeColors } from "src/shared/themes/colors";
 import { datesFormat } from "src/shared/utils/const";
 
 type NotificationProps = {
@@ -26,12 +25,8 @@ const Notification: FC<NotificationProps> = ({ title, text, date }) => {
         </Typography>
       </Box>
       <Stack textAlign="right">
-        <Typography variant="caption" color={theme.palette.grey["400"]}>
-          {dateTime}
-        </Typography>
-        <Typography variant="caption" color={theme.palette.grey["400"]}>
-          {dateSimple}
-        </Typography>
+        <Typography variant="caption">{dateTime}</Typography>
+        <Typography variant="caption">{dateSimple}</Typography>
       </Stack>
     </Stack>
   );

@@ -3,8 +3,6 @@ import { useTranslation } from "react-i18next";
 
 import { Box, Typography, Paper } from "@mui/material";
 
-import { XlnteeColors } from "src/shared/themes/colors";
-
 import "./StatisticCard.scss";
 
 export interface StatisticCardProps {
@@ -24,12 +22,7 @@ const StatisticCard: FC<StatisticCardProps> = ({ title, totalValue, lastMonthVal
       <Box className="statistic-card__total-value" textAlign="center" fontSize="48px">
         {totalValue}
       </Box>
-      <Typography
-        className="statistic-card__text"
-        fontSize={{ xs: "16px", lg: "20px" }}
-        fontWeight={400}
-        color={XlnteeColors.GrayColor600}
-      >
+      <Typography className="statistic-card__text" fontSize={{ xs: "16px", lg: "20px" }} fontWeight={400}>
         {t("statistic.text")}{" "}
         <Typography variant="caption" fontSize={{ xs: "16px", lg: "20px" }} fontWeight={700}>
           {lastMonthValue}

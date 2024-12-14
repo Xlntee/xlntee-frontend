@@ -3,7 +3,6 @@ import { useTranslation } from "react-i18next";
 
 import { Box, Paper, Stack, Typography } from "@mui/material";
 
-import { XlnteeColors } from "src/shared/themes/colors";
 import { InfoField } from "src/features/user-manager";
 
 interface CourseCategoriesProps {
@@ -18,7 +17,7 @@ const CourseCategories: FC<CourseCategoriesProps> = ({ title, items }) => {
   return (
     <Paper elevation={12}>
       <Box p="10px">
-        <Typography variant="body2" color={XlnteeColors.BlackElementColor} mb="14px">
+        <Typography variant="body2" mb="14px">
           {title}
         </Typography>
         {items.length ? (
