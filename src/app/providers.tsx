@@ -7,7 +7,7 @@ import { AuthProvider } from "./context/auth";
 import { ThemeModeProvider } from "./context/theme-mode";
 import MuiProvider from "./muiProvider";
 
-import "src/i18n";
+import "src/shared/i18n";
 
 if (import.meta.env.MODE === "production") {
   disableReactDevTools();
