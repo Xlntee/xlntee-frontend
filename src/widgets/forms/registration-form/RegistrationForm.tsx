@@ -11,7 +11,7 @@ import SchoolOutlinedIcon from "@mui/icons-material/SchoolOutlined";
 import { TextField, PasswordField } from "src/features/form-fields";
 import { RootForm } from "src/widgets/forms";
 
-import { AppRoutes } from "src/app/routing/appRoutes";
+import { AppRoutes } from "src/shared/routes";
 import LocalStorageService from "src/shared/local-storage";
 import { Role, UserRoles } from "src/shared/utils/user-role";
 import { PasswordValidationPanel } from "src/features";

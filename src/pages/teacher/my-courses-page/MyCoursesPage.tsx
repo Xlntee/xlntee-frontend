@@ -2,7 +2,7 @@ import { FC, useEffect, useState } from "react";
 
 import { Box, Container } from "@mui/material";
 
-import { AppRoutes } from "src/app/routing/appRoutes";
+import { AppRoutes } from "src/shared/routes";
 import { CourseCard } from "src/widgets/components";
 import useTitle from "src/hooks/useTitle";
 import { PageProps } from "pages/type";

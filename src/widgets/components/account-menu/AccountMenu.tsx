@@ -14,7 +14,7 @@ import { closeLatestDialog } from "src/app/store/slices/dialog/slice";
 
 import { LanguageSwitcher } from "src/widgets/components";
 import { UserRoles } from "src/shared/utils/user-role";
-import { AppRoutes } from "src/app/routing/appRoutes";
+import { AppRoutes } from "src/shared/routes";
 import { useAuth } from "src/hooks/useAuth";
 import useDialog from "src/hooks/useDialog";
 import { logOut } from "src/app/store/modules/auth/actions";

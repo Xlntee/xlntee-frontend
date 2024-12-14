@@ -6,7 +6,7 @@ import { Box, Container } from "@mui/material";
 import useTitle from "src/hooks/useTitle";
 import { PageProps } from "pages/type";
 import { CardList, CourseCardProgress } from "src/features";
-import { AppRoutes } from "src/app/routing/appRoutes";
+import { AppRoutes } from "src/shared/routes";
 
 import { myCourses } from "./data";
 

@@ -13,9 +13,9 @@ import {
   StudentCoursePageLayout
 } from "src/layouts";
 
-import { AppRoutes } from "./appRoutes";
 import { ProtectedRoute } from "./ProtectedRoute";
 
+import { AppRoutes } from "src/shared/routes";
 import { LoginForm, RegistrationForm, AccountVerificationForm } from "src/widgets/forms";
 import AuthTab from "src/widgets/components/auth-tab/AuthTab";
 import { SuspenseWrapper } from "src/shared/utils/suspense-wrapper";

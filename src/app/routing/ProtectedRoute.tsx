@@ -3,7 +3,7 @@ import { Navigate, useLocation } from "react-router-dom";
 
 import { useAuth } from "src/hooks/useAuth";
 
-import { AppRoutes, rolePrivateRoutes } from "./appRoutes";
+import { AppRoutes, rolePrivateRoutes } from "src/shared/routes";
 
 type ProtectedRouteProps = {
   element: ReactNode;

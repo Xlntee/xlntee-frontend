@@ -5,7 +5,7 @@ import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import DoneOutlineIcon from "@mui/icons-material/DoneOutline";
 import LocalActivityIcon from "@mui/icons-material/LocalActivity";
 
-import { AppRoutes } from "src/app/routing/appRoutes";
+import { AppRoutes } from "src/shared/routes";
 import { NavigationLinkType } from "src/features";
 
 type useHeaderNavigationStudentProps = {

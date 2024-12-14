@@ -6,7 +6,7 @@ import cn from "classnames";
 import { Box, List, ListItem, Link } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
-import { AppRoutes } from "src/app/routing/appRoutes";
+import { AppRoutes } from "src/shared/routes";
 
 const NavigationList: FC = () => {
   const { t } = useTranslation("teacher-create-course");

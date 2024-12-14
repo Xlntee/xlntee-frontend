@@ -5,7 +5,7 @@ import cn from "classnames";
 import { Box, Stack } from "@mui/material";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 
-import { AppRoutes } from "src/app/routing/appRoutes";
+import { AppRoutes } from "src/shared/routes";
 import { HeaderProfile, NotificationToggler, Footer } from "src/widgets/components";
 import AuthStudentContainer from "src/widgets/components/auth-student-container";
 import { Role } from "src/shared/utils/user-role";

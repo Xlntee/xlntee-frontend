@@ -6,7 +6,7 @@ import { Box, Stack } from "@mui/material";
 
 import { CourseComplain, CourseRate, CourseShare, HeaderProfile, Footer } from "src/widgets/components";
 import { UserRoles } from "src/shared/utils/user-role";
-import { AppRoutes } from "src/app/routing/appRoutes";
+import { AppRoutes } from "src/shared/routes";
 import { CourseProgress } from "src/widgets/student";
 
 import RootLayout from "src/layouts/RootLayout";

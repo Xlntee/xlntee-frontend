@@ -7,7 +7,7 @@ import { Button, Typography, Stack, useTheme } from "@mui/material";
 import useTitle from "src/hooks/useTitle";
 import { OtpInput } from "src/features";
 import { PageProps } from "pages/type";
-import { AppRoutes } from "src/app/routing/appRoutes";
+import { AppRoutes } from "src/shared/routes";
 import LocalStorageService from "src/shared/local-storage";
 
 type ConfirmationFormFields = {

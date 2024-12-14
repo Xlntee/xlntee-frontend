@@ -4,7 +4,7 @@ import { Link as RouterLink } from "react-router-dom";
 import { Box, Button, Grid, Stack, Typography, Container } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
-import { AppRoutes } from "src/app/routing/appRoutes";
+import { AppRoutes } from "src/shared/routes";
 import { CheckList } from "./ui";
 
 import "./SectionLandingHero.scss";

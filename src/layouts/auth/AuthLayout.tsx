@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 import { Box, Container, Stack } from "@mui/material";
 
 import LocalStorageService from "src/shared/local-storage";
-import { AppRoutes } from "src/app/routing/appRoutes";
+import { AppRoutes } from "src/shared/routes";
 
 import "./AuthLayout.scss";
 

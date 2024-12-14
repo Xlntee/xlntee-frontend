@@ -8,7 +8,7 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import LocalActivityIcon from "@mui/icons-material/LocalActivity";
 
 import { AccordionProgress } from "src/features";
-import { AppRoutes } from "src/app/routing/appRoutes";
+import { AppRoutes } from "src/shared/routes";
 
 import { CategoryLinkType, CategoryNavigation } from "./ui";
 

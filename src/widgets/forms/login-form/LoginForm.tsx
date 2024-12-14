@@ -8,7 +8,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, Stack, Typography } from "@mui/material";
 
 import { RootForm } from "src/widgets/forms";
-import { AppRoutes } from "src/app/routing/appRoutes";
+import { AppRoutes } from "src/shared/routes";
 import { PasswordField, TextField } from "src/features/form-fields";
 
 import { loginApiSlice } from "./api";

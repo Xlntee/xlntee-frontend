@@ -6,7 +6,7 @@ import { Box, Container } from "@mui/material";
 import useTitle from "src/hooks/useTitle";
 import { PageProps } from "pages/type";
 import { CardList, CertificateCard } from "src/features";
-import { AppRoutes } from "src/app/routing/appRoutes";
+import { AppRoutes } from "src/shared/routes";
 
 import { myCertificates } from "./data";
 

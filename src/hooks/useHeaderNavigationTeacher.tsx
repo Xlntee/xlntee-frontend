@@ -4,7 +4,7 @@ import VideocamIcon from "@mui/icons-material/Videocam";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
 
-import { AppRoutes } from "src/app/routing/appRoutes";
+import { AppRoutes } from "src/shared/routes";
 import { NavigationLinkType } from "src/features";
 
 type useHeaderNavigationTeacherProps = {

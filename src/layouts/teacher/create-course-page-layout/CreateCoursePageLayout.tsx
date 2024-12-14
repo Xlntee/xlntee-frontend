@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { Box } from "@mui/material";
 
 import { HeaderProfile, NotificationToggler, Footer } from "src/widgets/components";
-import { AppRoutes } from "src/app/routing/appRoutes";
+import { AppRoutes } from "src/shared/routes";
 import { UserRoles } from "src/shared/utils/user-role";
 import { CoursePreviewButtons } from "src/widgets/teacher";
 

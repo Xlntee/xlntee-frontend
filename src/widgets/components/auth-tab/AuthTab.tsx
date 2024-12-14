@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import { Box } from "@mui/material";
 
-import { AppRoutes } from "src/app/routing/appRoutes";
+import { AppRoutes } from "src/shared/routes";
 
 import "./AuthTab.scss";
 

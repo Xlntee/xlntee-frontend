@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { Box, Button, Container, Stack } from "@mui/material";
 
 import { MenuToggler, Navigation } from "src/features";
-import { AppRoutes } from "src/app/routing/appRoutes";
+import { AppRoutes } from "src/shared/routes";
 
 import { useAuth } from "src/hooks/useAuth";
 import useDrawer from "src/hooks/useDrawer";
