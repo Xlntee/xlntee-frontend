@@ -32,19 +32,15 @@
   --transition-cubic-bezier: cubic-bezier(0.4, 0, 0.2, 1);
 
   --app-modal-bg-color: var(--main-element-contrast-color);
-
   --app-block-lecture-bg-color: var(--brand-color);
   --app-block-lecture-aside-bg-color: var(--light-color);
   --app-block-lecture-field-bg-color: var(--light-color);
-
   --app-course-btn-card-bg-color: var(--light-element-color);
-
   --app-complain-field-bg-color: var(--light-element-color);
-
-  // --app-video-description-bg-color: rgb(var(--light-element-color));
   --app-video-description-border-color: transparent;
   --app-collapsed-navigation-bg-color: rgb(var(--light-color));
   --app-accordion-progress-color: rgb(var(--light-color));
+  --app-auth-tab-color: rgb(var(--brand-color));
 }
 
 html[data-theme="dark"] {
@@ -61,14 +57,10 @@ html[data-theme="dark"] {
   --app-block-lecture-bg-color: "transparent";
   --app-block-lecture-aside-bg-color: "transparent";
   --app-block-lecture-field-bg-color: "transparent";
-
   --app-course-btn-card-bg-color: transparent;
-
   --app-complain-field-bg-color: transparent;
-
-  // --app-video-description-bg-color: transparent;
   --app-video-description-border-color: rgb(var(--gray-stroke-color));
   --app-collapsed-navigation-bg-color: rgb(var(--main-dark-color));
-
   --app-accordion-progress-color: rgb(var(--main-dark-color));
+  --app-auth-tab-color: rgb(var(--main-element-color));
 }

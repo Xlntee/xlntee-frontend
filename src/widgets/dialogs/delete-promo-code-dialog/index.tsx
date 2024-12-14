@@ -25,7 +25,7 @@ const DeletePromoCodeDialog: FC = () => {
       <MenuToggler active={true} onClick={onCloseDialog} className="dialog-box__close-btn" />
       <DialogTitle>{t("dialog_modal_delete_promo_code")}</DialogTitle>
       <DialogActions>
-        <Button color={"success"} variant={"black-contain"} autoFocus onClick={onAgreeDialog}>
+        <Button color="success" variant={"black-contain"} autoFocus onClick={onAgreeDialog}>
           {t("dialog_modal_agree")}
         </Button>
         <Button variant="black-text" onClick={onCloseDialog}>
