@@ -11,7 +11,9 @@ type DescriptionProps = {
 const Description: FC<DescriptionProps> = ({ text }) => {
   return (
     <Box className="course-video-description">
-      <Typography variant="body2">{text}</Typography>
+      <Typography variant="body2" color="text.secondary">
+        {text}
+      </Typography>
     </Box>
   );
 };

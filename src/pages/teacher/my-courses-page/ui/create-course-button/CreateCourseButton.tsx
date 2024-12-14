@@ -13,7 +13,7 @@ const CreateCourseButton: FC<CreateCourseButtonProps> = ({ path }) => {
   return (
     <Link to={path} className="course-btn-card">
       <Box component="span" className="course-btn-card__inner-box">
-        <Typography component="span" fontSize={30} fontWeight={900}>
+        <Typography color="text.secondary" component="span" fontWeight={900}>
           +
         </Typography>
       </Box>

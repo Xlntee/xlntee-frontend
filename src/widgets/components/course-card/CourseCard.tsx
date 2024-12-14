@@ -53,7 +53,7 @@ const CourseCard: FC<CourseCardProps> = ({
         )}
       </Box>
       <Box pt="4px" pb="10px">
-        <Typography variant="subtitle1" className="course-card__title">
+        <Typography className="course-card__title" color="text.secondary">
           {title}
         </Typography>
       </Box>

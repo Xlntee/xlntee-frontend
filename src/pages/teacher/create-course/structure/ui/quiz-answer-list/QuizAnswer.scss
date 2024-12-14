@@ -8,6 +8,7 @@
   &__action-add-answer {
     &.MuiButtonBase-root {
       font-weight: 400;
+      color: currentColor;
     }
   }
 }
@@ -21,6 +22,7 @@
 
   &__action {
     text-align: center;
+    color: currentColor;
 
     &.MuiButtonBase-root {
       min-width: auto;
@@ -32,6 +34,12 @@
 
     @include mixins.media(tablet) {
       margin-top: 10px;
+    }
+
+    svg {
+      &.MuiSvgIcon-root {
+        color: rgb(var(--light-color));
+      }
     }
   }
 }

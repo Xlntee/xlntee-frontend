@@ -1,6 +1,6 @@
 import { FC, ReactNode } from "react";
 
-import { Box, Stack, List, ListItem, Button, Typography, ListItemIcon, ListItemText } from "@mui/material";
+import { Box, Stack, List, ListItem, Button, Typography, ListItemIcon, ListItemText, useTheme } from "@mui/material";
 
 type PricePlanDescription = {
   title: string;
@@ -18,6 +18,8 @@ export type PricePlanProps = {
 };
 
 const PricePlanCard: FC<PricePlanProps> = ({ pretitle, title, text, button, descriptionList, bgColor }) => {
+  const theme = useTheme();
+
   return (
     <Stack
       direction="column"
@@ -29,9 +31,13 @@ const PricePlanCard: FC<PricePlanProps> = ({ pretitle, title, text, button, desc
       bgcolor={bgColor}
       className="base-shadow"
     >
-      <Typography variant="body1">{pretitle}</Typography>
-      <Typography variant="h2">{title}</Typography>
-      <Typography variant="body1" textAlign="center">
+      <Typography color="text.secondary" variant="body1">
+        {pretitle}
+      </Typography>
+      <Typography color="text.secondary" variant="h2">
+        {title}
+      </Typography>
+      <Typography color="text.secondary" variant="body1" textAlign="center">
         {text}
       </Typography>
       <Box marginBottom="30px">
@@ -54,16 +60,17 @@ const PricePlanCard: FC<PricePlanProps> = ({ pretitle, title, text, button, desc
               <ListItem key={index} alignItems="flex-start" sx={{ marginBottom: "20px" }}>
                 <ListItemIcon
                   sx={{
-                    marginTop: 0
+                    marginTop: 0,
+                    color: theme.palette.text.secondary
                   }}
                 >
                   {item.icon}
                 </ListItemIcon>
                 <ListItemText>
-                  <Typography variant="body2" fontWeight={700} fontSize={18}>
+                  <Typography color="text.secondary" variant="body2" fontWeight={700} fontSize={18}>
                     {item.title}
                   </Typography>
-                  <Typography variant="body2" fontWeight={400} fontSize={18}>
+                  <Typography color="text.secondary" variant="body2" fontWeight={400} fontSize={18}>
                     {item.text}
                   </Typography>
                 </ListItemText>

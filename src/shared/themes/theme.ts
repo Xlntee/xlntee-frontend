@@ -1,6 +1,7 @@
-import { createTheme, PaletteMode, Theme, ThemeOptions } from "@mui/material";
+import { createTheme, PaletteMode, Theme } from "@mui/material";
 
 import { XlnteeColors } from "./colors";
+import { palete } from "./theme-palette";
 
 declare module "@mui/material/Button" {
   interface ButtonPropsVariantOverrides {
@@ -11,77 +12,6 @@ declare module "@mui/material/Button" {
     "white-text": true;
   }
 }
-
-const palete: Record<PaletteMode, Partial<ThemeOptions["palette"]>> = {
-  light: {
-    mode: "light",
-    primary: {
-      main: XlnteeColors.BrandColor,
-      contrastText: XlnteeColors.LightColor
-    },
-    secondary: {
-      main: XlnteeColors.ActionColor,
-      contrastText: XlnteeColors.LightColor
-    },
-    warning: {
-      main: XlnteeColors.WarningBaseColor,
-      light: XlnteeColors.ErrorLightColor
-    },
-    success: {
-      main: XlnteeColors.SuccessBaseColor
-    },
-    info: {
-      main: XlnteeColors.BrandColor,
-      light: XlnteeColors.Violet100,
-      dark: XlnteeColors.Violet200
-    },
-    grey: {
-      "100": XlnteeColors.LightElementColor,
-      "200": XlnteeColors.GrayStrokeColor,
-      "300": XlnteeColors.GrayColor300,
-      "400": XlnteeColors.GrayColor400,
-      "500": XlnteeColors.GrayColor500
-    },
-    text: {
-      primary: XlnteeColors.MainBlackElementColor,
-      secondary: XlnteeColors.MainBlackElementColor
-    }
-  },
-  dark: {
-    mode: "dark",
-    primary: {
-      main: XlnteeColors.LightColor,
-      contrastText: XlnteeColors.LightColor
-    },
-    secondary: {
-      main: XlnteeColors.ActionColor,
-      contrastText: XlnteeColors.LightColor
-    },
-    warning: {
-      main: XlnteeColors.WarningBaseColor,
-      light: XlnteeColors.ErrorLightColor
-    },
-    success: {
-      main: XlnteeColors.SuccessBaseColor
-    },
-    info: {
-      main: XlnteeColors.BrandColor,
-      light: XlnteeColors.Violet100,
-      dark: XlnteeColors.Violet200
-    },
-    grey: {
-      "100": XlnteeColors.LightElementColor,
-      "200": XlnteeColors.GrayStrokeColor,
-      "300": XlnteeColors.GrayColor300,
-      "400": XlnteeColors.GrayColor400,
-      "500": XlnteeColors.GrayColor500
-    },
-    text: {
-      primary: XlnteeColors.LightColor,
-      secondary: XlnteeColors.LightColor
-    }
-  }
-};
 
 function getTheme(colorTheme: PaletteMode): Theme {
   const defaultTheme = createTheme({
@@ -97,42 +27,6 @@ function getTheme(colorTheme: PaletteMode): Theme {
     palette: palete[colorTheme],
     typography: {
       fontFamily: ["Noto Sans", "Roboto", "sans-serif"].join(",")
-    },
-    components: {
-      MuiCard: {
-        styleOverrides: {
-          root: {
-            backgroundColor: "transparent",
-            boxShadow: "none",
-            borderRadius: 20
-          }
-        }
-      },
-      MuiCardMedia: {
-        styleOverrides: {
-          root: {
-            height: 216,
-            borderRadius: 20
-          }
-        }
-      },
-      MuiCardContent: {
-        styleOverrides: {
-          root: {
-            padding: 8
-          }
-        }
-      },
-      MuiRating: {
-        styleOverrides: {
-          sizeSmall: {
-            fontSize: "16px"
-          },
-          sizeLarge: {
-            fontSize: "24px"
-          }
-        }
-      }
     }
   });
 
@@ -206,7 +100,10 @@ function getTheme(colorTheme: PaletteMode): Theme {
     MuiCssBaseline: {
       styleOverrides: {
         body: {
-          backgroundColor: colorTheme === "light" ? XlnteeColors.LightColor : XlnteeColors.MainBlackElementColor,
+          backgroundColor:
+            colorTheme === "light"
+              ? XlnteeColors[colorTheme].LightColor
+              : XlnteeColors[colorTheme].MainBlackElementColor,
           color: defaultTheme.palette.text.primary
         }
       }
@@ -313,10 +210,14 @@ function getTheme(colorTheme: PaletteMode): Theme {
             minHeight: 36,
             backgroundColor: defaultTheme.palette.text.primary,
             color:
-              colorTheme === "light" ? defaultTheme.palette.primary.contrastText : XlnteeColors.MainBlackElementColor,
+              colorTheme === "light"
+                ? defaultTheme.palette.primary.contrastText
+                : XlnteeColors[colorTheme].MainBlackElementColor,
             ":hover": {
               color:
-                colorTheme === "light" ? XlnteeColors.MainBlackElementColor : defaultTheme.palette.primary.contrastText
+                colorTheme === "light"
+                  ? XlnteeColors[colorTheme].MainBlackElementColor
+                  : defaultTheme.palette.primary.contrastText
             }
           }
         },
@@ -332,10 +233,14 @@ function getTheme(colorTheme: PaletteMode): Theme {
             height: "auto",
             backgroundColor: defaultTheme.palette.text.primary,
             color:
-              colorTheme === "light" ? defaultTheme.palette.primary.contrastText : XlnteeColors.MainBlackElementColor,
+              colorTheme === "light"
+                ? defaultTheme.palette.primary.contrastText
+                : XlnteeColors[colorTheme].MainBlackElementColor,
             ":hover": {
               color:
-                colorTheme === "light" ? XlnteeColors.MainBlackElementColor : defaultTheme.palette.primary.contrastText
+                colorTheme === "light"
+                  ? XlnteeColors[colorTheme].MainBlackElementColor
+                  : defaultTheme.palette.primary.contrastText
             },
             [defaultTheme.breakpoints.up("md")]: {
               fontSize: 16,
@@ -355,10 +260,14 @@ function getTheme(colorTheme: PaletteMode): Theme {
             minHeight: 36,
             backgroundColor: defaultTheme.palette.text.primary,
             color:
-              colorTheme === "light" ? defaultTheme.palette.primary.contrastText : XlnteeColors.MainBlackElementColor,
+              colorTheme === "light"
+                ? defaultTheme.palette.primary.contrastText
+                : XlnteeColors[colorTheme].MainBlackElementColor,
             ":hover": {
               color:
-                colorTheme === "light" ? XlnteeColors.MainBlackElementColor : defaultTheme.palette.primary.contrastText
+                colorTheme === "light"
+                  ? XlnteeColors[colorTheme].MainBlackElementColor
+                  : defaultTheme.palette.primary.contrastText
             },
             [defaultTheme.breakpoints.up("md")]: {
               fontSize: 20,
@@ -377,7 +286,9 @@ function getTheme(colorTheme: PaletteMode): Theme {
             borderStyle: "solid",
             "&:hover": {
               color:
-                colorTheme === "light" ? defaultTheme.palette.primary.contrastText : XlnteeColors.MainBlackElementColor,
+                colorTheme === "light"
+                  ? defaultTheme.palette.primary.contrastText
+                  : XlnteeColors[colorTheme].MainBlackElementColor,
               backgroundColor: defaultTheme.palette.text.primary
             }
           }
@@ -417,7 +328,8 @@ function getTheme(colorTheme: PaletteMode): Theme {
             variant: "black-text"
           },
           style: {
-            color: defaultTheme.palette.text.primary,
+            color:
+              colorTheme === "light" ? defaultTheme.palette.text.primary : defaultTheme.palette.primary.contrastText,
             padding: 0,
             minWidth: "auto",
 
@@ -498,7 +410,7 @@ function getTheme(colorTheme: PaletteMode): Theme {
           input: {
             height: 20,
             color: defaultTheme.palette.text.primary,
-            backgroundColor: defaultTheme.palette.primary.contrastText,
+            backgroundColor: "transparent",
             fontSize: 14,
             paddingBlock: 8,
             paddingInline: 10,
@@ -622,7 +534,8 @@ function getTheme(colorTheme: PaletteMode): Theme {
           width: "100%",
           boxShadow: "none",
           margin: 32,
-          backgroundColor: "transparent"
+          backgroundColor: "transparent",
+          backgroundImage: "none"
         }
       }
     },
@@ -657,6 +570,16 @@ function getTheme(colorTheme: PaletteMode): Theme {
           marginTop: 20,
           justifyContent: "center",
           gap: "20px"
+        }
+      }
+    },
+    MuiRating: {
+      styleOverrides: {
+        sizeSmall: {
+          fontSize: "16px"
+        },
+        sizeLarge: {
+          fontSize: "24px"
         }
       }
     }

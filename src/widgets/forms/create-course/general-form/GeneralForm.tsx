@@ -138,9 +138,7 @@ const GeneralPage: FC<PageProps> = ({ title }) => {
     <RootForm methods={methods} onSubmit={onSubmit}>
       <Stack gap="20px">
         <FormLabel className="field-box">
-          <Typography variant="h5" className="field-box__title">
-            {t("general.title-field-label")}*
-          </Typography>
+          <Typography className="field-box__title">{t("general.title-field-label")}*</Typography>
           <Typography className="field-box__subtitle">{t("general.title-field-description")}</Typography>
           <TextField
             name="title"
@@ -150,9 +148,7 @@ const GeneralPage: FC<PageProps> = ({ title }) => {
           />
         </FormLabel>
         <FormLabel className="field-box">
-          <Typography variant="h5" className="field-box__title">
-            {t("general.description-field-label")}*
-          </Typography>
+          <Typography className="field-box__title">{t("general.description-field-label")}*</Typography>
           <Typography className="field-box__subtitle">{t("general.description-field-description")}</Typography>
           <TextField
             name="description"
@@ -175,7 +171,7 @@ const GeneralPage: FC<PageProps> = ({ title }) => {
             ? selectFields.map((item) => (
                 <Grid key={item.value} item xs={12} sm={6}>
                   <FormLabel className="field-box">
-                    <Typography variant="h5" mb="8px" className="field-box__title">
+                    <Typography className="field-box__title" mb="8px">
                       {item.title}
                     </Typography>
                     <SelectField name={item.value} options={item.options} />
@@ -185,7 +181,7 @@ const GeneralPage: FC<PageProps> = ({ title }) => {
             : null}
           <Grid item xs={12} sm={6}>
             <FormLabel className="field-box">
-              <Typography mb="8px" className="field-box__title">
+              <Typography className="field-box__title" mb="8px">
                 {t("general.tags-field-label")}*
               </Typography>
               <AutocompleteField

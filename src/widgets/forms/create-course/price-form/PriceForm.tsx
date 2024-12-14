@@ -41,7 +41,7 @@ const PriceForm: FC = () => {
     <RootForm methods={methods} onSubmit={onSubmit}>
       <CheckboxField name="paid" label={t("price.checkbox-label")} className="field-box" />
       <FormLabel className="field-box">
-        <Typography mb="8px" className="field-box__title">
+        <Typography className="field-box__title" mb="8px">
           {t("price.price-field-label")}
         </Typography>
         <TextField name="price" variant="outlined" fullWidth placeholder={`${t("price.price-field-placeholder")}...`} />

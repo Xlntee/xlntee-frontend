@@ -60,6 +60,7 @@
   overflow: hidden scroll;
   overscroll-behavior: contain;
   scrollbar-gutter: stable;
+  background-color: var(--app-collapsed-navigation-bg-color);
 
   &::-webkit-scrollbar {
     width: 0;

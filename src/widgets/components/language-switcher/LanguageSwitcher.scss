@@ -15,8 +15,6 @@
   }
 
   &.language-switcher--compact {
-    --lang-switcher-color: rgb(var(--link-color));
-
     @include mixins.hover {
       .MuiOutlinedInput-notchedOutline {
         border-color: inherit;
@@ -31,11 +29,11 @@
       height: 30px;
       width: 30px;
       border-radius: 10px;
-      color: var(--lang-switcher-color);
+      color: rgb(var(--main-element-color));
     }
 
     .MuiOutlinedInput-notchedOutline {
-      border-color: var(--lang-switcher-color);
+      border-color: rgb(var(--main-element-color));
     }
 
     .MuiInputBase-input {

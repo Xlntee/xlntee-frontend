@@ -2,7 +2,7 @@
 @use "styles/mixins" as mixins;
 
 .course-btn-card {
-  background-color: rgb(var(--light-element-color));
+  background-color: rgb(var(--app-course-btn-card-bg-color));
   width: 100%;
   border-radius: 25px;
   cursor: pointer;
@@ -11,6 +11,7 @@
   align-items: center;
   text-decoration: none;
   min-height: 40vw;
+  box-shadow: var(--base-shadow);
 
   @include mixins.animate(box-shadow);
 
@@ -31,5 +32,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .MuiTypography-root {
+    font-size: 30px;
   }
 }

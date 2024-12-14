@@ -49,17 +49,32 @@ const PricePage: FC<PageProps> = ({ title }) => {
         <Grid container columnSpacing="20px" rowGap="20px" flexDirection={{ md: "row-reverse" }} mb="20px">
           <Grid item xs={12} md={6}>
             <Box borderRadius="20px" padding="10px 20px" bgcolor={theme.palette.grey["100"]}>
-              <Typography variant="h6">{t("price.info-box-title")}</Typography>
-              <Typography fontWeight={300} fontSize="14px !important" color={theme.palette.grey["400"]}>
+              <Typography variant="h6" color="text.secondary">
+                {t("price.info-box-title")}
+              </Typography>
+              <Typography fontWeight={300} color="text.secondary" fontSize="14px !important">
                 {t("price.info-box-text")}
               </Typography>
             </Box>
           </Grid>
           <Grid item xs={12} md={6}>
             <Stack gap="20px">
-              <CheckboxField name="paid" label={t("price.checkbox-label")} className="field-box" />
+              <Box className="field-box">
+                <Stack direction="row" alignItems="center">
+                  <CheckboxField
+                    id="paid"
+                    name="paid"
+                    sx={{
+                      mb: "4px"
+                    }}
+                  />
+                  <FormLabel htmlFor="paid">
+                    <Typography className="field-box__title">{t("price.checkbox-label")}</Typography>
+                  </FormLabel>
+                </Stack>
+              </Box>
               <FormLabel className="field-box">
-                <Typography mb="8px" className="field-box__title">
+                <Typography className="field-box__title" mb="8px">
                   {t("price.price-field-label")}
                 </Typography>
                 <TextField
