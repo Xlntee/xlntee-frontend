@@ -1,42 +1,66 @@
 :root {
   --light-color: 255 255 255; //#ffffff;
-  --dark-color: 0 0 0; //#000000
+  --brand-color: 99 97 255; //#6361ff
+  --action-color: 255 28 96; //#ff1c60
 
-  --primary-color: 99 97 255; //#6361ff
-  --primary-light-color: 153 200 255; //#99C8FF
-  --link-color: 104 121 252; //#6879fc = --primary-color
-  --cta-color: 255 28 96; //#ff1c60
+  --violet-color-100: 239 238 253; // #EFEEFD
+  --violet-color-200: 239 239 255; // #EFEFFF
 
-  --text-color: 63 69 74; //#3f454a
-  --element-color: 32 32 32; // #202020
+  --main-element-color: 32 32 32; // #202020
+  --main-element-contrast-color: 255 255 255; // #ffffff
+  --main-dark-color: var(--main-element-color);
 
   --light-element-color: 248 248 248; //#f8f8f8
   --gray-stroke-color: 234 234 234; //#eaeaea
 
   --warning-extra-light-color: 255 153 178; //#ff99b2
-  --warning-extra-light-color2: 253 237 237; //#FDEDED
   --warning-light-color: 238 44 44; //#ee2c2c
   --warning-base-color: 182 48 48; //#b63030
 
   --success-base-color: 48 182 134; //#30b686
-  --success-extra-light-color: 242 255 243; //#f2fff3
-  --success-light-color: 175 237 192; //#afedc0
-  --success-dark-color: 50 156 86; //#329c56
-
-  --gray-color-200: 85 94 104; //#555E68
-  --gray-color-300: 217 217 217; //#d9d9d9
-  --gray-color-400: 196 196 196; //#c4c4c4
-  --gray-color-500: 189 189 189; //#bdbdbd
-  --gray-color-600: 102 102 102; //#666666
-  --gray-color-700: 130 130 130; //#828282
-  --gray-color-800: 249 249 249; //#f9f9f9
-  --gray-color-900: 243 243 243; //#f3f3f3
-
+  --gray-color-300: 196 196 196; //#c4c4c4
+  --gray-color-400: 102 102 102; //#666666
+  --gray-color-500: 130 130 130; //#828282
   --yellow-color: 250 175 0; //#faaf00
 
-  --base-shadow: 0 2px 6px 0 rgb(var(--dark-color) / 0.25);
-  --base-shadow-invisible: 0 2px 6px 0 rgb(var(--dark-color) / 0);
-  --header-shadow: 0 2px 5px 0 rgb(var(--dark-color) / 0.2);
+  --link-color: var(--brand-color);
+
+  --base-shadow: 0 2px 6px 0 rgb(var(--main-element-color) / 0.25);
+  --base-shadow-invisible: 0 2px 6px 0 rgb(var(--main-element-color) / 0);
+  --header-shadow: 0 2px 5px 0 rgb(var(--main-element-color) / 0.2);
 
   --transition-cubic-bezier: cubic-bezier(0.4, 0, 0.2, 1);
+
+  --app-modal-bg-color: var(--main-element-contrast-color);
+  --app-block-lecture-bg-color: var(--brand-color);
+  --app-block-lecture-aside-bg-color: var(--light-color);
+  --app-block-lecture-field-bg-color: var(--light-color);
+  --app-course-btn-card-bg-color: var(--light-element-color);
+  --app-complain-field-bg-color: var(--light-element-color);
+  --app-video-description-border-color: transparent;
+  --app-collapsed-navigation-bg-color: rgb(var(--light-color));
+  --app-accordion-progress-color: rgb(var(--light-color));
+  --app-auth-tab-color: rgb(var(--brand-color));
+}
+
+html[data-theme="dark"] {
+  --gray-color-300: 255 255 255; //#FFFFFF
+  --gray-color-400: 255 250 250; //#FFFAFA
+  --gray-color-500: 245 245 245; //#F5F5F5
+
+  --main-element-color: 255 255 255; // #ffffff
+  --main-element-contrast-color: 32 32 32; // #202020
+  --main-dark-color: var(--main-element-contrast-color);
+
+  --brand-color: 99 97 255; // #ffffff
+
+  --app-block-lecture-bg-color: "transparent";
+  --app-block-lecture-aside-bg-color: "transparent";
+  --app-block-lecture-field-bg-color: "transparent";
+  --app-course-btn-card-bg-color: transparent;
+  --app-complain-field-bg-color: transparent;
+  --app-video-description-border-color: rgb(var(--gray-stroke-color));
+  --app-collapsed-navigation-bg-color: rgb(var(--main-dark-color));
+  --app-accordion-progress-color: rgb(var(--main-dark-color));
+  --app-auth-tab-color: rgb(var(--main-element-color));
 }

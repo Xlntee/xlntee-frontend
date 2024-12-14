@@ -39,10 +39,12 @@ const LoginForm: FC = () => {
 
   return (
     <ApiProvider api={loginApiSlice}>
-      <RootForm methods={methods} onSubmit={onSubmit} className="auth-form">
+      <RootForm methods={methods} onSubmit={onSubmit} className="auth-form login-form">
         <Stack direction="column" gap="20px">
           <Stack direction="row" alignItems="center" justifyContent="center" gap="20px">
-            <Typography variant="body2">{t("login-with")}</Typography>
+            <Typography variant="body2" color="text.primary">
+              {t("login-with")}
+            </Typography>
             <Stack direction="row" gap="20px">
               <Button
                 aria-label={`${t("login-with")} Google button`}
@@ -72,10 +74,10 @@ const LoginForm: FC = () => {
             {t("login")}
           </Button>
           <Stack direction="column" gap="4px">
-            <Typography variant="caption" className="auth-form__caption-text">
+            <Typography variant="caption" className="auth-form__caption-text" color="text.primary">
               {t("forgot-password")}? <Link to={AppRoutes.auth.passwordUpdate}>{t("recover-password")}</Link>
             </Typography>
-            <Typography variant="caption" className="auth-form__caption-text">
+            <Typography variant="caption" className="auth-form__caption-text" color="text.primary">
               {t("no-account")}? <Link to={AppRoutes.auth.registration}>{t("sign-up")}</Link>
             </Typography>
           </Stack>

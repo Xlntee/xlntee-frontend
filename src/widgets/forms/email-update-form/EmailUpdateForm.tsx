@@ -38,9 +38,7 @@ const EmailUpdateForm: FC<EmailUpdateFormProps> = ({ oldEmail, onSubmit }) => {
     <RootForm methods={methods} onSubmit={onHandleSubmit} className="auth-form">
       <Stack gap="20px">
         <FormLabel className="field-box">
-          <Typography variant="h5" className="field-box__title">
-            {t("current-email-address")}
-          </Typography>
+          <Typography className="field-box__title">{t("current-email-address")}</Typography>
           <TextField
             name="email"
             type="email"
@@ -52,15 +50,11 @@ const EmailUpdateForm: FC<EmailUpdateFormProps> = ({ oldEmail, onSubmit }) => {
           />
         </FormLabel>
         <FormLabel className="field-box">
-          <Typography variant="h5" className="field-box__title">
-            {t("new-email-address")}
-          </Typography>
+          <Typography className="field-box__title">{t("new-email-address")}</Typography>
           <TextField name="new_email" type="email" aria-label="new email input" placeholder="New email" fullWidth />
         </FormLabel>
         <FormLabel className="field-box">
-          <Typography variant="h5" className="field-box__title">
-            {t("confirm-new-email")}
-          </Typography>
+          <Typography className="field-box__title">{t("confirm-new-email")}</Typography>
           <TextField
             name="confirm_email"
             type="email"

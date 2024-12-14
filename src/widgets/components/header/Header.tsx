@@ -14,6 +14,7 @@ import { HideMediaContainer } from "src/features/hide-media-container";
 
 import { User } from "../user";
 import { LanguageSwitcher } from "../language-switcher";
+import { ThemeModeToggler } from "../theme-mode-toggler";
 
 import "./Header.scss";
 
@@ -41,6 +42,7 @@ const HeaderProfile: FC = () => {
             <Navigation items={navigationList} />
           </Box>
           <Stack direction="row" alignItems="center" gap="10px" className="header__nav-right">
+            <ThemeModeToggler />
             <LanguageSwitcher compact />
             {!isAppLoading && (
               <>

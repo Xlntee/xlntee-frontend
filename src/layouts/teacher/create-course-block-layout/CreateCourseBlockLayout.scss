@@ -24,13 +24,13 @@
   &__aside {
     position: relative;
     z-index: 2;
-    background-color: rgb(var(--light-color));
+    background-color: rgb(var(--app-block-lecture-aside-bg-color));
   }
 
   .error-limits {
     padding: 4px 10px;
     border-radius: 25px;
-    background-color: rgb(var(--warning-extra-light-color2));
+    background-color: rgb(var(--warning-extra-light-color));
     margin-bottom: 30px;
 
     @include mixins.media(tablet) {
@@ -40,9 +40,13 @@
       right: 20px;
     }
 
+    .MuiTypography-body2 {
+      color: rgb(var(--main-dark-color));
+    }
+
     a {
       text-decoration: underline;
-      color: rgb(var(--link-color));
+      color: rgb(var(--main-dark-color));
 
       @include mixins.hover {
         text-decoration: none;

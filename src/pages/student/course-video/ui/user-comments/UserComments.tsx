@@ -3,8 +3,6 @@ import { useTranslation } from "react-i18next";
 
 import { Button, Box, Stack } from "@mui/material";
 
-import { XlnteeColors } from "src/shared/themes/colors";
-
 import { UserSingleComment, UserSingleCommentProps } from "../user-single-comment";
 
 export type UserCommentsProps = {
@@ -38,7 +36,6 @@ const UserComment: FC<UserCommentsProps> = ({ comments, user }) => {
             onClick={onToggleVisibilityComments}
             sx={{
               minWidth: "auto",
-              color: XlnteeColors.GrayColor700,
               fontWeight: 400
             }}
           >

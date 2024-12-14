@@ -16,11 +16,16 @@
     color: rgb(var(--link-color));
   }
 
-  &__social-network-icon {
-    @include mixins.animate(color);
+  &__social-link {
+    &.MuiTypography-root {
+      color: currentColor;
+      display: flex;
 
-    @include mixins.hover {
-      color: rgb(var(--gray-color-600));
+      @include mixins.animate(color);
+
+      @include mixins.hover {
+        color: rgb(var(--gray-color-400));
+      }
     }
   }
 }

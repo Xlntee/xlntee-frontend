@@ -7,7 +7,6 @@ import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import EditIcon from "@mui/icons-material/Edit";
 import RestoreFromTrashIcon from "@mui/icons-material/RestoreFromTrash";
 
-import { XlnteeColors } from "src/shared/themes/colors";
 import { CourseStatus } from "src/shared/config/CourseStatus";
 
 import "./CourseCard.scss";
@@ -39,7 +38,7 @@ const CourseCard: FC<CourseCardProps> = ({
   return (
     <Box className={cn("course-card", className)}>
       <Box className="course-card__image-section">
-        <Box bgcolor={imageSrc ? "transparent" : XlnteeColors.LightElementColor} className="course-card__image-inner">
+        <Box bgcolor={imageSrc ? "transparent" : theme.palette.grey["100"]} className="course-card__image-inner">
           {imageSrc && <img src={imageSrc} alt={title} className="course-card__image" />}
         </Box>
         {updateTime && (
@@ -54,7 +53,7 @@ const CourseCard: FC<CourseCardProps> = ({
         )}
       </Box>
       <Box pt="4px" pb="10px">
-        <Typography variant="subtitle1" className="course-card__title">
+        <Typography className="course-card__title" color="text.secondary">
           {title}
         </Typography>
       </Box>

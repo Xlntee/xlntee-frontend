@@ -4,7 +4,6 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import { Box, Stack, Typography, Container, Grid } from "@mui/material";
 
-import { XlnteeColors } from "src/shared/themes/colors";
 import { ContactsLinks } from "src/shared/config/LinkConstants";
 import { ContactList, ContactLinkType } from "./ui";
 
@@ -44,7 +43,7 @@ const SectionLandingContact: FC = () => {
                 mb={{ xs: "20px", md: "0" }}
               >
                 <img src="assets/x-logo-modal-extend.png" width={175} height={64} alt={t("contacts.title")} />
-                <Typography variant="body2" fontWeight={300} color={XlnteeColors.BlackElementColor}>
+                <Typography variant="body2" fontWeight={300}>
                   {t("contacts.title")}
                 </Typography>
               </Stack>

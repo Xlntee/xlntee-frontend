@@ -39,7 +39,7 @@
   &__progress {
     &:not(.full) {
       .MuiLinearProgress-bar {
-        background-color: rgb(var(--primary-color));
+        background-color: rgb(var(--brand-color));
       }
     }
   }

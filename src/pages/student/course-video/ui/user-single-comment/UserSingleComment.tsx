@@ -4,7 +4,6 @@ import relativeTime from "dayjs/plugin/relativeTime";
 import { useTranslation } from "react-i18next";
 
 import { Stack, Box, Avatar, Typography, Button } from "@mui/material";
-import { XlnteeColors } from "src/shared/themes/colors";
 
 export type UserSingleCommentProps = {
   id: string;
@@ -29,12 +28,7 @@ const UserComment: FC<UserSingleCommentProps> = ({ image, nickname, date, text, 
           <Typography variant="caption">, {howLongAgo}</Typography>
         </Box>
         <Typography variant="body2">{text}</Typography>
-        <Button
-          variant="black-text"
-          size="small"
-          onClick={onClickAnswer}
-          sx={{ minWidth: "auto", color: XlnteeColors.GrayColor700 }}
-        >
+        <Button variant="black-text" size="small" onClick={onClickAnswer} sx={{ minWidth: "auto" }}>
           {t("answer-button")}
         </Button>
       </Box>

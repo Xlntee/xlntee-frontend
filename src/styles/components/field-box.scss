@@ -6,6 +6,7 @@
       margin-bottom: 4px;
       font-weight: 400;
       text-transform: capitalize;
+      font-size: 16px;
     }
   }
 
@@ -13,7 +14,7 @@
     &.MuiTypography-root {
       font-weight: 300;
       font-size: 14px;
-      color: rgb(var(--gray-color-600));
+      color: rgb(var(--gray-color-400));
       margin-bottom: 8px;
     }
   }
@@ -27,6 +28,6 @@
   }
 
   a {
-    color: rgb(var(--dark-color));
+    color: rgb(var(--main-element-color));
   }
 }

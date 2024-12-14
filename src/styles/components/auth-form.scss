@@ -2,10 +2,6 @@
 
 .auth-form {
   &__caption-text {
-    &.MuiTypography-root {
-      color: rgb(var(--dark-color));
-    }
-
     a {
       text-decoration: underline;
       color: rgb(var(--link-color));
@@ -39,12 +35,19 @@
   &__btn-role {
     &.MuiButtonBase-root {
       font-weight: 400;
+      color: rgb(var(--main-dark-color));
+      border-color: rgb(var(--main-dark-color));
+
+      @include mixins.hover {
+        color: rgb(var(--light-color));
+        background-color: rgb(var(--main-dark-color));
+      }
     }
 
     &.active {
       &.MuiButtonBase-root {
         color: rgb(var(--light-color));
-        background-color: rgb(var(--dark-color));
+        background-color: rgb(var(--main-dark-color));
       }
     }
   }
@@ -56,7 +59,7 @@
       font-size: 20px;
       padding: 8px;
       box-shadow: var(--base-shadow-invisible);
-      background-color: rgb(var(--light-color));
+      border-color: rgb(var(--main-element-color));
 
       @include mixins.media(tablet) {
         font-size: 30px;

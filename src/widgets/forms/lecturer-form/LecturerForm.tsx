@@ -41,9 +41,7 @@ const LecturerForm: FC = () => {
     <RootForm methods={methods} onSubmit={onSubmit}>
       <Stack gap="20px">
         <FormLabel className="field-box">
-          <Typography variant="h5" className="field-box__title">
-            {t("lecturer.fullname-field-label")}
-          </Typography>
+          <Typography className="field-box__title">{t("lecturer.fullname-field-label")}</Typography>
           <Typography className="field-box__subtitle">{t("lecturer.fullname-field-description")}</Typography>
           <TextField
             name="username"

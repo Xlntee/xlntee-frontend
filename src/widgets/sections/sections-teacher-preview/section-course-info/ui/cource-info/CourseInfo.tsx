@@ -1,6 +1,5 @@
 import { FC } from "react";
-import { Stack, List, Box, ListItem, Typography } from "@mui/material";
-import { XlnteeColors } from "src/shared/themes/colors";
+import { Stack, List, Box, ListItem, Typography, useTheme } from "@mui/material";
 
 type CoursePreviewInfoBlockProps = {
   title: string;
@@ -8,13 +7,14 @@ type CoursePreviewInfoBlockProps = {
 };
 
 const CoursePreviewInfoBlock: FC<CoursePreviewInfoBlockProps> = ({ title, info }) => {
+  const theme = useTheme();
+
   return (
     <Stack
       gap="14px"
       p={{ xs: "20px", md: "26px 32px" }}
       borderRadius="20px"
-      bgcolor={XlnteeColors.GrayColor800}
-      border={`1px solid ${XlnteeColors.GrayColor400}`}
+      border={`1px solid ${theme.palette.grey["300"]}`}
     >
       <Typography variant="h2" fontWeight={400}>
         {title}:

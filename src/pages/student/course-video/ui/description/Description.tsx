@@ -2,7 +2,7 @@ import { FC } from "react";
 
 import { Box, Typography } from "@mui/material";
 
-import { XlnteeColors } from "src/shared/themes/colors";
+import "./Description.scss";
 
 type DescriptionProps = {
   text: string;
@@ -10,8 +10,10 @@ type DescriptionProps = {
 
 const Description: FC<DescriptionProps> = ({ text }) => {
   return (
-    <Box bgcolor={XlnteeColors.LightElementColor} p="20px" borderRadius="10px">
-      <Typography variant="body2">{text}</Typography>
+    <Box className="course-video-description">
+      <Typography variant="body2" color="text.secondary">
+        {text}
+      </Typography>
     </Box>
   );
 };

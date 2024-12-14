@@ -1,8 +1,6 @@
 import { FC } from "react";
 
-import { Box, Checkbox, Stack, FormLabel, Typography } from "@mui/material";
-
-import { XlnteeColors } from "src/shared/themes/colors";
+import { Box, Checkbox, Stack, FormLabel, Typography, useTheme } from "@mui/material";
 
 import "./Quiz.scss";
 
@@ -19,8 +17,10 @@ type QuizProps = {
 };
 
 const Quiz: FC<QuizProps> = ({ number, title, items }) => {
+  const theme = useTheme();
+
   return (
-    <Box bgcolor={XlnteeColors.LightElementColor} p={{ xs: "20px", lg: "50px 30px" }}>
+    <Box bgcolor={theme.palette.grey["100"]} p={{ xs: "20px", lg: "50px 30px" }}>
       <Typography variant="h5" fontWeight={400} ml={{ md: "46px" }} mb="20px">
         {number}. {title}
       </Typography>

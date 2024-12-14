@@ -2,17 +2,17 @@ import { FC, useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography, useTheme } from "@mui/material";
 
 import { AppRoutes } from "src/app/routing/appRoutes";
 
-import { XlnteeColors } from "src/shared/themes/colors";
 import { PageProps } from "pages/type";
 import useTitle from "src/hooks/useTitle";
 import { AuthPasswordUpdateForm, PasswordUpdateFormFields } from "src/widgets/forms";
 
 const AuthPasswordUpdatePage: FC<PageProps> = ({ title }) => {
   useTitle(title);
+  const theme = useTheme();
   const { t } = useTranslation("auth");
 
   const [isSubmit, setIsSubmit] = useState<boolean>(false);
@@ -29,7 +29,7 @@ const AuthPasswordUpdatePage: FC<PageProps> = ({ title }) => {
       <Typography
         variant="body2"
         paddingBlock="12px"
-        borderBottom={`1px solid ${XlnteeColors.GrayStrokeColor}`}
+        borderBottom={`1px solid ${theme.palette.grey["200"]}`}
         fontWeight={300}
         className="account-verification-form__title"
       >

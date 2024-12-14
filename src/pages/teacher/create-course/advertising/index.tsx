@@ -27,9 +27,7 @@ const AdvertisingPage: FC<PageProps> = ({ title }) => {
   return (
     <Box className="create-course-advertising">
       <Box className="field-box">
-        <Typography variant="h5" className="field-box__title">
-          {t("advertising.course-url-label")}*
-        </Typography>
+        <Typography className="field-box__title">{t("advertising.course-url-label")}*</Typography>
         <Typography className="field-box__subtitle">{t("advertising.course-url-description")}</Typography>
         <TextField
           variant="outlined"

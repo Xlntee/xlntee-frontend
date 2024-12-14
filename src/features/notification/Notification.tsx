@@ -1,8 +1,9 @@
 import { FC } from "react";
 import dayjs from "dayjs";
 
-import { Box, Stack, Typography } from "@mui/material";
-import { XlnteeColors } from "src/shared/themes/colors";
+import { Box, Stack, Typography, useTheme } from "@mui/material";
+
+import "./Notification.scss";
 
 type NotificationProps = {
   title: string;
@@ -11,20 +12,12 @@ type NotificationProps = {
 };
 
 const Notification: FC<NotificationProps> = ({ title, text, date }) => {
+  const theme = useTheme();
   const dateTime = dayjs(date).format("HH:MM");
   const dateSimple = dayjs(date).format("DD.MM.YYYY");
 
   return (
-    <Stack
-      className="notification"
-      direction="row"
-      alignItems="start"
-      justifyContent="space-between"
-      bgcolor={XlnteeColors.LightElementColor}
-      borderRadius="10px"
-      p="10px"
-      gap="10px"
-    >
+    <Stack className="notification">
       <Box>
         <Typography variant="body2" fontWeight={500}>
           {title}
@@ -34,10 +27,10 @@ const Notification: FC<NotificationProps> = ({ title, text, date }) => {
         </Typography>
       </Box>
       <Stack textAlign="right">
-        <Typography variant="caption" color={XlnteeColors.GrayColor600}>
+        <Typography variant="caption" color={theme.palette.grey["400"]}>
           {dateTime}
         </Typography>
-        <Typography variant="caption" color={XlnteeColors.GrayColor600}>
+        <Typography variant="caption" color={theme.palette.grey["400"]}>
           {dateSimple}
         </Typography>
       </Stack>

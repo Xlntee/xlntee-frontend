@@ -3,11 +3,10 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { yupResolver } from "@hookform/resolvers/yup";
 
-import { Box, FormLabel, Divider, Stack, Typography, Grid, Button } from "@mui/material";
+import { Box, FormLabel, Divider, Stack, Typography, Grid, Button, useTheme } from "@mui/material";
 
 import useTitle from "src/hooks/useTitle";
 import { PageProps } from "pages/type";
-import { XlnteeColors } from "src/shared/themes/colors";
 import { RootForm } from "src/widgets/forms";
 import { CheckboxField, TextField } from "src/features/form-fields";
 
@@ -23,6 +22,7 @@ export type PriceFormFields = PromoCodeCreateFormFields & {
 
 const PricePage: FC<PageProps> = ({ title }) => {
   useTitle(title);
+  const theme = useTheme();
   const { t } = useTranslation("teacher-create-course");
   const { t: tCommon } = useTranslation("common");
 
@@ -48,20 +48,33 @@ const PricePage: FC<PageProps> = ({ title }) => {
       <RootForm methods={methods}>
         <Grid container columnSpacing="20px" rowGap="20px" flexDirection={{ md: "row-reverse" }} mb="20px">
           <Grid item xs={12} md={6}>
-            <Box borderRadius="20px" padding="10px 20px" bgcolor={XlnteeColors.LightElementColor}>
-              <Typography variant="h6" color={XlnteeColors.BlackElementColor}>
+            <Box borderRadius="20px" padding="10px 20px" bgcolor={theme.palette.grey["100"]}>
+              <Typography variant="h6" color="text.secondary">
                 {t("price.info-box-title")}
               </Typography>
-              <Typography fontWeight={300} fontSize="14px !important" color={XlnteeColors.GrayColor600}>
+              <Typography fontWeight={300} color="text.secondary" fontSize="14px !important">
                 {t("price.info-box-text")}
               </Typography>
             </Box>
           </Grid>
           <Grid item xs={12} md={6}>
             <Stack gap="20px">
-              <CheckboxField name="paid" label={t("price.checkbox-label")} className="field-box" />
+              <Box className="field-box">
+                <Stack direction="row" alignItems="center">
+                  <CheckboxField
+                    id="paid"
+                    name="paid"
+                    sx={{
+                      mb: "4px"
+                    }}
+                  />
+                  <FormLabel htmlFor="paid">
+                    <Typography className="field-box__title">{t("price.checkbox-label")}</Typography>
+                  </FormLabel>
+                </Stack>
+              </Box>
               <FormLabel className="field-box">
-                <Typography mb="8px" className="field-box__title">
+                <Typography className="field-box__title" mb="8px">
                   {t("price.price-field-label")}
                 </Typography>
                 <TextField

@@ -7,13 +7,13 @@ import useDrawer from "src/hooks/useDrawer";
 
 import { MenuToggler, Navigation, NavigationLinkType } from "src/features";
 import { Role, UserRoles } from "src/shared/utils/user-role";
-
 import useHeaderNavigationStudent from "src/hooks/useHeaderNavigationStudent";
 import useHeaderNavigationTeacher from "src/hooks/useHeaderNavigationTeacher";
 import { useAuth } from "src/hooks/useAuth";
 import { HideMediaContainer } from "src/features/hide-media-container";
 
 import { User } from "../user";
+import { ThemeModeToggler } from "../theme-mode-toggler";
 
 import "./HeaderProfile.scss";
 
@@ -69,6 +69,7 @@ const HeaderProfile: FC<HeaderProfileProps> = ({ children, link, tools, classNam
             </Box>
           )}
           <Stack direction="row" alignItems="center" gap="10px" className="header-profile__nav-right">
+            <ThemeModeToggler />
             <Stack direction="row" alignItems="center" gap="10px" className="header-profile__tools">
               {tools}
               <User />

@@ -52,7 +52,7 @@
     }
 
     a {
-      color: rgb(var(--element-color));
+      color: rgb(var(--main-element-color));
       font-size: 14px;
     }
   }
@@ -75,7 +75,7 @@
     }
 
     svg {
-      color: rgb(var(--dark-color));
+      color: rgb(var(--main-element-color));
 
       @include mixins.media(tablet) {
         font-size: 30px;
@@ -91,7 +91,7 @@
     }
 
     .active {
-      color: rgb(var(--primary-color));
+      color: rgb(var(--brand-color));
 
       svg {
         color: inherit;

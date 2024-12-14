@@ -79,7 +79,7 @@ const StudentProfileForm: FC = () => {
         {fields.map(({ name, label, placeholder }) => (
           <Grid key={name} item xs={12} sm={6}>
             <FormLabel className="field-box">
-              <Typography mb="8px" variant="body2" className="field-box__title">
+              <Typography className="field-box__title" mb="8px">
                 {label}
               </Typography>
               <Stack direction="row" gap="10px" alignItems="center">
