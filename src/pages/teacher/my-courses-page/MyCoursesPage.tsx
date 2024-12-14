@@ -4,7 +4,7 @@ import { Box, Container } from "@mui/material";
 
 import { AppRoutes } from "src/shared/routes";
 import { CourseCard } from "src/widgets/components";
-import useTitle from "src/hooks/useTitle";
+import useTitle from "src/shared/hooks/useTitle";
 import { PageProps } from "pages/type";
 import { CardList } from "src/shared/ui";
 

@@ -1,7 +1,7 @@
 import { FC } from "react";
 
-import useDrawer from "src/hooks/useDrawer";
-import useHeaderNavigation from "src/hooks/useHeaderNavigation";
+import useDrawer from "src/shared/hooks/useDrawer";
+import useHeaderNavigation from "src/shared/hooks/useHeaderNavigation";
 
 import NavigationDrawer from "../navigation-drawer";
 

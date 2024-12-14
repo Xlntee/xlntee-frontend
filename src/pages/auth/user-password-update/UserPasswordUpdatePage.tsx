@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import { Box, Container, Typography } from "@mui/material";
 
-import useTitle from "src/hooks/useTitle";
+import useTitle from "src/shared/hooks/useTitle";
 import { PageProps } from "pages/type";
 import { UserPasswordUpdateForm, UserPasswordUpdateFormFields } from "src/widgets/forms";
 import { InfoBlock } from "../info-block";

@@ -10,7 +10,7 @@ import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import ArticleIcon from "@mui/icons-material/Article";
 
-import useDialog from "src/hooks/useDialog";
+import useDialog from "src/shared/hooks/useDialog";
 import { FileUpload, VideoUpload } from "src/shared/ui";
 import { TextField } from "src/shared/ui/form-fields";
 

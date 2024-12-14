@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Box } from "@mui/material";
 
-import useTitle from "src/hooks/useTitle";
+import useTitle from "src/shared/hooks/useTitle";
 import { PageProps } from "pages/type";
 
 const CourseTestPage: FC<PageProps> = ({ title }) => {

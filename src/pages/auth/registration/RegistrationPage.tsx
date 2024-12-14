@@ -3,7 +3,7 @@ import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-import useTitle from "src/hooks/useTitle";
+import useTitle from "src/shared/hooks/useTitle";
 import { PageProps } from "pages/type";
 
 import {

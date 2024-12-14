@@ -4,9 +4,9 @@ import { useTranslation } from "react-i18next";
 import { Box, Typography, TextField, InputAdornment, Button } from "@mui/material";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 
-import useTitle from "src/hooks/useTitle";
+import useTitle from "src/shared/hooks/useTitle";
 import { PageProps } from "pages/type";
-import useSnackbarAlert from "src/hooks/useSnackbarAlert";
+import useSnackbarAlert from "src/shared/hooks/useSnackbarAlert";
 import { Snackbar } from "src/shared/ui";
 
 const AdvertisingPage: FC<PageProps> = ({ title }) => {

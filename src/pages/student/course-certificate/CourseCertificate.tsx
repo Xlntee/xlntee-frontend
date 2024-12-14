@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import { Box, Typography } from "@mui/material";
 
-import useTitle from "src/hooks/useTitle";
+import useTitle from "src/shared/hooks/useTitle";
 import { PageProps } from "pages/type";
 
 const CourseCertificate: FC<PageProps> = ({ title }) => {

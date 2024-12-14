@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import { Box, Stack, Container, Typography, Button } from "@mui/material";
 
-import useTitle from "src/hooks/useTitle";
+import useTitle from "src/shared/hooks/useTitle";
 import { PageProps } from "pages/type";
 import { AppRoutes } from "src/shared/routes";
 

@@ -4,7 +4,7 @@ import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
 import { useForm } from "react-hook-form";
 
 import { authApiSlice, useLoginMutation } from "src/app/store/slices/auth/api";
-import useTitle from "src/hooks/useTitle";
+import useTitle from "src/shared/hooks/useTitle";
 
 import { PageProps } from "pages/type";
 

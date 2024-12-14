@@ -7,7 +7,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 
 import { MenuToggler } from "src/shared/ui";
-import useDialog from "src/hooks/useDialog";
+import useDialog from "src/shared/hooks/useDialog";
 
 const StudentCourseShareDialog: FC = () => {
   const { t } = useTranslation("student");

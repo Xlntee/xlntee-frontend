@@ -7,7 +7,7 @@ import { Box, Stack, Typography, useTheme } from "@mui/material";
 import { AppRoutes } from "src/shared/routes";
 
 import { PageProps } from "pages/type";
-import useTitle from "src/hooks/useTitle";
+import useTitle from "src/shared/hooks/useTitle";
 import { AuthPasswordUpdateForm, PasswordUpdateFormFields } from "src/widgets/forms";
 
 const AuthPasswordUpdatePage: FC<PageProps> = ({ title }) => {

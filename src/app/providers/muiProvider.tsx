@@ -1,5 +1,5 @@
 import { CssBaseline, ThemeProvider } from "@mui/material";
-import { useThemeMode } from "src/hooks/useThemeMode";
+import { useThemeMode } from "src/shared/hooks/useThemeMode";
 
 import getTheme from "src/shared/themes/theme";
 

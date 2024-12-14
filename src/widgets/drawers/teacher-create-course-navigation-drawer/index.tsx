@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import useDrawer from "src/hooks/useDrawer";
+import useDrawer from "src/shared/hooks/useDrawer";
 import useHeaderNavigationTeacher from "src/hooks/useHeaderNavigationTeacher";
 import NavigationDrawer from "../navigation-drawer";
 

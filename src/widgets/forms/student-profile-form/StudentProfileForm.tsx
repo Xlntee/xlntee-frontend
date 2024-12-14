@@ -8,7 +8,7 @@ import EditIcon from "@mui/icons-material/Edit";
 
 import { TextField } from "src/shared/ui/form-fields";
 import { RootForm } from "src/widgets/forms";
-import { useAuth } from "src/hooks/useAuth";
+import { useAuth } from "src/shared/hooks/useAuth";
 
 type StudentProfileFormFields = {
   firstName: string;

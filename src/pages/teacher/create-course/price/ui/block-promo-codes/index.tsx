@@ -6,11 +6,11 @@ import { v4 as uuidv4 } from "uuid";
 import { Box, Divider, Typography } from "@mui/material";
 
 import { Snackbar } from "src/shared/ui";
-import useSnackbarAlert from "src/hooks/useSnackbarAlert";
+import useSnackbarAlert from "src/shared/hooks/useSnackbarAlert";
 
 import PromoCodeCreate, { PromoCodeCreateFormFields } from "../promo-code-create";
 import PromoRow from "../promo-row";
-import useDialog from "src/hooks/useDialog";
+import useDialog from "src/shared/hooks/useDialog";
 
 type PromoCode = {
   id: string;

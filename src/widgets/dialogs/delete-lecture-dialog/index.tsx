@@ -8,7 +8,7 @@ import { MenuToggler } from "src/shared/ui";
 
 import { deleteLecture } from "pages/teacher/create-course/structure/store/lessonsSlice";
 
-import useDialog from "src/hooks/useDialog";
+import useDialog from "src/shared/hooks/useDialog";
 
 const DeleteLectureDialog: FC = () => {
   const { t } = useTranslation("dialog-modal");

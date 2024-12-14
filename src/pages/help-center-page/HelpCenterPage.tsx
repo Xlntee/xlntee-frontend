@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { Box, Button, Container, Stack, Typography, useTheme } from "@mui/material";
 import CheckIcon from "@mui/icons-material/Check";
 
-import useTitle from "src/hooks/useTitle";
+import useTitle from "src/shared/hooks/useTitle";
 import { HelpCenterForm, HelpCenterFormFields } from "src/widgets/forms";
 import { PageProps } from "pages/type";
 

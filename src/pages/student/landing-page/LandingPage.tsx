@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
-import useTitle from "src/hooks/useTitle";
+import useTitle from "src/shared/hooks/useTitle";
 import { PageProps } from "pages/type";
 import { SectionLandingHero, SectionLandingAbout, SectionLandingContact } from "src/widgets/sections";
 import { SectionFeatures } from "./ui";

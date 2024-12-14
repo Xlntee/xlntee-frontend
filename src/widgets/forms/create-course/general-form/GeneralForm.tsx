@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 
 import { Box, Typography, Stack, FormLabel, Grid, Button } from "@mui/material";
 
-import useTitle from "src/hooks/useTitle";
+import useTitle from "src/shared/hooks/useTitle";
 import { PageProps } from "pages/type";
 
 import { Difficulty, Language } from "src/entities/course/model";

@@ -1,7 +1,7 @@
 import { FC, ReactNode } from "react";
 import { Navigate, useLocation } from "react-router-dom";
 
-import { useAuth } from "src/hooks/useAuth";
+import { useAuth } from "src/shared/hooks/useAuth";
 
 import { AppRoutes, rolePrivateRoutes } from "src/shared/routes";
 

@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import { Box, Stack } from "@mui/material";
 
-import useTitle from "src/hooks/useTitle";
+import useTitle from "src/shared/hooks/useTitle";
 import { ImageUpload } from "src/shared/ui";
 import { PageProps } from "pages/type";
 import { LecturerForm } from "src/widgets/forms";

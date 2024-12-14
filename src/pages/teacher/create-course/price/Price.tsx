@@ -5,7 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 
 import { Box, FormLabel, Divider, Stack, Typography, Grid, Button, useTheme } from "@mui/material";
 
-import useTitle from "src/hooks/useTitle";
+import useTitle from "src/shared/hooks/useTitle";
 import { PageProps } from "pages/type";
 import { RootForm } from "src/widgets/forms";
 import { CheckboxField, TextField } from "src/shared/ui/form-fields";

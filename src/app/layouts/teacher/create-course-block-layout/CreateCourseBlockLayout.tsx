@@ -10,7 +10,7 @@ import { closeDrawer } from "src/app/store/slices/drawer/slice";
 import { useAppDispatch } from "src/app/store/store";
 import { HideMediaContainer } from "src/shared/ui/hide-media-container";
 
-import useDrawer from "src/hooks/useDrawer";
+import useDrawer from "src/shared/hooks/useDrawer";
 import { SidebarMenu } from "./ui";
 
 import "./CreateCourseBlockLayout.scss";

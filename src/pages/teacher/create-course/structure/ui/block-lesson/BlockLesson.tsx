@@ -18,7 +18,7 @@ import { addLecture, selectLessons, updateLesson } from "../../store/lessonsSlic
 import { BlockLecture } from "../block-lecture";
 import { lessonSingleValidationSchema, LessonSingleFormValues } from "./validation";
 import { getConvertedLessonFormValuesToLesson } from "./utils";
-import useDialog from "src/hooks/useDialog";
+import useDialog from "src/shared/hooks/useDialog";
 
 import "./BlockLesson.scss";
 

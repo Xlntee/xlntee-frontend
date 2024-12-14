@@ -3,7 +3,7 @@ import cn from "classnames";
 import { Link, useLocation } from "react-router-dom";
 
 import { Box, List, ListItem, Typography } from "@mui/material";
-import useDrawer from "src/hooks/useDrawer";
+import useDrawer from "src/shared/hooks/useDrawer";
 
 import "./Navigation.scss";
 
