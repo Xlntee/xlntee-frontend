@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from "react";
 
 import { Box, Container } from "@mui/material";
-import { CardList } from "src/features/card-list";
+import { CardList } from "src/shared/ui/card-list";
 import { CardSkeleton } from "../card-skeleton";
 
 type GridCardsProps = {

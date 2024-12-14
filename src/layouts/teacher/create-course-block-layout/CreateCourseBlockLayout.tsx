@@ -8,7 +8,7 @@ import ErrorOutlineOutlinedIcon from "@mui/icons-material/ErrorOutlineOutlined";
 
 import { closeDrawer } from "src/app/store/slices/drawer/slice";
 import { useAppDispatch } from "src/app/store/store";
-import { HideMediaContainer } from "src/features/hide-media-container";
+import { HideMediaContainer } from "src/shared/ui/hide-media-container";
 
 import useDrawer from "src/hooks/useDrawer";
 import { SidebarMenu } from "./ui";

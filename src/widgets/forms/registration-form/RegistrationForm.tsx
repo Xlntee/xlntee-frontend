@@ -8,13 +8,13 @@ import cn from "classnames";
 import { Button, Stack, Typography } from "@mui/material";
 import SchoolOutlinedIcon from "@mui/icons-material/SchoolOutlined";
 
-import { TextField, PasswordField } from "src/features/form-fields";
+import { TextField, PasswordField } from "src/shared/ui/form-fields";
 import { RootForm } from "src/widgets/forms";
 
 import { AppRoutes } from "src/shared/routes";
 import LocalStorageService from "src/shared/local-storage";
 import { Role, UserRoles } from "src/shared/config/user-role";
-import { PasswordValidationPanel } from "src/features";
+import { PasswordValidationPanel } from "src/shared/ui";
 
 import { useValidationSchema } from "./validation";
 

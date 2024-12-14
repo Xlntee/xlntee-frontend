@@ -6,7 +6,7 @@ import { AppRoutes } from "src/shared/routes";
 import { CourseCard } from "src/widgets/components";
 import useTitle from "src/hooks/useTitle";
 import { PageProps } from "pages/type";
-import { CardList } from "src/features";
+import { CardList } from "src/shared/ui";
 
 import CreateCourseButton from "./ui/create-course-button/CreateCourseButton";
 import { MockCourse, myCourses } from "./myCourses-mock-data";

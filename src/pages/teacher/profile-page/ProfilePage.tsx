@@ -5,7 +5,7 @@ import { Box, Container } from "@mui/material";
 
 import useTitle from "src/hooks/useTitle";
 import { PageProps } from "pages/type";
-import { ImageUpload } from "src/features";
+import { ImageUpload } from "src/shared/ui";
 import { TeacherProfileForm } from "src/widgets/forms";
 import withUserImageUpload from "src/hocs/withUserImageUpload";
 

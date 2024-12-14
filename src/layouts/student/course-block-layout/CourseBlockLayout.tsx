@@ -7,7 +7,7 @@ import { Box, Button, Stack, Typography } from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import LocalActivityIcon from "@mui/icons-material/LocalActivity";
 
-import { AccordionProgress } from "src/features";
+import { AccordionProgress } from "src/shared/ui";
 import { AppRoutes } from "src/shared/routes";
 
 import { CategoryLinkType, CategoryNavigation } from "./ui";

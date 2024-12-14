@@ -1,6 +1,6 @@
 import { Grid, GridSize, Stack } from "@mui/material";
 
-import { PlaceholderCard } from "src/features";
+import { PlaceholderCard } from "src/shared/ui";
 
 type ResponsiveType = {
   xs: GridSize;

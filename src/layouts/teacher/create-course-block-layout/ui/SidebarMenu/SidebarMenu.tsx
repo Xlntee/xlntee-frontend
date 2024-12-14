@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import { Stack, Button } from "@mui/material";
 
-import { Progress } from "src/features";
+import { Progress } from "src/shared/ui";
 
 import { NavigationList } from "../NavigationList";
 

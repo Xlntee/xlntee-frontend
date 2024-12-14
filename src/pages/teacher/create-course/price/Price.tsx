@@ -8,7 +8,7 @@ import { Box, FormLabel, Divider, Stack, Typography, Grid, Button, useTheme } fr
 import useTitle from "src/hooks/useTitle";
 import { PageProps } from "pages/type";
 import { RootForm } from "src/widgets/forms";
-import { CheckboxField, TextField } from "src/features/form-fields";
+import { CheckboxField, TextField } from "src/shared/ui/form-fields";
 
 import { defaultValuesForm } from "./initialDate";
 import BlockPromoCodes from "./ui/block-promo-codes";

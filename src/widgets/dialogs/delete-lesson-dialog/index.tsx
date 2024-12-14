@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { Box, Button, DialogTitle, DialogActions } from "@mui/material";
 
 import { useAppDispatch } from "src/app/store/store";
-import { MenuToggler } from "src/features";
+import { MenuToggler } from "src/shared/ui";
 
 import { deleteLesson } from "pages/teacher/create-course/structure/store/lessonsSlice";
 

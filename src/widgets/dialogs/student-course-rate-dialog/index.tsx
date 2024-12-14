@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import { Stack, Button, Box, Typography, TextField } from "@mui/material";
 
-import { MenuToggler, Rating } from "src/features";
+import { MenuToggler, Rating } from "src/shared/ui";
 import useDialog from "src/hooks/useDialog";
 
 const StudentCourseRateDialog: FC = () => {

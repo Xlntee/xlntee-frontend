@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { NavigationLinkType } from "src/features";
+import { NavigationLinkType } from "src/shared/ui";
 
 type UseHeaderNavigationProps = {
   navigationList: NavigationLinkType[];

@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import { Progress } from "src/features";
+import { Progress } from "src/shared/ui";
 
 const CourseProgress: FC = () => {
   const value = 60;

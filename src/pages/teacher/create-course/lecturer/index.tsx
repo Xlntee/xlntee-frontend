@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { Box, Stack } from "@mui/material";
 
 import useTitle from "src/hooks/useTitle";
-import { ImageUpload } from "src/features";
+import { ImageUpload } from "src/shared/ui";
 import { PageProps } from "pages/type";
 import { LecturerForm } from "src/widgets/forms";
 import withUserImageUpload from "src/hocs/withUserImageUpload";

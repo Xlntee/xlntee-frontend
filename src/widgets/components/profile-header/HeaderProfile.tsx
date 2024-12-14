@@ -5,12 +5,12 @@ import { Box, Container, Stack } from "@mui/material";
 
 import useDrawer from "src/hooks/useDrawer";
 
-import { MenuToggler, Navigation, NavigationLinkType } from "src/features";
+import { MenuToggler, Navigation, NavigationLinkType } from "src/shared/ui";
 import { Role, UserRoles } from "src/shared/config/user-role";
 import useHeaderNavigationStudent from "src/hooks/useHeaderNavigationStudent";
 import useHeaderNavigationTeacher from "src/hooks/useHeaderNavigationTeacher";
 import { useAuth } from "src/hooks/useAuth";
-import { HideMediaContainer } from "src/features/hide-media-container";
+import { HideMediaContainer } from "src/shared/ui/hide-media-container";
 
 import { User } from "../user";
 import { ThemeModeToggler } from "../theme-mode-toggler";

@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import { Button, Stack, Box, FormLabel, Typography } from "@mui/material";
 
 import { RootForm } from "src/widgets/forms";
-import { PasswordField } from "src/features/form-fields";
+import { PasswordField } from "src/shared/ui/form-fields";
 
 import { useValidationSchema } from "./validation";
 

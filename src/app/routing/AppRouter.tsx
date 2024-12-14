@@ -20,7 +20,7 @@ import { LoginForm, RegistrationForm, AccountVerificationForm } from "src/widget
 import AuthTab from "src/widgets/components/auth-tab/AuthTab";
 
 import NotFoundPage from "src/pages/not-found/NotFoundPage";
-import { GridCardSkeleton } from "src/features/skeletons";
+import { GridCardSkeleton } from "src/shared/ui/skeletons";
 import { SuspenseWrapper } from "src/shared/ui/suspens-wrapper";
 
 // Lazy load the component

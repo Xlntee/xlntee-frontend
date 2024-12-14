@@ -7,7 +7,7 @@ import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import useTitle from "src/hooks/useTitle";
 import { PageProps } from "pages/type";
 import useSnackbarAlert from "src/hooks/useSnackbarAlert";
-import { Snackbar } from "src/features";
+import { Snackbar } from "src/shared/ui";
 
 const AdvertisingPage: FC<PageProps> = ({ title }) => {
   useTitle(title);

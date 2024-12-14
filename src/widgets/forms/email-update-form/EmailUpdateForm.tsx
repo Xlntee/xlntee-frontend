@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import { Button, Stack, Box, FormLabel, Typography } from "@mui/material";
 
 import { RootForm } from "src/widgets/forms";
-import { TextField } from "src/features/form-fields";
+import { TextField } from "src/shared/ui/form-fields";
 
 import { getSecureEmail } from "src/shared/config/methods";
 

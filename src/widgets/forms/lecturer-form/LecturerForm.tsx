@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 
 import { Box, Typography, Stack, FormLabel, Button } from "@mui/material";
 
-import { AutocompleteField, TextField } from "src/features/form-fields";
+import { AutocompleteField, TextField } from "src/shared/ui/form-fields";
 import { RootForm } from "src/widgets/forms";
 
 import { defaultValuesForm } from "./initialData";

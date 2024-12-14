@@ -6,7 +6,7 @@ import * as yup from "yup";
 import { FormLabel, Stack, Typography, Button } from "@mui/material";
 
 import { RootForm } from "src/widgets/forms";
-import { CheckboxField, TextField } from "src/features/form-fields";
+import { CheckboxField, TextField } from "src/shared/ui/form-fields";
 
 import { defaultValuesForm } from "./initialData";
 import { yupResolver } from "@hookform/resolvers/yup";

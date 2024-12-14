@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import { Grid, Button, FormLabel, Typography, Stack } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 
-import { TextField } from "src/features/form-fields";
+import { TextField } from "src/shared/ui/form-fields";
 import { RootForm } from "src/widgets/forms";
 import { useAuth } from "src/hooks/useAuth";
 

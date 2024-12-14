@@ -7,7 +7,7 @@ import { Button } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 import { RootForm } from "src/widgets/forms";
-import { TextField } from "src/features/form-fields";
+import { TextField } from "src/shared/ui/form-fields";
 
 import { useValidationSchema } from "./validation";
 

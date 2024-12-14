@@ -6,7 +6,7 @@ import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 
-import { MenuToggler } from "src/features";
+import { MenuToggler } from "src/shared/ui";
 import useDialog from "src/hooks/useDialog";
 
 const StudentCourseShareDialog: FC = () => {

@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { Button, Typography, Stack, useTheme } from "@mui/material";
 
 import useTitle from "src/hooks/useTitle";
-import { OtpInput } from "src/features";
+import { OtpInput } from "src/shared/ui";
 import { PageProps } from "pages/type";
 import { AppRoutes } from "src/shared/routes";
 import LocalStorageService from "src/shared/local-storage";

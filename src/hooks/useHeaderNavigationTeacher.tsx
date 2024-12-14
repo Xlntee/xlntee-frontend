@@ -5,7 +5,7 @@ import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
 
 import { AppRoutes } from "src/shared/routes";
-import { NavigationLinkType } from "src/features";
+import { NavigationLinkType } from "src/shared/ui";
 
 type useHeaderNavigationTeacherProps = {
   navigationList: NavigationLinkType[];

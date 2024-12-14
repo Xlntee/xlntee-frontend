@@ -6,7 +6,7 @@ import DoneOutlineIcon from "@mui/icons-material/DoneOutline";
 import LocalActivityIcon from "@mui/icons-material/LocalActivity";
 
 import { AppRoutes } from "src/shared/routes";
-import { NavigationLinkType } from "src/features";
+import { NavigationLinkType } from "src/shared/ui";
 
 type useHeaderNavigationStudentProps = {
   navigationList: NavigationLinkType[];

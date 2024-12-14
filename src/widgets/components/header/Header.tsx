@@ -4,13 +4,13 @@ import { useTranslation } from "react-i18next";
 
 import { Box, Button, Container, Stack } from "@mui/material";
 
-import { MenuToggler, Navigation } from "src/features";
+import { MenuToggler, Navigation } from "src/shared/ui";
 import { AppRoutes } from "src/shared/routes";
 
 import { useAuth } from "src/hooks/useAuth";
 import useDrawer from "src/hooks/useDrawer";
 import useHeaderNavigation from "src/hooks/useHeaderNavigation";
-import { HideMediaContainer } from "src/features/hide-media-container";
+import { HideMediaContainer } from "src/shared/ui/hide-media-container";
 
 import { User } from "../user";
 import { LanguageSwitcher } from "../language-switcher";

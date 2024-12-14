@@ -5,7 +5,7 @@ import { Button, Typography } from "@mui/material";
 import StarIcon from "@mui/icons-material/Star";
 
 import useDialog from "src/hooks/useDialog";
-import { HideMediaContainer } from "src/features/hide-media-container";
+import { HideMediaContainer } from "src/shared/ui/hide-media-container";
 
 import "./CourseRate.scss";
 

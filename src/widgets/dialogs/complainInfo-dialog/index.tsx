@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import { Box } from "@mui/material";
 
-import { InfoCourseComplain, MenuToggler } from "src/features";
+import { InfoCourseComplain, MenuToggler } from "src/shared/ui";
 import useDialog from "src/hooks/useDialog";
 
 const ComplainInfoDialog: FC = () => {

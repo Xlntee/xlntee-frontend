@@ -9,7 +9,7 @@ import useTitle from "src/hooks/useTitle";
 import { PageProps } from "pages/type";
 
 import { Difficulty, Language } from "src/entities/course/model";
-import { AutocompleteField, CheckboxField, SelectField, TextField } from "src/features/form-fields";
+import { AutocompleteField, CheckboxField, SelectField, TextField } from "src/shared/ui/form-fields";
 
 import { useValidationSchema } from "./validation";
 import { defaultValuesForm } from "./initialData";

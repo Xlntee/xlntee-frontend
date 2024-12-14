@@ -2,7 +2,7 @@ import Box from "@mui/material/Box";
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
-import { InfoCourseComplain, MenuToggler } from "src/features";
+import { InfoCourseComplain, MenuToggler } from "src/shared/ui";
 import useDialog from "src/hooks/useDialog";
 
 const RefundInfoDialog: FC = () => {

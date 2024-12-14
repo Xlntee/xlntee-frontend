@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import { Button, Container, Stack, Box, Typography, Grid, TextField, InputLabel, Divider } from "@mui/material";
 
-import { DialogModal, Snackbar } from "src/features";
+import { DialogModal, Snackbar } from "src/shared/ui";
 
 import useTitle from "src/hooks/useTitle";
 import { PageProps } from "pages/type";

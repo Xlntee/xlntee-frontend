@@ -12,7 +12,7 @@ import ShareIcon from "@mui/icons-material/Share";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
-import { Rating } from "src/features";
+import { Rating } from "src/shared/ui";
 import { DifficultyType, LanguageType } from "src/entities/course/model";
 
 import "./SectionCourseHero.scss";

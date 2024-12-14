@@ -6,7 +6,7 @@ import { Button, Stack, Box, Typography } from "@mui/material";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 
-import { Rating } from "src/features";
+import { Rating } from "src/shared/ui";
 
 import "./StudentCourseCard.scss";
 

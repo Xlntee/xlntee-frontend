@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 
 import { Box, Divider, Typography } from "@mui/material";
 
-import { Snackbar } from "src/features";
+import { Snackbar } from "src/shared/ui";
 import useSnackbarAlert from "src/hooks/useSnackbarAlert";
 
 import PromoCodeCreate, { PromoCodeCreateFormFields } from "../promo-code-create";

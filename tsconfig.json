@@ -27,18 +27,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": [
-    "src",
-    "legacy/cypress",
-    "legacy/App.test.tsx",
-    "legacy/price",
-    "src/features/rating",
-    "legacy/test",
-    "legacy/header",
-    "legacy/filter",
-    "legacy/pictures-section",
-    "legacy/landing"
-  ],
+  "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }],
   "noFallthroughCasesInSwitch": true,
   "types": ["vitest/importMeta", "cypress"]

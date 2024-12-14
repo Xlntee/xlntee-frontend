@@ -6,8 +6,8 @@ import { useTranslation } from "react-i18next";
 import { Button, Stack } from "@mui/material";
 
 import { useValidationSchema } from "./validation";
-import { PasswordValidationPanel } from "src/features";
-import { TextField, PasswordField } from "src/features/form-fields";
+import { PasswordValidationPanel } from "src/shared/ui";
+import { TextField, PasswordField } from "src/shared/ui/form-fields";
 import { RootForm } from "../root-form";
 
 export type PasswordUpdateFormFields = {

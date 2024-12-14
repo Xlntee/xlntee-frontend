@@ -6,8 +6,8 @@ import { useTranslation } from "react-i18next";
 
 import { Box, Typography, Stack, FormLabel, Grid, Button, FormHelperText } from "@mui/material";
 
-import { ImageUpload, ListRequirements, VideoUpload } from "src/features";
-import { AutocompleteField } from "src/features/form-fields";
+import { ImageUpload, ListRequirements, VideoUpload } from "src/shared/ui";
+import { AutocompleteField } from "src/shared/ui/form-fields";
 
 import { useValidationSchema } from "./validation";
 import { defaultValuesForm } from "./initialData";

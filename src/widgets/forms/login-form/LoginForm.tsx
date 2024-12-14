@@ -9,7 +9,7 @@ import { Button, Stack, Typography } from "@mui/material";
 
 import { RootForm } from "src/widgets/forms";
 import { AppRoutes } from "src/shared/routes";
-import { PasswordField, TextField } from "src/features/form-fields";
+import { PasswordField, TextField } from "src/shared/ui/form-fields";
 
 import { loginApiSlice } from "./api";
 import { useLogin } from "./useLogin";

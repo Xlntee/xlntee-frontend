@@ -10,7 +10,7 @@ import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 
 import { RootForm } from "src/widgets/forms";
-import { CheckboxField, TextField } from "src/features/form-fields";
+import { CheckboxField, TextField } from "src/shared/ui/form-fields";
 
 import { useAppDispatch, useAppSelector } from "src/app/store/store";
 import { addLecture, selectLessons, updateLesson } from "../../store/lessonsSlice";
