@@ -7,7 +7,7 @@ import useTitle from "src/shared/hooks/useTitle";
 import { ImageUpload } from "src/shared/ui";
 import { PageProps } from "pages/type";
 import { LecturerForm } from "src/widgets/forms";
-import withUserImageUpload from "src/hocs/withUserImageUpload";
+import withUserImageUpload from "src/shared/hocs/withUserImageUpload";
 
 export type LectureFormFields = {
   username: string;

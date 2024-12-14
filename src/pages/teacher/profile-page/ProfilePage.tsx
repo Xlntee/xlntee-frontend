@@ -7,7 +7,7 @@ import useTitle from "src/shared/hooks/useTitle";
 import { PageProps } from "pages/type";
 import { ImageUpload } from "src/shared/ui";
 import { TeacherProfileForm } from "src/widgets/forms";
-import withUserImageUpload from "src/hocs/withUserImageUpload";
+import withUserImageUpload from "src/shared/hocs/withUserImageUpload";
 
 const ProfilePage: FC<PageProps> = ({ title }) => {
   useTitle(title);
