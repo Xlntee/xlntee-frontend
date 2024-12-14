@@ -2,9 +2,9 @@ import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { disableReactDevTools } from "@fvilers/disable-react-devtools";
 
-import store, { persistor } from "./store/store";
-import { AuthProvider } from "./context/auth";
-import { ThemeModeProvider } from "./context/theme-mode";
+import store, { persistor } from "../store/store";
+import { AuthProvider } from "../context/auth";
+import { ThemeModeProvider } from "../context/theme-mode";
 import MuiProvider from "./muiProvider";
 
 import "src/shared/i18n";

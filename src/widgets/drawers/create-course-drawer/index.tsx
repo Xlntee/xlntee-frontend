@@ -3,7 +3,8 @@ import { useTranslation } from "react-i18next";
 
 import { Typography } from "@mui/material";
 
-import { SidebarMenu } from "src/layouts/teacher/create-course-block-layout/ui";
+import { SidebarMenu } from "src/app/layouts/teacher/create-course-block-layout/ui";
+
 import DrawerHeader from "../drawer-header";
 import DrawerBody from "../drawer-body";
 

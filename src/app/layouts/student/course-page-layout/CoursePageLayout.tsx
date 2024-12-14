@@ -9,7 +9,7 @@ import { UserRoles } from "src/shared/config/user-role";
 import { AppRoutes } from "src/shared/routes";
 import { CourseProgress } from "src/widgets/student";
 
-import RootLayout from "src/layouts/RootLayout";
+import RootLayout from "../../RootLayout";
 
 const CoursePageLayout: FC = () => {
   const { t } = useTranslation("auth");

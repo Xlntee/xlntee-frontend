@@ -11,7 +11,7 @@ import {
   TeacherCreateCoursePageLayout,
   StudentCourseBlockLayout,
   StudentCoursePageLayout
-} from "src/layouts";
+} from "src/app/layouts";
 
 import { ProtectedRoute } from "./ProtectedRoute";
 
