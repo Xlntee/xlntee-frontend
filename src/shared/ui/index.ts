@@ -20,3 +20,6 @@ export * from "./card-list";
 export * from "./info-course-complain";
 export * from "./list-requirements";
 export * from "./app-loader";
+export * from "./auth-tab";
+export * from "./root-form";
+export * from "./form-fields";

@@ -5,10 +5,9 @@ import { Box, Container, Typography } from "@mui/material";
 
 import useTitle from "src/shared/hooks/useTitle";
 import { PageProps } from "pages/type";
-import { EmailUpdateForm, EmailUpdateFormFields } from "src/widgets/forms";
-import { InfoBlock } from "../info-block";
+import { InfoBlock } from "src/shared/ui/info-block";
 
-import "./EmailUpdatePage.scss";
+import { EmailUpdateForm, EmailUpdateFormFields } from "./ui";
 
 const EmailUpdatePage: FC<PageProps> = ({ title }) => {
   useTitle(title);
@@ -27,7 +26,7 @@ const EmailUpdatePage: FC<PageProps> = ({ title }) => {
   }
 
   return (
-    <Box component="section" className="section-email-update" py="40px">
+    <Box component="section" py="40px">
       <Container>
         {!success ? (
           <Box maxWidth="450px" marginInline="auto">

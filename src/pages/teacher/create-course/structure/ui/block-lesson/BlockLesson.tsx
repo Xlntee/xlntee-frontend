@@ -9,8 +9,7 @@ import { Box, Typography, Stack, Button } from "@mui/material";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 
-import { RootForm } from "src/widgets/forms";
-import { CheckboxField, TextField } from "src/shared/ui/form-fields";
+import { CheckboxField, TextField, RootForm } from "src/shared/ui";
 
 import { useAppDispatch, useAppSelector } from "src/app/store/store";
 import { addLecture, selectLessons, updateLesson } from "../../store/lessonsSlice";

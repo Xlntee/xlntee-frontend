@@ -16,16 +16,18 @@ import {
 import { ProtectedRoute } from "./ProtectedRoute";
 
 import { AppRoutes } from "src/shared/routes";
-import { LoginForm, RegistrationForm, AccountVerificationForm } from "src/widgets/forms";
-import AuthTab from "src/widgets/components/auth-tab/AuthTab";
+import { AuthTab } from "src/shared/ui";
 
 import NotFoundPage from "src/pages/not-found/NotFoundPage";
 import { GridCardSkeleton } from "src/shared/ui/skeletons";
 import { SuspenseWrapper } from "src/shared/ui/suspens-wrapper";
 
 // Lazy load the component
+const LoginPage = lazy(() => import("src/pages/auth/login/LoginPage"));
+const RegistrationPage = lazy(() => import("src/pages/auth/registration/RegistrationPage"));
+const AccountVerification = lazy(() => import("src/pages/auth/account-verification/AccountVerification"));
 const EmailUpdatePage = lazy(() => import("src/pages/auth/email-update/EmailUpdatePage"));
-const UserPasswordUpdatePage = lazy(() => import("pages/auth/user-password-update/UserPasswordUpdatePage"));
+const UserPasswordUpdatePage = lazy(() => import("pages/auth/password-update/PasswordUpdatePage"));
 const AuthPasswordUpdatePage = lazy(() => import("pages/auth/auth-password-update/AuthPasswordUpdatePage"));
 
 const CoursePreviewPage = lazy(() => import("pages/teacher/course-preview/CoursePreviewPage"));
@@ -66,7 +68,7 @@ const authRoutes = [
         element: (
           <SuspenseWrapper>
             <AuthTab>
-              <LoginForm />
+              <LoginPage />
             </AuthTab>
           </SuspenseWrapper>
         )
@@ -76,7 +78,7 @@ const authRoutes = [
         element: (
           <SuspenseWrapper>
             <AuthTab>
-              <RegistrationForm />
+              <RegistrationPage />
             </AuthTab>
           </SuspenseWrapper>
         )
@@ -85,7 +87,7 @@ const authRoutes = [
         path: AppRoutes.auth.accountVerification,
         element: (
           <SuspenseWrapper>
-            <AccountVerificationForm />
+            <AccountVerification />
           </SuspenseWrapper>
         )
       },

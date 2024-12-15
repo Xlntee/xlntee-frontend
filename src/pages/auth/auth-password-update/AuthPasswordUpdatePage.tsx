@@ -5,10 +5,10 @@ import { useTranslation } from "react-i18next";
 import { Box, Stack, Typography, useTheme } from "@mui/material";
 
 import { AppRoutes } from "src/shared/routes";
-
 import { PageProps } from "pages/type";
 import useTitle from "src/shared/hooks/useTitle";
-import { AuthPasswordUpdateForm, PasswordUpdateFormFields } from "src/widgets/forms";
+
+import { PasswordUpdateForm, PasswordUpdateFormFields } from "./ui";
 
 const AuthPasswordUpdatePage: FC<PageProps> = ({ title }) => {
   useTitle(title);
@@ -48,7 +48,7 @@ const AuthPasswordUpdatePage: FC<PageProps> = ({ title }) => {
           </Typography>
         </Box>
       ) : (
-        <AuthPasswordUpdateForm onSubmit={onSubmit} />
+        <PasswordUpdateForm onSubmit={onSubmit} />
       )}
       <Stack direction="column" gap="4px">
         <Typography variant="caption" className="auth-form__caption-text">
