@@ -5,14 +5,12 @@ import { yupResolver } from "@hookform/resolvers/yup";
 
 import { Box, FormLabel, Divider, Stack, Typography, Grid, Button, useTheme } from "@mui/material";
 
-import useTitle from "src/hooks/useTitle";
+import useTitle from "src/shared/hooks/useTitle";
 import { PageProps } from "pages/type";
-import { RootForm } from "src/widgets/forms";
-import { CheckboxField, TextField } from "src/features/form-fields";
+import { CheckboxField, TextField, RootForm } from "src/shared/ui";
 
+import { PromoCodeCreateFormFields, BlockPromoCodes } from "./ui";
 import { defaultValuesForm } from "./initialDate";
-import BlockPromoCodes from "./ui/block-promo-codes";
-import { PromoCodeCreateFormFields } from "./ui/promo-code-create";
 import { useValidationSchema } from "./validation";
 
 export type PriceFormFields = PromoCodeCreateFormFields & {

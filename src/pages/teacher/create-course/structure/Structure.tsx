@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { Box, Button } from "@mui/material";
 
 import { useAppDispatch, useAppSelector } from "src/app/store/store";
-import useTitle from "src/hooks/useTitle";
+import useTitle from "src/shared/hooks/useTitle";
 import { PageProps } from "pages/type";
 
 import { addLesson, selectLessons } from "./store/lessonsSlice";

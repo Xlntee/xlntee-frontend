@@ -3,8 +3,8 @@ import { useTranslation } from "react-i18next";
 
 import { Box, Stack, Typography, List, ListItem, FormControlLabel, Checkbox, Button, TextField } from "@mui/material";
 
-import { MenuToggler } from "src/features";
-import useDialog from "src/hooks/useDialog";
+import { MenuToggler } from "src/shared/ui";
+import useDialog from "src/shared/hooks/useDialog";
 
 const RefundForm: FC = () => {
   const { t } = useTranslation("student");

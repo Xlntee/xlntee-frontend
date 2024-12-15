@@ -1,0 +1,56 @@
+@use "styles/mixins.scss" as mixins;
+
+.create-course-layout {
+  --collapsed-navigation-width: 100%;
+
+  flex: 1;
+
+  &__container {
+    position: relative;
+  }
+
+  &__grid {
+    @include mixins.animate(grid-template-columns);
+
+    @include mixins.media(desktop) {
+      --collapsed-navigation-width: 350px;
+
+      display: grid;
+      grid-template-columns: var(--collapsed-navigation-width) 1fr;
+      gap: 20px;
+    }
+  }
+
+  &__aside {
+    position: relative;
+    z-index: 2;
+    background-color: var(--app-block-lecture-aside-bg-color);
+  }
+
+  .error-limits {
+    padding: 4px 10px;
+    border-radius: 25px;
+    background-color: rgb(var(--warning-extra-light-color));
+    margin-bottom: 30px;
+
+    @include mixins.media(tablet) {
+      position: absolute;
+      top: -50px;
+      left: 20px;
+      right: 20px;
+    }
+
+    .MuiTypography-body2 {
+      color: rgb(var(--main-dark-color));
+    }
+
+    a {
+      text-decoration: underline;
+      color: rgb(var(--main-dark-color));
+
+      @include mixins.hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

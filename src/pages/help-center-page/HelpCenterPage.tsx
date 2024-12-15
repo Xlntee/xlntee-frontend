@@ -5,9 +5,9 @@ import { useTranslation } from "react-i18next";
 import { Box, Button, Container, Stack, Typography, useTheme } from "@mui/material";
 import CheckIcon from "@mui/icons-material/Check";
 
-import useTitle from "src/hooks/useTitle";
-import { HelpCenterForm, HelpCenterFormFields } from "src/widgets/forms";
 import { PageProps } from "pages/type";
+import useTitle from "src/shared/hooks/useTitle";
+import { HelpCenterForm, HelpCenterFormFields } from "./ui";
 
 import "./HelpCenterPage.scss";
 
@@ -22,8 +22,6 @@ const HelpCenterPage: FC<PageProps> = ({ title }) => {
     console.log(data);
     setIsSubmit(true);
   }
-
-  //TODO: render button when user not authorized
 
   return (
     <Box className="help-center-page">

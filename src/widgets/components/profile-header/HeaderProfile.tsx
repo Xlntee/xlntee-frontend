@@ -3,14 +3,12 @@ import cn from "classnames";
 
 import { Box, Container, Stack } from "@mui/material";
 
-import useDrawer from "src/hooks/useDrawer";
+import useDrawer from "src/shared/hooks/useDrawer";
 
-import { MenuToggler, Navigation, NavigationLinkType } from "src/features";
-import { Role, UserRoles } from "src/shared/utils/user-role";
-import useHeaderNavigationStudent from "src/hooks/useHeaderNavigationStudent";
-import useHeaderNavigationTeacher from "src/hooks/useHeaderNavigationTeacher";
-import { useAuth } from "src/hooks/useAuth";
-import { HideMediaContainer } from "src/features/hide-media-container";
+import { MenuToggler, Navigation, HideMediaContainer } from "src/shared/ui";
+import { Role } from "src/shared/config/user-role";
+import useHeaderNavigation from "src/shared/hooks/useHeaderNavigation";
+import useAuth from "src/shared/hooks/useAuth";
 
 import { User } from "../user";
 import { ThemeModeToggler } from "../theme-mode-toggler";
@@ -27,8 +25,7 @@ type HeaderProfileProps = {
 
 const HeaderProfile: FC<HeaderProfileProps> = ({ children, link, tools, className, userRole }) => {
   const { isOpenDrawer, onOpenDrawer } = useDrawer();
-  const { navigationList: studentNavigationList } = useHeaderNavigationStudent();
-  const { navigationList: teacherNavigationList } = useHeaderNavigationTeacher();
+  const { navigationList } = useHeaderNavigation(userRole);
   const { isStudentRole, isTeacherRole } = useAuth();
   const isOpen = isOpenDrawer("STUDENT_COURSE_NAVIGATION_DRAWER");
 
@@ -39,16 +36,6 @@ const HeaderProfile: FC<HeaderProfileProps> = ({ children, link, tools, classNam
     if (isTeacherRole) {
       onOpenDrawer("TEACHER_CREATE_COURSE_NAVIGATION_DRAWER");
     }
-  }
-
-  function getNavigation(): NavigationLinkType[] {
-    if (userRole === UserRoles.student) {
-      return studentNavigationList;
-    }
-    if (userRole === UserRoles.teacher) {
-      return teacherNavigationList;
-    }
-    return [];
   }
 
   return (
@@ -65,7 +52,7 @@ const HeaderProfile: FC<HeaderProfileProps> = ({ children, link, tools, classNam
             </Box>
           ) : (
             <Box className="header-profile__nav-left">
-              <Navigation items={getNavigation()} />
+              <Navigation items={navigationList} />
             </Box>
           )}
           <Stack direction="row" alignItems="center" gap="10px" className="header-profile__nav-right">

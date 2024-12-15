@@ -1,7 +1,7 @@
 import { Lecture, TestConfiguraton, TestConfiguratonVariant } from "src/entities/course/model";
 import { ILessonsState } from "./lessonsSlice";
 import { v4 as uuidv4 } from "uuid";
-import { MakeKeyRequired } from "src/shared/types";
+import { MakeKeyRequired } from "src/shared/types/common";
 
 export const getInitalAnswerVariant = (): TestConfiguratonVariant => {
   return {

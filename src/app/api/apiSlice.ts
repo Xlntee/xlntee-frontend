@@ -9,7 +9,7 @@ import {
   fetchBaseQuery
 } from "@reduxjs/toolkit/query/react";
 
-import { cookieKeys } from "src/shared/utils/cookie-keys";
+import { cookieKeys } from "src/shared/config/cookie-keys";
 
 import { setCredentials } from "../store/slices/auth/slice";
 import { logOut } from "../store/modules/auth/actions";

@@ -9,10 +9,9 @@ import {
   getDialogSizeSelector,
   getIsDialogOpenedSelector
 } from "src/app/store/slices/dialog/selectors";
+import { SuspenseWrapper } from "src/shared/ui/suspens-wrapper";
 
-import { SuspenseWrapper } from "src/shared/utils/suspense-wrapper";
-
-import useDialog from "src/hooks/useDialog";
+import useDialog from "src/shared/hooks/useDialog";
 import dialogs from "../index";
 
 import "./RootDialog.scss";

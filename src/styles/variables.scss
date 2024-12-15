@@ -31,12 +31,12 @@
 
   --transition-cubic-bezier: cubic-bezier(0.4, 0, 0.2, 1);
 
-  --app-modal-bg-color: var(--main-element-contrast-color);
-  --app-block-lecture-bg-color: var(--brand-color);
-  --app-block-lecture-aside-bg-color: var(--light-color);
-  --app-block-lecture-field-bg-color: var(--light-color);
-  --app-course-btn-card-bg-color: var(--light-element-color);
-  --app-complain-field-bg-color: var(--light-element-color);
+  --app-modal-bg-color: rgb(var(--main-element-contrast-color));
+  --app-block-lecture-bg-color: rgb(var(--brand-color));
+  --app-block-lecture-aside-bg-color: rgb(var(--light-color));
+  --app-block-lecture-field-bg-color: rgb(var(--light-color));
+  --app-course-btn-card-bg-color: rgb(var(--light-element-color));
+  --app-complain-field-bg-color: rgb(var(--light-element-color));
   --app-video-description-border-color: transparent;
   --app-collapsed-navigation-bg-color: rgb(var(--light-color));
   --app-accordion-progress-color: rgb(var(--light-color));

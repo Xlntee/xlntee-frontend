@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import { Box, Stack, Typography } from "@mui/material";
 
-import { Notification } from "src/features";
+import { Notification } from "src/shared/ui";
 import DrawerHeader from "../drawer-header";
 import DrawerBody from "../drawer-body";
 

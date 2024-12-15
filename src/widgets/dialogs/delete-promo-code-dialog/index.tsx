@@ -3,8 +3,8 @@ import { useTranslation } from "react-i18next";
 
 import { Box, Button, DialogTitle, DialogActions } from "@mui/material";
 
-import { MenuToggler } from "src/features";
-import useDialog from "src/hooks/useDialog";
+import { MenuToggler } from "src/shared/ui";
+import useDialog from "src/shared/hooks/useDialog";
 
 const DeletePromoCodeDialog: FC = () => {
   const { t } = useTranslation("dialog-modal");

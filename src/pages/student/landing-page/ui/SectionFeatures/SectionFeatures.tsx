@@ -14,7 +14,7 @@ import QuizOutlinedIcon from "@mui/icons-material/QuizOutlined";
 import WorkspacePremiumOutlinedIcon from "@mui/icons-material/WorkspacePremiumOutlined";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 
-import { AppRoutes } from "src/app/routing/appRoutes";
+import { AppRoutes } from "src/shared/routes";
 import { Feature } from "src/widgets/components";
 
 const icons: JSX.Element[] = [

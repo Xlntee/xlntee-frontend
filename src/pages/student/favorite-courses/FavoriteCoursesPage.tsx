@@ -1,10 +1,10 @@
 import { FC } from "react";
 import { Box, Container } from "@mui/material";
 
-import useTitle from "src/hooks/useTitle";
+import useTitle from "src/shared/hooks/useTitle";
 import { PageProps } from "pages/type";
 import { StudentCourseCard } from "src/widgets/components";
-import { CardList } from "src/features";
+import { CardList } from "src/shared/ui";
 
 import { myCourses } from "./data";
 

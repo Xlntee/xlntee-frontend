@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import cn from "classnames";
 
 import { Select, MenuItem } from "@mui/material";
-import { languages } from "src/i18n";
+import { languages } from "src/shared/i18n";
 
 import "./LanguageSwitcher.scss";
 

@@ -1,6 +1,6 @@
 import { TestConfiguraton, TestConfiguratonVariant } from "src/entities/course/model";
 import { Lesson } from "src/entities/course/model/lesson";
-import { MakeKeyRequired } from "src/shared/types";
+import { MakeKeyRequired } from "src/shared/types/common";
 
 export type AddLecturePayload = {
   lessonId: string;

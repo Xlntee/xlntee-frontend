@@ -12,7 +12,7 @@ import { QuizAnswerList } from "../quiz-answer-list";
 import { LessonSingleFormValues } from "../block-lesson/validation";
 
 import "./BlockQuiz.scss";
-import { TextField } from "src/features/form-fields";
+import { TextField } from "src/shared/ui/form-fields";
 
 type BlockQuizProps = {
   lessonId: string;

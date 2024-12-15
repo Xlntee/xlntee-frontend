@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { Box, Stack } from "@mui/material";
 
 import { CourseCard } from "src/widgets/components";
-import { StatisticInfo } from "src/features";
+import { StatisticInfo } from "src/shared/ui";
 
 import "./CourseStatistic.scss";
 

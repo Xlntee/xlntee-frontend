@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { Box, Button, List, ListItem, FormHelperText } from "@mui/material";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 
-import { CheckboxField, TextField } from "src/features/form-fields";
+import { CheckboxField, TextField } from "src/shared/ui/form-fields";
 
 import { getInitalAnswerVariant } from "../../store/initialData";
 import { LecturesArrayFormValues } from "../block-lecture/validation";

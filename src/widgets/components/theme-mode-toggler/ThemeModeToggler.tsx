@@ -4,7 +4,7 @@ import { Button } from "@mui/material";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
 
-import { useThemeMode } from "src/hooks/useThemeMode";
+import useThemeMode from "src/shared/hooks/useThemeMode";
 
 const ThemeModeToggler: FC = () => {
   const { mode, toggleThemeMode } = useThemeMode();

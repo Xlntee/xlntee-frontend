@@ -4,17 +4,18 @@ import { useParams } from "react-router-dom";
 import { Stack } from "@mui/material";
 
 import { useGetCourseQuery } from "src/entities/course/api/coursesApiSlice";
+
+import { PageProps } from "pages/type";
+import { Difficulty, Language } from "src/entities/course/model";
+import useTitle from "src/shared/hooks/useTitle";
+
 import {
   SectionCourseInfo,
   SectionCourseHero,
   SectionCourseStructure,
   SectionCourseDescription,
   SectionCourseAbout
-} from "src/widgets/sections/sections-teacher-preview";
-import useTitle from "src/hooks/useTitle";
-import { PageProps } from "pages/type";
-
-import { Difficulty, Language } from "src/entities/course/model";
+} from "./ui";
 
 const CoursePreviewPage: FC<PageProps> = ({ title }) => {
   useTitle(title);
@@ -25,7 +26,6 @@ const CoursePreviewPage: FC<PageProps> = ({ title }) => {
     skip: !id
   });
 
-  //тимчасово, щоб ts не жалувався на undefined
   if (isLoading) {
     return <div>Loading...</div>;
   }

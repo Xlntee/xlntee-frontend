@@ -3,11 +3,12 @@ import { useTranslation } from "react-i18next";
 
 import { Box, Container } from "@mui/material";
 
-import useTitle from "src/hooks/useTitle";
+import useTitle from "src/shared/hooks/useTitle";
 import { PageProps } from "pages/type";
-import { ImageUpload } from "src/features";
-import { TeacherProfileForm } from "src/widgets/forms";
-import withUserImageUpload from "src/hocs/withUserImageUpload";
+import { ImageUpload } from "src/shared/ui";
+import withUserImageUpload from "src/shared/hocs/withUserImageUpload";
+
+import { ProfileForm } from "./ui";
 
 const ProfilePage: FC<PageProps> = ({ title }) => {
   useTitle(title);
@@ -22,7 +23,7 @@ const ProfilePage: FC<PageProps> = ({ title }) => {
           <Box maxWidth={{ xs: "100px", md: "140px" }} marginInline="auto" mb="20px">
             <WithUserImageUpload viewType="avatar" buttonText={t("upload-button")} />
           </Box>
-          <TeacherProfileForm />
+          <ProfileForm />
         </Box>
       </Container>
     </Box>

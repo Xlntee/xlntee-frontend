@@ -1,0 +1,71 @@
+@use "styles/mixins.scss" as mixins;
+@use "styles/breakpoints.scss" as breakpoints;
+
+.navigation {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include mixins.media(breakpoints.$mobile_breakpoint_min) {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 32px;
+    }
+
+    &.MuiList-root {
+      padding: 0;
+    }
+  }
+
+  &__item {
+    &.MuiListItem-root {
+      padding: 0;
+      width: initial;
+    }
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    color: rgb(var(--main-element-color));
+
+    @include mixins.animate(color);
+
+    @include mixins.hover {
+      color: rgb(var(--brand-color));
+    }
+
+    &.active {
+      color: rgb(var(--brand-color));
+    }
+  }
+
+  &__icon {
+    display: flex;
+    color: currentColor;
+    margin-right: 6px;
+  }
+
+  &__name {
+    &.MuiTypography-root {
+      color: currentColor;
+    }
+  }
+
+  &__action {
+    color: rgb(var(--light-color));
+    background-color: rgb(var(--link-color));
+    padding: 4px 14px;
+    border-radius: 25px;
+
+    &.active {
+      color: rgb(var(--light-color));
+    }
+
+    @include mixins.hover {
+      color: rgb(var(--light-color));
+    }
+  }
+}

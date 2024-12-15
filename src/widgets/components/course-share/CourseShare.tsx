@@ -4,8 +4,8 @@ import { useTranslation } from "react-i18next";
 import { Button, Typography } from "@mui/material";
 import ShareIcon from "@mui/icons-material/Share";
 
-import useDialog from "src/hooks/useDialog";
-import { HideMediaContainer } from "src/features/hide-media-container";
+import useDialog from "src/shared/hooks/useDialog";
+import { HideMediaContainer } from "src/shared/ui";
 
 import "./CourseShare.scss";
 

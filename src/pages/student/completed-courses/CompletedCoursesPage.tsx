@@ -3,10 +3,10 @@ import { useTranslation } from "react-i18next";
 
 import { Box, Container } from "@mui/material";
 
-import useTitle from "src/hooks/useTitle";
+import useTitle from "src/shared/hooks/useTitle";
 import { PageProps } from "pages/type";
-import { CardList, CourseCardProgress } from "src/features";
-import { AppRoutes } from "src/app/routing/appRoutes";
+import { CardList, CourseCardProgress } from "src/shared/ui";
+import { AppRoutes } from "src/shared/routes";
 
 import { myCourses } from "./data";
 

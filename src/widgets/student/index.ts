@@ -1,1 +1,1 @@
-export * from "./course-progress";
+export { default as CourseProgress } from "./course-progress";

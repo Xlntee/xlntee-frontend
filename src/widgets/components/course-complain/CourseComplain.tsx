@@ -7,7 +7,7 @@ import NewReleasesOutlinedIcon from "@mui/icons-material/NewReleasesOutlined";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
 
-import useDialog from "src/hooks/useDialog";
+import useDialog from "src/shared/hooks/useDialog";
 
 import "./CourseComplain.scss";
 

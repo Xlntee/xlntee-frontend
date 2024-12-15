@@ -6,7 +6,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 
 import { getUserRole } from "src/app/store/slices/user/selectors";
 
-import useDialog from "src/hooks/useDialog";
+import useDialog from "src/shared/hooks/useDialog";
 import { AccountMenu } from "../account-menu";
 
 import "./User.scss";

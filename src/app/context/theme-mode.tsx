@@ -1,7 +1,7 @@
 import { createContext, ReactNode, memo, useEffect, useState } from "react";
 
 import { PaletteMode } from "@mui/material";
-import { localStorageKeys } from "src/shared/utils/local-storage-keys";
+import { localStorageKeys } from "src/shared/config/local-storage-keys";
 
 export type ThemeModeContextType = {
   mode: PaletteMode;

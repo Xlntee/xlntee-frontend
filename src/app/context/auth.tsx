@@ -2,8 +2,8 @@ import { createContext, ReactNode, useMemo, memo, useEffect } from "react";
 
 import { getUserRole } from "src/app/store/slices/user/selectors";
 
-import { Role } from "src/shared/utils/user-role";
-import { AppLoader } from "src/features";
+import { Role } from "src/shared/config/user-role";
+import { AppLoader } from "src/shared/ui";
 // useAppDispatch
 import { useAppSelector } from "../store/store";
 import { getIsAuthSelector } from "../store/slices/auth/selectors";

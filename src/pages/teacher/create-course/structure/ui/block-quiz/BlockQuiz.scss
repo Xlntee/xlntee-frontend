@@ -35,7 +35,7 @@
   }
 
   .quiz-panel {
-    background-color: rgb(var(--app-block-lecture-bg-color));
+    background-color: var(--app-block-lecture-bg-color);
     border-radius: 10px;
     margin-bottom: 20px;
     padding: 16px;

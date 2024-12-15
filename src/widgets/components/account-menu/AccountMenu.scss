@@ -47,19 +47,19 @@
       }
     }
   }
-}
 
-.language-switcher {
-  &.MuiInputBase-root {
-    height: 34px;
-    width: calc(100% - 34px);
-  }
+  .language-switcher {
+    &.MuiInputBase-root {
+      height: 34px;
+      width: calc(100% - 34px);
+    }
 
-  .MuiSelect-select {
-    font-size: 16px;
-  }
+    .MuiSelect-select {
+      font-size: 16px;
+    }
 
-  .MuiSvgIcon-root {
-    display: none;
+    .MuiSvgIcon-root {
+      display: none;
+    }
   }
 }

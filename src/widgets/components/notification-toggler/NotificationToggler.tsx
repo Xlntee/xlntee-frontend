@@ -2,7 +2,7 @@ import { FC } from "react";
 
 import { Button, Badge } from "@mui/material";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
-import useDrawer from "src/hooks/useDrawer";
+import useDrawer from "src/shared/hooks/useDrawer";
 
 const NotificationToggler: FC = () => {
   const { onOpenDrawer } = useDrawer();

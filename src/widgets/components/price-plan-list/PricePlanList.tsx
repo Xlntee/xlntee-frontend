@@ -7,7 +7,7 @@ import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import QuizIcon from "@mui/icons-material/Quiz";
 import OfflineBoltIcon from "@mui/icons-material/OfflineBolt";
 
-import { PricePlanCard, PricePlanProps } from "src/features";
+import { PricePlanCard, PricePlanProps } from "src/shared/ui";
 
 type PricePlanContentProps = {
   pretitle: string;

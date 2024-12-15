@@ -2,7 +2,7 @@ import { FC } from "react";
 
 import { Box, Divider } from "@mui/material";
 
-import { Navigation, NavigationLinkType } from "src/features";
+import { Navigation, NavigationLinkType } from "src/shared/ui";
 import DrawerHeader from "../drawer-header";
 import DrawerBody from "../drawer-body";
 

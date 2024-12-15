@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import { Box, Button, FormLabel, Typography } from "@mui/material";
 
-import { TextField } from "src/features/form-fields";
+import { TextField } from "src/shared/ui/form-fields";
 
 import "./PromoCodeCreate.scss";
 

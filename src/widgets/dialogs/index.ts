@@ -1,8 +1,8 @@
 import { lazy } from "react";
 
 const dialogs = {
-  COMPLAIN_INFO_DIALOG: lazy(() => import("./complainInfo-dialog")),
-  REFUND_INFO_DIALOG: lazy(() => import("./refundInfo-dialog")),
+  COMPLAIN_INFO_DIALOG: lazy(() => import("./complain-info-dialog")),
+  REFUND_INFO_DIALOG: lazy(() => import("./refund-info-dialog")),
   STUDENT_COURSE_COMPLAIN_DIALOG: lazy(() => import("./student-course-complain-dialog")),
   STUDENT_COURSE_RATE_DIALOG: lazy(() => import("./student-course-rate-dialog")),
   STUDENT_COURSE_REFUND_DIALOG: lazy(() => import("./student-course-refund-dialog")),
