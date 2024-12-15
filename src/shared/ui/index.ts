@@ -23,3 +23,5 @@ export * from "./app-loader";
 export * from "./auth-tab";
 export * from "./root-form";
 export * from "./form-fields";
+export { default as LimitError } from "./limit-error";
+export { default as HideMediaContainer } from "./hide-media-container";

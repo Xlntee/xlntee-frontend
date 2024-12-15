@@ -1,14 +1,13 @@
 import { FC, useEffect } from "react";
-import { Outlet, Link as RouterLink, useLocation } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import cn from "classnames";
 
-import { Box, Container, Stack, Button, Typography } from "@mui/material";
-import ErrorOutlineOutlinedIcon from "@mui/icons-material/ErrorOutlineOutlined";
+import { Box, Container, Button } from "@mui/material";
 
 import { closeDrawer } from "src/app/store/slices/drawer/slice";
 import { useAppDispatch } from "src/app/store/store";
-import { HideMediaContainer } from "src/shared/ui/hide-media-container";
+import { HideMediaContainer, LimitError } from "src/shared/ui";
 
 import useDrawer from "src/shared/hooks/useDrawer";
 import { SidebarMenu } from "./ui";
@@ -35,22 +34,10 @@ const CreateCourseBlockLayout: FC = () => {
     closeAsideMenu();
   }, [pathname]);
 
-  const LimitError: FC = () => {
-    return (
-      <Stack direction="row" justifyContent="center" alignItems="center" gap="10px" className="error-limits">
-        <ErrorOutlineOutlinedIcon color="error" />
-        <Typography variant="body2" fontWeight={300}>
-          {t("error-limits-plan")} {""}
-          <RouterLink to="#">{t("change-plan")}</RouterLink>
-        </Typography>
-      </Stack>
-    );
-  };
-
   return (
     <Box className="create-course-layout" pt={{ xs: "40px", md: "60px" }} pb="40px">
       <Container className="create-course-layout__container">
-        <LimitError />
+        <LimitError message={t("error-limits-plan")} />
         <HideMediaContainer type="up" breakpoint="xl">
           <Button variant="black-contain" onClick={openMenu}>
             {t("course-navigation")}

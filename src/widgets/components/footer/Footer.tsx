@@ -13,7 +13,6 @@ import { AppRoutes } from "src/shared/routes";
 import "./Footer.scss";
 
 const Footer: FC = () => {
-  //TODO: add links
   const { t } = useTranslation("common");
 
   return (
