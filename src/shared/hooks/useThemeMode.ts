@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { ThemeModeContext, ThemeModeContextType } from "src/app/context/theme-mode";
 
-export function useThemeMode(): ThemeModeContextType {
+export default function useThemeMode(): ThemeModeContextType {
   const context = useContext(ThemeModeContext);
 
   if (context === undefined) {

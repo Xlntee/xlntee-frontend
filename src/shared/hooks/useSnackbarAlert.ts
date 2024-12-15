@@ -69,7 +69,7 @@ function reducer(state: ActionStateProps, action: ActionType): ActionStateProps 
   }
 }
 
-export const useSnackbarAlert = (): UseSnackbarAlertProps => {
+const useSnackbarAlert = (): UseSnackbarAlertProps => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   function showAlert(): void {

@@ -6,7 +6,7 @@ import { Box, Button, Stack } from "@mui/material";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 
 import { Snackbar } from "src/shared/ui/snackbar";
-import { useSnackbarAlert } from "src/shared/hooks/useSnackbarAlert";
+import useSnackbarAlert from "src/shared/hooks/useSnackbarAlert";
 
 import { getUploadedFile } from "../utils";
 import { UploaderProps } from "../types";

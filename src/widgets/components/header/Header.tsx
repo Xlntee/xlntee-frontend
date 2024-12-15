@@ -7,7 +7,7 @@ import { Box, Button, Container, Stack } from "@mui/material";
 import { MenuToggler, Navigation, HideMediaContainer } from "src/shared/ui";
 import { AppRoutes } from "src/shared/routes";
 
-import { useAuth } from "src/shared/hooks/useAuth";
+import useAuth from "src/shared/hooks/useAuth";
 import useDrawer from "src/shared/hooks/useDrawer";
 import useHeaderNavigation from "src/shared/hooks/useHeaderNavigation";
 

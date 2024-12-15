@@ -12,13 +12,13 @@ import { useAppDispatch } from "src/app/store/store";
 import { switchRole } from "src/app/store/slices/user/slice";
 import { closeLatestDialog } from "src/app/store/slices/dialog/slice";
 
-import { LanguageSwitcher } from "src/widgets/components";
 import { UserRoles } from "src/shared/config/user-role";
 import { AppRoutes } from "src/shared/routes";
-import { useAuth } from "src/shared/hooks/useAuth";
+import useAuth from "src/shared/hooks/useAuth";
 import useDialog from "src/shared/hooks/useDialog";
 import { logOut } from "src/app/store/modules/auth/actions";
 
+import { LanguageSwitcher } from "../language-switcher";
 import AuthStudentContainer from "../auth-student-container";
 import AuthTeacherContainer from "../auth-teacher-container";
 

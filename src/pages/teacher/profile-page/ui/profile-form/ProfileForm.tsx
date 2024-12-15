@@ -7,7 +7,7 @@ import { Grid, Button, FormLabel, Typography, Stack } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 
 import { TextField, RootForm } from "src/shared/ui";
-import { useAuth } from "src/shared/hooks/useAuth";
+import useAuth from "src/shared/hooks/useAuth";
 
 type ProfileFormFields = {
   firstName: string;

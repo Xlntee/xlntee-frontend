@@ -2,8 +2,7 @@ import { FC } from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 import { Breakpoint } from "@mui/material";
-import getTheme from "src/shared/themes/theme";
-import { useThemeMode } from "src/shared/hooks/useThemeMode";
+import { getCreateTheme } from "src/shared/themes/theme";
 
 type HideMediaContainerProps = {
   children: React.ReactNode;
@@ -12,8 +11,7 @@ type HideMediaContainerProps = {
 };
 
 const HideMediaContainer: FC<HideMediaContainerProps> = ({ children, type, breakpoint }) => {
-  const { mode } = useThemeMode();
-  const isMobileMediaQuery = useMediaQuery(getTheme(mode).breakpoints[type](breakpoint));
+  const isMobileMediaQuery = useMediaQuery(getCreateTheme().breakpoints[type](breakpoint));
 
   if (isMobileMediaQuery) return null;
 

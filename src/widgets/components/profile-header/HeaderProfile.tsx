@@ -8,7 +8,7 @@ import useDrawer from "src/shared/hooks/useDrawer";
 import { MenuToggler, Navigation, HideMediaContainer } from "src/shared/ui";
 import { Role } from "src/shared/config/user-role";
 import useHeaderNavigation from "src/shared/hooks/useHeaderNavigation";
-import { useAuth } from "src/shared/hooks/useAuth";
+import useAuth from "src/shared/hooks/useAuth";
 
 import { User } from "../user";
 import { ThemeModeToggler } from "../theme-mode-toggler";

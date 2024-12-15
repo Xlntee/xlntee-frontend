@@ -1,7 +1,6 @@
 import { createTheme, PaletteMode, Theme } from "@mui/material";
 
 import { XlnteeColors } from "./colors";
-import { palete } from "./theme-palette";
 
 declare module "@mui/material/Button" {
   interface ButtonPropsVariantOverrides {
@@ -13,8 +12,8 @@ declare module "@mui/material/Button" {
   }
 }
 
-function getTheme(colorTheme: PaletteMode): Theme {
-  const defaultTheme = createTheme({
+export function getCreateTheme(): Theme {
+  return createTheme({
     breakpoints: {
       values: {
         xs: 0,
@@ -24,11 +23,14 @@ function getTheme(colorTheme: PaletteMode): Theme {
         xl: 1280
       }
     },
-    palette: palete[colorTheme],
     typography: {
       fontFamily: ["Noto Sans", "Roboto", "sans-serif"].join(",")
     }
   });
+}
+
+function getTheme(colorTheme: PaletteMode): Theme {
+  const defaultTheme = getCreateTheme();
 
   defaultTheme.typography.h1 = {
     fontSize: 32,
