@@ -2,7 +2,7 @@
 @use "styles/mixins" as mixins;
 
 .course-btn-card {
-  background-color: rgb(var(--app-course-btn-card-bg-color));
+  background-color: var(--app-course-btn-card-bg-color);
   width: 100%;
   border-radius: 25px;
   cursor: pointer;

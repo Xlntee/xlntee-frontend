@@ -40,7 +40,7 @@
 
 .dialog-box {
   position: relative;
-  background-color: rgb(var(--app-modal-bg-color));
+  background-color: var(--app-modal-bg-color);
   padding: 40px 20px 30px;
   border-radius: 20px;
   box-shadow: 0 0 10px 0 rgb(var(--main-element-color) / 0.25);

@@ -34,11 +34,11 @@
     @include mixins.animate(color);
 
     @include mixins.hover {
-      color: rgb(var(--primary-color));
+      color: rgb(var(--brand-color));
     }
 
     &.active {
-      color: rgb(var(--primary-color));
+      color: rgb(var(--brand-color));
     }
   }
 
