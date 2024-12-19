@@ -40,27 +40,6 @@ const LoginForm: FC = () => {
     <ApiProvider api={loginApiSlice}>
       <RootForm methods={methods} onSubmit={onSubmit} className="auth-form login-form">
         <Stack direction="column" gap="20px">
-          <Stack direction="row" alignItems="center" justifyContent="center" gap="20px">
-            <Typography variant="body2" color="text.primary">
-              {t("login-with")}
-            </Typography>
-            <Stack direction="row" gap="20px">
-              <Button
-                aria-label={`${t("login-with")} Google button`}
-                className="auth-form__auth-btn"
-                variant="black-outline"
-              >
-                <img src="/assets/google.svg" alt="google" />
-              </Button>
-              <Button
-                aria-label={`${t("login-with")} facebook button`}
-                className="auth-form__auth-btn"
-                variant="black-outline"
-              >
-                <img src="/assets/facebook.svg" alt="facebook" />
-              </Button>
-            </Stack>
-          </Stack>
           <TextField name="email" type="text" aria-label="email input" placeholder={t("email-placeholder")} />
           <PasswordField name="password" aria-label="password input" placeholder={t("password-placeholder")} />
           <Button
