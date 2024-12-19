@@ -128,7 +128,7 @@ const OTP: FC<OTPProps> = ({ separator, length, value, onChange }) => {
   };
 
   return (
-    <Stack direction="row" gap="10px" className="otp-input__item">
+    <Stack className="otp-input" direction="row" gap="10px">
       {new Array(length).fill(null).map((_, index) => (
         <Fragment key={index}>
           <BaseInput
@@ -168,11 +168,7 @@ const OTPInput: FC<OTPInputProps> = ({ length = 4, separator, onUpdate }) => {
     }
   }, [otp]);
 
-  return (
-    <Stack className="otp-input">
-      <OTP separator={separator && <span>-</span>} value={otp} onChange={setOtp} length={length} />
-    </Stack>
-  );
+  return <OTP separator={separator && <span>-</span>} value={otp} onChange={setOtp} length={length} />;
 };
 
 export default OTPInput;

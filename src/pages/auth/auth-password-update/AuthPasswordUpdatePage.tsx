@@ -31,7 +31,7 @@ const AuthPasswordUpdatePage: FC<PageProps> = ({ title }) => {
         paddingBlock="12px"
         borderBottom={`1px solid ${theme.palette.grey["200"]}`}
         fontWeight={300}
-        className="account-verification-form__title"
+        mb="20px"
       >
         {isSubmit ? t("credential-update-content.title-password") : t("password-change")}
       </Typography>

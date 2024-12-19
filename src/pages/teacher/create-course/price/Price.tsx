@@ -5,9 +5,10 @@ import { yupResolver } from "@hookform/resolvers/yup";
 
 import { Box, FormLabel, Divider, Stack, Typography, Grid, Button, useTheme } from "@mui/material";
 
-import useTitle from "src/shared/hooks/useTitle";
 import { PageProps } from "pages/type";
+import useTitle from "src/shared/hooks/useTitle";
 import { CheckboxField, TextField, RootForm } from "src/shared/ui";
+import useInverseColor from "src/shared/hooks/useInverseColor";
 
 import { PromoCodeCreateFormFields, BlockPromoCodes } from "./ui";
 import { defaultValuesForm } from "./initialDate";
@@ -21,6 +22,7 @@ export type PriceFormFields = PromoCodeCreateFormFields & {
 const PricePage: FC<PageProps> = ({ title }) => {
   useTitle(title);
   const theme = useTheme();
+  const { getInverseColor } = useInverseColor();
   const { t } = useTranslation("teacher-create-course");
   const { t: tCommon } = useTranslation("common");
 
@@ -46,11 +48,14 @@ const PricePage: FC<PageProps> = ({ title }) => {
       <RootForm methods={methods}>
         <Grid container columnSpacing="20px" rowGap="20px" flexDirection={{ md: "row-reverse" }} mb="20px">
           <Grid item xs={12} md={6}>
-            <Box borderRadius="20px" padding="10px 20px" bgcolor={theme.palette.grey["100"]}>
-              <Typography variant="h6" color="text.secondary">
-                {t("price.info-box-title")}
-              </Typography>
-              <Typography fontWeight={300} color="text.secondary" fontSize="14px !important">
+            <Box
+              borderRadius="20px"
+              padding="10px 20px"
+              bgcolor={getInverseColor(theme.palette.grey["100"], "transparent")}
+              border={`1px solid ${getInverseColor("transparent", theme.palette.grey["100"])}`}
+            >
+              <Typography variant="h6">{t("price.info-box-title")}</Typography>
+              <Typography fontWeight={300} fontSize="14px !important">
                 {t("price.info-box-text")}
               </Typography>
             </Box>

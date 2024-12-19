@@ -2,7 +2,7 @@ import { FC } from "react";
 import { useFieldArray, useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-import { Box, Typography, Stack, Button, Checkbox } from "@mui/material";
+import { Box, Typography, Stack, Button, Checkbox, useTheme } from "@mui/material";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import QuizIcon from "@mui/icons-material/Quiz";
 
@@ -13,6 +13,7 @@ import { LessonSingleFormValues } from "../block-lesson/validation";
 
 import "./BlockQuiz.scss";
 import { TextField } from "src/shared/ui/form-fields";
+import useInverseColor from "src/shared/hooks/useInverseColor";
 
 type BlockQuizProps = {
   lessonId: string;
@@ -22,6 +23,9 @@ type BlockQuizProps = {
 };
 
 const BlockQuiz: FC<BlockQuizProps> = ({ lessonId, lectureId, lectureIndex, onCloseQuiz }) => {
+  const theme = useTheme();
+  const { getInverseColor } = useInverseColor();
+
   const { t } = useTranslation("teacher-create-course");
 
   const { control } = useFormContext<LessonSingleFormValues>();
@@ -66,7 +70,7 @@ const BlockQuiz: FC<BlockQuizProps> = ({ lessonId, lectureId, lectureIndex, onCl
         ? fields.map((item, index, arr) => (
             <Box key={item.customId} className="block-quiz__item">
               <QuizIcon />
-              <Box className="quiz-panel">
+              <Box className="quiz-panel" bgcolor={getInverseColor(theme.palette.primary.contrastText, "transparent")}>
                 <Box className="quiz-question">
                   <Typography variant="body2" className="quiz-question__number">
                     {index + 1}

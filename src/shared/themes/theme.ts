@@ -102,8 +102,8 @@ function getTheme(colorTheme: PaletteMode): Theme {
         body: {
           backgroundColor:
             colorTheme === "light"
-              ? XlnteeColors[colorTheme].LightColor
-              : XlnteeColors[colorTheme].MainBlackElementColor,
+              ? XlnteeColors[colorTheme].ThemeLightAccentColor
+              : XlnteeColors[colorTheme].ThemeDarkAccentColor,
           color: defaultTheme.palette.text.primary
         }
       }
@@ -212,7 +212,7 @@ function getTheme(colorTheme: PaletteMode): Theme {
             color:
               colorTheme === "light"
                 ? defaultTheme.palette.primary.contrastText
-                : XlnteeColors[colorTheme].MainBlackElementColor,
+                : XlnteeColors[colorTheme].ThemeDarkAccentColor,
             ":hover": {
               color:
                 colorTheme === "light"
@@ -235,7 +235,7 @@ function getTheme(colorTheme: PaletteMode): Theme {
             color:
               colorTheme === "light"
                 ? defaultTheme.palette.primary.contrastText
-                : XlnteeColors[colorTheme].MainBlackElementColor,
+                : XlnteeColors[colorTheme].ThemeDarkAccentColor,
             ":hover": {
               color:
                 colorTheme === "light"
@@ -262,7 +262,7 @@ function getTheme(colorTheme: PaletteMode): Theme {
             color:
               colorTheme === "light"
                 ? defaultTheme.palette.primary.contrastText
-                : XlnteeColors[colorTheme].MainBlackElementColor,
+                : XlnteeColors[colorTheme].ThemeDarkAccentColor,
             ":hover": {
               color:
                 colorTheme === "light"
@@ -288,7 +288,7 @@ function getTheme(colorTheme: PaletteMode): Theme {
               color:
                 colorTheme === "light"
                   ? defaultTheme.palette.primary.contrastText
-                  : XlnteeColors[colorTheme].MainBlackElementColor,
+                  : XlnteeColors[colorTheme].ThemeDarkAccentColor,
               backgroundColor: defaultTheme.palette.text.primary
             }
           }

@@ -35,19 +35,17 @@
   &__btn-role {
     &.MuiButtonBase-root {
       font-weight: 400;
-      color: rgb(var(--main-dark-color));
-      border-color: rgb(var(--main-dark-color));
-
-      @include mixins.hover {
-        color: rgb(var(--light-color));
-        background-color: rgb(var(--main-dark-color));
-      }
     }
 
     &.active {
       &.MuiButtonBase-root {
         color: rgb(var(--light-color));
         background-color: rgb(var(--main-dark-color));
+
+        [data-theme="dark"] & {
+          background-color: rgb(var(--light-color));
+          color: rgb(var(--main-dark-color));
+        }
       }
     }
   }

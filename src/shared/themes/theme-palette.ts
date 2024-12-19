@@ -13,8 +13,7 @@ export const palete: Record<PaletteMode, Partial<ThemeOptions["palette"]>> = {
       contrastText: XlnteeColors["light"].LightColor
     },
     warning: {
-      main: XlnteeColors["light"].WarningBaseColor,
-      light: XlnteeColors["light"].ErrorLightColor
+      main: XlnteeColors["light"].WarningBaseColor
     },
     success: {
       main: XlnteeColors["light"].SuccessBaseColor
@@ -33,7 +32,7 @@ export const palete: Record<PaletteMode, Partial<ThemeOptions["palette"]>> = {
     },
     text: {
       primary: XlnteeColors["light"].MainBlackElementColor,
-      secondary: XlnteeColors["light"].MainBlackElementColor
+      secondary: XlnteeColors["light"].ThemeDarkAccentColor
     }
   },
   dark: {
@@ -67,7 +66,7 @@ export const palete: Record<PaletteMode, Partial<ThemeOptions["palette"]>> = {
     },
     text: {
       primary: XlnteeColors["dark"].LightColor,
-      secondary: XlnteeColors["dark"].MainBlackElementColor
+      secondary: XlnteeColors["dark"].ThemeDarkAccentColor
     }
   }
 };

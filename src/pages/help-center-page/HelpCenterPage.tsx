@@ -29,13 +29,18 @@ const HelpCenterPage: FC<PageProps> = ({ title }) => {
         <Typography className="help-center-page__caption" variant="h2">
           {t("help-center.caption")}
         </Typography>
-        {isSubmit ? (
+        {!isSubmit ? (
           <Stack alignItems="center">
-            <CheckIcon className="help-center-page__check-icon" />
+            <CheckIcon
+              sx={{
+                fontSize: "250px",
+                color: theme.palette.primary.main
+              }}
+            />
             <Typography variant="caption" color={theme.palette.primary.main}>
               {t("help-center.info-text")}
             </Typography>
-            <Button className="help-center-page__return-btn" onClick={() => navigate(-1)}>
+            <Button variant="black-text" className="help-center-page__return-btn" onClick={() => navigate(-1)}>
               {t("help-center.return-btn")} &gt;
             </Button>
           </Stack>

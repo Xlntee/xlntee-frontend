@@ -108,6 +108,7 @@ const BlockLesson: FC<BlockLessonProps> = ({ index, id, canDelete }) => {
         <Button
           className={cn("collapse-toggler", { active: isCollapsed })}
           onClick={() => setIsCollapsed((prevState) => !prevState)}
+          variant="black-text"
         >
           <ArrowDropUpIcon />
         </Button>

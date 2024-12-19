@@ -104,7 +104,12 @@ const BlockLecture: FC<BlockLectureProps> = ({ lessonId, id, index }) => {
   }
 
   return (
-    <Stack direction="column" gap="20px" className={cn("block-lecture", { "block-lecture--collapsed": isCollapsed })}>
+    <Stack
+      direction="column"
+      gap="20px"
+      className={cn("block-lecture", { "block-lecture--collapsed": isCollapsed })}
+      bgcolor={theme.palette.primary.main}
+    >
       <Box className="block-lecture__header">
         <Typography variant="h4" color={theme.palette.primary.contrastText}>
           {t("structure.lecture")} #{index + 1}
@@ -112,6 +117,7 @@ const BlockLecture: FC<BlockLectureProps> = ({ lessonId, id, index }) => {
         <Button
           className={cn("collapse-toggler", { active: isCollapsed })}
           onClick={() => setIsCollapsed((prevState) => !prevState)}
+          variant="white-text"
         >
           <ArrowDropUpIcon />
         </Button>
@@ -129,7 +135,7 @@ const BlockLecture: FC<BlockLectureProps> = ({ lessonId, id, index }) => {
         variant="outlined"
         fullWidth
         placeholder={t("structure.title-lecture-placeholder") + "..."}
-        className="text-field-light block-lecture__title"
+        className="text-field-light"
       />
       <Box className="block-lecture__body">
         <Box display="flex" flexDirection="column" gap="20px">
@@ -137,7 +143,11 @@ const BlockLecture: FC<BlockLectureProps> = ({ lessonId, id, index }) => {
             <Stack gap="20px">
               <LectureFilePreview type="video" value={videoFile} onDelete={() => setVideoFile(null)} />
               <Box className="lecture-description">
-                <ArticleIcon />
+                <ArticleIcon
+                  sx={{
+                    color: theme.palette.primary.contrastText
+                  }}
+                />
                 <ReactQuill
                   onBlur={(_a, _b, value) => {
                     onChangeRichText(value.getHTML());

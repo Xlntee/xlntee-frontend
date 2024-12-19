@@ -34,7 +34,12 @@ const SectionLandingHero: FC<SectionLandingHeroProps> = ({ title, subtitle, butt
               <Typography color="primary" variant="h1" mb="-14px" lineHeight={1}>
                 {title}
               </Typography>
-              <Typography variant="body1" color={theme.palette.primary.contrastText} className="section-hero__subtitle">
+              <Typography
+                variant="body1"
+                className="section-hero__subtitle"
+                color={theme.palette.primary.contrastText}
+                bgcolor={theme.palette.primary.main}
+              >
                 {subtitle}
               </Typography>
               {isFeaturesArray && <CheckList items={features} />}

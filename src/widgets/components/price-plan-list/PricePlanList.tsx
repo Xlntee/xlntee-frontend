@@ -8,6 +8,7 @@ import QuizIcon from "@mui/icons-material/Quiz";
 import OfflineBoltIcon from "@mui/icons-material/OfflineBolt";
 
 import { PricePlanCard, PricePlanProps } from "src/shared/ui";
+import useInverseColor from "src/shared/hooks/useInverseColor";
 
 type PricePlanContentProps = {
   pretitle: string;
@@ -22,13 +23,15 @@ type PricePlanContentProps = {
 
 const PricePlanList: FC = () => {
   const theme = useTheme();
+  const { getInverseColor } = useInverseColor();
+
   const { t } = useTranslation("teacher-landing");
 
   const cards = t("price-plan.cards", { returnObjects: true }) as PricePlanContentProps[];
 
   const pricePlanCard1: PricePlanProps = {
     ...cards[0],
-    bgColor: theme.palette.grey["100"],
+    bgColor: getInverseColor(theme.palette.grey["100"], "transparent"),
     descriptionList: [
       {
         icon: <AllInclusiveIcon sx={{ fontSize: "30px" }} />,
@@ -47,7 +50,7 @@ const PricePlanList: FC = () => {
 
   const pricePlanCard2: PricePlanProps = {
     ...cards[1],
-    bgColor: theme.palette.info.dark,
+    bgColor: getInverseColor(theme.palette.info.dark, "transparent"),
     descriptionList: [
       {
         icon: <OfflineBoltIcon sx={{ fontSize: "30px" }} />,

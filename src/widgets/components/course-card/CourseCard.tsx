@@ -53,9 +53,7 @@ const CourseCard: FC<CourseCardProps> = ({
         )}
       </Box>
       <Box pt="4px" pb="10px">
-        <Typography className="course-card__title" color="text.secondary">
-          {title}
-        </Typography>
+        <Typography className="course-card__title">{title}</Typography>
       </Box>
       <Box className="course-card__overlay">
         {status === CourseStatus.deleted ? (

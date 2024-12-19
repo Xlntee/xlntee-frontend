@@ -1,5 +1,7 @@
 export const XlnteeColors = {
   light: {
+    ThemeLightAccentColor: "#ffffff",
+    ThemeDarkAccentColor: "#000000",
     LightColor: "#ffffff",
     BrandColor: "#6361ff",
     Violet100: "#EFEEFD",
@@ -19,12 +21,14 @@ export const XlnteeColors = {
     YellowColor: "#faaf00"
   },
   dark: {
+    ThemeLightAccentColor: "#ffffff",
+    ThemeDarkAccentColor: "#000000",
     LightColor: "#ffffff",
     BrandColor: "#6361ff",
     Violet100: "#EFEEFD",
     Violet200: "#EFEFFF",
     ActionColor: "#ff1c60",
-    MainBlackElementColor: "#202020",
+    MainBlackElementColor: "#ffffff", //update color
     LightElementColor: "#f8f8f8",
     GrayStrokeColor: "#eaeaea",
     GrayColor300: "#FFFFFF",
