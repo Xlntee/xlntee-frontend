@@ -1,17 +1,26 @@
 import { FC } from "react";
 
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
 
-import "./Description.scss";
+import useInverseColor from "src/shared/hooks/useInverseColor";
 
 type DescriptionProps = {
   text: string;
 };
 
 const Description: FC<DescriptionProps> = ({ text }) => {
+  const theme = useTheme();
+  const { getInverseColor } = useInverseColor();
+
   return (
-    <Box className="course-video-description">
-      <Typography variant="body2" color="text.secondary">
+    <Box
+      className="course-video-description"
+      p="20px"
+      borderRadius="10px"
+      bgcolor={getInverseColor(theme.palette.grey["100"], "transparent")}
+      border={`1px solid ${getInverseColor("transparent", theme.palette.grey["100"])}`}
+    >
+      <Typography variant="body2" color="text.primary">
         {text}
       </Typography>
     </Box>

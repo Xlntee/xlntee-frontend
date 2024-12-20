@@ -1,7 +1,7 @@
 export const XlnteeColors = {
   light: {
     ThemeLightAccentColor: "#ffffff",
-    ThemeDarkAccentColor: "#000000",
+    ThemeDarkAccentColor: "#202020",
     LightColor: "#ffffff",
     BrandColor: "#6361ff",
     Violet100: "#EFEEFD",
@@ -22,7 +22,7 @@ export const XlnteeColors = {
   },
   dark: {
     ThemeLightAccentColor: "#ffffff",
-    ThemeDarkAccentColor: "#000000",
+    ThemeDarkAccentColor: "#202020",
     LightColor: "#ffffff",
     BrandColor: "#6361ff",
     Violet100: "#EFEEFD",

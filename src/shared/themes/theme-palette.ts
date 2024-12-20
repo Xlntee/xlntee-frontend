@@ -13,7 +13,8 @@ export const palete: Record<PaletteMode, Partial<ThemeOptions["palette"]>> = {
       contrastText: XlnteeColors["light"].LightColor
     },
     warning: {
-      main: XlnteeColors["light"].WarningBaseColor
+      main: XlnteeColors["light"].WarningBaseColor,
+      light: XlnteeColors["dark"].ErrorLightColor
     },
     success: {
       main: XlnteeColors["light"].SuccessBaseColor
