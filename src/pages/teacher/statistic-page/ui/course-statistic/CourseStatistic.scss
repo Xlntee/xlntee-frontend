@@ -1,8 +1,8 @@
 @use "styles/mixins.scss" as mixins;
 
 .course-statistic {
-  background: rgb(var(--light-element-color));
-  border: 1px solid rgb(var(--gray-stroke-color));
+  background: rgb(var(--light-gray-color));
+  border: 1px solid rgb(var(--stroke-gray-color));
   border-radius: 25px;
   padding: 10px;
   gap: 10px;

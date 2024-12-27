@@ -1,8 +1,8 @@
 @use "styles/mixins.scss" as mixins;
 
 .statistic-info {
-  background-color: rgb(var(--light-color));
-  border: 1px solid rgb(var(--gray-stroke-color));
+  background-color: rgb(var(--white-color));
+  border: 1px solid rgb(var(--stroke-gray-color));
   border-radius: 10px;
   padding: 4px 10px;
   width: 100%;

@@ -4,7 +4,7 @@
 
     input {
       width: 100%;
-      border: 1px solid rgb(var(--gray-color-300));
+      border: 1px solid rgb(var(--input-field-border-color));
       border-radius: 5px;
       height: 62px;
       font-size: 16px;
@@ -14,11 +14,10 @@
 
       &:hover,
       &:focus {
-        border-color: rgb(var(--main-element-color));
+        border-color: rgb(var(--main-black-color));
       }
 
       &::placeholder {
-        color: rgb(var(--gray-color-500));
       }
     }
   }

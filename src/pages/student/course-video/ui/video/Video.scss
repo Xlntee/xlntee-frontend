@@ -38,11 +38,11 @@
 
     .MuiSvgIcon-root {
       font-size: 70px;
-      color: rgb(var(--main-element-color) / 0.5);
+      color: rgb(var(--main-black-color) / 0.5);
 
       &[data-testid="PauseIcon"] {
-        color: rgb(var(--light-color));
-        background-color: rgb(var(--main-element-color) / 0.5);
+        color: rgb(var(--white-color));
+        background-color: rgb(var(--main-black-color) / 0.5);
         border-radius: 50%;
         font-size: 60px;
       }

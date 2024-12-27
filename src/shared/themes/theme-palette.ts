@@ -6,33 +6,31 @@ export const palete: Record<PaletteMode, Partial<ThemeOptions["palette"]>> = {
     mode: "light",
     primary: {
       main: XlnteeColors["light"].BrandColor,
-      contrastText: XlnteeColors["light"].LightColor
+      contrastText: XlnteeColors["light"].WhiteColor
     },
     secondary: {
       main: XlnteeColors["light"].ActionColor,
-      contrastText: XlnteeColors["light"].LightColor
+      contrastText: XlnteeColors["light"].WhiteColor
     },
     warning: {
-      main: XlnteeColors["light"].WarningBaseColor,
-      light: XlnteeColors["dark"].ErrorLightColor
+      main: XlnteeColors["light"].ErrorTextColor,
+      light: XlnteeColors["dark"].ErrorBackgroundColor
     },
     success: {
-      main: XlnteeColors["light"].SuccessBaseColor
+      main: XlnteeColors["light"].SuccessFontColor
     },
     info: {
       main: XlnteeColors["light"].BrandColor,
-      light: XlnteeColors["light"].Violet100,
-      dark: XlnteeColors["light"].Violet200
+      light: XlnteeColors["light"].LightBrandColor
     },
     grey: {
-      "100": XlnteeColors["light"].LightElementColor,
-      "200": XlnteeColors["light"].GrayStrokeColor,
-      "300": XlnteeColors["light"].GrayColor300,
-      "400": XlnteeColors["light"].GrayColor400,
-      "500": XlnteeColors["light"].GrayColor500
+      "100": XlnteeColors["dark"].LightGrayColor,
+      "200": XlnteeColors["dark"].StrokeGrayColor,
+      "300": XlnteeColors["dark"].InputFieldBorderColor,
+      "400": XlnteeColors["dark"].FilledTextColor
     },
     text: {
-      primary: XlnteeColors["light"].MainBlackElementColor,
+      primary: XlnteeColors["light"].MainBlackColor,
       secondary: XlnteeColors["light"].ThemeDarkAccentColor
     }
   },
@@ -40,33 +38,31 @@ export const palete: Record<PaletteMode, Partial<ThemeOptions["palette"]>> = {
     mode: "dark",
     primary: {
       main: XlnteeColors["light"].BrandColor,
-      contrastText: XlnteeColors["dark"].LightColor
+      contrastText: XlnteeColors["dark"].WhiteColor
     },
     secondary: {
       main: XlnteeColors["dark"].ActionColor,
-      contrastText: XlnteeColors["dark"].LightColor
+      contrastText: XlnteeColors["dark"].WhiteColor
     },
     warning: {
-      main: XlnteeColors["dark"].WarningBaseColor,
-      light: XlnteeColors["dark"].ErrorLightColor
+      main: XlnteeColors["dark"].ErrorTextColor,
+      light: XlnteeColors["dark"].ErrorBackgroundColor
     },
     success: {
-      main: XlnteeColors["dark"].SuccessBaseColor
+      main: XlnteeColors["dark"].SuccessFontColor
     },
     info: {
       main: XlnteeColors["dark"].BrandColor,
-      light: XlnteeColors["dark"].Violet100,
-      dark: XlnteeColors["dark"].Violet200
+      light: XlnteeColors["dark"].LightBrandColor
     },
     grey: {
-      "100": XlnteeColors["dark"].LightElementColor,
-      "200": XlnteeColors["dark"].GrayStrokeColor,
-      "300": XlnteeColors["dark"].GrayColor300,
-      "400": XlnteeColors["dark"].GrayColor400,
-      "500": XlnteeColors["dark"].GrayColor500
+      "100": XlnteeColors["dark"].LightGrayColor,
+      "200": XlnteeColors["dark"].StrokeGrayColor,
+      "300": XlnteeColors["dark"].InputFieldBorderColor,
+      "400": XlnteeColors["dark"].FilledTextColor
     },
     text: {
-      primary: XlnteeColors["dark"].LightColor,
+      primary: XlnteeColors["dark"].WhiteColor,
       secondary: XlnteeColors["dark"].ThemeDarkAccentColor
     }
   }

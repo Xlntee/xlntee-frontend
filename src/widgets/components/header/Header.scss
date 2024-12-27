@@ -49,7 +49,7 @@
     }
 
     svg {
-      color: rgb(var(--main-element-color));
+      color: rgb(var(--main-black-color));
 
       @include mixins.media(tablet) {
         font-size: 30px;

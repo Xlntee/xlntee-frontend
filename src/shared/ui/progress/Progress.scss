@@ -29,7 +29,6 @@
   }
 
   .MuiLinearProgress-barColorWarning {
-    background-color: rgb(var(--warning-extra-light-color));
   }
 
   .MuiLinearProgress-barColorInfo {
@@ -37,14 +36,14 @@
   }
 
   .MuiLinearProgress-colorSuccess + &__value.MuiTypography-root {
-    color: rgb(var(--light-color));
+    color: rgb(var(--white-color));
   }
 
   &__value {
     @include text-position;
 
     &.MuiTypography-root {
-      color: rgb(var(--main-element-color));
+      color: rgb(var(--main-black-color));
     }
   }
 

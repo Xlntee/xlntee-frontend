@@ -27,7 +27,7 @@
   }
 
   &.MuiAccordion-root {
-    color: rgb(var(--light-color));
+    color: rgb(var(--white-color));
     background-color: rgb(var(--brand-color));
     border-radius: 10px;
 
@@ -125,7 +125,7 @@
     transition: opacity 0.3s linear;
 
     svg {
-      fill: rgb(var(--light-color));
+      fill: rgb(var(--white-color));
     }
   }
 }

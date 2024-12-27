@@ -39,11 +39,11 @@
 
     &.active {
       &.MuiButtonBase-root {
-        color: rgb(var(--light-color));
+        color: rgb(var(--white-color));
         background-color: rgb(var(--main-dark-color));
 
         [data-theme="dark"] & {
-          background-color: rgb(var(--light-color));
+          background-color: rgb(var(--white-color));
           color: rgb(var(--main-dark-color));
         }
       }
@@ -57,7 +57,7 @@
       font-size: 20px;
       padding: 8px;
       box-shadow: var(--base-shadow-invisible);
-      border-color: rgb(var(--main-element-color));
+      border-color: rgb(var(--main-black-color));
 
       @include mixins.media(tablet) {
         font-size: 30px;

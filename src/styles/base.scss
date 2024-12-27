@@ -67,8 +67,8 @@ img {
 
 .button-preview {
   &.MuiButtonBase-root {
-    border: 1px solid rgb(var(--gray-stroke-color));
-    background-color: rgb(var(--light-element-color));
+    border: 1px solid rgb(var(--stroke-gray-color));
+    background-color: rgb(var(--light-gray-color));
     font-weight: 400;
   }
 }

@@ -2,43 +2,53 @@ export const XlnteeColors = {
   light: {
     ThemeLightAccentColor: "#ffffff",
     ThemeDarkAccentColor: "#202020",
-    LightColor: "#ffffff",
+
+    WhiteColor: "#FFFFFF",
+    MainBlackColor: "#202020",
+
     BrandColor: "#6361ff",
-    Violet100: "#EFEEFD",
-    Violet200: "#EFEFFF",
-    ActionColor: "#ff1c60",
-    MainBlackElementColor: "#202020",
-    LightElementColor: "#f8f8f8",
-    GrayStrokeColor: "#eaeaea",
-    GrayColor300: "#C4C4C4",
-    GrayColor400: "#666666",
-    GrayColor500: "#828282",
-    WarningExtraLightColor: "#FF99B2",
-    WarningLightColor: "#EE2C2C",
-    ErrorLightColor: "#FFF2F2",
-    WarningBaseColor: "#B63030",
-    SuccessBaseColor: "#30B686",
-    YellowColor: "#faaf00"
+    ActionColor: "#FF1C60",
+
+    ErrorTextColor: "#B63030",
+    ErrorBorderColor: "#EE2C2C",
+    ErrorBackgroundColor: "#FFF2F2",
+
+    SuccessColor: "#F2FFF3",
+    SuccessStrokeColor: "#AFEDC0",
+    SuccessFontColor: "#30B686",
+
+    LightGrayColor: "#F8F8F8",
+    StrokeGrayColor: "#EAEAEA",
+    InputFieldBorderColor: "#C4C4C4",
+    FilledTextColor: "#787878",
+
+    LightBrandColor: "#EFEFFF",
+    RatingColor: "#FFC940"
   },
   dark: {
     ThemeLightAccentColor: "#ffffff",
     ThemeDarkAccentColor: "#202020",
-    LightColor: "#ffffff",
+
+    WhiteColor: "#FFFFFF",
+    MainBlackColor: "#202020",
+
     BrandColor: "#6361ff",
-    Violet100: "#EFEEFD",
-    Violet200: "#EFEFFF",
-    ActionColor: "#ff1c60",
-    MainBlackElementColor: "#ffffff", //update color
-    LightElementColor: "#f8f8f8",
-    GrayStrokeColor: "#eaeaea",
-    GrayColor300: "#FFFFFF",
-    GrayColor400: "#FFFAFA",
-    GrayColor500: "#F5F5F5",
-    WarningExtraLightColor: "#FF99B2",
-    WarningLightColor: "#EE2C2C",
-    ErrorLightColor: "#FFF2F2",
-    WarningBaseColor: "#B63030",
-    SuccessBaseColor: "#30B686",
-    YellowColor: "#faaf00"
+    ActionColor: "#FF1C60",
+
+    ErrorTextColor: "#B63030",
+    ErrorBorderColor: "#EE2C2C",
+    ErrorBackgroundColor: "#FFF2F2",
+
+    SuccessColor: "#F2FFF3",
+    SuccessStrokeColor: "#AFEDC0",
+    SuccessFontColor: "#30B686",
+
+    LightGrayColor: "#F8F8F8",
+    StrokeGrayColor: "#EAEAEA",
+    InputFieldBorderColor: "#C4C4C4",
+    FilledTextColor: "#787878",
+
+    LightBrandColor: "#EFEFFF",
+    RatingColor: "#FFC940"
   }
 } as const;

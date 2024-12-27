@@ -46,7 +46,7 @@ function getTheme(colorTheme: PaletteMode): Theme {
     color: defaultTheme.palette.text.primary,
 
     [defaultTheme.breakpoints.up("lg")]: {
-      fontSize: 48
+      fontSize: 34
     }
   };
 
@@ -57,19 +57,19 @@ function getTheme(colorTheme: PaletteMode): Theme {
   };
 
   defaultTheme.typography.h4 = {
-    fontSize: 20,
+    fontSize: 24,
     lineHeight: 1.45,
     color: defaultTheme.palette.text.primary
   };
 
   defaultTheme.typography.h5 = {
-    fontSize: 16,
+    fontSize: 20,
     lineHeight: 1.45,
     color: defaultTheme.palette.text.primary
   };
 
   defaultTheme.typography.h6 = {
-    fontSize: 16,
+    fontSize: 20,
     lineHeight: 1.2,
     color: defaultTheme.palette.text.primary
   };
@@ -216,7 +216,7 @@ function getTheme(colorTheme: PaletteMode): Theme {
             ":hover": {
               color:
                 colorTheme === "light"
-                  ? XlnteeColors[colorTheme].MainBlackElementColor
+                  ? XlnteeColors[colorTheme].MainBlackColor
                   : defaultTheme.palette.primary.contrastText
             }
           }
@@ -239,7 +239,7 @@ function getTheme(colorTheme: PaletteMode): Theme {
             ":hover": {
               color:
                 colorTheme === "light"
-                  ? XlnteeColors[colorTheme].MainBlackElementColor
+                  ? XlnteeColors[colorTheme].MainBlackColor
                   : defaultTheme.palette.primary.contrastText
             },
             [defaultTheme.breakpoints.up("md")]: {
@@ -266,7 +266,7 @@ function getTheme(colorTheme: PaletteMode): Theme {
             ":hover": {
               color:
                 colorTheme === "light"
-                  ? XlnteeColors[colorTheme].MainBlackElementColor
+                  ? XlnteeColors[colorTheme].MainBlackColor
                   : defaultTheme.palette.primary.contrastText
             },
             [defaultTheme.breakpoints.up("md")]: {

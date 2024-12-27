@@ -1,7 +1,7 @@
 @use "styles/mixins.scss" as mixins;
 
 .account-menu {
-  box-shadow: 0 0 3px 0 rgb(var(--main-element-color) / 0.25);
+  box-shadow: 0 0 3px 0 rgb(var(--main-black-color) / 0.25);
   background-color: rgb(var(--main-element-contrast-color));
 
   &__user {
