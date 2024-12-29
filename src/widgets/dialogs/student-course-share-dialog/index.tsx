@@ -38,7 +38,7 @@ const StudentCourseShareDialog: FC = () => {
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
-                <Button variant="black-text" sx={{ minWidth: "40px" }} onClick={onCopyToClipboard}>
+                <Button variant="dark-text" sx={{ minWidth: "40px" }} onClick={onCopyToClipboard}>
                   <ContentCopyIcon />
                 </Button>
               </InputAdornment>
@@ -46,16 +46,16 @@ const StudentCourseShareDialog: FC = () => {
           }}
         />
         <Stack gap="14px" flexDirection="row">
-          <Button variant="black-text" aria-label="telegram link">
+          <Button variant="dark-text" aria-label="telegram link">
             <img src="/assets/telegram.svg" alt="telegram icon" width={28} height={28} />
           </Button>
-          <Button variant="black-text" aria-label="twitter link">
+          <Button variant="dark-text" aria-label="twitter link">
             <TwitterIcon sx={{ fontSize: "28px" }} />
           </Button>
-          <Button variant="black-text" aria-label="messenger link">
+          <Button variant="dark-text" aria-label="messenger link">
             <img src="/assets/messenger.svg" alt="messenger icon" width={28} height={28} />
           </Button>
-          <Button variant="black-text" aria-label="instagram link">
+          <Button variant="dark-text" aria-label="instagram link">
             <InstagramIcon sx={{ fontSize: "28px" }} />
           </Button>
         </Stack>

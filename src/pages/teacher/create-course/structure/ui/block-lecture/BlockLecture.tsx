@@ -117,12 +117,12 @@ const BlockLecture: FC<BlockLectureProps> = ({ lessonId, id, index }) => {
         <Button
           className={cn("collapse-toggler", { active: isCollapsed })}
           onClick={() => setIsCollapsed((prevState) => !prevState)}
-          variant="white-text"
+          variant="light-text"
         >
           <ArrowDropUpIcon />
         </Button>
         <Button
-          variant="white-text"
+          variant="light-text"
           size="medium"
           className="block-lecture__action-delete"
           onClick={() => onOpenModal(index)}
@@ -186,7 +186,7 @@ const BlockLecture: FC<BlockLectureProps> = ({ lessonId, id, index }) => {
             video={videoFile}
             disabled={!!videoFile}
             showPreview={false}
-            togglerVariant="white-contain"
+            togglerVariant="light-contain"
             buttonText={t("structure.video-upload-button-text")}
             onChange={(file) => {
               onAddVideo(file as File);
@@ -195,13 +195,13 @@ const BlockLecture: FC<BlockLectureProps> = ({ lessonId, id, index }) => {
           <FileUpload
             multiple
             disabled={!!files}
-            togglerVariant="white-contain"
+            togglerVariant="light-contain"
             buttonText={t("structure.file-upload-button-text")}
             onChange={(fileList) => {
               onAddFile(fileList as FileList);
             }}
           />
-          <Button variant="white-contain" size="medium" disabled={showQuiz} onClick={onAddQuiz}>
+          <Button variant="light-contain" size="medium" disabled={showQuiz} onClick={onAddQuiz}>
             + {t("structure.lecture-add-quiz")}
           </Button>
         </Box>

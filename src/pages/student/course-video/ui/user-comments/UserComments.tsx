@@ -31,7 +31,7 @@ const UserComment: FC<UserCommentsProps> = ({ comments, user }) => {
       {comments.length !== 0 && (
         <Box pl="50px">
           <Button
-            variant="black-text"
+            variant="dark-text"
             size="small"
             onClick={onToggleVisibilityComments}
             sx={{

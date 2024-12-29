@@ -83,7 +83,7 @@ const BlockQuiz: FC<BlockQuizProps> = ({ lessonId, lectureId, lectureIndex, onCl
                     className="quiz-question__text-field"
                   />
                   <Button
-                    variant="black-text"
+                    variant="dark-text"
                     size="medium"
                     className="quiz-question__action"
                     onClick={() => {
@@ -108,7 +108,7 @@ const BlockQuiz: FC<BlockQuizProps> = ({ lessonId, lectureId, lectureIndex, onCl
         : null}
       <Box pl="34px">
         <Button
-          variant="white-contain"
+          variant="light-contain"
           size="medium"
           className="block-quiz__action-add-quetion"
           onClick={onAddQuestion}

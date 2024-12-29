@@ -21,7 +21,7 @@ const CourseShare: FC = () => {
   }
 
   return (
-    <Button startIcon={<ShareIcon />} variant="black-text" className="course-share" onClick={() => onOpenModal()}>
+    <Button startIcon={<ShareIcon />} variant="dark-text" className="course-share" onClick={() => onOpenModal()}>
       <HideMediaContainer type="down" breakpoint="md">
         <Typography variant="caption" textAlign="center">
           {t("share")}

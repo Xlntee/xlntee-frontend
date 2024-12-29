@@ -50,7 +50,7 @@ const PricePlanList: FC = () => {
 
   const pricePlanCard2: PricePlanProps = {
     ...cards[1],
-    bgColor: getInverseColor(theme.palette.info.dark, "transparent"),
+    bgColor: getInverseColor(theme.palette.info.light, "transparent"),
     descriptionList: [
       {
         icon: <OfflineBoltIcon sx={{ fontSize: "30px" }} />,

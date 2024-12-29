@@ -75,7 +75,7 @@ const AccountMenu: FC = () => {
       <Divider />
       <Stack direction="column" alignItems="start" gap="14px" p="14px 20px">
         <Button
-          variant="black-outline"
+          variant="dark-outline"
           startIcon={<SwapHorizIcon fontSize="large" />}
           fullWidth
           size="small"
@@ -92,7 +92,7 @@ const AccountMenu: FC = () => {
         <Link to={`${userRole}/dashboard/support`} className="account-menu__link">
           {t("support-center")}
         </Link>
-        <Button variant="black-text" className="account-menu__link" onClick={onLogout}>
+        <Button variant="dark-text" className="account-menu__link" onClick={onLogout}>
           {t("sign-out")}
         </Button>
       </Stack>

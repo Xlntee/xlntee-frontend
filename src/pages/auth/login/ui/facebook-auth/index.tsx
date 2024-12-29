@@ -7,7 +7,7 @@ const FacebookAuth: FC = () => {
   const { t } = useTranslation("auth");
 
   return (
-    <Button aria-label={`${t("login-with")} facebook button`} className="auth-form__auth-btn" variant="black-outline">
+    <Button aria-label={`${t("login-with")} facebook button`} className="auth-form__auth-btn" variant="dark-outline">
       <img src="/assets/facebook.svg" alt="facebook" />
     </Button>
   );

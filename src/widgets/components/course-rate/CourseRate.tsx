@@ -21,7 +21,7 @@ const CourseRate: FC = () => {
   }
 
   return (
-    <Button startIcon={<StarIcon />} variant="black-text" className="course-rate" onClick={onOpenModal}>
+    <Button startIcon={<StarIcon />} variant="dark-text" className="course-rate" onClick={onOpenModal}>
       <HideMediaContainer type="down" breakpoint="md">
         <Typography variant="caption">{t("rate")}</Typography>
       </HideMediaContainer>

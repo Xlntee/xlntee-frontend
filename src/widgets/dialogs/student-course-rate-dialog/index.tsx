@@ -60,7 +60,7 @@ const StudentCourseRateDialog: FC = () => {
           fullWidth
         />
         <Box textAlign="center">
-          <Button variant="black-contain" size="large" sx={{ minWidth: "188px" }} onClick={onSubmit}>
+          <Button variant="dark-contain" size="large" sx={{ minWidth: "188px" }} onClick={onSubmit}>
             {t("review.submit")}
           </Button>
         </Box>

@@ -51,7 +51,7 @@ const HeaderProfile: FC = () => {
                   <Button
                     component={Link}
                     to={AppRoutes.auth.login}
-                    variant="black-contain"
+                    variant="dark-contain"
                     size="small"
                     className="button-rounded-sm"
                     sx={{ paddingInline: "20px" }}

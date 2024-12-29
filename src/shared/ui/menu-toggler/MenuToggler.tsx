@@ -15,7 +15,7 @@ type MenuTogglerProps = {
 
 const MenuToggler: FC<MenuTogglerProps> = ({ active, className, onClick }) => {
   return (
-    <Button variant="black-text" aria-label="toggle menu" className={cn("menu-toggler", className)} onClick={onClick}>
+    <Button variant="dark-text" aria-label="toggle menu" className={cn("menu-toggler", className)} onClick={onClick}>
       {active ? <CloseIcon /> : <MenuIcon />}
     </Button>
   );

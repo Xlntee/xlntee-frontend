@@ -76,7 +76,7 @@ const StudentCourseCard: FC<StudentCourseCardProps> = ({
           </Stack>
         </Stack>
         <Stack direction="row" gap="10px" flexWrap="wrap">
-          <Button variant="black-outline" size="small" className="student-course-card__action">
+          <Button variant="dark-outline" size="small" className="student-course-card__action">
             {t("preview")}
           </Button>
           <Button variant="contained" size="small" className="student-course-card__action">

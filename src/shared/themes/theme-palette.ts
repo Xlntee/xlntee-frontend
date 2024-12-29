@@ -5,12 +5,14 @@ export const palete: Record<PaletteMode, Partial<ThemeOptions["palette"]>> = {
   light: {
     mode: "light",
     primary: {
-      main: XlnteeColors["light"].BrandColor,
-      contrastText: XlnteeColors["light"].WhiteColor
+      main: `rgb(${XlnteeColors["light"].BrandColor})`,
+      light: `rgb(${XlnteeColors["light"].BrandColor}, 0.9)`,
+      contrastText: `rgb(${XlnteeColors["light"].LightAccentColor})`
     },
     secondary: {
-      main: XlnteeColors["light"].ActionColor,
-      contrastText: XlnteeColors["light"].WhiteColor
+      main: `rgb(${XlnteeColors["light"].ActionColor})`,
+      light: `rgb(${XlnteeColors["light"].ActionColor}, 0.9)`,
+      contrastText: `rgb(${XlnteeColors["light"].LightAccentColor})`
     },
     warning: {
       main: XlnteeColors["light"].ErrorTextColor,
@@ -20,7 +22,7 @@ export const palete: Record<PaletteMode, Partial<ThemeOptions["palette"]>> = {
       main: XlnteeColors["light"].SuccessFontColor
     },
     info: {
-      main: XlnteeColors["light"].BrandColor,
+      main: `rgb(${XlnteeColors["light"].BrandColor})`,
       light: XlnteeColors["light"].LightBrandColor
     },
     grey: {
@@ -30,19 +32,21 @@ export const palete: Record<PaletteMode, Partial<ThemeOptions["palette"]>> = {
       "400": XlnteeColors["dark"].FilledTextColor
     },
     text: {
-      primary: XlnteeColors["light"].MainBlackColor,
-      secondary: XlnteeColors["light"].ThemeDarkAccentColor
+      primary: `rgb(${XlnteeColors["light"].DarkAccentColor})`,
+      secondary: `rgb(${XlnteeColors["light"].LightAccentColor})`
     }
   },
   dark: {
     mode: "dark",
     primary: {
-      main: XlnteeColors["light"].BrandColor,
-      contrastText: XlnteeColors["dark"].WhiteColor
+      main: `rgb(${XlnteeColors["light"].BrandColor})`,
+      light: `rgb(${XlnteeColors["light"].BrandColor}, 0.9)`,
+      contrastText: `rgb(${XlnteeColors["light"].LightAccentColor})`
     },
     secondary: {
-      main: XlnteeColors["dark"].ActionColor,
-      contrastText: XlnteeColors["dark"].WhiteColor
+      main: `rgb(${XlnteeColors["light"].ActionColor})`,
+      light: `rgb(${XlnteeColors["light"].ActionColor}, 0.9)`,
+      contrastText: `rgb(${XlnteeColors["light"].LightAccentColor})`
     },
     warning: {
       main: XlnteeColors["dark"].ErrorTextColor,
@@ -52,7 +56,7 @@ export const palete: Record<PaletteMode, Partial<ThemeOptions["palette"]>> = {
       main: XlnteeColors["dark"].SuccessFontColor
     },
     info: {
-      main: XlnteeColors["dark"].BrandColor,
+      main: `rgb(${XlnteeColors["light"].BrandColor})`,
       light: XlnteeColors["dark"].LightBrandColor
     },
     grey: {
@@ -62,8 +66,8 @@ export const palete: Record<PaletteMode, Partial<ThemeOptions["palette"]>> = {
       "400": XlnteeColors["dark"].FilledTextColor
     },
     text: {
-      primary: XlnteeColors["dark"].WhiteColor,
-      secondary: XlnteeColors["dark"].ThemeDarkAccentColor
+      primary: `rgb(${XlnteeColors["light"].LightAccentColor})`,
+      secondary: `rgb(${XlnteeColors["light"].DarkAccentColor})`
     }
   }
 };

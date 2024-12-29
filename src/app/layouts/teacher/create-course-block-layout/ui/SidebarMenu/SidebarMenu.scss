@@ -58,8 +58,8 @@
       background-color: rgb(var(--stroke-gray-color));
 
       @include mixins.hover {
-        color: rgb(var(--white-color));
-        background-color: rgb(var(--main-black-color));
+        color: rgb(var(--light-accent-color));
+        background-color: rgb(var(--dark-accent-color));
       }
     }
   }

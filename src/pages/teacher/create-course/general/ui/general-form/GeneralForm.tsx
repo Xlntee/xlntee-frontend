@@ -194,10 +194,10 @@ const GeneralPage: FC<PageProps> = ({ title }) => {
           </Grid>
         </Grid>
         <Stack direction={{ sm: "row" }} flexWrap="wrap" gap={{ sm: "20px", md: "40px" }}>
-          <Button type="submit" variant="black-contain" size="medium" sx={{ minWidth: "190px" }}>
+          <Button type="submit" variant="dark-contain" size="medium" sx={{ minWidth: "190px" }}>
             {tCommon("button-save")}
           </Button>
-          <Button variant="black-text" size="medium">
+          <Button variant="dark-text" size="medium">
             {tCommon("button-discard-changes")}
           </Button>
         </Stack>

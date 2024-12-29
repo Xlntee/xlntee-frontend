@@ -38,7 +38,7 @@ const LectureFilePreview: FC<LectureFilePreviewProps> = ({ type, value, onDelete
         value={value}
       />
       <Button
-        variant="white-text"
+        variant="light-text"
         size="medium"
         className="lecture-file-preview__delete-icon"
         sx={{

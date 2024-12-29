@@ -29,6 +29,7 @@ const PricePlanCard: FC<PricePlanProps> = ({ pretitle, title, text, button, desc
       p="30px 30px 10px"
       borderRadius="20px"
       bgcolor={bgColor}
+      border={`1px solid ${theme.palette.grey["200"]}`}
       className="base-shadow"
     >
       <Typography variant="body1">{pretitle}</Typography>
@@ -38,7 +39,8 @@ const PricePlanCard: FC<PricePlanProps> = ({ pretitle, title, text, button, desc
       </Typography>
       <Box marginBottom="30px">
         <Button
-          variant="outlined"
+          color="primary"
+          variant="contained"
           size="large"
           className="button-rounded-xl"
           sx={{

@@ -28,7 +28,7 @@ const StructurePage: FC<PageProps> = ({ title }) => {
         <BlockLesson key={lesson.id} index={index} id={lesson.id} canDelete={arr.length > 1} />
       ))}
       <Button
-        variant="black-outline"
+        variant="dark-outline"
         size="medium"
         fullWidth
         className="button-rounded-md"
@@ -37,7 +37,7 @@ const StructurePage: FC<PageProps> = ({ title }) => {
       >
         + {t("structure.add-lesson")}
       </Button>
-      <Button variant="black-contain" size="medium" onClick={onSave} sx={{ minWidth: "190px" }}>
+      <Button variant="dark-contain" size="medium" onClick={onSave} sx={{ minWidth: "190px" }}>
         {tCommon("button-save")}
       </Button>
     </Box>

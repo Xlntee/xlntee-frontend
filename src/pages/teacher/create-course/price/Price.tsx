@@ -94,10 +94,10 @@ const PricePage: FC<PageProps> = ({ title }) => {
           <BlockPromoCodes />
         </Box>
         <Stack direction={{ sm: "row" }} flexWrap="wrap" gap={{ sm: "20px", md: "40px" }} mb="20px">
-          <Button onClick={onSubmit} variant="black-contain" size="medium" sx={{ minWidth: "190px" }}>
+          <Button onClick={onSubmit} variant="dark-contain" size="medium" sx={{ minWidth: "190px" }}>
             {tCommon("button-save")}
           </Button>
-          <Button variant="black-text" size="medium">
+          <Button variant="dark-text" size="medium">
             {tCommon("button-discard-changes")}
           </Button>
         </Stack>

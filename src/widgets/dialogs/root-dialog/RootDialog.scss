@@ -43,7 +43,7 @@
   background-color: var(--app-modal-bg-color);
   padding: 40px 20px 30px;
   border-radius: 20px;
-  box-shadow: 0 0 10px 0 rgb(var(--main-black-color) / 0.25);
+  box-shadow: 0 0 10px 0 rgb(var(--dark-accent-color) / 0.25);
 
   @include mixins.media(tablet) {
     padding: 40px;

@@ -51,7 +51,7 @@ const RegistrationForm: FC = () => {
     <RootForm methods={methods} onSubmit={onSubmit} className="auth-form">
       <Stack direction="row" gap="20px" mb="20px">
         <Button
-          variant="black-outline"
+          variant="dark-outline"
           size="medium"
           fullWidth
           startIcon={<SchoolOutlinedIcon />}
@@ -63,7 +63,7 @@ const RegistrationForm: FC = () => {
           {t("registration-as-student")}
         </Button>
         <Button
-          variant="black-outline"
+          variant="dark-outline"
           size="medium"
           fullWidth
           startIcon={<SchoolOutlinedIcon />}

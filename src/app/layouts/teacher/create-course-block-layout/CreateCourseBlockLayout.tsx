@@ -39,7 +39,7 @@ const CreateCourseBlockLayout: FC = () => {
       <Container className="create-course-layout__container">
         <LimitError message={t("error-limits-plan")} />
         <HideMediaContainer type="up" breakpoint="xl">
-          <Button variant="black-contain" onClick={openMenu}>
+          <Button variant="dark-contain" onClick={openMenu}>
             {t("course-navigation")}
           </Button>
         </HideMediaContainer>

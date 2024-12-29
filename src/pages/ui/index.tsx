@@ -9,38 +9,6 @@ import { Header, HeaderProfile } from "src/widgets/components";
 import { UserRoles } from "src/shared/config/user-role";
 
 const typographyList = ["h1", "h2", "h3", "h4", "h5", "h6"] as const;
-const buttonColorList = ["primary", "secondary", "success", "error"] as const;
-
-const renderButtons = (variant: string, size: string, className?: string): JSX.Element => {
-  return (
-    <>
-      {buttonColorList.map((item) => (
-        <Button key={item} color={item} variant={variant as any} size={size as any} className={className}>
-          {item}
-        </Button>
-      ))}
-    </>
-  );
-};
-
-const renderButtonsGridCol = (variant: string, className?: string): JSX.Element => {
-  return (
-    <Grid item xs={12} sm={6} md={3}>
-      <Typography variant="h6">{variant} small</Typography>
-      <Stack gap={2} mb={2} direction="column" alignItems="start">
-        {renderButtons(variant, "small", className)}
-      </Stack>
-      <Typography variant="h6">{variant} medium</Typography>
-      <Stack gap={2} mb={2} direction="column" alignItems="start">
-        {renderButtons(variant, "medium", className)}
-      </Stack>
-      <Typography variant="h6">{variant} large</Typography>
-      <Stack gap={2} mb={2} direction="column" alignItems="start">
-        {renderButtons(variant, "large", className)}
-      </Stack>
-    </Grid>
-  );
-};
 
 const UiPage: FC<PageProps> = ({ title }) => {
   useTitle(title);
@@ -110,24 +78,145 @@ const UiPage: FC<PageProps> = ({ title }) => {
         <Box marginBlock={3}>
           <Divider />
         </Box>
-        <Typography variant="h2">Buttons Default</Typography>
-        <Grid container spacing={2}>
-          {renderButtonsGridCol("contained")}
-          {renderButtonsGridCol("outlined")}
-          {renderButtonsGridCol("text")}
-        </Grid>
-        <Typography variant="h2">Buttons Rounded</Typography>
-        <Grid container spacing={2}>
-          {renderButtonsGridCol("contained", "button-rounded-md")}
-          {renderButtonsGridCol("outlined", "button-rounded-md")}
-          {renderButtonsGridCol("text", "button-rounded-lg")}
-        </Grid>
-        <Typography variant="h2">Buttons custom variants</Typography>
-        <Grid container spacing={4}>
-          {renderButtonsGridCol("black-contain", "button-rounded-md")}
-          {renderButtonsGridCol("black-outline", "button-rounded-md")}
-          {renderButtonsGridCol("black-text")}
-        </Grid>
+        <Typography variant="h2">Buttons</Typography>
+        <Box maxWidth="max-content">
+          <Grid container spacing="10px">
+            <Grid item md={4}>
+              <Stack gap="10px">
+                <Button color="primary" variant="contained" size="small">
+                  Primary contained
+                </Button>
+                <Button color="primary" variant="contained" size="medium">
+                  Primary contained
+                </Button>
+                <Button color="primary" variant="contained" size="large">
+                  Primary contained
+                </Button>
+              </Stack>
+            </Grid>
+            <Grid item md={4}>
+              <Stack gap="10px">
+                <Button color="primary" variant="outlined" size="small" className="button-rounded-xl">
+                  Primary outlined
+                </Button>
+                <Button color="primary" variant="outlined" size="medium" className="button-rounded-xl">
+                  Primary outlined
+                </Button>
+                <Button color="primary" variant="outlined" size="large" className="button-rounded-xl">
+                  Primary outlined
+                </Button>
+              </Stack>
+            </Grid>
+            <Grid item md={4}>
+              <Stack gap="10px">
+                <Button color="primary" variant="text" size="small">
+                  Primary text
+                </Button>
+                <Button color="primary" variant="text" size="medium">
+                  Primary text
+                </Button>
+                <Button color="primary" variant="text" size="large">
+                  Primary text
+                </Button>
+              </Stack>
+            </Grid>
+            <Grid item md={4}>
+              <Stack gap="10px">
+                <Button color="secondary" variant="contained" size="small">
+                  Secondary contained
+                </Button>
+                <Button color="secondary" variant="contained" size="medium">
+                  Secondary contained
+                </Button>
+                <Button color="secondary" variant="contained" size="large">
+                  Secondary contained
+                </Button>
+              </Stack>
+            </Grid>
+            <Grid item md={4}>
+              <Stack gap="10px">
+                <Button color="secondary" variant="outlined" size="small" className="button-rounded-xl">
+                  Secondary contained
+                </Button>
+                <Button color="secondary" variant="outlined" size="medium" className="button-rounded-xl">
+                  Secondary contained
+                </Button>
+                <Button color="secondary" variant="outlined" size="large" className="button-rounded-xl">
+                  Secondary contained
+                </Button>
+              </Stack>
+            </Grid>
+            <Grid item md={4}>
+              <Stack gap="10px">
+                <Button color="secondary" variant="text" size="small">
+                  Secondary text
+                </Button>
+                <Button color="secondary" variant="text" size="medium">
+                  Secondary text
+                </Button>
+                <Button color="secondary" variant="text" size="large">
+                  Secondary text
+                </Button>
+              </Stack>
+            </Grid>
+            <Grid item md={4}>
+              <Stack gap="10px">
+                <Button variant="dark-contain" size="small">
+                  Black contain
+                </Button>
+                <Button variant="dark-contain" size="medium">
+                  Black contain
+                </Button>
+                <Button variant="dark-contain" size="large">
+                  Black contain
+                </Button>
+              </Stack>
+            </Grid>
+            <Grid item md={4}>
+              <Stack gap="10px">
+                <Button variant="dark-outline" size="small" className="button-rounded-xl">
+                  Secondary text
+                </Button>
+                <Button variant="dark-outline" size="medium" className="button-rounded-xl">
+                  Secondary text
+                </Button>
+                <Button variant="dark-outline" size="large" className="button-rounded-xl">
+                  Secondary text
+                </Button>
+              </Stack>
+            </Grid>
+            <Grid item md={4}>
+              <Stack gap="10px">
+                <Button variant="dark-text" size="small" className="button-rounded-xl">
+                  Text
+                </Button>
+                <Button variant="dark-text" size="medium" className="button-rounded-xl">
+                  Text
+                </Button>
+                <Button variant="dark-text" size="large" className="button-rounded-xl">
+                  Text
+                </Button>
+              </Stack>
+            </Grid>
+            <Grid item md={4}>
+              <Stack gap="10px">
+                <Button variant="light-contain" size="small">
+                  Light contain
+                </Button>
+                <Button variant="light-text" size="small">
+                  Light text
+                </Button>
+              </Stack>
+            </Grid>
+            <Grid item md={4}>
+              <Stack gap="10px">
+                <Button variant="light-contain" size="small" className="button-rounded-xl">
+                  Light contain
+                </Button>
+              </Stack>
+            </Grid>
+          </Grid>
+        </Box>
         <Box marginBlock={3}>
           <Divider />
         </Box>

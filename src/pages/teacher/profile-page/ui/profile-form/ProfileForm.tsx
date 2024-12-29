@@ -130,7 +130,7 @@ const ProfileForm: FC = () => {
           </Grid>
         ))}
       </Grid>
-      <Button type="submit" variant="black-contain" sx={{ minWidth: "140px" }}>
+      <Button type="submit" variant="dark-contain" sx={{ minWidth: "140px" }}>
         {tCommon("button-save")}
       </Button>
     </RootForm>

@@ -64,7 +64,7 @@ const QuizAnswerList: FC<QuizAnswerListProps> = ({ lectureIndex, quizIndex }) =>
                 placeholder={`${t("structure.quiz-answer-field-placeholder")}...`}
                 className="text-field-light"
               />
-              <Button variant="black-text" size="medium" onClick={() => remove(index)} className="quiz-answer__action">
+              <Button variant="dark-text" size="medium" onClick={() => remove(index)} className="quiz-answer__action">
                 <DeleteOutlineIcon />
               </Button>
             </Box>
@@ -72,12 +72,7 @@ const QuizAnswerList: FC<QuizAnswerListProps> = ({ lectureIndex, quizIndex }) =>
         ))}
       </List>
       <Box mt="10px" paddingLeft="38px">
-        <Button
-          variant="black-text"
-          size="medium"
-          className="quiz-answer-list__action-add-answer"
-          onClick={onAddAnswer}
-        >
+        <Button variant="dark-text" size="medium" className="quiz-answer-list__action-add-answer" onClick={onAddAnswer}>
           + {t("structure.lecture-quiz-add-answer")}
         </Button>
       </Box>

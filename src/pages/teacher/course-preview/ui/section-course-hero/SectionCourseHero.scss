@@ -2,7 +2,7 @@
 
 .section-course-hero {
   &__price {
-    color: rgb(var(--main-black-color));
+    color: rgb(var(--dark-accent-color));
     font-weight: 400;
 
     &.MuiTypography-root {
@@ -54,7 +54,7 @@
       transform: translate(-50%, -50%);
       z-index: 1;
       border-radius: 50%;
-      background-color: rgb(var(--white-color) / 0.6);
+      background-color: rgb(var(--light-accent-color) / 0.6);
       height: 60px;
       height: 60px;
 

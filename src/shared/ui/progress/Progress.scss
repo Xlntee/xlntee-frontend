@@ -36,14 +36,14 @@
   }
 
   .MuiLinearProgress-colorSuccess + &__value.MuiTypography-root {
-    color: rgb(var(--white-color));
+    color: rgb(var(--light-accent-color));
   }
 
   &__value {
     @include text-position;
 
     &.MuiTypography-root {
-      color: rgb(var(--main-black-color));
+      color: rgb(var(--dark-accent-color));
     }
   }
 

@@ -40,7 +40,7 @@ const HelpCenterPage: FC<PageProps> = ({ title }) => {
             <Typography variant="caption" color={theme.palette.primary.main}>
               {t("help-center.info-text")}
             </Typography>
-            <Button variant="black-text" className="help-center-page__return-btn" onClick={() => navigate(-1)}>
+            <Button variant="dark-text" className="help-center-page__return-btn" onClick={() => navigate(-1)}>
               {t("help-center.return-btn")} &gt;
             </Button>
           </Stack>

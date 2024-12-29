@@ -1,13 +1,10 @@
 export const XlnteeColors = {
   light: {
-    ThemeLightAccentColor: "#ffffff",
-    ThemeDarkAccentColor: "#202020",
+    LightAccentColor: "255, 255, 255", // #FFFFFF
+    DarkAccentColor: "32, 32, 32", // #202020
 
-    WhiteColor: "#FFFFFF",
-    MainBlackColor: "#202020",
-
-    BrandColor: "#6361ff",
-    ActionColor: "#FF1C60",
+    BrandColor: "99, 97, 255", // #6361FF
+    ActionColor: "255, 28, 96", // #FF1C60
 
     ErrorTextColor: "#B63030",
     ErrorBorderColor: "#EE2C2C",
@@ -26,14 +23,11 @@ export const XlnteeColors = {
     RatingColor: "#FFC940"
   },
   dark: {
-    ThemeLightAccentColor: "#ffffff",
-    ThemeDarkAccentColor: "#202020",
+    LightAccentColor: "255, 255, 255", // #FFFFFF
+    DarkAccentColor: "32, 32, 32", // #202020
 
-    WhiteColor: "#FFFFFF",
-    MainBlackColor: "#202020",
-
-    BrandColor: "#6361ff",
-    ActionColor: "#FF1C60",
+    BrandColor: "99, 97, 255", // #6361FF
+    ActionColor: "255, 28, 96", // #FF1C60
 
     ErrorTextColor: "#B63030",
     ErrorBorderColor: "#EE2C2C",

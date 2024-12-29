@@ -34,18 +34,18 @@ const Tools: FC<ToolsProps> = ({ onClickTab }) => {
       border={`1px solid ${theme.palette.grey["200"]}`}
     >
       <Stack direction="row" alignItems="center" gap="10px">
-        <Button variant="black-text" className="course-tools__button">
+        <Button variant="dark-text" className="course-tools__button">
           <ArrowBackIcon />
         </Button>
         <Button
-          variant="black-text"
+          variant="dark-text"
           className={cn("course-tools__button", { active: tab === ToolsTab.description })}
           onClick={() => onChooseTab(ToolsTab.description)}
         >
           <TextSnippetIcon />
         </Button>
         <Button
-          variant="black-text"
+          variant="dark-text"
           className={cn("course-tools__button", { active: tab === ToolsTab.comments })}
           onClick={() => onChooseTab(ToolsTab.comments)}
         >
@@ -54,7 +54,7 @@ const Tools: FC<ToolsProps> = ({ onClickTab }) => {
       </Stack>
       <Stack direction="row" alignItems="center" gap="10px" pl="10px">
         <FormControlLabel control={<Checkbox />} label="Completed lecture" className="course-tools__label" />
-        <Button variant="black-text" className="course-tools__button">
+        <Button variant="dark-text" className="course-tools__button">
           <ArrowForwardIcon />
         </Button>
       </Stack>

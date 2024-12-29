@@ -1,6 +1,6 @@
 import { InputHTMLAttributes } from "react";
 
-export type UploadTogglerVariant = "text" | "white-contain";
+export type UploadTogglerVariant = "text" | "light-contain";
 
 export type UploaderProps = Omit<InputHTMLAttributes<HTMLInputElement>, "onChange"> & {
   file?: string | null;

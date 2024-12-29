@@ -87,7 +87,7 @@ const RefundForm: FC = () => {
           </Typography>
         </Stack>
         <Stack alignItems="flex-end">
-          <Button variant="black-contain" onClick={onSubmit} sx={{ textTransform: "capitalize", minWidth: "120px" }}>
+          <Button variant="dark-contain" onClick={onSubmit} sx={{ textTransform: "capitalize", minWidth: "120px" }}>
             {t("refund.submit")}
           </Button>
         </Stack>

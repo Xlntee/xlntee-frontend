@@ -1,6 +1,6 @@
 :root {
-  --white-color: 255 255 255; //#FFFFFF;
-  --main-black-color: 32 32 32; // #202020
+  --light-accent-color: 255 255 255; //#FFFFFF;
+  --dark-accent-color: 32 32 32; // #202020
 
   --brand-color: 99 97 255; //#6361FF
   --action-color: 255 28 96; //#FF1C60
@@ -22,32 +22,32 @@
 
   --rating-color: 255 201 64; //#FFC940
 
-  --main-dark-color: var(--main-black-color);
-  --main-element-contrast-color: var(--white-color);
+  --main-dark-color: var(--dark-accent-color);
+  --main-element-contrast-color: var(--light-accent-color);
   --link-color: var(--brand-color);
 
-  --base-shadow: 0 2px 6px 0 rgb(var(--main-black-color) / 0.25);
-  --base-shadow-invisible: 0 2px 6px 0 rgb(var(--main-black-color) / 0);
-  --header-shadow: 0 2px 5px 0 rgb(var(--main-black-color) / 0.2);
+  --base-shadow: 0 2px 6px 0 rgb(var(--dark-accent-color) / 0.25);
+  --base-shadow-invisible: 0 2px 6px 0 rgb(var(--dark-accent-color) / 0);
+  --header-shadow: 0 2px 5px 0 rgb(var(--dark-accent-color) / 0.2);
 
   --transition-cubic-bezier: cubic-bezier(0.4, 0, 0.2, 1);
 
   --app-modal-bg-color: rgb(var(--main-element-contrast-color));
   --app-block-lecture-bg-color: rgb(var(--brand-color));
-  --app-block-lecture-aside-bg-color: rgb(var(--white-color));
-  --app-block-lecture-field-bg-color: rgb(var(--white-color));
+  --app-block-lecture-aside-bg-color: rgb(var(--light-accent-color));
+  --app-block-lecture-field-bg-color: rgb(var(--light-accent-color));
   --app-course-btn-card-bg-color: rgb(var(--light-gray-color));
   --app-complain-field-bg-color: rgb(var(--light-gray-color));
   --app-video-description-border-color: transparent;
-  --app-collapsed-navigation-bg-color: rgb(var(--white-color));
-  --app-accordion-progress-color: rgb(var(--white-color));
+  --app-collapsed-navigation-bg-color: rgb(var(--light-accent-color));
+  --app-accordion-progress-color: rgb(var(--light-accent-color));
   --app-auth-tab-color: rgb(var(--brand-color));
 }
 
 html[data-theme="dark"] {
   --input-field-border-color: 255 255 255; //#FFFFFF
 
-  --main-black-color: 255 255 255; // #ffffff
+  --dark-accent-color: 255 255 255; // #ffffff
   --main-element-contrast-color: 32 32 32; // #202020
   --main-dark-color: var(--main-element-contrast-color);
 
@@ -61,5 +61,5 @@ html[data-theme="dark"] {
   --app-video-description-border-color: rgb(var(--stroke-gray-color));
   --app-collapsed-navigation-bg-color: rgb(var(--main-dark-color));
   --app-accordion-progress-color: rgb(var(--main-dark-color));
-  --app-auth-tab-color: rgb(var(--main-black-color));
+  --app-auth-tab-color: rgb(var(--dark-accent-color));
 }

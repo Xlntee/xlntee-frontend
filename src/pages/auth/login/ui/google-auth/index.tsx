@@ -7,7 +7,7 @@ const GoogleAuth: FC = () => {
   const { t } = useTranslation("auth");
 
   return (
-    <Button aria-label={`${t("login-with")} Google button`} className="auth-form__auth-btn" variant="black-outline">
+    <Button aria-label={`${t("login-with")} Google button`} className="auth-form__auth-btn" variant="dark-outline">
       <img src="/assets/google.svg" alt="google" />
     </Button>
   );

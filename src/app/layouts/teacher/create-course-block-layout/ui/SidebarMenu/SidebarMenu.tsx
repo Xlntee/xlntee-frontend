@@ -18,7 +18,7 @@ const SidebarMenu: FC = () => {
       <Stack className="create-course-nav" direction="column" gap="10px">
         <NavigationList />
         <Button
-          variant="black-text"
+          variant="dark-text"
           size="small"
           fullWidth
           disabled
@@ -34,7 +34,7 @@ const SidebarMenu: FC = () => {
         <Progress value={0} title={t("students")} color="info">
           0/100
         </Progress>
-        <Button size="small" variant="black-contain" className="button-rounded-sm">
+        <Button size="small" variant="dark-contain" className="button-rounded-sm">
           {t("change-plan")}
         </Button>
       </Stack>
