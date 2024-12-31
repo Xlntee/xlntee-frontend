@@ -2,11 +2,7 @@
 
 .create-course-nav {
   padding: 16px 14px;
-  box-shadow: var(--base-shadow);
-
-  @include mixins.media(desktop) {
-    border-radius: 25px;
-  }
+  border-radius: 25px;
 
   &__list {
     display: flex;
@@ -32,7 +28,7 @@
       color: currentColor;
       text-decoration: none;
       padding-block: 8px;
-      font-size: 18px;
+      font-size: 16px;
 
       @include mixins.animate(color);
 
@@ -55,12 +51,15 @@
       justify-content: start;
       min-height: 36px;
       font-size: 16px;
-      color: rgb(var(--gray-color-400));
-      background-color: rgb(var(--gray-stroke-color));
+      background-color: rgb(var(--stroke-gray-color));
 
       @include mixins.hover {
-        color: rgb(var(--light-color));
-        background-color: rgb(var(--main-element-color));
+        color: rgb(var(--light-accent-color));
+        background-color: rgb(var(--dark-accent-color));
+      }
+
+      [data-theme="dark"] & {
+        color: rgb(var(--main-dark-color));
       }
     }
   }

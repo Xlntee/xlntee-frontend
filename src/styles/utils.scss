@@ -1,0 +1,25 @@
+@use "styles/mixins.scss" as mixins;
+
+.base-shadow {
+  box-shadow: var(--base-shadow);
+}
+
+.base-shadow-with-hover {
+  box-shadow: var(--base-shadow);
+
+  @include mixins.animate(box-shadow);
+
+  @include mixins.hover {
+    box-shadow: 0 8px 8px 0 rgb(var(--dark-accent-color) / 0.3);
+  }
+}
+
+.base-invisible-shadow-with-hover {
+  box-shadow: var(--base-shadow-invisible);
+
+  @include mixins.animate(box-shadow);
+
+  @include mixins.hover {
+    box-shadow: var(--base-shadow);
+  }
+}

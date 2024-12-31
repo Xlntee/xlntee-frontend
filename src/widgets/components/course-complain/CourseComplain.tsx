@@ -60,7 +60,7 @@ const CourseRate: FC = () => {
           aria-controls="account-menu"
           aria-expanded={open ? "true" : undefined}
           endIcon={<ArrowDropDownIcon />}
-          variant="black-text"
+          variant="dark-text"
           className="course-complain__toggler"
           onClick={handleClick}
         >
@@ -78,7 +78,7 @@ const CourseRate: FC = () => {
       >
         <Stack position="relative" direction="column" gap="10px" padding="14px">
           <Button
-            variant="black-text"
+            variant="dark-text"
             startIcon={<NewReleasesOutlinedIcon />}
             className="course-complain-menu__button"
             onClick={() => onHandleClickModal(Dialogs.complain)}
@@ -86,7 +86,7 @@ const CourseRate: FC = () => {
             {t("complain")}
           </Button>
           <Button
-            variant="black-text"
+            variant="dark-text"
             startIcon={<CreditCardIcon />}
             className="course-complain-menu__button"
             onClick={() => onHandleClickModal(Dialogs.refund)}

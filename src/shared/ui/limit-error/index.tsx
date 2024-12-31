@@ -15,9 +15,13 @@ const LimitError: FC<LimitErrorProps> = ({ message }) => {
   return (
     <Stack direction="row" justifyContent="center" alignItems="center" gap="10px" className="error-limits">
       <ErrorOutlineOutlinedIcon color="error" />
-      <Typography variant="body2" fontWeight={300}>
+      <Typography variant="body2" fontWeight={300} color="text.secondary">
         {message} {""}
-        <RouterLink to="#">{t("change-plan")}</RouterLink>
+        <RouterLink to="#">
+          <Typography variant="body2" component="span" color="text.secondary">
+            {t("change-plan")}
+          </Typography>
+        </RouterLink>
       </Typography>
     </Stack>
   );

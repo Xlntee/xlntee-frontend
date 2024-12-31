@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import cn from "classnames";
 
-import { Checkbox, Stack, Button, FormControlLabel } from "@mui/material";
+import { Checkbox, Stack, Button, FormControlLabel, useTheme } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import TextSnippetIcon from "@mui/icons-material/TextSnippet";
@@ -17,6 +17,7 @@ type ToolsProps = {
 
 const Tools: FC<ToolsProps> = ({ onClickTab }) => {
   const [tab, setTab] = useState<string>(ToolsTab.description);
+  const theme = useTheme();
 
   function onChooseTab(value: string): void {
     onClickTab(value);
@@ -24,20 +25,27 @@ const Tools: FC<ToolsProps> = ({ onClickTab }) => {
   }
 
   return (
-    <Stack className="course-tools" direction="row" flexWrap="wrap" gap="10px" justifyContent="space-between">
+    <Stack
+      className="course-tools"
+      direction="row"
+      flexWrap="wrap"
+      gap="10px"
+      justifyContent="space-between"
+      border={`1px solid ${theme.palette.grey["200"]}`}
+    >
       <Stack direction="row" alignItems="center" gap="10px">
-        <Button variant="black-text" className="course-tools__button">
+        <Button variant="dark-text" className="course-tools__button">
           <ArrowBackIcon />
         </Button>
         <Button
-          variant="black-text"
+          variant="dark-text"
           className={cn("course-tools__button", { active: tab === ToolsTab.description })}
           onClick={() => onChooseTab(ToolsTab.description)}
         >
           <TextSnippetIcon />
         </Button>
         <Button
-          variant="black-text"
+          variant="dark-text"
           className={cn("course-tools__button", { active: tab === ToolsTab.comments })}
           onClick={() => onChooseTab(ToolsTab.comments)}
         >
@@ -46,7 +54,7 @@ const Tools: FC<ToolsProps> = ({ onClickTab }) => {
       </Stack>
       <Stack direction="row" alignItems="center" gap="10px" pl="10px">
         <FormControlLabel control={<Checkbox />} label="Completed lecture" className="course-tools__label" />
-        <Button variant="black-text" className="course-tools__button">
+        <Button variant="dark-text" className="course-tools__button">
           <ArrowForwardIcon />
         </Button>
       </Stack>

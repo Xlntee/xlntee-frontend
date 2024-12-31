@@ -4,8 +4,6 @@
   --collapsed: block;
 
   border-radius: 10px;
-  background-color: var(--app-block-lecture-bg-color);
-  color: rgb(var(--light-color));
   padding: 16px;
 
   &--collapsed {
@@ -17,12 +15,6 @@
     align-items: center;
     gap: 10px;
     grid-template-columns: auto auto 1fr;
-  }
-
-  &__title {
-    .MuiFormHelperText-root.Mui-error {
-      color: rgb(var(--light-color));
-    }
   }
 
   &__action-delete {
@@ -51,8 +43,8 @@
   }
 
   .quill {
-    color: rgb(var(--main-element-color));
-    background-color: rgb(var(--light-color));
+    color: rgb(var(--dark-accent-color));
+    background-color: rgb(var(--light-accent-color));
     border-radius: 10px;
     overflow: hidden;
   }
@@ -62,7 +54,7 @@
   display: grid;
   align-items: start;
   gap: 10px;
-  grid-template-columns: 24px 1fr 24px;
+  grid-template-columns: 24px 1fr 40px;
 
   > svg {
     position: relative;

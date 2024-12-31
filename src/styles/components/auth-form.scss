@@ -35,19 +35,17 @@
   &__btn-role {
     &.MuiButtonBase-root {
       font-weight: 400;
-      color: rgb(var(--main-dark-color));
-      border-color: rgb(var(--main-dark-color));
-
-      @include mixins.hover {
-        color: rgb(var(--light-color));
-        background-color: rgb(var(--main-dark-color));
-      }
     }
 
     &.active {
       &.MuiButtonBase-root {
-        color: rgb(var(--light-color));
+        color: rgb(var(--light-accent-color));
         background-color: rgb(var(--main-dark-color));
+
+        [data-theme="dark"] & {
+          background-color: rgb(var(--light-accent-color));
+          color: rgb(var(--main-dark-color));
+        }
       }
     }
   }
@@ -58,8 +56,9 @@
       min-height: 36px;
       font-size: 20px;
       padding: 8px;
+      border-radius: 6px;
       box-shadow: var(--base-shadow-invisible);
-      border-color: rgb(var(--main-element-color));
+      border-color: rgb(var(--dark-accent-color));
 
       @include mixins.media(tablet) {
         font-size: 30px;

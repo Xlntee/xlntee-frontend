@@ -37,7 +37,7 @@ const AdvertisingPage: FC<PageProps> = ({ title }) => {
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
-                <Button variant="black-text" sx={{ minWidth: "40px" }} onClick={onCopyToClipboard}>
+                <Button variant="dark-text" sx={{ minWidth: "40px" }} onClick={onCopyToClipboard}>
                   <ContentCopyIcon />
                 </Button>
               </InputAdornment>

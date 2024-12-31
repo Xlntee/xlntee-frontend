@@ -42,7 +42,7 @@
   &::after {
     content: "";
     position: absolute;
-    border: 1px dashed rgb(var(--main-element-color));
+    border: 1px dashed rgb(var(--dark-accent-color));
     top: var(--top-position-decor-line);
     left: calc(var(--left-position-decor-line) * -1);
   }
@@ -64,7 +64,7 @@
 
     &::after {
       content: "";
-      border: 1px dashed rgb(var(--main-element-color));
+      border: 1px dashed rgb(var(--dark-accent-color));
       flex: 1;
     }
   }

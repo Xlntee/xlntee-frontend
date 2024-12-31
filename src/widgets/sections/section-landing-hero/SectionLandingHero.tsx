@@ -8,6 +8,7 @@ import { AppRoutes } from "src/shared/routes";
 import { CheckList } from "./ui";
 
 import "./SectionLandingHero.scss";
+import { XlnteeColors } from "src/shared/themes/colors";
 
 type SectionLandingHeroProps = {
   title: string;
@@ -22,6 +23,7 @@ type SectionLandingHeroProps = {
 
 const SectionLandingHero: FC<SectionLandingHeroProps> = ({ title, subtitle, buttonTitle, features, image }) => {
   const theme = useTheme();
+  console.log(XlnteeColors[theme.palette.mode].LightAccentColor);
 
   const isFeaturesArray = Array.isArray(features);
 
@@ -34,7 +36,12 @@ const SectionLandingHero: FC<SectionLandingHeroProps> = ({ title, subtitle, butt
               <Typography color="primary" variant="h1" mb="-14px" lineHeight={1}>
                 {title}
               </Typography>
-              <Typography variant="body1" color={theme.palette.primary.contrastText} className="section-hero__subtitle">
+              <Typography
+                variant="body1"
+                className="section-hero__subtitle"
+                color={`rgb(${XlnteeColors[theme.palette.mode].LightAccentColor})`}
+                bgcolor={theme.palette.primary.main}
+              >
                 {subtitle}
               </Typography>
               {isFeaturesArray && <CheckList items={features} />}

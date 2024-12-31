@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { yupResolver } from "@hookform/resolvers/yup";
 
-import { Button } from "@mui/material";
+import { Button, Stack } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 import { TextField } from "src/shared/ui/form-fields";
@@ -43,9 +43,11 @@ const HelpCenterForm: FC<HelpCenterFormProps> = ({ onSubmit }) => {
         className="help-center-form__text-field"
         placeholder={t("help-center.placeholder")}
       />
-      <Button type="submit" endIcon={<ArrowForwardIcon />} className="help-center-form__submit-button">
-        {t("help-center.submit-btn")}
-      </Button>
+      <Stack direction="row" justifyContent="flex-end">
+        <Button type="submit" endIcon={<ArrowForwardIcon />}>
+          {t("help-center.submit-btn")}
+        </Button>
+      </Stack>
     </RootForm>
   );
 };

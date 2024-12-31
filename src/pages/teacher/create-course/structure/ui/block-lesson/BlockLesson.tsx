@@ -108,6 +108,7 @@ const BlockLesson: FC<BlockLessonProps> = ({ index, id, canDelete }) => {
         <Button
           className={cn("collapse-toggler", { active: isCollapsed })}
           onClick={() => setIsCollapsed((prevState) => !prevState)}
+          variant="dark-text"
         >
           <ArrowDropUpIcon />
         </Button>
@@ -115,7 +116,7 @@ const BlockLesson: FC<BlockLessonProps> = ({ index, id, canDelete }) => {
         <Box position="absolute" top="4px" right="0">
           {canDelete && (
             <Button
-              variant="black-text"
+              variant="dark-text"
               size="medium"
               className="block-lesson__action-delete"
               onClick={() => onOpenModal(id)}
@@ -155,7 +156,7 @@ const BlockLesson: FC<BlockLessonProps> = ({ index, id, canDelete }) => {
           >
             + {t("structure.add-lecture")}
           </Button>
-          <Button type="submit" variant="black-contain" size="medium" className="block-lesson__action-save-lecture">
+          <Button type="submit" variant="dark-contain" size="medium" className="block-lesson__action-save-lecture">
             {t("structure.save-section")}
           </Button>
         </Stack>

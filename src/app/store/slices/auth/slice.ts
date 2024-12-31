@@ -7,7 +7,7 @@ export interface IAuthState {
 
 const initialState: IAuthState = {
   email: "",
-  isAuth: false
+  isAuth: true
 };
 
 const authSlice = createSlice({

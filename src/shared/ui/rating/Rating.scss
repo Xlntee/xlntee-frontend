@@ -18,14 +18,13 @@
   &__count {
     &.MuiTypography-root {
       font-size: var(--review-count-size);
-      color: rgb(var(--yellow-color));
+      color: rgb(var(--rating-color));
     }
   }
 
   &__review-count {
     &.MuiTypography-root {
       font-size: var(--rating-review-size);
-      color: rgb(var(--gray-color-400));
     }
   }
 

@@ -2,7 +2,6 @@
 
 .student-course-card {
   position: relative;
-  border: 1px solid rgb(var(--gray-stroke-color));
   border-radius: 25px;
   padding: 6px;
   box-shadow: var(--base-shadow-invisible);
@@ -42,8 +41,6 @@
   }
 
   &__discount {
-    color: rgb(var(--light-color));
-    background-color: rgb(var(--action-color));
     border-radius: 20px;
     display: inline-block;
     padding: 4px 8px;

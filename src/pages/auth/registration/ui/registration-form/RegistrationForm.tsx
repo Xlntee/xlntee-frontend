@@ -5,7 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useTranslation } from "react-i18next";
 import cn from "classnames";
 
-import { Button, Stack, Typography } from "@mui/material";
+import { Button, FormLabel, Stack, Typography } from "@mui/material";
 import SchoolOutlinedIcon from "@mui/icons-material/SchoolOutlined";
 
 import { TextField, PasswordField, RootForm } from "src/shared/ui";
@@ -51,7 +51,7 @@ const RegistrationForm: FC = () => {
     <RootForm methods={methods} onSubmit={onSubmit} className="auth-form">
       <Stack direction="row" gap="20px" mb="20px">
         <Button
-          variant="black-outline"
+          variant="dark-outline"
           size="medium"
           fullWidth
           startIcon={<SchoolOutlinedIcon />}
@@ -63,7 +63,7 @@ const RegistrationForm: FC = () => {
           {t("registration-as-student")}
         </Button>
         <Button
-          variant="black-outline"
+          variant="dark-outline"
           size="medium"
           fullWidth
           startIcon={<SchoolOutlinedIcon />}
@@ -76,20 +76,30 @@ const RegistrationForm: FC = () => {
         </Button>
       </Stack>
       <Stack direction="column" gap="20px">
-        <TextField name="fullname" aria-label="password input" placeholder={t("fullname-placeholder")} />
-        <TextField name="email" type="email" aria-label="email input" placeholder={t("email-placeholder")} />
-        <PasswordField
-          name="password"
-          showErrorMessage={false}
-          aria-label="password input"
-          placeholder={t("password-placeholder")}
-        />
+        <FormLabel className="field-box">
+          <Typography className="field-box__title">{t("fullname-label")}</Typography>
+          <TextField fullWidth name="fullname" aria-label="password input" placeholder={t("fullname-placeholder")} />
+        </FormLabel>
+        <FormLabel className="field-box">
+          <Typography className="field-box__title">{t("email-label")}</Typography>
+          <TextField fullWidth name="email" aria-label="email input" placeholder={t("email-placeholder")} />
+        </FormLabel>
+        <FormLabel className="field-box">
+          <Typography className="field-box__title">{t("password-label")}</Typography>
+          <PasswordField
+            fullWidth
+            name="password"
+            showErrorMessage={false}
+            aria-label="password input"
+            placeholder={t("create-password-placeholder")}
+          />
+        </FormLabel>
         <PasswordValidationPanel isError={!!errors.password} />
         <Button type="submit" variant="contained" className="auth-form__btn-submit">
           {t("sign-up")}
         </Button>
         <Stack direction="column" gap="4px">
-          <Typography variant="caption" className="auth-form__caption-text">
+          <Typography variant="body2" className="auth-form__caption-text">
             {t("have-account")}? <Link to={AppRoutes.auth.login}>{t("login")}</Link>
           </Typography>
         </Stack>

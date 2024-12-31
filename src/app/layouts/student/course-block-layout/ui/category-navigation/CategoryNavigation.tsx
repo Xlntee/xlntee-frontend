@@ -1,6 +1,6 @@
 import { FC, ReactNode } from "react";
 
-import { Box, List, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
+import { Box, List, ListItemButton, ListItemIcon, ListItemText, useTheme } from "@mui/material";
 import VideocamIcon from "@mui/icons-material/Videocam";
 import HelpCenterIcon from "@mui/icons-material/HelpCenter";
 import InsertDriveFileIcon from "@mui/icons-material/InsertDriveFile";
@@ -23,6 +23,8 @@ type CategoryNavigationProps = {
 };
 
 const CategoryNavigation: FC<CategoryNavigationProps> = ({ items }) => {
+  const theme = useTheme();
+
   function getIconRelateOnType(type: CategoryType): ReactNode {
     if (type === "file") {
       return <InsertDriveFileIcon />;
@@ -41,12 +43,33 @@ const CategoryNavigation: FC<CategoryNavigationProps> = ({ items }) => {
         {items.map((item) => (
           <ListItemButton key={item.id} className="category-navigation__button">
             {item.completed && (
-              <ListItemIcon className="category-navigation__check">
+              <ListItemIcon
+                className="category-navigation__check"
+                sx={{
+                  color: theme.palette.primary.contrastText
+                }}
+              >
                 <CheckCircleOutlineIcon />
               </ListItemIcon>
             )}
-            <ListItemIcon className="category-navigation__icon">{getIconRelateOnType(item.type)}</ListItemIcon>
-            <ListItemText primary={item.title} className="category-navigation__text" />
+            <ListItemIcon
+              className="category-navigation__icon"
+              sx={{
+                color: theme.palette.primary.contrastText
+              }}
+            >
+              {getIconRelateOnType(item.type)}
+            </ListItemIcon>
+            <ListItemText
+              primary={item.title}
+              className="category-navigation__text"
+              sx={{
+                color: theme.palette.primary.contrastText,
+                "& .MuiTypography-root": {
+                  color: "currentColor"
+                }
+              }}
+            />
           </ListItemButton>
         ))}
       </List>

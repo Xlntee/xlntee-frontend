@@ -5,7 +5,7 @@ import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
-import { Button, Stack, Typography } from "@mui/material";
+import { Button, FormLabel, Stack, Typography } from "@mui/material";
 
 import { AppRoutes } from "src/shared/routes";
 import { PasswordField, TextField, RootForm } from "src/shared/ui";
@@ -40,8 +40,25 @@ const LoginForm: FC = () => {
     <ApiProvider api={loginApiSlice}>
       <RootForm methods={methods} onSubmit={onSubmit} className="auth-form login-form">
         <Stack direction="column" gap="20px">
-          <TextField name="email" type="text" aria-label="email input" placeholder={t("email-placeholder")} />
-          <PasswordField name="password" aria-label="password input" placeholder={t("password-placeholder")} />
+          <FormLabel className="field-box">
+            <Typography className="field-box__title">{t("email-label")}</Typography>
+            <TextField
+              fullWidth
+              name="email"
+              type="email"
+              aria-label="email input"
+              placeholder={t("email-placeholder")}
+            />
+          </FormLabel>
+          <FormLabel className="field-box">
+            <Typography className="field-box__title">{t("password-label")}</Typography>
+            <PasswordField
+              fullWidth
+              name="password"
+              aria-label="password input"
+              placeholder={t("password-placeholder")}
+            />
+          </FormLabel>
           <Button
             aria-label="login button"
             variant="contained"
@@ -52,10 +69,10 @@ const LoginForm: FC = () => {
             {t("login")}
           </Button>
           <Stack direction="column" gap="4px">
-            <Typography variant="caption" className="auth-form__caption-text" color="text.primary">
+            <Typography variant="body2" className="auth-form__caption-text" color="text.primary">
               {t("forgot-password")}? <Link to={AppRoutes.auth.passwordUpdate}>{t("recover-password")}</Link>
             </Typography>
-            <Typography variant="caption" className="auth-form__caption-text" color="text.primary">
+            <Typography variant="body2" className="auth-form__caption-text" color="text.primary">
               {t("no-account")}? <Link to={AppRoutes.auth.registration}>{t("sign-up")}</Link>
             </Typography>
           </Stack>

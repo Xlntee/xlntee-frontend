@@ -5,69 +5,71 @@ export const palete: Record<PaletteMode, Partial<ThemeOptions["palette"]>> = {
   light: {
     mode: "light",
     primary: {
-      main: XlnteeColors["light"].BrandColor,
-      contrastText: XlnteeColors["light"].LightColor
+      main: `rgb(${XlnteeColors["light"].BrandColor})`,
+      light: `rgb(${XlnteeColors["light"].BrandColor}, 0.9)`,
+      contrastText: `rgb(${XlnteeColors["light"].LightAccentColor})`
     },
     secondary: {
-      main: XlnteeColors["light"].ActionColor,
-      contrastText: XlnteeColors["light"].LightColor
+      main: `rgb(${XlnteeColors["light"].ActionColor})`,
+      light: `rgb(${XlnteeColors["light"].ActionColor}, 0.9)`,
+      contrastText: `rgb(${XlnteeColors["light"].LightAccentColor})`
     },
     warning: {
-      main: XlnteeColors["light"].WarningBaseColor,
-      light: XlnteeColors["light"].ErrorLightColor
+      main: `rgb(${XlnteeColors["light"].ErrorTextColor})`,
+      light: `rgb(${XlnteeColors["dark"].ErrorBackgroundColor})`
     },
     success: {
-      main: XlnteeColors["light"].SuccessBaseColor
+      main: `rgb(${XlnteeColors["light"].SuccessFontColor})`
     },
     info: {
-      main: XlnteeColors["light"].BrandColor,
-      light: XlnteeColors["light"].Violet100,
-      dark: XlnteeColors["light"].Violet200
+      main: `rgb(${XlnteeColors["light"].BrandColor})`,
+      light: `rgb(${XlnteeColors["light"].LightBrandColor})`
     },
     grey: {
-      "100": XlnteeColors["light"].LightElementColor,
-      "200": XlnteeColors["light"].GrayStrokeColor,
-      "300": XlnteeColors["light"].GrayColor300,
-      "400": XlnteeColors["light"].GrayColor400,
-      "500": XlnteeColors["light"].GrayColor500
+      "100": `rgb(${XlnteeColors["dark"].LightGrayColor})`,
+      "200": `rgb(${XlnteeColors["dark"].StrokeGrayColor})`,
+      "300": `rgb(${XlnteeColors["dark"].InputFieldBorderColor})`,
+      "400": `rgb(${XlnteeColors["dark"].FilledTextColor})`,
+      "900": `rgb(${XlnteeColors["dark"].DarkAccentColor})`
     },
     text: {
-      primary: XlnteeColors["light"].MainBlackElementColor,
-      secondary: XlnteeColors["light"].MainBlackElementColor
+      primary: `rgb(${XlnteeColors["light"].DarkAccentColor})`,
+      secondary: `rgb(${XlnteeColors["light"].LightAccentColor})`
     }
   },
   dark: {
     mode: "dark",
     primary: {
-      main: XlnteeColors["light"].BrandColor,
-      contrastText: XlnteeColors["dark"].LightColor
+      main: `rgb(${XlnteeColors["light"].BrandColor})`,
+      light: `rgb(${XlnteeColors["light"].BrandColor}, 0.9)`,
+      contrastText: `rgb(${XlnteeColors["light"].LightAccentColor})`
     },
     secondary: {
-      main: XlnteeColors["dark"].ActionColor,
-      contrastText: XlnteeColors["dark"].LightColor
+      main: `rgb(${XlnteeColors["light"].ActionColor})`,
+      light: `rgb(${XlnteeColors["light"].ActionColor}, 0.9)`,
+      contrastText: `rgb(${XlnteeColors["light"].LightAccentColor})`
     },
     warning: {
-      main: XlnteeColors["dark"].WarningBaseColor,
-      light: XlnteeColors["dark"].ErrorLightColor
+      main: `rgb(${XlnteeColors["dark"].ErrorTextColor})`,
+      light: `rgb(${XlnteeColors["dark"].ErrorBackgroundColor})`
     },
     success: {
-      main: XlnteeColors["dark"].SuccessBaseColor
+      main: `rgb(${XlnteeColors["dark"].SuccessFontColor})`
     },
     info: {
-      main: XlnteeColors["dark"].BrandColor,
-      light: XlnteeColors["dark"].Violet100,
-      dark: XlnteeColors["dark"].Violet200
+      main: `rgb(${XlnteeColors["light"].BrandColor})`,
+      light: `rgb(${XlnteeColors["dark"].LightBrandColor})`
     },
     grey: {
-      "100": XlnteeColors["dark"].LightElementColor,
-      "200": XlnteeColors["dark"].GrayStrokeColor,
-      "300": XlnteeColors["dark"].GrayColor300,
-      "400": XlnteeColors["dark"].GrayColor400,
-      "500": XlnteeColors["dark"].GrayColor500
+      "100": `rgb(${XlnteeColors["dark"].LightGrayColor})`,
+      "200": `rgb(${XlnteeColors["dark"].StrokeGrayColor})`,
+      "300": `rgb(${XlnteeColors["dark"].InputFieldBorderColor})`,
+      "400": `rgb(${XlnteeColors["dark"].FilledTextColor})`,
+      "900": `rgb(${XlnteeColors["dark"].DarkAccentColor})`
     },
     text: {
-      primary: XlnteeColors["dark"].LightColor,
-      secondary: XlnteeColors["dark"].MainBlackElementColor
+      primary: `rgb(${XlnteeColors["light"].LightAccentColor})`,
+      secondary: `rgb(${XlnteeColors["light"].DarkAccentColor})`
     }
   }
 };

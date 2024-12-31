@@ -67,7 +67,7 @@ const BlockPromoCodes: FC = () => {
         {t("price.promo-title")}
       </Typography>
       <Divider style={{ marginBottom: "20px" }} />
-      <Box mb="20px">
+      <Box mb="30px">
         <PromoCodeCreate onSubmit={onSubmit} />
       </Box>
       {promoCodes.length ? (
@@ -76,13 +76,9 @@ const BlockPromoCodes: FC = () => {
             {t("price.promo-created-title")}
           </Typography>
           <Divider style={{ marginBottom: "20px" }} />
-          <Box className="promo-row">
-            <Box className="promo-row__field">
-              <Typography className="promo-field__label">{t("price.promo-field-discount-label")} (%)</Typography>
-            </Box>
-            <Box className="promo-row__field">
-              <Typography className="promo-field__label">{t("price.promo-field-code-label")}</Typography>
-            </Box>
+          <Box className="promo-row field-box">
+            <Typography className="field-box__title">{t("price.promo-field-discount-label")} (%)</Typography>
+            <Typography className="field-box__title">{t("price.promo-field-code-label")}</Typography>
           </Box>
           {promoCodes.map(({ id, discount, promoCode }) => (
             <PromoRow key={id} id={id} discount={discount.toString()} promoCode={promoCode} onRemove={onOpenModal} />

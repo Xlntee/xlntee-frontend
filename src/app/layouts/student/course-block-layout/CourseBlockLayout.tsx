@@ -110,7 +110,7 @@ const CourseLayout: FC = () => {
       <Box component="aside" className={cn("collapsed-navigation", { expanded: isOpenMenu })}>
         <Box mb="10px">
           <Button
-            variant="black-text"
+            variant="dark-text"
             className={cn("collapsed-navigation__toggler", { active: isOpenMenu })}
             onClick={onToggleNavigation}
           >

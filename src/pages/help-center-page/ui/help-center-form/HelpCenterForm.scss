@@ -1,12 +1,7 @@
 .help-center-form {
   &__text-field {
     .MuiOutlinedInput-root {
-      border-radius: 25px;
       height: auto;
     }
-  }
-
-  &__submit-button {
-    float: right;
   }
 }

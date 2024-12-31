@@ -29,7 +29,7 @@
   &__link {
     display: inline-flex;
     align-items: center;
-    color: rgb(var(--main-element-color));
+    color: rgb(var(--dark-accent-color));
 
     @include mixins.animate(color);
 
@@ -55,17 +55,17 @@
   }
 
   &__action {
-    color: rgb(var(--light-color));
+    color: rgb(var(--light-accent-color));
     background-color: rgb(var(--link-color));
     padding: 4px 14px;
     border-radius: 25px;
 
     &.active {
-      color: rgb(var(--light-color));
+      color: rgb(var(--light-accent-color));
     }
 
     @include mixins.hover {
-      color: rgb(var(--light-color));
+      color: rgb(var(--light-accent-color));
     }
   }
 }

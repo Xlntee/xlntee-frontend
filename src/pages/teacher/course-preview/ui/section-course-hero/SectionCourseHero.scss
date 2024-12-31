@@ -2,7 +2,7 @@
 
 .section-course-hero {
   &__price {
-    color: rgb(var(--main-element-color));
+    color: rgb(var(--dark-accent-color));
     font-weight: 400;
 
     &.MuiTypography-root {
@@ -13,7 +13,6 @@
   }
 
   &__price--old {
-    color: rgb(var(--gray-color-400));
     font-weight: 300;
   }
 
@@ -55,7 +54,7 @@
       transform: translate(-50%, -50%);
       z-index: 1;
       border-radius: 50%;
-      background-color: rgb(var(--light-color) / 0.6);
+      background-color: rgb(var(--light-accent-color) / 0.6);
       height: 60px;
       height: 60px;
 
@@ -93,7 +92,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 20px;
-  background-color: rgb(var(--gray-stroke-color));
+  background-color: rgb(var(--stroke-gray-color));
   padding: 12px 30px;
   border-radius: 20px;
 

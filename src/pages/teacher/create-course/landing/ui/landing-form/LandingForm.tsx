@@ -168,11 +168,11 @@ const LandingForm: FC = () => {
             </Box>
           </Grid>
         </Grid>
-        <Stack direction={{ sm: "row" }} flexWrap="wrap" gap={{ sm: "20px", md: "40px" }}>
-          <Button type="submit" variant="black-contain" size="medium" sx={{ minWidth: "190px" }}>
+        <Stack direction={{ sm: "row" }} flexWrap="wrap" gap="20px">
+          <Button type="submit" variant="contained" color="primary" size="large" sx={{ minWidth: "150px" }}>
             {tCommon("button-save")}
           </Button>
-          <Button variant="black-text" size="medium">
+          <Button variant="dark-text" size="large" disabled>
             {tCommon("button-discard-changes")}
           </Button>
         </Stack>

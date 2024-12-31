@@ -13,7 +13,7 @@ const SectionPricePlan: FC = () => {
     <Box component="section" className="section-price-plan" py="40px">
       <Container>
         <Box maxWidth="1050px" marginInline="auto">
-          <Box border={`1px solid ${theme.palette.grey["200"]}`} borderRadius="20px" p="20px" mb="40px">
+          <Box p="20px" mb="40px" borderRadius="20px" border={`1px solid ${theme.palette.grey["200"]}`}>
             <Stack direction={{ md: "row-reverse" }} justifyContent={{ md: "space-between" }} gap="20px">
               <Box>
                 <Typography variant="body2" fontSize={20} fontWeight={700}>

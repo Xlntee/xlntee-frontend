@@ -1,5 +1,5 @@
 .category-navigation {
-  --category-navigation-color: rgb(var(--light-color));
+  --category-navigation-color: rgb(var(--light-accent-color));
   --category-navigation-bg-color: transparent;
 
   .MuiList-root {
@@ -13,15 +13,6 @@
       gap: 12px;
       border-radius: 20px;
       padding: 2px 14px 2px 40px;
-      background-color: var(--category-navigation-bg-color);
-
-      &:hover {
-        background-color: rgb(var(--link-color));
-      }
-    }
-
-    &.active {
-      --category-navigation-bg-color: rgb(var(--link-color));
     }
   }
 
@@ -31,7 +22,6 @@
       top: 50%;
       left: 14px;
       transform: translateY(-50%);
-      color: var(--category-navigation-color);
     }
 
     .MuiSvgIcon-root {
@@ -41,7 +31,6 @@
 
   &__icon {
     &.MuiListItemIcon-root {
-      color: var(--category-navigation-color);
       min-width: 24px;
     }
   }
@@ -52,7 +41,6 @@
     }
 
     .MuiTypography-root {
-      color: var(--category-navigation-color);
       font-size: 16px;
     }
   }

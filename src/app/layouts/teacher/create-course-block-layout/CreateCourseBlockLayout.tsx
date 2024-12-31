@@ -7,7 +7,7 @@ import { Box, Container, Button } from "@mui/material";
 
 import { closeDrawer } from "src/app/store/slices/drawer/slice";
 import { useAppDispatch } from "src/app/store/store";
-import { HideMediaContainer, LimitError } from "src/shared/ui";
+import { HideMediaContainer } from "src/shared/ui";
 
 import useDrawer from "src/shared/hooks/useDrawer";
 import { SidebarMenu } from "./ui";
@@ -35,15 +35,14 @@ const CreateCourseBlockLayout: FC = () => {
   }, [pathname]);
 
   return (
-    <Box className="create-course-layout" pt={{ xs: "40px", md: "60px" }} pb="40px">
+    <Box className="create-course-layout" pt={{ xs: "20px", md: "40px" }} pb="40px">
       <Container className="create-course-layout__container">
-        <LimitError message={t("error-limits-plan")} />
         <HideMediaContainer type="up" breakpoint="xl">
-          <Button variant="black-contain" onClick={openMenu}>
+          <Button variant="dark-contain" onClick={openMenu}>
             {t("course-navigation")}
           </Button>
         </HideMediaContainer>
-        <Box pt="20px" className="create-course-layout__grid">
+        <Box pt={{ xs: "20px", xl: "0" }} className="create-course-layout__grid">
           <HideMediaContainer type="down" breakpoint="xl">
             <Box
               component="aside"

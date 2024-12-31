@@ -35,7 +35,7 @@ const PasswordUpdateForm: FC<PasswordUpdateFormProps> = ({ onSubmit }) => {
   return (
     <RootForm methods={methods} onSubmit={onHandleSubmit} className="auth-form">
       <Stack gap="20px">
-        <FormLabel>
+        <FormLabel className="field-box">
           <Typography className="field-box__title">{t("current-password-label")}</Typography>
           <PasswordField
             name="password"
@@ -44,7 +44,7 @@ const PasswordUpdateForm: FC<PasswordUpdateFormProps> = ({ onSubmit }) => {
             fullWidth
           />
         </FormLabel>
-        <FormLabel>
+        <FormLabel className="field-box">
           <Typography className="field-box__title">{t("new-password-label")}</Typography>
           <PasswordField
             name="new_password"
@@ -53,7 +53,7 @@ const PasswordUpdateForm: FC<PasswordUpdateFormProps> = ({ onSubmit }) => {
             fullWidth
           />
         </FormLabel>
-        <FormLabel>
+        <FormLabel className="field-box">
           <Typography className="field-box__title">{t("confirm-password-label")}</Typography>
           <PasswordField
             name="confirm_password"

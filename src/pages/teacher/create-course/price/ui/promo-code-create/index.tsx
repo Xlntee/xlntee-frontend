@@ -36,7 +36,7 @@ const PromoCodeCreate: FC<PromoCodeCreateProps> = ({ onSubmit }) => {
   return (
     <Box className="promo-code-create">
       <FormLabel className="field-box promo-code-create__field">
-        <Typography variant="caption" className="field-box__title">
+        <Typography variant="caption" className="field-box__title" mb="6px" display="block">
           {t("price.promo-field-discount-label")} (%)
         </Typography>
         <TextField
@@ -51,7 +51,7 @@ const PromoCodeCreate: FC<PromoCodeCreateProps> = ({ onSubmit }) => {
         />
       </FormLabel>
       <FormLabel className="field-box promo-code-create__field">
-        <Typography variant="caption" className="field-box__title">
+        <Typography variant="caption" className="field-box__title" mb="6px" display="block">
           {t("price.promo-field-code-label")}
         </Typography>
         <TextField
@@ -64,7 +64,7 @@ const PromoCodeCreate: FC<PromoCodeCreateProps> = ({ onSubmit }) => {
           showErrorMessage={false}
         />
       </FormLabel>
-      <Button variant="outlined" size="medium" sx={{ minWidth: "156px", fontWeight: 400 }} onClick={onHandleSubmit}>
+      <Button variant="outlined" size="large" sx={{ minWidth: "156px", fontWeight: 400 }} onClick={onHandleSubmit}>
         {t("price.promo-button-create")}
       </Button>
     </Box>

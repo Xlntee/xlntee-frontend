@@ -2,7 +2,7 @@ import { FC, useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-import { Button, Stack, Box, Typography } from "@mui/material";
+import { Button, Stack, Box, Typography, useTheme } from "@mui/material";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 
@@ -35,6 +35,7 @@ const StudentCourseCard: FC<StudentCourseCardProps> = ({
   href
 }) => {
   const { t } = useTranslation("common");
+  const theme = useTheme();
 
   const [isFavorite, setIsFavorite] = useState<boolean>(false);
 
@@ -43,7 +44,7 @@ const StudentCourseCard: FC<StudentCourseCardProps> = ({
   }
 
   return (
-    <Box className="student-course-card">
+    <Box className="student-course-card" border={`1px solid ${theme.palette.grey["200"]}`}>
       <Box className="student-course-card__image">
         <img src={image} alt={title} />
         <Link to={href} className="student-course-card__link" />
@@ -63,7 +64,15 @@ const StudentCourseCard: FC<StudentCourseCardProps> = ({
               <s>{price}</s>
             </Box>
             <Stack direction="row" justifyContent="flex-end" alignItems="center" gap="10px">
-              {discount && <Box className="student-course-card__discount">-{discount}%</Box>}
+              {discount && (
+                <Box
+                  className="student-course-card__discount"
+                  color={theme.palette.primary.contrastText}
+                  bgcolor={theme.palette.secondary.main}
+                >
+                  -{discount}%
+                </Box>
+              )}
               <Button variant="text" className="student-course-card__favorite-toggler" onClick={onToggleFavorite}>
                 {isFavorite ? <FavoriteIcon /> : <FavoriteBorderIcon />}
               </Button>
@@ -71,7 +80,7 @@ const StudentCourseCard: FC<StudentCourseCardProps> = ({
           </Stack>
         </Stack>
         <Stack direction="row" gap="10px" flexWrap="wrap">
-          <Button variant="black-outline" size="small" className="student-course-card__action">
+          <Button variant="dark-outline" size="small" className="student-course-card__action">
             {t("preview")}
           </Button>
           <Button variant="contained" size="small" className="student-course-card__action">

@@ -1,54 +1,53 @@
 :root {
-  --light-color: 255 255 255; //#ffffff;
-  --brand-color: 99 97 255; //#6361ff
-  --action-color: 255 28 96; //#ff1c60
+  --light-accent-color: 255 255 255; //#FFFFFF;
+  --dark-accent-color: 32 32 32; // #202020
 
-  --violet-color-100: 239 238 253; // #EFEEFD
-  --violet-color-200: 239 239 255; // #EFEFFF
+  --brand-color: 99 97 255; //#6361FF
+  --action-color: 255 28 96; //#FF1C60
 
-  --main-element-color: 32 32 32; // #202020
-  --main-element-contrast-color: 255 255 255; // #ffffff
-  --main-dark-color: var(--main-element-color);
+  --error-text-color: 182 48 48; //#B63030
+  --error-border-color: 238 44 44; //#EE2C2C
+  --error-background-color: 255 242 242; //#FFF2F2
 
-  --light-element-color: 248 248 248; //#f8f8f8
-  --gray-stroke-color: 234 234 234; //#eaeaea
+  --success-color: 242 255 243; //#F2FFF3
+  --success-stroke-color: 175 237 192; //#AFEDC0
+  --success-font-color: 48 182 134; //#30b686
 
-  --warning-extra-light-color: 255 153 178; //#ff99b2
-  --warning-light-color: 238 44 44; //#ee2c2c
-  --warning-base-color: 182 48 48; //#b63030
+  --light-brand-color: 239 239 255; // #EFEFFF
 
-  --success-base-color: 48 182 134; //#30b686
-  --gray-color-300: 196 196 196; //#c4c4c4
-  --gray-color-400: 102 102 102; //#666666
-  --gray-color-500: 130 130 130; //#828282
-  --yellow-color: 250 175 0; //#faaf00
+  --light-gray-color: 248 248 248; //#F8F8F8
+  --stroke-gray-color: 234 234 234; //#EAEAEA
+  --input-field-border-color: 196 196 196; //#c4c4c4
+  --filled-text-color: 120 120 120; //#787878
 
+  --rating-color: 255 201 64; //#FFC940
+
+  --main-dark-color: var(--dark-accent-color);
+  --main-element-contrast-color: var(--light-accent-color);
   --link-color: var(--brand-color);
 
-  --base-shadow: 0 2px 6px 0 rgb(var(--main-element-color) / 0.25);
-  --base-shadow-invisible: 0 2px 6px 0 rgb(var(--main-element-color) / 0);
-  --header-shadow: 0 2px 5px 0 rgb(var(--main-element-color) / 0.2);
+  --base-shadow: 0 2px 6px 0 rgb(var(--dark-accent-color) / 0.25);
+  --base-shadow-invisible: 0 2px 6px 0 rgb(var(--dark-accent-color) / 0);
+  --header-shadow: 0 2px 5px 0 rgb(var(--dark-accent-color) / 0.2);
 
   --transition-cubic-bezier: cubic-bezier(0.4, 0, 0.2, 1);
 
   --app-modal-bg-color: rgb(var(--main-element-contrast-color));
   --app-block-lecture-bg-color: rgb(var(--brand-color));
-  --app-block-lecture-aside-bg-color: rgb(var(--light-color));
-  --app-block-lecture-field-bg-color: rgb(var(--light-color));
-  --app-course-btn-card-bg-color: rgb(var(--light-element-color));
-  --app-complain-field-bg-color: rgb(var(--light-element-color));
+  --app-block-lecture-aside-bg-color: rgb(var(--light-accent-color));
+  --app-block-lecture-field-bg-color: rgb(var(--light-accent-color));
+  --app-course-btn-card-bg-color: rgb(var(--light-gray-color));
+  --app-complain-field-bg-color: rgb(var(--light-gray-color));
   --app-video-description-border-color: transparent;
-  --app-collapsed-navigation-bg-color: rgb(var(--light-color));
-  --app-accordion-progress-color: rgb(var(--light-color));
+  --app-collapsed-navigation-bg-color: rgb(var(--light-accent-color));
+  --app-accordion-progress-color: rgb(var(--light-accent-color));
   --app-auth-tab-color: rgb(var(--brand-color));
 }
 
 html[data-theme="dark"] {
-  --gray-color-300: 255 255 255; //#FFFFFF
-  --gray-color-400: 255 250 250; //#FFFAFA
-  --gray-color-500: 245 245 245; //#F5F5F5
+  --input-field-border-color: 255 255 255; //#FFFFFF
 
-  --main-element-color: 255 255 255; // #ffffff
+  --dark-accent-color: 255 255 255; // #ffffff
   --main-element-contrast-color: 32 32 32; // #202020
   --main-dark-color: var(--main-element-contrast-color);
 
@@ -59,8 +58,8 @@ html[data-theme="dark"] {
   --app-block-lecture-field-bg-color: "transparent";
   --app-course-btn-card-bg-color: transparent;
   --app-complain-field-bg-color: transparent;
-  --app-video-description-border-color: rgb(var(--gray-stroke-color));
+  --app-video-description-border-color: rgb(var(--stroke-gray-color));
   --app-collapsed-navigation-bg-color: rgb(var(--main-dark-color));
   --app-accordion-progress-color: rgb(var(--main-dark-color));
-  --app-auth-tab-color: rgb(var(--main-element-color));
+  --app-auth-tab-color: rgb(var(--dark-accent-color));
 }

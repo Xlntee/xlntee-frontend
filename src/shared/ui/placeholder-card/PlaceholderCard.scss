@@ -1,5 +1,5 @@
 .placeholder-card {
-  background-color: rgb(var(--light-element-color));
+  background-color: rgb(var(--light-gray-color));
   border-radius: 25px;
   max-width: 362px;
   width: 100%;
@@ -12,7 +12,6 @@
 
   &__text {
     font-weight: 300;
-    color: rgb(var(--gray-color-400));
     max-width: 220px;
     width: 100%;
     margin-inline: auto;

@@ -4,16 +4,17 @@
   &__tablist {
     display: flex;
     gap: 14px;
-    border-bottom: 1px solid rgb(var(--gray-stroke-color));
+    border-bottom: 1px solid rgb(var(--stroke-gray-color));
     margin-bottom: 20px;
   }
 
   &__button {
     position: relative;
     display: inline-block;
-    padding-block: 12px;
+    padding-block: 10px;
+    font-size: 16px;
     font-weight: 300;
-    color: var(--app-auth-tab-color);
+    color: currentColor;
 
     @include mixins.hover {
       color: var(--app-auth-tab-color);

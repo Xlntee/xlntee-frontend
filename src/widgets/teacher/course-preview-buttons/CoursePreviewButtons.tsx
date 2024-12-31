@@ -12,7 +12,7 @@ const CoursePreviewButtons: FC = () => {
     <Stack direction="row" gap="14px">
       <Button
         className="button-preview button-rounded-md"
-        variant="black-outline"
+        variant="dark-outline"
         size="small"
         startIcon={<RemoveRedEyeIcon />}
         disabled
@@ -21,7 +21,7 @@ const CoursePreviewButtons: FC = () => {
       </Button>
       <Button
         className="button-preview button-rounded-md"
-        variant="black-outline"
+        variant="dark-outline"
         size="small"
         startIcon={<SentimentSatisfiedAltIcon />}
         disabled

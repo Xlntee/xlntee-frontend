@@ -48,7 +48,7 @@ const DialogModal: FC<DialogModalProps> = ({
     <Dialog open={open} onClose={handleClose} className={classnames}>
       <Box className="dialog-box">
         {showCloseButtonIcon && (
-          <Button variant="black-text" onClick={handleClose} className="dialog-modal__close-btn">
+          <Button variant="dark-text" onClick={handleClose} className="dialog-modal__close-btn">
             <CloseIcon />
           </Button>
         )}
@@ -59,7 +59,7 @@ const DialogModal: FC<DialogModalProps> = ({
             {primaryButtonText && (
               <Button
                 color={type === "send" ? "success" : type === "delete" ? "error" : "info"}
-                variant={type === "send" ? "black-contain" : type === "delete" ? "outlined" : "contained"}
+                variant={type === "send" ? "dark-contain" : type === "delete" ? "outlined" : "contained"}
                 onClick={handleAgree}
                 autoFocus
                 disabled={loading}
@@ -68,7 +68,7 @@ const DialogModal: FC<DialogModalProps> = ({
               </Button>
             )}
             {secondaryButtonText && (
-              <Button variant="black-text" onClick={handleClose}>
+              <Button variant="dark-text" onClick={handleClose}>
                 {secondaryButtonText}
               </Button>
             )}

@@ -29,20 +29,18 @@ const PricePlanCard: FC<PricePlanProps> = ({ pretitle, title, text, button, desc
       p="30px 30px 10px"
       borderRadius="20px"
       bgcolor={bgColor}
+      border={`1px solid ${theme.palette.grey["200"]}`}
       className="base-shadow"
     >
-      <Typography color="text.secondary" variant="body1">
-        {pretitle}
-      </Typography>
-      <Typography color="text.secondary" variant="h2">
-        {title}
-      </Typography>
-      <Typography color="text.secondary" variant="body1" textAlign="center">
+      <Typography variant="body1">{pretitle}</Typography>
+      <Typography variant="h2">{title}</Typography>
+      <Typography variant="body1" textAlign="center">
         {text}
       </Typography>
       <Box marginBottom="30px">
         <Button
-          variant="outlined"
+          color="primary"
+          variant="contained"
           size="large"
           className="button-rounded-xl"
           sx={{
@@ -61,16 +59,16 @@ const PricePlanCard: FC<PricePlanProps> = ({ pretitle, title, text, button, desc
                 <ListItemIcon
                   sx={{
                     marginTop: 0,
-                    color: theme.palette.text.secondary
+                    color: theme.palette.text.primary
                   }}
                 >
                   {item.icon}
                 </ListItemIcon>
                 <ListItemText>
-                  <Typography color="text.secondary" variant="body2" fontWeight={700} fontSize={18}>
+                  <Typography variant="body2" fontWeight={700} fontSize={18}>
                     {item.title}
                   </Typography>
-                  <Typography color="text.secondary" variant="body2" fontWeight={400} fontSize={18}>
+                  <Typography variant="body2" fontWeight={400} fontSize={18}>
                     {item.text}
                   </Typography>
                 </ListItemText>

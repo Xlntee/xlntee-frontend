@@ -5,11 +5,11 @@ import { palete } from "./theme-palette";
 
 declare module "@mui/material/Button" {
   interface ButtonPropsVariantOverrides {
-    "black-contain": true;
-    "black-outline": true;
-    "black-text": true;
-    "white-contain": true;
-    "white-text": true;
+    "dark-contain": true;
+    "dark-outline": true;
+    "dark-text": true;
+    "light-contain": true;
+    "light-text": true;
   }
 }
 
@@ -33,7 +33,6 @@ function getTheme(colorTheme: PaletteMode): Theme {
   defaultTheme.typography.h1 = {
     fontSize: 32,
     lineHeight: 1.2,
-    color: defaultTheme.palette.text.primary,
 
     [defaultTheme.breakpoints.up("lg")]: {
       fontSize: 48
@@ -43,41 +42,35 @@ function getTheme(colorTheme: PaletteMode): Theme {
   defaultTheme.typography.h2 = {
     fontSize: 30,
     lineHeight: 1.2,
-    color: defaultTheme.palette.text.primary,
 
     [defaultTheme.breakpoints.up("lg")]: {
-      fontSize: 48
+      fontSize: 34
     }
   };
 
   defaultTheme.typography.h3 = {
     fontSize: 24,
-    lineHeight: 1.35,
-    color: defaultTheme.palette.text.primary
+    lineHeight: 1.35
   };
 
   defaultTheme.typography.h4 = {
-    fontSize: 20,
-    lineHeight: 1.45,
-    color: defaultTheme.palette.text.primary
+    fontSize: 24,
+    lineHeight: 1.45
   };
 
   defaultTheme.typography.h5 = {
-    fontSize: 16,
-    lineHeight: 1.45,
-    color: defaultTheme.palette.text.primary
+    fontSize: 20,
+    lineHeight: 1.45
   };
 
   defaultTheme.typography.h6 = {
-    fontSize: 16,
-    lineHeight: 1.2,
-    color: defaultTheme.palette.text.primary
+    fontSize: 20,
+    lineHeight: 1.2
   };
 
   defaultTheme.typography.body1 = {
     fontSize: 18,
     lineHeight: 1.5,
-    color: defaultTheme.palette.text.primary,
 
     [defaultTheme.breakpoints.up("lg")]: {
       fontSize: 20
@@ -86,25 +79,20 @@ function getTheme(colorTheme: PaletteMode): Theme {
 
   defaultTheme.typography.body2 = {
     fontSize: 16,
-    lineHeight: 1.35,
-    color: defaultTheme.palette.text.primary
+    lineHeight: 1.35
   };
 
   defaultTheme.typography.caption = {
     fontSize: 14,
-    lineHeight: 1.35,
-    color: defaultTheme.palette.text.primary
+    lineHeight: 1.35
   };
 
   defaultTheme.components = {
     MuiCssBaseline: {
       styleOverrides: {
         body: {
-          backgroundColor:
-            colorTheme === "light"
-              ? XlnteeColors[colorTheme].LightColor
-              : XlnteeColors[colorTheme].MainBlackElementColor,
-          color: defaultTheme.palette.text.primary
+          color: defaultTheme.palette.text.primary,
+          backgroundColor: defaultTheme.palette.text.secondary
         }
       }
     },
@@ -133,7 +121,7 @@ function getTheme(colorTheme: PaletteMode): Theme {
         root: {
           textTransform: "none",
           lineHeight: 1.4,
-          fontWeight: 700,
+          fontWeight: 400,
           boxShadow: "none",
           ":hover": {
             boxShadow: "none"
@@ -141,32 +129,77 @@ function getTheme(colorTheme: PaletteMode): Theme {
         },
         sizeSmall: {
           fontSize: 14,
-          borderRadius: 5,
+          borderRadius: 10,
           height: "auto",
-          minHeight: 36
+          minHeight: 40
         },
         sizeMedium: {
           fontSize: 14,
-          borderRadius: 5,
+          borderRadius: 10,
           height: "auto",
-          minHeight: 36,
+          minHeight: 40,
           [defaultTheme.breakpoints.up("md")]: {
-            fontSize: 16,
-            minHeight: 50
+            fontSize: 16
           }
         },
         sizeLarge: {
           fontSize: 14,
-          borderRadius: 5,
+          borderRadius: 10,
+          minHeight: 40,
           height: "auto",
-          minHeight: 36,
           [defaultTheme.breakpoints.up("md")]: {
             fontSize: 20,
-            minHeight: 60
+            minHeight: 50
           }
         }
       },
       variants: [
+        {
+          props: {
+            color: "primary",
+            variant: "contained"
+          },
+          style: {
+            ":hover": {
+              backgroundColor: defaultTheme.palette.primary.light
+            }
+          }
+        },
+        {
+          props: {
+            color: "primary",
+            variant: "outlined"
+          },
+          style: {
+            ":hover": {
+              color: defaultTheme.palette.secondary.contrastText,
+              backgroundColor: defaultTheme.palette.primary.main
+            }
+          }
+        },
+        {
+          props: {
+            color: "secondary",
+            variant: "contained"
+          },
+          style: {
+            ":hover": {
+              backgroundColor: defaultTheme.palette.secondary.light
+            }
+          }
+        },
+        {
+          props: {
+            color: "secondary",
+            variant: "outlined"
+          },
+          style: {
+            ":hover": {
+              color: defaultTheme.palette.secondary.contrastText,
+              backgroundColor: defaultTheme.palette.secondary.main
+            }
+          }
+        },
         {
           props: {
             variant: "text"
@@ -176,7 +209,8 @@ function getTheme(colorTheme: PaletteMode): Theme {
             minWidth: "auto",
 
             ":hover": {
-              backgroundColor: "transparent"
+              backgroundColor: "transparent",
+              opacity: "0.7"
             }
           }
         },
@@ -200,47 +234,61 @@ function getTheme(colorTheme: PaletteMode): Theme {
         },
         {
           props: {
-            variant: "black-contain",
+            variant: "dark-contain",
             size: "small"
           },
           style: {
             fontSize: 14,
-            borderRadius: 5,
+            borderRadius: 10,
             height: "auto",
-            minHeight: 36,
-            backgroundColor: defaultTheme.palette.text.primary,
+            minHeight: 40,
+            backgroundColor:
+              colorTheme === "light"
+                ? `rgb(${XlnteeColors[colorTheme].DarkAccentColor})`
+                : `rgb(${XlnteeColors[colorTheme].LightAccentColor})`,
             color:
               colorTheme === "light"
-                ? defaultTheme.palette.primary.contrastText
-                : XlnteeColors[colorTheme].MainBlackElementColor,
+                ? `rgb(${XlnteeColors[colorTheme].LightAccentColor})`
+                : `rgb(${XlnteeColors[colorTheme].DarkAccentColor})`,
             ":hover": {
               color:
                 colorTheme === "light"
-                  ? XlnteeColors[colorTheme].MainBlackElementColor
-                  : defaultTheme.palette.primary.contrastText
+                  ? `rgb(${XlnteeColors[colorTheme].LightAccentColor})`
+                  : `rgb(${XlnteeColors[colorTheme].DarkAccentColor})`,
+              backgroundColor:
+                colorTheme === "light"
+                  ? `rgb(${XlnteeColors[colorTheme].DarkAccentColor}, 0.9)`
+                  : `rgb(${XlnteeColors[colorTheme].LightAccentColor}, 0.9)`
             }
           }
         },
         {
           props: {
-            variant: "black-contain",
+            variant: "dark-contain",
             size: "medium"
           },
           style: {
             fontSize: 14,
-            borderRadius: 5,
-            minHeight: 36,
+            borderRadius: 10,
+            minHeight: 40,
             height: "auto",
-            backgroundColor: defaultTheme.palette.text.primary,
+            backgroundColor:
+              colorTheme === "light"
+                ? `rgb(${XlnteeColors[colorTheme].DarkAccentColor})`
+                : `rgb(${XlnteeColors[colorTheme].LightAccentColor})`,
             color:
               colorTheme === "light"
-                ? defaultTheme.palette.primary.contrastText
-                : XlnteeColors[colorTheme].MainBlackElementColor,
+                ? `rgb(${XlnteeColors[colorTheme].LightAccentColor})`
+                : `rgb(${XlnteeColors[colorTheme].DarkAccentColor})`,
             ":hover": {
               color:
                 colorTheme === "light"
-                  ? XlnteeColors[colorTheme].MainBlackElementColor
-                  : defaultTheme.palette.primary.contrastText
+                  ? `rgb(${XlnteeColors[colorTheme].LightAccentColor})`
+                  : `rgb(${XlnteeColors[colorTheme].DarkAccentColor})`,
+              backgroundColor:
+                colorTheme === "light"
+                  ? `rgb(${XlnteeColors[colorTheme].DarkAccentColor}, 0.9)`
+                  : `rgb(${XlnteeColors[colorTheme].LightAccentColor}, 0.9)`
             },
             [defaultTheme.breakpoints.up("md")]: {
               fontSize: 16,
@@ -250,95 +298,126 @@ function getTheme(colorTheme: PaletteMode): Theme {
         },
         {
           props: {
-            variant: "black-contain",
+            variant: "dark-contain",
             size: "large"
           },
           style: {
             fontSize: 14,
-            borderRadius: 5,
+            borderRadius: 10,
             height: "auto",
-            minHeight: 36,
-            backgroundColor: defaultTheme.palette.text.primary,
+            minHeight: 40,
+            backgroundColor:
+              colorTheme === "light"
+                ? `rgb(${XlnteeColors[colorTheme].DarkAccentColor})`
+                : `rgb(${XlnteeColors[colorTheme].LightAccentColor})`,
             color:
               colorTheme === "light"
-                ? defaultTheme.palette.primary.contrastText
-                : XlnteeColors[colorTheme].MainBlackElementColor,
+                ? `rgb(${XlnteeColors[colorTheme].LightAccentColor})`
+                : `rgb(${XlnteeColors[colorTheme].DarkAccentColor})`,
             ":hover": {
               color:
                 colorTheme === "light"
-                  ? XlnteeColors[colorTheme].MainBlackElementColor
-                  : defaultTheme.palette.primary.contrastText
+                  ? `rgb(${XlnteeColors[colorTheme].LightAccentColor})`
+                  : `rgb(${XlnteeColors[colorTheme].DarkAccentColor})`,
+              backgroundColor:
+                colorTheme === "light"
+                  ? `rgb(${XlnteeColors[colorTheme].DarkAccentColor}, 0.9)`
+                  : `rgb(${XlnteeColors[colorTheme].LightAccentColor}, 0.9)`
             },
             [defaultTheme.breakpoints.up("md")]: {
               fontSize: 20,
-              minHeight: 60
+              minHeight: 50
             }
           }
         },
         {
           props: {
-            variant: "black-outline"
+            variant: "dark-outline"
           },
           style: {
-            color: defaultTheme.palette.text.primary,
-            borderColor: defaultTheme.palette.text.primary,
+            color:
+              colorTheme === "light"
+                ? `rgb(${XlnteeColors[colorTheme].DarkAccentColor})`
+                : `rgb(${XlnteeColors[colorTheme].LightAccentColor})`,
+            borderColor:
+              colorTheme === "light"
+                ? `rgb(${XlnteeColors[colorTheme].DarkAccentColor})`
+                : `rgb(${XlnteeColors[colorTheme].LightAccentColor})`,
             borderWidth: 1,
             borderStyle: "solid",
             "&:hover": {
-              color:
-                colorTheme === "light"
-                  ? defaultTheme.palette.primary.contrastText
-                  : XlnteeColors[colorTheme].MainBlackElementColor,
+              color: defaultTheme.palette.text.secondary,
               backgroundColor: defaultTheme.palette.text.primary
             }
           }
         },
         {
           props: {
-            variant: "white-contain",
-            size: "medium"
+            variant: "dark-text"
           },
           style: {
-            color: defaultTheme.palette.primary.main,
-            backgroundColor: defaultTheme.palette.primary.contrastText,
-            borderColor: "transparent",
-            borderWidth: 0,
-            borderStyle: "solid",
-            fontWeight: 500,
+            color:
+              colorTheme === "light"
+                ? `rgb(${XlnteeColors[colorTheme].DarkAccentColor})`
+                : `rgb(${XlnteeColors[colorTheme].LightAccentColor})`,
+            padding: 0,
+            minWidth: "auto",
             "&:hover": {
-              backgroundColor: defaultTheme.palette.info.light
+              backgroundColor: "transparent"
             }
           }
         },
         {
           props: {
-            variant: "white-text",
-            size: "medium"
+            variant: "light-contain"
           },
           style: {
-            color: defaultTheme.palette.primary.contrastText,
+            color: `rgb(${XlnteeColors[colorTheme].DarkAccentColor})`,
+            backgroundColor: `rgb(${XlnteeColors[colorTheme].LightAccentColor})`,
+            boxShadow: `0 2px 6px 0 rgb(${
+              colorTheme === "light"
+                ? `${XlnteeColors[colorTheme].DarkAccentColor}`
+                : `${XlnteeColors[colorTheme].LightAccentColor}`
+            }, 0.25)`,
             borderColor: "transparent",
             borderWidth: 0,
             borderStyle: "solid",
-            padding: 0
+            "&:hover": {
+              backgroundColor: defaultTheme.palette.info.light
+            },
+            "&.Mui-disabled": {
+              color: `rgb(${XlnteeColors[colorTheme].DarkAccentColor}, 0.5)`
+            }
           }
         },
         {
           props: {
-            variant: "black-text"
+            variant: "light-text"
           },
           style: {
-            color:
-              colorTheme === "light" ? defaultTheme.palette.text.primary : defaultTheme.palette.primary.contrastText,
+            color: `rgb(${XlnteeColors[colorTheme].LightAccentColor})`,
+            borderColor: "transparent",
+            borderWidth: 0,
+            borderStyle: "solid",
             padding: 0,
-            minWidth: "auto",
-
             "&:hover": {
+              boxShadow: "none",
               backgroundColor: "transparent"
             }
           }
         }
       ]
+    },
+    MuiFormLabel: {
+      styleOverrides: {
+        root: {
+          color: "inherit",
+          fontSize: 16,
+          [defaultTheme.breakpoints.up("md")]: {
+            fontSize: 16
+          }
+        }
+      }
     },
     MuiFormControlLabel: {
       styleOverrides: {
@@ -357,6 +436,10 @@ function getTheme(colorTheme: PaletteMode): Theme {
           fontSize: 14,
           lineHeight: 1.4,
           marginBottom: 2,
+          color: defaultTheme.palette.text.primary,
+          [defaultTheme.breakpoints.up("md")]: {
+            fontSize: 16
+          },
           "&.Mui-focused": {
             color: `${defaultTheme.palette.text.primary}`
           }
@@ -368,12 +451,25 @@ function getTheme(colorTheme: PaletteMode): Theme {
         root: {
           height: 36,
           overflow: "hidden",
+          borderRadius: 10,
           [defaultTheme.breakpoints.up("md")]: {
             height: 50
           },
           fieldset: {
             borderColor: defaultTheme.palette.grey["300"]
           },
+          "&.Mui-disabled": {
+            color: defaultTheme.palette.grey["400"],
+            backgroundColor:
+              colorTheme === "light"
+                ? `rgb(${XlnteeColors[colorTheme].LightGrayColor})`
+                : `rgb(${XlnteeColors[colorTheme].LightGrayColor}, 0.1)`
+          },
+          "&.Mui-disabled .MuiOutlinedInput-notchedOutline": {
+            borderColor: defaultTheme.palette.grey["300"],
+            backgroundColor: "transparent"
+          },
+
           "&.Mui-focused fieldset": {
             borderColor: defaultTheme.palette.text.primary,
             borderWidth: 4
@@ -409,7 +505,7 @@ function getTheme(colorTheme: PaletteMode): Theme {
         root: {
           input: {
             height: 20,
-            color: defaultTheme.palette.text.primary,
+            color: "inherit",
             backgroundColor: "transparent",
             fontSize: 14,
             paddingBlock: 8,
@@ -417,7 +513,7 @@ function getTheme(colorTheme: PaletteMode): Theme {
             textAlign: "inherit",
 
             "&::placeholder": {
-              color: defaultTheme.palette.grey["500"]
+              color: defaultTheme.palette.grey["400"]
             },
 
             [defaultTheme.breakpoints.up("md")]: {

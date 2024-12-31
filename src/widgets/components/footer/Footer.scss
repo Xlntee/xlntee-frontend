@@ -1,7 +1,7 @@
 @use "styles/mixins" as mixins;
 
 .footer {
-  border-top: 1px solid rgb(var(--gray-stroke-color));
+  border-top: 1px solid rgb(var(--stroke-gray-color));
   padding-block: 20px;
 
   &__container-main-text {
@@ -24,7 +24,6 @@
       @include mixins.animate(color);
 
       @include mixins.hover {
-        color: rgb(var(--gray-color-400));
       }
     }
   }

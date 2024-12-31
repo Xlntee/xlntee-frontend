@@ -1,26 +1,20 @@
 .otp-input {
-  &__item {
-    .MuiInput-root {
-      flex: 1;
+  .base-Input-root {
+    flex: 1;
 
-      input {
-        width: 100%;
-        border: 1px solid rgb(var(--gray-color-300));
-        border-radius: 5px;
-        height: 62px;
-        font-size: 16px;
-        padding: 8px 14px;
-        outline: none;
-        text-align: center;
+    input {
+      width: 100%;
+      border: 1px solid rgb(var(--input-field-border-color));
+      border-radius: 5px;
+      height: 62px;
+      font-size: 16px;
+      padding: 8px 14px;
+      outline: none;
+      text-align: center;
 
-        &:hover,
-        &:focus {
-          border-color: rgb(var(--main-element-color));
-        }
-
-        &::placeholder {
-          color: rgb(var(--gray-color-500));
-        }
+      &:hover,
+      &:focus {
+        border-color: rgb(var(--dark-accent-color));
       }
     }
   }

@@ -67,12 +67,24 @@ img {
 
 .button-preview {
   &.MuiButtonBase-root {
-    border: 1px solid rgb(var(--gray-stroke-color));
-    background-color: rgb(var(--light-element-color));
+    border: 1px solid rgb(var(--stroke-gray-color));
+    color: rgb(var(--main-dark-color));
+    background-color: rgb(var(--light-gray-color));
     font-weight: 400;
-  }
-}
 
-.base-shadow {
-  box-shadow: var(--base-shadow);
+    [data-theme="dark"] & {
+      @include mixins.animate(opacity);
+
+      @include mixins.hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &.Mui-disabled {
+    [data-theme="dark"] & {
+      color: rgb(var(--light-gray-color) / 0.4);
+      background-color: rgb(var(--light-gray-color) / 0.4);
+    }
+  }
 }

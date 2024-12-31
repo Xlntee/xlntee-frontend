@@ -8,7 +8,7 @@ import { PageProps } from "pages/type";
 
 const CourseCertificate: FC<PageProps> = ({ title }) => {
   useTitle(title);
-  const { t } = useTranslation("common");
+  const { t } = useTranslation("student");
 
   return (
     <Box py="40px">

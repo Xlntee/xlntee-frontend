@@ -3,7 +3,7 @@
 .block-quiz {
   &__info-message {
     color: rgb(var(--main-dark-color));
-    background-color: rgb(var(--gray-stroke-color));
+    background-color: rgb(var(--stroke-gray-color));
     border-radius: 10px;
     padding: 14px;
 
@@ -35,7 +35,6 @@
   }
 
   .quiz-panel {
-    background-color: var(--app-block-lecture-bg-color);
     border-radius: 10px;
     margin-bottom: 20px;
     padding: 16px;
@@ -54,7 +53,6 @@
     align-items: center;
     justify-content: center;
     min-height: 34px;
-    color: rgb(var(--light-color));
 
     @include mixins.media(tablet) {
       min-height: 50px;

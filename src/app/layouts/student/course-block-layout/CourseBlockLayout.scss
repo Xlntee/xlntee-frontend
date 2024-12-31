@@ -54,13 +54,10 @@
 
   padding: 10px;
   box-shadow: var(--base-shadow);
-  background-color: rgb(var(--light-color));
   z-index: 1;
-
   overflow: hidden scroll;
   overscroll-behavior: contain;
   scrollbar-gutter: stable;
-  background-color: var(--app-collapsed-navigation-bg-color);
 
   &::-webkit-scrollbar {
     width: 0;
@@ -105,20 +102,8 @@
       @include toggler-button($padding-left: 10px, $padding-right: 10px);
 
       border-radius: 10px;
-      color: rgb(var(--light-color));
       gap: var(--collapsed-navigation-toggle-link-gap);
       justify-content: var(--collapsed-navigation-toggle-link-justify-content);
-      background-color: rgb(var(--brand-color));
-      border: 1px solid rgb(var(--brand-color));
-
-      @include mixins.hover {
-        background-color: rgb(var(--brand-color));
-      }
-
-      &.Mui-disabled {
-        border-color: rgb(var(--gray-stroke-color));
-        background-color: rgb(var(--light-element-color));
-      }
     }
 
     .MuiTypography-root {

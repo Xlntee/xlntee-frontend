@@ -11,9 +11,9 @@ type CreateCourseButtonProps = {
 
 const CreateCourseButton: FC<CreateCourseButtonProps> = ({ path }) => {
   return (
-    <Link to={path} className="course-btn-card">
+    <Link to={path} className="course-btn-card base-shadow-with-hover">
       <Box component="span" className="course-btn-card__inner-box">
-        <Typography color="text.secondary" component="span" fontWeight={900}>
+        <Typography color="grey.900" component="span" fontWeight={900}>
           +
         </Typography>
       </Box>

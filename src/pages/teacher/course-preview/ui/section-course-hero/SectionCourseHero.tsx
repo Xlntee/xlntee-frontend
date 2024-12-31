@@ -129,7 +129,7 @@ const SectionCourseHero: FC<SectionCourseHeroProps> = ({
                     )}
                   </Stack>
                   <Stack direction="row" gap="12px">
-                    <Button variant="black-outline" className="button-rounded-xl">
+                    <Button variant="dark-outline" className="button-rounded-xl">
                       {t("section-course-hero.actionViewCourse")}
                     </Button>
                     <Button variant="contained" color="primary" className="button-rounded-xl">

@@ -28,7 +28,7 @@ const UserComment: FC<UserSingleCommentProps> = ({ image, nickname, date, text, 
           <Typography variant="caption">, {howLongAgo}</Typography>
         </Box>
         <Typography variant="body2">{text}</Typography>
-        <Button variant="black-text" size="small" onClick={onClickAnswer} sx={{ minWidth: "auto" }}>
+        <Button variant="dark-text" size="small" onClick={onClickAnswer} sx={{ minWidth: "auto" }}>
           {t("answer-button")}
         </Button>
       </Box>
