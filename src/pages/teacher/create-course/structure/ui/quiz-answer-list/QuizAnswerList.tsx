@@ -62,7 +62,7 @@ const QuizAnswerList: FC<QuizAnswerListProps> = ({ lectureIndex, quizIndex }) =>
                 variant="outlined"
                 fullWidth
                 placeholder={`${t("structure.quiz-answer-field-placeholder")}...`}
-                className="text-field-light"
+                className="field-box-light"
               />
               <Button variant="dark-text" size="medium" onClick={() => remove(index)} className="quiz-answer__action">
                 <DeleteOutlineIcon />

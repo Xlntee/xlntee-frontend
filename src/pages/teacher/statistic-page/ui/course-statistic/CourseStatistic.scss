@@ -15,6 +15,10 @@
     gap: 20px;
   }
 
+  [data-theme="dark"] & {
+    background: rgb(var(--light-gray-color) / 0.2);
+  }
+
   &__card {
     @include mixins.media(tablet) {
       max-width: 280px;

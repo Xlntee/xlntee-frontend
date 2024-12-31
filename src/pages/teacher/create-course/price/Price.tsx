@@ -54,8 +54,8 @@ const PricePage: FC<PageProps> = ({ title }) => {
               bgcolor={getInverseColor(theme.palette.grey["100"], "transparent")}
               border={`1px solid ${getInverseColor("transparent", theme.palette.grey["100"])}`}
             >
-              <Typography variant="h6">{t("price.info-box-title")}</Typography>
-              <Typography fontWeight={300} fontSize="14px !important">
+              <Typography variant="body2">{t("price.info-box-title")}</Typography>
+              <Typography variant="caption" display="block">
                 {t("price.info-box-text")}
               </Typography>
             </Box>
@@ -71,9 +71,7 @@ const PricePage: FC<PageProps> = ({ title }) => {
                       mb: "4px"
                     }}
                   />
-                  <FormLabel htmlFor="paid">
-                    <Typography className="field-box__title">{t("price.checkbox-label")}</Typography>
-                  </FormLabel>
+                  <FormLabel htmlFor="paid">{t("price.checkbox-label")}</FormLabel>
                 </Stack>
               </Box>
               <FormLabel className="field-box">
@@ -93,11 +91,11 @@ const PricePage: FC<PageProps> = ({ title }) => {
         <Box mb="20px">
           <BlockPromoCodes />
         </Box>
-        <Stack direction={{ sm: "row" }} flexWrap="wrap" gap={{ sm: "20px", md: "40px" }} mb="20px">
-          <Button onClick={onSubmit} variant="dark-contain" size="medium" sx={{ minWidth: "190px" }}>
+        <Stack direction={{ sm: "row" }} flexWrap="wrap" gap="20px" mb="20px">
+          <Button onClick={onSubmit} variant="contained" color="primary" size="large" sx={{ minWidth: "150px" }}>
             {tCommon("button-save")}
           </Button>
-          <Button variant="dark-text" size="medium">
+          <Button variant="dark-text" size="large" disabled>
             {tCommon("button-discard-changes")}
           </Button>
         </Stack>

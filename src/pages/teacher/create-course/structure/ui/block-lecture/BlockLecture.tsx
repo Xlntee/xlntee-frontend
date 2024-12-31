@@ -135,7 +135,7 @@ const BlockLecture: FC<BlockLectureProps> = ({ lessonId, id, index }) => {
         variant="outlined"
         fullWidth
         placeholder={t("structure.title-lecture-placeholder") + "..."}
-        className="text-field-light"
+        className="field-box-light"
       />
       <Box className="block-lecture__body">
         <Box display="flex" flexDirection="column" gap="20px">

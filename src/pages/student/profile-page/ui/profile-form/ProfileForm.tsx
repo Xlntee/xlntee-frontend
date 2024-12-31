@@ -24,6 +24,7 @@ type FieldType = {
   name: ProfileFormKeys;
   label: string;
   placeholder: string;
+  disabled?: boolean;
 };
 
 const ProfileForm: FC = () => {
@@ -54,7 +55,8 @@ const ProfileForm: FC = () => {
     {
       name: "email",
       label: t("email-label"),
-      placeholder: t("email-placeholder")
+      placeholder: t("email-placeholder"),
+      disabled: true
     },
     {
       name: "lastName",
@@ -64,7 +66,8 @@ const ProfileForm: FC = () => {
     {
       name: "password",
       label: t("password-label"),
-      placeholder: t("password-placeholder")
+      placeholder: t("password-placeholder"),
+      disabled: true
     }
   ];
 
@@ -75,15 +78,14 @@ const ProfileForm: FC = () => {
   return (
     <RootForm methods={methods} onSubmit={onSubmit}>
       <Grid container columnSpacing={{ sm: "20px", md: "40px" }} rowGap="20px" mb="20px">
-        {fields.map(({ name, label, placeholder }) => (
+        {fields.map(({ name, label, placeholder, disabled }) => (
           <Grid key={name} item xs={12} sm={6}>
             <FormLabel className="field-box">
-              <Typography className="field-box__title" mb="8px">
-                {label}
-              </Typography>
+              <Typography className="field-box__title">{label}</Typography>
               <Stack direction="row" gap="10px" alignItems="center">
                 <TextField
                   name={name}
+                  disabled={disabled}
                   variant="outlined"
                   fullWidth
                   placeholder={placeholder}
@@ -106,9 +108,14 @@ const ProfileForm: FC = () => {
           </Grid>
         ))}
       </Grid>
-      <Button type="submit" variant="dark-contain" sx={{ minWidth: "140px" }}>
-        {tCommon("button-save")}
-      </Button>
+      <Stack direction="row" gap="20px">
+        <Button type="submit" color="primary" variant="contained" size="large" sx={{ minWidth: "140px" }}>
+          {tCommon("button-save")}
+        </Button>
+        <Button disabled={true} variant="text" size="large">
+          {tCommon("decline-changes")}
+        </Button>
+      </Stack>
     </RootForm>
   );
 };

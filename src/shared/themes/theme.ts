@@ -326,7 +326,7 @@ function getTheme(colorTheme: PaletteMode): Theme {
             },
             [defaultTheme.breakpoints.up("md")]: {
               fontSize: 20,
-              minHeight: 60
+              minHeight: 50
             }
           }
         },
@@ -384,6 +384,9 @@ function getTheme(colorTheme: PaletteMode): Theme {
             borderStyle: "solid",
             "&:hover": {
               backgroundColor: defaultTheme.palette.info.light
+            },
+            "&.Mui-disabled": {
+              color: `rgb(${XlnteeColors[colorTheme].DarkAccentColor}, 0.5)`
             }
           }
         },
@@ -392,15 +395,7 @@ function getTheme(colorTheme: PaletteMode): Theme {
             variant: "light-text"
           },
           style: {
-            color:
-              colorTheme === "light"
-                ? `rgb(${XlnteeColors[colorTheme].DarkAccentColor})`
-                : `rgb(${XlnteeColors[colorTheme].LightAccentColor})`,
-            boxShadow: `0 2px 6px 0 rgb(${
-              colorTheme === "light"
-                ? `${XlnteeColors[colorTheme].DarkAccentColor}`
-                : `${XlnteeColors[colorTheme].LightAccentColor}`
-            }, 0.25)`,
+            color: `rgb(${XlnteeColors[colorTheme].LightAccentColor})`,
             borderColor: "transparent",
             borderWidth: 0,
             borderStyle: "solid",
@@ -412,6 +407,17 @@ function getTheme(colorTheme: PaletteMode): Theme {
           }
         }
       ]
+    },
+    MuiFormLabel: {
+      styleOverrides: {
+        root: {
+          color: "inherit",
+          fontSize: 16,
+          [defaultTheme.breakpoints.up("md")]: {
+            fontSize: 16
+          }
+        }
+      }
     },
     MuiFormControlLabel: {
       styleOverrides: {
@@ -430,6 +436,10 @@ function getTheme(colorTheme: PaletteMode): Theme {
           fontSize: 14,
           lineHeight: 1.4,
           marginBottom: 2,
+          color: defaultTheme.palette.text.primary,
+          [defaultTheme.breakpoints.up("md")]: {
+            fontSize: 16
+          },
           "&.Mui-focused": {
             color: `${defaultTheme.palette.text.primary}`
           }
@@ -441,12 +451,25 @@ function getTheme(colorTheme: PaletteMode): Theme {
         root: {
           height: 36,
           overflow: "hidden",
+          borderRadius: 10,
           [defaultTheme.breakpoints.up("md")]: {
             height: 50
           },
           fieldset: {
             borderColor: defaultTheme.palette.grey["300"]
           },
+          "&.Mui-disabled": {
+            color: defaultTheme.palette.grey["400"],
+            backgroundColor:
+              colorTheme === "light"
+                ? `rgb(${XlnteeColors[colorTheme].LightGrayColor})`
+                : `rgb(${XlnteeColors[colorTheme].LightGrayColor}, 0.1)`
+          },
+          "&.Mui-disabled .MuiOutlinedInput-notchedOutline": {
+            borderColor: defaultTheme.palette.grey["300"],
+            backgroundColor: "transparent"
+          },
+
           "&.Mui-focused fieldset": {
             borderColor: defaultTheme.palette.text.primary,
             borderWidth: 4
@@ -482,7 +505,7 @@ function getTheme(colorTheme: PaletteMode): Theme {
         root: {
           input: {
             height: 20,
-            color: defaultTheme.palette.text.primary,
+            color: "inherit",
             backgroundColor: "transparent",
             fontSize: 14,
             paddingBlock: 8,
@@ -490,7 +513,7 @@ function getTheme(colorTheme: PaletteMode): Theme {
             textAlign: "inherit",
 
             "&::placeholder": {
-              color: defaultTheme.palette.grey["500"]
+              color: defaultTheme.palette.grey["400"]
             },
 
             [defaultTheme.breakpoints.up("md")]: {

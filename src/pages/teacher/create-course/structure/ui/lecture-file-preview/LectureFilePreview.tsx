@@ -34,7 +34,7 @@ const LectureFilePreview: FC<LectureFilePreviewProps> = ({ type, value, onDelete
         InputProps={{ readOnly: true }}
         variant="outlined"
         fullWidth
-        className="text-field-light"
+        className="field-box-light"
         value={value}
       />
       <Button

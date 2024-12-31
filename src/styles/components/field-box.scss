@@ -1,3 +1,5 @@
+@use "styles/mixins" as mixins;
+
 .field-box {
   display: block;
 
@@ -6,7 +8,11 @@
       margin-bottom: 4px;
       font-weight: 400;
       text-transform: capitalize;
-      font-size: 16px;
+      font-size: 14px;
+
+      @include mixins.media(tablet) {
+        font-size: 16px;
+      }
     }
   }
 
@@ -28,5 +34,22 @@
 
   a {
     color: rgb(var(--dark-accent-color));
+  }
+}
+
+.field-box-light {
+  .MuiInputBase-root {
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  .MuiInputBase-input {
+    background-color: var(--app-block-lecture-field-bg-color);
+
+    &::placeholder {
+      [data-theme="dark"] & {
+        color: rgb(var(--light-accent-color));
+      }
+    }
   }
 }

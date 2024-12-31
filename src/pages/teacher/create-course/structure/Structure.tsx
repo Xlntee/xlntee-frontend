@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 
-import { Box, Button } from "@mui/material";
+import { Box, Button, Stack } from "@mui/material";
 
 import { useAppDispatch, useAppSelector } from "src/app/store/store";
 import useTitle from "src/shared/hooks/useTitle";
@@ -29,7 +29,7 @@ const StructurePage: FC<PageProps> = ({ title }) => {
       ))}
       <Button
         variant="dark-outline"
-        size="medium"
+        size="large"
         fullWidth
         className="button-rounded-md"
         onClick={() => dispatch(addLesson())}
@@ -37,9 +37,14 @@ const StructurePage: FC<PageProps> = ({ title }) => {
       >
         + {t("structure.add-lesson")}
       </Button>
-      <Button variant="dark-contain" size="medium" onClick={onSave} sx={{ minWidth: "190px" }}>
-        {tCommon("button-save")}
-      </Button>
+      <Stack direction={{ sm: "row" }} flexWrap="wrap" gap="20px" mb="20px">
+        <Button variant="contained" color="primary" size="large" onClick={onSave} sx={{ minWidth: "150px" }}>
+          {tCommon("button-save")}
+        </Button>
+        <Button variant="dark-text" size="large" disabled>
+          {tCommon("button-discard-changes")}
+        </Button>
+      </Stack>
     </Box>
   );
 };

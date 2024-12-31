@@ -2,11 +2,7 @@
 
 .create-course-nav {
   padding: 16px 14px;
-  box-shadow: var(--base-shadow);
-
-  @include mixins.media(desktop) {
-    border-radius: 25px;
-  }
+  border-radius: 25px;
 
   &__list {
     display: flex;
@@ -32,7 +28,7 @@
       color: currentColor;
       text-decoration: none;
       padding-block: 8px;
-      font-size: 18px;
+      font-size: 16px;
 
       @include mixins.animate(color);
 
@@ -60,6 +56,10 @@
       @include mixins.hover {
         color: rgb(var(--light-accent-color));
         background-color: rgb(var(--dark-accent-color));
+      }
+
+      [data-theme="dark"] & {
+        color: rgb(var(--main-dark-color));
       }
     }
   }

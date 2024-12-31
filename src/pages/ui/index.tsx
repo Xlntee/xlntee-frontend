@@ -1,5 +1,16 @@
 import { FC, useState } from "react";
-import { Button, Container, Stack, Box, Typography, Grid, TextField, InputLabel, Divider } from "@mui/material";
+import {
+  Button,
+  Container,
+  Stack,
+  Box,
+  Typography,
+  Grid,
+  TextField,
+  InputLabel,
+  Divider,
+  FormLabel
+} from "@mui/material";
 
 import { DialogModal, Snackbar } from "src/shared/ui";
 
@@ -224,31 +235,17 @@ const UiPage: FC<PageProps> = ({ title }) => {
         <Grid container>
           <Grid item xs={12} md={6}>
             <Stack direction="column" gap={2} mb={2}>
+              <FormLabel className="field-box">
+                <Typography className="field-box__title">Label</Typography>
+                <TextField name="email" type="text" placeholder="Placeholder" fullWidth />
+              </FormLabel>
               <Box width="100%">
                 <InputLabel required shrink={false} htmlFor="field1">
                   Label
                 </InputLabel>
                 <TextField required id="field1" fullWidth variant="outlined" size="small" placeholder="placeholder" />
               </Box>
-              <TextField
-                required
-                label="Label"
-                variant="outlined"
-                fullWidth
-                InputLabelProps={{
-                  shrink: true
-                }}
-              />
-              <TextField
-                required
-                disabled
-                label="Label"
-                variant="outlined"
-                fullWidth
-                InputLabelProps={{
-                  shrink: true
-                }}
-              />
+              <TextField disabled fullWidth variant="outlined" size="small" placeholder="placeholder" />
             </Stack>
           </Grid>
         </Grid>

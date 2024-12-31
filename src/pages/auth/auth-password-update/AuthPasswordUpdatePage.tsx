@@ -26,18 +26,12 @@ const AuthPasswordUpdatePage: FC<PageProps> = ({ title }) => {
 
   return (
     <Box className="auth-form">
-      <Typography
-        variant="body2"
-        paddingBlock="12px"
-        borderBottom={`1px solid ${theme.palette.grey["200"]}`}
-        fontWeight={300}
-        mb="20px"
-      >
+      <Typography variant="body2" paddingBlock="12px" borderBottom={`1px solid ${theme.palette.grey["200"]}`} mb="20px">
         {isSubmit ? t("credential-update-content.title-password") : t("password-change")}
       </Typography>
       {isSubmit ? (
         <Box mb="20px">
-          <Typography variant="body2" fontWeight={300}>
+          <Typography variant="body2">
             {t("credential-update-content.subtitle1")}
             {""}
             <Typography component="span" variant="body2" marginInline="4px" fontWeight="500" display="inline">
@@ -51,7 +45,7 @@ const AuthPasswordUpdatePage: FC<PageProps> = ({ title }) => {
         <PasswordUpdateForm onSubmit={onSubmit} />
       )}
       <Stack direction="column" gap="4px">
-        <Typography variant="caption" className="auth-form__caption-text">
+        <Typography variant="body2" className="auth-form__caption-text">
           {t("have-account")}? <Link to={AppRoutes.auth.login}>{t("login")}</Link>
         </Typography>
       </Stack>

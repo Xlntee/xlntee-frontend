@@ -69,7 +69,11 @@ const BlockQuiz: FC<BlockQuizProps> = ({ lessonId, lectureId, lectureIndex, onCl
       {fields?.length
         ? fields.map((item, index, arr) => (
             <Box key={item.customId} className="block-quiz__item">
-              <QuizIcon />
+              <QuizIcon
+                sx={{
+                  color: theme.palette.primary.contrastText
+                }}
+              />
               <Box className="quiz-panel" bgcolor={getInverseColor(theme.palette.primary.contrastText, "transparent")}>
                 <Box className="quiz-question">
                   <Typography variant="body2" className="quiz-question__number">

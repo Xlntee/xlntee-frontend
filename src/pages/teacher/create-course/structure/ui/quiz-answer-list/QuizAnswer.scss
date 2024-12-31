@@ -34,11 +34,5 @@
     @include mixins.media(tablet) {
       margin-top: 10px;
     }
-
-    svg {
-      &.MuiSvgIcon-root {
-        color: rgb(var(--light-accent-color));
-      }
-    }
   }
 }

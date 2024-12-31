@@ -59,11 +59,11 @@ const LecturerForm: FC = () => {
           <Typography className="field-box__subtitle">{t("lecturer.about-field-description")}</Typography>
           <ReactQuill ref={refRichText} theme="snow" />
         </Box>
-        <Stack direction={{ sm: "row" }} flexWrap="wrap" gap={{ sm: "20px", md: "40px" }}>
-          <Button type="submit" variant="dark-contain" size="medium" sx={{ minWidth: "190px" }}>
+        <Stack direction={{ sm: "row" }} flexWrap="wrap" gap="20px">
+          <Button type="submit" variant="contained" color="primary" size="large" sx={{ minWidth: "150px" }}>
             {tCommon("button-save")}
           </Button>
-          <Button variant="dark-text" size="medium">
+          <Button variant="dark-text" size="large" disabled>
             {tCommon("button-discard-changes")}
           </Button>
         </Stack>

@@ -67,7 +67,7 @@ const BlockPromoCodes: FC = () => {
         {t("price.promo-title")}
       </Typography>
       <Divider style={{ marginBottom: "20px" }} />
-      <Box mb="20px">
+      <Box mb="30px">
         <PromoCodeCreate onSubmit={onSubmit} />
       </Box>
       {promoCodes.length ? (
