@@ -109,7 +109,7 @@ const ProfileForm: FC = () => {
         ))}
       </Grid>
       <Stack direction="row" gap="20px">
-        <Button type="submit" color="primary" variant="contained" size="large" sx={{ minWidth: "140px" }}>
+        <Button type="submit" color="primary" variant="contained" size="large" sx={{ minWidth: "150px" }}>
           {tCommon("button-save")}
         </Button>
         <Button disabled={true} variant="text" size="large">

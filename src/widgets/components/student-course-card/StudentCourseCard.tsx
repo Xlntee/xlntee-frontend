@@ -65,7 +65,11 @@ const StudentCourseCard: FC<StudentCourseCardProps> = ({
             </Box>
             <Stack direction="row" justifyContent="flex-end" alignItems="center" gap="10px">
               {discount && (
-                <Box className="student-course-card__discount" bgcolor={theme.palette.secondary.main}>
+                <Box
+                  className="student-course-card__discount"
+                  color={theme.palette.primary.contrastText}
+                  bgcolor={theme.palette.secondary.main}
+                >
                   -{discount}%
                 </Box>
               )}

@@ -14,7 +14,6 @@ const Description: FC<DescriptionProps> = ({ text }) => {
 
   return (
     <Box
-      className="course-video-description"
       p="20px"
       borderRadius="10px"
       bgcolor={getInverseColor(theme.palette.grey["100"], "transparent")}

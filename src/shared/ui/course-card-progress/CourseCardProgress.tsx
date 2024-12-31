@@ -15,7 +15,7 @@ type CourseCardProgressProps = {
 
 const CourseCardProgress: FC<CourseCardProgressProps> = ({ title, image, progress = 0, href }) => {
   return (
-    <Box className="course-card-progress">
+    <Box className="course-card-progress base-invisible-shadow-with-hover">
       <Box className="course-card-progress__image">
         <img src={image} alt={title} />
       </Box>
