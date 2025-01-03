@@ -15,9 +15,10 @@ export type PricePlanProps = {
   button: string;
   bgColor: string;
   descriptionList: PricePlanDescription[];
+  isDefault?: boolean;
 };
 
-const PricePlanCard: FC<PricePlanProps> = ({ pretitle, title, text, button, descriptionList, bgColor }) => {
+const PricePlanCard: FC<PricePlanProps> = ({ isDefault, pretitle, title, text, button, descriptionList, bgColor }) => {
   const theme = useTheme();
 
   return (
@@ -31,7 +32,13 @@ const PricePlanCard: FC<PricePlanProps> = ({ pretitle, title, text, button, desc
       bgcolor={bgColor}
       border={`1px solid ${theme.palette.grey["200"]}`}
       className="base-shadow"
+      position="relative"
     >
+      {isDefault && (
+        <Typography variant="body2" position="absolute" top="14px" left="14px">
+          Default
+        </Typography>
+      )}
       <Typography variant="body1">{pretitle}</Typography>
       <Typography variant="h2">{title}</Typography>
       <Typography variant="body1" textAlign="center">

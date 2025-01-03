@@ -9,17 +9,7 @@ import OfflineBoltIcon from "@mui/icons-material/OfflineBolt";
 
 import { PricePlanCard, PricePlanProps } from "src/shared/ui";
 import useInverseColor from "src/shared/hooks/useInverseColor";
-
-type PricePlanContentProps = {
-  pretitle: string;
-  title: string;
-  text: string;
-  button: string;
-  descriptionList: {
-    title: string;
-    text: string;
-  }[];
-};
+import { PricePlanContentProps } from "src/shared/types/price-plan-content";
 
 const PricePlanList: FC = () => {
   const theme = useTheme();

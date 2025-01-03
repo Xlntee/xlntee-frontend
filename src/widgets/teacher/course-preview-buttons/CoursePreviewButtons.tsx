@@ -10,17 +10,11 @@ const CoursePreviewButtons: FC = () => {
 
   return (
     <Stack direction="row" gap="14px">
-      <Button
-        className="button-preview button-rounded-md"
-        variant="dark-outline"
-        size="small"
-        startIcon={<RemoveRedEyeIcon />}
-        disabled
-      >
+      <Button className="button-preview " variant="dark-outline" size="small" startIcon={<RemoveRedEyeIcon />} disabled>
         {t("button-landing-text")}
       </Button>
       <Button
-        className="button-preview button-rounded-md"
+        className="button-preview"
         variant="dark-outline"
         size="small"
         startIcon={<SentimentSatisfiedAltIcon />}
