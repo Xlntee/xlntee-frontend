@@ -26,5 +26,13 @@
   "button-submit": "Submit",
   "complain": "Complain",
   "refund": "Refund",
-  "decline-changes": "Decline changes"
+  "decline-changes": "Decline changes",
+  "validation": {
+    "required-field": "Required field",
+    "invalid-format": "Invalid format",
+    "email-invalid-format": "Invalid email format",
+    "confirm-password": "The new password must not match the old one",
+    "confirm-password-requirements": "Password must be at least 8 characters long and contain at least one lowercase letter, one uppercase letter, one number, and one special character",
+    "passwords-match": "Passwords must match"
+  }
 }

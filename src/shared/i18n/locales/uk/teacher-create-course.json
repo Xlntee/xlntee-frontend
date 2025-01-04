@@ -14,17 +14,7 @@
     "select-field-subcategory": "Підкатегорія",
     "select-field-language": "Мова",
     "tags-field-label": "Теги",
-    "tags_field_placeholder": "Додати",
-    "validation": {
-      "title": "Необхідно вказати назву курсу",
-      "short-description": "Необхідно вказати назву курсу",
-      "category": "Необхідно вказати категорію",
-      "level": "Потрібен рівень",
-      "subcategory": "Необхідна підкатегорія",
-      "language": "Потрібна мова",
-      "tags": "Теги не можуть бути порожніми",
-      "tags-requirements": "Потрібен принаймні один теги"
-    }
+    "tags_field_placeholder": "Додати"
   },
   "landing": {
     "nav-title": "Лендінг",
@@ -62,16 +52,7 @@
         "value": "2 MB"
       }
     ],
-    "promo-button-text": "Завантажити",
-    "validation": {
-      "subjects": "Теми не можуть бути порожніми",
-      "subjects-requirements": "Потрібен принаймні один тег",
-      "requirements": "Вимоги не можуть бути пустими",
-      "requirements-requirements": "Потрібен принаймні один тег",
-      "description": "Потрібен опис",
-      "image": "Потрібне зображення",
-      "video": "Потрібне відео"
-    }
+    "promo-button-text": "Завантажити"
   },
   "structure": {
     "nav-title": "Структура курсу",
@@ -91,8 +72,7 @@
     "lecture-quiz-question-placeholder": "Питання",
     "lecture-quiz-add-answer": "Додайте відповідь",
     "lecture-quiz-add-question": "Додайте запитання",
-    "quiz-answer-field-placeholder": "Відповідь",
-    "validation": {}
+    "quiz-answer-field-placeholder": "Відповідь"
   },
   "lecturer": {
     "nav-title": "Викладач",
@@ -105,12 +85,7 @@
     "about-field-label": "Про лектора",
     "about-field-description": "Розкажіть докладніше про викладача курсу",
     "image-upload-title": "Фото викладача",
-    "image-upload-button-text": "Завантажити",
-    "validation": {
-      "username": "Потрібно ввести ім'я користувача",
-      "tags": "Теги не можуть бути порожніми",
-      "tags-requirements": "Потрібен принаймні один тег"
-    }
+    "image-upload-button-text": "Завантажити"
   },
   "price": {
     "nav-title": "Ціна",
