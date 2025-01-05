@@ -99,7 +99,7 @@ const BlockLesson: FC<BlockLessonProps> = ({ index, id, canDelete }) => {
     <RootForm
       methods={methods}
       onSubmit={onSubmit}
-      className={cn("block-lesson", { "block-lesson--collapsed": isCollapsed })}
+      className={cn("block-lesson base-shadow", { "block-lesson--collapsed": isCollapsed })}
     >
       <Stack className="block-lesson__header">
         <Typography variant="h4">

@@ -21,7 +21,7 @@ const SectionLandingAbout: FC<SectionLandingAboutProps> = ({ title, wordsList, d
   return (
     <Box component="section" className="section-about">
       <Container>
-        <Box className="section-about__panel">
+        <Box className="section-about__panel base-shadow">
           <Typography variant="h2" className="section-about__title">
             {title}
           </Typography>

@@ -39,7 +39,7 @@ const AuthLayout: FC = () => {
           <Box mt={{ md: "40px" }} display={{ xs: "none", md: "block" }}>
             <img src="/assets/auth-image.webp" alt="auth" className="section-auth__image" />
           </Box>
-          <Box className="section-auth__content">
+          <Box className="section-auth__content base-shadow">
             <Outlet />
           </Box>
         </Stack>

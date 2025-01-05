@@ -183,13 +183,7 @@ const GeneralPage: FC<PageProps> = ({ title }) => {
               <Typography className="field-box__title" mb="8px">
                 {t("general.tags-field-label")}*
               </Typography>
-              <AutocompleteField
-                name="tags"
-                placeholder={`${t("general.tags_field_placeholder")}...`}
-                onChange={(e) => {
-                  console.log("change", e);
-                }}
-              />
+              <AutocompleteField name="tags" placeholder={`${t("general.tags_field_placeholder")}...`} />
             </FormLabel>
           </Grid>
         </Grid>

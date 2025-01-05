@@ -29,6 +29,7 @@ body {
   font-family: "Noto Sans", sans-serif;
   min-height: 100dvh;
   font-display: optional;
+  cursor: default;
 }
 
 a {
@@ -38,4 +39,14 @@ a {
 
 img {
   max-width: 100%;
+}
+
+*::-moz-selection {
+  color: rgb(var(--light-accent-color));
+  background: rgb(var(--brand-color));
+}
+
+*::selection {
+  color: rgb(var(--light-accent-color));
+  background: rgb(var(--brand-color));
 }

@@ -44,7 +44,10 @@ const StudentCourseCard: FC<StudentCourseCardProps> = ({
   }
 
   return (
-    <Box className="student-course-card" border={`1px solid ${theme.palette.grey["200"]}`}>
+    <Box
+      className="student-course-card base-invisible-shadow-with-hover"
+      border={`1px solid ${theme.palette.grey["200"]}`}
+    >
       <Box className="student-course-card__image">
         <img src={image} alt={title} />
         <Link to={href} className="student-course-card__link" />

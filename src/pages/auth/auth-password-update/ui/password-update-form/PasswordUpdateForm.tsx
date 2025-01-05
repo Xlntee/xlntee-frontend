@@ -62,7 +62,6 @@ const PasswordUpdateForm: FC<PasswordUpdateFormProps> = ({ onSubmit }) => {
             name="confirm_password"
             aria-label="password input"
             placeholder={t("confirm-password-placeholder")}
-            showErrorMessage={false}
           />
         </FormLabel>
         <PasswordValidationPanel isError={!!errors.password} />
