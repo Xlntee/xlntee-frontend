@@ -21,6 +21,7 @@ import { LectureFilePreview } from "../lecture-file-preview";
 import { LecturesArrayFormValues } from "./validation";
 
 import "./BlockLecture.scss";
+import useInverseColor from "src/shared/hooks/useInverseColor";
 
 type BlockLectureProps = {
   id: string;
@@ -37,6 +38,7 @@ const BlockLecture: FC<BlockLectureProps> = ({ lessonId, id, index }) => {
   const { t } = useTranslation("teacher-create-course");
   const theme = useTheme();
 
+  const { getInverseColor } = useInverseColor();
   const { onOpenDialog } = useDialog();
   const { setValue } = useFormContext<LecturesArrayFormValues>();
 
@@ -107,8 +109,8 @@ const BlockLecture: FC<BlockLectureProps> = ({ lessonId, id, index }) => {
     <Stack
       direction="column"
       gap="20px"
-      className={cn("block-lecture", { "block-lecture--collapsed": isCollapsed })}
-      bgcolor={theme.palette.primary.main}
+      className={cn("block-lecture base-shadow", { "block-lecture--collapsed": isCollapsed })}
+      bgcolor={getInverseColor(theme.palette.primary.main, "transparent")}
     >
       <Box className="block-lecture__header">
         <Typography variant="h4" color={theme.palette.primary.contrastText}>

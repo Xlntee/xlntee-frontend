@@ -13,7 +13,7 @@ type CertificateCardProps = {
 
 const CertificateCard: FC<CertificateCardProps> = ({ title, image, href }) => {
   return (
-    <Box className="cartificate-card">
+    <Box className="cartificate-card base-invisible-shadow-with-hover">
       <Box className="cartificate-card__image">
         <img src={image} alt={title} />
       </Box>

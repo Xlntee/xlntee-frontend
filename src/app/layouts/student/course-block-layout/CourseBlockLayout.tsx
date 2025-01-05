@@ -107,7 +107,7 @@ const CourseLayout: FC = () => {
 
   return (
     <Box className={cn("course-layout", { "open-navigation": isOpenMenu })}>
-      <Box component="aside" className={cn("collapsed-navigation", { expanded: isOpenMenu })}>
+      <Box component="aside" className={cn("collapsed-navigation base-shadow", { expanded: isOpenMenu })}>
         <Box mb="10px">
           <Button
             variant="dark-text"

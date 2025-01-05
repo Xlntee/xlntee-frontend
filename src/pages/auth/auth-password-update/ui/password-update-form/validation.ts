@@ -12,7 +12,7 @@ export const useValidationSchema = (): yup.ObjectSchema<PasswordUpdateFormFields
     password: yup.string().required(t("validation.required-field")),
     confirm_password: yup
       .string()
-      .notOneOf(["password"], t("validation.confirm-password"))
+      .oneOf([yup.ref("password")], t("validation.passwords-match"))
       .matches(passwordRegex, t("validation.required-field"))
       .required(t("validation.required-field"))
   });

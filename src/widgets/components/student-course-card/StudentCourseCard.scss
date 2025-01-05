@@ -4,13 +4,6 @@
   position: relative;
   border-radius: 25px;
   padding: 6px;
-  box-shadow: var(--base-shadow-invisible);
-
-  @include mixins.animate(box-shadow);
-
-  @include mixins.hover {
-    box-shadow: var(--base-shadow);
-  }
 
   &__image {
     position: relative;

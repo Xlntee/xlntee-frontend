@@ -22,7 +22,7 @@ const Video: FC<VideoProps> = ({ video, type }) => {
   }
 
   return (
-    <Box className="course-video">
+    <Box className="course-video base-shadow">
       <video ref={videoRef} width="320" height="240" {...(isPlaying && { controls: true })}>
         <source src={video} type={type} />
         Your browser does not support the video tag.
