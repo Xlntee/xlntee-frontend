@@ -47,11 +47,9 @@
 html[data-theme="dark"] {
   --input-field-border-color: 255 255 255; //#FFFFFF
 
-  --dark-accent-color: 255 255 255; // #ffffff
+  --dark-accent-color: 255 255 255; // #FFFFFF
   --main-element-contrast-color: 32 32 32; // #202020
   --main-dark-color: var(--main-element-contrast-color);
-
-  --brand-color: 99 97 255; // #ffffff
 
   --app-block-lecture-bg-color: "transparent";
   --app-block-lecture-aside-bg-color: "transparent";
