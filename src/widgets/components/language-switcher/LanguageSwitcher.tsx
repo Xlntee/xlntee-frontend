@@ -2,7 +2,7 @@ import { FC, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import cn from "classnames";
 
-import { Select, MenuItem } from "@mui/material";
+import { Box, Select, MenuItem } from "@mui/material";
 import { languages } from "src/shared/i18n";
 
 import "./LanguageSwitcher.scss";
@@ -24,6 +24,7 @@ const LanguageSwitcher: FC<LanguageSwitcherProps> = ({ compact = false }) => {
 
   useEffect(() => {
     const langFromLC = localStorage.getItem(LCLangKey);
+    console.log("langFromLC", langFromLC);
     if (langFromLC) {
       setLang(langFromLC);
     } else {
@@ -32,24 +33,26 @@ const LanguageSwitcher: FC<LanguageSwitcherProps> = ({ compact = false }) => {
   }, []);
 
   return (
-    <Select
-      size="small"
-      fullWidth
-      className={cn("language-switcher", { "language-switcher--compact": compact })}
-      value={lang}
-      onChange={(e) => {
-        onHandleChangeLanguage(e.target.value);
-      }}
-      inputProps={{
-        "aria-label": "Select language"
-      }}
-    >
-      {languages.map((item) => (
-        <MenuItem value={item.code} key={item.code}>
-          {compact ? item.shortName.toUpperCase() : item.fullName}
-        </MenuItem>
-      ))}
-    </Select>
+    <Box className={cn("language-switcher", { "language-switcher--compact": compact })}>
+      <Select
+        size="small"
+        fullWidth
+        className="language-switcher__select"
+        value={lang}
+        onChange={(e) => {
+          onHandleChangeLanguage(e.target.value);
+        }}
+        inputProps={{
+          "aria-label": "Select language"
+        }}
+      >
+        {languages.map((item) => (
+          <MenuItem value={item.code} key={item.code}>
+            {compact ? item.shortName.toUpperCase() : item.fullName}
+          </MenuItem>
+        ))}
+      </Select>
+    </Box>
   );
 };
 
